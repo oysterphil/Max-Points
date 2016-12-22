@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Max Points, LLC</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<!--   <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav> -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container" id="intakeForm">
+      <br><br>
+      <h1 class="header center orange-text">Maximize Your Points</h1>
+      <h5 class="header center light-blue-text">
+        You're 1 minute away from your free individualized credit card points report.
+      </h5>
+      <div class="col s12">  
+        <div class="row center">
+          <div class="input-field col s12 m6">
+            <select id="ownBusiness">
+              <option value="" disabled selected>Do you own a business?</option>
+              <option value="yesOwnBusiness">Yes</option>
+              <option value="noOwnBusiness">No</option>
+            </select>
+          </div>
+          <div class="input-field col s12 m6">
+            <select id="rewardsGoal">
+              <option value="" disabled selected>Choose your Rewards Goal</option>
+              <option value="freeFlights">Free Flights</option>
+              <option value="cashBack">Cash Back</option>
+            </select>
+          </div>
+          <div class="input-field col s12 m6">
+            <select id="creditScore">
+              <option value="" disabled selected>My credit score is:</option>
+              <option value="excellentCredit">Excellent (720+)</option>
+              <option value="goodCredit">Good (690-719)</option>
+              <option value="averageCredit">Average (640-689)</option>
+              <option value="poorCredit">Poor (350-639)</option>
+            </select>
+          </div>
+          <div class="input-field col s12 m6">
+            <input placeholder="Email to send results." id="email" type="email" class="validate">
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="row center">
+          <h5>Three credit cards you use the most:</h5>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">credit_card</i>
+            <input type="text" id="card1" class="autocomplete">
+            <label for="card1">Card 1</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">credit_card</i>
+            <input type="text" id="card2" class="autocomplete">
+            <label for="card2">Card 2</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">credit_card</i>
+            <input type="text" id="card3" class="autocomplete">
+            <label for="card3">Card 3</label>
+          </div>
+        </div>
+        <div class="row center">
+          <button class="btn waves-effect waves-light btn-large" id="submitForm">
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+      
+      <br><br>
+
+    </div>
+
+    <div class="container" id="loading" style="display: none;">
+  
+      <h5 style="text-align: center;">Crunching the numbers...</h5>
+      <div class="progress">
+          <div class="indeterminate"></div>
+      </div>
+      
+    </div>
+
+    <div class="container" id="recommendationReport" style="display: none;">
+      
+      <h1 style="text-align: center;">
+        Your Individual Report
+      </h1>
+      <hr style="width: 75%">
+
+      <div class="row" id="personalRecommendations">
+
+        <h3 style="text-align: center;">
+          Personal Credit Card Recommendations
+        </h3>
+
+        <!-- Personal Recommendation #1 -->
+        <div class="col s12 m4" id="personalRecommendationOne">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Points Earned Per Dollar Spent by Adding {{Card1}}</span>
+                <br><hr><br>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      Current
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      With {{Card1}}
+                    </td>
+                  </tr>
+                </table>
+                
+                <h6>Everywhere:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      2x
+                    </td>
+                    <td style="width:50%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Gas:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      3x
+                    </td>
+                    <td style="width:40%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Office Supplies:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      0x
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      5x
+                    </td>
+                    <td style="width:55%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Annual Fees:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      $95
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      $0
+                    </td>
+                  </tr>
+                </table>
+
+                <h6>Sign up Bonus:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      10,000 points after $1,000 in purchases in the first 3 months
+                    </td>
+                  </tr>
+                </table>
+
+                <br><hr><br>
+
+                <h6>How {{Card1}} Increases your points:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <ul style="padding-left: 10px;">
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                  </ul>
+                </table>
+
+            </div>
+
+            <div class="card-action">
+              <a class="waves-effect waves-light btn blue lighten-2">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Recommendation #2 -->
+        <div class="col s12 m4" id="personalRecommendationOne">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Points Earned Per Dollar Spent by Adding {{Card2}}</span>
+                <br><hr><br>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      Current
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      With {{Card1}}
+                    </td>
+                  </tr>
+                </table>
+                
+                <h6>Everywhere:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      2x
+                    </td>
+                    <td style="width:50%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Gas:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      3x
+                    </td>
+                    <td style="width:40%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Office Supplies:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      0x
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      5x
+                    </td>
+                    <td style="width:55%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Annual Fees:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      $95
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      $0
+                    </td>
+                  </tr>
+                </table>
+
+                <h6>Sign up Bonus:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      10,000 points after $1,000 in purchases in the first 3 months
+                    </td>
+                  </tr>
+                </table>
+
+                <br><hr><br>
+
+                <h6>How {{Card2}} Increases your points:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <ul style="padding-left: 10px;">
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                  </ul>
+                </table>
+
+            </div>
+
+            <div class="card-action">
+              <a class="waves-effect waves-light btn blue lighten-2">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Recommendation #3 -->
+        <div class="col s12 m4" id="personalRecommendationOne">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Points Earned Per Dollar Spent by Adding {{Card3}}</span>
+                <br><hr><br>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      Current
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      With {{Card1}}
+                    </td>
+                  </tr>
+                </table>
+                
+                <h6>Everywhere:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      2x
+                    </td>
+                    <td style="width:50%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Gas:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      3x
+                    </td>
+                    <td style="width:40%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Office Supplies:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      0x
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      5x
+                    </td>
+                    <td style="width:55%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Annual Fees:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      $95
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      $0
+                    </td>
+                  </tr>
+                </table>
+
+                <h6>Sign up Bonus:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      10,000 points after $1,000 in purchases in the first 3 months
+                    </td>
+                  </tr>
+                </table>
+
+                <br><hr><br>
+
+                <h6>How {{Card3}} Increases your points:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <ul style="padding-left: 10px;">
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                  </ul>
+                </table>
+
+            </div>
+
+            <div class="card-action">
+              <a class="waves-effect waves-light btn blue lighten-2">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row" id="businessRecommendations">
+
+        <h3 style="text-align: center;">
+          Business Credit Card Recommendations
+        </h3>
+
+        <!-- Personal Recommendation #1 -->
+        <div class="col s12 m4" id="personalRecommendationOne">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Points Earned Per Dollar Spent by Adding {{Card1}}</span>
+                <br><hr><br>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      Current
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      With {{Card1}}
+                    </td>
+                  </tr>
+                </table>
+                
+                <h6>Everywhere:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      2x
+                    </td>
+                    <td style="width:50%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Gas:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      3x
+                    </td>
+                    <td style="width:40%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Office Supplies:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      0x
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      5x
+                    </td>
+                    <td style="width:55%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Annual Fees:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      $95
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      $0
+                    </td>
+                  </tr>
+                </table>
+
+                <h6>Sign up Bonus:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      10,000 points after $1,000 in purchases in the first 3 months
+                    </td>
+                  </tr>
+                </table>
+
+                <br><hr><br>
+
+                <h6>How {{Card1}} Increases your points:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <ul style="padding-left: 10px;">
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                  </ul>
+                </table>
+
+            </div>
+
+            <div class="card-action">
+              <a class="waves-effect waves-light btn blue lighten-2">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Recommendation #2 -->
+        <div class="col s12 m4" id="personalRecommendationOne">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Points Earned Per Dollar Spent by Adding {{Card2}}</span>
+                <br><hr><br>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      Current
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      With {{Card1}}
+                    </td>
+                  </tr>
+                </table>
+                
+                <h6>Everywhere:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      2x
+                    </td>
+                    <td style="width:50%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Gas:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      3x
+                    </td>
+                    <td style="width:40%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Office Supplies:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      0x
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      5x
+                    </td>
+                    <td style="width:55%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Annual Fees:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      $95
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      $0
+                    </td>
+                  </tr>
+                </table>
+
+                <h6>Sign up Bonus:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      10,000 points after $1,000 in purchases in the first 3 months
+                    </td>
+                  </tr>
+                </table>
+
+                <br><hr><br>
+
+                <h6>How {{Card2}} Increases your points:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <ul style="padding-left: 10px;">
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                  </ul>
+                </table>
+
+            </div>
+
+            <div class="card-action">
+              <a class="waves-effect waves-light btn blue lighten-2">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Recommendation #3 -->
+        <div class="col s12 m4" id="personalRecommendationOne">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Points Earned Per Dollar Spent by Adding {{Card3}}</span>
+                <br><hr><br>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      Current
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      With {{Card1}}
+                    </td>
+                  </tr>
+                </table>
+                
+                <h6>Everywhere:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      2x
+                    </td>
+                    <td style="width:50%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Gas:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      1x
+                    </td>
+                    <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      3x
+                    </td>
+                    <td style="width:40%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Office Supplies:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      0x
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      5x
+                    </td>
+                    <td style="width:55%; padding: 3px 3px;"></td>
+                  </tr>
+                </table>
+
+                <h6>Annual Fees:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
+                      $95
+                    </td>
+                    <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      $0
+                    </td>
+                  </tr>
+                </table>
+
+                <h6>Sign up Bonus:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <tr>
+                    <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
+                      10,000 points after $1,000 in purchases in the first 3 months
+                    </td>
+                  </tr>
+                </table>
+
+                <br><hr><br>
+
+                <h6>How {{Card3}} Increases your points:</h6>
+                <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                  <ul style="padding-left: 10px;">
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                    <li>
+                      Lorem Ipsum
+                    </li>
+                  </ul>
+                </table>
+
+            </div>
+
+            <div class="card-action">
+              <a class="waves-effect waves-light btn blue lighten-2">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center;">
+
+      <h5>Send our experts your questions.</h5>
+      <button class="btn waves-effect waves-light btn-large" id="contactMe">
+        Contact Us
+        <i class="material-icons right">email</i>
+      </button>
+      <p>We respond within 24 hours :)</p>
+        
+      </div>
+
+    </div>
+  </div>
+
+
+<!--   <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div> -->
+
+  <footer class="page-footer" id="disclaimer" style="display: none;">
+    <div class="container" style="background-color: #64b5f6;">
+      <div class="row center">
+        <div class="col l3"></div>
+        <div class="col l6 s12">
+          <h5>Disclaimer</h5>
+          <p>Max Points, LLC may receive a commission for approved cards.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center">
+      <a href="#">Terms of Service</a>
+      | Max Points, LLC |
+      <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <!-- Pulling in Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAf0759upbjwMeun_jSQ3Ff_QESxIBhsQs",
+      authDomain: "maxpoints-ba294.firebaseapp.com",
+      databaseURL: "https://maxpoints-ba294.firebaseio.com",
+      storageBucket: "maxpoints-ba294.appspot.com",
+      messagingSenderId: "698965710938"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/index.js"></script>
+
+  </body>
+</html>
