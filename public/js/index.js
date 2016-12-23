@@ -257,8 +257,9 @@ function determineResults() {
 }
 
 function determineSelections() {
-	model.results.rewardsGoal = document.getElementById('rewardsGoal').value;
+	// Log User's Inputs to the Model
 	model.results.ownBusiness = document.getElementById('ownBusiness').value;
+	model.results.rewardsGoal = document.getElementById('rewardsGoal').value;
 	model.results.creditScore = document.getElementById('creditScore').value;
 	model.results.email = document.getElementById('email').value;
 	const card1 = document.getElementById('card1').value;
@@ -266,6 +267,7 @@ function determineSelections() {
 	const card3 = document.getElementById('card3').value; 
 	var cards = model.cards;
 
+	// Create the Selections Object
 	for (var i = 0; i < cards.length; i++) {
 		if (cards[i].cardName === card1) {
 			model.selections.push(cards[i]);
@@ -275,18 +277,26 @@ function determineSelections() {
 			model.selections.push(cards[i]);
 		} 
 	}
+
+	// Move on to create the Results Object from the Selection
 	determineResults();
 }
 
 
-function showRecommendationReport() {
+function createReport() {
+	// Hide the Form
 	document.getElementById('intakeForm').style.display = 'none';
+
+	// Display the Loading Page
 	document.getElementById('loading').style.display = 'inline';
-	setTimeout(function(){
-		document.getElementById('loading').style.display = 'none';
-		document.getElementById('recommendationReport').style.display ='inline'; 
-		document.getElementById('disclaimer').style.display = 'inline';
-	}, 3000);
+
+	// Move on to Log the User's Selections to the Model
+	determineSelections();
+	// setTimeout(function(){
+	// 	document.getElementById('loading').style.display = 'none';
+	// 	document.getElementById('recommendationReport').style.display ='inline'; 
+	// 	document.getElementById('disclaimer').style.display = 'inline';
+	// }, 3000);
 }
 
 // Controller
@@ -295,7 +305,7 @@ function setup() {
 	// document.getElementById('submitForm').addEventListener('click', determineSelections);
 
 	// In Test:
-	document.getElementById('submitForm').addEventListener('click', showRecommendationReport);
+	document.getElementById('submitForm').addEventListener('click', createReport);
 }
 
 $(document).ready(setup);
