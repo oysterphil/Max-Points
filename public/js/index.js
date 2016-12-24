@@ -1917,17 +1917,14 @@ var model = {
             var c = model.cards;
             if (a.ownBusiness) {
                 if (a.creditScore === 'poorCredit' || 
-                    a.creditScore === 'limitedCredit') {
-                    model.controllers.determinePersRecs();
-                    return;
+                    a.creditScore === 'limitedCredit' ||
+                    a.creditScore === 'notSureCredit') {
                 } else if (a.creditScore === 'fairCredit') {
                     for (var i = 0; i < c.possibleBizRecs.length; i++) {
                         if (c.possibleBizRecs[i].cardName === 'Capital One Spark Classic For Business Visa') {
                             c.finalRecsBiz.push(c.possibleBizRecs[i]);
                         }
                     }
-                    model.controllers.determinePersRecs();
-                    return;
                 } else if (a.creditScore === 'goodCredit') {
                     for (var i = 0; i < c.possibleBizRecs.length; i++) {
                         if (c.possibleBizRecs[i].cardName === 'Capital One Spark Cash Select For Business Visa') {
@@ -1938,8 +1935,6 @@ var model = {
                             c.finalRecsBiz.push(c.possibleBizRecs[i]);
                         }
                     }
-                    model.controllers.determinePersRecs();
-                    return;
                 } else if (a.creditScore === 'excellentCredit' 
                             && a.rewardsGoal === 'cashBack') {
                     for (var i = 0; i < c.possibleBizRecs.length; i++) {
@@ -1953,8 +1948,6 @@ var model = {
                             c.finalRecsBiz.push(c.possibleBizRecs[i]);
                         }
                     }
-                    model.controllers.determinePersRecs();
-                    return;
                 } else if (a.creditScore === 'excellentCredit' 
                             && a.rewardsGoal === 'freeFlights') {
                     for (var i = 0; i < c.possibleBizRecs.length; i++) {
@@ -1964,16 +1957,170 @@ var model = {
                             c.finalRecsBiz.push(c.possibleBizRecs[i]);
                         }
                     }
-                    model.controllers.determinePersRecs();
-                    return;
-                } else {
-                    console.log(alert('User selected Not Sure about credit history and logic has been provided for this scenario'));
                 }
-            } else {
-                model.controllers.determinePersRecs();
             }
+
+            model.controllers.determinePersRecs();
         },
         determinePersRecs: () => {
+            console.log(model.cards.finalRecsBiz);
+
+            var a = model.cards.currentStatusBasedOnSelections;
+            var c = model.cards;
+
+            if (a.creditScore === 'poorCredit') {
+                for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                    if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
+                        c.finalRecsPers.push(c.possiblePersRecs[i]);
+                    } else if (c.possiblePersRecs[i].cardName === 'Capital One Secured Mastercard') {
+                        c.finalRecsPers.push(c.possiblePersRecs[i]);
+                    }
+                }
+            } else if (a.creditScore === 'limitedCredit' ||
+                    a.creditScore === 'notSureCredit') {
+                for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                    if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
+                        c.finalRecsPers.push(c.possiblePersRecs[i]);
+                    } else if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                        c.finalRecsPers.push(c.possiblePersRecs[i]);
+                    } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                        c.finalRecsPers.push(c.possiblePersRecs[i]);
+                    } 
+                }
+            } else if (a.rewardsGoal === 'cashBack') {
+                else if (a.creditScore === 'fairCredit') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Capital One Quicksilver One MasterCard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if ((a.creditScore === 'goodCredit' || 
+                            a.creditScore === 'excellentCredit') && 
+                            (a.everywhere < 1.5)) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash Mastercard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Barclaycard Arrival Plus World Elite MasterCard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if ((a.creditScore === 'goodCredit' || 
+                            a.creditScore === 'excellentCredit') && 
+                            (a.everywhere >= 1.5 &&
+                             a.everywhere < 2)) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Barclaycard Arrival Plus World Elite MasterCard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if ((a.creditScore === 'goodCredit' || 
+                            a.creditScore === 'excellentCredit') && 
+                            (a.everywhere = 2)) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if ((a.creditScore === 'goodCredit' || 
+                            a.creditScore === 'excellentCredit') && 
+                            (a.everywhere = 2.1)) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                }
+            } else if (a.rewardsGoal === 'freeFlights') {
+                if (a.creditScore === 'poorCredit') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Capital One Secured Mastercard') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else (a.creditScore === 'limitedCredit' ||
+                        a.creditScore === 'notSureCredit') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } 
+                    }
+                } else if (a.creditScore === 'fairCredit') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if (a.creditScore === 'goodCredit') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if (a.creditScore === 'excellentCredit' 
+                            && a.rewardsGoal === 'cashBack') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                } else if (a.creditScore === 'excellentCredit' 
+                            && a.rewardsGoal === 'freeFlights') {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === '') {
+                            c.finalRecsPers.push(c.possiblePersRecs[i]);
+                        }
+                    }
+                }
+            }
+
             console.log(model.cards.finalRecsBiz);
         }
     },
