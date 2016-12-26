@@ -1850,7 +1850,7 @@ var model = {
         },
         determineSelections: () => {
             // Log User's Inputs to the Model
-            if (document.getElementById('ownBusiness').value === 'Yes') {
+            if (document.getElementById('ownBusiness').value === 'yesOwnBusiness') {
                 model.cards.currentStatusBasedOnSelections.ownBusiness = true;
             } else {
                 model.cards.currentStatusBasedOnSelections.ownBusiness = false;
@@ -1923,6 +1923,7 @@ var model = {
                 if (a.creditScore === 'poorCredit' || 
                     a.creditScore === 'limitedCredit' ||
                     a.creditScore === 'notSureCredit') {
+                    // model.controllers.determinePersRecs();
                 } else if (a.creditScore === 'fairCredit') {
                     for (var i = 0; i < c.possibleBizRecs.length; i++) {
                         if (c.possibleBizRecs[i].cardName === 'Capital One Spark Classic For Business Visa') {
@@ -1970,7 +1971,17 @@ var model = {
             console.log(model.cards.intermediateRecsBiz);
 
             var a = model.cards.currentStatusBasedOnSelections;
+            var b = model.cards.userSelections;
             var c = model.cards;
+            var d = (cardName, list) => {
+                for (var i = 0; i < list.length; i++) {
+                    if (list[i].cardName === cardName) {
+                        return true;
+                    }
+                }
+
+                return false;
+            };
 
             if (a.creditScore === 'poorCredit') {
                 for (var i = 0; i < c.possiblePersRecs.length; i++) {
@@ -1992,13 +2003,13 @@ var model = {
                     } 
                 }
             } else if (a.rewardsGoal === 'cashBack') {
-                else if (a.creditScore === 'fairCredit') {
+                if (a.creditScore === 'fairCredit') {
                     for (var i = 0; i < c.possiblePersRecs.length; i++) {
                         if (c.possiblePersRecs[i].cardName === 'Discover It') {
                             c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                         } else if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
                             c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === 'Capital One Quicksilver One MasterCard') {
+                        } else if (c.possiblePersRecs[i].cardName === 'Capital One Quicksilver One MasterCard or Visa') {
                             c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                         }
                     }
@@ -2073,7 +2084,7 @@ var model = {
                             c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                         }
                     }
-                } else (a.creditScore === 'limitedCredit' ||
+                } else if (a.creditScore === 'limitedCredit' ||
                         a.creditScore === 'notSureCredit') {
                     for (var i = 0; i < c.possiblePersRecs.length; i++) {
                         if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
@@ -2086,46 +2097,108 @@ var model = {
                     }
                 } else if (a.creditScore === 'fairCredit') {
                     for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === '') {
+                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
+                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
+                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                        } else if (c.possiblePersRecs[i].cardName === 'Capital One Quicksilver One MasterCard or Visa') {
                             c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                         }
                     }
-                } else if (a.creditScore === 'goodCredit') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                } else if (a.creditScore === 'goodCredit' || a.creditScore === 'excellentCredit') {
+                    if (d('American Express Platinum (Personal)', b) || 
+                        d('American Express Platinum (Business)', b)) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
                         }
-                    }
-                } else if (a.creditScore === 'excellentCredit' 
-                            && a.rewardsGoal === 'cashBack') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                    } else if (d('American Express Premier Rewards Gold', b) || 
+                                d('American Express Gold', b)) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
                         }
-                    }
-                } else if (a.creditScore === 'excellentCredit' 
-                            && a.rewardsGoal === 'freeFlights') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } else if (c.possiblePersRecs[i].cardName === '') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                    } else if (d('Chase Sapphire Preferred Visa', b)) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
+                        }
+                    } else if (d('Chase Sapphire Reserve Visa', b)) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
+                        }
+                    } else if (d('American Express Everyday', b)) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
+                        }
+                    } else {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            } else if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
                         }
                     }
                 }
             }
 
-            console.log(model.cards.intermediateRecsBiz);
+            console.log(model.cards.intermediateRecsPers);
         }
     },
     tests: {
