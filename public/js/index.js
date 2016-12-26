@@ -1874,6 +1874,7 @@ var model = {
                 } 
             }
 
+            console.log('Display User Selections');
             console.log(model.cards.userSelections);
 
             // Move on to create the Results Object from the Selection
@@ -1898,7 +1899,6 @@ var model = {
                     }
                 }
                 determineBest.sort().reverse();
-                //console.log(determineBest);
                 model.cards.currentStatusBasedOnSelections[cat] = determineBest[0];
                 determineBest = [];
             });
@@ -1912,6 +1912,7 @@ var model = {
                 }
             }
 
+            console.log('Display Current Status Based on Selections:');
             console.log(model.cards.currentStatusBasedOnSelections);
             
             model.controllers.determineBizRecs();
@@ -1968,6 +1969,7 @@ var model = {
             model.controllers.determinePersRecs();
         },
         determinePersRecs: () => {
+            console.log('Display Intermediate Business Recommendations');
             console.log(model.cards.intermediateRecsBiz);
 
             var a = model.cards.currentStatusBasedOnSelections;
@@ -2198,8 +2200,61 @@ var model = {
                 }
             }
 
+            console.log('Display Intermediate Personal Recommendations');
             console.log(model.cards.intermediateRecsPers);
-        }
+            model.controllers.vetIntPersAndBizRecsAgainstUserSelections();
+        },
+        vetIntPersAndBizRecsAgainstUserSelections: () => {
+            // User Selection
+            for (var i = 0; i < model.cards.userSelections.length; i++) {
+                
+                // Vet Against Personal Recs 
+                for (var j = 0; j < model.cards.intermediateRecsPers.length; j++) {
+                    if (model.cards.userSelections[i].cardName === model.cards.intermediateRecsPers[j].cardName) {
+                        model.cards.intermediateRecsPers[j].splice(j, 1);
+                    }
+                }
+
+                // Vet Against Business Recs
+                for (var k = 0; k < model.cards.intermediateRecsBiz.length; k++) {
+                    if (model.cards.userSelections[i].cardName === model.cards.intermediateRecsBiz[k].cardName) {
+                        model.cards.intermediateRecsBiz[k].splice(k, 1);
+                    }
+                }
+            }
+
+            console.log('Remove any recommended cards that the user already has.');
+            console.log(model.cards.intermediateRecsBiz);
+            console.log(model.cards.intermediateRecsPers);
+            
+
+            model.controllers.limitRecsToThree();
+        },
+        limitRecsToThree: () => {
+            // Limit Pers Recs to 3
+            if (model.cards.intermediateRecsPers.length > 2) {
+                model.cards.intermediateRecsPers.splice(3);
+            }
+
+            // Limit Biz Recs to 3
+            if (model.cards.intermediateRecsPers.length > 2) {
+                model.cards.intermediateRecsPers.splice(3);
+            }
+
+            console.log('Limit Recs to no more than 3 per Biz/Pers Rec.');
+
+            model.controllers.finalizeRecs();
+        },
+        finalizeRecs: () => {
+            model.cards.finalRecsPers = model.cards.intermediateRecsPers;
+            model.cards.finalRecsBiz = model.cards.intermediateRecsBiz;
+
+            console.log('Finalized Recommendations');
+            console.log(model.cards.finalRecsBiz);
+            console.log(model.cards.finalRecsPers);
+
+
+        },
     },
     tests: {
         testThatRecCardsAreInCardsArray: () => {
