@@ -1842,11 +1842,6 @@ var model = {
 
             // Move on to Log the User's Selections to the Model
             model.controllers.determineSelections();
-            // setTimeout(function(){
-            //  document.getElementById('loading').style.display = 'none';
-            //  document.getElementById('recommendationReport').style.display ='inline'; 
-            //  document.getElementById('disclaimer').style.display = 'inline';
-            // }, 3000);
         },
         determineSelections: () => {
             // Log User's Inputs to the Model
@@ -2253,7 +2248,237 @@ var model = {
             console.log(model.cards.finalRecsBiz);
             console.log(model.cards.finalRecsPers);
 
+            model.controllers.createAndInsertBizReportHtml();
 
+        },
+        createAndInsertBizReportHtml: () => {
+            const current = model.cards.currentStatusBasedOnSelections;
+            var bizReportHtml = '';
+            model.cards.finalRecsBiz.forEach((rec) => {
+                bizReportHtml += 
+                    '<div class="col s12 m4" id="personalRecommendationOne">\
+                      <div class="card blue-grey darken-1">\
+                        <div class="card-content white-text">\
+                          <span class="card-title">Points Earned Per Dollar Spent by Adding <strong>' + rec.cardName + '</strong></span>\
+                            <br><hr><br>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  Current\
+                                </td>\
+                                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  With ' + rec.cardName + '\
+                                </td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Everywhere:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  ' + current.everywhere + '\
+                                </td>\
+                                <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  ' + rec.everywhere + '\
+                                </td>\
+                                <td style="width:50%; padding: 3px 3px;"></td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Gas:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  1x\
+                                </td>\
+                                <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  3x\
+                                </td>\
+                                <td style="width:40%; padding: 3px 3px;"></td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Office Supplies:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  0x\
+                                </td>\
+                                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  5x\
+                                </td>\
+                                <td style="width:55%; padding: 3px 3px;"></td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Annual Fees:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  $95\
+                                </td>\
+                                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  $0\
+                                </td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Sign up Bonus:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  10,000 points after $1,000 in purchases in the first 3 months\
+                                </td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <br><hr><br>\
+                            \
+                            <h6>How {{Card1}} Increases your points:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <ul style="padding-left: 10px;">\
+                                <li>\
+                                  Lorem Ipsum\
+                                </li>\
+                                <li>\
+                                  Lorem Ipsum\
+                                </li>\
+                                <li>\
+                                  Lorem Ipsum\
+                                </li>\
+                              </ul>\
+                            </table>\
+                            \
+                        </div>\
+                            \
+                        <div class="card-action">\
+                          <a class="waves-effect waves-light btn blue lighten-2">\
+                            Apply Now\
+                          </a>\
+                        </div>\
+                      </div>\
+                    </div>'
+            });
+            document.getElementById('businessRecommendations').innerHTML = bizReportHtml;
+
+            model.controllers.createAndInsertPersReportHtml();
+        },
+        createAndInsertPersReportHtml: () => {
+            const current = model.cards.currentStatusBasedOnSelections;
+            var persReportHtml = '';
+            model.cards.finalRecsPers.forEach((rec) => {
+                persReportHtml += 
+                    '<div class="col s12 m4" id="personalRecommendationOne">\
+                      <div class="card blue-grey darken-1">\
+                        <div class="card-content white-text">\
+                          <span class="card-title">Points Earned Per Dollar Spent by Adding <strong>' + rec.cardName + '</strong></span>\
+                            <br><hr><br>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  Current\
+                                </td>\
+                                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  With ' + rec.cardName + '\
+                                </td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Everywhere:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:25%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  ' + current.everywhere + '\
+                                </td>\
+                                <td style="width:25%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  ' + rec.everywhere + '\
+                                </td>\
+                                <td style="width:50%; padding: 3px 3px;"></td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Gas:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:15%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  1x\
+                                </td>\
+                                <td style="width:45%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  3x\
+                                </td>\
+                                <td style="width:40%; padding: 3px 3px;"></td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Office Supplies:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:5%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  0x\
+                                </td>\
+                                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  5x\
+                                </td>\
+                                <td style="width:55%; padding: 3px 3px;"></td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Annual Fees:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">\
+                                  $95\
+                                </td>\
+                                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  $0\
+                                </td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <h6>Sign up Bonus:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <tr>\
+                                <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">\
+                                  10,000 points after $1,000 in purchases in the first 3 months\
+                                </td>\
+                              </tr>\
+                            </table>\
+                            \
+                            <br><hr><br>\
+                            \
+                            <h6>How {{Card1}} Increases your points:</h6>\
+                            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
+                              <ul style="padding-left: 10px;">\
+                                <li>\
+                                  Lorem Ipsum\
+                                </li>\
+                                <li>\
+                                  Lorem Ipsum\
+                                </li>\
+                                <li>\
+                                  Lorem Ipsum\
+                                </li>\
+                              </ul>\
+                            </table>\
+                            \
+                        </div>\
+                            \
+                        <div class="card-action">\
+                          <a class="waves-effect waves-light btn blue lighten-2">\
+                            Apply Now\
+                          </a>\
+                        </div>\
+                      </div>\
+                    </div>'
+            });
+            document.getElementById('personalRecommendations').innerHTML = persReportHtml;
+            
+            // Display Report
+            setTimeout(function(){
+             document.getElementById('loading').style.display = 'none';
+             document.getElementById('recommendationReport').style.display ='inline'; 
+             document.getElementById('disclaimer').style.display = 'inline';
+                }, 3000);
         },
     },
     tests: {
