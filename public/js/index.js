@@ -1566,13 +1566,12 @@ var model = {
                 drugstores: 5,
                 departmentStores: 5,
                 signUpBonus: '15,000 points after spending $500 in the first three months.',
-                howCardIncreasesPoints: [
-                    '1% cash back everywhere.',
-                    '5% cash back on rotating categories (up to $1,500 spent per quarter).',
-                    'Typical categories: gas & commuter passes in Q1,grocery stores and drugstores in Q2, restaurants in Q3 then department stores & drugstores in Q4',
-                    'Access to Chase’s online shopping portal.',
-                    'Points are cash back but if the same cardholder has the Chase Sapphire Preferred, Reserve, Ink Plus, Ink Bold or Ink Preferred, then all points are transferable to many frequent flyer and hotel loyalty programs for even more value.'
-                ]
+                howCardIncreasesPoints: 
+                    '<li>1% cash back everywhere.</li>\
+                    <li>5% cash back on rotating categories (up to $1,500 spent per quarter).</li>\
+                    <li>Typical categories: gas & commuter passes in Q1,grocery stores and drugstores in Q2, restaurants in Q3 then department stores & drugstores in Q4</li>\
+                    <li>Access to Chase’s online shopping portal.</li>\
+                    <li>Points are cash back but if the same cardholder has the Chase Sapphire Preferred, Reserve, Ink Plus, Ink Bold or Ink Preferred, then all points are transferable to many frequent flyer and hotel loyalty programs for even more value.</li>'
             },
             {
                 cardName: 'Barclaycard Arrival Plus World Elite MasterCard',
@@ -1659,17 +1658,15 @@ var model = {
                 uber: 2.2,
                 amexTravel: 2.2,
                 signUpBonus: '10,000 points after spending $1,000 in the first three months.',
-                howCardIncreasesPoints: [
-                    'No annual fee.',
-                    '1x (1.2x with bonus) everywhere.',
-                    '2x (2.2x with bonus) on Uber & Amex Travel.',
-                    '2x (2.4x with bonus) on groceries (up to $6,000 spent annually).',
-                    'If you make 20 transactions a month, receive a 20% bonus on points earned.',
-                    'Free Experian FICO score updated monthly.',
-                    'Access to valuable Amex Sync Offers for automatic savings and bonus points.',
-                    'Points are directly transferable to many frequent flyer programs for even more value.'
-
-                ]
+                howCardIncreasesPoints: 
+                    '<li>No annual fee.</li>\
+                    <li>1x (1.2x with bonus) everywhere.</li>\
+                    <li>2x (2.2x with bonus) on Uber & Amex Travel.</li>\
+                    <li>2x (2.4x with bonus) on groceries (up to $6,000 spent annually).</li>\
+                    <li>If you make 20 transactions a month, receive a 20% bonus on points earned.</li>\
+                    <li>Free Experian FICO score updated monthly.</li>\
+                    <li>Access to valuable Amex Sync Offers for automatic savings and bonus points.</li>\
+                    <li>Points are directly transferable to many frequent flyer programs for even more value.</li>'
             },
             {
                 cardName: 'American Express Everyday Preferred',
@@ -2334,18 +2331,10 @@ var model = {
                             \
                             <br><hr><br>\
                             \
-                            <h6>How {{Card1}} Increases your points:</h6>\
+                            <h6>How ' + rec.cardName + ' Increases your points:</h6>\
                             <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
                               <ul style="padding-left: 10px;">\
-                                <li>\
-                                  Lorem Ipsum\
-                                </li>\
-                                <li>\
-                                  Lorem Ipsum\
-                                </li>\
-                                <li>\
-                                  Lorem Ipsum\
-                                </li>\
+                                ' + rec.howCardIncreasesPoints + ' \
                               </ul>\
                             </table>\
                             \
@@ -2446,18 +2435,10 @@ var model = {
                             \
                             <br><hr><br>\
                             \
-                            <h6>How {{Card1}} Increases your points:</h6>\
+                            <h6>How ' + rec.cardName + ' Increases your points:</h6>\
                             <table style="border:0;" cellpadding="0" cellspacing="0" width="250">\
                               <ul style="padding-left: 10px;">\
-                                <li>\
-                                  Lorem Ipsum\
-                                </li>\
-                                <li>\
-                                  Lorem Ipsum\
-                                </li>\
-                                <li>\
-                                  Lorem Ipsum\
-                                </li>\
+                                ' + rec.howCardIncreasesPoints + ' \
                               </ul>\
                             </table>\
                             \
