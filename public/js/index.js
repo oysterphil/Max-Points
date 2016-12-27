@@ -1472,41 +1472,22 @@ var model = {
         	ownBusiness: null,
         	creditScore: null,
     		rewardsGoal: null,
-    		totalAnnualFee: null,
-    		everywhere: null,
-    		gas: null,
-    		groceries: null,
-    		diningOut: null,
-    		travel: null,
-    		airfare: null,
-    		hotels: null,
-    		carRentals: null,
-    		uber: null,
-    		localTransportation: null,
-    		amexTravel: null,
-    		drugstores: null,
-    		departmentStores: null,
-    		amazon: null,
-    		telecommunications: null,
-    		cellPhoneServices: null,
-    		officeSupplyStores: null,
-    		socialMediaAdvertising: null,
-    		shipping: null,
-    		wholesaleClubs: null,
-    		singleHotelChain: null,
-    		singleAirline: null
+    		totalAnnualFee: null        },
+        currentCategoriesArray: {
         },
         possiblePersRecs: [
             {
                 cardName: 'Discover It',
                 annualFee: 0,
-                everywhere: 1,
-                gas: 5,
-                diningOut: 5,
-                localTransportation: 5,
-                departmentStores: 5,
-                amazon: 5,
-                wholesaleClubs: 5,
+                categories: {
+                    everywhere: 1,
+                    gas: 5,
+                    diningOut: 5,
+                    localTransportation: 5,
+                    departmentStores: 5,
+                    amazon: 5,
+                    wholesaleClubs: 5
+                },
                 howCardIncreasesPoints: [
                     'No annual fee.',
                     '1% cash back everywhere and 2% in year one.',
@@ -1521,9 +1502,11 @@ var model = {
             {
                 cardName: 'Discover It Secured Card',
                 annualFee: 0,
-                everywhere: 1,
-                gas: 2,
-                diningOut: 2,
+                categories: {
+                    everywhere: 1,
+                    gas: 2,
+                    diningOut: 2
+                },
                 howCardIncreasesPoints: [
                     'The highest points-earning secured card without an annual fee.',
                     'Your initial deposit is your credit line and your card is reviewed automatically after the first year in order to refund the deposit and transition the card to a regular unsecured card.',
@@ -1537,7 +1520,9 @@ var model = {
             {
                 cardName: 'Capital One Quicksilver One MasterCard or Visa',
                 annualFee: 39,
-                everywhere: 1.5,
+                categories: {
+                    everywhere: 1.5
+                },
                 howCardIncreasesPoints: [
                     '$39 annual fee.',
                     '1.5% cash back everywhere.',
@@ -1547,7 +1532,9 @@ var model = {
             {
                 cardName: 'Citi Double Cash MasterCard',
                 annualFee: 0,
-                everywhere: 2,
+                categories: {
+                    everywhere: 2
+                },
                 howCardIncreasesPoints: [
                     'No annual fee.',
                     '2% cash back everywhere.',
@@ -1557,26 +1544,31 @@ var model = {
             {
                 cardName: 'Chase Freedom Visa',
                 annualFee: 0,
-                everywhere: 1,
-                gas: 5,
-                groceries: 5,
-                diningOut: 5,
-                uber: 5,
-                localTransportation: 5,
-                drugstores: 5,
-                departmentStores: 5,
+                categories: {
+                    everywhere: 1,
+                    gas: 5,
+                    groceries: 5,
+                    diningOut: 5,
+                    uber: 5,
+                    localTransportation: 5,
+                    drugstores: 5,
+                    departmentStores: 5
+                },
                 signUpBonus: '15,000 points after spending $500 in the first three months.',
-                howCardIncreasesPoints: 
-                    '<li>1% cash back everywhere.</li>\
-                    <li>5% cash back on rotating categories (up to $1,500 spent per quarter).</li>\
-                    <li>Typical categories: gas & commuter passes in Q1,grocery stores and drugstores in Q2, restaurants in Q3 then department stores & drugstores in Q4</li>\
-                    <li>Access to Chase’s online shopping portal.</li>\
-                    <li>Points are cash back but if the same cardholder has the Chase Sapphire Preferred, Reserve, Ink Plus, Ink Bold or Ink Preferred, then all points are transferable to many frequent flyer and hotel loyalty programs for even more value.</li>'
+                howCardIncreasesPoints: [
+                    '1% cash back everywhere.',
+                    '5% cash back on rotating categories (up to $1,500 spent per quarter).',
+                    'Typical categories: gas & commuter passes in Q1,grocery stores and drugstores in Q2, restaurants in Q3 then department stores & drugstores in Q4',
+                    'Access to Chase’s online shopping portal.',
+                    'Points are cash back but if the same cardholder has the Chase Sapphire Preferred, Reserve, Ink Plus, Ink Bold or Ink Preferred, then all points are transferable to many frequent flyer and hotel loyalty programs for even more value.'
+                ]
             },
             {
                 cardName: 'Barclaycard Arrival Plus World Elite MasterCard',
                 annualFee: 89,
-                everywhere: 2.1,
+                categories: {
+                    everywhere: 2.1
+                },
                 signUpBonus: '50,000 points (plus 5% redemption bonus=52,500) after spending $3,000 in the first three months.',
                 howCardIncreasesPoints: [
                     'Card earns 2% everywhere (2.1% with bonus).',
@@ -1590,7 +1582,9 @@ var model = {
             {
                 cardName: 'Discover It Miles',
                 annualFee: 0,
-                everywhere: 1.5,
+                categories: {
+                    everywhere: 1.5
+                },
                 howCardIncreasesPoints: [
                     '1.5% cash back everywhere and 3% in year one.',
                     'No foreign transaction fees.',
@@ -1603,7 +1597,9 @@ var model = {
             {
                 cardName: 'Chase Freedom Unlimited Visa',
                 annualFee: 0,
-                everywhere: 1.5,
+                categories: {
+                    everywhere: 1.5
+                },
                 signUpBonus: '15,000 points after spending $500 in the first three months.',
                 howCardIncreasesPoints: [
                     '1.5x everywhere.',
@@ -1614,9 +1610,11 @@ var model = {
             {
                 cardName: 'Chase Sapphire Preferred Visa',
                 annualFee: 95,
-                everywhere: 1,
-                diningOut: 2,
-                travel: 2,
+                categories: {
+                    everywhere: 1,
+                    diningOut: 2,
+                    travel: 2
+                },
                 signUpBonus: '50,000 points after spending $4,000 in the first three months.',
                 howCardIncreasesPoints: [
                     '$95 annual fee waived the first year.',
@@ -1632,9 +1630,11 @@ var model = {
             {
                 cardName: 'Chase Sapphire Reserve Visa',
                 annualFee: 450,
-                everywhere: 1,
-                diningOut: 3,
-                travel: 3,
+                categories: {
+                    everywhere: 1,
+                    diningOut: 3,
+                    travel: 3
+                },
                 signUpBonus: '100,000 points after spending $4,000 in the first three months.',
                 howCardIncreasesPoints: [
                     '$450 annual fee.',
@@ -1653,29 +1653,34 @@ var model = {
             {
                 cardName: 'American Express Everyday',
                 annualFee: 0,
-                everywhere: 1.2,
-                groceries: 2.4,
-                uber: 2.2,
-                amexTravel: 2.2,
+                categories: {
+                    everywhere: 1.2,
+                    groceries: 2.4,
+                    uber: 2.2,
+                    amexTravel: 2.2
+                },
                 signUpBonus: '10,000 points after spending $1,000 in the first three months.',
-                howCardIncreasesPoints: 
-                    '<li>No annual fee.</li>\
-                    <li>1x (1.2x with bonus) everywhere.</li>\
-                    <li>2x (2.2x with bonus) on Uber & Amex Travel.</li>\
-                    <li>2x (2.4x with bonus) on groceries (up to $6,000 spent annually).</li>\
-                    <li>If you make 20 transactions a month, receive a 20% bonus on points earned.</li>\
-                    <li>Free Experian FICO score updated monthly.</li>\
-                    <li>Access to valuable Amex Sync Offers for automatic savings and bonus points.</li>\
-                    <li>Points are directly transferable to many frequent flyer programs for even more value.</li>'
+                howCardIncreasesPoints: [
+                    'No annual fee.',
+                    '1x (1.2x with bonus) everywhere.',
+                    '2x (2.2x with bonus) on Uber & Amex Travel.',
+                    '2x (2.4x with bonus) on groceries (up to $6,000 spent annually).',
+                    'If you make 20 transactions a month, receive a 20% bonus on points earned.',
+                    'Free Experian FICO score updated monthly.',
+                    'Access to valuable Amex Sync Offers for automatic savings and bonus points.',
+                    'Points are directly transferable to many frequent flyer programs for even more value.'
+                ]
             },
             {
                 cardName: 'American Express Everyday Preferred',
                 annualFee: 95,
-                everywhere: 1.5,
-                gas: 3,
-                groceries: 4.5,
-                uber: 2.5,
-                amexTravel: 2.5,
+                categories: {
+                    everywhere: 1.5,
+                    gas: 3,
+                    groceries: 4.5,
+                    uber: 2.5,
+                    amexTravel: 2.5
+                },
                 signUpBonus: '15,000 points after spending $1,000 in the first three months.',
                 howCardIncreasesPoints: [
                     '$95 annual fee.',
@@ -1692,7 +1697,9 @@ var model = {
             {
                 cardName: 'Capital One Secured MasterCard',
                 annualFee: 0,
-                everywhere: 0,
+                categories: {
+                    everywhere: 0
+                },
                 howCardIncreasesPoints: [
                     'No annual fee.',
                     'No foreign transaction fees.'
@@ -1703,12 +1710,14 @@ var model = {
             {
                 cardName: 'Chase Ink Business Preferred Visa',
                 annualFee: 95,
-                everywhere: 1,
-                diningOut: 3,
-                travel: 3,
-                telecommunications: 3,
-                socialMediaAdvertising: 3,
-                shipping: 3,
+                categories: {
+                    everywhere: 1,
+                    diningOut: 3,
+                    travel: 3,
+                    telecommunications: 3,
+                    socialMediaAdvertising: 3,
+                    shipping: 3
+                },
                 signUpBonus: '80,000 points after spending $5,000 in the first three months.',
                 howCardIncreasesPoints: [
                     '$95 annual fee.',
@@ -1722,7 +1731,9 @@ var model = {
             {
                 cardName: 'Capital One Spark Classic For Business Visa',
                 annualFee: 0,
-                everywhere: 1,
+                categories: {
+                    everywhere: 1
+                },
                 howCardIncreasesPoints: [
                     'No annual fee.',
                     '1% cash back everywhere.',
@@ -1732,7 +1743,9 @@ var model = {
             {
                 cardName: 'Capital One Spark Cash Select For Business Visa',
                 annualFee: 0,
-                everywhere: 1.5,
+                categories: {
+                    everywhere: 1.5
+                },
                 signUpBonus: '20,000 points after spending $3,000 in the first three months.',
                 howCardIncreasesPoints: [
                     'No annual fee.',
@@ -1743,7 +1756,9 @@ var model = {
             {
                 cardName: 'Capital One Spark Cash For Business Visa',
                 annualFee: 59,
-                everywhere: 2,
+                categories: {
+                    everywhere: 2
+                },
                 signUpBonus: '50,000 points after spending $5,000 in the first three months.',
                 howCardIncreasesPoints: [
                     '$59 annual fee waived the first year.',
@@ -1754,11 +1769,13 @@ var model = {
             {
                 cardName: 'Chase Ink Cash Business Visa',
                 annualFee: 0,
-                everywhere: 1,
-                gas: 2,
-                diningOut: 2,
-                telecommunications: 5,
-                officeSupplyStores: 5,
+                categories: {
+                    everywhere: 1,
+                    gas: 2,
+                    diningOut: 2,
+                    telecommunications: 5,
+                    officeSupplyStores: 5
+                },
                 signUpBonus: '30,000 points after spending $3,000 in the first three months.',
                 howCardIncreasesPoints: [
                     'No annual fee.',
@@ -1772,11 +1789,13 @@ var model = {
             {
                 cardName: 'Citi Business American Airlines AAdvantage Platinum Select MasterCard',
                 annualFee: 95,
-                everywhere: 1,
-                gas: 2,
-                carRentals: 2,
-                telecommunications: 2,
-                americanAirlinesFlights: 2,
+                categories: {
+                    everywhere: 1,
+                    gas: 2,
+                    carRentals: 2,
+                    telecommunications: 2,
+                    americanAirlinesFlights: 2
+                },
                 signUpBonus: '50,000 American Airlines miles after spending $3,000 in the first three months.',
                 howCardIncreasesPoints: [
                     '$95 annual fee waived the first year.',
@@ -1795,6 +1814,46 @@ var model = {
         finalRecsBiz: [
         ],
         finalRecsPers: [
+        ],
+        currentVsPersRecCatArray: [
+            {
+                name: 'cat1',
+                currentVal: 2,
+                recVal: 3
+            },
+            {
+                name: 'cat2',
+                currentVal: 1,
+                recVal: null
+            },
+            {
+                name: 'cat3',
+                current: false,
+                currentVal: null,
+                rec: true,
+                recVal: 5
+            },
+            {
+                name: 'cat4',
+                current: true,
+                currentVal: 4,
+                rec: true,
+                recVal: 6
+            },
+            {
+                name: 'cat5',
+                current: true,
+                currentVal: 1,
+                rec: true,
+                recVal: 1
+            },
+            {
+                name: 'cat6',
+                current: false,
+                currentVal: null,
+                rec: true,
+                recVal: 3
+            },
         ]
     },
     templates: {
@@ -1816,7 +1875,7 @@ var model = {
             document.getElementById('personalRecommendations').innerHTML = personalRecommendationsTemplateHtml;
         },
         renderBusinessRecommendationsTemplate: () => {
-            var businessRecommendationsTemplateHtml = model.templates.variables.businessRecommendationsTemplateHtml(model.cards);
+            var businessRecommendationsTemplateHtml = model.templates.variables.businessRecommendationsTemplate(model.cards);
             document.getElementById('businessRecommendations').innerHTML = businessRecommendationsTemplateHtml;   
         }
     },
@@ -1825,10 +1884,10 @@ var model = {
             model.templates.compile();
 
             // In Production:
-            // document.getElementById('submitForm').addEventListener('click', determineSelections);
+            document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
 
             // In Test:
-            document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
+            // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
         },
         createReport: () => {
             // Hide the Form
@@ -1879,7 +1938,7 @@ var model = {
                 model.cards.currentStatusBasedOnSelections.totalAnnualFee += a.annualFee;
             });
 
-            // Determine Best Everything
+            // Determine Best Everything for currentStatusBasedOnSelections
             determineBest = [];
             model.cards.categories.forEach(function(cat) {      
                 if (cat !== 'annualFee') {
@@ -1895,7 +1954,31 @@ var model = {
                 determineBest = [];
             });
 
+            // Determine Best Everything for currentCategoriesArray
+            determineBest = [];
+            model.cards.categories.forEach(function(cat) {      
+                if (cat !== 'annualFee') {
+                    for (var i = 0; i < model.cards.userSelections.length; i++) {
+                        var a = model.cards.userSelections[i];
+                        if (a.hasOwnProperty(cat)) {
+                            determineBest.push(a[cat]);
+                        }
+                    }
+                }
+                determineBest.sort().reverse();
+                model.cards.currentCategoriesArray[cat] = determineBest[0];
+                determineBest = [];
+            });
+
             model.controllers.cleanUpResults(model.cards.currentStatusBasedOnSelections);
+            console.log('Display Current Status Based on Selections:');
+            console.log(model.cards.currentStatusBasedOnSelections);
+
+            model.controllers.cleanUpResults(model.cards.currentCategoriesArray);
+            console.log('Display Current Categories Only:');
+            console.log(model.cards.currentCategoriesArray);
+
+            model.controllers.determineBizRecs();
         },
         cleanUpResults: (obj) => {
             for (var propName in obj) { 
@@ -1903,11 +1986,6 @@ var model = {
                   delete obj[propName];
                 }
             }
-
-            console.log('Display Current Status Based on Selections:');
-            console.log(model.cards.currentStatusBasedOnSelections);
-            
-            model.controllers.determineBizRecs();
         },
         determineBizRecs: () => {
             var a = model.cards.currentStatusBasedOnSelections;
@@ -2044,7 +2122,8 @@ var model = {
                             a.creditScore === 'excellentCredit') && 
                             (a.everywhere < 1.5)) {
                     for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash Mastercard') {
+                        console.log(c.possiblePersRecs[i].cardName);
+                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
                             c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                         }
                     }
@@ -2368,14 +2447,14 @@ var model = {
                 // Vet Against Personal Recs 
                 for (var j = 0; j < model.cards.intermediateRecsPers.length; j++) {
                     if (model.cards.userSelections[i].cardName === model.cards.intermediateRecsPers[j].cardName) {
-                        model.cards.intermediateRecsPers[j].splice(j, 1);
+                        model.cards.intermediateRecsPers.splice(j, 1);
                     }
                 }
 
                 // Vet Against Business Recs
                 for (var k = 0; k < model.cards.intermediateRecsBiz.length; k++) {
                     if (model.cards.userSelections[i].cardName === model.cards.intermediateRecsBiz[k].cardName) {
-                        model.cards.intermediateRecsBiz[k].splice(k, 1);
+                        model.cards.intermediateRecsBiz.splice(k, 1);
                     }
                 }
             }
@@ -2394,11 +2473,18 @@ var model = {
             }
 
             // Limit Biz Recs to 3
-            if (model.cards.intermediateRecsPers.length > 2) {
-                model.cards.intermediateRecsPers.splice(3);
+            if (model.cards.intermediateRecsBiz.length > 2) {
+                model.cards.intermediateRecsBiz.splice(3);
             }
 
             console.log('Limit Recs to no more than 3 per Biz/Pers Rec.');
+
+            model.controllers.createCategoryComparisonArrayInEachRecommendation();
+        },
+        createCategoryComparisonArrayInEachRecommendation: () => {
+            model.cards.intermediateRecsBiz.forEach((obj) => {
+                
+            });
 
             model.controllers.finalizeRecs();
         },
@@ -2411,14 +2497,13 @@ var model = {
             console.log(model.cards.finalRecsPers);
 
             model.controllers.createAndInsertBizReportHtml();
-
         },
         createAndInsertBizReportHtml: () => {
             const current = model.cards.currentStatusBasedOnSelections;
             var bizReportHtml = '';
             model.cards.finalRecsBiz.forEach((rec) => {
                 bizReportHtml += 
-                    '<div class="col s12 m4" id="personalRecommendationOne">\
+                    '<div class="col s12 m4">\
                       <div class="card blue-grey darken-1">\
                         <div class="card-content white-text">\
                           <span class="card-title">Points Earned Per Dollar Spent by Adding <strong>' + rec.cardName + '</strong></span>\
@@ -2522,7 +2607,7 @@ var model = {
             var persReportHtml = '';
             model.cards.finalRecsPers.forEach((rec) => {
                 persReportHtml += 
-                    '<div class="col s12 m4" id="personalRecommendationOne">\
+                    '<div class="col s12 m4">\
                       <div class="card blue-grey darken-1">\
                         <div class="card-content white-text">\
                           <span class="card-title">Points Earned Per Dollar Spent by Adding <strong>' + rec.cardName + '</strong></span>\
@@ -2618,14 +2703,14 @@ var model = {
                     </div>'
             });
             document.getElementById('personalRecommendations').innerHTML = persReportHtml;
-            
+            model.templates.renderPersonalRecommendationsTemplate();
             // Display Report
             setTimeout(function(){
              document.getElementById('loading').style.display = 'none';
              document.getElementById('recommendationReport').style.display ='inline'; 
              document.getElementById('disclaimer').style.display = 'inline';
                 }, 3000);
-        },
+        }
     },
     tests: {
         testThatRecCardsAreInCardsArray: () => {
@@ -2648,6 +2733,18 @@ var model = {
             });
             console.log(counter);
             console.log(model.cards.possiblePersRecs.length + model.cards.possibleBizRecs.length);
+        },
+        testForIn: () => {
+        console.log(model.cards.currentStatusBasedOnSelections);
+
+        Object.keys(model.cards.currentStatusBasedOnSelections).forEach(function(key) {
+          var newkey = key + "xxx";
+          model.cards.currentStatusBasedOnSelections[newkey] = model.cards.currentStatusBasedOnSelections[key];
+          delete model.cards.currentStatusBasedOnSelections[key];
+        });
+
+        console.log(model.cards.currentStatusBasedOnSelections);
+        
         }
     }
 }
