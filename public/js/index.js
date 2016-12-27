@@ -1816,44 +1816,6 @@ var model = {
         finalRecsPers: [
         ],
         currentVsPersRecCatArray: [
-            {
-                name: 'cat1',
-                currentVal: 2,
-                recVal: 3
-            },
-            {
-                name: 'cat2',
-                currentVal: 1,
-                recVal: null
-            },
-            {
-                name: 'cat3',
-                current: false,
-                currentVal: null,
-                rec: true,
-                recVal: 5
-            },
-            {
-                name: 'cat4',
-                current: true,
-                currentVal: 4,
-                rec: true,
-                recVal: 6
-            },
-            {
-                name: 'cat5',
-                current: true,
-                currentVal: 1,
-                rec: true,
-                recVal: 1
-            },
-            {
-                name: 'cat6',
-                current: false,
-                currentVal: null,
-                rec: true,
-                recVal: 3
-            },
         ]
     },
     templates: {
@@ -2482,9 +2444,85 @@ var model = {
             model.controllers.createCategoryComparisonArrayInEachRecommendation();
         },
         createCategoryComparisonArrayInEachRecommendation: () => {
+
+            // For Business 
             model.cards.intermediateRecsBiz.forEach((obj) => {
+                // Combined Object Current and Rec Categories in the Same Object
+                obj.combinedCategories = {};
+                obj.combinedCategories.current = model.cards.currentCategoriesArray;
+                obj.combinedCategories.recs = obj.categories;
                 
+                obj.combinedCategoryNames = {};
+
+
+                // Create Combined Categories Object
+                $.extend(obj.combinedCategoryNames, obj.categories, model.cards.currentCategoriesArray);
+
+                // Create Categories Comparison Array
+                obj.combinedCategoriesComparison = [];
+
+                // Populate Array with Category Names
+                for (var prop in obj.combinedCategoryNames) {
+                    obj.combinedCategoriesComparison.push({
+                        catName: prop
+                    });
+                }
             });
+
+            model.cards.intermediateRecsBiz.forEach((obj) => {
+                obj.combinedCategoriesComparison.forEach((cat) => {
+                    if (obj.combinedCategories.current.hasOwnProperty(cat.catName)) {
+                        cat.currentVal = obj.combinedCategories.current[cat.catName];
+                    } else {
+                        cat.currentVal = 0;
+                    }
+                    if (obj.combinedCategories.recs.hasOwnProperty(cat.catName)) {
+                        cat.recVal = obj.combinedCategories.recs[cat.catName];
+                    } else {
+                        cat.recVal = 0;
+                    }
+                });
+            });
+
+            // For Personal 
+            model.cards.intermediateRecsPers.forEach((obj) => {
+                // Combined Object Current and Rec Categories in the Same Object
+                obj.combinedCategories = {};
+                obj.combinedCategories.current = model.cards.currentCategoriesArray;
+                obj.combinedCategories.recs = obj.categories;
+                
+                obj.combinedCategoryNames = {};
+
+
+                // Create Combined Categories Object
+                $.extend(obj.combinedCategoryNames, obj.categories, model.cards.currentCategoriesArray);
+
+                // Create Categories Comparison Array
+                obj.combinedCategoriesComparison = [];
+
+                // Populate Array with Category Names
+                for (var prop in obj.combinedCategoryNames) {
+                    obj.combinedCategoriesComparison.push({
+                        catName: prop
+                    });
+                }
+            });
+
+            model.cards.intermediateRecsPers.forEach((obj) => {
+                obj.combinedCategoriesComparison.forEach((cat) => {
+                    if (obj.combinedCategories.current.hasOwnProperty(cat.catName)) {
+                        cat.currentVal = obj.combinedCategories.current[cat.catName];
+                    } else {
+                        cat.currentVal = 0;
+                    }
+                    if (obj.combinedCategories.recs.hasOwnProperty(cat.catName)) {
+                        cat.recVal = obj.combinedCategories.recs[cat.catName];
+                    } else {
+                        cat.recVal = 0;
+                    }
+                });
+            });
+
 
             model.controllers.finalizeRecs();
         },
@@ -2496,7 +2534,15 @@ var model = {
             console.log(model.cards.finalRecsBiz);
             console.log(model.cards.finalRecsPers);
 
-            model.controllers.createAndInsertBizReportHtml();
+            model.templates.renderPersonalRecommendationsTemplate();
+            model.templates.renderBusinessRecommendationsTemplate();
+
+            // Display Report
+            setTimeout(function(){
+             document.getElementById('loading').style.display = 'none';
+             document.getElementById('recommendationReport').style.display ='inline'; 
+             document.getElementById('disclaimer').style.display = 'inline';
+                }, 3000);
         },
         createAndInsertBizReportHtml: () => {
             const current = model.cards.currentStatusBasedOnSelections;
