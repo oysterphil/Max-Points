@@ -1472,7 +1472,8 @@ var model = {
         	ownBusiness: null,
         	creditScore: null,
     		rewardsGoal: null,
-    		totalAnnualFee: null        },
+    		totalAnnualFee: null        
+        },
         currentCategoriesArray: {
         },
         possiblePersRecs: [
@@ -2467,21 +2468,41 @@ var model = {
                         catName: prop
                     });
                 }
+
+                // Duplicate Total Annual Fee Key into Object
+                obj.totalAnnualFee = model.cards.currentStatusBasedOnSelections.totalAnnualFee;
             });
 
             model.cards.intermediateRecsBiz.forEach((obj) => {
                 obj.combinedCategoriesComparison.forEach((cat) => {
                     if (obj.combinedCategories.current.hasOwnProperty(cat.catName)) {
                         cat.currentVal = obj.combinedCategories.current[cat.catName];
+                        cat.currentDisplayVal = cat.currentVal * 20;
                     } else {
                         cat.currentVal = 0;
+                        cat.currentDisplayVal = 5;
                     }
                     if (obj.combinedCategories.recs.hasOwnProperty(cat.catName)) {
                         cat.recVal = obj.combinedCategories.recs[cat.catName];
+                        if (cat.recVal > cat.currentVal) {
+                            cat.recGreaterThanCurrent = true;
+                            cat.recDisplayVal = (cat.recVal * 20) - cat.currentDisplayVal;
+                            cat.recColor = '#81d4fa';
+                        } else {
+                            cat.recGreaterThanCurrent = false;
+                            cat.recDisplayVal = 0;
+                            cat.recColor = '';
+                        }
                     } else {
                         cat.recVal = 0;
+                        cat.recDisplayVal = 5;
+                    }
+                    if (cat.currentDisplayVal + cat.recDisplayVal < 100) {
+                        cat.addEmptyRow = true;
+                        cat.emptyRowDisplayVal = 100 - (cat.currentDisplayVal + cat.recDisplayVal);
                     }
                 });
+
             });
 
             // For Personal 
@@ -2506,19 +2527,38 @@ var model = {
                         catName: prop
                     });
                 }
+
+                // Duplicate Total Annual Fee Key into Object
+                obj.totalAnnualFee = model.cards.currentStatusBasedOnSelections.totalAnnualFee;
             });
 
             model.cards.intermediateRecsPers.forEach((obj) => {
                 obj.combinedCategoriesComparison.forEach((cat) => {
                     if (obj.combinedCategories.current.hasOwnProperty(cat.catName)) {
                         cat.currentVal = obj.combinedCategories.current[cat.catName];
+                        cat.currentDisplayVal = cat.currentVal * 20;
                     } else {
                         cat.currentVal = 0;
+                        cat.currentDisplayVal = 5;
                     }
                     if (obj.combinedCategories.recs.hasOwnProperty(cat.catName)) {
                         cat.recVal = obj.combinedCategories.recs[cat.catName];
+                        if (cat.recVal > cat.currentVal) {
+                            cat.recGreaterThanCurrent = true;
+                            cat.recDisplayVal = (cat.recVal * 20) - cat.currentDisplayVal;
+                            cat.recColor = '#81d4fa';
+                        } else {
+                            cat.recGreaterThanCurrent = false;
+                            cat.recDisplayVal = 0;
+                            cat.recColor = '';
+                        }
                     } else {
                         cat.recVal = 0;
+                        cat.recDisplayVal = 5;
+                    }
+                    if (cat.currentDisplayVal + cat.recDisplayVal < 100) {
+                        cat.addEmptyRow = true;
+                        cat.emptyRowDisplayVal = 100 - (cat.currentDisplayVal + cat.recDisplayVal);
                     }
                 });
             });
