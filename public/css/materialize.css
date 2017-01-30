@@ -2621,7 +2621,7 @@ a {
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #ee6e73;
+  border-left: 5px solid #0d47a1;
 }
 
 i {
@@ -2681,7 +2681,7 @@ video.responsive-video {
 }
 
 .pagination li.active {
-  background-color: #ee6e73;
+  background-color: #0d47a1;
 }
 
 .pagination li.disabled a {
@@ -4006,7 +4006,7 @@ input[type=range] + .thumb {
 
 nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: #0d47a1;
   width: 100%;
   height: 56px;
   line-height: 56px;
@@ -4627,7 +4627,7 @@ small {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-  color: #ffab40;
+  color: #00c853;
   margin-right: 20px;
   transition: color .3s ease;
   text-transform: uppercase;
@@ -4807,7 +4807,7 @@ small {
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: #ee6e73;
+  color: #0d47a1;
 }
 
 .tabs .tab.disabled a,
@@ -4951,7 +4951,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #00c853;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -7085,7 +7085,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active,
 .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
-  background-color: #ee6e73;
+  background-color: #0d47a1;
 }
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active a,

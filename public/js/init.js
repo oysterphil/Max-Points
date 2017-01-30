@@ -1,6 +1,5 @@
 (function($){
   $(function(){
-
     $('.button-collapse').sideNav();
 	$('input.autocomplete').autocomplete({
 		data: {
