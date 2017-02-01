@@ -1848,7 +1848,7 @@ var model = {
             document.getElementById('businessRecommendations').innerHTML = businessRecommendationsTemplateHtml;   
         },
         renderDisplayRecommendationsTemplate: () => {
-            var displayRecommendationsTemplateHtml = model.templates.variables.displayRecommendationsTemplate(model.cards.currentDisplayRec);
+            var displayRecommendationsTemplateHtml = model.templates.variables.displayRecommendationsTemplate(model.cards);
             document.getElementById('displayRecommendations').innerHTML = displayRecommendationsTemplateHtml;
         }
     },
@@ -1886,6 +1886,12 @@ var model = {
             const card2 = document.getElementById('card2').value;
             const card3 = document.getElementById('card3').value; 
             var cards = model.cards.all;
+
+            if (model.cards.currentStatusBasedOnSelections.rewardsGoal === 'cashBack') {
+                model.cards.currentStatusBasedOnSelections.cashBack = true;
+            } else {
+                model.cards.currentStatusBasedOnSelections.cashBack = false;
+            }
 
             // Create the Selections Object
             for (var i = 0; i < cards.length; i++) {
@@ -2600,6 +2606,8 @@ var model = {
              //document.getElementById('disclaimer').style.display = 'inline';
                 }, 3000);
 
+            document.getElementById('desktopSwitch').addEventListener('click', model.controllers.toggleCashBackFreeFlightsSwitchDesktop);
+
             document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
                 model.controllers.toggleBetweenCardRecsDesktop(e);
             });
@@ -2635,6 +2643,17 @@ var model = {
             document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
                 model.controllers.toggleBetweenCardRecsDesktop(e);
             });
+        },
+        toggleCashBackFreeFlightsSwitchDesktop: () => {
+            if (model.cards.currentStatusBasedOnSelections.cashBack) {
+                model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
+                model.cards.currentStatusBasedOnSelections.cashBack = false;
+                model.controllers.determineCurrentStatusBasedOnSelections();
+            } else {
+                model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
+                model.cards.currentStatusBasedOnSelections.cashBack = true;
+                model.controllers.determineCurrentStatusBasedOnSelections();
+            }
         }
     },
     tests: {

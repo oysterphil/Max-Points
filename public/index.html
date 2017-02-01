@@ -197,10 +197,14 @@
 
       <div class="container" style="background-color: #eceff1">  
         <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
-          <div class="switch">
+          <div id="mobileSwitch" class="switch">
             <label>
               Cash Back
-              <input type="checkbox">
+              {{#if currentStatusBasedOnSelections.cashBack}}
+                <input type="checkbox">
+              {{else}}
+                <input type="checkbox" checked="checked">
+              {{/if}}
               <span class="lever"></span>
               Free Flights
             </label>
@@ -257,10 +261,10 @@
                     Signup Bonus Value
                   </p>
                   <h2 style="text-align: center;color: #00c853;">
-                    ${{cardDetails.signupBonus.bonusValue}} 
+                    ${{currentDisplayRec.cardDetails.signupBonus.bonusValue}} 
                   </h2>
                   <p style="text-align: center;">
-                    {{cardDetails.signupBonus.bonusCopy}}
+                    {{currentDisplayRec.cardDetails.signupBonus.bonusCopy}}
                   </p>
                 </div>
               </div>
@@ -272,7 +276,7 @@
                     Earning rate increase
                   </p>
                   <h2 style="text-align: center;color: #00c853;">
-                    {{earningRateIncrease}}%            
+                    {{currentDisplayRec.earningRateIncrease}}%            
                   </h2>
                   <p style="text-align: center;">
                     compared to your current card selections
@@ -287,7 +291,7 @@
           <div class="col s12">
             <div class="card white">
               <div class="card-content">
-                <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{cardName}}</h5>
+                <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
                 <hr><br>
                 <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                   <tr>
@@ -295,12 +299,12 @@
                       Current
                     </td>
                     <td style="width:50%; background-color:#01579b; padding: 3px 3px; text-align: center;">
-                      With {{cardName}}
+                      With {{currentDisplayRec.cardName}}
                     </td>
                   </tr>
                 </table>
                 
-                {{#each combinedCategoriesComparison}}
+                {{#each currentDisplayRec.combinedCategoriesComparison}}
                   <h6>{{catName}}:</h6>
                   <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                     <tr>
@@ -346,7 +350,7 @@
               <div class="card white">
                 <div class="card-content">
                   <p style="text-align: center;">
-                    {{cardDetails.bonusEarnings}}
+                    {{currentDisplayRec.cardDetails.bonusEarnings}}
                   </p>
                 </div>
               </div>
@@ -355,7 +359,7 @@
               <div class="card white">
                 <div class="card-content">
                   <p style="text-align: center;">
-                    {{cardDetails.annualFeeDetails}}
+                    {{currentDisplayRec.cardDetails.annualFeeDetails}}
                   </p>
                 </div>
               </div>
@@ -364,7 +368,7 @@
               <div class="card white">
                 <div class="card-content">
                   <p style="text-align: center;">
-                    {{cardDetails.extraBenefits}}
+                    {{currentDisplayRec.cardDetails.extraBenefits}}
                   </p>
                 </div>
               </div>
@@ -373,7 +377,7 @@
               <div class="card white">
                 <div class="card-content">
                   <p style="text-align: center;">
-                    {{cardDetails.redemption}}
+                    {{currentDisplayRec.cardDetails.redemption}}
                   </p>
                 </div>
               </div>
@@ -382,7 +386,7 @@
               <div class="card white">
                 <div class="card-content">
                   <p style="text-align: center;">
-                    {{cardDetails.analysis}}
+                    {{currentDisplayRec.cardDetails.analysis}}
                   </p>
                 </div>
               </div>
@@ -458,10 +462,10 @@
                         Signup Bonus Value
                       </p>
                       <h2 style="text-align: center;color: #00c853;">
-                        ${{cardDetails.signupBonus.bonusValue}}
+                        ${{currentDisplayRec.cardDetails.signupBonus.bonusValue}}
                       </h2>
                       <p style="text-align: center;">
-                        {{cardDetails.signupBonus.bonusCopy}}
+                        {{currentDisplayRec.cardDetails.signupBonus.bonusCopy}}
                       </p>
                     </div>
                   </div>
@@ -475,7 +479,7 @@
                       Earning rate increase
                       </p>
                       <h2 style="text-align: center;color: #00c853;">
-                        {{earningRateIncrease}}%
+                        {{currentDisplayRec.earningRateIncrease}}%
                       </h2>
                       <p style="text-align: center;">
                         comparing your current card selection to the recommended card
@@ -489,7 +493,7 @@
               <div class="col s12">
                 <div class="card white">
                   <div class="card-content">
-                    <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{cardName}}</h5>
+                    <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
                     <hr><br>
                     <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                       <tr>
@@ -497,12 +501,12 @@
                           Current
                         </td>
                         <td style="width:50%; background-color:#01579b; padding: 3px 3px; text-align: center;">
-                          With {{cardName}}
+                          With {{currentDisplayRec.cardName}}
                         </td>
                       </tr>
                     </table>
                     
-                    {{#each combinedCategoriesComparison}}
+                    {{#each currentDisplayRec.combinedCategoriesComparison}}
                       <h6>{{catName}}:</h6>
                       <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                         <tr>
@@ -510,7 +514,7 @@
                             {{currentVal}}x
                           </td>
                           {{#if recGreaterThanCurrent}}
-                            <td style="width:{{recDisplayVal}}%; background-color:#01579b; padding: 3px 3px; text-align: center;">
+                            <td style="width:{{currentDisplayRec.recDisplayVal}}%; background-color:#01579b; padding: 3px 3px; text-align: center;">
                                 {{recVal}}x
                             </td>
                           {{/if}}
@@ -538,7 +542,7 @@
                 <div class="card white">
                   <div class="card-content">
                     <p style="text-align: center;">
-                      {{cardDetails.bonusEarnings}}
+                      {{currentDisplayRec.cardDetails.bonusEarnings}}
                     </p>
                   </div>
                 </div>
@@ -547,7 +551,7 @@
                 <div class="card white">
                   <div class="card-content">
                     <p style="text-align: center;">
-                      {{cardDetails.annualFeeDetails}}
+                      {{currentDisplayRec.cardDetails.annualFeeDetails}}
                     </p>
                   </div>
                 </div>
@@ -556,7 +560,7 @@
                 <div class="card white">
                   <div class="card-content">
                     <p style="text-align: center;">
-                      {{cardDetails.extraBenefits}}
+                      {{currentDisplayRec.cardDetails.extraBenefits}}
                     </p>
                   </div>
                 </div>
@@ -565,7 +569,7 @@
                 <div class="card white">
                   <div class="card-content">
                     <p style="text-align: center;">
-                      {{cardDetails.redemption}}
+                      {{currentDisplayRec.cardDetails.redemption}}
                     </p>
                   </div>
                 </div>
@@ -574,7 +578,7 @@
                 <div class="card white">
                   <div class="card-content">
                     <p style="text-align: center;">
-                      {{cardDetails.analysis}}
+                      {{currentDisplayRec.cardDetails.analysis}}
                     </p>
                   </div>
                 </div>
@@ -590,10 +594,14 @@
           </div>
           <div class="col m3">
             <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
-              <div class="switch">
+              <div id="desktopSwitch" class="switch">
                 <label>
                   Cash Back
-                  <input type="checkbox">
+                  {{#if currentStatusBasedOnSelections.cashBack}}
+                    <input type="checkbox">
+                  {{else}}
+                    <input type="checkbox" checked="checked">
+                  {{/if}}
                   <span class="lever"></span>
                   Free Flights
                 </label>
