@@ -1816,13 +1816,15 @@ var model = {
         ],
         finalRecsPers: [
         ],
+        currentDisplayRec: null,
         currentVsPersRecCatArray: [
         ]
     },
     templates: {
         variables: {
             personalRecommendationsTemplate: null,
-            businessRecommendationsTemplate: null
+            businessRecommendationsTemplate: null,
+            displayRecommendationsTemplate: null
         },
         compile: function() {
         // Compile Personal Recommendations Template
@@ -1832,6 +1834,10 @@ var model = {
         // Compile Business Recommendations Template
         var businessRecommendationsTemplateSource = document.getElementById('businessRecommendationsTemplate').innerHTML;
         model.templates.variables.businessRecommendationsTemplate = Handlebars.compile(businessRecommendationsTemplateSource);
+
+        // Compile Display Recommendations Template
+        var displayRecommendationsTemplateSource = document.getElementById('displayRecommendationsTemplate').innerHTML;
+        model.templates.variables.displayRecommendationsTemplate = Handlebars.compile(displayRecommendationsTemplateSource);
         },
         renderPersonalRecommendationsTemplate: () => {
             var personalRecommendationsTemplateHtml = model.templates.variables.personalRecommendationsTemplate(model.cards);
@@ -1840,6 +1846,10 @@ var model = {
         renderBusinessRecommendationsTemplate: () => {
             var businessRecommendationsTemplateHtml = model.templates.variables.businessRecommendationsTemplate(model.cards);
             document.getElementById('businessRecommendations').innerHTML = businessRecommendationsTemplateHtml;   
+        },
+        renderDisplayRecommendationsTemplate: () => {
+            var displayRecommendationsTemplateHtml = model.templates.variables.displayRecommendationsTemplate(model.cards.currentDisplayRec);
+            document.getElementById('displayRecommendations').innerHTML = displayRecommendationsTemplateHtml;
         }
     },
     controllers: {
@@ -2569,24 +2579,62 @@ var model = {
         finalizeRecs: () => {
             model.cards.finalRecsPers = model.cards.intermediateRecsPers;
             model.cards.finalRecsBiz = model.cards.intermediateRecsBiz;
+            model.cards.currentDisplayRec = model.cards.finalRecsPers[0];
 
             console.log('Finalized Recommendations');
             console.log(model.cards.finalRecsBiz);
             console.log(model.cards.finalRecsPers);
 
-            model.templates.renderPersonalRecommendationsTemplate();
-            model.templates.renderBusinessRecommendationsTemplate();
+            model.templates.renderDisplayRecommendationsTemplate();
+            // model.templates.renderPersonalRecommendationsTemplate();
+            // model.templates.renderBusinessRecommendationsTemplate();
 
-            if (model.cards.currentStatusBasedOnSelections.ownBusiness) {
-                document.getElementById('showBizHeader').style.display = 'block';
-            }
+            // if (model.cards.currentStatusBasedOnSelections.ownBusiness) {
+            //     document.getElementById('showBizHeader').style.display = 'block';
+            // }
 
             // Display Report
             setTimeout(function(){
              document.getElementById('loading').style.display = 'none';
-             document.getElementById('recommendationReport').style.display ='inline'; 
-             document.getElementById('disclaimer').style.display = 'inline';
+             document.getElementById('displayRecommendations').style.display ='inline'; 
+             //document.getElementById('disclaimer').style.display = 'inline';
                 }, 3000);
+
+            document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
+                model.controllers.toggleBetweenCardRecsDesktop(e);
+            });
+            document.getElementById('pickCardMobile').addEventListener('click', (e) => {
+                model.controllers.toggleBetweenCardRecsMobile(e);
+            });
+        },
+        toggleBetweenCardRecsDesktop: (e) => {
+            if (e.target.nodeName === 'I') {
+                model.cards.currentDisplayRec = model.cards.finalRecsPers[e.target.id];
+                model.templates.renderDisplayRecommendationsTemplate();
+                $("#pickCardDesktop>li>a.active").removeClass("active");
+                document.getElementById(e.target.id).parentNode.classList.add('active');
+            }
+            document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
+                model.controllers.toggleBetweenCardRecsDesktop(e);
+            });
+            document.getElementById('pickCardMobile').addEventListener('click', (e) => {
+                model.controllers.toggleBetweenCardRecsMobile(e);
+            });
+
+        },
+        toggleBetweenCardRecsMobile: (e) => {
+            if (e.target.nodeName === 'I') {
+                model.cards.currentDisplayRec = model.cards.finalRecsPers[e.target.id-4];
+                model.templates.renderDisplayRecommendationsTemplate();
+                $("#pickCardMobile>li>a.active").removeClass("active");
+                document.getElementById(e.target.id).parentNode.classList.add('active');
+            };
+            document.getElementById('pickCardMobile').addEventListener('click', (e) => {
+                model.controllers.toggleBetweenCardRecsMobile(e);
+            });
+            document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
+                model.controllers.toggleBetweenCardRecsDesktop(e);
+            });
         }
     },
     tests: {
