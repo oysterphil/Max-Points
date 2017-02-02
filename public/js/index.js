@@ -2443,20 +2443,20 @@ var model = {
             console.log(model.cards.intermediateRecsPers);
             
 
-            model.controllers.limitRecsToThree();
+            model.controllers.limitRecsToFour();
         },
-        limitRecsToThree: () => {
-            // Limit Pers Recs to 3
-            if (model.cards.intermediateRecsPers.length > 2) {
-                model.cards.intermediateRecsPers.splice(3);
+        limitRecsToFour: () => {
+            // Limit Pers Recs to 4
+            if (model.cards.intermediateRecsPers.length > 3) {
+                model.cards.intermediateRecsPers.splice(4);
             }
 
             // Limit Biz Recs to 3
-            if (model.cards.intermediateRecsBiz.length > 2) {
-                model.cards.intermediateRecsBiz.splice(3);
+            if (model.cards.intermediateRecsBiz.length > 3) {
+                model.cards.intermediateRecsBiz.splice(4);
             }
 
-            console.log('Limit Recs to no more than 3 per Biz/Pers Rec.');
+            console.log('Limit Recs to no more than 4 per Biz/Pers Rec.');
 
             model.controllers.createCategoryComparisonArrayInEachRecommendation();
         },
@@ -2606,6 +2606,9 @@ var model = {
                     model.cards.finalRecsPers[3]);
             }
 
+            console.log('Combined Recs Array:');
+            console.log(model.cards.combinedRecs);
+
 
             // ONLY NEED TO DO IF MAX WANTS TO KEEP THE ICONS IN PLACE.
             // IF HE WANTS TO USE IMAGES, HANDLEBARS WILL TAKE CARE OF THIS!
@@ -2634,21 +2637,29 @@ var model = {
 
             model.cards.currentDisplayRec = model.cards.combinedRecs[0];
 
+  var a =
+  '<div class="row"> \
+    <div class="col s12"> \
+      <ul class="tabs"> \
+        <li class="tab col s3"><a href="#test1">Test 1</a></li> \
+        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li> \
+        <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li> \
+        <li class="tab col s3"><a href="#test4">Test 4</a></li> \
+      </ul> \
+    </div> \
+    <div id="test1" class="col s12">Test 1</div> \
+    <div id="test2" class="col s12">Test 2</div> \
+    <div id="test3" class="col s12">Test 3</div> \
+    <div id="test4" class="col s12">Test 4</div>\
+  </div>';
             // TO DO: 
             // Combine personal and business formatted recommendations here into 
             // one array that is 4 objects long. 
 
-            console.log('Finalized Recommendations');
-            console.log(model.cards.finalRecsBiz);
-            console.log(model.cards.finalRecsPers);
-
             model.templates.renderDisplayRecommendationsTemplate();
-            // model.templates.renderPersonalRecommendationsTemplate();
-            // model.templates.renderBusinessRecommendationsTemplate();
 
-            // if (model.cards.currentStatusBasedOnSelections.ownBusiness) {
-            //     document.getElementById('showBizHeader').style.display = 'block';
-            // }
+            document.getElementById('putHere').innerHTML = a;
+
 
             // Display Report
             setTimeout(function(){
@@ -2671,7 +2682,7 @@ var model = {
         },
         toggleBetweenCardRecsDesktop: (e) => {
             if (e.target.nodeName === 'I') {
-                model.cards.currentDisplayRec = model.cards.finalRecsPers[e.target.id];
+                model.cards.currentDisplayRec = model.cards.combinedRecs[e.target.id];
                 model.templates.renderDisplayRecommendationsTemplate();
                 $("#pickCardDesktop>li>a.active").removeClass("active");
                 document.getElementById(e.target.id).parentNode.classList.add('active');
@@ -2683,10 +2694,15 @@ var model = {
                 model.controllers.toggleBetweenCardRecsMobile(e);
             });
 
+            document.getElementById('desktopSwitch').addEventListener('click', 
+                model.controllers.toggleCashBackFreeFlightsSwitch);
+            document.getElementById('mobileSwitch').addEventListener('click', 
+                model.controllers.toggleCashBackFreeFlightsSwitch);
+
         },
         toggleBetweenCardRecsMobile: (e) => {
             if (e.target.nodeName === 'I') {
-                model.cards.currentDisplayRec = model.cards.finalRecsPers[e.target.id-4];
+                model.cards.currentDisplayRec = model.cards.combinedRecs[e.target.id-4];
                 model.templates.renderDisplayRecommendationsTemplate();
                 $("#pickCardMobile>li>a.active").removeClass("active");
                 document.getElementById(e.target.id).parentNode.classList.add('active');
@@ -2697,6 +2713,11 @@ var model = {
             document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
                 model.controllers.toggleBetweenCardRecsDesktop(e);
             });
+
+            document.getElementById('desktopSwitch').addEventListener('click', 
+                model.controllers.toggleCashBackFreeFlightsSwitch);
+            document.getElementById('mobileSwitch').addEventListener('click', 
+                model.controllers.toggleCashBackFreeFlightsSwitch);
         },
         toggleCashBackFreeFlightsSwitch: () => {
             if (model.cards.currentStatusBasedOnSelections.cashBack) {
@@ -2706,6 +2727,7 @@ var model = {
                 model.cards.intermediateRecsBiz = [];
                 model.cards.finalRecsPers = [];
                 model.cards.finalRecsBiz = [];
+                model.cards.combinedRecs = [];
                 model.controllers.determineBizRecs();
             } else {
                 model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
@@ -2714,6 +2736,7 @@ var model = {
                 model.cards.intermediateRecsBiz = [];
                 model.cards.finalRecsPers = [];
                 model.cards.finalRecsBiz = [];
+                model.cards.combinedRecs = [];
                 model.controllers.determineBizRecs();
             }
         }

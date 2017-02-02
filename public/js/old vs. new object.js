@@ -42,14 +42,14 @@
     },
     cardDetails: {
     	cardImage: '',
-    	bonusEarnings: '',
-    	annualFeeDetails: '',
-    	extraBenefits: '',
-    	redemption: '',
-    	analysis: '',
+    	bonusEarnings: 'Here are some bonus earnings.',
+    	annualFeeDetails: 'Here are some annual fee details.',
+    	extraBenefits: 'Here are some extra benefits.',
+    	redemption: 'Here are some redemption details.',
+    	analysis: 'Here is some analysis.',
     	signupBonus: {
     		bonusValue: 0,
-    		bonusCopy: ''
+    		bonusCopy: 'Here is some signup bonus copy.'
     	},
     	earningRateIncrease: 0
     },
