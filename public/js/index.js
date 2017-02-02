@@ -1817,7 +1817,7 @@ var model = {
         finalRecsPers: [
         ],
         currentDisplayRec: null,
-        currentVsPersRecCatArray: [
+        combinedRecs: [
         ]
     },
     templates: {
@@ -2590,7 +2590,49 @@ var model = {
         finalizeRecs: () => {
             model.cards.finalRecsPers = model.cards.intermediateRecsPers;
             model.cards.finalRecsBiz = model.cards.intermediateRecsBiz;
-            model.cards.currentDisplayRec = model.cards.finalRecsPers[0];
+            
+            if (model.cards.finalRecsBiz.length >= 2) {
+                model.cards.combinedRecs.push(model.cards.finalRecsBiz[0],
+                    model.cards.finalRecsBiz[1]);
+                model.cards.combinedRecs.push(model.cards.finalRecsPers[0],
+                    model.cards.finalRecsPers[1]);
+            } else if (model.cards.finalRecsBiz.length === 1) {
+                model.cards.combinedRecs.push(model.cards.finalRecsBiz[0]);
+                model.cards.combinedRecs.push(model.cards.finalRecsPers[0],
+                    model.cards.finalRecsPers[1], model.cards.finalRecsPers[2]);
+            } else if (model.cards.finalRecsBiz.length === 0) {
+                model.cards.combinedRecs.push(model.cards.finalRecsPers[0],
+                    model.cards.finalRecsPers[1], model.cards.finalRecsPers[2],
+                    model.cards.finalRecsPers[3]);
+            }
+
+
+            // ONLY NEED TO DO IF MAX WANTS TO KEEP THE ICONS IN PLACE.
+            // IF HE WANTS TO USE IMAGES, HANDLEBARS WILL TAKE CARE OF THIS!
+
+            // if (model.cards.combinedRecs.length < 4) {
+            //     // Trim Number of CC Images to the Number of Recs on Desktop View
+
+            //     var desktopLength = [0,1,2,3];
+            //     var numberOfRecsDesktop = [];
+
+            //     for (var i = 0; i < model.cards.combinedRecs.length; i++) {
+            //         numberOfRecsDesktop.push(i)
+            //     }
+
+            //     // Trim Number of CC Images to the Number of Recs on Desktop View
+
+            //     var mobileLength = [4,5,6,7];
+            //     var numberOfRecsMobile = [];
+
+            //     for (var i = 0; i < model.cards.combinedRecs.length; i++) {
+            //         numberOfRecsDesktop.push(i + 4)
+            //     }
+
+            //     array1 = array1.filter(val => !array2.includes(val));
+            // }
+
+            model.cards.currentDisplayRec = model.cards.combinedRecs[0];
 
             // TO DO: 
             // Combine personal and business formatted recommendations here into 
@@ -2615,7 +2657,10 @@ var model = {
                 //document.getElementById('disclaimer').style.display = 'inline';
                 }, 3000);
 
-            document.getElementById('desktopSwitch').addEventListener('click', model.controllers.toggleCashBackFreeFlightsSwitchDesktop);
+            document.getElementById('desktopSwitch').addEventListener('click', 
+                model.controllers.toggleCashBackFreeFlightsSwitch);
+            document.getElementById('mobileSwitch').addEventListener('click', 
+                model.controllers.toggleCashBackFreeFlightsSwitch);
 
             document.getElementById('pickCardDesktop').addEventListener('click', (e) => {
                 model.controllers.toggleBetweenCardRecsDesktop(e);
@@ -2653,7 +2698,7 @@ var model = {
                 model.controllers.toggleBetweenCardRecsDesktop(e);
             });
         },
-        toggleCashBackFreeFlightsSwitchDesktop: () => {
+        toggleCashBackFreeFlightsSwitch: () => {
             if (model.cards.currentStatusBasedOnSelections.cashBack) {
                 model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
                 model.cards.currentStatusBasedOnSelections.cashBack = false;
