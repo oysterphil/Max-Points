@@ -594,13 +594,13 @@
           </div>
           <div class="col m3">
             <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
-              <div id="desktopSwitch" class="switch">
+              <div class="switch">
                 <label>
                   Cash Back
                   {{#if currentStatusBasedOnSelections.cashBack}}
-                    <input type="checkbox">
+                    <input id="desktopSwitch" type="checkbox">
                   {{else}}
-                    <input type="checkbox" checked="checked">
+                    <input id="desktopSwitch" type="checkbox" checked="checked">
                   {{/if}}
                   <span class="lever"></span>
                   Free Flights

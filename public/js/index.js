@@ -1,5 +1,5 @@
 // Model
-var model = {
+var model = { 
 	cards: {
         all: [
             {
@@ -2462,6 +2462,11 @@ var model = {
         },
         createCategoryComparisonArrayInEachRecommendation: () => {
 
+            // TO DO:
+            // Reformat this object along the lines set out in the 
+            // old vs. new object file.
+
+
             // For Business 
             model.cards.intermediateRecsBiz.forEach((obj) => {
                 // Combined Object Current and Rec Categories in the Same Object
@@ -2587,6 +2592,10 @@ var model = {
             model.cards.finalRecsBiz = model.cards.intermediateRecsBiz;
             model.cards.currentDisplayRec = model.cards.finalRecsPers[0];
 
+            // TO DO: 
+            // Combine personal and business formatted recommendations here into 
+            // one array that is 4 objects long. 
+
             console.log('Finalized Recommendations');
             console.log(model.cards.finalRecsBiz);
             console.log(model.cards.finalRecsPers);
@@ -2601,9 +2610,9 @@ var model = {
 
             // Display Report
             setTimeout(function(){
-             document.getElementById('loading').style.display = 'none';
-             document.getElementById('displayRecommendations').style.display ='inline'; 
-             //document.getElementById('disclaimer').style.display = 'inline';
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('displayRecommendations').style.display ='inline'; 
+                //document.getElementById('disclaimer').style.display = 'inline';
                 }, 3000);
 
             document.getElementById('desktopSwitch').addEventListener('click', model.controllers.toggleCashBackFreeFlightsSwitchDesktop);
@@ -2648,11 +2657,19 @@ var model = {
             if (model.cards.currentStatusBasedOnSelections.cashBack) {
                 model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
                 model.cards.currentStatusBasedOnSelections.cashBack = false;
-                model.controllers.determineCurrentStatusBasedOnSelections();
+                model.cards.intermediateRecsPers = [];
+                model.cards.intermediateRecsBiz = [];
+                model.cards.finalRecsPers = [];
+                model.cards.finalRecsBiz = [];
+                model.controllers.determineBizRecs();
             } else {
                 model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
                 model.cards.currentStatusBasedOnSelections.cashBack = true;
-                model.controllers.determineCurrentStatusBasedOnSelections();
+                model.cards.intermediateRecsPers = [];
+                model.cards.intermediateRecsBiz = [];
+                model.cards.finalRecsPers = [];
+                model.cards.finalRecsBiz = [];
+                model.controllers.determineBizRecs();
             }
         }
     },
