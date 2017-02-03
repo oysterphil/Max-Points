@@ -12,10 +12,12 @@
 </head>
 <body>
 
-  <div class="section no-pad-bot" id="index-banner" style="display: inline;">
+  <div class="section no-pad-bot" id="pointsCalculator" style="display: inline;">
       <div class="container" id="intakeForm">
         <br><br>
-        <h1 class="header center orange-text">Maximize Your Points</h1>
+        <h1 class="header center orange-text">
+          Maximize Your Points
+        </h1>
         <h5 class="header center light-blue-text">
           You're 1 minute away from your free individualized credit card points report.
         </h5>
@@ -23,27 +25,53 @@
           <div class="row center">
             <div class="input-field col s12 m6">
               <select id="ownBusiness">
-                <option value="" disabled selected>Do you own a business?</option>
-                <option value="yesOwnBusiness">Yes</option>
-                <option value="noOwnBusiness">No</option>
+                <option value="" disabled selected>
+                  Do you own a business?
+                </option>
+                <option value="yesOwnBusiness">
+                  Yes
+                </option>
+                <option value="noOwnBusiness">
+                  No
+                </option>
               </select>
             </div>
             <div class="input-field col s12 m6">
               <select id="rewardsGoal">
-                <option value="" disabled selected>Choose your Rewards Goal</option>
-                <option value="freeFlights">Free Flights</option>
-                <option value="cashBack">Cash Back</option>
+                <option value="" disabled selected>
+                  Choose your Rewards Goal
+                </option>
+                <option value="freeFlights">
+                  Free Flights
+                </option>
+                <option value="cashBack">
+                  Cash Back
+                </option>
               </select>
             </div>
             <div class="input-field col s12 m6">
               <select id="creditScore">
-                <option value="" disabled selected>My credit score is:</option>
-                <option value="excellentCredit">Excellent (720+)</option>
-                <option value="goodCredit">Good (690-719)</option>
-                <option value="fairCredit">Fair (640-689)</option>
-                <option value="poorCredit">Poor (350-639)</option>
-                <option value="limitedCredit">Limited or no credit history</option>
-                <option value="notSureCredit">Not Sure</option>
+                <option value="" disabled selected>
+                  My credit score is:
+                </option>
+                <option value="excellentCredit">
+                  Excellent (720+)
+                </option>
+                <option value="goodCredit">
+                  Good (690-719)
+                </option>
+                <option value="fairCredit">
+                  Fair (640-689)
+                </option>
+                <option value="poorCredit">
+                  Poor (350-639)
+                </option>
+                <option value="limitedCredit">
+                  Limited or no credit history
+                </option>
+                <option value="notSureCredit">
+                  Not Sure
+                </option>
               </select>
             </div>
             <div class="input-field col s12 m6">
@@ -53,27 +81,43 @@
         </div>
         <div class="col s12">
           <div class="row center">
-            <h5>Three credit cards you use the most:</h5>
+            <h5>
+              Three credit cards you use the most:
+            </h5>
             <div class="input-field col s12">
-              <i class="material-icons prefix">credit_card</i>
+              <i class="material-icons prefix">
+                credit_card
+              </i>
               <input type="text" id="card1" class="autocomplete">
-              <label for="card1">Card 1</label>
+              <label for="card1">
+                Card 1
+              </label>
             </div>
             <div class="input-field col s12">
-              <i class="material-icons prefix">credit_card</i>
+              <i class="material-icons prefix">
+                credit_card
+              </i>
               <input type="text" id="card2" class="autocomplete">
-              <label for="card2">Card 2</label>
+              <label for="card2">
+                Card 2
+              </label>
             </div>
             <div class="input-field col s12">
-              <i class="material-icons prefix">credit_card</i>
+              <i class="material-icons prefix">
+                credit_card
+              </i>
               <input type="text" id="card3" class="autocomplete">
-              <label for="card3">Card 3</label>
+              <label for="card3">
+                Card 3
+              </label>
             </div>
           </div>
           <div class="row center">
             <button class="btn waves-effect waves-light btn-large" id="submitForm">
               Submit
-              <i class="material-icons right">send</i>
+              <i class="material-icons right">
+                send
+              </i>
             </button>
           </div>
         </div>
@@ -84,7 +128,9 @@
 
       <div class="container" id="loading" style="display: none;">
     
-        <h5 style="text-align: center;">Crunching the numbers...</h5>
+        <h5 style="text-align: center;">
+          Crunching the numbers...
+        </h5>
         <div class="progress">
             <div class="indeterminate"></div>
         </div>
@@ -112,12 +158,18 @@
 
         <div style="text-align: center;">
 
-          <h5>Send our experts your questions.</h5>
+          <h5>
+            Send our experts your questions.
+          </h5>
           <button class="btn waves-effect waves-light btn-large" id="contactMe">
             Contact Us
-            <i class="material-icons right">email</i>
+            <i class="material-icons right">
+              email
+            </i>
           </button>
-          <p>We respond within 24 hours :)</p>
+          <p>
+            We respond within 24 hours :)
+          </p>
           
         </div>
 
@@ -125,27 +177,36 @@
   </div>
 
   <div id="displayRecommendations" style="display: none;"></div>
+
+  <div id="termsOfService" style="display: none;">
+    <div class='row'>
+      <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light btn-large" id="termsOfServiceBack">
+        Back
+      </button>
+    <div class="row">
+      <h3 class="col s12 m12" style="text-align: none;">
+        Terms of Service
+      </h3>
+      <p class="col s12">
+        Lorem Ipsum
+      </p>
+    </div>
+  </div>
   
-
-  <footer class="page-footer" id="disclaimer" style="display: none;">
-    <div class="container" style="background-color: #64b5f6;">
-      <div class="row center">
-        <div class="col l3"></div>
-        <div class="col l6 s12">
-          <h5>Disclaimer</h5>
-          <p>Max Points, LLC may receive a commission for approved cards.</p>
-        </div>
-      </div>
+  <div id="privacyPolicy" style="display: inline;">
+    <div class='row'>
+      <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light btn-large" id="privacyPolicyBack">
+        Back
+      </button>
+    <div class="row">
+      <h3 class="col s12 m12" style="text-align: center;">
+        Privacy Policy
+      </h3>
+      <p class="col s12">
+        Lorem Ipsum
+      </p>
     </div>
-    <div class="footer-copyright">
-      <div class="container center">
-      <a href="#">Terms of Service</a>
-      | Max Points, LLC |
-      <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-  </footer>
-
+  </div>
 
   <!--  Scripts-->
   
@@ -187,15 +248,27 @@
       <!--Navbar-->
       <nav>
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo left">Logo</a>
+          <a href="#!" class="brand-logo left">
+            Logo
+          </a>
           <ul class="right">
-            <li><a class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
-            <li><a class="waves-effect waves-light btn">Register</a></li>
+            <li>
+              <a class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">
+                Sign in
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn">
+                Register
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
 
       <div class="container" style="background-color: #eceff1">  
+
+        <!-- Cash Back vs. Free Flights Swithc -->
         <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
           <div id="mobileSwitch" class="switch">
             <label>
@@ -211,28 +284,37 @@
           </div>
         </div>
 
+        <!-- Select Card -->
         <div class="container">
           <div class="row">
             <div class="col s12">
               <ul id="pickCardMobile" class="tabs white" style="height: 55px !important;">
                 <li class="tab col s3">
-                  <a id="cardRec0" class="active">
-                    <i id="4" class="medium material-icons">credit_card</i>
+                  <a class="active">
+                    <i id="4" class="medium material-icons">
+                      credit_card
+                    </i>
                   </a>
                 </li>
                 <li class="tab col s3">
-                  <a id="cardRec1">
-                    <i id="5" class="medium material-icons">credit_card</i>
+                  <a>
+                    <i id="5" class="medium material-icons">
+                      credit_card
+                    </i>
                   </a>
                 </li>
                 <li class="tab col s3">
-                  <a id="cardRec2">
-                    <i id="6" class="medium material-icons">credit_card</i>
+                  <a>
+                    <i id="6" class="medium material-icons">
+                      credit_card
+                    </i>
                   </a>
                 </li>
                 <li class="tab col s3">
-                  <a id="cardRec3">
-                    <i id="7" class="medium material-icons">credit_card</i>
+                  <a>
+                    <i id="7" class="medium material-icons">
+                      credit_card
+                    </i>
                   </a>
                 </li>
               </ul>
@@ -240,18 +322,31 @@
           </div>
         </div>
 
+        <!-- Current Display Card --> 
         <div class="row col s12">
-          <i class="large material-icons col s4 offset-s4" style="text-align: center; color: #00c853;">credit_card</i>
+          <i class="large material-icons col s4 offset-s4" style="text-align: center; color: #00c853;">
+            credit_card
+          </i>
+          <h5>
+            {{currentDisplayRec.cardName}}
+          </h5>
         </div>
 
+        <!-- Apply Now Button -->
         <div class="row col s12">
-          <a class="col s4 offset-s4 waves-effect waves-light btn">Apply Now</a>
+          <a class="col s4 offset-s4 waves-effect waves-light btn" href="{{cardDetails.affiliateLink}}">
+            Apply Now
+          </a>
         </div>
 
+        <!-- Save for Later -->
         <div class="row col s12">
-          <a class="col s6 offset-s3" href="#" style="text-align: center;">Save for Later</a>
+          <a class="col s6 offset-s3" id="createAccount" style="text-align: center;">
+            Save for Later
+          </a>
         </div>
 
+        <!-- Signup Bonus Value and Earning Rate Increase -->
         <div class="container">
           <div class="row">
             <div class="col s6">
@@ -287,11 +382,14 @@
           </div>
         </div>
 
+        <!-- Comparison Chart -->
         <div class="container">
           <div class="col s12">
             <div class="card white">
               <div class="card-content">
-                <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
+                <h5 style="text-align: center;">
+                  Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}
+                </h5>
                 <hr><br>
                 <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                   <tr>
@@ -305,7 +403,9 @@
                 </table>
                 
                 {{#each currentDisplayRec.combinedCategoriesComparison}}
-                  <h6>{{catName}}:</h6>
+                  <h6>
+                    {{catName}}:
+                  </h6>
                   <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                     <tr>
                       <td style="width:{{currentDisplayVal}}%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
@@ -327,74 +427,76 @@
           </div>
         </div>
 
+        <!-- Apply Now Button -->
         <div class="row col s12">
-          <a class="col s4 offset-s4 waves-effect waves-light btn" href="{{affiliateLink}}">Apply Now</a>
+          <a class="col s4 offset-s4 waves-effect waves-light btn" href="{{cardDetails.affiliateLink}}">
+            Apply Now
+          </a>
         </div>
 
+        <!-- Save for Later -->
         <div class="row col s12">
-          <a class="col s6 offset-s3" href="#" style="text-align: center;">Save for Later</a>
+          <a class="col s6 offset-s3" id="createAccount" style="text-align: center;">
+            Save for Later
+          </a>
         </div>
 
+        <!-- Card Details -->
         <div class="container">
           <div class="row">
             <div class="col s12">
-              <ul class="tabs white" style="height: 55px !important;">
-                <li class="tab"><a class="active" href="#bonusAndEarningsDetails">Bonus & Earnings</a></li>
-                <li class="tab"><a href="#annualFeeDetails">Annual Fee</a></li>
-                <li class="tab"><a href="#extraBenefitsDetails">Extra Benefits</a></li>
-                <li class="tab"><a href="#redemptionDetails">Redemption</a></li>
-                <li class="tab"><a href="#analysisDetails">Analysis</a></li>
+              <ul id="pickCategoryMobile" class="tabs white" style="height: 55px !important;">
+                <li class="tab">
+                  <a class="active" id="{{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}">
+                    Bonus & Earnings
+                  </a>
+                </li>
+                <li class="tab">
+                  <a id="{{#each currentDisplayRec.cardDetails.annualFeeDetails}}">
+                    Annual Fee
+                  </a>
+                </li>
+                <li class="tab">
+                  <a id="{{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}">
+                    Extra Benefits
+                  </a>
+                </li>
+                <li class="tab">
+                  <a id="{{#each currentDisplayRec.cardDetails.redemptionDetails}}">
+                    Redemption
+                  </a>
+                </li>
+                <li class="tab">
+                  <a id="{{#each currentDisplayRec.cardDetails.analysisDetails}}">
+                    Analysis
+                  </a>
+                </li>
               </ul>
             </div>
-            <div id="bonusAndEarningsDetails" class="col s12">
+            <div class="col s12">
               <div class="card white">
                 <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.bonusEarnings}}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div id="annualFeeDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.annualFeeDetails}}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div id="extraBenefitsDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.extraBenefits}}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div id="redemptionDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.redemption}}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div id="analysisDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.analysis}}
-                  </p>
+                  <div id="detailsDisplayMobile" style="text-align: center;">
+                   {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                  {{/each}}
                 </div>
               </div>
             </div>
           </div>
         </div>
           
-
+        <!-- Social Links -->
         <div class="row">
           <div class="col s12" style="text-align: center;">
             <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
@@ -402,23 +504,32 @@
             <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
           </div>
         </div>
-
       </div>
+
+      <!-- Mobile Footer -->
       <footer class="page-footer" id="disclaimer">
         <div class="container" style="background-color: #64b5f6;">
           <div class="row center">
             <div class="col l3"></div>
             <div class="col l6 s12">
-              <h5>Disclaimer</h5>
-              <p>Max Points, LLC may receive a commission for approved cards.</p>
+              <h5>
+                Disclaimer
+              </h5>
+              <p>
+                Max Points, LLC may receive a commission for approved cards.
+              </p>
             </div>
           </div>
         </div>
         <div class="footer-copyright">
           <div class="container center">
-          <a href="#">Terms of Service</a>
-          | Max Points, LLC |
-          <a href="#">Privacy Policy</a>
+            <a id="termsOfServiceButton">
+              Terms of Service
+            </a>
+            | Max Points, LLC |
+            <a id="privacyPolicyButton">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </footer>
@@ -426,33 +537,57 @@
 
     <!--Desktop and Tablet View-->
     <div class="hide-on-small-only">
+      
+      <!-- Show Current Card Selection -->
       <header>
         <div class="side-nav fixed">
           <div class="row col m12" style="padding-top: 100px;">
             <i class="large material-icons col m12" style="text-align: center; color: #00c853;">
               credit_card
             </i>
-            <a class="col m6 offset-m3 waves-effect waves-light btn" href="{{affiliateLink}}">Apply Now</a>
-            <a class="col m6 offset-m3" href="#" style="text-align: center;">Save for Later</a>
+            <h5>
+              {{currentDisplayRec.cardName}}
+            </h5>
+            <a class="col m6 offset-m3 waves-effect waves-light btn" href="{{cardDetails.affiliateLink}}">
+              Apply Now
+            </a>
+            <a class="col m6 offset-m3" id="createAccount" style="text-align: center;">
+              Save for Later
+            </a>
           </div>
         </div>
       </header>
+
       <main style="padding-left: 300px;">
+        
+        <!-- Header -->
         <div class="section" style="background-color: #0d47a1">
           <div class="row">
             <div class="col m4">
-              <a href="#!" class="brand-logo left">Logo</a>
+              <a href="#!" class="brand-logo left">
+                Logo
+              </a>
             </div>
             <div class="col m2 offset-m4">
-              <a class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a>
+              <a class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">
+                Sign in
+              </a>
             </div>
             <div class="col m2">
-              <a class="waves-effect waves-light btn">Register</a>
+              <a class="waves-effect waves-light btn">
+                Register
+              </a>
             </div>
           </div>
         </div>
+
+        <!-- Display Results Page -->
         <div class="row" style="background-color: #eceff1;">
+          
+          <!-- Main Details Section -->
           <div class="section col m9">
+            
+            <!-- Signup Bonus and Earning Rate Increase Section -->
             <div class="row">
               <div class="col m6">
                 <div class="card horizontal">
@@ -476,7 +611,7 @@
                   <div class="card-stacked">
                     <div class="card-content">
                       <p style="text-align: center;">
-                      Earning rate increase
+                        Earning rate increase
                       </p>
                       <h2 style="text-align: center;color: #00c853;">
                         {{currentDisplayRec.earningRateIncrease}}%
@@ -489,11 +624,15 @@
                 </div>
               </div>
             </div>
+
+            <!-- Comparison Chart -->
             <div class="row">
               <div class="col s12">
                 <div class="card white">
                   <div class="card-content">
-                    <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
+                    <h5 style="text-align: center;">
+                      Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}
+                    </h5>
                     <hr><br>
                     <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                       <tr>
@@ -507,7 +646,9 @@
                     </table>
                     
                     {{#each currentDisplayRec.combinedCategoriesComparison}}
-                      <h6>{{catName}}:</h6>
+                      <h6>
+                        {{catName}}:
+                      </h6>
                       <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
                         <tr>
                           <td style="width:{{currentDisplayVal}}%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
@@ -530,60 +671,60 @@
             </div>
             <div class="row">
               <div class="col s12">
-                <ul class="tabs white" style="height: 55px !important;">
-                  <li class="tab"><a class="active" href="#bonusAndEarningsDetailsDesktop">Bonus & Earnings</a></li>
-                  <li class="tab"><a href="#annualFeeDetailsDesktop">Annual Fee</a></li>
-                  <li class="tab"><a href="#extraBenefitsDetailsDesktop">Extra Benefits</a></li>
-                  <li class="tab"><a href="#redemptionDetailsDesktop">Redemption</a></li>
-                  <li class="tab"><a href="#analysisDetailsDesktop">Analysis</a></li>
+
+                <!-- Card Details -->
+                <ul id="pickCategoryDesktop" class="tabs white" style="height: 55px !important;">
+                  <li class="tab">
+                    <a class="active" id="{{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}">
+                      Bonus & Earnings
+                    </a>
+                  </li>
+                  <li class="tab">
+                    <a id="{{#each currentDisplayRec.cardDetails.annualFeeDetails}}">
+                      Annual Fee
+                    </a>
+                  </li>
+                  <li class="tab">
+                    <a id="{{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}">
+                      Extra Benefits
+                    </a>
+                  </li>
+                  <li class="tab">
+                    <a id="{{#each currentDisplayRec.cardDetails.redemptionDetails}}">
+                      Redemption
+                    </a>
+                  </li>
+                  <li class="tab">
+                    <a id="{{#each currentDisplayRec.cardDetails.analysisDetails}}">
+                      Analysis
+                    </a>
+                  </li>
                 </ul>
               </div>
-              <div id="bonusAndEarningsDetailsDesktop" class="col s12">
+              <div class="col s12">
                 <div class="card white">
                   <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.bonusEarnings}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div id="annualFeeDetailsDesktop" class="col s12">
-                <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.annualFeeDetails}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div id="extraBenefitsDetailsDesktop" class="col s12">
-                <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.extraBenefits}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div id="redemptionDetailsDesktop" class="col s12">
-                <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.redemption}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div id="analysisDetailsDesktop" class="col s12">
-                <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.analysis}}
-                    </p>
+                    <div id="detailsDisplayDesktop" style="text-align: center;">
+                      {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                    </div>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
+                          </div>
+                          <div class="col s9">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                      {{/each}}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Social Links -->
             <div class="row">
               <div class="col m4 offset-m4" style="text-align: center">
                 <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
@@ -592,7 +733,11 @@
               </div>
             </div>
           </div>
+
+          <!-- Select Card and Cash Back vs. Free Flights -->
           <div class="col m3">
+
+            <!-- Cash Back vs. Free Flights Switch -->
             <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
               <div class="switch">
                 <label>
@@ -607,210 +752,70 @@
                 </label>
               </div>
             </div>
+
+            <!-- Select Card -->
             <ul id="pickCardDesktop" class="table-of-contents" style="text-align: center;">
-              <li><a class="active"><i id="0" class="medium material-icons">credit_card</i></a></li>
-              <li><a><i id="1" class="medium material-icons">credit_card</i></a></li>
-              <li><a><i id="2" class="medium material-icons">credit_card</i></a></li>
-              <li><a><i id="3" class="medium material-icons">credit_card</i></a></li>
+              <li>
+                <a class="active">
+                  <i id="0" class="medium material-icons">
+                    credit_card
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i id="1" class="medium material-icons">
+                    credit_card
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i id="2" class="medium material-icons">
+                    credit_card
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i id="3" class="medium material-icons">
+                    credit_card
+                  </i>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </main>
+
+      <!-- Footer -- >
       <footer class="page-footer" id="disclaimer" style="padding-left: 300px;">
         <div class="container" style="background-color: #64b5f6;">
           <div class="row center">
             <div class="col l3"></div>
             <div class="col l6 s12">
-              <h5>Disclaimer</h5>
-              <p>Max Points, LLC may receive a commission for approved cards.</p>
+              <h5>
+                Disclaimer
+              </h5>
+              <p>
+                Max Points, LLC may receive a commission for approved cards.
+              </p>
             </div>
           </div>
         </div>
         <div class="footer-copyright">
           <div class="container center">
-          <a href="#">Terms of Service</a>
-          | Max Points, LLC |
-          <a href="#">Privacy Policy</a>
+            <a id="termsOfServiceButton">
+              Terms of Service
+            </a>
+            | Max Points, LLC |
+            <a id="privacyPolicyButton">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </footer>
     </div>
-
-  </script>
-
-  <!--Personal Reccomendations Template-->
-  <script type="text/x-handlebars-template" id="personalRecommendationsTemplate"> 
-
-    <!-- For Each Personal Recommendation -->
-    {{#each finalRecsPers}}
-    <div class="col s12 m4" id="personalRecommendationOne">
-      <div class="card grey">
-        <div class="card-content white-text">
-          <span class="card-title">Points Earned Per Dollar Spent by Adding {{cardName}}</span>
-            <br><hr><br>
-            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-              <tr>
-                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
-                  Current
-                </td>
-                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
-                  With {{cardName}}
-                </td>
-              </tr>
-            </table>
-            
-            {{#each combinedCategoriesComparison}}
-              <h6>{{catName}}:</h6>
-              <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-                <tr>
-                  <td style="width:{{currentDisplayVal}}%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
-                    {{currentVal}}x
-                  </td>
-                  <td style="width:{{recDisplayVal}}%; background-color:{{recColor}}; padding: 3px 3px; text-align: center;">
-                    {{#if recGreaterThanCurrent}}
-                      {{recVal}}x
-                    {{/if}}
-                  </td>
-                  {{#if addEmptyRow}}
-                    <td style="width: {{emptyRowDisplayVal}}%"></td>
-                  {{/if}}
-                </tr>
-              </table>
-            {{/each}}
-
-            <h6>Annual Fees:</h6>
-            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-              <tr>
-                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
-                  ${{totalAnnualFee}}
-                </td>
-                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
-                  ${{annualFee}}
-                </td>
-              </tr>
-            </table>
-
-            {{#if signUpBonus}}
-              <h6>Sign up Bonus:</h6>
-              <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-                <tr>
-                  <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
-                    {{signUpBonus}}
-                  </td>
-                </tr>
-              </table>
-            {{/if}}
-
-            <br><hr><br>
-
-            <h6>How {{cardName}} Increases your points:</h6>
-            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-              <ul style="padding-left: 10px;">
-                {{#each howCardIncreasesPoints}}
-                <li>
-                  {{this}}
-                </li>
-                {{/each}}
-              </ul>
-            </table>
-
-        </div>
-
-        <div class="card-action">
-          <a class="waves-effect waves-light btn blue lighten-2">
-            Apply Now
-          </a>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-
-  </script>
-
-  <!--Business Reccomendations Template-->
-  <script type="text/x-handlebars-template" id="businessRecommendationsTemplate">  
-
-    <!-- For Each Business Recommendation -->
-    {{#each finalRecsBiz}}
-    <div class="col s12 m4" id="personalRecommendationOne">
-      <div class="card grey">
-        <div class="card-content white-text">
-          <span class="card-title">Points Earned Per Dollar Spent by Adding {{cardName}}</span>
-            <br><hr><br>
-            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-              <tr>
-                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
-                  Current
-                </td>
-                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
-                  With {{cardName}}
-                </td>
-              </tr>
-            </table>
-            
-            {{#each combinedCategoriesComparison}}
-              <h6>{{catName}}:</h6>
-              <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-                <tr>
-                  <td style="width:{{currentDisplayVal}}%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
-                    {{currentVal}}x
-                  </td>
-                  <td style="width:{{recDisplayVal}}%; background-color:{{recColor}}; padding: 3px 3px; text-align: center;">
-                    {{#if recGreaterThanCurrent}}
-                      {{recVal}}x
-                    {{/if}}
-                  </td>
-                  <td style="width: {{emptyRowDisplayVal}}%"></td>
-                </tr>
-              </table>
-            {{/each}}
-
-            <h6>Annual Fees:</h6>
-            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-              <tr>
-                <td style="width:50%; background-color:#ef9a9a; padding: 3px 3px; text-align: center;">
-                  ${{totalAnnualFee}}
-                </td>
-                <td style="width:50%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
-                  ${{annualFee}}
-                </td>
-              </tr>
-            </table>
-
-            {{#if signUpBonus}}
-              <h6>Sign up Bonus:</h6>
-              <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-                <tr>
-                  <td style="width:100%; background-color:#81d4fa; padding: 3px 3px; text-align: center;">
-                    {{signUpBonus}}
-                  </td>
-                </tr>
-              </table>
-            {{/if}}
-
-            <br><hr><br>
-
-            <h6>How {{cardName}} Increases your points:</h6>
-            <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-              <ul style="padding-left: 10px;">
-                {{#each howCardIncreasesPoints}}
-                <li>
-                  {{this}}
-                </li>
-                {{/each}}
-              </ul>
-            </table>
-
-        </div>
-
-        <div class="card-action">
-          <a class="waves-effect waves-light btn blue lighten-2">
-            Apply Now
-          </a>
-        </div>
-      </div>
-    </div>
-    {{/each}}
 
   </script>
 
