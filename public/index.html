@@ -371,7 +371,18 @@
               <div class="card white">
                 <div class="card-content">
                   <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.annualFeeDetails}}
+                    {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
+                          </div>
+                          <div class="col s9" style="padding-top: 5px;">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                    {{/each}}
                   </p>
                 </div>
               </div>
@@ -494,7 +505,7 @@
                       Earning rate increase
                       </p>
                       <h2 style="text-align: center;color: #00c853;">
-                        {{currentDisplayRec.earningRateIncrease}}%
+                        {{currentDisplayRec.cardDetails.earningRateIncrease}}%
                       </h2>
                       <p style="text-align: center;">
                         comparing your current card selection to the recommended card
@@ -543,6 +554,7 @@
                 </div>
               </div>
             </div>
+             
             <div class="row">
               <div class="col s12">
                 <ul class="tabs white" style="height: 55px !important;">
@@ -566,7 +578,18 @@
                 <div class="card white">
                   <div class="card-content">
                     <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.annualFeeDetails}}
+                      {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                        <div class="container">
+                          <div class="row">
+                            <div class="col s3">
+                              <img src="{{icon}}">
+                            </div>
+                            <div class="col s9" style="padding-top: 5px;">
+                              {{detail}}
+                            </div>
+                          </div>
+                        </div> 
+                      {{/each}}
                     </p>
                   </div>
                 </div>
