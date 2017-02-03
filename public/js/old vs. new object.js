@@ -41,84 +41,19 @@
         wholesaleClubs: 5
     },
     cardDetails: {
-    	cardImage: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-    	bonusAndEarningsDetails: [
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	}
-	    ],
-    	annualFeeDetails: [
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	}
-	    ],
-    	extraBenefitsDetails: [
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	}
-	    ],
-    	redemptionDetails: [
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	}
-	    ],
-    	analysisDetails: [
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	},
-	    	{
-	    		icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-	    		detail: 'Here are some details.'
-	    	}
-	    ],
+    	cardImage: '',
+    	bonusEarnings: 'Here are some bonus earnings.',
+    	annualFeeDetails: 'Here are some annual fee details.',
+    	extraBenefits: 'Here are some extra benefits.',
+    	redemption: 'Here are some redemption details.',
+    	analysis: 'Here is some analysis.',
     	signupBonus: {
     		bonusValue: 0,
     		bonusCopy: 'Here is some signup bonus copy.'
     	},
-    	earningRateIncrease: 0,
-    	affiliateLink: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png'
-    }
+    	earningRateIncrease: 0
+    },
+    affiliateLink: ''
 }
 
 

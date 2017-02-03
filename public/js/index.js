@@ -1,7 +1,6 @@
 // Model
-
 var model = { 
-    appState: {
+	appState: {
         landingPage: false,
         calculator: true,
         resultsPage: false,
@@ -50,51 +49,9 @@ var model = {
                 backToViewFromTos);
 
             // TO DO Check and see if more event listeners need to be added.
-        },
-        toggleToPp: () => {
-
-            // Hide Current View
-            if (model.appState.landingPage) {
-                // TO DO: Fill in id of landing page
-                document.getElementById('').style.display = 'none';
-            } else if (model.appState.calculator) {
-                document.getElementById('pointsCalculator').style.display = 'none';
-            } else if (model.appState.resultsPage) {
-                document.getElementById('displayRecommendations').style.display = 'none';
-            } else if (model.appState.profilePage) {
-                // TO DO: Fill in id of profile page
-                document.getElementById('').style.display = 'none';
-            }
-
-            // Display PP
-            document.getElementById('privacyPolicy').style.display = 'inline';
-
-            // Declare Return Function
-            function backToViewFromPp() {
-                // Display Current View
-                if (model.appState.landingPage) {
-                    // TO DO: Fill in id of landing page
-                    document.getElementById('').style.display = 'inline';
-                } else if (model.appState.calculator) {
-                    document.getElementById('pointsCalculator').style.display = 'inline';
-                } else if (model.appState.resultsPage) {
-                    document.getElementById('displayRecommendations').style.display = 'inline';
-                } else if (model.appState.profilePage) {
-                    // TO DO: Fill in id of profile page
-                    document.getElementById('').style.display = 'inline';
-                }
-
-                // Hide PP
-                document.getElementById('privacyPolicy').style.display = 'inline';
-            }
-
-            // Listen for Back Click
-            document.getElementById('privacyPolicyBack').addEventListener('click', backToViewFromPp);
-
-            // TO DO Check and see if more event listeners need to be added.
         }
     },
-	cards: {
+    cards: {
         all: [
             {
                 cardName: 'No Credit Card',
@@ -1916,11 +1873,9 @@ var model = {
     },
     templates: {
         variables: {
-            personalRecommendationsTemplate: null,
-            businessRecommendationsTemplate: null,
             displayRecommendationsTemplate: null
         },
-        compile: () => {
+        compile: function() {
         // Compile Display Recommendations Template
         var displayRecommendationsTemplateSource = document.getElementById('displayRecommendationsTemplate').innerHTML;
         model.templates.variables.displayRecommendationsTemplate = Handlebars.compile(displayRecommendationsTemplateSource);
@@ -1936,10 +1891,6 @@ var model = {
 
             // In Production:
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
-
-            // PP and TOS Event Listeners - Add during re-design of UC-03
-            // document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);
-            // document.getElementById('privacyPolicyButton').addEventListener('click', model.appState.toggleToPp);
 
             // In Test:
             // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
@@ -2544,6 +2495,11 @@ var model = {
         },
         createCategoryComparisonArrayInEachRecommendation: () => {
 
+            // TO DO:
+            // Reformat this object along the lines set out in the 
+            // old vs. new object file.
+
+
             // For Business 
             model.cards.intermediateRecsBiz.forEach((obj) => {
                 // Combined Object Current and Rec Categories in the Same Object
@@ -2665,12 +2621,11 @@ var model = {
             model.controllers.finalizeRecs();
         },
         finalizeRecs: () => {
-            // Set intermediate recommendations equal to final recommendations 
+            // Combine personal and business formatted recommendations into 
+            // one array that is 4 objects long. 
             model.cards.finalRecsPers = model.cards.intermediateRecsPers;
             model.cards.finalRecsBiz = model.cards.intermediateRecsBiz;
             
-            // Combine personal and business formatted recommendations into 
-            // one array that is 4 objects long. 
             if (model.cards.finalRecsBiz.length >= 2) {
                 model.cards.combinedRecs.push(model.cards.finalRecsBiz[0],
                     model.cards.finalRecsBiz[1]);
@@ -2715,27 +2670,17 @@ var model = {
             //     array1 = array1.filter(val => !array2.includes(val));
             // }
 
-            // Set the Current Display Recommendation Equal to the First Card in the 
-            // Combined Recommendation Array
             model.cards.currentDisplayRec = model.cards.combinedRecs[0];
 
-            console.log('Current Display Rec');
-            console.log(model.cards.currentDisplayRec);
-
-            // Render the Display Recommendations Template
             model.templates.renderDisplayRecommendationsTemplate();
 
 
-            // Display Loading Screen before Displaying Recommendations Report
+            // Display Report
             setTimeout(function(){
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('displayRecommendations').style.display ='inline'; 
-                //document.getElementById('disclaimer').style.display = 'inline';
+                model.controllers.displayRecInteractions();
                 }, 3000);
-
-            // Move into the Function that will house event listeners and allow for 
-            // interactivity once the display page has been loaded.
-            model.controllers.displayRecInteractions();
         },
         displayRecInteractions: () => {
             console.log('Made it to Display Interactions');
@@ -2750,6 +2695,7 @@ var model = {
                     $("#pickCardDesktop>li>a.active").removeClass("active");
                     document.getElementById(e.target.id).parentNode.classList.add('active');
                 }
+                model.controllers.displayRecInteractions();
             }
 
             function toggleBetweenCardRecsMobile (e) {
@@ -2759,6 +2705,7 @@ var model = {
                     $("#pickCardMobile>li>a.active").removeClass("active");
                     document.getElementById(e.target.id).parentNode.classList.add('active');
                 };
+                model.controllers.displayRecInteractions();
             }
 
             function toggleCashBackFreeFlightsSwitch () {
@@ -2781,43 +2728,44 @@ var model = {
                     model.cards.combinedRecs = [];
                     model.controllers.determineBizRecs();
                 }
+                model.controllers.displayRecInteractions();
             }
 
-            function toggleBetweenDetailsCategoriesDesktop () {
-                // Makes sure the right thing was clicked
-                if (e.target.nodeName === 'A') {
-                    // Removes the active class from all other elements in the ul
-                    $("#pickCategoryDesktop>li>a.active").removeClass("active");
-                    // Adds the active class to the element that was clicked
-                    // Will .classList work in this context?
-                    document.getElementById(e.target.id).classList.add('active');
-                    // Deletes the text in the Details Display Box
-                    document.getElementById(detailsDisplayDesktop).innerHTML = '';
-                    // Inserts the Details of the clicked element in the Details Display Box
-                    document.getElementById(detailsDisplayDesktop).innerHTML = '{{' + 
-                        e.target.id + '}}';
-                    // Render the Display Recommendations Template
-                    model.templates.renderDisplayRecommendationsTemplate();
-                }
-            }
+            // function toggleBetweenDetailsCategoriesDesktop () {
+            //     // Makes sure the right thing was clicked
+            //     if (e.target.nodeName === 'A') {
+            //         // Removes the active class from all other elements in the ul
+            //         $("#pickCategoryDesktop>li>a.active").removeClass("active");
+            //         // Adds the active class to the element that was clicked
+            //         // Will .classList work in this context?
+            //         document.getElementById(e.target.id).classList.add('active');
+            //         // Deletes the text in the Details Display Box
+            //         document.getElementById(detailsDisplayDesktop).innerHTML = '';
+            //         // Inserts the Details of the clicked element in the Details Display Box
+            //         document.getElementById(detailsDisplayDesktop).innerHTML = '{{' + 
+            //             e.target.id + '}}';
+            //         // Render the Display Recommendations Template
+            //         model.templates.renderDisplayRecommendationsTemplate();
+            //     }
+            // }
 
-            function toggleBetweenDetailsCategoriesMobile () {
-                // Makes sure the right thing was clicked
-                if (e.target.nodeName === 'A') {
-                    // Removes the active class from all other elements in the ul
-                    $("#pickCategoryMobile>li>a.active").removeClass("active");
-                    // Adds the active class to the element that was clicked
-                    // Will .classList work in this context?
-                    document.getElementById(e.target.id).classList.add('active');
-                    // Deletes the text in the Details Display Box
-                    document.getElementById(detailsDisplayMobile).innerHTML = '';
-                    // Inserts the Details of the clicked element in the Details Display Box
-                    document.getElementById(detailsDisplayMobile).innerHTML = '{{' + 
-                        e.target.id + '}}';
-                    // Render the Display Recommendations Template
-                    model.templates.renderDisplayRecommendationsTemplate();
-                }
-            }
+            // function toggleBetweenDetailsCategoriesMobile () {
+            //     // Makes sure the right thing was clicked
+            //     if (e.target.nodeName === 'A') {
+            //         // Removes the active class from all other elements in the ul
+            //         $("#pickCategoryMobile>li>a.active").removeClass("active");
+            //         // Adds the active class to the element that was clicked
+            //         // Will .classList work in this context?
+            //         document.getElementById(e.target.id).classList.add('active');
+            //         // Deletes the text in the Details Display Box
+            //         document.getElementById(detailsDisplayMobile).innerHTML = '';
+            //         // Inserts the Details of the clicked element in the Details Display Box
+            //         document.getElementById(detailsDisplayMobile).innerHTML = '{{' + 
+            //             e.target.id + '}}';
+            //         // Render the Display Recommendations Template
+            //         model.templates.renderDisplayRecommendationsTemplate();
+            //     }
+            // }
 
             // Event Listeners
 
@@ -2836,11 +2784,11 @@ var model = {
                 toggleCashBackFreeFlightsSwitch);
 
             // Toggle b/w Card Details Event Listeners Desktop/Mobile
-            document.getElementById('pickCategoryDesktop').addEventListener('click', 
-                toggleBetweenDetailsCategoriesDesktop);
+            // document.getElementById('pickCategoryDesktop').addEventListener('click', 
+            //     toggleBetweenDetailsCategoriesDesktop);
 
-            document.getElementById('pickCategoryMobile').addEventListener('click', 
-                toggleBetweenDetailsCategoriesDesktop);
+            // document.getElementById('pickCategoryMobile').addEventListener('click', 
+            //     toggleBetweenDetailsCategoriesDesktop);
 
             // PP and TOS Event Listeners
             document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);
