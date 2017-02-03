@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <!-- Points Calculator -->
   <div class="section no-pad-bot" id="pointsCalculator" style="display: inline;">
       <div class="container" id="intakeForm">
         <br><br>
@@ -184,7 +185,7 @@
         Back
       </button>
     <div class="row">
-      <h3 class="col s12 m12" style="text-align: none;">
+      <h3 class="col s12 m12" style="text-align: center;">
         Terms of Service
       </h3>
       <p class="col s12">
@@ -208,7 +209,7 @@
     </div>
   </div>
 
-  <!--  Scripts-->
+  <!--  Scripts -->
   
   <!-- Pulling in Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
@@ -447,27 +448,27 @@
             <div class="col s12">
               <ul id="pickCategoryMobile" class="tabs white" style="height: 55px !important;">
                 <li class="tab">
-                  <a class="active" id="{{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}">
+                  <a class="active">
                     Bonus & Earnings
                   </a>
                 </li>
                 <li class="tab">
-                  <a id="{{#each currentDisplayRec.cardDetails.annualFeeDetails}}">
+                  <a>
                     Annual Fee
                   </a>
                 </li>
                 <li class="tab">
-                  <a id="{{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}">
+                  <a>
                     Extra Benefits
                   </a>
                 </li>
                 <li class="tab">
-                  <a id="{{#each currentDisplayRec.cardDetails.redemptionDetails}}">
+                  <a>
                     Redemption
                   </a>
                 </li>
                 <li class="tab">
-                  <a id="{{#each currentDisplayRec.cardDetails.analysisDetails}}">
+                  <a>
                     Analysis
                   </a>
                 </li>
@@ -534,6 +535,7 @@
         </div>
       </footer>
     </div>
+
 
     <!--Desktop and Tablet View-->
     <div class="hide-on-small-only">
@@ -675,27 +677,27 @@
                 <!-- Card Details -->
                 <ul id="pickCategoryDesktop" class="tabs white" style="height: 55px !important;">
                   <li class="tab">
-                    <a class="active" id="{{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}">
+                    <a class="active">
                       Bonus & Earnings
                     </a>
                   </li>
                   <li class="tab">
-                    <a id="{{#each currentDisplayRec.cardDetails.annualFeeDetails}}">
+                    <a>
                       Annual Fee
                     </a>
                   </li>
                   <li class="tab">
-                    <a id="{{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}">
+                    <a>
                       Extra Benefits
                     </a>
                   </li>
                   <li class="tab">
-                    <a id="{{#each currentDisplayRec.cardDetails.redemptionDetails}}">
+                    <a>
                       Redemption
                     </a>
                   </li>
                   <li class="tab">
-                    <a id="{{#each currentDisplayRec.cardDetails.analysisDetails}}">
+                    <a>
                       Analysis
                     </a>
                   </li>
@@ -707,18 +709,15 @@
                     <div id="detailsDisplayDesktop" style="text-align: center;">
                       {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
                     </div>
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                      {{/each}}
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9">
+                        {{detail}}
+                      </div>
                     </div>
+                      {{/each}}
                   </div>
                 </div>
               </div>
@@ -787,6 +786,7 @@
           </div>
         </div>
       </main>
+
 
       <!-- Footer -- >
       <footer class="page-footer" id="disclaimer" style="padding-left: 300px;">

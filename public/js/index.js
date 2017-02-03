@@ -1920,26 +1920,10 @@ var model = {
             businessRecommendationsTemplate: null,
             displayRecommendationsTemplate: null
         },
-        compile: function() {
-        // Compile Personal Recommendations Template
-        var personalRecommendationsTemplateSource = document.getElementById('personalRecommendationsTemplate').innerHTML;
-        model.templates.variables.personalRecommendationsTemplate = Handlebars.compile(personalRecommendationsTemplateSource);
-
-        // Compile Business Recommendations Template
-        var businessRecommendationsTemplateSource = document.getElementById('businessRecommendationsTemplate').innerHTML;
-        model.templates.variables.businessRecommendationsTemplate = Handlebars.compile(businessRecommendationsTemplateSource);
-
+        compile: () => {
         // Compile Display Recommendations Template
         var displayRecommendationsTemplateSource = document.getElementById('displayRecommendationsTemplate').innerHTML;
         model.templates.variables.displayRecommendationsTemplate = Handlebars.compile(displayRecommendationsTemplateSource);
-        },
-        renderPersonalRecommendationsTemplate: () => {
-            var personalRecommendationsTemplateHtml = model.templates.variables.personalRecommendationsTemplate(model.cards);
-            document.getElementById('personalRecommendations').innerHTML = personalRecommendationsTemplateHtml;
-        },
-        renderBusinessRecommendationsTemplate: () => {
-            var businessRecommendationsTemplateHtml = model.templates.variables.businessRecommendationsTemplate(model.cards);
-            document.getElementById('businessRecommendations').innerHTML = businessRecommendationsTemplateHtml;   
         },
         renderDisplayRecommendationsTemplate: () => {
             var displayRecommendationsTemplateHtml = model.templates.variables.displayRecommendationsTemplate(model.cards);
@@ -1953,9 +1937,9 @@ var model = {
             // In Production:
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
 
-            // PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButton').addEventListener('click', model.appState.toggleToPp);
+            // PP and TOS Event Listeners - Add during re-design of UC-03
+            // document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);
+            // document.getElementById('privacyPolicyButton').addEventListener('click', model.appState.toggleToPp);
 
             // In Test:
             // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
@@ -2735,6 +2719,9 @@ var model = {
             // Combined Recommendation Array
             model.cards.currentDisplayRec = model.cards.combinedRecs[0];
 
+            console.log('Current Display Rec');
+            console.log(model.cards.currentDisplayRec);
+
             // Render the Display Recommendations Template
             model.templates.renderDisplayRecommendationsTemplate();
 
@@ -2751,7 +2738,7 @@ var model = {
             model.controllers.displayRecInteractions();
         },
         displayRecInteractions: () => {
-
+            console.log('Made it to Display Interactions');
             // Change App State
             model.appState.calculator = false;
             model.appState.resultsPage = true;
