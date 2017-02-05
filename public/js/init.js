@@ -1,6 +1,6 @@
 (function($){
   $(function(){
-    $('ul.tabs').tabs();
+    //$('ul.tabs').tabs();
     $('.button-collapse').sideNav();
 	$('input.autocomplete').autocomplete({
 		data: {
