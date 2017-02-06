@@ -2941,68 +2941,76 @@ var model = {
                 model.controllers.displayRecInteractions();
             }
 
-            function toggleBetweenDetailsCategoriesDesktop (e) {
-                console.log('1');
+            function toggleBetweenDetailsCategoriesMobile (e) {
                 // Makes sure the right thing was clicked
                 if (e.target.nodeName === 'A') {
 
-                    // Removes the active class and style attribute from li elements in the ul
-                    $("#pickCategoryDesktop>li>a.active").removeClass('active');
+                    // Declare all variables
+                    var i, tabcontent, tablinks;
 
-                    // Hides all details boxes
-                    document.getElementById('bonusAndEarningsDetailsDesktopTab').style.display = 'none';
-                    document.getElementById('extraBenefitsDetailsDesktopTab').style.display = 'none';
-                    document.getElementById('redemptionDetailsDesktopTab').style.display = 'none';
-                    document.getElementById('analysisDetailsDesktopTab').style.display = 'none';
-                    document.getElementById('annualFeeDetailsDesktopTab').style.display = 'none';
+                    // Get all elements with class="tabcontent" and hide them
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
 
-                    // console.log(e.target.id);
-                    // Adds the active class to the element that was clicked
+                    // Get all elements with class="tablinks" and remove the class "active"
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace("active", "");
+                    }
+
+                    // Adds the active class to the element that was clicked - Mobile
                     document.getElementById(e.target.id).classList.add('active');
                     
-                    // Adds the style attribute to the element that was clicked
+                    // Adds the style attribute to the element that was clicked - Mobile
                     document.getElementById(e.target.id + 'Tab').style.display = "inline";
+
+                    var desktop = (e.target.id).slice(0,-6) + 'Desktop';
+
+                    // Adds the active class to the element that was clicked - Desktop
+                    document.getElementById(desktop).classList.add('active');
+                    
+                    // Adds the style attribute to the element that was clicked - Desktop
+                    document.getElementById(desktop + 'Tab').style.display = "inline";
                 }
+
             }
 
-              function openCity(evt, cityName) {
-                // Declare all variables
-                var i, tabcontent, tablinks;
+            function toggleBetweenDetailsCategoriesDesktop (e) {
+                // Makes sure the right thing was clicked
+                if (e.target.nodeName === 'A') {
 
-                // Get all elements with class="tabcontent" and hide them
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+                    // Declare all variables
+                    var i, tabcontent, tablinks;
+
+                    // Get all elements with class="tabcontent" and hide them
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    // Get all elements with class="tablinks" and remove the class "active"
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace("active", "");
+                    }
+
+                    // Adds the active class to the element that was clicked - Desktop
+                    document.getElementById(e.target.id).classList.add('active');
+                    
+                    // Adds the style attribute to the element that was clicked - Desktop
+                    document.getElementById(e.target.id + 'Tab').style.display = "inline";
+
+                    var mobile = (e.target.id).slice(0,-7) + 'Mobile';
+
+                    // Adds the active class to the element that was clicked - Mobile
+                    document.getElementById(mobile).classList.add('active');
+                    
+                    // Adds the style attribute to the element that was clicked - Mobile
+                    document.getElementById(mobile + 'Tab').style.display = "inline";
                 }
-
-                // Get all elements with class="tablinks" and remove the class "active"
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace("active", "");
-                }
-
-                // Show the current tab, and add an "active" class to the link that opened the tab
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-              }
-
-            // function toggleBetweenDetailsCategoriesMobile (e) {
-            //     // Makes sure the right thing was clicked
-            //     if (e.target.nodeName === 'A') {
-            //         // Removes the active class from all other elements in the ul
-            //         $("#pickCategoryMobile>li>a.active").removeClass("active");
-            //         // Adds the active class to the element that was clicked
-            //         // Will .classList work in this context?
-            //         document.getElementById(e.target.id).classList.add('active');
-            //         // Deletes the text in the Details Display Box
-            //         document.getElementById(detailsDisplayMobile).innerHTML = '';
-            //         // Inserts the Details of the clicked element in the Details Display Box
-            //         document.getElementById(detailsDisplayMobile).innerHTML = '{{' + 
-            //             e.target.id + '}}';
-            //         // Render the Display Recommendations Template
-            //         model.templates.renderDisplayRecommendationsTemplate();
-            //     }
-            // }
+            }
 
             // Event Listeners
 
@@ -3023,11 +3031,11 @@ var model = {
             // Toggle b/w Card Details Event Listeners Desktop/Mobile
             document.getElementById('pickCategoryDesktop').addEventListener('click', (e) => {
                 toggleBetweenDetailsCategoriesDesktop(e);
-            }, false);
+            });
 
-            // document.getElementById('pickCategoryMobile').addEventListener('click', (e) => {
-            //     toggleBetweenDetailsCategoriesMobile(e);
-            // });
+            document.getElementById('pickCategoryMobile').addEventListener('click', (e) => {
+                toggleBetweenDetailsCategoriesMobile(e);
+            });
 
             // PP and TOS Event Listeners
             document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);

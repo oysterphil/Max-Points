@@ -347,71 +347,103 @@
           <a class="col s6 offset-s3" href="#" style="text-align: center;">Save for Later</a>
         </div>
 
-        <div class="container">
-          <div class="row">
-            <div class="col s12">
-              <ul class="tabs white" style="height: 55px !important;">
-                <li class="tab"><a class="active" href="#bonusAndEarningsDetails">Bonus & Earnings</a></li>
-                <li class="tab"><a href="#annualFeeDetails">Annual Fee</a></li>
-                <li class="tab"><a href="#extraBenefitsDetails">Extra Benefits</a></li>
-                <li class="tab"><a href="#redemptionDetails">Redemption</a></li>
-                <li class="tab"><a href="#analysisDetails">Analysis</a></li>
-              </ul>
-            </div>
-            <div id="bonusAndEarningsDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.bonusEarnings}}
-                  </p>
-                </div>
+        <div class="row">
+          <div class="col s12">
+            <ul id="pickCategoryMobile" class="tabs white">
+              <li class="tab"><a id="bonusAndEarningsDetailsMobile" class="tablinks active">Bonus & Earnings</a></li>
+              <li class="tab"><a id="annualFeeDetailsMobile" class="tablinks">Annual Fee</a></li>
+              <li class="tab"><a id="extraBenefitsDetailsMobile" class="tablinks">Extra Benefits</a></li>
+              <li class="tab"><a id="redemptionDetailsMobile" class="tablinks">Redemption</a></li>
+              <li class="tab"><a id="analysisDetailsMobile" class="tablinks">Analysis</a></li>
+            </ul>
+          </div>
+          <div id="bonusAndEarningsDetailsMobileTab" class="col s12 tabcontent">
+            <div class="card white">
+              <div class="card-content" style="text-align: center;">
+                {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                {{/each}}
               </div>
             </div>
-            <div id="annualFeeDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9" style="padding-top: 5px;">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                    {{/each}}
-                  </p>
-                </div>
+          </div>
+          <div id="annualFeeDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+            <div class="card white">
+              <div class="card-content" style="text-align: center;">
+                {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                {{/each}}
               </div>
             </div>
-            <div id="extraBenefitsDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.extraBenefits}}
-                  </p>
-                </div>
+          </div>
+          <div id="extraBenefitsDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+            <div class="card white">
+              <div class="card-content" style="text-align: center;">
+                {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                {{/each}}
               </div>
             </div>
-            <div id="redemptionDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.redemption}}
-                  </p>
-                </div>
+          </div>
+          <div id="redemptionDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+            <div class="card white">
+              <div class="card-content" style="text-align: center;">
+                {{#each currentDisplayRec.cardDetails.redemptionDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                {{/each}}
               </div>
             </div>
-            <div id="analysisDetails" class="col s12">
-              <div class="card white">
-                <div class="card-content">
-                  <p style="text-align: center;">
-                    {{currentDisplayRec.cardDetails.analysis}}
-                  </p>
-                </div>
+          </div>
+          <div id="analysisDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+            <div class="card white">
+              <div class="card-content" style="text-align: center;">
+                {{#each currentDisplayRec.cardDetails.analysisDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                {{/each}}
               </div>
             </div>
           </div>
@@ -419,7 +451,7 @@
           
 
         <div class="row">
-          <div class="col s12" style="text-align: center;">
+          <div class="col s12" style="text-align: center; margin-bottom: 20px;">
             <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
             <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
             <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
@@ -565,7 +597,7 @@
                   <li class="tab"><a id="analysisDetailsDesktop" class="tablinks">Analysis</a></li>
                 </ul>
               </div>
-              <div id="bonusAndEarningsDetailsDesktopTab" class="col s12">
+              <div id="bonusAndEarningsDetailsDesktopTab" class="col s12 tabcontent">
                 <div class="card white">
                   <div class="card-content" style="text-align: center;">
                     {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
@@ -583,7 +615,7 @@
                   </div>
                 </div>
               </div>
-              <div id="annualFeeDetailsDesktopTab" class="col s12" style="display: none;">
+              <div id="annualFeeDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
                 <div class="card white">
                   <div class="card-content" style="text-align: center;">
                     {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
@@ -601,7 +633,7 @@
                   </div>
                 </div>
               </div>
-              <div id="extraBenefitsDetailsDesktopTab" class="col s12" style="display: none;">
+              <div id="extraBenefitsDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
                 <div class="card white">
                   <div class="card-content" style="text-align: center;">
                     {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
@@ -619,7 +651,7 @@
                   </div>
                 </div>
               </div>
-              <div id="redemptionDetailsDesktopTab" class="col s12" style="display: none;">
+              <div id="redemptionDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
                 <div class="card white">
                   <div class="card-content" style="text-align: center;">
                     {{#each currentDisplayRec.cardDetails.redemptionDetails}}
@@ -637,7 +669,7 @@
                   </div>
                 </div>
               </div>
-              <div id="analysisDetailsDesktopTab" class="col s12" style="display: none;">
+              <div id="analysisDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
                 <div class="card white">
                   <div class="card-content" style="text-align: center;">
                     {{#each currentDisplayRec.cardDetails.analysisDetails}}
@@ -656,28 +688,6 @@
                 </div>
               </div>
             </div>
-
-<ul class="tabs">
-  <li class="tab"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')">London</a></li>
-  <li class="tab"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Paris</a></li>
-  <li class="tab"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</a></li>
-</ul>
-
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
             <div class="row">
               <div class="col m4 offset-m4" style="text-align: center">
                 <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
