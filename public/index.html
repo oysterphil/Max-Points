@@ -9,29 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript">
-    function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-  </script>
-
 </head>
 <body style="background-color: #0d47a1;">
 
@@ -581,7 +558,7 @@
             <div class="row">
               <div class="col s12">
                 <ul id="pickCategoryDesktop" class="tabs white">
-                  <li class="tab"><a id="bonusAndEarningsDetailsDesktop" class="tablinks active" style="border-bottom: 2px solid;">Bonus & Earnings</a></li>
+                  <li class="tab"><a id="bonusAndEarningsDetailsDesktop" class="tablinks active">Bonus & Earnings</a></li>
                   <li class="tab"><a id="annualFeeDetailsDesktop" class="tablinks">Annual Fee</a></li>
                   <li class="tab"><a id="extraBenefitsDetailsDesktop" class="tablinks">Extra Benefits</a></li>
                   <li class="tab"><a id="redemptionDetailsDesktop" class="tablinks">Redemption</a></li>

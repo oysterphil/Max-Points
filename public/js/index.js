@@ -2941,31 +2941,50 @@ var model = {
                 model.controllers.displayRecInteractions();
             }
 
-            function toggleBetweenDetailsCategoriesDesktop () {
-
+            function toggleBetweenDetailsCategoriesDesktop (e) {
+                console.log('1');
                 // Makes sure the right thing was clicked
-//                if (e.target.nodeName === 'A') {
+                if (e.target.nodeName === 'A') {
+
+                    // Removes the active class and style attribute from li elements in the ul
+                    $("#pickCategoryDesktop>li>a.active").removeClass('active');
 
                     // Hides all details boxes
                     document.getElementById('bonusAndEarningsDetailsDesktopTab').style.display = 'none';
                     document.getElementById('extraBenefitsDetailsDesktopTab').style.display = 'none';
                     document.getElementById('redemptionDetailsDesktopTab').style.display = 'none';
                     document.getElementById('analysisDetailsDesktopTab').style.display = 'none';
-                    document.getElementById('annualFeeDetailsDesktopTab').style.display = 'inline';
-
-                    // // Removes the active class and style attribute from li elements in the ul
-                    // $("#pickCategoryDesktop>li>a.active").removeClass('active');
-                    // $("#displayDetails>li>a").removeAttr('style');
+                    document.getElementById('annualFeeDetailsDesktopTab').style.display = 'none';
 
                     // console.log(e.target.id);
-                    // // Adds the active class to the element that was clicked
-                    // document.getElementById(e.target.id).classList.add('active');
+                    // Adds the active class to the element that was clicked
+                    document.getElementById(e.target.id).classList.add('active');
                     
-                    // // Adds the style attribute to the element that was clicked
-                    // document.getElementById(e.target.id).style.borderBottom = "2px solid";
-              //  }
-                model.controllers.displayRecInteractions();
+                    // Adds the style attribute to the element that was clicked
+                    document.getElementById(e.target.id + 'Tab').style.display = "inline";
+                }
             }
+
+              function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace("active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the link that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
 
             // function toggleBetweenDetailsCategoriesMobile (e) {
             //     // Makes sure the right thing was clicked
@@ -3002,8 +3021,9 @@ var model = {
                 toggleCashBackFreeFlightsSwitch);
 
             // Toggle b/w Card Details Event Listeners Desktop/Mobile
-            document.getElementById('annualFeeDetailsDesktop').addEventListener('click',
-                toggleBetweenDetailsCategoriesDesktop);
+            document.getElementById('pickCategoryDesktop').addEventListener('click', (e) => {
+                toggleBetweenDetailsCategoriesDesktop(e);
+            }, false);
 
             // document.getElementById('pickCategoryMobile').addEventListener('click', (e) => {
             //     toggleBetweenDetailsCategoriesMobile(e);
