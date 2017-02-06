@@ -9,6 +9,29 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript">
+    function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+  </script>
+
 </head>
 <body style="background-color: #0d47a1;">
 
@@ -191,7 +214,7 @@
   <script type="text/x-handlebars-template" id="displayRecommendationsTemplate">
 
     <!--Mobile View-->
-    <div class="row hide-on-med-only hide-on-large-only">
+    <div class="row hide-on-large-only">
       
       <!--Navbar-->
       <nav>
@@ -448,7 +471,7 @@
     </div>
 
     <!--Desktop and Tablet View-->
-    <div class="hide-on-small-only">
+    <div class="hide-on-med-only hide-on-small-only">
       <header>
         <div class="side-nav fixed">
           <div class="row col m12" style="padding-top: 100px;">
@@ -557,71 +580,127 @@
              
             <div class="row">
               <div class="col s12">
-                <ul class="tabs white">
-                  <li class="tab"><a id="bonusAndEarningsDetailsDesktopTab" class="active" style="border-bottom: 2px solid;">Bonus & Earnings</a></li>
-                  <li class="tab"><a id="annualFeeDetailsDesktopTab">Annual Fee</a></li>
-                  <li class="tab"><a id="extraBenefitsDetailsDesktopTab">Extra Benefits</a></li>
-                  <li class="tab"><a id="redemptionDetailsDesktopTab">Redemption</a></li>
-                  <li class="tab"><a id="analysisDetailsDesktopTab">Analysis</a></li>
+                <ul id="pickCategoryDesktop" class="tabs white">
+                  <li class="tab"><a id="bonusAndEarningsDetailsDesktop" class="tablinks active" style="border-bottom: 2px solid;">Bonus & Earnings</a></li>
+                  <li class="tab"><a id="annualFeeDetailsDesktop" class="tablinks">Annual Fee</a></li>
+                  <li class="tab"><a id="extraBenefitsDetailsDesktop" class="tablinks">Extra Benefits</a></li>
+                  <li class="tab"><a id="redemptionDetailsDesktop" class="tablinks">Redemption</a></li>
+                  <li class="tab"><a id="analysisDetailsDesktop" class="tablinks">Analysis</a></li>
                 </ul>
               </div>
-              <div id="bonusAndEarningsDetailsDesktop" class="col s12">
+              <div id="bonusAndEarningsDetailsDesktopTab" class="col s12">
                 <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.bonusEarnings}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div id="annualFeeDetailsDesktop" class="col s12">
-                <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
-                        <div class="container">
-                          <div class="row">
-                            <div class="col s3">
-                              <img src="{{icon}}">
-                            </div>
-                            <div class="col s9" style="padding-top: 5px;">
-                              {{detail}}
-                            </div>
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
                           </div>
-                        </div> 
-                      {{/each}}
-                    </p>
+                          <div class="col s9" style="padding-top: 5px;">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                    {{/each}}
                   </div>
                 </div>
               </div>
-              <div id="extraBenefitsDetailsDesktop" class="col s12">
+              <div id="annualFeeDetailsDesktopTab" class="col s12" style="display: none;">
                 <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.extraBenefits}}
-                    </p>
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
+                          </div>
+                          <div class="col s9" style="padding-top: 5px;">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                    {{/each}}
                   </div>
                 </div>
               </div>
-              <div id="redemptionDetailsDesktop" class="col s12">
+              <div id="extraBenefitsDetailsDesktopTab" class="col s12" style="display: none;">
                 <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.redemption}}
-                    </p>
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
+                          </div>
+                          <div class="col s9" style="padding-top: 5px;">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                    {{/each}}
                   </div>
                 </div>
               </div>
-              <div id="analysisDetailsDesktop" class="col s12">
+              <div id="redemptionDetailsDesktopTab" class="col s12" style="display: none;">
                 <div class="card white">
-                  <div class="card-content">
-                    <p style="text-align: center;">
-                      {{currentDisplayRec.cardDetails.analysis}}
-                    </p>
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.redemptionDetails}}
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
+                          </div>
+                          <div class="col s9" style="padding-top: 5px;">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div id="analysisDetailsDesktopTab" class="col s12" style="display: none;">
+                <div class="card white">
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.analysisDetails}}
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s3">
+                            <img src="{{icon}}">
+                          </div>
+                          <div class="col s9" style="padding-top: 5px;">
+                            {{detail}}
+                          </div>
+                        </div>
+                      </div> 
+                    {{/each}}
                   </div>
                 </div>
               </div>
             </div>
+
+<ul class="tabs">
+  <li class="tab"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')">London</a></li>
+  <li class="tab"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Paris</a></li>
+  <li class="tab"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</a></li>
+</ul>
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
             <div class="row">
               <div class="col m4 offset-m4" style="text-align: center">
                 <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>

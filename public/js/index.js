@@ -1545,7 +1545,7 @@ var model = {
                     bonusAndEarningsDetails: [
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-                            detail: 'Here are some details.'
+                            detail: 'Here are some bonus details.'
                         },
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
@@ -1559,7 +1559,7 @@ var model = {
                     annualFeeDetails: [
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-                            detail: 'Here are some details.'
+                            detail: 'Here are some annual fee details.'
                         },
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
@@ -1573,7 +1573,7 @@ var model = {
                     extraBenefitsDetails: [
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-                            detail: 'Here are some details.'
+                            detail: 'Here are some extra benefits details.'
                         },
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
@@ -1587,7 +1587,7 @@ var model = {
                     redemptionDetails: [
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-                            detail: 'Here are some details.'
+                            detail: 'Here are some redemption details.'
                         },
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
@@ -1601,7 +1601,7 @@ var model = {
                     analysisDetails: [
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
-                            detail: 'Here are some details.'
+                            detail: 'Here are some analysis details.'
                         },
                         {
                             icon: 'https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png',
@@ -2097,6 +2097,7 @@ var model = {
     },
     controllers: {
         setup: () => {
+
             model.templates.compile();
 
             // In Production:
@@ -2884,7 +2885,6 @@ var model = {
 
             model.templates.renderDisplayRecommendationsTemplate();
 
-
             // Display Report
             setTimeout(function(){
                 document.getElementById('loading').style.display = 'none';
@@ -2893,7 +2893,7 @@ var model = {
                 }, 3000);
         },
         displayRecInteractions: () => {
-            console.log('Made it to Display Interactions');
+            
             // Change App State
             model.appState.calculator = false;
             model.appState.resultsPage = true;
@@ -2941,25 +2941,33 @@ var model = {
                 model.controllers.displayRecInteractions();
             }
 
-            // function toggleBetweenDetailsCategoriesDesktop () {
-            //     // Makes sure the right thing was clicked
-            //     if (e.target.nodeName === 'A') {
-            //         // Removes the active class from all other elements in the ul
-            //         $("#pickCategoryDesktop>li>a.active").removeClass("active");
-            //         // Adds the active class to the element that was clicked
-            //         // Will .classList work in this context?
-            //         document.getElementById(e.target.id).classList.add('active');
-            //         // Deletes the text in the Details Display Box
-            //         document.getElementById(detailsDisplayDesktop).innerHTML = '';
-            //         // Inserts the Details of the clicked element in the Details Display Box
-            //         document.getElementById(detailsDisplayDesktop).innerHTML = '{{' + 
-            //             e.target.id + '}}';
-            //         // Render the Display Recommendations Template
-            //         model.templates.renderDisplayRecommendationsTemplate();
-            //     }
-            // }
+            function toggleBetweenDetailsCategoriesDesktop () {
 
-            // function toggleBetweenDetailsCategoriesMobile () {
+                // Makes sure the right thing was clicked
+//                if (e.target.nodeName === 'A') {
+
+                    // Hides all details boxes
+                    document.getElementById('bonusAndEarningsDetailsDesktopTab').style.display = 'none';
+                    document.getElementById('extraBenefitsDetailsDesktopTab').style.display = 'none';
+                    document.getElementById('redemptionDetailsDesktopTab').style.display = 'none';
+                    document.getElementById('analysisDetailsDesktopTab').style.display = 'none';
+                    document.getElementById('annualFeeDetailsDesktopTab').style.display = 'inline';
+
+                    // // Removes the active class and style attribute from li elements in the ul
+                    // $("#pickCategoryDesktop>li>a.active").removeClass('active');
+                    // $("#displayDetails>li>a").removeAttr('style');
+
+                    // console.log(e.target.id);
+                    // // Adds the active class to the element that was clicked
+                    // document.getElementById(e.target.id).classList.add('active');
+                    
+                    // // Adds the style attribute to the element that was clicked
+                    // document.getElementById(e.target.id).style.borderBottom = "2px solid";
+              //  }
+                model.controllers.displayRecInteractions();
+            }
+
+            // function toggleBetweenDetailsCategoriesMobile (e) {
             //     // Makes sure the right thing was clicked
             //     if (e.target.nodeName === 'A') {
             //         // Removes the active class from all other elements in the ul
@@ -2994,11 +3002,12 @@ var model = {
                 toggleCashBackFreeFlightsSwitch);
 
             // Toggle b/w Card Details Event Listeners Desktop/Mobile
-            // document.getElementById('pickCategoryDesktop').addEventListener('click', 
-            //     toggleBetweenDetailsCategoriesDesktop);
+            document.getElementById('annualFeeDetailsDesktop').addEventListener('click',
+                toggleBetweenDetailsCategoriesDesktop);
 
-            // document.getElementById('pickCategoryMobile').addEventListener('click', 
-            //     toggleBetweenDetailsCategoriesDesktop);
+            // document.getElementById('pickCategoryMobile').addEventListener('click', (e) => {
+            //     toggleBetweenDetailsCategoriesMobile(e);
+            // });
 
             // PP and TOS Event Listeners
             document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);
