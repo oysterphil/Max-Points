@@ -25,6 +25,10 @@ var model = {
 
             // Declare Return Function
             function backToViewFromTos() {
+               
+                // Hide TOS
+                document.getElementById('termsOfService').style.display = 'none';
+
                 // Display Current View
                 if (model.appState.landingPage) {
                     // TO DO: Fill in id of landing page
@@ -32,23 +36,66 @@ var model = {
                 } else if (model.appState.calculator) {
                     document.getElementById('pointsCalculator').style.display = 
                     'inline';
+                    model.controllers.setup();
                 } else if (model.appState.resultsPage) {
                     document.getElementById('displayRecommendations').style.display = 
                     'inline';
+                    model.controllers.displayRecInteractions();
                 } else if (model.appState.profilePage) {
                     // TO DO: Fill in id of profile page
                     document.getElementById('').style.display = 'inline';
                 }
-
-                // Hide TOS
-                document.getElementById('termsOfService').style.display = 'inline';
             }
 
             // Listen for Back Click
             document.getElementById('termsOfServiceBack').addEventListener('click', 
                 backToViewFromTos);
+        },
+        toggleToPp: () => {
 
-            // TO DO Check and see if more event listeners need to be added.
+            // Hide Current View
+            if (model.appState.landingPage) {
+                // TO DO: Fill in id of landing page
+                document.getElementById('').style.display = 'none';
+            } else if (model.appState.calculator) {
+                document.getElementById('pointsCalculator').style.display = 'none';
+            } else if (model.appState.resultsPage) {
+                document.getElementById('displayRecommendations').style.display = 'none';
+            } else if (model.appState.profilePage) {
+                // TO DO: Fill in id of profile page
+                document.getElementById('').style.display = 'none';
+            }
+
+            // Display TOS
+            document.getElementById('privacyPolicy').style.display = 'inline';
+
+            // Declare Return Function
+            function backToViewFromPp() {
+               
+                // Hide TOS
+                document.getElementById('privacyPolicy').style.display = 'none';
+
+                // Display Current View
+                if (model.appState.landingPage) {
+                    // TO DO: Fill in id of landing page
+                    document.getElementById('').style.display = 'inline';
+                } else if (model.appState.calculator) {
+                    document.getElementById('pointsCalculator').style.display = 
+                    'inline';
+                    model.controllers.setup();
+                } else if (model.appState.resultsPage) {
+                    document.getElementById('displayRecommendations').style.display = 
+                    'inline';
+                    model.controllers.displayRecInteractions();
+                } else if (model.appState.profilePage) {
+                    // TO DO: Fill in id of profile page
+                    document.getElementById('').style.display = 'inline';
+                }
+            }
+
+            // Listen for Back Click
+            document.getElementById('privacyPolicyBack').addEventListener('click', 
+                backToViewFromPp);
         }
     },
     cards: {
@@ -2966,6 +3013,9 @@ var model = {
                     // Adds the style attribute to the element that was clicked - Mobile
                     document.getElementById(e.target.id + 'Tab').style.display = "inline";
 
+                    // Re-jigger the clicked id to be used for Desktop view as well. This
+                    // allows user selections on both views to persist if, for whatever 
+                    // reason, the user decides to make those changes.
                     var desktop = (e.target.id).slice(0,-6) + 'Desktop';
 
                     // Adds the active class to the element that was clicked - Desktop
@@ -2974,7 +3024,6 @@ var model = {
                     // Adds the style attribute to the element that was clicked - Desktop
                     document.getElementById(desktop + 'Tab').style.display = "inline";
                 }
-
             }
 
             function toggleBetweenDetailsCategoriesDesktop (e) {
@@ -3002,6 +3051,9 @@ var model = {
                     // Adds the style attribute to the element that was clicked - Desktop
                     document.getElementById(e.target.id + 'Tab').style.display = "inline";
 
+                    // Re-jigger the clicked id to be used for Mobile view as well. This
+                    // allows user selections on both views to persist if, for whatever 
+                    // reason, the user decides to make those changes.
                     var mobile = (e.target.id).slice(0,-7) + 'Mobile';
 
                     // Adds the active class to the element that was clicked - Mobile
@@ -3037,9 +3089,16 @@ var model = {
                 toggleBetweenDetailsCategoriesMobile(e);
             });
 
-            // PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButton').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButton').addEventListener('click', model.appState.toggleToPp);
+            // PP and TOS Event Listeners Desktop/Mobile
+            document.getElementById('termsOfServiceButtonDesktop').addEventListener('click', 
+                model.appState.toggleToTos);
+            document.getElementById('termsOfServiceButtonMobile').addEventListener('click', 
+                model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonDesktop').addEventListener('click', 
+                model.appState.toggleToPp);
+            document.getElementById('privacyPolicyButtonMobile').addEventListener('click', 
+                model.appState.toggleToPp);
+
         }
     },
     tests: {
