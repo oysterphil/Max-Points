@@ -223,24 +223,24 @@
         <div class="container">
           <div class="row">
             <div class="col s12">
-              <ul id="pickCardMobile" class="tabs white" style="height: 55px !important;">
+              <ul id="pickCardMobile" class="tabs">
                 <li class="tab col s3">
-                  <a id="cardRec0" href="#" class="active">
-                    <i id="4" class="medium material-icons">credit_card</i>
+                  <a id="cardRec0" class="active">
+                    <i id="4" class="medium material-icons" style="height: 50px; width: 50px;">credit_card</i>
                   </a>
                 </li>
                 <li class="tab col s3">
-                  <a id="cardRec1" href="#">
+                  <a id="cardRec1">
                     <i id="5" class="medium material-icons">credit_card</i>
                   </a>
                 </li>
                 <li class="tab col s3">
-                  <a id="cardRec2" href="#">
+                  <a id="cardRec2">
                     <i id="6" class="medium material-icons">credit_card</i>
                   </a>
                 </li>
                 <li class="tab col s3">
-                  <a id="cardRec3" href="#">
+                  <a id="cardRec3">
                     <i id="7" class="medium material-icons">credit_card</i>
                   </a>
                 </li>
@@ -261,7 +261,7 @@
         </div>
 
         <div class="row col s12">
-          <a class="col s6 offset-s3" href="#" style="text-align: center;">Save for Later</a>
+          <a class="col s6 offset-s3" style="text-align: center;">Save for Later</a>
         </div>
 
         <div class="container">
@@ -344,106 +344,108 @@
         </div>
 
         <div class="row col s12">
-          <a class="col s6 offset-s3" href="#" style="text-align: center;">Save for Later</a>
+          <a class="col s6 offset-s3" style="text-align: center;">Save for Later</a>
         </div>
 
-        <div class="row">
-          <div class="col s12">
-            <ul id="pickCategoryMobile" class="tabs white">
-              <li class="tab"><a id="bonusAndEarningsDetailsMobile" class="tablinks active">Bonus & Earnings</a></li>
-              <li class="tab"><a id="annualFeeDetailsMobile" class="tablinks">Annual Fee</a></li>
-              <li class="tab"><a id="extraBenefitsDetailsMobile" class="tablinks">Extra Benefits</a></li>
-              <li class="tab"><a id="redemptionDetailsMobile" class="tablinks">Redemption</a></li>
-              <li class="tab"><a id="analysisDetailsMobile" class="tablinks">Analysis</a></li>
-            </ul>
-          </div>
-          <div id="bonusAndEarningsDetailsMobileTab" class="col s12 tabcontent">
-            <div class="card white">
-              <div class="card-content" style="text-align: center;">
-                {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
-                  <div class="container">
-                    <div class="row">
-                      <div class="col s3">
-                        <img src="{{icon}}">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <ul id="pickCategoryMobile" class="tabs">
+                <li class="tab"><a id="bonusAndEarningsDetailsMobile" class="tablinks active">Bonus & Earnings</a></li>
+                <li class="tab"><a id="annualFeeDetailsMobile" class="tablinks">Annual Fee</a></li>
+                <li class="tab"><a id="extraBenefitsDetailsMobile" class="tablinks">Extra Benefits</a></li>
+                <li class="tab"><a id="redemptionDetailsMobile" class="tablinks">Redemption</a></li>
+                <li class="tab"><a id="analysisDetailsMobile" class="tablinks">Analysis</a></li>
+              </ul>
+            </div>
+            <div id="bonusAndEarningsDetailsMobileTab" class="col s12 tabcontent">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <img src="{{icon}}">
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
                       </div>
-                      <div class="col s9" style="padding-top: 5px;">
-                        {{detail}}
-                      </div>
-                    </div>
-                  </div> 
-                {{/each}}
+                    </div> 
+                  {{/each}}
+                </div>
               </div>
             </div>
-          </div>
-          <div id="annualFeeDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
-            <div class="card white">
-              <div class="card-content" style="text-align: center;">
-                {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
-                  <div class="container">
-                    <div class="row">
-                      <div class="col s3">
-                        <img src="{{icon}}">
+            <div id="annualFeeDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <img src="{{icon}}">
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
                       </div>
-                      <div class="col s9" style="padding-top: 5px;">
-                        {{detail}}
-                      </div>
-                    </div>
-                  </div> 
-                {{/each}}
+                    </div> 
+                  {{/each}}
+                </div>
               </div>
             </div>
-          </div>
-          <div id="extraBenefitsDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
-            <div class="card white">
-              <div class="card-content" style="text-align: center;">
-                {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
-                  <div class="container">
-                    <div class="row">
-                      <div class="col s3">
-                        <img src="{{icon}}">
+            <div id="extraBenefitsDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <img src="{{icon}}">
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
                       </div>
-                      <div class="col s9" style="padding-top: 5px;">
-                        {{detail}}
-                      </div>
-                    </div>
-                  </div> 
-                {{/each}}
+                    </div> 
+                  {{/each}}
+                </div>
               </div>
             </div>
-          </div>
-          <div id="redemptionDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
-            <div class="card white">
-              <div class="card-content" style="text-align: center;">
-                {{#each currentDisplayRec.cardDetails.redemptionDetails}}
-                  <div class="container">
-                    <div class="row">
-                      <div class="col s3">
-                        <img src="{{icon}}">
+            <div id="redemptionDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.redemptionDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <img src="{{icon}}">
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
                       </div>
-                      <div class="col s9" style="padding-top: 5px;">
-                        {{detail}}
-                      </div>
-                    </div>
-                  </div> 
-                {{/each}}
+                    </div> 
+                  {{/each}}
+                </div>
               </div>
             </div>
-          </div>
-          <div id="analysisDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
-            <div class="card white">
-              <div class="card-content" style="text-align: center;">
-                {{#each currentDisplayRec.cardDetails.analysisDetails}}
-                  <div class="container">
-                    <div class="row">
-                      <div class="col s3">
-                        <img src="{{icon}}">
+            <div id="analysisDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.analysisDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <img src="{{icon}}">
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
                       </div>
-                      <div class="col s9" style="padding-top: 5px;">
-                        {{detail}}
-                      </div>
-                    </div>
-                  </div> 
-                {{/each}}
+                    </div> 
+                  {{/each}}
+                </div>
               </div>
             </div>
           </div>
@@ -471,9 +473,9 @@
         </div>
         <div class="footer-copyright">
           <div class="container center">
-          <a href="#">Terms of Service</a>
+          <a id="termsOfServiceButton">Terms of Service</a>
           | Max Points, LLC |
-          <a href="#">Privacy Policy</a>
+          <a id="privacyPolicyButton">Privacy Policy</a>
           </div>
         </div>
       </footer>
@@ -491,7 +493,7 @@
               {{currentDisplayRec.cardName}}
             </h5>
             <a class="col m6 offset-m3 waves-effect waves-light btn" href="{{affiliateLink}}">Apply Now</a>
-            <a class="col m6 offset-m3" href="#" style="text-align: center;">Save for Later</a>
+            <a class="col m6 offset-m3" style="text-align: center;">Save for Later</a>
           </div>
         </div>
       </header>
@@ -588,8 +590,8 @@
             </div>
              
             <div class="row">
-              <div class="col s12">
-                <ul id="pickCategoryDesktop" class="tabs white">
+              <div class="col s12" style="margin-bottom: 0px !important;">
+                <ul id="pickCategoryDesktop" class="tabs">
                   <li class="tab"><a id="bonusAndEarningsDetailsDesktop" class="tablinks active">Bonus & Earnings</a></li>
                   <li class="tab"><a id="annualFeeDetailsDesktop" class="tablinks">Annual Fee</a></li>
                   <li class="tab"><a id="extraBenefitsDetailsDesktop" class="tablinks">Extra Benefits</a></li>
