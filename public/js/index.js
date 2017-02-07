@@ -3098,7 +3098,6 @@ var model = {
                 model.appState.toggleToPp);
             document.getElementById('privacyPolicyButtonMobile').addEventListener('click', 
                 model.appState.toggleToPp);
-
         }
     },
     tests: {
