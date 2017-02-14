@@ -12,8 +12,114 @@
 </head>
 <body style="background-color: #0d47a1;">
 
-  <div class="section no-pad-bot" id="index-banner" style="display: inline;">
-      <div class="container" id="intakeForm">
+  <!-- Landing Page -->
+  <div id="landingPage" style="display: inline;">
+    
+    <!-- Navbar Mobile through Desktop -->
+    <div class="navbar-fixed">  
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo left">Logo</a>
+          <ul class="right">
+            <li><a class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
+            <li><a class="waves-effect waves-light btn">Register</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+
+    <!-- Splash Page --> 
+    <section class="z-depth-1" style="background-image: url(https://www.rewardexpert.com/assets/home/map-blue-6193d943c4727043b081f06d651540bc.png); padding:30px 0px 50px 0px; height: 100%; position: relative;">
+      <div class="container">
+        <div class="row center">
+          <div class="col s12">
+            <h1 style="color: #ffffff">
+              Earn more credit card points. Travel anywhere for free.
+            </h1>
+          </div>
+        </div>
+        <div class="row center" style="padding:0px 0px 30px 0px;">
+          <div class="col s12">
+            <h5 style="color: #ffffff">
+              We simplify credit card points and frequent flyer miles with a free individualized plan so that you earn more points from your everyday spending. 
+            </h5>
+          </div>
+        </div>
+        <div class="row center">
+          <div class="col s12">
+            <a class="waves-effect waves-light btn-large">
+              Start Maximizing!
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Splash Page -->
+
+    <div style="background-color: #546e7a; z-index: 1; padding: 20px 0px 1px 0px;">
+      <div class="row center-align no-margin">
+        <div class="col s4 m2 offset-m3">
+          <img src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/home/investors/GoogleVentures.png">
+        </div>
+        <div class="col s4 m2">
+          <img src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/home/investors/GoogleVentures.png">
+        </div>
+        <div class="col s4 m2">
+          <img src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/home/investors/GoogleVentures.png">
+        </div> 
+      </div>
+    </div>
+
+<section id="benefits">  
+  <div class="container">  
+    <h4 class="center-align with-subtitle">Bust the Backlog and Shadow IT</h4>
+    <h5 class="subtitle center-align">Rapidly create complex apps and workflows across your systems.</h5>
+    <div class="row three-paragraphs center-align">
+      <div class="col m4 s12">
+        <div class="row">
+          <div class="col s4 offset-s4 m6 offset-m3">
+            <img src="svg/benefits-fastest-time.svg" alt="Build fast">
+          </div>
+        </div>
+        <h5>Move Faster</h5>
+        <p>
+          Build complex automation, microservices, API connections fast and reduce integration times down from weeks into days.
+        </p>         
+      </div>
+      <div class="col m4 s12">
+        <div class="row">
+          <div class="col s4 offset-s4 m6 offset-m3">
+            <img src="svg/benefits-distributed-everything.svg" alt="Break silos">
+          </div>
+        </div>
+        <h5>Orchestrate</h5>
+        <p>
+          Break silos between teams. Give business groups the flexibility and innovation cloud services can deliver without loosing control.
+        </p>         
+      </div>
+      <div class="col m4 s12">
+        <div class="row">
+          <div class="col s4 offset-s4 m6 offset-m3">
+            <img src="svg/benefts-working-in-silos.svg" alt="Time for innovation">
+          </div>
+        </div>
+        <h5>Foster Collaboration</h5>
+        <p>
+          Eliminate reliance on integration specialists. Foster a self service philosophy and let the IT focus on business critical activities.
+        </p>         
+      </div>
+    </div>  
+  </div>
+</section>
+
+  </div>
+  <!-- End Landing Page -- >
+
+  <!-- Intake Form --> 
+  <div id="intakeForm" style="display: none;">
+    <div class="section no-pad-bot">
+      <div class="container">
         <br><br>
         <h1 class="header center orange-text">Maximize Your Points</h1>
         <h5 class="header center light-blue-text">
@@ -81,51 +187,26 @@
         <br><br>
 
       </div>
-
-      <div class="container" id="loading" style="display: none;">
-    
-        <h5 style="text-align: center;">Crunching the numbers...</h5>
-        <div class="progress">
-            <div class="indeterminate"></div>
-        </div>
-        
-      </div>
-
-      <div class="container" id="recommendationReport" style="display: none;">
-
-        <h1 style="text-align: center;">
-          Your Individual Report
-        </h1>
-        <hr style="width: 75%">
-
-        <h3 style="text-align: center;">
-          Personal Credit Card Recommendations
-        </h3>
-
-        <div class="row" id="personalRecommendations"></div>
-
-        <h3 id="showBizHeader" style="text-align: center; display: none;">
-          Business Credit Card Recommendations
-        </h3>
-
-        <div class="row" id="businessRecommendations"></div>
-
-        <div style="text-align: center;">
-
-          <h5>Send our experts your questions.</h5>
-          <button class="btn waves-effect waves-light btn-large" id="contactMe">
-            Contact Us
-            <i class="material-icons right">email</i>
-          </button>
-          <p>We respond within 24 hours :)</p>
-          
-        </div>
-
-      </div>
+    </div>
   </div>
+  <!-- End Intake Form --> 
 
+  <!-- Loading Section -->
+  <div class="container" id="loading" style="display: none;">
+
+    <h5 style="text-align: center;">Crunching the numbers...</h5>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    
+  </div>
+  <!-- End Loading Section -->
+
+  <!-- Display Recommendations --> 
   <div id="displayRecommendations" style="display: none;"></div>
+  <!-- End Display Recommendations -->
 
+  <!-- Terms of Service -->
   <div id="termsOfService" style="display: none;">
     <div class='row'>
       <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light btn-large" id="termsOfServiceBack">
@@ -141,8 +222,9 @@
       </p>
     </div>
   </div>
+  <!-- End Terms of Service -->
 
-  
+  <!-- Privacy Policy -- >
   <div id="privacyPolicy" style="display: none;">
     <div class='row'>
       <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light btn-large" id="privacyPolicyBack">
@@ -158,6 +240,7 @@
       </p>
     </div>
   </div>
+  <!-- End Privacy Policy -- >
 
   <!--  Scripts-->
   
@@ -196,7 +279,7 @@
     <!--Mobile View-->
     <div class="row hide-on-large-only">
       
-      <!--Navbar-->
+      <!-- Mobile Navbar-->
       <nav>
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo left">Logo</a>

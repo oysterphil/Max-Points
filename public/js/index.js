@@ -1,8 +1,8 @@
 // Model
 var model = { 
 	appState: {
-        landingPage: false,
-        calculator: true,
+        landingPage: true,
+        calculator: false,
         resultsPage: false,
         profilePage: false,
         toggleToTos: () => {
