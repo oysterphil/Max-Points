@@ -98,6 +98,348 @@ var model = {
                 backToViewFromPp);
         }
     },
+    destinations: {
+        selectionDesktop: null,
+        optionsDesktop: {
+            europe: [
+                {
+                    one: {
+                        destination: 'Example 1',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 2',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 3',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                },
+                {
+                    one: {
+                        destination: 'Example 4',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 5',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 6',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                }
+            ],
+            caribbean: [
+                {
+                    one: {
+                        destination: 'Example 1',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 2',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 3',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                },
+                {
+                    one: {
+                        destination: 'Example 4',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 5',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 6',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                }
+            ],
+            asia: [
+                {
+                    one: {
+                        destination: 'Example 1',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 2',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 3',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                }
+            ],
+            southAmerica: [
+                {
+                    one: {
+                        destination: 'Example 1',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 2',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 3',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                }
+            ],
+            unitedStates: [
+                {
+                    one: {
+                        destination: 'Example 1',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 2',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 3',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                }
+            ],
+            cashBackLandingPage: [
+                {
+                    one: {
+                        destination: 'Example 1',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    two: {
+                        destination: 'Example 2',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    },
+                    three: {
+                        destination: 'Example 3',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000 miles',
+                        value: '199.95'
+                    }
+                }
+            ]
+        },
+        selectionMobile: null,
+        optionsMobile: {
+            europe: [
+                {
+                    destination: 'Example 1',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 2',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 3',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }
+            ],
+            caribbean: [
+                {
+                    destination: 'Example 1',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 2',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 3',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }
+            ],
+            asia: [
+                {
+                    destination: 'Example 1',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 2',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 3',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }
+            ],
+            southAmerica: [
+                {
+                    destination: 'Example 1',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 2',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 3',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }
+            ],
+            unitedStates: [
+                {
+                    destination: 'Example 1',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 2',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 3',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }
+            ],
+            cashBackLandingPage: [
+                {
+                    destination: 'Example 1',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 2',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }, 
+                {
+                    destination: 'Example 3',
+                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                    timeframe: '2 months',
+                    points: '40,000 miles',
+                    value: '199.95'
+                }           
+            ]
+        }
+    },
     cards: {
         all: [
             {
@@ -2130,22 +2472,55 @@ var model = {
     },
     templates: {
         variables: {
-            displayRecommendationsTemplate: null
+            displayRecommendationsTemplate: null,
+            carouselGoalSliderDesktopTemplate: null,
+            carouselGoalSliderMobileTemplate: null
         },
         compile: function() {
         // Compile Display Recommendations Template
-        var displayRecommendationsTemplateSource = document.getElementById('displayRecommendationsTemplate').innerHTML;
-        model.templates.variables.displayRecommendationsTemplate = Handlebars.compile(displayRecommendationsTemplateSource);
+        var displayRecommendationsTemplateSource = 
+            document.getElementById('displayRecommendationsTemplate').innerHTML;
+        model.templates.variables.displayRecommendationsTemplate = 
+            Handlebars.compile(displayRecommendationsTemplateSource);
+
+        // Compile Carousel Goal Slider Desktop
+        var carouselGoalSliderDesktopTemplateSource = 
+            document.getElementById('carouselGoalSliderDesktopTemplate').innerHTML;
+        model.templates.variables.carouselGoalSliderDesktopTemplate = 
+            Handlebars.compile(carouselGoalSliderDesktopTemplateSource);
+
+        // Compile Carousel Goal Slider Mobile
+        var carouselGoalSliderMobileTemplateSource = 
+            document.getElementById('carouselGoalSliderMobileTemplate').innerHTML;
+        model.templates.variables.carouselGoalSliderMobileTemplate = 
+            Handlebars.compile(carouselGoalSliderMobileTemplateSource);
+
         },
         renderDisplayRecommendationsTemplate: () => {
-            var displayRecommendationsTemplateHtml = model.templates.variables.displayRecommendationsTemplate(model.cards);
-            document.getElementById('displayRecommendations').innerHTML = displayRecommendationsTemplateHtml;
+            var displayRecommendationsTemplateHtml = 
+                model.templates.variables.displayRecommendationsTemplate(model.cards);
+            document.getElementById('displayRecommendations').innerHTML = 
+                displayRecommendationsTemplateHtml;
+        },
+        renderCarouselGoalSliderDesktopTemplate: () => {
+            var carouselGoalSliderDesktopTemplateHtml = 
+                model.templates.variables.carouselGoalSliderDesktopTemplate(model.destinations);
+            document.getElementById('carouselGoalSliderDesktop').innerHTML = 
+                carouselGoalSliderDesktopTemplateHtml;
+        },
+        renderCarouselGoalSliderMobileTemplate: () => {
+            var carouselGoalSliderMobileTemplateHtml = 
+                model.templates.variables.carouselGoalSliderMobileTemplate(model.destinations);
+            document.getElementById('carouselGoalSliderMobile').innerHTML = 
+                carouselGoalSliderMobileTemplateHtml;
         }
     },
     controllers: {
         setup: () => {
 
             model.templates.compile();
+            model.templates.renderCarouselGoalSliderDesktopTemplate();
+            model.templates.renderCarouselGoalSliderMobileTemplate();
 
             // In Production:
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
