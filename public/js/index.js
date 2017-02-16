@@ -101,7 +101,7 @@ var model = {
     destinations: {
         selectionDesktop: null,
         optionsDesktop: {
-            europe: [
+            europeDesktop: [
                 {
                     one: {
                         destination: 'Example 1',
@@ -149,7 +149,7 @@ var model = {
                     }
                 }
             ],
-            caribbean: [
+            caribbeanDesktop: [
                 {
                     one: {
                         destination: 'Example 1',
@@ -197,7 +197,7 @@ var model = {
                     }
                 }
             ],
-            asia: [
+            asiaDesktop: [
                 {
                     one: {
                         destination: 'Example 1',
@@ -222,7 +222,7 @@ var model = {
                     }
                 }
             ],
-            southAmerica: [
+            southAmericaDesktop: [
                 {
                     one: {
                         destination: 'Example 1',
@@ -247,7 +247,7 @@ var model = {
                     }
                 }
             ],
-            unitedStates: [
+            unitedStatesDesktop: [
                 {
                     one: {
                         destination: 'Example 1',
@@ -272,7 +272,7 @@ var model = {
                     }
                 }
             ],
-            cashBackLandingPage: [
+            cashBackLandingPageDesktop: [
                 {
                     one: {
                         destination: 'Example 1',
@@ -300,7 +300,7 @@ var model = {
         },
         selectionMobile: null,
         optionsMobile: {
-            europe: [
+            europeMobile: [
                 {
                     destination: 'Example 1',
                     image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
@@ -323,7 +323,7 @@ var model = {
                     value: '199.95'
                 }
             ],
-            caribbean: [
+            caribbeanMobile: [
                 {
                     destination: 'Example 1',
                     image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
@@ -346,7 +346,7 @@ var model = {
                     value: '199.95'
                 }
             ],
-            asia: [
+            asiaMobile: [
                 {
                     destination: 'Example 1',
                     image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
@@ -369,7 +369,7 @@ var model = {
                     value: '199.95'
                 }
             ],
-            southAmerica: [
+            southAmericaMobile: [
                 {
                     destination: 'Example 1',
                     image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
@@ -392,7 +392,7 @@ var model = {
                     value: '199.95'
                 }
             ],
-            unitedStates: [
+            unitedStatesMobile: [
                 {
                     destination: 'Example 1',
                     image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
@@ -415,7 +415,7 @@ var model = {
                     value: '199.95'
                 }
             ],
-            cashBackLandingPage: [
+            cashBackLandingPageMobile: [
                 {
                     destination: 'Example 1',
                     image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
@@ -2519,14 +2519,97 @@ var model = {
         setup: () => {
 
             model.templates.compile();
+            model.destinations.selectionDesktop = model.destinations.optionsDesktop.europeDesktop;
+            model.destinations.selectionMobile = model.destinations.optionsMobile.europeMobile;
             model.templates.renderCarouselGoalSliderDesktopTemplate();
+            model.controllers.setupCarouselViewDesktop();
             model.templates.renderCarouselGoalSliderMobileTemplate();
+            model.controllers.setupCarouselViewMobile();
 
             // In Production:
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
 
+            $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
+            $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
+
+            function changeRewardGoalViewDesktop() {
+
+                if ($(this).val().includes('europe')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.europeDesktop;
+                } else if ($(this).val().includes('caribbean')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.caribbeanDesktop;
+                } else if ($(this).val().includes('asia')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.asiaDesktop;
+                } else if ($(this).val().includes('south')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.southAmericaDesktop;
+                } else if ($(this).val().includes('united')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.unitedStatesDesktop;
+                } else if ($(this).val().includes('cashBack')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.cashBackLandingPageDesktop;
+                }
+
+                model.templates.renderCarouselGoalSliderDesktopTemplate();
+                model.controllers.setupCarouselViewDesktop();
+            }
+
+            function changeRewardGoalViewMobile() {
+                
+                if ($(this).val().includes('europe')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.europeMobile;
+                } else if ($(this).val().includes('caribbean')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.caribbeanMobile;
+                } else if ($(this).val().includes('asia')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.asiaMobile;
+                } else if ($(this).val().includes('south')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.southAmericaMobile;
+                } else if ($(this).val().includes('united')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.unitedStatesMobile;
+                } else if ($(this).val().includes('cashBack')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.cashBackLandingPageMobile;
+                }
+
+                model.templates.renderCarouselGoalSliderMobileTemplate();
+                model.controllers.setupCarouselViewMobile();
+            }
+
             // In Test:
             // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
+        },
+        setupCarouselViewMobile: () => {
+            var carouselSlidesMobile = document.getElementsByClassName("mySlides2");
+            var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
+            console.log(carouselSlidesMobileArray.length);
+            for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
+                if (i === 0) {
+                    carouselSlidesMobileArray[i].style.display = 'block';
+                } else {
+                    carouselSlidesMobileArray[i].style.display = 'none';
+                }
+            }
+        },
+        setupCarouselViewDesktop: () => {
+            var carouselSlidesDesktop = document.getElementsByClassName("mySlides2");
+            var carouselSlidesDesktopArray = Array.from(carouselSlidesDesktop);
+            console.log(carouselSlidesDesktopArray.length);
+            for (var i = 0; i < carouselSlidesDesktopArray.length; i++) {
+                if (i === 0) {
+                    carouselSlidesDesktopArray[i].style.display = 'block';
+                } else {
+                    carouselSlidesDesktopArray[i].style.display = 'none';
+                }
+            }
         },
         createReport: () => {
             // Hide the Form

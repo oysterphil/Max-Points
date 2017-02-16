@@ -204,7 +204,7 @@
             Most popular rewards goals for:
           </h5>
           <div class="input-field col s4 offset-s4 m3">
-            <select>
+            <select id="rewardsGoalDesktopSelect">
               <option value="europeDesktop"><strong>Europe</strong></option>
               <option value="caribbeanDesktop"><strong>Caribbean</strong></option>
               <option value="asiaDesktop"><strong>Asia</strong></option>
@@ -233,7 +233,7 @@
             Most popular rewards goals for:
           </h5>
           <div class="input-field col s4 offset-s4">
-            <select>
+            <select id="rewardsGoalMobileSelect">
               <option value="europeMobile"><strong>Europe</strong></option>
               <option value="caribbeanMobile"><strong>Caribbean</strong></option>
               <option value="asiaMobile"><strong>Asia</strong></option>
@@ -277,7 +277,7 @@
     <!-- End Landing Page Footer -->
 
   </div>
-  <!-- End Landing Page -- >
+  <!-- End Landing Page -->
 
   <!-- Intake Form --> 
   <div id="intakeForm" style="display: none;">
@@ -387,7 +387,7 @@
   </div>
   <!-- End Terms of Service -->
 
-  <!-- Privacy Policy -- >
+  <!-- Privacy Policy -->
   <div id="privacyPolicy" style="display: none;">
     <div class='row'>
       <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light btn-large" id="privacyPolicyBack">
@@ -403,7 +403,7 @@
       </p>
     </div>
   </div>
-  <!-- End Privacy Policy -- >
+  <!-- End Privacy Policy -->
 
   <!--  Scripts-->
   
@@ -434,66 +434,6 @@
   <!-- Pulling in Logic -->
   <script src="js/index.js"></script>
 
-  <script type="text/javascript">
-    
-    // Screenshot Section
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1} 
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none"; 
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block"; 
-      dots[slideIndex-1].className += " active";
-    }
-    // End Screenshot Section
-
-    // Carousel Goal Slider
-    var slideIndex2 = 1;
-    showSlides2(slideIndex2);
-
-    function plusSlides2(n) {
-      showSlides2(slideIndex += n);
-    }
-
-    function currentSlide2(n) {
-      showSlides2(slideIndex = n);
-    }
-
-    function showSlides2(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides2");
-      var dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) {slideIndex = 1} 
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none"; 
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block"; 
-      dots[slideIndex-1].className += " active";
-    }
-    // End Carousel Goal Slider
-  </script>
 
   <!--Handlebars Templates-->
 
@@ -501,7 +441,7 @@
   <!-- Carousel Goal Slider Desktop -->
   <script type="text/x-handlebars-template" id="carouselGoalSliderDesktopTemplate">
     <div class="slideshow-container" style="padding: 0px 0px 50px 0px;color: white;">
-      {{#each optionsDesktop.europe}}
+      {{#each selectionDesktop}}
         <div class="mySlides2 fade">
           <div class="row center">
                 
@@ -579,7 +519,7 @@
   <!-- Carousel Goal Slider Mobile -->
   <script type="text/x-handlebars-template" id="carouselGoalSliderMobileTemplate">
     <div class="slideshow-container" style="padding: 0px 0px 50px 0px;color: white;">
-      {{#each optionsMobile.europe}}
+      {{#each selectionMobile}}
 
         <div class="mySlides2 fade">
           <div class="row center">
@@ -1173,6 +1113,67 @@
       </footer>
     </div>
 
+  </script>
+
+  <script type="text/javascript">
+      
+    // Screenshot Section
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1} 
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none"; 
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block"; 
+      dots[slideIndex-1].className += " active";
+    }
+    // End Screenshot Section
+
+    // Carousel Goal Slider
+    var slideIndex2 = 1;
+    showSlides2(slideIndex2);
+
+    function plusSlides2(n) {
+      showSlides2(slideIndex2 += n);
+    }
+
+    function currentSlide2(n) {
+      showSlides2(slideIndex2 = n);
+    }
+
+    function showSlides2(n) {
+      var i;
+      var slides2 = document.getElementsByClassName("mySlides2");
+      var dots2 = document.getElementsByClassName("dot2");
+      if (n > slides2.length) {slideIndex2 = 1} 
+      if (n < 1) {slideIndex2 = slides2.length}
+      for (i = 0; i < slides2.length; i++) {
+          slides2[i].style.display = "none"; 
+      }
+      for (i = 0; i < dots2.length; i++) {
+          dots2[i].className = dots2[i].className.replace(" active", "");
+      }
+      slides2[slideIndex2-1].style.display = "block"; 
+      dots2[slideIndex2-1].className += " active";
+    }
+    // End Carousel Goal Slider
   </script>
 
   </body>
