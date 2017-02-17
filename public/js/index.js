@@ -104,11 +104,14 @@ var model = {
             europeDesktop: [
                 {
                     one: {
-                        destination: 'Example 1',
+                        city: 'CITY',
+                        country: 'COUNTRY',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
-                        points: '40,000 miles',
-                        value: '199.95'
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fee'
                     },
                     two: {
                         destination: 'Example 2',
