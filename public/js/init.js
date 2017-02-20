@@ -1,5 +1,17 @@
 (function($){
   $(function(){
+	var options = [
+		{selector: '#scrollFireIcon1', offset: 100, callback: function(el) {
+			Materialize.fadeInImage($(el));
+		} },
+		{selector: '#scrollFireIcon2', offset: 100, callback: function(el) {
+			Materialize.fadeInImage($(el));
+		} },
+		{selector: '#scrollFireIcon3', offset: 100, callback: function(el) {
+			Materialize.fadeInImage($(el));
+		} }
+	];
+	Materialize.scrollFire(options);
     $('.carousel.carousel-slider').carousel({fullWidth: true});
     $('.button-collapse').sideNav();
 	$('input.autocomplete').autocomplete({
