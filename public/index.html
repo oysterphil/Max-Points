@@ -11,10 +11,10 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="LivIconsEvo/css/LivIconsEvo.css" rel="stylesheet">
 </head>
-<body style="background-color: #0d47a1;">
+<body style="background-color: #90caf9;">
 
   <!-- Landing Page -->
-  <div id="landingPage" style="display: inline;">
+  <div id="landingPage" style="display: none;">
     
     <!-- Navbar Mobile, Tablet, and Desktop -->
     <div class="navbar-fixed">  
@@ -138,7 +138,7 @@
             <h3>
               Ask Our Experts
             </h3>
-            <p>
+            <p style="font-size: 18px;">
               Receive unlimited, free advice from our experts anytime. If you are deciding on which cards would increase your points, whether cash back or miles makes the most sense for you or trying to redeem miles for flights, we are here to help. 
             </p>
           </div>
@@ -217,7 +217,7 @@
                 <div id="scrollFireIcon1" class="livicon-evo" data-options="name: touch.svg; size: 120px; style: original; tryToSharpen: true" style="opacity: 0"></div>
               </div>
             </div>
-            <h5>Customize</h5>
+            <h5><b>Customize</b></h5>
             <p>
               In 30 seconds, choose your goals and tell us what cards you use.
             </p>         
@@ -337,16 +337,72 @@
   <!-- End Landing Page -->
 
   <!-- Intake Form --> 
-  <div id="intakeForm" style="display: none;">
+  <div id="intakeForm" style="display: inline;">
+    
+    <!-- Navbar Mobile, Tablet, and Desktop -->
+    <div class="navbar-fixed">  
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo left">Logo</a>
+          <ul class="right">
+            <li><a class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
+            <li><a class="waves-effect waves-light btn">Register</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
         <h1 class="header center orange-text">Maximize Your Points</h1>
         <h5 class="header center light-blue-text">
           You're 1 minute away from your free individualized credit card points report.
         </h5>
         <div class="col s12">  
-          <div class="row center">
+          <div class="row">
+            <div class="col s12 m12" style="background-color: white; border-radius: 5px; margin-bottom: 20px;">
+              <div class="col s12 m3" style="margin-left: 20px;">
+                <div class="livicon-evo" data-options="name: touch.svg; size: 120px; style: original; tryToSharpen: true"></div>
+              </div>
+              <h5 class="col s12 m6" style="margin-top: 45px;">
+                What’s your rewards goal?
+              </h5>
+              <div class="col s12 m2 collection center" style="margin-top: 17px;">
+                <a class="collection-item">Yes</a>
+                <a class="collection-item">No</a>
+              </div>
+            </div>
+            <div class="col s12 m12" style="background-color: white; border-radius: 5px; margin-bottom: 20px;">
+              <div class="col s12 m3" style="margin-left: 20px;">
+                <div class="livicon-evo" data-options="name: briefcase.svg; size: 120px; style: original; tryToSharpen: true"></div>
+              </div>
+              <h5 class="col s12 m6" style="margin-top: 45px;">
+                Do you own a business?
+              </h5>
+              <div class="col s12 m2 collection center" style="margin-top: 17px;">
+                <a class="collection-item">Yes</a>
+                <a class="collection-item">No</a>
+              </div>
+            </div>
+            <div class="col s12 m12" style="background-color: white; border-radius: 5px; margin-bottom: 20px;">
+              <div class="row">
+              <div class="col s12 m4 offset-m2">
+                <div class="livicon-evo" data-options="name: dashboard.svg; size: 120px; style: original; tryToSharpen: true"></div>
+              </div>
+              <h5 class="col s12 m6" style="margin-top: 60px;">
+                How's your credit score?
+              </h5>
+              </div>
+              <div class="row center">
+                <div class="container">
+                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 1</a>
+                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 2</a>
+                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 3</a>
+                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 4</a>
+                </div>
+              </div>
+            </div>
             <div class="input-field col s12 m6">
               <select id="ownBusiness">
                 <option value="" disabled selected>Do you own a business?</option>
