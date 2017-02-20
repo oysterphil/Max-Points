@@ -9,8 +9,7 @@ var model = {
 
             // Hide Current View
             if (model.appState.landingPage) {
-                // TO DO: Fill in id of landing page
-                document.getElementById('').style.display = 'none';
+                document.getElementById('landingPage').style.display = 'none';
             } else if (model.appState.calculator) {
                 document.getElementById('pointsCalculator').style.display = 'none';
             } else if (model.appState.resultsPage) {
@@ -31,8 +30,7 @@ var model = {
 
                 // Display Current View
                 if (model.appState.landingPage) {
-                    // TO DO: Fill in id of landing page
-                    document.getElementById('').style.display = 'inline';
+                    document.getElementById('landingPage').style.display = 'inline';
                 } else if (model.appState.calculator) {
                     document.getElementById('pointsCalculator').style.display = 
                     'inline';
@@ -55,8 +53,7 @@ var model = {
 
             // Hide Current View
             if (model.appState.landingPage) {
-                // TO DO: Fill in id of landing page
-                document.getElementById('').style.display = 'none';
+                document.getElementById('landingPage').style.display = 'none';
             } else if (model.appState.calculator) {
                 document.getElementById('pointsCalculator').style.display = 'none';
             } else if (model.appState.resultsPage) {
@@ -77,8 +74,7 @@ var model = {
 
                 // Display Current View
                 if (model.appState.landingPage) {
-                    // TO DO: Fill in id of landing page
-                    document.getElementById('').style.display = 'inline';
+                    document.getElementById('landingPage').style.display = 'inline';
                 } else if (model.appState.calculator) {
                     document.getElementById('pointsCalculator').style.display = 
                     'inline';
@@ -96,6 +92,12 @@ var model = {
             // Listen for Back Click
             document.getElementById('privacyPolicyBack').addEventListener('click', 
                 backToViewFromPp);
+        },
+        toCalculator: () => {
+            model.appState.landingPage = false;
+            model.appState.calculator = true;
+            document.getElementById('landingPage').style.display = "none";
+            document.getElementById('intakeForm').style.display = "inline";
         }
     },
     destinations: {
@@ -2555,6 +2557,8 @@ var model = {
 
             // In Production:
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
+            document.getElementById('termsOfServiceButtonMobileLp').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonMobileLp').addEventListener('click', model.appState.toggleToPp);
 
             $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
             $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
