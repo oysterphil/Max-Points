@@ -107,8 +107,8 @@
     </div>
     <!-- End Media Coverage -->
 
-    <!-- Screenshot Section -->
-    <div class="slideshow-container" style="padding: 50px 0px 50px 0px;color: white;">
+    <!-- Screenshot Section Desktop -->
+    <div class="slideshow-container hide-on-small-only hide-on-med-only" style="padding: 50px 0px 50px 0px;color: white;">
       <div class="mySlides fade">
         <div class="row">
           <div class="col s8 offset-s2 m4 offset-m1">
@@ -134,10 +134,10 @@
           <div class="col s8 offset-s2 m4 offset-m1">
             <img src="https://www.rewardexpert.com/assets/home/screen3-a73248480087041966d338569ca90799.png" width="100%">
           </div>
-          <div class="col s8 offset-s2 m5 offset-m1" style="padding-top: 40px;">
-            <h5>
+          <div class="col s8 offset-s2 m5 offset-m1" style="padding-top: 10px;">
+            <h3>
               Ask Our Experts
-            </h5>
+            </h3>
             <p>
               Receive unlimited, free advice from our experts anytime. If you are deciding on which cards would increase your points, whether cash back or miles makes the most sense for you or trying to redeem miles for flights, we are here to help. 
             </p>
@@ -153,7 +153,59 @@
         <span class="dot" onclick="currentSlide(2)"></span> 
       </div>
     </div>
-    <!-- End Screenshot Section -->
+    <!-- End Screenshot Section Desktop -->
+
+    <!-- Screenshot Section Mobile -->
+    <div class="slideshow-container hide-on-large-only" style="padding: 50px 0px 50px 0px;color: white;">
+      <div class="mySlides3 fade">
+        <div class="row">
+          <div class="col s8 offset-s2 m4 offset-m1">
+            <img src="https://www.rewardexpert.com/assets/home/screen2-c0fa5d698f4310d11d25f8516c9ad9bd.png" width="100%">
+          </div>
+          <div class="col s8 offset-s2 m5 offset-m1 center" style="padding-top: 10px;">
+            <h5>
+              <strong>
+                Your Individualized Plan
+              </strong>
+            </h5>
+            <p style="font-size: 18px;">
+              This is where you will view how you are currently earning points and what option we would recommend to increase your points while spending the same each month. 
+              <br><br>
+              <strong>
+                On average we increase points by 82%.
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides3 fade">
+        <div class="row" style="padding: 0px 30px 0px 30px;">
+          <div class="col s8 offset-s2 m4 offset-m1">
+            <img src="https://www.rewardexpert.com/assets/home/screen3-a73248480087041966d338569ca90799.png" width="100%">
+          </div>
+          <div class="col s8 offset-s2 m5 offset-m1 center" style="padding-top: 10px;">
+            <h5>
+              <strong>
+                Ask Our Experts
+              </strong>
+            </h5>
+            <p>
+              Receive unlimited, free advice from our experts anytime. If you are deciding on which cards would increase your points, whether cash back or miles makes the most sense for you or trying to redeem miles for flights, we are here to help. 
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a class="prev3" onclick="plusSlides3(-1)">&#10094;</a>
+      <a class="next3" onclick="plusSlides3(1)">&#10095;</a>
+
+      <div style="text-align:center; padding-bottom: 15">
+        <span class="dot3" onclick="currentSlide3(1)"></span> 
+        <span class="dot3" onclick="currentSlide3(2)"></span> 
+      </div>
+    </div>
+    <!-- End Screenshot Section Mobile -->
 
     <!-- How it works Section -->
     <section id="howItWorks" style="background-color: #ffffff; padding:50px 0px 30px 0px;">  
@@ -1151,7 +1203,7 @@
 
   <script type="text/javascript">
       
-    // Screenshot Section
+    // Screenshot Section Desktop
     var slideIndex = 1;
     showSlides(slideIndex);
 
@@ -1178,7 +1230,36 @@
       slides[slideIndex-1].style.display = "block"; 
       dots[slideIndex-1].className += " active";
     }
-    // End Screenshot Section
+    // End Screenshot Section Desktop
+
+    // Screenshot Section Mobile
+    var slideIndex3 = 1;
+    showSlides3(slideIndex3);
+
+    function plusSlides3(n) {
+      showSlides3(slideIndex3 += n);
+    }
+
+    function currentSlide3(n) {
+      showSlides3(slideIndex3 = n);
+    }
+
+    function showSlides3(n) {
+      var i;
+      var slides3 = document.getElementsByClassName("mySlides3");
+      var dots3 = document.getElementsByClassName("dot3");
+      if (n > slides3.length) {slideIndex3 = 1} 
+      if (n < 1) {slideIndex3 = slides3.length}
+      for (i = 0; i < slides3.length; i++) {
+          slides3[i].style.display = "none"; 
+      }
+      for (i = 0; i < dots3.length; i++) {
+          dots3[i].className = dots3[i].className.replace(" active", "");
+      }
+      slides3[slideIndex3-1].style.display = "block"; 
+      dots3[slideIndex3-1].className += " active";
+    }
+    // End Screenshot Section Mobile
 
     // Carousel Goal Slider
     var slideIndex2 = 1;
