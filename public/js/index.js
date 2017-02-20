@@ -111,44 +111,59 @@ var model = {
                         points: '40,000',
                         pointsUnit: 'miles',
                         value: '199.95',
-                        valueUnits: 'estimated fee'
+                        valueUnits: 'estimated fees'
                     },
                     two: {
-                        destination: 'Example 2',
+                        city: 'CITY',
+                        country: 'COUNTRY',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
-                        points: '40,000 miles',
-                        value: '199.95'
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                     },
                     three: {
-                        destination: 'Example 3',
+                        city: 'CITY',
+                        country: 'COUNTRY',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
-                        points: '40,000 miles',
-                        value: '199.95'
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                     }
                 },
                 {
                     one: {
-                        destination: 'Example 4',
+                        city: 'CITY',
+                        country: 'COUNTRY',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
-                        points: '40,000 miles',
-                        value: '199.95'
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                     },
                     two: {
-                        destination: 'Example 5',
+                        city: 'CITY',
+                        country: 'COUNTRY',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
-                        points: '40,000 miles',
-                        value: '199.95'
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                     },
                     three: {
-                        destination: 'Example 6',
+                        city: 'CITY',
+                        country: 'COUNTRY',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
-                        points: '40,000 miles',
-                        value: '199.95'
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                     }
                 }
             ],
@@ -305,25 +320,34 @@ var model = {
         optionsMobile: {
             europeMobile: [
                 {
-                    destination: 'Example 1',
-                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
-                    timeframe: '2 months',
-                    points: '40,000 miles',
-                    value: '199.95'
+                        city: 'CITY',
+                        country: 'COUNTRY',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                 }, 
                 {
-                    destination: 'Example 2',
-                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
-                    timeframe: '2 months',
-                    points: '40,000 miles',
-                    value: '199.95'
+                        city: 'CITY',
+                        country: 'COUNTRY',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                 }, 
                 {
-                    destination: 'Example 3',
-                    image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
-                    timeframe: '2 months',
-                    points: '40,000 miles',
-                    value: '199.95'
+                        city: 'CITY',
+                        country: 'COUNTRY',
+                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        timeframe: '2 months',
+                        points: '40,000',
+                        pointsUnit: 'miles',
+                        value: '199.95',
+                        valueUnits: 'estimated fees'
                 }
             ],
             caribbeanMobile: [
@@ -2591,7 +2615,7 @@ var model = {
             // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
         },
         setupCarouselViewMobile: () => {
-            var carouselSlidesMobile = document.getElementsByClassName("mySlides2");
+            var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
             var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
             console.log(carouselSlidesMobileArray.length);
             for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
