@@ -271,6 +271,10 @@
       <!-- End Select Rewards Goal Desktop -->
 
       <!-- Slider Desktop -->
+      <div style="text-align:center; padding-bottom: 15">
+        <span class="dot2" onclick="currentSlide2(1)"></span> 
+        <span class="dot2" onclick="currentSlide2(2)"></span> 
+      </div>
       <div id="carouselGoalSliderDesktop"></div>
       <!-- End Slider Desktop -->
 
@@ -321,9 +325,9 @@
       </div>
       <div class="footer-copyright">
         <div class="container center">
-        <a id="termsOfServiceButtonMobile">Terms of Service</a>
+        <a id="termsOfServiceButtonMobileLp">Terms of Service</a>
         | Max Points, LLC |
-        <a id="privacyPolicyButtonMobile">Privacy Policy</a>
+        <a id="privacyPolicyButtonMobileLp">Privacy Policy</a>
         </div>
       </div>
     </footer>
@@ -632,10 +636,6 @@
       <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
       <a class="next2" onclick="plusSlides2(1)">&#10095;</a>
 
-      <div style="text-align:center; padding-bottom: 15">
-        <span class="dot2" onclick="currentSlide2(1)"></span> 
-        <span class="dot2" onclick="currentSlide2(2)"></span> 
-      </div>
     </div>
   </script>
 
@@ -1255,10 +1255,16 @@
 
   </script>
 
+  <!-- Slider Logic Desktop/Mobile -->
   <script type="text/javascript">
       
-    // Screenshot Section Desktop
+    // Declare slideIndex Variables BEFORE Handlebars messes it up!
     var slideIndex = 1;
+    var slideIndex2 = 1;
+    var slideIndex3 = 1;
+    var slideIndex4 = 1;
+
+    // Screenshot Section Desktop
     showSlides(slideIndex);
 
     function plusSlides(n) {
@@ -1287,7 +1293,6 @@
     // End Screenshot Section Desktop
 
     // Screenshot Section Mobile
-    var slideIndex3 = 1;
     showSlides3(slideIndex3);
 
     function plusSlides3(n) {
@@ -1316,7 +1321,6 @@
     // End Screenshot Section Mobile
 
     // Carousel Goal Slider Desktop
-    var slideIndex2 = 1;
     showSlides2(slideIndex2);
 
     function plusSlides2(n) {
@@ -1345,7 +1349,6 @@
     // End Carousel Goal Slider Desktop
 
     // Carousel Goal Slider Mobile
-    var slideIndex4 = 1;
     showSlides4(slideIndex4);
 
     function plusSlides4(n) {
@@ -1355,20 +1358,16 @@
     function showSlides4(n) {
       var i;
       var slides4 = document.getElementsByClassName("mySlides4");
-      var dots4 = document.getElementsByClassName("dot4");
       if (n > slides4.length) {slideIndex4 = 1} 
       if (n < 1) {slideIndex4 = slides4.length}
       for (i = 0; i < slides4.length; i++) {
           slides4[i].style.display = "none"; 
       }
-      for (i = 0; i < dots4.length; i++) {
-          dots4[i].className = dots4[i].className.replace(" active", "");
-      }
       slides4[slideIndex4-1].style.display = "block"; 
-      dots4[slideIndex4-1].className += " active";
     }
     // End Carousel Goal Slider Mobile
   </script>
+  <!-- End Slider Logic Desktop/Mobile -->
 
   </body>
 </html>

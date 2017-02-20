@@ -104,8 +104,8 @@ var model = {
             europeDesktop: [
                 {
                     one: {
-                        city: 'CITY',
-                        country: 'COUNTRY',
+                        city: 'CITY1',
+                        country: 'COUNTRY1',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
                         points: '40,000',
@@ -136,8 +136,8 @@ var model = {
                 },
                 {
                     one: {
-                        city: 'CITY',
-                        country: 'COUNTRY',
+                        city: 'CITY2',
+                        country: 'COUNTRY2',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
                         points: '40,000',
@@ -320,8 +320,8 @@ var model = {
         optionsMobile: {
             europeMobile: [
                 {
-                        city: 'CITY',
-                        country: 'COUNTRY',
+                        city: 'CITY1',
+                        country: 'COUNTRY1',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
                         points: '40,000',
@@ -330,8 +330,8 @@ var model = {
                         valueUnits: 'estimated fees'
                 }, 
                 {
-                        city: 'CITY',
-                        country: 'COUNTRY',
+                        city: 'CITY2',
+                        country: 'COUNTRY2',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
                         points: '40,000',
@@ -340,8 +340,8 @@ var model = {
                         valueUnits: 'estimated fees'
                 }, 
                 {
-                        city: 'CITY',
-                        country: 'COUNTRY',
+                        city: 'CITY3',
+                        country: 'COUNTRY3',
                         image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
                         timeframe: '2 months',
                         points: '40,000',

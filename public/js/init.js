@@ -12,7 +12,6 @@
 		} }
 	];
 	Materialize.scrollFire(options);
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
     $('.button-collapse').sideNav();
 	$('input.autocomplete').autocomplete({
 		data: {
