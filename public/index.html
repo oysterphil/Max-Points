@@ -353,117 +353,227 @@
     </div>
     <!-- End Navbar -->
 
+    <!-- Intake Form Desktop -->
     <div class="section no-pad-bot">
       <div class="container">
-        <h1 class="header center orange-text">Maximize Your Points</h1>
-        <h5 class="header center light-blue-text">
-          You're 1 minute away from your free individualized credit card points report.
-        </h5>
-        <div class="col s12">  
-          <div class="row">
-            <div class="col s12 m12" style="background-color: white; border-radius: 5px; margin-bottom: 20px;">
-              <div class="col s12 m3" style="margin-left: 20px;">
-                <div class="livicon-evo" data-options="name: touch.svg; size: 120px; style: original; tryToSharpen: true"></div>
-              </div>
-              <h5 class="col s12 m6" style="margin-top: 45px;">
-                What’s your rewards goal?
-              </h5>
-              <div class="col s12 m2 collection center" style="margin-top: 17px;">
-                <a class="collection-item">Yes</a>
-                <a class="collection-item">No</a>
-              </div>
-            </div>
-            <div class="col s12 m12" style="background-color: white; border-radius: 5px; margin-bottom: 20px;">
-              <div class="col s12 m3" style="margin-left: 20px;">
-                <div class="livicon-evo" data-options="name: briefcase.svg; size: 120px; style: original; tryToSharpen: true"></div>
-              </div>
-              <h5 class="col s12 m6" style="margin-top: 45px;">
-                Do you own a business?
-              </h5>
-              <div class="col s12 m2 collection center" style="margin-top: 17px;">
-                <a class="collection-item">Yes</a>
-                <a class="collection-item">No</a>
-              </div>
-            </div>
-            <div class="col s12 m12" style="background-color: white; border-radius: 5px; margin-bottom: 20px;">
-              <div class="row">
-              <div class="col s12 m4 offset-m2">
-                <div class="livicon-evo" data-options="name: dashboard.svg; size: 120px; style: original; tryToSharpen: true"></div>
-              </div>
-              <h5 class="col s12 m6" style="margin-top: 60px;">
-                How's your credit score?
-              </h5>
-              </div>
-              <div class="row center">
-                <div class="container">
-                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 1</a>
-                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 2</a>
-                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 3</a>
-                <a class="col s6 m3 waves-effect waves-teal btn-flat">Option 4</a>
+        <h2 class="header center">
+          Tell us a little bit about your goals.
+        </h2>
+        <div class="row"> 
+
+          <!-- Rewards goal --> 
+          <div class="col m10 offset-m1">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="col m2">
+                    <div class="livicon-evo" data-options="name: touch.svg; size: 120px; style: original; tryToSharpen: true"></div>
+                  </div>
+                  <h5 class="col m6" style="margin-top: 45px; margin-left: 50px;">
+                    What’s your rewards goal?
+                  </h5>
+                  <div class="col m3 collection center" style="margin-top: 17px;">
+                    <a class="collection-item">
+                      Free Flights
+                    </a>
+                    <a class="collection-item">
+                      Cash Back
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="input-field col s12 m6">
-              <select id="ownBusiness">
-                <option value="" disabled selected>Do you own a business?</option>
-                <option value="yesOwnBusiness">Yes</option>
-                <option value="noOwnBusiness">No</option>
-              </select>
-            </div>
-            <div class="input-field col s12 m6">
-              <select id="rewardsGoal">
-                <option value="" disabled selected>Choose your Rewards Goal</option>
-                <option value="freeFlights">Free Flights</option>
-                <option value="cashBack">Cash Back</option>
-              </select>
-            </div>
-            <div class="input-field col s12 m6">
-              <select id="creditScore">
-                <option value="" disabled selected>My credit score is:</option>
-                <option value="excellentCredit">Excellent (720+)</option>
-                <option value="goodCredit">Good (690-719)</option>
-                <option value="fairCredit">Fair (640-689)</option>
-                <option value="poorCredit">Poor (350-639)</option>
-                <option value="limitedCredit">Limited or no credit history</option>
-                <option value="notSureCredit">Not Sure</option>
-              </select>
-            </div>
-            <div class="input-field col s12 m6">
-              <input placeholder="Email to send results." id="email" type="email" class="validate">
-            </div>
           </div>
-        </div>
-        <div class="col s12">
-          <div class="row center">
-            <h5>Three credit cards you use the most:</h5>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">credit_card</i>
-              <input type="text" id="card1" class="autocomplete">
-              <label for="card1">Card 1</label>
-            </div>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">credit_card</i>
-              <input type="text" id="card2" class="autocomplete">
-              <label for="card2">Card 2</label>
-            </div>
-            <div class="input-field col s12">
-              <i class="material-icons prefix">credit_card</i>
-              <input type="text" id="card3" class="autocomplete">
-              <label for="card3">Card 3</label>
-            </div>
-          </div>
-          <div class="row center">
-            <button class="btn waves-effect waves-light btn-large" id="submitForm">
-              Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-        </div>
-        
-        <br><br>
+          <!-- End Rewards goal -->
 
+          <!-- Own a Business? -->
+          <div class="col m10 offset-m1">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="col m2">
+                    <div class="livicon-evo" data-options="name: briefcase.svg; size: 120px; style: original; tryToSharpen: true"></div>
+                  </div>
+                  <h5 class="col m6" style="margin-top: 45px; margin-left: 50px;">
+                    Do you own a business?
+                  </h5>
+                  <div class="col m3 collection center" style="margin-top: 17px;">
+                    <a class="collection-item">
+                      Yes
+                    </a>
+                    <a class="collection-item">
+                      No
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End own a business -->
+
+          <!-- Credit Score? -->
+          <div class="col m10 offset-m1">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="col m3 offset-m2">
+                    <div class="livicon-evo" data-options="name: dashboard.svg; size: 120px; style: original; tryToSharpen: true"></div>
+                  </div>
+                  <h5 class="col m6" style="margin-top: 60px;">
+                    How's your credit score?
+                  </h5>
+                  <div class="row col m12 center" style="margin-top: 10px;">
+                    <a class="col m3 btn-flat">
+                      Great (700+)
+                    </a>
+                    <a class="col m3 btn-flat">
+                      Good (680-699)
+                    </a>
+                    <a class="col m3 btn-flat">
+                      Fair (640-679)
+                    </a>
+                    <a class="col m3 btn-flat">
+                      Needs Work
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Credit Score? -->
+
+          <!-- Monthly Spending? -->
+          <div class="col m10 offset-m1">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="col m3" style="margin-left: 30px;">
+                    <div class="livicon-evo" data-options="name: credit-card-out.svg; size: 120px; style: original; tryToSharpen: true"></div>
+                  </div>
+                  <h5 class="col m8" style="margin-top: 30px;">
+                    On average, how much do you spend <b>per month</b> on debit and credit cards?
+                  </h5>
+                  <div class="row col m12 center" style="margin-top: 10px;">
+                    <a class="col m2 btn-flat">
+                      $500
+                    </a>
+                    <a class="col m2 btn-flat">
+                      $1,000
+                    </a>
+                    <a class="col m2 btn-flat">
+                      $1,500
+                    </a>
+                    <a class="col m2 btn-flat">
+                      $2,000
+                    </a>
+                    <a class="col m2 btn-flat">
+                      $3,000+
+                    </a>
+                    <a class="col m2 btn-flat">
+                      Other
+                    </a>
+                  </div>
+                  <div class="row" id="otherSelection" style="display: none;">
+                    <div class="input-field col m6 offset-m3">
+                      <input id="otherSelectionInput" type="text" class="validate">
+                      <label for="otherSelectionInput">Amount:</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Monthly Spending? -->
+
+          <!-- E-mail? -->
+          <div class="col m10 offset-m1">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="col m2" style="margin-left: 15px;">
+                    <div class="livicon-evo" data-options="name: envelope-put.svg; size: 120px; style: original; tryToSharpen: true"></div>
+                  </div>
+                  <h5 class="col m5 center" style="margin-top: 32px; margin-left: 25px;">
+                    What’s the best email to send your results?
+                  </h5>
+                  <div class="col m4" style="margin-top: 15px;">
+                    <div class="input-field">
+                      <input id="email" type="email" class="validate">
+                      <label for="email" data-error="Please re-submit." data-success="Success!">Email</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End E-mail? -->
+
+          <!-- Credit Cards? -->
+          <div class="col m10 offset-m1">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div class="col m3 offset-m2">
+                    <div class="livicon-evo" data-options="name: credit-card-in.svg; size: 120px; style: original; tryToSharpen: true"></div>
+                  </div>
+                  <h5 class="col m6" style="margin-top: 60px;">
+                    What credit cards do you have?
+                  </h5>
+                  <div class="row col m12 center">
+                    <div class="input-field col m8 offset-m2 center">
+                      <input type="text" id="card1" class="autocomplete">
+                      <label for="card1">Card 1</label>
+                    </div>
+                    <div class="input-field col m8 offset-m2" style="display: none;">
+                      <i class="material-icons prefix">credit_card</i>
+                      <input type="text" id="card2" class="autocomplete">
+                      <label for="card2">Card 2</label>
+                    </div>
+                    <div class="input-field col m8 offset-m2" style="display: none;">
+                      <i class="material-icons prefix">credit_card</i>
+                      <input type="text" id="card3" class="autocomplete">
+                      <label for="card3">Card 3</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col m3 offset-m3">
+                      <button class="btn waves-effect waves-light btn" id="addAnotherCard">
+                        Add Card
+                        <i class="material-icons right">credit_card</i>
+                      </button>
+                    </div>
+                    <div class="col m3">
+                      <button class="btn waves-effect waves-light btn" id="submitForm">
+                        Submit
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Credit Cards? -->
+
+        </div>
       </div>
     </div>
+    <footer class="page-footer" id="disclaimer" style="background-color: #0d47a1; padding-top: 0px;">
+      <div class="footer-copyright">
+        <div class="row center white-text">
+          <div class="container">
+            <div class="col m6">
+              &#169; 2017 Max Points, LLC. All Rights Reserved.         
+            </div>
+            <div class="col m6">
+              <a id="termsOfServiceButtonMobile" style="color:white;">Terms of Service</a>
+              |
+              <a id="privacyPolicyButtonMobile" style="color:white;">Privacy Policy</a>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
   <!-- End Intake Form --> 
 
