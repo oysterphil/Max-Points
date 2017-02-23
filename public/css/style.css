@@ -245,16 +245,33 @@
 
 /* End Mark up for cards on Landing Page */
 
+  .collection-horizontal {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .btn-flat-horizonatal {
+    box-shadow: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color .2s;
+    vertical-align: middle;
+    height: 36px;
+    line-height: 36px;
+  }
+
 /* Destination Card Mark Up */
 
-.destinationCard {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-}
+  .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+  }
 
-/* On mouse-over, add a deeper shadow */
-.destinationCard:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
