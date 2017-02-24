@@ -2557,8 +2557,9 @@ var model = {
             model.templates.renderCarouselGoalSliderMobileTemplate();
             model.controllers.setupCarouselViewMobile();
 
-            // In Production:
+            // In Production:submitFormMobile
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.createReport);
             document.getElementById('termsOfServiceButtonLp').addEventListener('click', model.appState.toggleToTos);
             document.getElementById('privacyPolicyButtonLp').addEventListener('click', model.appState.toggleToPp);
             document.getElementById('termsOfServiceButtonCalc').addEventListener('click', model.appState.toggleToTos);
@@ -2620,25 +2621,25 @@ var model = {
                 model.controllers.setupCarouselViewMobile();
             }
 
-            // Set up Event Listeners for Collections Inputs
-            var collection = Array.from(document.getElementsByClassName("collection-item")); 
+            // Set up Event Listeners for Calculator Inputs Desktop
+            var collection = Array.from(document.getElementsByClassName("calculatorInputDesktop")); 
             for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', manageCollectionInputs, false);
+                collection[i].addEventListener('click', manageCalculatorInputsDesktop, false);
             }
 
-            // Manage Collection Inputs
-            function manageCollectionInputs() {
+            // Manage Calculator Inputs Desktop
+            function manageCalculatorInputsDesktop() {
                 const selection = this.id;
                 if (selection === "freeFlights" || 
                     selection === "cashBack") {
-                    
+
                     // Make sure to reset box inputs
                     var ids = ['cashBack', 'freeFlights'];
                     ids.forEach(function(id) {
                         $('#' +id).removeClass('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
-                    
+
                     // Add Active to selection
                     $(this).addClass('active');
 
@@ -2656,7 +2657,6 @@ var model = {
                     ids.forEach(function (id) {
                         document.getElementById(id).style.color = 'grey';
                     });
-
                 } else if (selection === "yesOwnBusiness" || 
                     selection ==='noOwnBusiness') {
 
@@ -2688,8 +2688,7 @@ var model = {
                     ids.forEach(function (id) {
                         document.getElementById(id).style.color = 'grey';
                     });
-
-                } else {
+                } else if (selection.includes('Credit')) {
                     // Make sure to reset box inputs
                     var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'poorCredit'];
                     ids.forEach(function(id) {
@@ -2714,76 +2713,215 @@ var model = {
                     ids.forEach(function (id) {
                         document.getElementById(id).style.color = 'grey';
                     });
+                } else if (selection.includes('00') || selection.includes('other')) {
+                    
+                    document.getElementById('otherSelection').style.display = 'none';
+
+                    if (selection === 'other') {
+                        // Make sure to reset box inputs
+                        var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection).style.color = 'white';
+                        document.getElementById(selection).style.backgroundColor = '#26a69a';
+
+                        // Show Other Form
+                        document.getElementById('otherSelection').style.display = 'inline';
+                    } else {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        // Make sure to reset box inputs
+                        var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection).style.color = 'white';
+                        document.getElementById(selection).style.backgroundColor = '#26a69a';
+
+                        // Remove selection from ids Array
+                        var index = ids.indexOf(selection);
+                        ids.splice(index, 1);
+
+                        // Grey out other option/s
+                        ids.forEach(function (id) {
+                            document.getElementById(id).style.color = 'grey';
+                        });
+                    }
                 }
                 console.log(model.cards.currentStatusBasedOnSelections);
             }
 
-            // Set up Event Listeners for Collections Inputs
-            var monthlySpendElements = Array.from(document.getElementsByClassName("monthlySpend")); 
-            for (var i = 0; i < monthlySpendElements.length; i++) {
-                monthlySpendElements[i].addEventListener('click', manageMonthlySpendInputs, false);
+            // Set up Event Listeners for Calculator Inputs Mobile
+            var collection = Array.from(document.getElementsByClassName("calculatorInputMobile")); 
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
             }
 
-            // Manage Monthly Spend Inputs
-            function manageMonthlySpendInputs() {
-                
+            // Manage Calculator Inputs Mobile
+            function manageCalculatorInputsMobile() {
                 // Grab Selection
-                const selection = this.id;
-                
-                document.getElementById('otherSelection').style.display = 'none';
+                var selection = this.id;
+                // Delete Mobile String from Selection
+                selection = selection.replace('Mobile', '');
 
-                if (selection === 'other') {
+                if (selection === "freeFlights" || 
+                    selection === "cashBack") {
+
                     // Make sure to reset box inputs
-                    var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                    var ids = ['cashBackMobile', 'freeFlightsMobile'];
                     ids.forEach(function(id) {
-                        document.getElementById(id).style.backgroundColor = 'white';
+                        $('#' +id).removeClass('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
-                    
+
                     // Add Active to selection
                     $(this).addClass('active');
 
-                    // Turn Selection Font White
-                    document.getElementById(selection).style.color = 'white';
-                    document.getElementById(selection).style.backgroundColor = '#26a69a';
-
-                    // Show Other Form
-                    document.getElementById('otherSelection').style.display = 'inline';
-                } else {
-                    
-                    // Log Selection to the Model
-                    model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
-                        
-                    // Make sure to reset box inputs
-                    var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).style.backgroundColor = 'white';
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-                    
-                    // Add Active to selection
-                    $(this).addClass('active');
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
 
                     // Turn Selection Font White
-                    document.getElementById(selection).style.color = 'white';
-                    document.getElementById(selection).style.backgroundColor = '#26a69a';
+                    document.getElementById(selection + 'Mobile').style.color = 'white';
 
                     // Remove selection from ids Array
-                    var index = ids.indexOf(selection);
+                    var index = ids.indexOf(selection + 'Mobile');
                     ids.splice(index, 1);
 
                     // Grey out other option/s
                     ids.forEach(function (id) {
                         document.getElementById(id).style.color = 'grey';
                     });
+                } else if (selection === "yesOwnBusiness" || 
+                    selection ==='noOwnBusiness') {
+
+                    // Make sure to reset box inputs
+                    var ids = ['yesOwnBusinessMobile', 'noOwnBusinessMobile'];
+                    ids.forEach(function(id) {
+                        $('#' +id).removeClass('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    if (selection === "yesOwnBusiness"){
+                        model.cards.currentStatusBasedOnSelections.ownBusiness = true;
+                    } else {
+                        model.cards.currentStatusBasedOnSelections.ownBusiness = false;
+                    }
+
+                    // Turn Selection Font White
+                    document.getElementById(selection + 'Mobile').style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection + 'Mobile');
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection.includes('Credit')) {
+                    // Make sure to reset box inputs
+                    var ids = ['excellentCreditMobile', 'goodCreditMobile',
+                                'fairCreditMobile', 'poorCreditMobile'];
+                    ids.forEach(function(id) {
+                        $('#' +id).removeClass('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.creditScore = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection + 'Mobile').style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection + 'Mobile');
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection.includes('00') || selection.includes('other')) {
+                    
+                    document.getElementById('otherSelectionMobile').style.display = 'none';
+
+                    if (selection === 'other') {
+                        // Make sure to reset box inputs
+                        var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
+                                    '2000Mobile', '3000+Mobile', 'otherMobile'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection + 'Mobile').style.color = 'white';
+                        document.getElementById(selection + 'Mobile').style.backgroundColor = '#26a69a';
+
+                        // Show Other Form
+                        document.getElementById('otherSelectionMobile').style.display = 'inline';
+                    } else {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        // Make sure to reset box inputs
+                        var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
+                                    '2000Mobile', '3000+Mobile', 'otherMobile'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection + 'Mobile').style.color = 'white';
+                        document.getElementById(selection + 'Mobile').style.backgroundColor = '#26a69a';
+
+                        // Remove selection from ids Array
+                        var index = ids.indexOf(selection + 'Mobile');
+                        ids.splice(index, 1);
+
+                        // Grey out other option/s
+                        ids.forEach(function (id) {
+                            document.getElementById(id).style.color = 'grey';
+                        });
+                    }
                 }
                 console.log(model.cards.currentStatusBasedOnSelections);
             }
 
-            // Add another card event listener
-            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputs, false);
+            // Add another card event listener desktop
+            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
 
-            function manageCreditCardInputs() {
+            function manageCreditCardInputsDesktop() {
                 for (var i = 1; i < 3; i++) {
                     if (model.appState.addAnotherCardCount === i) {
                         var nextCard = 'card' + (i+1) + (i+1);
@@ -2792,6 +2930,24 @@ var model = {
                         model.appState.addAnotherCardCount += 1;
                         if (model.appState.addAnotherCardCount === 3) {
                             document.getElementById('addAnotherCard').innerHTML = "Limit Reached!";
+                        }
+                        break;
+                    } 
+                }
+            }
+
+            // Add another card event listener mobile
+            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
+
+            function manageCreditCardInputsMobile() {
+                for (var i = 1; i < 3; i++) {
+                    if (model.appState.addAnotherCardCount === i) {
+                        var nextCard = 'card' + (i+1) + (i+1) + (i+1);
+                        console.log(nextCard);
+                        document.getElementById(nextCard).style.display = "inline";
+                        model.appState.addAnotherCardCount += 1;
+                        if (model.appState.addAnotherCardCount === 3) {
+                            document.getElementById('addAnotherCardMobile').innerHTML = "Limit Reached!";
                         }
                         break;
                     } 
@@ -3758,13 +3914,13 @@ var model = {
             });
 
             // PP and TOS Event Listeners Desktop/Mobile
-            document.getElementById('termsOfServiceButtonDesktop').addEventListener('click', 
+            document.getElementById('termsOfServiceButtonDesktopDisplayRecs').addEventListener('click', 
                 model.appState.toggleToTos);
-            document.getElementById('termsOfServiceButtonMobile').addEventListener('click', 
+            document.getElementById('termsOfServiceButtonMobileDisplayRecs').addEventListener('click', 
                 model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonDesktop').addEventListener('click', 
+            document.getElementById('privacyPolicyButtonDesktopDisplayRecs').addEventListener('click', 
                 model.appState.toggleToPp);
-            document.getElementById('privacyPolicyButtonMobile').addEventListener('click', 
+            document.getElementById('privacyPolicyButtonMobileDisplayRecs').addEventListener('click', 
                 model.appState.toggleToPp);
         }
     },
