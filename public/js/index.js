@@ -1941,6 +1941,7 @@ var model = {
         	ownBusiness: null,
         	creditScore: null,
     		rewardsGoal: null,
+            monthlySpend: null,
     		totalAnnualFee: null        
         },
         currentCategoriesArray: {
@@ -2615,71 +2616,166 @@ var model = {
                 model.controllers.setupCarouselViewMobile();
             }
 
-            var collection = Array.from(document.getElementsByClassName("collection-item"));
+            // Set up Event Listeners for Collections Inputs
+            var collection = Array.from(document.getElementsByClassName("collection-item")); 
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', manageCollectionInputs, false);
+            }
 
-            var manageCollectionInputs = function() {
-                console.log(this.id);
+            // Manage Collection Inputs
+            function manageCollectionInputs() {
                 const selection = this.id;
-                model.cards.
                 if (selection === "freeFlights" || 
                     selection === "cashBack") {
                     
                     // Make sure to reset box inputs
-                    $('#cashBack').removeClass('active');
-                    $('#freeFlights').removeClass('active');
-                    document.getElementById('cashBack').style.color = '#039be5';
-                    document.getElementById('freeFlights').style.color = '#039be5';
+                    var ids = ['cashBack', 'freeFlights'];
+                    ids.forEach(function(id) {
+                        $('#' +id).removeClass('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
                     
                     // Add Active to selection
                     $(this).addClass('active');
 
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
                     // Grey out other option/s
-                    if (selection === 'freeFlights') {
-                        model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
-                        document.getElementById('cashBack').style.color = 'grey';
-                        document.getElementById('freeFlights').style.color = 'white';
-                    } else {
-                        model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
-                        document.getElementById('freeFlights').style.color = 'grey';
-                        document.getElementById('cashBack').style.color = 'white';
-                    }
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
 
                 } else if (selection === "yesOwnBusiness" || 
                     selection ==='noOwnBusiness') {
 
                     // Make sure to reset box inputs
-                    $('#yesOwnBusiness').removeClass('active');
-                    $('#noOwnBusiness').removeClass('active');
-                    document.getElementById('yesOwnBusiness').style.color = '#039be5';
-                    document.getElementById('noOwnBusiness').style.color = '#039be5';
+                    var ids = ['yesOwnBusiness', 'noOwnBusiness'];
+                    ids.forEach(function(id) {
+                        $('#' +id).removeClass('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
                     
                     // Add Active to selection
                     $(this).addClass('active');
 
-                    // Grey out other option/s
-                    if (this.id === 'yesOwnBusiness') {
+                    // Log Active to the Model
+                    if (selection === "yesOwnBusiness"){
                         model.cards.currentStatusBasedOnSelections.ownBusiness = true;
-                        document.getElementById('noOwnBusiness').style.color = 'grey';
-                        document.getElementById('yesOwnBusiness').style.color = 'white';
                     } else {
                         model.cards.currentStatusBasedOnSelections.ownBusiness = false;
-                        document.getElementById('yesOwnBusiness').style.color = 'grey';
-                        document.getElementById('noOwnBusiness').style.color = 'white';
                     }
 
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+
                 } else {
-                    if 
+                    // Make sure to reset box inputs
+                    var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'poorCredit'];
+                    ids.forEach(function(id) {
+                        $('#' +id).removeClass('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.creditScore = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
                 }
-
-                console.log(this.id);
-                var attribute = this.getAttribute("id");
-            };
-
-
-
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', manageCollectionInputs, false);
+                console.log(model.cards.currentStatusBasedOnSelections);
             }
+
+            // Set up Event Listeners for Collections Inputs
+            var monthlySpendElements = Array.from(document.getElementsByClassName("monthlySpend")); 
+            for (var i = 0; i < monthlySpendElements.length; i++) {
+                monthlySpendElements[i].addEventListener('click', manageMonthlySpendInputs, false);
+            }
+
+            // Manage Monthly Spend Inputs
+            function manageMonthlySpendInputs() {
+                
+                // Grab Selection
+                const selection = this.id;
+                
+                document.getElementById('otherSelection').style.display = 'none';
+
+                if (selection === 'other') {
+                    // Make sure to reset box inputs
+                    var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).style.backgroundColor = 'white';
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+                    document.getElementById(selection).style.backgroundColor = '#26a69a';
+
+                    // Show Other Form
+                    document.getElementById('otherSelection').style.display = 'inline';
+                } else {
+                    
+                    // Log Selection to the Model
+                    model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+                        
+                    // Make sure to reset box inputs
+                    var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).style.backgroundColor = 'white';
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+                    document.getElementById(selection).style.backgroundColor = '#26a69a';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                }
+                console.log(model.cards.currentStatusBasedOnSelections);
+            }
+
 
             // In Test:
             // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
