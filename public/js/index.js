@@ -5,6 +5,7 @@ var model = {
         calculator: false,
         resultsPage: false,
         profilePage: false,
+        addAnotherCardCount: 1,
         toggleToTos: () => {
 
             // Hide Current View
@@ -97,7 +98,7 @@ var model = {
             model.appState.landingPage = false;
             model.appState.calculator = true;
             document.getElementById('landingPage').style.display = "none";
-            document.getElementById('intakeForm').style.display = "inline";
+            document.getElementById('pointsCalculator').style.display = "inline";
         }
     },
     destinations: {
@@ -2558,8 +2559,11 @@ var model = {
 
             // In Production:
             document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
-            document.getElementById('termsOfServiceButtonMobileLp').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonMobileLp').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('termsOfServiceButtonLp').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonLp').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('termsOfServiceButtonCalc').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonCalc').addEventListener('click', model.appState.toggleToPp);
+            
 
             $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
             $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
@@ -2776,6 +2780,24 @@ var model = {
                 console.log(model.cards.currentStatusBasedOnSelections);
             }
 
+            // Add another card event listener
+            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputs, false);
+
+            function manageCreditCardInputs() {
+                for (var i = 1; i < 3; i++) {
+                    if (model.appState.addAnotherCardCount === i) {
+                        var nextCard = 'card' + (i+1) + (i+1);
+                        console.log(nextCard);
+                        document.getElementById(nextCard).style.display = "inline";
+                        model.appState.addAnotherCardCount += 1;
+                        if (model.appState.addAnotherCardCount === 3) {
+                            document.getElementById('addAnotherCard').innerHTML = "Limit Reached!";
+                        }
+                        break;
+                    } 
+                }
+            }
+
 
             // In Test:
             // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
@@ -2783,7 +2805,6 @@ var model = {
         setupCarouselViewMobile: () => {
             var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
             var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
-            console.log(carouselSlidesMobileArray.length);
             for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
                 if (i === 0) {
                     carouselSlidesMobileArray[i].style.display = 'block';
@@ -2795,7 +2816,6 @@ var model = {
         setupCarouselViewDesktop: () => {
             var carouselSlidesDesktop = document.getElementsByClassName("mySlides2");
             var carouselSlidesDesktopArray = Array.from(carouselSlidesDesktop);
-            console.log(carouselSlidesDesktopArray.length);
             for (var i = 0; i < carouselSlidesDesktopArray.length; i++) {
                 if (i === 0) {
                     carouselSlidesDesktopArray[i].style.display = 'block';
@@ -2806,7 +2826,7 @@ var model = {
         },
         createReport: () => {
             // Hide the Form
-            document.getElementById('intakeForm').style.display = 'none';
+            document.getElementById('pointsCalculator').style.display = 'none';
 
             // Display the Loading Page
             document.getElementById('loading').style.display = 'inline';
@@ -2816,13 +2836,10 @@ var model = {
         },
         determineSelections: () => {
             // Log User's Inputs to the Model
-            if (document.getElementById('ownBusiness').value === 'yesOwnBusiness') {
-                model.cards.currentStatusBasedOnSelections.ownBusiness = true;
-            } else {
-                model.cards.currentStatusBasedOnSelections.ownBusiness = false;
+            var otherAmount = document.getElementById('otherSelectionInput').value;
+            if (otherAmount) {
+                model.cards.currentStatusBasedOnSelections.monthlySpend = otherAmount;
             }
-            model.cards.currentStatusBasedOnSelections.rewardsGoal = document.getElementById('rewardsGoal').value;
-            model.cards.currentStatusBasedOnSelections.creditScore = document.getElementById('creditScore').value;
             model.cards.currentStatusBasedOnSelections.email = document.getElementById('email').value;
             const card1 = document.getElementById('card1').value;
             const card2 = document.getElementById('card2').value;
