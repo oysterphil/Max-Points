@@ -93,12 +93,6 @@ var model = {
             // Listen for Back Click
             document.getElementById('privacyPolicyBack').addEventListener('click', 
                 backToViewFromPp);
-        },
-        toCalculator: () => {
-            model.appState.landingPage = false;
-            model.appState.calculator = true;
-            document.getElementById('landingPage').style.display = "none";
-            document.getElementById('pointsCalculator').style.display = "inline";
         }
     },
     destinations: {
@@ -109,7 +103,7 @@ var model = {
                     one: {
                         city: 'CITY1',
                         country: 'COUNTRY1',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -119,7 +113,7 @@ var model = {
                     two: {
                         city: 'CITY',
                         country: 'COUNTRY',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -129,7 +123,7 @@ var model = {
                     three: {
                         city: 'CITY',
                         country: 'COUNTRY',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -141,7 +135,7 @@ var model = {
                     one: {
                         city: 'CITY2',
                         country: 'COUNTRY2',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -151,7 +145,7 @@ var model = {
                     two: {
                         city: 'CITY',
                         country: 'COUNTRY',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -161,7 +155,7 @@ var model = {
                     three: {
                         city: 'CITY',
                         country: 'COUNTRY',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -325,7 +319,7 @@ var model = {
                 {
                         city: 'CITY1',
                         country: 'COUNTRY1',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -335,7 +329,7 @@ var model = {
                 {
                         city: 'CITY2',
                         country: 'COUNTRY2',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -345,7 +339,7 @@ var model = {
                 {
                         city: 'CITY3',
                         country: 'COUNTRY3',
-                        image: 'https://image.freepik.com/free-vector/sydney-buildings_23-2147522790.jpg',
+                        image: '/img/icon.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -2505,27 +2499,33 @@ var model = {
         variables: {
             displayRecommendationsTemplate: null,
             carouselGoalSliderDesktopTemplate: null,
-            carouselGoalSliderMobileTemplate: null
+            carouselGoalSliderMobileTemplate: null,
+            pointsCalculatorTemplate: null
         },
-        compile: function() {
-        // Compile Display Recommendations Template
-        var displayRecommendationsTemplateSource = 
-            document.getElementById('displayRecommendationsTemplate').innerHTML;
-        model.templates.variables.displayRecommendationsTemplate = 
-            Handlebars.compile(displayRecommendationsTemplateSource);
+        compile: () => {
+            // Compile Display Recommendations Template
+            var displayRecommendationsTemplateSource = 
+                document.getElementById('displayRecommendationsTemplate').innerHTML;
+            model.templates.variables.displayRecommendationsTemplate = 
+                Handlebars.compile(displayRecommendationsTemplateSource);
 
-        // Compile Carousel Goal Slider Desktop
-        var carouselGoalSliderDesktopTemplateSource = 
-            document.getElementById('carouselGoalSliderDesktopTemplate').innerHTML;
-        model.templates.variables.carouselGoalSliderDesktopTemplate = 
-            Handlebars.compile(carouselGoalSliderDesktopTemplateSource);
+            // Compile Carousel Goal Slider Desktop
+            var carouselGoalSliderDesktopTemplateSource = 
+                document.getElementById('carouselGoalSliderDesktopTemplate').innerHTML;
+            model.templates.variables.carouselGoalSliderDesktopTemplate = 
+                Handlebars.compile(carouselGoalSliderDesktopTemplateSource);
 
-        // Compile Carousel Goal Slider Mobile
-        var carouselGoalSliderMobileTemplateSource = 
-            document.getElementById('carouselGoalSliderMobileTemplate').innerHTML;
-        model.templates.variables.carouselGoalSliderMobileTemplate = 
-            Handlebars.compile(carouselGoalSliderMobileTemplateSource);
+            // Compile Carousel Goal Slider Mobile
+            var carouselGoalSliderMobileTemplateSource = 
+                document.getElementById('carouselGoalSliderMobileTemplate').innerHTML;
+            model.templates.variables.carouselGoalSliderMobileTemplate = 
+                Handlebars.compile(carouselGoalSliderMobileTemplateSource);
 
+            // Compile Points Calculator Template
+            var pointsCalculatorTemplateSource = 
+                document.getElementById('pointsCalculatorTemplate').innerHTML;
+            model.templates.variables.pointsCalculatorTemplate = 
+                Handlebars.compile(pointsCalculatorTemplateSource);
         },
         renderDisplayRecommendationsTemplate: () => {
             var displayRecommendationsTemplateHtml = 
@@ -2544,28 +2544,37 @@ var model = {
                 model.templates.variables.carouselGoalSliderMobileTemplate(model.destinations);
             document.getElementById('carouselGoalSliderMobile').innerHTML = 
                 carouselGoalSliderMobileTemplateHtml;
+        },
+        renderPointsCalculatorTemplate: () => {
+            var pointsCalculatorTemplateHtml = 
+                model.templates.variables.pointsCalculatorTemplate(model.cards);
+            document.getElementById('pointsCalculator').innerHTML = 
+                pointsCalculatorTemplateHtml;
         }
     },
     controllers: {
         setup: () => {
 
+            // Compile Templates
             model.templates.compile();
+
+            // Set Rewards Goal Selections for Mobile/Desktop to Europe
             model.destinations.selectionDesktop = model.destinations.optionsDesktop.europeDesktop;
             model.destinations.selectionMobile = model.destinations.optionsMobile.europeMobile;
+            
+            // Render Rewards Goal Tempalates and Establish the View for Mobile/Desktop
             model.templates.renderCarouselGoalSliderDesktopTemplate();
             model.controllers.setupCarouselViewDesktop();
             model.templates.renderCarouselGoalSliderMobileTemplate();
             model.controllers.setupCarouselViewMobile();
 
             // In Production:submitFormMobile
-            document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
-            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.createReport);
+
+            // Landing Page PP and TOS Event Listeners
             document.getElementById('termsOfServiceButtonLp').addEventListener('click', model.appState.toggleToTos);
             document.getElementById('privacyPolicyButtonLp').addEventListener('click', model.appState.toggleToPp);
-            document.getElementById('termsOfServiceButtonCalc').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonCalc').addEventListener('click', model.appState.toggleToPp);
             
-
+            // Rewards Goal Event Listeners 
             $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
             $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
 
@@ -2620,12 +2629,49 @@ var model = {
                 model.templates.renderCarouselGoalSliderMobileTemplate();
                 model.controllers.setupCarouselViewMobile();
             }
-
-            // Set up Event Listeners for Calculator Inputs Desktop
-            var collection = Array.from(document.getElementsByClassName("calculatorInputDesktop")); 
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', manageCalculatorInputsDesktop, false);
+        },
+        setupCarouselViewMobile: () => {
+            var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
+            var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
+            for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
+                if (i === 0) {
+                    carouselSlidesMobileArray[i].style.display = 'block';
+                } else {
+                    carouselSlidesMobileArray[i].style.display = 'none';
+                }
             }
+        },
+        setupCarouselViewDesktop: () => {
+            var carouselSlidesDesktop = document.getElementsByClassName("mySlides2");
+            var carouselSlidesDesktopArray = Array.from(carouselSlidesDesktop);
+            for (var i = 0; i < carouselSlidesDesktopArray.length; i++) {
+                if (i === 0) {
+                    carouselSlidesDesktopArray[i].style.display = 'block';
+                } else {
+                    carouselSlidesDesktopArray[i].style.display = 'none';
+                }
+            }
+        },
+        calculatorSetup: () => {
+            
+            // Scroll to Top
+            $('html,body').scrollTop(0);
+
+            // Change App State
+            model.appState.landingPage = false;
+            model.appState.calculator = true;
+
+            // Hide Landing Page
+            document.getElementById('landingPage').style.display = "none";
+
+            // Render Points Calculator Template 
+            model.templates.renderPointsCalculatorTemplate();
+
+            // Insert LivIcons
+            model.controllers.insertLivIconsForCalculator();
+
+            // Show Points Calculator Template
+            document.getElementById('pointsCalculator').style.display = "inline";
 
             // Manage Calculator Inputs Desktop
             function manageCalculatorInputsDesktop() {
@@ -2764,12 +2810,6 @@ var model = {
                     }
                 }
                 console.log(model.cards.currentStatusBasedOnSelections);
-            }
-
-            // Set up Event Listeners for Calculator Inputs Mobile
-            var collection = Array.from(document.getElementsByClassName("calculatorInputMobile")); 
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
             }
 
             // Manage Calculator Inputs Mobile
@@ -2918,9 +2958,7 @@ var model = {
                 console.log(model.cards.currentStatusBasedOnSelections);
             }
 
-            // Add another card event listener desktop
-            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
-
+            // Manage CC Inputs Desktop
             function manageCreditCardInputsDesktop() {
                 for (var i = 1; i < 3; i++) {
                     if (model.appState.addAnotherCardCount === i) {
@@ -2935,10 +2973,8 @@ var model = {
                     } 
                 }
             }
-
-            // Add another card event listener mobile
-            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
-
+            
+            // Manage CC Inputs Mobile
             function manageCreditCardInputsMobile() {
                 for (var i = 1; i < 3; i++) {
                     if (model.appState.addAnotherCardCount === i) {
@@ -2954,31 +2990,320 @@ var model = {
                 }
             }
 
+            // Set up Event Listeners for Calculator Inputs Desktop
+            var collection = Array.from(document.getElementsByClassName("calculatorInputDesktop")); 
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', manageCalculatorInputsDesktop, false);
+            }
 
-            // In Test:
-            // document.getElementById('test').addEventListener('click', model.controllers.createCurrentCategoriesArray);
-        },
-        setupCarouselViewMobile: () => {
-            var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
-            var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
-            for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
-                if (i === 0) {
-                    carouselSlidesMobileArray[i].style.display = 'block';
-                } else {
-                    carouselSlidesMobileArray[i].style.display = 'none';
-                }
+            // Set up Event Listeners for Calculator Inputs Mobile
+            var collection = Array.from(document.getElementsByClassName("calculatorInputMobile")); 
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
             }
-        },
-        setupCarouselViewDesktop: () => {
-            var carouselSlidesDesktop = document.getElementsByClassName("mySlides2");
-            var carouselSlidesDesktopArray = Array.from(carouselSlidesDesktop);
-            for (var i = 0; i < carouselSlidesDesktopArray.length; i++) {
-                if (i === 0) {
-                    carouselSlidesDesktopArray[i].style.display = 'block';
-                } else {
-                    carouselSlidesDesktopArray[i].style.display = 'none';
+
+            // Add another card event listener desktop
+            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
+
+            // Add another card event listener mobile
+            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
+
+            // Submit Form Event Listeners
+            document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.createReport);
+            
+            // Points Calculator PP and TOS Event Listeners
+            document.getElementById('termsOfServiceButtonCalc').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonCalc').addEventListener('click', model.appState.toggleToPp);
+
+            $('input.autocomplete').autocomplete({
+                data: {
+                    'No Credit Card': null,
+                    'American Express Blue Cash Everyday': null,
+                    'American Express Blue Cash Preferred': null,
+                    'American Express Blue Sky': null,
+                    'American Express Charles Schwabb Investor Card': null,
+                    'American Express Platinum (Personal)': null,
+                    'American Express Platinum (Business)': null,
+                    'American Express Everyday': null,
+                    'American Express Everyday Preferred': null,
+                    'American Express Simply Cash Plus Business': null,
+                    'American Express Business Gold Rewards': null,
+                    'American Express Premier Rewards Gold': null,
+                    'American Express Corporate Gold': null,
+                    'American Express Gold': null,
+                    'American Express Corporate Platinum': null,
+                    'American Express Centurion': null,
+                    'American Express Green': null,
+                    'American Express Plum': null,
+                    'American Express Hilton HHonors': null,
+                    'American Express Hilton HHonors Surpass': null,
+                    'American Express Starwood Preferred Guest Personal': null,
+                    'American Express Starwood Preferred Guest Business': null,
+                    'American Express Gold Delta SkyMiles': null,
+                    'American Express Platinum Delta SkyMiles': null,
+                    'American Express Delta Reserve': null,
+                    'Bank of America BankAmericard Cash Rewards Visa (All Versions)': null,
+                    'Bank of America BankAmericard Travel Rewards Visa': null,
+                    'Bank of America BankAmericard MasterCard': null,
+                    'Bank of America BankAmericard Rewards Visa': null,
+                    'Bank of America WorldPoints Visa or MasterCard': null,
+                    'Bank of America Alaska Airlines Visa Signature': null,
+                    'Bank of America Alaska Airlines Platinum Plus Visa': null,
+                    'Bank of America Alaska Airlines Business Visa': null,
+                    'Bank of America Virgin Atlantic World Elite MasterCard': null,
+                    'Bank of America Cash Rewards For Business MasterCard': null,
+                    'Bank of America Travel Rewards World MasterCard For Business': null,
+                    'Bank of America Hawaiian Airlines World Elite MasterCard': null,
+                    'Barclaycard Arrival Plus World Elite MasterCard': null,
+                    'Barclaycard Rewards MasterCard': null,
+                    'Barclaycard Cash Forward MasterCard': null,
+                    'Barclaycard Ring MasterCard': null,
+                    'Barclaycard Upromise By Sallie Mae World MasterCard': null,
+                    'Barclaycard Hawaiian Airlines Business MasterCard': null,
+                    'Barclaycard JetBlue Plus MasterCard': null,
+                    'Barclaycard Lufthansa Premier Miles and More MasterCard': null,
+                    'Barclaycard JetBlue MasterCard': null,
+                    'Barclaycard JetBlue Business MasterCard': null,
+                    'Barclaycard Frontier Airlines World MasterCard': null,
+                    'Capital One Quicksilver MasterCard or Visa': null,
+                    'Capital One Quicksilver One MasterCard or Visa': null,
+                    'Capital One Venture Rewards Visa': null,
+                    'Capital One Venture One Rewards Visa': null,
+                    'Capital One Platinum MasterCard': null,
+                    'Capital One Secured MasterCard': null,
+                    'Capital One Journey Student Rewards Visa': null,
+                    'Capital One Buy Power MasterCard': null,
+                    'Capital One Spark Cash Select For Business Visa': null,
+                    'Capital One Spark Miles Select For Business Visa': null,
+                    'Capital One Spark Cash For Business Visa': null,
+                    'Capital One Spark Miles For Business Visa': null,
+                    'Capital One Spark Classic For Business Visa': null,
+                    'Capital One BuyPower For Business MasterCard': null,
+                    'Capital One Cash Rewards Visa or MasterCard': null,
+                    'Capital One Platinum Visa': null,
+                    'Capital One Platinum Prestige Visa or MasterCard': null,
+                    'Capital One Spark Select For Business Visa': null,
+                    'Chase Freedom Unlimited Visa': null,
+                    'Chase Freedom Visa': null,
+                    'Chase Sapphire Preferred Visa': null,
+                    'Chase Sapphire Reserve Visa': null,
+                    'Chase Ink Plus or Bold Business Visa or MasterCard': null,
+                    'Chase Ink Cash Business Visa': null,
+                    'Chase Ink Business Preferred Visa': null,
+                    'Chase Slate Visa': null,
+                    'Chase Marriott Rewards Premier Visa': null,
+                    'Chase Marriott Rewards Premier Business Visa': null,
+                    'Chase United MileagePlus Explorer Visa': null,
+                    'Chase United MileagePlus Club Visa': null,
+                    'Chase United MileagePlus Explorer Business Visa': null,
+                    'Chase Amazon Rewards Visa': null,
+                    'Synchrony Bank Amazon Prime Rewards Store Card': null,
+                    'Chase Southwest Rapid Rewards Plus Business Visa': null,
+                    'Chase Southwest Airlines Rapid Rewards Premier Business Visa': null,
+                    'Chase Southwest Airlines Rapid Rewards Premier Visa': null,
+                    'Chase Southwest Airlines Rapid Rewards Plus Visa': null,
+                    'Chase Hyatt Visa': null,
+                    'Chase IHG Rewards Club Select MasterCard': null,
+                    'Chase Disney Rewards Visa': null,
+                    'Chase Disney Premier Visa': null,
+                    'Chase Ritz Carlton Rewards Visa': null,
+                    'Chase Marriott Rewards Premier Business Visa Signature': null,
+                    'American Express Mercedes Benz': null,
+                    'American Express Mercedes Benz Platinum': null,
+                    'Citi Double Cash MasterCard': null,
+                    'Citi Simplicity MasterCard': null,
+                    'Citi Diamond Preferred MasterCard': null,
+                    'Citi Costco Anywhere Visa': null,
+                    'Citi Costco Anywhere Business Visa': null,
+                    'Citi Thank You Prestige MasterCard': null,
+                    'Citi Thank You Premier MasterCard': null,
+                    'Citi Secured MasterCard': null,
+                    'Citi Thank You Preferred MasterCard': null,
+                    'Citi Forward MasterCard or Visa': null,
+                    'Citi American Airlines AAdvantage Executive World Elite MasterCard': null,
+                    'Citi American Airlines AAdvantage Platinum Select World Elite MasterCard': null,
+                    'Citi Business American Airlines AAdvantage Platinum Select MasterCard': null,
+                    'Barclaycard American Airlines AAdvantage Aviator Red World Elite    MasterCard': null,
+                    'Barclaycard American Airlines AAdvantage Aviator Silver World Elite MasterCard': null,
+                    'Barclaycard American Airlines AAdvantage Aviator Mastercard': null,
+                    'Barclaycard American Airlines AAdvantage Aviator Blue Mastercard': null,
+                    'Discover It': null,
+                    'Discover It Miles': null,
+                    'Discover It Secured Card': null,
+                    'Discover It Chrome': null,
+                    'Discover More': null,
+                    'Discover Business Card': null,
+                    'Wells Fargo Cash Wise Visa': null,
+                    'Wells Fargo Propel 365 By American Express': null,
+                    'Wells Fargo Platinum Visa': null,
+                    'Wells Fargo Rewards Visa': null,
+                    'Wells Fargo Propel By American Express': null,
+                    'Wells Fargo Secured Visa': null,
+                    'Wells Fargo Business VIsa': null,
+                    'Citi Hilton HHonors Visa Signature': null,
+                    'Citi Hilton HHonors Reserve Visa': null,
+                    'USAA Platinum Visa': null,
+                    'USAA Cash Rewards World MasterCard': null,
+                    'USAA Preferred Cash Rewards World MasterCard': null,
+                    'USAA Rate Advantage Platinum Visa': null,
+                    'USAA Rewards Visa or World MasterCard': null,
+                    'USAA Active Military MasterCard': null,
+                    'USAA Secured Card By American Express': null,
+                    'USAA Rewards By American Express': null,
+                    'USAA Cash Rewards By American Express': null,
+                    'TD Cash Rewards or Cash Rewards Platinum Visa': null,
+                    'TD Cash Visa': null,
+                    'TD Business Solutions Visa': null,
+                    'TD Easy Rewards Visa': null,
+                    'TD Aeroplan Visa': null,
+                    'Lowe’s Credit Card': null,
+                    'Target Credit Card': null,
+                    'Banana Republic Credit Card': null,
+                    'Walmart Credit Card': null,
+                    'Other Store Card': null,
+                    'Other No Annual Fee Card': null,
+                    'M&T Rewards Visa': null,
+                    'M&T Business Visa': null,
+                    'M&T Business Bonus Rewards Visa': null,
+                    'M&T Business Bonus Rewards Plus Visa': null,
+                    'M&T Visa Signature': null,
+                    'Suntrust Cash Rewards MasterCard': null,
+                    'Suntrust Travel Rewards MasterCard': null,
+                    'Suntrust Prime Rewards MasterCard': null,
+                    'Suntrust Business Visa or MasterCard': null,
+                    'Other Personal Bank Credit Card': null,
+                    'Other Business Bank Credit Card': null,
+                    'PNC CashBuilder Visa': null,
+                    'PNC Core Visa': null,
+                    'PNC Points Visa': null,
+                    'PNC Premier Traveler Visa Signature': null,
+                    'PNC Points Business Visa': null,
+                    'PNC Business Cash Rewards Visa Signature': null,
+                    'PNC Business Travel Rewards Visa': null,
+                    'PNC Business Visa': null,
+                    'Barclaycard Wyndham Rewards Visa Signature': null,
+                    'Barclaycard Wyndham Rewards Visa Signature (Annual Fee Version)': null,
+                    'US Bank Cash Plus Visa Signature': null,
+                    'US Bank Club Carlson Premier Rewards Visa Signature': null,
+                    'US Bank Club Carlson Rewards Visa Signature': null,
+                    'US Bank Club Carlson Rewards Visa': null,
+                    'US Bank Club Carlson Business Rewards Visa': null,
+                    'US Bank Cash Rewards Business Visa': null,
+                    'US Bank Flexperks Business Select Visa': null,
+                    'US Bank Flexperks Business Travel Rewards Visa': null,
+                    'US Bank Flexperks Travel Rewards Visa': null,
+                    'US Bank Flexperks By American Express': null,
+                    'Best Western Rewards Secured MasterCard': null,
+                    'Best Western Rewards Premier MasterCard': null,
+                    'Best Western Rewards MasterCard': null,
+                    'Best Western Rewards Business MasterCard': null,
+                    'Choice Privileges Visa Signature ': null,
+                    'JP Morgan Chase Palladium Visa Signature': null,
+                    'Chase British Airways Avios Visa Signature': null,
+                    'Bank of America Allegiant Airlines World MasterCard': null,
+                    'Bank of America Spirit Airlines World MasterCard': null,
+                    'Comenity Bank Virgin America Visa Signature': null,
+                    'Comenity Bank Virgin America Premium Visa Signature': null
                 }
-            }
+            });
+        },
+        insertLivIconsForCalculator: () => {
+            // Rewards Goal Icon Desktop
+            jQuery('#addTouch').addLiviconEvo({
+                name: 'touch.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Own a Business Icon Desktop
+            jQuery('#addBriefcase').addLiviconEvo({
+                name: 'briefcase.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Credit Score Icon Desktop
+            jQuery('#addDashboard').addLiviconEvo({
+                name: 'dashboard.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Monthly Spend Icon Desktop
+            jQuery('#addCreditCardOut').addLiviconEvo({
+                name: 'credit-card-out.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Email Icon Desktop
+            jQuery('#addEnvelopePut').addLiviconEvo({
+                name: 'envelope-put.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Current Credit Cards Icon Desktop
+            jQuery('#addCreditCardIn').addLiviconEvo({
+                name: 'credit-card-in.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Rewards Goal Icon Mobile
+            jQuery('#addTouchMobile').addLiviconEvo({
+                name: 'touch.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Own a Business Icon Mobile
+            jQuery('#addBriefcaseMobile').addLiviconEvo({
+                name: 'briefcase.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Credit Score Icon Mobile
+            jQuery('#addDashboardMobile').addLiviconEvo({
+                name: 'dashboard.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Monthly Spend Icon Mobile
+            jQuery('#addCreditCardOutMobile').addLiviconEvo({
+                name: 'credit-card-out.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Email Icon Mobile
+            jQuery('#addEnvelopePutMobile').addLiviconEvo({
+                name: 'envelope-put.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Current Credit Cards Icon Mobile
+            jQuery('#addCreditCardInMobile').addLiviconEvo({
+                name: 'credit-card-in.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
         },
         createReport: () => {
             // Hide the Form
