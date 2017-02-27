@@ -2568,8 +2568,6 @@ var model = {
             model.templates.renderCarouselGoalSliderMobileTemplate();
             model.controllers.setupCarouselViewMobile();
 
-            // In Production:submitFormMobile
-
             // Landing Page PP and TOS Event Listeners
             document.getElementById('termsOfServiceButtonLp').addEventListener('click', model.appState.toggleToTos);
             document.getElementById('privacyPolicyButtonLp').addEventListener('click', model.appState.toggleToPp);
@@ -3009,13 +3007,14 @@ var model = {
             document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
 
             // Submit Form Event Listeners
-            document.getElementById('submitForm').addEventListener('click', model.controllers.createReport);
-            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.createReport);
+            document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);
             
             // Points Calculator PP and TOS Event Listeners
             document.getElementById('termsOfServiceButtonCalc').addEventListener('click', model.appState.toggleToTos);
             document.getElementById('privacyPolicyButtonCalc').addEventListener('click', model.appState.toggleToPp);
 
+            // Add Autocomplete Functionality for Add Cards Section
             $('input.autocomplete').autocomplete({
                 data: {
                     'No Credit Card': null,
@@ -3304,6 +3303,16 @@ var model = {
                 style: 'original',
                 tryToSharpen: true
             });
+        },
+        vetPointCalcInputs: () => {
+            const m = model.cards.currentStatusBasedOnSelections;
+            if (m.email && m.ownBusiness && m.creditScore
+                && m.rewardsGoal && m.monthlySpend) {
+                model.controllers.createReport();
+            } else {
+                document.getElementById('vetPointCalcInputsDesktop').style.display = 'inline';
+                document.getElementById('vetPointCalcInputsMobile').style.display = 'inline';
+            }
         },
         createReport: () => {
             // Hide the Form
