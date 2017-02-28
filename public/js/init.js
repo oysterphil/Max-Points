@@ -9,7 +9,7 @@
 			Materialize.fadeInImage($(el));
 			$('#scrollFireIcon2').playLiviconEvo();
 		} },
-		{selector: '#scrollFireIcon3', offset: 400, callback: function(el) {
+		{selector: '#scrollFireIcon3', offset: 350, callback: function(el) {
 			Materialize.fadeInImage($(el));
 			$('#scrollFireIcon3').playLiviconEvo();
 		} }
