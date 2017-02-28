@@ -280,3 +280,12 @@
   .livicon-evo {
     margin: auto !important;
   }
+
+  a.collection-horizontal:not(.active):hover {
+    background-color: #ddd;
+  }
+
+  a.collection-horizontal.active {
+    background-color: #26a69a;
+    color: white;
+  }

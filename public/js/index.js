@@ -2569,8 +2569,10 @@ var model = {
             model.controllers.setupCarouselViewMobile();
 
             // Landing Page PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButtonLp').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonLp').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('termsOfServiceButtonLpDesktop').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonLpDesktop').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('termsOfServiceButtonLpMobile').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonLpMobile').addEventListener('click', model.appState.toggleToPp);
             
             // Rewards Goal Event Listeners 
             $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
@@ -2650,6 +2652,103 @@ var model = {
                 }
             }
         },
+        insertLivIconsForCalculator: () => {
+            // Rewards Goal Icon Desktop
+            jQuery('#addTouch').addLiviconEvo({
+                name: 'touch.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Own a Business Icon Desktop
+            jQuery('#addBriefcase').addLiviconEvo({
+                name: 'briefcase.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Credit Score Icon Desktop
+            jQuery('#addDashboard').addLiviconEvo({
+                name: 'dashboard.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Monthly Spend Icon Desktop
+            jQuery('#addCreditCardOut').addLiviconEvo({
+                name: 'credit-card-out.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Email Icon Desktop
+            jQuery('#addEnvelopePut').addLiviconEvo({
+                name: 'envelope-put.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Current Credit Cards Icon Desktop
+            jQuery('#addCreditCardIn').addLiviconEvo({
+                name: 'credit-card-in.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Rewards Goal Icon Mobile
+            jQuery('#addTouchMobile').addLiviconEvo({
+                name: 'touch.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Own a Business Icon Mobile
+            jQuery('#addBriefcaseMobile').addLiviconEvo({
+                name: 'briefcase.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Credit Score Icon Mobile
+            jQuery('#addDashboardMobile').addLiviconEvo({
+                name: 'dashboard.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Monthly Spend Icon Mobile
+            jQuery('#addCreditCardOutMobile').addLiviconEvo({
+                name: 'credit-card-out.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Email Icon Mobile
+            jQuery('#addEnvelopePutMobile').addLiviconEvo({
+                name: 'envelope-put.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Current Credit Cards Icon Mobile
+            jQuery('#addCreditCardInMobile').addLiviconEvo({
+                name: 'credit-card-in.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+        },
         calculatorSetup: () => {
             
             // Scroll to Top
@@ -2680,7 +2779,7 @@ var model = {
                     // Make sure to reset box inputs
                     var ids = ['cashBack', 'freeFlights'];
                     ids.forEach(function(id) {
-                        $('#' +id).removeClass('active');
+                        document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
 
@@ -2707,7 +2806,7 @@ var model = {
                     // Make sure to reset box inputs
                     var ids = ['yesOwnBusiness', 'noOwnBusiness'];
                     ids.forEach(function(id) {
-                        $('#' +id).removeClass('active');
+                        document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
                     
@@ -2736,7 +2835,7 @@ var model = {
                     // Make sure to reset box inputs
                     var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'poorCredit'];
                     ids.forEach(function(id) {
-                        $('#' +id).removeClass('active');
+                        document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
                     
@@ -2765,7 +2864,7 @@ var model = {
                         // Make sure to reset box inputs
                         var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
                         ids.forEach(function(id) {
-                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).classList.remove('active');
                             document.getElementById(id).style.color = '#039be5';
                         });
                         
@@ -2774,7 +2873,6 @@ var model = {
 
                         // Turn Selection Font White
                         document.getElementById(selection).style.color = 'white';
-                        document.getElementById(selection).style.backgroundColor = '#26a69a';
 
                         // Show Other Form
                         document.getElementById('otherSelection').style.display = 'inline';
@@ -2786,7 +2884,7 @@ var model = {
                         // Make sure to reset box inputs
                         var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
                         ids.forEach(function(id) {
-                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).classList.remove('active');
                             document.getElementById(id).style.color = '#039be5';
                         });
                         
@@ -2795,7 +2893,6 @@ var model = {
 
                         // Turn Selection Font White
                         document.getElementById(selection).style.color = 'white';
-                        document.getElementById(selection).style.backgroundColor = '#26a69a';
 
                         // Remove selection from ids Array
                         var index = ids.indexOf(selection);
@@ -2823,7 +2920,7 @@ var model = {
                     // Make sure to reset box inputs
                     var ids = ['cashBackMobile', 'freeFlightsMobile'];
                     ids.forEach(function(id) {
-                        $('#' +id).removeClass('active');
+                        document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
 
@@ -2850,7 +2947,7 @@ var model = {
                     // Make sure to reset box inputs
                     var ids = ['yesOwnBusinessMobile', 'noOwnBusinessMobile'];
                     ids.forEach(function(id) {
-                        $('#' +id).removeClass('active');
+                        document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
                     
@@ -2880,7 +2977,7 @@ var model = {
                     var ids = ['excellentCreditMobile', 'goodCreditMobile',
                                 'fairCreditMobile', 'poorCreditMobile'];
                     ids.forEach(function(id) {
-                        $('#' +id).removeClass('active');
+                        document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
                     });
                     
@@ -3011,8 +3108,10 @@ var model = {
             document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);
             
             // Points Calculator PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButtonCalc').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonCalc').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('termsOfServiceButtonCalcDesktop').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('termsOfServiceButtonCalcMobile').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonCalcDesktop').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('privacyPolicyButtonCalcMobile').addEventListener('click', model.appState.toggleToPp);
 
             // Add Autocomplete Functionality for Add Cards Section
             $('input.autocomplete').autocomplete({
@@ -3207,107 +3306,21 @@ var model = {
                 }
             });
         },
-        insertLivIconsForCalculator: () => {
-            // Rewards Goal Icon Desktop
-            jQuery('#addTouch').addLiviconEvo({
-                name: 'touch.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Own a Business Icon Desktop
-            jQuery('#addBriefcase').addLiviconEvo({
-                name: 'briefcase.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Credit Score Icon Desktop
-            jQuery('#addDashboard').addLiviconEvo({
-                name: 'dashboard.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Monthly Spend Icon Desktop
-            jQuery('#addCreditCardOut').addLiviconEvo({
-                name: 'credit-card-out.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Email Icon Desktop
-            jQuery('#addEnvelopePut').addLiviconEvo({
-                name: 'envelope-put.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Current Credit Cards Icon Desktop
-            jQuery('#addCreditCardIn').addLiviconEvo({
-                name: 'credit-card-in.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Rewards Goal Icon Mobile
-            jQuery('#addTouchMobile').addLiviconEvo({
-                name: 'touch.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Own a Business Icon Mobile
-            jQuery('#addBriefcaseMobile').addLiviconEvo({
-                name: 'briefcase.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Credit Score Icon Mobile
-            jQuery('#addDashboardMobile').addLiviconEvo({
-                name: 'dashboard.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Monthly Spend Icon Mobile
-            jQuery('#addCreditCardOutMobile').addLiviconEvo({
-                name: 'credit-card-out.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Email Icon Mobile
-            jQuery('#addEnvelopePutMobile').addLiviconEvo({
-                name: 'envelope-put.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Current Credit Cards Icon Mobile
-            jQuery('#addCreditCardInMobile').addLiviconEvo({
-                name: 'credit-card-in.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-        },
         vetPointCalcInputs: () => {
+            // Create Shortcut to Model
             const m = model.cards.currentStatusBasedOnSelections;
-            if (m.email && m.ownBusiness && m.creditScore
-                && m.rewardsGoal && m.monthlySpend) {
+
+            // Log E-mail Input to the Model, if filled in
+            if (document.getElementById('email').value) {
+                m.email = document.getElementById('email').value;
+            } else if (document.getElementById('emailMobile').value) {
+                m.email = document.getElementById('emailMobile').value;
+            }
+
+            // Vet inputs
+            if (m.ownBusiness !== null && m.creditScore !== null 
+                && m.rewardsGoal !== null && m.monthlySpend !== null 
+                && m.email !== null) {
                 model.controllers.createReport();
             } else {
                 document.getElementById('vetPointCalcInputsDesktop').style.display = 'inline';
@@ -3325,17 +3338,22 @@ var model = {
             model.controllers.determineSelections();
         },
         determineSelections: () => {
-            // Log User's Inputs to the Model
+            
+            // Log User's Remaining Inputs to the Model
+            
+            // Other Amount, if applicable
             var otherAmount = document.getElementById('otherSelectionInput').value;
             if (otherAmount) {
                 model.cards.currentStatusBasedOnSelections.monthlySpend = otherAmount;
             }
-            model.cards.currentStatusBasedOnSelections.email = document.getElementById('email').value;
+
+            // Current CCs, if applicable
             const card1 = document.getElementById('card1').value;
             const card2 = document.getElementById('card2').value;
             const card3 = document.getElementById('card3').value; 
             var cards = model.cards.all;
 
+            // Determine Cash Back Status for Rewards Goal Toggle on Display Recs View
             if (model.cards.currentStatusBasedOnSelections.rewardsGoal === 'cashBack') {
                 model.cards.currentStatusBasedOnSelections.cashBack = true;
             } else {
