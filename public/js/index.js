@@ -95,6 +95,152 @@ var model = {
                 backToViewFromPp);
         }
     },
+    auth: {
+        handleCreateAcctWithEmailAndPassword: () => {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Signal firstLoginEmailPass: true to Model
+            model.appState.firstLoginEmailPass = true;
+
+            model.custMeta.email = email;
+            
+            // Create Account through Firebase via Email and Password
+            const auth = firebase.auth();
+            const promise = auth.createUserWithEmailAndPassword(email,password);
+            promise.catch(e => console.log(e.message));
+        },
+        handleGoogleRegister: () => {
+            // Signal firstLoginEmailPass: false and firstLoginGoogleFacebook: true to Model.
+            model.appState.firstLoginEmailPass = false;
+            model.appState.firstLoginGoogleFacebook = true;
+
+            // Authenticate through Google
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+
+            // The signed-in user info.
+            var user = result.user;
+
+            var mystring = user.displayName;
+            var arr = mystring.split(" ", 2);
+
+            var firstName = arr[0];
+            var lastName = arr[1];
+            model.custMeta.uid = user.uid;
+            model.custMeta.email = user.email;
+            model.custMeta.firstName = firstName;
+            model.custMeta.lastName = lastName;
+
+            // Send Google Sign-up Data to Firebase
+            firebase.database().ref('custMeta/' + model.custMeta.uid).set({
+                firstName: model.custMeta.firstName,
+                lastName: model.custMeta.lastName,
+                email: model.custMeta.email
+            });
+
+            // Send App State Info to Firebase
+            firebase.database().ref('custAppState/' + model.custMeta.uid).set({
+                registerInfoComplete: model.appState.registerInfoComplete,
+                firstLoginEmailPass: model.appState.firstLoginEmailPass,
+                firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook
+            });
+
+            }).catch(function(error) {
+
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                // The email of the user's account used.
+                var email = error.email;
+
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+
+                console.log(errorMessage);
+                // ...
+            });
+        },
+        handleAuthStateChange: () => {
+            const user = firebase.auth().currentUser;
+
+            if (user) {
+              model.custMeta.uid = user.uid;
+                  // Complete Login Flow
+                  $.ajax({
+                      type: 'POST',
+                      url: 'https://27952f82.ngrok.io' + 'referralCandy/purchase',
+                      // url: 'https://young-plateau-13187.herokuapp.com/' + 'referralCandy/purchase',
+                      data: JSON.stringify({  
+                          email: email
+                      }), 
+                      success: function(data) {
+                          if (data.message === 'Success') {
+                            console.log('It worked.');
+                        // delete data.message;
+                        // sendRegisterDataToFirebase(data, email, password, firstName, lastName);
+
+                    }
+                },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+
+                  if (model.appState.firstLoginEmailPass) {
+                    // Change firstLoginEmailPass to False
+                    model.appState.firstLoginEmailPass = false;
+
+                    // Send Sign-up Data to Firebase
+                    firebase.database().ref('custMeta/' + model.custMeta.uid).set({
+                      email: model.custMeta.email
+                  }).then(function() {
+                      // Send Storage Info to Firebase
+                      firebase.database().ref('custStorage/' + model.custMeta.uid).set({
+                        storageTerm: model.calculatorInputs.monthEstimate,
+                        boxEstimate: model.calculatorInputs.boxEstimate,
+                        itemEstimate: model.calculatorInputs.itemEstimate,
+                        coupon: model.calculatorInputs.coupon,
+                        quoteValue: model.calculatorInputs.quoteValue,
+                        monthlyQuoteValue: model.calculatorInputs.monthlyQuoteValue,
+                        planEstimate: model.calculatorInputs.planEstimate,
+                        priceBoxMonth: model.calculatorInputs.priceBoxMonth,
+                        priceItemMonth: model.calculatorInputs.priceItemMonth,
+                        discount: model.calculatorInputs.discount,
+                        boxActual: null,
+                        itemActual: null
+                    }).then(function(){
+                        // Send Legal Info to Firebase
+                        firebase.database().ref('custLegal/' + model.custMeta.uid).set({
+                          acceptTerms: model.custLegal.acceptTerms
+                      }).then(function() {
+                          // Send App State Info to Firebase
+                          firebase.database().ref('custAppState/' + model.custMeta.uid).set({
+                            registerInfoComplete: model.appState.registerInfoComplete,
+                            firstLoginEmailPass: model.appState.firstLoginEmailPass,
+                            firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook,
+                            registerInfoComplete: model.appState.registerInfoComplete
+                        }).then(function() {
+                            window.location = "https://www.storganize.io/storganize-profile";
+                        });
+                    });
+                  });
+                });
+              }
+              if (model.appState.firstLoginGoogleFacebook) {
+                model.appState.firstLoginGoogleFacebook = false;
+                window.location = "https://www.storganize.io/storganize-profile";
+            }
+            } else {
+                  // No user is signed in.
+              }
+        }
+    },
     destinations: {
         selectionDesktop: null,
         optionsDesktop: {
@@ -113,7 +259,7 @@ var model = {
                     two: {
                         city: 'CITY',
                         country: 'COUNTRY',
-                        image: '/img/icon.png',
+                        image: '/img/Beirut.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
@@ -319,7 +465,7 @@ var model = {
                 {
                         city: 'CITY1',
                         country: 'COUNTRY1',
-                        image: '/img/icon.png',
+                        image: '/img/Beirut.png',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles',
