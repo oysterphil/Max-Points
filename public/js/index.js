@@ -2970,7 +2970,7 @@ var model = {
         calculatorSetup: () => {
             
             // Scroll to Top
-            $('html,body').scrollTop(0);
+            window.scrollTo(0,0);
 
             // Change App State
             model.appState.landingPage = false;
@@ -3313,22 +3313,6 @@ var model = {
                 collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
             }
 
-            // Add another card event listener desktop
-            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
-
-            // Add another card event listener mobile
-            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
-
-            // Submit Form Event Listeners
-            document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
-            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);
-            
-            // Points Calculator PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButtonCalcDesktop').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('termsOfServiceButtonCalcMobile').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonCalcDesktop').addEventListener('click', model.appState.toggleToPp);
-            document.getElementById('privacyPolicyButtonCalcMobile').addEventListener('click', model.appState.toggleToPp);
-
             // Add Autocomplete Functionality for Add Cards Section
             $('input.autocomplete').autocomplete({
                 data: {
@@ -3521,6 +3505,22 @@ var model = {
                     'Comenity Bank Virgin America Premium Visa Signature': null
                 }
             });
+
+            // Add another card event listener desktop
+            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
+
+            // Add another card event listener mobile
+            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
+
+            // Submit Form Event Listeners
+            document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);
+            
+            // Points Calculator PP and TOS Event Listeners
+            document.getElementById('termsOfServiceButtonCalcDesktop').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('termsOfServiceButtonCalcMobile').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonCalcDesktop').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('privacyPolicyButtonCalcMobile').addEventListener('click', model.appState.toggleToPp);
         },
         vetPointCalcInputs: () => {
             // Create Shortcut to Model
@@ -3567,27 +3567,19 @@ var model = {
             }
 
             // Current CCs, if applicable
-            var card1;
-            var card2;
-            var card3;
-            var card4;
-            var card5;
-            var card6;
-            var card7;
-            var card8;
-            var card9;
+
             var compiledCardValues = [card1,card2,card3,card4,card5,card6,card7,card8,card9];
 
             var checkCards = ['card1','card2','card3','card4','card5','card6','card7','card8','card9',]
             
-            checkCards.forEach(function(card) {
-                if (document.getElementById(card).value) {
-                    card1 = document.getElementById(card).value;
-                } else if (document.getElementById(card + 'Mobile').value) {
-                    card1 = document.getElementById(card + 'Mobile').value;
+            for (var i = 0; i < checkCards.length; i++) {
+                if (document.getElementById(checkCards[i]).value) {
+                    compiledCardValues[i] = document.getElementById(checkCards[i]).value;
+                } else if (document.getElementById(checkCards[i] + 'Mobile').value) {
+                    compiledCardValues[i] = document.getElementById(checkCards[i] + 'Mobile').value;
                 }
-            });
-     
+            }
+
             var cards = model.cards.all;
 
             // Determine Cash Back Status for Rewards Goal Toggle on Display Recs View
@@ -4509,7 +4501,91 @@ var model = {
                 model.appState.toggleToPp);
             document.getElementById('privacyPolicyButtonMobileDisplayRecs').addEventListener('click', 
                 model.appState.toggleToPp);
-        }
+
+            // Sign in and Register Event Listeners Desktop/Mobile
+            document.getElementById('signInRecsDesktop').addEventListener ('click', model.controllers.showLoginRec);
+            document.getElementById('signInRecsMobile').addEventListener ('click', model.controllers.showLoginRec);
+            document.getElementById('registerRecsMobile').addEventListener ('click', model.controllers.showRegisterRec);
+            document.getElementById('registerRecsMobile2').addEventListener ('click', model.controllers.showRegisterRec);
+            document.getElementById('registerRecsMobile3').addEventListener ('click', model.controllers.showRegisterRec);
+            document.getElementById('registerRecsDesktop').addEventListener ('click', model.controllers.showRegisterRec);
+            document.getElementById('registerRecsDesktop2').addEventListener ('click', model.controllers.showRegisterRec);
+
+            registerRecsDesktop2
+        },
+        showRegisterRec: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+
+            model.appState.registerBeforeRecs = true;
+            model.appState.resultsPage = false;
+           
+            document.getElementById('displayRecommendations').style.display = 'none';
+
+            window.scrollTo(0,0);
+
+            document.getElementById('preNav').style.display = 'block';
+            document.getElementById('preFooterDesktop').style.display = 'block';
+            document.getElementById('preFooterMobile').style.display = 'block';
+            document.getElementById('register').style.display = 'inline';
+
+            document.getElementById('returnToResultsFromRegister').innerHTML = "Return to results.";
+
+            document.getElementById('returnToResultsFromRegister').addEventListener('click', model.controllers.returnToResultsFromRegister);
+        },
+        returnToResultsFromRegister: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+            document.getElementById('preNav').style.display = 'none';
+            document.getElementById('preFooterDesktop').style.display = 'none';
+            document.getElementById('preFooterMobile').style.display = 'none';
+
+            window.scrollTo(0,0);
+
+            model.appState.registerBeforeRecs = false;
+            model.appState.resultsPage = true;
+           
+            document.getElementById('displayRecommendations').style.display = 'inline';
+
+            document.getElementById('register').style.display = 'none';
+        },
+        showLoginRec: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+
+
+            model.appState.signInBeforeRecs = true;
+            model.appState.resultsPage = false;
+           
+            document.getElementById('displayRecommendations').style.display = 'none';
+            
+            window.scrollTo(0,0);
+
+            document.getElementById('preNav').style.display = 'block';
+            document.getElementById('preFooterDesktop').style.display = 'block';
+            document.getElementById('preFooterMobile').style.display = 'block';
+            document.getElementById('signIn').style.display = 'inline';
+
+            document.getElementById('returnToResultsFromSignIn').innerHTML = "Return to results.";
+
+            document.getElementById('returnToResultsFromSignIn').addEventListener('click', model.controllers.returnToResultsFromSignIn);
+        },
+        returnToResultsFromSignIn: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+            document.getElementById('preNav').style.display = 'none';
+            document.getElementById('preFooterDesktop').style.display = 'none';
+            document.getElementById('preFooterMobile').style.display = 'none';
+
+            model.appState.signInBeforeRecs = false;
+            model.appState.resultsPage = true;
+
+            window.scrollTo(0,0);
+           
+            document.getElementById('displayRecommendations').style.display = 'inline';
+
+            document.getElementById('signIn').style.display = 'none';
+        },
     },
     tests: {
         testThatRecCardsAreInCardsArray: () => {
