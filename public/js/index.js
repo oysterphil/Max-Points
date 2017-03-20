@@ -10,7 +10,8 @@ var model = {
         privacyPolicy: false,
         termsOfService: false,
         addAnotherCardCount: 1,
-        firstLoginEmailPass: true,
+        firstLoginEmailPass: null,
+        firstLoginGoogleFacebook: null,
         completedCalculator: false,
         toggleToTos: () => {
 
@@ -136,6 +137,8 @@ var model = {
             document.getElementById('createAccountEmailPass').style.display = 'none';
             document.getElementById('loadingRegister').style.display = 'inline';
 
+            model.appState.firstLoginEmailPass = true;
+
             const email = document.getElementById('registerEmail').value;
             const password = document.getElementById('registerPassword').value;
 
@@ -154,19 +157,24 @@ var model = {
               document.getElementById('createAccountEmailPass').style.display = 'inline';
               document.getElementById('loadingRegister').style.display = 'none';
             } else {
-              // Create Account through Firebase via Email and Password
-              const auth = firebase.auth();
-              const promise = auth.createUserWithEmailAndPassword(email,password);
-              promise.catch(e => (
-                document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + e.message + "</span>")
-                document.getElementById('createAccountEmailPass').style.display = 'inline';
-                document.getElementById('loadingRegister').style.display = 'none';
-              );
+                // Create Account through Firebase via Email and Password
+                const auth = firebase.auth();
+                const promise = auth.createUserWithEmailAndPassword(email,password);
+                promise.catch(function(error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                  
+                    document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + errorMessage + "</span>";
+                    document.getElementById('createAccountEmailPass').style.display = 'inline';
+                    document.getElementById('loadingRegister').style.display = 'none';
+                });
             }
         },
         handleGoogleRegister: () => {
 
-            model.appState.firstLoginEmailPass = false;
+            model.appState.firstLoginEmailPass = true;
+
             // Authenticate through Google
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -237,7 +245,7 @@ var model = {
         handleLoginGoogle: () => {
             event.preventDefault();
 
-            model.appState.firstLoginEmailPass = false;
+            model.appState.firstLoginGoogleFacebook = false;
 
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -284,22 +292,29 @@ var model = {
                 // Login through Firebase via Email and Password
                 const auth = firebase.auth();
                 const promise = auth.signInWithEmailAndPassword(email, password);
-                promise.catch(e => (
-                    document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + e.message + "</span>");
+                promise.catch(function(error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                  
+                    document.getElementById('authErrorMessageSignIn').innerHTML = "<span style='color: red;'>" + errorMessage + "</span>";
                     document.getElementById('signInEmailPassword').style.display = 'inline';
                     document.getElementById('loadingSignIn').style.display = 'none';
-                );
+                });
             }
         },
         handleAuthStateChange: () => {
             const user = firebase.auth().currentUser;
+            console.log('Auth state change fired');
 
             if (user) {
-                if (model.appState.firstLoginEmailPass) {
+                if (model.appState.firstLoginEmailPass || model.appState.firstLoginGoogleFacebook) {
+                    console.log('First log in');
                     // Send App State Info to Firebase
                     firebase.database().ref('appState/' + user.uid).set({
                         completedCalculator: model.appState.completedCalculator,
-                        firstLoginEmailPass: model.appState.firstLoginEmailPass
+                        firstLoginEmailPass: model.appState.firstLoginEmailPass,
+                        firstLoginGoogleFacebook: model.appState.firstLoginEmailPass
                     });
                     
                     // Send Data to Firebase if there is data to send
@@ -338,13 +353,16 @@ var model = {
                         });
                     }
                 } else {
+                    
+                    console.log('Not first log in');
+
                     // Load Data from Firebase into the Model Locally
                     firebase.database().ref('/appState/' + user.uid).once('value').then(function(snapshot) {
 
                       var loadAppState = (snapshot.val());
 
-                      model.appState.completedCalculator = loadCustMeta.completedCalculator;
-                      model.appState.firstLoginEmailPass = loadCustMeta.firstLoginEmailPass;
+                      model.appState.completedCalculator = loadAppState.completedCalculator;
+                      model.appState.firstLoginEmailPass = loadAppState.firstLoginEmailPass;
                     
                       if (model.appState.completedCalculator) {
                         loadRestOfData();
@@ -362,13 +380,13 @@ var model = {
                             firebase.database().ref('/calculatorInputs/' + user.uid).once('value').then(function(snapshot) {
                                 var loadCalculatorInputs = (snapshot.val());
 
-                                model.cards.currentStatusBasedOnSelections.email = email;
-                                model.cards.currentStatusBasedOnSelections.ownBusiness = ownBusiness;
-                                model.cards.currentStatusBasedOnSelections.creditScore = creditScore;
-                                model.cards.currentStatusBasedOnSelections.rewardsGoal = rewardsGoal;
-                                model.cards.currentStatusBasedOnSelections.monthlySpend = monthlySpend;
-                                model.cards.currentStatusBasedOnSelections.totalAnnualFee = totalAnnualFee;
-                                model.cards.currentStatusBasedOnSelections.cashBack = cashBack;
+                                model.cards.currentStatusBasedOnSelections.email = loadCalculatorInputs.email;
+                                model.cards.currentStatusBasedOnSelections.ownBusiness = loadCalculatorInputs.ownBusiness;
+                                model.cards.currentStatusBasedOnSelections.creditScore = loadCalculatorInputs.creditScore;
+                                model.cards.currentStatusBasedOnSelections.rewardsGoal = loadCalculatorInputs.rewardsGoal;
+                                model.cards.currentStatusBasedOnSelections.monthlySpend = loadCalculatorInputs.monthlySpend;
+                                model.cards.currentStatusBasedOnSelections.totalAnnualFee = loadCalculatorInputs.totalAnnualFee;
+                                model.cards.currentStatusBasedOnSelections.cashBack = loadCalculatorInputs.cashBack;
                             }).then(function() {
                                 firebase.database().ref('/recsForUser/' + user.uid).once('value').then(function(snapshot) {
                                     var loadRecsForUser = (snapshot.val());
@@ -382,6 +400,27 @@ var model = {
             } else {
                 console.log('No one is signed in.');
             }
+        },
+        resetPassword: () => {
+          event.preventDefault();
+          var auth = firebase.auth();
+          const emailAddress = document.getElementById('forgotPasswordEmail').value;
+          auth.sendPasswordResetEmail(emailAddress).then(function() {
+            // Remove Error Message
+            document.getElementById('forgotPasswordResult').innerHTML = "";
+
+            // Place in Success Message
+            document.getElementById('forgotPasswordResult').style.color = 'green';
+            document.getElementById('forgotPasswordResult').style.border = 'solid 1 px green';
+            document.getElementById('forgotPasswordResult').style.display = 'inline';
+            document.getElementById('forgotPasswordResult').innerHTML = 
+              "<h6>Success! Check your email for the link to reset your password.</h6>";
+          }, function(error) {
+                // Display Error Message
+                document.getElementById('forgotPasswordResult').style.display = 'inline';
+                document.getElementById('forgotPasswordResult').innerHTML = 
+                "<h6>" + error.message + "</h6>";
+          });
         }
     },
     destinations: {
@@ -2922,6 +2961,10 @@ var model = {
                 model.templates.renderCarouselGoalSliderMobileTemplate();
                 model.controllers.setupCarouselViewMobile();
             }
+        },
+        closeForgotPasswordModal: () => {
+            event.preventDefault();
+            $('#forgotPasswordModal').modal('close');
         },
         showRegister: () => {
             document.getElementById('privacyPolicy').style.display = 'none';
