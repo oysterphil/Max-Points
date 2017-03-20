@@ -5,8 +5,15 @@ var model = {
         calculator: false,
         resultsPage: false,
         profilePage: false,
+        registerBeforeRecs: false,
+        signInBeforeRecs: false,
+        privacyPolicy: false,
+        termsOfService: false,
         addAnotherCardCount: 1,
         toggleToTos: () => {
+
+            model.appState.privacyPolicy = false;
+            document.getElementById('privacyPolicy').style.display = 'none';
 
             // Hide Current View
             if (model.appState.landingPage) {
@@ -15,6 +22,12 @@ var model = {
                 document.getElementById('pointsCalculator').style.display = 'none';
             } else if (model.appState.resultsPage) {
                 document.getElementById('displayRecommendations').style.display = 'none';
+            } else if (model.appState.registerBeforeRecs) {
+                document.getElementById('register').style.display = 'none';
+            } else if (model.appState.signInBeforeRecs) {
+                document.getElementById('signIn').style.display = 'none';
+            } else if (document.getElementById('privacyPolicy').style.display === 'inline') {
+                document.getElementById('privacyPolicy').style.display = 'none';
             } else if (model.appState.profilePage) {
                 // TO DO: Fill in id of profile page
                 document.getElementById('').style.display = 'none';
@@ -22,12 +35,14 @@ var model = {
 
             // Display TOS
             document.getElementById('termsOfService').style.display = 'inline';
+            model.appState.termsOfService = true;
 
             // Declare Return Function
             function backToViewFromTos() {
                
                 // Hide TOS
                 document.getElementById('termsOfService').style.display = 'none';
+                model.appState.termsOfService = false;
 
                 // Display Current View
                 if (model.appState.landingPage) {
@@ -40,17 +55,24 @@ var model = {
                     document.getElementById('displayRecommendations').style.display = 
                     'inline';
                     model.controllers.displayRecInteractions();
+                } else if (model.appState.registerBeforeRecs) {
+                    document.getElementById('register').style.display = 'inline';
+                } else if (model.appState.signInBeforeRecs) {
+                    document.getElementById('signIn').style.display = 'inline';
                 } else if (model.appState.profilePage) {
                     // TO DO: Fill in id of profile page
                     document.getElementById('').style.display = 'inline';
                 }
             }
 
-            // Listen for Back Click
+            // Listen for Back Click/Home
             document.getElementById('termsOfServiceBack').addEventListener('click', 
                 backToViewFromTos);
         },
         toggleToPp: () => {
+
+            model.appState.termsOfService = false;
+            document.getElementById('termsOfService').style.display = 'none';
 
             // Hide Current View
             if (model.appState.landingPage) {
@@ -59,19 +81,25 @@ var model = {
                 document.getElementById('pointsCalculator').style.display = 'none';
             } else if (model.appState.resultsPage) {
                 document.getElementById('displayRecommendations').style.display = 'none';
+            } else if (model.appState.registerBeforeRecs) {
+                document.getElementById('register').style.display = 'none';
+            } else if (model.appState.signInBeforeRecs) {
+                document.getElementById('signIn').style.display = 'none';
             } else if (model.appState.profilePage) {
                 // TO DO: Fill in id of profile page
                 document.getElementById('').style.display = 'none';
             }
 
-            // Display TOS
+            // Display Privacy Policy
             document.getElementById('privacyPolicy').style.display = 'inline';
+            model.appState.privacyPolicy = true;
 
             // Declare Return Function
             function backToViewFromPp() {
                
                 // Hide TOS
                 document.getElementById('privacyPolicy').style.display = 'none';
+                model.appState.privacyPolicy = false;
 
                 // Display Current View
                 if (model.appState.landingPage) {
@@ -84,13 +112,17 @@ var model = {
                     document.getElementById('displayRecommendations').style.display = 
                     'inline';
                     model.controllers.displayRecInteractions();
+                } else if (model.appState.registerBeforeRecs) {
+                    document.getElementById('register').style.display = 'inline';
+                } else if (model.appState.signInBeforeRecs) {
+                    document.getElementById('signIn').style.display = 'inline';
                 } else if (model.appState.profilePage) {
                     // TO DO: Fill in id of profile page
                     document.getElementById('').style.display = 'inline';
                 }
             }
 
-            // Listen for Back Click
+            // Listen for Back Click/Home
             document.getElementById('privacyPolicyBack').addEventListener('click', 
                 backToViewFromPp);
         }
@@ -2724,6 +2756,10 @@ var model = {
             $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
             $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
 
+            // Login/Register/Logo Event Listeners
+            document.getElementById('registerButton').addEventListener('click', model.controllers.showRegister);
+            document.getElementById('signInButton').addEventListener('click', model.controllers.showLogin);
+
             function changeRewardGoalViewDesktop() {
 
                 if ($(this).val().includes('europe')) {
@@ -2775,6 +2811,42 @@ var model = {
                 model.templates.renderCarouselGoalSliderMobileTemplate();
                 model.controllers.setupCarouselViewMobile();
             }
+        },
+        showRegister: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+
+            model.appState.registerBeforeRecs = true;
+            if (document.getElementById('landingPage').style.display === 'inline') {
+                model.appState.landingPage = false;
+                document.getElementById('landingPage').style.display = 'none';
+            } else if (document.getElementById('pointsCalculator').style.display === 'inline') {
+                model.appState.calculator = false;
+                document.getElementById('pointsCalculator').style.display = 'none';
+            } else if (document.getElementById('signIn').style.display === 'inline') {
+                model.appState.signInBeforeRecs = false;
+                document.getElementById('signIn').style.display = 'none';
+            }
+
+            document.getElementById('register').style.display = 'inline';
+        },
+        showLogin: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+
+            model.appState.signInBeforeRecs = true;
+            if (document.getElementById('landingPage').style.display === 'inline') {
+                model.appState.landingPage = false;
+                document.getElementById('landingPage').style.display = 'none';
+            } else if (document.getElementById('pointsCalculator').style.display === 'inline') {
+                model.appState.calculator = false;
+                document.getElementById('pointsCalculator').style.display = 'none';
+            } else if (document.getElementById('register').style.display === 'inline') {
+                model.appState.registerBeforeRecs = false;
+                document.getElementById('register').style.display = 'none';
+            }
+            
+            document.getElementById('signIn').style.display = 'inline';
         },
         setupCarouselViewMobile: () => {
             var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
@@ -3201,14 +3273,13 @@ var model = {
 
             // Manage CC Inputs Desktop
             function manageCreditCardInputsDesktop() {
-                for (var i = 1; i < 3; i++) {
+                for (var i = 1; i < 10; i++) {
                     if (model.appState.addAnotherCardCount === i) {
                         var nextCard = 'card' + (i+1) + (i+1);
-                        console.log(nextCard);
                         document.getElementById(nextCard).style.display = "inline";
                         model.appState.addAnotherCardCount += 1;
-                        if (model.appState.addAnotherCardCount === 3) {
-                            document.getElementById('addAnotherCard').innerHTML = "Limit Reached!";
+                        if (model.appState.addAnotherCardCount === 9) {
+                            document.getElementById('addAnotherCard').classList.add('disabled');
                         }
                         break;
                     } 
@@ -3217,14 +3288,13 @@ var model = {
             
             // Manage CC Inputs Mobile
             function manageCreditCardInputsMobile() {
-                for (var i = 1; i < 3; i++) {
+                for (var i = 1; i < 10; i++) {
                     if (model.appState.addAnotherCardCount === i) {
                         var nextCard = 'card' + (i+1) + (i+1) + (i+1);
-                        console.log(nextCard);
                         document.getElementById(nextCard).style.display = "inline";
                         model.appState.addAnotherCardCount += 1;
-                        if (model.appState.addAnotherCardCount === 3) {
-                            document.getElementById('addAnotherCardMobile').innerHTML = "Limit Reached!";
+                        if (model.appState.addAnotherCardCount === 9) {
+                            document.getElementById('addAnotherCardMobile').classList.add('disabled');
                         }
                         break;
                     } 
@@ -3476,6 +3546,9 @@ var model = {
         createReport: () => {
             // Hide the Form
             document.getElementById('pointsCalculator').style.display = 'none';
+            document.getElementById('preFooterMobile').style.display = 'none';
+            document.getElementById('preFooterDesktop').style.display = 'none';
+            document.getElementById('preNav').style.display = 'none';
 
             // Display the Loading Page
             document.getElementById('loading').style.display = 'inline';
@@ -3494,9 +3567,27 @@ var model = {
             }
 
             // Current CCs, if applicable
-            const card1 = document.getElementById('card1').value;
-            const card2 = document.getElementById('card2').value;
-            const card3 = document.getElementById('card3').value; 
+            var card1;
+            var card2;
+            var card3;
+            var card4;
+            var card5;
+            var card6;
+            var card7;
+            var card8;
+            var card9;
+            var compiledCardValues = [card1,card2,card3,card4,card5,card6,card7,card8,card9];
+
+            var checkCards = ['card1','card2','card3','card4','card5','card6','card7','card8','card9',]
+            
+            checkCards.forEach(function(card) {
+                if (document.getElementById(card).value) {
+                    card1 = document.getElementById(card).value;
+                } else if (document.getElementById(card + 'Mobile').value) {
+                    card1 = document.getElementById(card + 'Mobile').value;
+                }
+            });
+     
             var cards = model.cards.all;
 
             // Determine Cash Back Status for Rewards Goal Toggle on Display Recs View
@@ -3508,13 +3599,11 @@ var model = {
 
             // Create the Selections Object
             for (var i = 0; i < cards.length; i++) {
-                if (cards[i].cardName === card1) {
-                    model.cards.userSelections.push(cards[i]);
-                } else if (cards[i].cardName === card2) {
-                    model.cards.userSelections.push(cards[i]);
-                } else if (cards[i].cardName === card3) {
-                    model.cards.userSelections.push(cards[i]);
-                } 
+                compiledCardValues.forEach(function(card) {
+                    if (cards[i].cardName === card) {
+                        model.cards.userSelections.push(cards[i]);
+                    }
+                }); 
             }
 
             console.log('Display User Selections');
