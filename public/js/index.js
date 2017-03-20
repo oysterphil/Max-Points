@@ -10,6 +10,8 @@ var model = {
         privacyPolicy: false,
         termsOfService: false,
         addAnotherCardCount: 1,
+        firstLoginEmailPass: true,
+        completedCalculator: false,
         toggleToTos: () => {
 
             model.appState.privacyPolicy = false;
@@ -131,24 +133,40 @@ var model = {
         handleCreateAcctWithEmailAndPassword: () => {
             event.preventDefault();
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            document.getElementById('createAccountEmailPass').style.display = 'none';
+            document.getElementById('loadingRegister').style.display = 'inline';
 
-            // Signal firstLoginEmailPass: true to Model
-            model.appState.firstLoginEmailPass = true;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
 
-            model.custMeta.email = email;
-            
-            // Create Account through Firebase via Email and Password
-            const auth = firebase.auth();
-            const promise = auth.createUserWithEmailAndPassword(email,password);
-            promise.catch(e => console.log(e.message));
+            model.cards.currentStatusBasedOnSelections.email = email;
+
+            if (email === "") {
+              document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + "Email is required" + "</span>";
+              document.getElementById('createAccountEmailPass').style.display = 'inline';
+              document.getElementById('loadingRegister').style.display = 'none';
+            } else if (password === "") {
+              document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + "Password is required" + "</span>";
+              document.getElementById('createAccountEmailPass').style.display = 'inline';
+              document.getElementById('loadingRegister').style.display = 'none';
+            } else if (password.length < 6) {
+              document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + "Password must be at least 6 characters long." + "</span>";
+              document.getElementById('createAccountEmailPass').style.display = 'inline';
+              document.getElementById('loadingRegister').style.display = 'none';
+            } else {
+              // Create Account through Firebase via Email and Password
+              const auth = firebase.auth();
+              const promise = auth.createUserWithEmailAndPassword(email,password);
+              promise.catch(e => (
+                document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + e.message + "</span>")
+                document.getElementById('createAccountEmailPass').style.display = 'inline';
+                document.getElementById('loadingRegister').style.display = 'none';
+              );
+            }
         },
         handleGoogleRegister: () => {
-            // Signal firstLoginEmailPass: false and firstLoginGoogleFacebook: true to Model.
-            model.appState.firstLoginEmailPass = false;
-            model.appState.firstLoginGoogleFacebook = true;
 
+            model.appState.firstLoginEmailPass = false;
             // Authenticate through Google
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -159,29 +177,47 @@ var model = {
             // The signed-in user info.
             var user = result.user;
 
-            var mystring = user.displayName;
-            var arr = mystring.split(" ", 2);
+            // Send Data to Firebase if there is data to send
+            if (model.appState.completedCalculator) {
+                
+                // Send App State Info to Firebase
+                firebase.database().ref('appState/' + user.uid).set({
+                    completedCalculator: model.appState.completedCalculator,
+                    firstLoginEmailPass: model.appState.firstLoginEmailPass
+                });
 
-            var firstName = arr[0];
-            var lastName = arr[1];
-            model.custMeta.uid = user.uid;
-            model.custMeta.email = user.email;
-            model.custMeta.firstName = firstName;
-            model.custMeta.lastName = lastName;
+                // Send User Card Info to Firebase
+                firebase.database().ref('userBaselineCards/' + user.uid).set({
+                    card1: model.cards.userSelections[0],
+                    card2: model.cards.userSelections[1],
+                    card3: model.cards.userSelections[2],
+                    card4: model.cards.userSelections[3],
+                    card5: model.cards.userSelections[4],
+                    card6: model.cards.userSelections[5],
+                    card7: model.cards.userSelections[6],
+                    card8: model.cards.userSelections[7],
+                    card9: model.cards.userSelections[8]
+                });
 
-            // Send Google Sign-up Data to Firebase
-            firebase.database().ref('custMeta/' + model.custMeta.uid).set({
-                firstName: model.custMeta.firstName,
-                lastName: model.custMeta.lastName,
-                email: model.custMeta.email
-            });
+                // Send Calculator Inputs to Firebase
+                firebase.database().ref('calculatorInputs/' + user.uid).set({
+                    email: model.cards.currentStatusBasedOnSelections.email,
+                    ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
+                    creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
+                    rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
+                    monthlySpend: model.cards.currentStatusBasedOnSelections.monthlySpend,
+                    totalAnnualFee: model.cards.currentStatusBasedOnSelections.totalAnnualFee,
+                    cashBack: model.cards.currentStatusBasedOnSelections.cashBack
+                });
 
-            // Send App State Info to Firebase
-            firebase.database().ref('custAppState/' + model.custMeta.uid).set({
-                registerInfoComplete: model.appState.registerInfoComplete,
-                firstLoginEmailPass: model.appState.firstLoginEmailPass,
-                firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook
-            });
+                // Send Recommendations for User to Firebase
+                firebase.database().ref('recsForUser/' + user.uid).set({
+                    rec1: model.cards.combinedRecs[0],
+                    rec2: model.cards.combinedRecs[1],
+                    rec3: model.cards.combinedRecs[2],
+                    rec4: model.cards.combinedRecs[3]
+                });
+            }
 
             }).catch(function(error) {
 
@@ -195,82 +231,157 @@ var model = {
                 // The firebase.auth.AuthCredential type that was used.
                 var credential = error.credential;
 
-                console.log(errorMessage);
-                // ...
+                document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + errorMessage + "</span>";
             });
+        },
+        handleLoginGoogle: () => {
+            event.preventDefault();
+
+            model.appState.firstLoginEmailPass = false;
+
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              var token = result.credential.accessToken;
+              // The signed-in user info.
+              var user = result.user;
+              // ...
+            }).catch(function(error) {
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              // The email of the user's account used.
+              var email = error.email;
+              // The firebase.auth.AuthCredential type that was used.
+              var credential = error.credential;
+              document.getElementById('authErrorMessageSignIn').innerHTML = "<span style='color: red;'>" + errorMessage + "</span>";
+            });
+        },
+        handleLoginEmailAndPassword: () => {
+            event.preventDefault();
+
+            model.appState.firstLoginEmailPass = false;
+
+            document.getElementById('signInEmailPassword').style.display = 'none';
+            document.getElementById('loadingSignIn').style.display = 'inline';
+
+            const email = document.getElementById('signInEmail').value;
+            const password = document.getElementById('signInPassword').value;
+
+            if (email === "") {
+              document.getElementById('authErrorMessageSignIn').innerHTML = "<span style='color: red;'>" + "Email is required" + "</span>";
+              document.getElementById('signInEmailPassword').style.display = 'inline';
+              document.getElementById('loadingSignIn').style.display = 'none';
+            } else if (password === "") {
+              document.getElementById('authErrorMessageSignIn').innerHTML = "<span style='color: red;'>" + "Password is required" + "</span>";
+              document.getElementById('signInEmailPassword').style.display = 'inline';
+              document.getElementById('loadingSignIn').style.display = 'none';
+            } else if (password.length < 6) {
+              document.getElementById('authErrorMessageSignIn').innerHTML = "<span style='color: red;'>" + "Password must be at least 6 characters long." + "</span>";
+              document.getElementById('signInEmailPassword').style.display = 'inline';
+              document.getElementById('loadingSignIn').style.display = 'none';
+            } else {
+                // Login through Firebase via Email and Password
+                const auth = firebase.auth();
+                const promise = auth.signInWithEmailAndPassword(email, password);
+                promise.catch(e => (
+                    document.getElementById('authErrorMessageRegister').innerHTML = "<span style='color: red;'>" + e.message + "</span>");
+                    document.getElementById('signInEmailPassword').style.display = 'inline';
+                    document.getElementById('loadingSignIn').style.display = 'none';
+                );
+            }
         },
         handleAuthStateChange: () => {
             const user = firebase.auth().currentUser;
 
             if (user) {
-              model.custMeta.uid = user.uid;
-                  // Complete Login Flow
-                  $.ajax({
-                      type: 'POST',
-                      url: 'https://27952f82.ngrok.io' + 'referralCandy/purchase',
-                      // url: 'https://young-plateau-13187.herokuapp.com/' + 'referralCandy/purchase',
-                      data: JSON.stringify({  
-                          email: email
-                      }), 
-                      success: function(data) {
-                          if (data.message === 'Success') {
-                            console.log('It worked.');
-                        // delete data.message;
-                        // sendRegisterDataToFirebase(data, email, password, firstName, lastName);
-
-                    }
-                },
-                contentType: "application/json",
-                dataType: 'json'
-            });
-
-                  if (model.appState.firstLoginEmailPass) {
-                    // Change firstLoginEmailPass to False
-                    model.appState.firstLoginEmailPass = false;
-
-                    // Send Sign-up Data to Firebase
-                    firebase.database().ref('custMeta/' + model.custMeta.uid).set({
-                      email: model.custMeta.email
-                  }).then(function() {
-                      // Send Storage Info to Firebase
-                      firebase.database().ref('custStorage/' + model.custMeta.uid).set({
-                        storageTerm: model.calculatorInputs.monthEstimate,
-                        boxEstimate: model.calculatorInputs.boxEstimate,
-                        itemEstimate: model.calculatorInputs.itemEstimate,
-                        coupon: model.calculatorInputs.coupon,
-                        quoteValue: model.calculatorInputs.quoteValue,
-                        monthlyQuoteValue: model.calculatorInputs.monthlyQuoteValue,
-                        planEstimate: model.calculatorInputs.planEstimate,
-                        priceBoxMonth: model.calculatorInputs.priceBoxMonth,
-                        priceItemMonth: model.calculatorInputs.priceItemMonth,
-                        discount: model.calculatorInputs.discount,
-                        boxActual: null,
-                        itemActual: null
-                    }).then(function(){
-                        // Send Legal Info to Firebase
-                        firebase.database().ref('custLegal/' + model.custMeta.uid).set({
-                          acceptTerms: model.custLegal.acceptTerms
-                      }).then(function() {
-                          // Send App State Info to Firebase
-                          firebase.database().ref('custAppState/' + model.custMeta.uid).set({
-                            registerInfoComplete: model.appState.registerInfoComplete,
-                            firstLoginEmailPass: model.appState.firstLoginEmailPass,
-                            firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook,
-                            registerInfoComplete: model.appState.registerInfoComplete
-                        }).then(function() {
-                            window.location = "https://www.storganize.io/storganize-profile";
-                        });
+                if (model.appState.firstLoginEmailPass) {
+                    // Send App State Info to Firebase
+                    firebase.database().ref('appState/' + user.uid).set({
+                        completedCalculator: model.appState.completedCalculator,
+                        firstLoginEmailPass: model.appState.firstLoginEmailPass
                     });
-                  });
-                });
-              }
-              if (model.appState.firstLoginGoogleFacebook) {
-                model.appState.firstLoginGoogleFacebook = false;
-                window.location = "https://www.storganize.io/storganize-profile";
-            }
+                    
+                    // Send Data to Firebase if there is data to send
+                    if (model.appState.completedCalculator) {
+
+                        // Send User Card Info to Firebase
+                        firebase.database().ref('userBaselineCards/' + user.uid).set({
+                            card1: model.cards.userSelections[0],
+                            card2: model.cards.userSelections[1],
+                            card3: model.cards.userSelections[2],
+                            card4: model.cards.userSelections[3],
+                            card5: model.cards.userSelections[4],
+                            card6: model.cards.userSelections[5],
+                            card7: model.cards.userSelections[6],
+                            card8: model.cards.userSelections[7],
+                            card9: model.cards.userSelections[8]
+                        });
+
+                        // Send Calculator Inputs to Firebase
+                        firebase.database().ref('calculatorInputs/' + user.uid).set({
+                            email: model.cards.currentStatusBasedOnSelections.email,
+                            ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
+                            creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
+                            rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
+                            monthlySpend: model.cards.currentStatusBasedOnSelections.monthlySpend,
+                            totalAnnualFee: model.cards.currentStatusBasedOnSelections.totalAnnualFee,
+                            cashBack: model.cards.currentStatusBasedOnSelections.cashBack
+                        });
+
+                        // Send Recommendations for User to Firebase
+                        firebase.database().ref('recsForUser/' + user.uid).set({
+                            rec1: model.cards.combinedRecs[0],
+                            rec2: model.cards.combinedRecs[1],
+                            rec3: model.cards.combinedRecs[2],
+                            rec4: model.cards.combinedRecs[3]
+                        });
+                    }
+                } else {
+                    // Load Data from Firebase into the Model Locally
+                    firebase.database().ref('/appState/' + user.uid).once('value').then(function(snapshot) {
+
+                      var loadAppState = (snapshot.val());
+
+                      model.appState.completedCalculator = loadCustMeta.completedCalculator;
+                      model.appState.firstLoginEmailPass = loadCustMeta.firstLoginEmailPass;
+                    
+                      if (model.appState.completedCalculator) {
+                        loadRestOfData();
+                      } else {
+                        // Write Functions to display a view for those that haven't filled out the calc yet
+                        console.log('No data to load.');
+                      }
+                    });
+                    function loadRestOfData() {
+                        firebase.database().ref('/userBaselineCards/' + user.uid).once('value').then(function(snapshot) {
+                            var loadUserBaselineCards = (snapshot.val());
+
+                            console.log(loadUserBaselineCards);
+                        }).then(function() {
+                            firebase.database().ref('/calculatorInputs/' + user.uid).once('value').then(function(snapshot) {
+                                var loadCalculatorInputs = (snapshot.val());
+
+                                model.cards.currentStatusBasedOnSelections.email = email;
+                                model.cards.currentStatusBasedOnSelections.ownBusiness = ownBusiness;
+                                model.cards.currentStatusBasedOnSelections.creditScore = creditScore;
+                                model.cards.currentStatusBasedOnSelections.rewardsGoal = rewardsGoal;
+                                model.cards.currentStatusBasedOnSelections.monthlySpend = monthlySpend;
+                                model.cards.currentStatusBasedOnSelections.totalAnnualFee = totalAnnualFee;
+                                model.cards.currentStatusBasedOnSelections.cashBack = cashBack;
+                            }).then(function() {
+                                firebase.database().ref('/recsForUser/' + user.uid).once('value').then(function(snapshot) {
+                                    var loadRecsForUser = (snapshot.val());
+
+                                    console.log(loadRecsForUser);
+                                });
+                            });
+                        });
+                    }
+                }
             } else {
-                  // No user is signed in.
-              }
+                console.log('No one is signed in.');
+            }
         }
     },
     destinations: {
@@ -3544,6 +3655,9 @@ var model = {
             }
         },
         createReport: () => {
+            
+            model.appState.completedCalculator = true;
+
             // Hide the Form
             document.getElementById('pointsCalculator').style.display = 'none';
             document.getElementById('preFooterMobile').style.display = 'none';
