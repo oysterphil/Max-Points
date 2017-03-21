@@ -306,7 +306,6 @@ var model = {
         handleAuthStateChange: () => {
             const user = firebase.auth().currentUser;
             console.log('Auth state change fired');
-
             if (user) {
                 if (model.appState.firstLoginEmailPass || model.appState.firstLoginGoogleFacebook) {
                     console.log('First log in');
@@ -314,8 +313,10 @@ var model = {
                     firebase.database().ref('appState/' + user.uid).set({
                         completedCalculator: model.appState.completedCalculator,
                         firstLoginEmailPass: model.appState.firstLoginEmailPass,
-                        firstLoginGoogleFacebook: model.appState.firstLoginEmailPass
+                        firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook
                     });
+
+                    model.controllers.calculatorSetup();
                     
                     // Send Data to Firebase if there is data to send
                     // if (model.appState.completedCalculator) {
@@ -370,6 +371,7 @@ var model = {
                       } else {
                         // Write Functions to display a view for those that haven't filled out the calc yet
                         console.log('No data to load.');
+                        model.controllers.calculatorSetup();
                       }
                     });
 
@@ -394,7 +396,7 @@ var model = {
                                     var loadRecsForUser = (snapshot.val());
 
                                     console.log(loadRecsForUser);
-                                });
+                                }).then(model.controllers.vetPointCalcInputs())
                             });
                         });
                     }
@@ -639,7 +641,7 @@ var model = {
                     one: {
                         city: 'New York City',
                         country: 'United States of America',
-                        image: '/img/washingtondc.png',
+                        image: '/img/newyork.png',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
@@ -649,7 +651,7 @@ var model = {
                     two: {
                         city: 'Los Angeles',
                         country: 'United States of America',
-                        image: '/img/newyork.png',
+                        image: '/img/losangeles.png',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
@@ -659,7 +661,7 @@ var model = {
                     three: {
                         city: 'Washington DC',
                         country: 'United States of America',
-                        image: '/img/losangeles.png',
+                        image: '/img/washingtondc.png',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
@@ -5758,13 +5760,12 @@ var model = {
     },
     controllers: {
         setup: () => {
-
             // Compile Templates
             model.templates.compile();
 
             // Set Rewards Goal Selections for Mobile/Desktop to Europe
-            model.destinations.selectionDesktop = model.destinations.optionsDesktop.europeDesktop;
-            model.destinations.selectionMobile = model.destinations.optionsMobile.europeMobile;
+            model.destinations.selectionDesktop = model.destinations.optionsDesktop.unitedStatesDesktop;
+            model.destinations.selectionMobile = model.destinations.optionsMobile.unitedStatesMobile;
             
             // Render Rewards Goal Tempalates and Establish the View for Mobile/Desktop
             model.templates.renderCarouselGoalSliderDesktopTemplate();
@@ -6007,7 +6008,18 @@ var model = {
             model.appState.calculator = true;
 
             // Hide Landing Page
-            document.getElementById('landingPage').style.display = "none";
+            document.getElementById('signIn').style.display = "none";
+            document.getElementById('register').style.display = "none";
+            document.getElementById('preNav').style.display = 'none';
+            document.getElementById('preFooterDesktop').style.display = 'none';
+            document.getElementById('preFooterMobile').style.display = 'none';
+
+            // if (!model.appState.completedCalculator) {
+            //     document.getElementById('cardRecs').style.display = 'none';
+            // }
+
+            // Show Profile Page
+            document.getElementById('profile').style.display = 'inline';
 
             // Render Points Calculator Template 
             model.templates.renderPointsCalculatorTemplate();
@@ -6556,17 +6568,9 @@ var model = {
             // Create Shortcut to Model
             const m = model.cards.currentStatusBasedOnSelections;
 
-            // Log E-mail Input to the Model, if filled in
-            if (document.getElementById('email').value) {
-                m.email = document.getElementById('email').value;
-            } else if (document.getElementById('emailMobile').value) {
-                m.email = document.getElementById('emailMobile').value;
-            }
-
             // Vet inputs
             if (m.ownBusiness !== null && m.creditScore !== null 
-                && m.rewardsGoal !== null && m.monthlySpend !== null 
-                && m.email !== null) {
+                && m.rewardsGoal !== null && m.monthlySpend !== null) {
                 model.controllers.createReport();
             } else {
                 document.getElementById('vetPointCalcInputsDesktop').style.display = 'inline';
@@ -7539,17 +7543,6 @@ var model = {
                 model.appState.toggleToPp);
             document.getElementById('privacyPolicyButtonMobileDisplayRecs').addEventListener('click', 
                 model.appState.toggleToPp);
-
-            // Sign in and Register Event Listeners Desktop/Mobile
-            document.getElementById('signInRecsDesktop').addEventListener ('click', model.controllers.showLoginRec);
-            document.getElementById('signInRecsMobile').addEventListener ('click', model.controllers.showLoginRec);
-            document.getElementById('registerRecsMobile').addEventListener ('click', model.controllers.showRegisterRec);
-            document.getElementById('registerRecsMobile2').addEventListener ('click', model.controllers.showRegisterRec);
-            document.getElementById('registerRecsMobile3').addEventListener ('click', model.controllers.showRegisterRec);
-            document.getElementById('registerRecsDesktop').addEventListener ('click', model.controllers.showRegisterRec);
-            document.getElementById('registerRecsDesktop2').addEventListener ('click', model.controllers.showRegisterRec);
-
-            registerRecsDesktop2
         },
         showRegisterRec: () => {
             document.getElementById('privacyPolicy').style.display = 'none';
