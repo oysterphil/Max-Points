@@ -19,10 +19,10 @@
 <body style="background-color: #90caf9;">
 
   <!-- Navbar Mobile, Tablet, and Desktop -->
-  <div id="preNav" class="navbar-fixed">  
+  <div id="preNav" class="navbar-fixed" style="display: block;">  
     <nav>
       <div class="nav-wrapper">
-        <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;margin-left: 10px;">Max Points</a>
+        <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;">Logo</a>
         <ul class="right">
           <li><a id="signInButton" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
           <li><a id="registerButton" class="waves-effect waves-light btn register">Register</a></li>
@@ -56,7 +56,7 @@
         </div>
         <div class="row center">
           <div class="col s12">
-            <a onclick="model.controllers.calculatorSetup()" class="waves-effect waves-light btn-large">
+            <a onclick="model.controllers.showRegister()" class="waves-effect waves-light btn-large">
               Start Maximizing!
             </a>
           </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="row center">
           <div class="col s12">
-            <a onclick="model.controllers.calculatorSetup()" class="waves-effect waves-light btn-large">
+            <a onclick="model.controllers.showRegister()" class="waves-effect waves-light btn-large">
               Start Maximizing!
             </a>
           </div>
@@ -236,7 +236,7 @@
                 <div id="scrollFireIcon2" class="livicon-evo" data-options="name: rocket.svg; size: 120px; style: original; tryToSharpen: true" style="opacity: 0"></div>
               </div>
             </div>
-            <h5>Maximize</h5>
+            <h5><b>Maximize</b></h5>
             <p>
               Instantly view your individualized plan and choose the best cards the earn more points while spending the same.
             </p>         
@@ -247,7 +247,7 @@
                 <div id="scrollFireIcon3" class="livicon-evo" data-options="name: image.svg; size: 120px; style: original; tryToSharpen: true" style="opacity: 0"></div>
               </div>
             </div>
-            <h5>Redeem</h5>
+            <h5><b>Redeem</b></h5>
             <p>
               More points, miles and cash back unlocks more free travel whether in economy or first class.
             </p>         
@@ -266,8 +266,13 @@
           </h5>
           <div class="input-field col s4 offset-s4 m3">
             <select id="rewardsGoalDesktopSelect">
+              <option value="unitedStatesDesktop"><strong>US + Canada</strong></option>
               <option value="europeDesktop"><strong>Europe</strong></option>
+              <option value="latinAmericaDesktop"><strong>Latin America</strong></option>
               <option value="asiaDesktop"><strong>Asia</strong></option>
+              <option value="oceaniaDesktop"><strong>Oceania</strong></option>
+              <option value="africaDesktop"><strong>Africa</strong></option>
+              <option value="cashBackLandingPageDesktop"><strong>Cash Back</strong></option>
             </select>
           </div>
         </div>
@@ -295,8 +300,13 @@
           </h5>
           <div class="col s5 offset-s3">
             <select id="rewardsGoalMobileSelect" class="browser-default" style="background-color: rgba(0,0,0,0); color:white; border: 0px rgba(0,0,0,0);border-bottom: solid 1px white !important;">
+              <option value="unitedStatesMobile"><strong>US + Canada</strong></option>
               <option value="europeMobile"><strong>Europe</strong></option>
+              <option value="latinAmericaMobile"><strong>Latin America</strong></option>
               <option value="asiaMobile"><strong>Asia</strong></option>
+              <option value="oceaniaMobile"><strong>Oceania</strong></option>
+              <option value="africaMobile"><strong>Africa</strong></option>
+              <option value="cashBackLandingPageMobile"><strong>Cash Back</strong></option>
             </select>
           </div>
           <div class="col s1">
@@ -316,9 +326,55 @@
   </div>
   <!-- End Landing Page -->
 
-  <!-- Points Calculator Form --> 
-  <div id="pointsCalculator" style="display: none;"></div>
-  <!-- End Points Calculator --> 
+  <!-- Profile -->
+  <div id="profile" style="display: none;">
+    <header>
+      <nav class="top-nav hide-on-med-only hide-on-small-only" style="height: 100px; line-height: 100px;">
+        <div class="container">
+          <div class="nav-wrapper center" style="margin-left: 300px;"><img src="/img/mainIconFinal.png" class="page-title" height="90px"></div>
+        </div>
+      </nav>
+      <nav class="top-nav hide-on-large-only" style="height: 80px; line-height: 80px;">
+        <div class="container">
+          <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only" style="height: 80px; line-height: 80px;margin-top: 10px;"><i class="large material-icons">menu</i></a>
+          <div class="nav-wrapper center"><img src="/img/mainIconFinal.png" class="page-title" height="80px"></div>
+        </div>
+      </nav>
+      <ul id="nav-mobile" class="side-nav fixed center" style="transform: translateX(0%);">
+        <li class="logo"><div id="logo-container" onclick="window.location.reload();" class="brand-logo">
+            <img id="front-page-logo" src="/img/logo.png" width="100%" style="padding: 20px 70px; text-align: center;"></div></li>
+        <li class="bold">
+          <a id="goals" class="waves-effect waves-default" style="font-size: 18px;">Info & Goals</a>
+        </li>
+        <li class="bold">
+          <a id="cardRecs" class="waves-effect waves-default" style="font-size: 18px;">Card Recommendations</a>
+        </li>
+        <li class="bold">
+          <a id="personalInfo" class="waves-effect waves-default" style="font-size: 18px;">Profile</a>
+        </li>
+        <li class="bold">
+          <a onclick="model.auth.handleSignout()" class="waves-effect waves-default" style="font-size: 18px;">Log Out</a>
+        </li>
+      </ul>
+    </header> 
+
+    <main>
+      
+      <div class="section no-pad-bot" style="padding-top: 0px;">
+        <div style="background-color: #90caf9; padding-bottom: 0px;">
+          <!-- Points Calculator Form --> 
+          <div id="pointsCalculator" style="display: none;"></div>
+          <!-- End Points Calculator --> 
+
+          <!-- Display Recommendations --> 
+          <div id="displayRecommendations" style="display: inline;"></div>
+          <!-- End Display Recommendations -->
+        </div>
+      </div>
+  
+    </main>
+  </div>
+  <!-- End Profile -->
 
   <!-- Loading Section -->
   <div class="container" id="loading" style="display: none;">
@@ -329,10 +385,6 @@
     </div>
   </div>
   <!-- End Loading Section -->
-
-  <!-- Display Recommendations --> 
-  <div id="displayRecommendations" style="display: none;"></div>
-  <!-- End Display Recommendations -->
 
   <!-- Terms of Service -->
   <div id="termsOfService" style="display: none;padding: 30px;">
@@ -345,70 +397,9 @@
       <h3 class="col s12 m12" style="text-align: center;">
         Terms of Service
       </h3>
-      <div class="col s10 offset-s1">
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>Max Points, LLC, a Maryland LLC doing business as Max Points, operates one or more websites, including the one located at https://www.MaxPoints.co provides services through our website. The Services are hosted in the United States. These Terms of Use, as may be modified by Max Points from time to time (the &ldquo;Terms&rdquo;), constitute a legally binding agreement between you and Max Points that applies to your Max Points account including any viewing or submission of content in the Services. &nbsp;</span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>  1. Your Agreement to these Terms.  </span></p>
-        <p dir="ltr"><span>By accessing or using our services, you agree to be bound by these Terms, whether you are a "Visitor" (which means that you browse or use the Services without registering for a MaxPoints.co account) or you are a "Member" (which means that you have registered for a MaxPoints.co account). The term "User" refers to another user of the Services (not you), whether a Visitor or a Member. You are authorized to use the services only if you agree to abide by all applicable laws, rules and regulations ("Applicable Law") and these Terms. If you do not agree to be bound by these Terms and to abide by all Applicable Law, you must discontinue use of the services and cancel your account immediately. Your use of, or participation in, certain Services may be subject to different or additional terms, and such terms will be presented to you for your acceptance when you sign up for or use such Services.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>2. Modifications to these Terms.  </span></p>
-        <p dir="ltr"><span>We reserve the right to modify these Terms at any time and from time to time, and each such modification shall be effective upon posting on the Services. Your continued use of the Services and/or App following any such modification constitutes your agreement to be bound by and your acceptance of the Terms as so modified. It is therefore important that you review these Terms regularly. If you do not agree to be bound by any modifications to these Terms, you must discontinue use of the Services and uninstall the App immediately. If we ask you to provide your express consent to any modifications to these Terms and you do not provide such consent, we may terminate your access to the Services and the App.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>3. Eligibility to Use Services.  </span></p>
-        <p dir="ltr"><span>Use of the Services and registration to be a Member for the Services ("Membership") is void where prohibited. Our services are not intended for children. By using our services, or by registering for Membership, you represent and warrant to us that you are 13 years of age or older and that your use of the Services and App does not violate any Applicable Law. In addition, by registering for Membership, you further represent and warrant to us that all registration information you submit is truthful and accurate, and that you will update such information as and when necessary to keep it accurate and up to date.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>4. Termination.  </span></p>
-        <p dir="ltr"><span>These Terms (including any modifications, as set forth above) shall remain in full force and effect while you use the Services and App or are a Member. You may terminate these Terms and, if applicable, your Membership at any time, for any reason, by contacting us. By terminating your Membership, you acknowledge and expressly agree that we may, in our discretion, irrevocably delete all of your profile content, photos and other content or information you have submitted to the Services (collectively, &ldquo;Content&rdquo;), as well as your Membership account information. We may suspend or terminate your Membership and/or terminate these Terms at any time, for any or no reason, with or without prior notice or explanation, and without liability. Upon termination of these Terms by you or us, you may no longer access or use the Services or the App in any way; and any provision of these Terms that by its nature or express terms should survive will survive such termination or expiration, including, but not limited to, this sentence and Sections 6-9 and 11-22.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>5. Member Registration.  </span></p>
-        <p dir="ltr"><span>In order to register for Membership, you are required to fill out the registration form by providing all required information, and choose a username and password that you can modify at any time. You are solely responsible for maintaining the confidentiality of your password. You agree not to use the account, username, email address or password of another Member at any time or to disclose your password to any third party. You agree to notify us immediately if you suspect any unauthorized use of your account or access to your password. You are solely responsible for any and all use of your account.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>6. Fees. </span></p>
-        <p dir="ltr"><span> We reserve the right to charge for any portion of our services and to change our fees (if any) from time to time in our discretion. If we terminate your Membership because you have breached these Terms, you shall not be entitled to the refund of any unused portion of fees or payments (if any).    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>7. Our Ownership Rights.  </span></p>
-        <p dir="ltr"><span>The Services also contain information and content created and/or provided by us (Max Points, LLC). As between you and us, we own all right, title, and interest in and to the site and services, all of which are protected by copyright, trademark, patent, trade secret and other laws and treaties in the United States and worldwide. We reserve all rights in the site and services.</span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>8. License Restrictions.  </span></p>
-        <p dir="ltr"><span>You may not, and may not engage or encourage a third party to, do any of the following: (a) copy, modify, or create derivative works of the our service, (or any part thereof, including the MaxPoints.co Content) for any purpose; (b) distribute, publicly display, publicly perform, transfer, sell, sublicense, lease, lend, rent or otherwise make available our services (or any part thereof) to any third party; (c) decompile, reverse-engineer, disassemble or interfere with or circumvent the site or services (or any part thereof), including without limitation any security or access control mechanism (except to the extent such a restriction is impermissible under applicable law, in which case you must notify us in writing of your need to do so and permit us to perform such services for you at our standard rates); or (d) use the site or services (or any part thereof) in any unlawful manner, for any unlawful purpose, or in any manner inconsistent with the Terms.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>9. Content Posted By Other Users.  </span></p>
-        <p dir="ltr"><span>We assume no responsibility or liability for any information, materials, products or services provided to you or through the Services by other Users. If you become aware of misuse of the Services by any person, please contact us immediately so that we may consider an appropriate response under the circumstances.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>10. Inappropriate and Prohibited Content.  </span></p>
-        <p dir="ltr"><span>We have no obligation to review or moderate the Content or any information or content submitted by other Users. However, we reserve the right, in our sole discretion, to reject, refuse to post or remove any posting by you or others (including, without limitation, private messages between you and other Users) or any Content or other User&rsquo;s content for any or no reason, with or without prior notice or explanation, and without liability. For example, we may, but are not obligated to, reject, refuse to post or delete any Content or any information or content submitted by others that in our sole judgment violates these Terms or that may be offensive, illegal or violate the rights of any person or entity, or harm or threaten the safety of any person or entity. You are solely responsible for the Content that you post on, through or in connection with any of the Services, and any material or information that you transmit to other Members and for your interactions with other Users. The following are examples of the kind of Content that is illegal or prohibited to post on, through or in connection with the Services. We reserve the right to investigate and take appropriate legal action against anyone who, in our sole discretion, violates this provision. Prohibited Content includes, but is not limited to, Content that we determine in our sole discretion: (a) is patently offensive or promotes or otherwise incites racism, bigotry, hatred or physical harm of any kind against any group or individual; (b) harasses or advocates harassment of another person; (c) exploits people in a sexual or violent manner; (d) contains nudity, violence, or offensive subject matter or contains a link to an adult website; (e) solicits or is designed to solicit personal information from anyone under 18; (f) discloses information that poses or creates a privacy or security risk to any person or entity; (g) constitutes or promotes information that you know is false or misleading or promotes illegal activities or conduct that is abusive, threatening, obscene, defamatory or libelous; (h) constitutes or promotes an illegal or unauthorized copy or derivative work of another person's work; (i) involves the transmission of "junk mail," "chain letters," or unsolicited mass mailing, instant messaging, or "spamming"; (j) contains restricted or password only access pages or hidden pages or images; (k) furthers or promotes any criminal activity or enterprise or provides instructional information about illegal activities; (l) solicits or is designed to solicit passwords or personal identifying information for commercial or unlawful purposes from other Users; (m) involves commercial activities and/or sales without prior written consent from us such as contests, sweepstakes, barter, advertising, or pyramid schemes; (n) includes a photograph or video of another person that you have posted without that person's consent; or (o) violates or attempts to violate the privacy rights, publicity rights, copyrights, trademark rights, contract rights or any other rights of any person; or (p) violates our Community Guidelines, including, without limitation, reviews, comments or other Content regarding any business that is (i) fake or defamatory, (ii) traded with other businesses, (iii) written by any owner, employee or other agent of the reviewed business, or (iv) for which you were compensated for writing, directly or indirectly, by the reviewed business, its affiliates or agents.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>11. Protecting Copyrights and Other Intellectual Property.  </span></p>
-        <p dir="ltr"><span>We respect the intellectual property of others, and we require that our users do the same. You may not upload, embed, post, email, transmit or otherwise make available any material that infringes any copyright, patent, trademark, trade secret or other proprietary rights of any person or entity. It is our policy to terminate, in appropriate circumstances, the Membership of repeat infringers.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>12. DMCA Takedown Policy.  </span></p>
-        <p dir="ltr"><span>If you believe your work has been copied and posted on or through the Services in a way that constitutes copyright infringement, please send our Copyright Agent a notification of claimed infringement with all of the following information: (a) identification of the copyrighted work claimed to have been infringed; (b) identification of the claimed infringing material and information reasonably sufficient to permit us to locate the material on the Services (providing the URL(s) of the claimed infringing material satisfies this requirement); (c) information reasonably sufficient to permit us to contact you, such as an address, telephone number, and, if available, an email address; (d) a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; (e) a statement by you, made under penalty of perjury, that the above information in your notification is accurate and that you are the copyright owner or are authorized to act on the copyright owner's behalf; and (f) your physical or electronic signature. Our Copyright Agent for notification of claimed infringement can be reached as follows: Contact@MaxPoints.co.</span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>13. Privacy.  </span></p>
-        <p dir="ltr"><span>Use of the Services is also governed by our Privacy Policy, which is available on the Sites and is incorporated into these Terms by this reference.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>14. Links to Third-Party Sites or Services.  </span></p>
-        <p dir="ltr"><span>The Services may include links to other sites and services that are not operated by us. These links may be provided by us or by other Users. We provide such links only as a convenience and are not responsible for the content, products, services, or links available on such sites. You are responsible for and assume all risk arising from your use or reliance of any third-party sites and services. Our Services may provide tools that enable you to provide or export information or Content to third-party services. By using these tools, you agree that we may transfer such information and Content to the applicable third-party service. Such third-party services are not under our control, and we are not responsible for their use of your exported information.   We may receive affiliate commissions from these sites. </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>15. Disclaimers.  </span></p>
-        <p dir="ltr"><span>The site and services are provided "AS-IS" and as available and we expressly disclaim any and all warranties, express, implied, or statutory, including any warranty of merchantability, fitness for a particular purpose, or against non-infringement. We cannot guarantee and does not promise any specific results from use of the site or services. We are not responsible for and make no warranties, express or implied, as to the accuracy or reliability of the services, the site, or any content or information available through or in connection with the services or site. Content or information submitted by you and other Users of the Services does not necessarily reflect our opinions or policies and may contain information that is false or misleading. In addition, we are not responsible for any damage, injury or loss caused by Users of the Services or by any of the equipment or programming associated with or utilized in the services or site. We take no responsibility for third-party advertisements that are posted on, through or in connection with the Services, nor do we take any responsibility for the goods or services provided by these third parties. We are not responsible for the conduct, whether online or offline, of any User of the Services.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>16. Limitation of Liability.  </span></p>
-        <p dir="ltr"><span>IN NO EVENT SHALL WE BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL OR PUNITIVE DAMAGES, INCLUDING, WITHOUT LIMITATION, LOST PROFITS, DATA, OR GOODWILL ARISING FROM OR RELATING TO YOUR USE OF OR INABILITY TO USE THE SERVICES (INCLUDING ANY CONTENT OR INFORMATION SUBMITTED BY YOU OR AVAILABLE THROUGH THE SERVICES) OR THE APP AND/OR ANY CONDUCT OR CONTENT OF ANY THIRD PARTY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF THE FORM OF THE CLAIM (CONTRACT, TORT, OR OTHER LEGAL THEORY). NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR TOTAL AGGREGATE LIABILITY TO YOU ARISING OUT OF OR RELATING TO THESE TERMS FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US FOR THE SERVICES AND THE APP. EACH PROVISION OF THE TERMS THAT PROVIDES FOR A LIMITATION OF LIABILITY, DISCLAIMER OF WARRANTIES, OR EXCLUSION OF DAMAGES IS TO ALLOCATE THE RISKS UNDER THE TERMS BETWEEN THE PARTIES. THIS ALLOCATION IS AN ESSENTIAL ELEMENT OF THE BASIS OF THE BARGAIN BETWEEN THE PARTIES. EACH OF THESE PROVISIONS IS SEVERABLE AND INDEPENDENT OF ALL OTHER PROVISIONS OF THE TERMS. THE LIMITATIONS IN THIS SECTION WILL APPLY EVEN IF ANY LIMITED REMEDY FAILS OF ITS ESSENTIAL PURPOSE.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>17. Disputes.  </span></p>
-        <p dir="ltr"><span>The laws of the State of Maryland, without regard to its conflict of law provisions, apply to these Terms and any matters arising from or relating to these Terms and/or your use of the site and services. You and MaxPoints agree resolve any claims or disputes arising from or relating to these Terms and/or your use of the site and services in the state and federal courts located in Montgomery County, California, and you and we agree to submit to the exclusive personal jurisdiction of such courts for any such claims or disputes. EACH OF THE PARTIES HEREBY KNOWINGLY, VOLUNTARILY AND INTENTIONALLY WAIVES ANY RIGHT IT MAY HAVE TO A TRIAL BY JURY IN RESPECT OF ANY LITIGATION (INCLUDING, BUT NOT LIMITED TO, ANY CLAIMS, COUNTERCLAIMS, CROSS-CLAIMS, OR THIRD PARTY CLAIMS) ARISING OUT OF, UNDER OR IN CONNECTION WITH THESE TERMS. FURTHER, EACH PARTY HERETO CERTIFIES THAT NO REPRESENTATIVE OR AGENT OF EITHER PARTY HAS REPRESENTED, EXPRESSLY OR OTHERWISE, THAT SUCH PARTY WOULD NOT IN THE EVENT OF SUCH LITIGATION, SEEK TO ENFORCE THIS WAIVER OF RIGHT TO JURY TRIAL PROVISION. EACH OF THE PARTIES ACKNOWLEDGES THAT THIS SECTION IS A MATERIAL INDUCEMENT FOR THE OTHER PARTY ENTERING INTO THESE TERMS.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>18. Indemnity.  </span></p>
-        <p dir="ltr"><span>You agree to indemnify and hold harmless Max Points and our subsidiaries and affiliates, and each of their respective officers, directors, agents, employees and shareholders, from and against any loss, liability, claim, or demand, including, but not limited to, reasonable attorneys' and expert witness fees, arising from or relating to: (a) your access to or use of the services and/or the site, (b) your violation of these Terms or any Applicable Law, (c) an actual or alleged violation of the rights of a third party by you or the Content, and (d) any disputes arising between you and any third party. We reserve the right, at our own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you (and without limiting your indemnification obligations with respect to such matter), and in such case, you agree to cooperate with our defense of such claim.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>19. Other.  </span></p>
-        <p dir="ltr"><span>A delay or failure on our part to exercise or enforce any right or provision of these Terms shall not operate as a waiver of such right or provision. The section titles in these Terms are for convenience only and have no legal or contractual effect. If any provision of these Terms is unlawful, void or unenforceable, that provision is deemed severable from these Terms and does not affect the validity and enforceability of any remaining provisions. You may not assign or transfer these Terms or any of your rights hereunder, in whole or in part, by operation of law or otherwise, without our prior written consent. We may assign or delegate these Terms, in whole or in part, at any time without notice.    </span></p>
-        <p dir="ltr"><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>To contact us regarding any questions about these Terms, please email </span><a href="mailto:Contact@MaxPoints.co"><span>Contact@MaxPoints.co</span></a><span>.</span></p>
-        <p dir="ltr"><span id="docs-internal-guid-6360abf0-ef4c-3e8a-222b-490c6e020711"><br /><br /></span></p>
-      </div>
+      <p class="col s12">
+        Lorem Ipsum
+      </p>
     </div>
   </div>
   <!-- End Terms of Service -->
@@ -424,111 +415,16 @@
       <h3 class="col s12 m12" style="text-align: center;">
         Privacy Policy
       </h3>
-      <div class="col s10 offset-s1">
-        <p><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>This privacy policy discloses the privacy practices of Max Points, LLC., the website located at MaxPoints.co, and the related services, applications, and websites owned or operated by Max Points, LLC and its corporate affiliates (collectively, the "Service").</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>What Information We Collect</span></h4>
-        <p dir="ltr"><span>The types of information that we collect fall under two general categories: personally identifiable information (PII) and non-personally identifiable information (non-PII). PII consists of any information which can be used to specifically identify you as an individual, whereas non-PII consists of aggregate information or any other information that does not reveal your identity. This Privacy Policy describes how your PII and non-PII are collected by us, and how we use such information. Please note that we store all information we collect, including PII and non-PII, on servers located in the United States. When you use the Service, you consent to that.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Log Files</span></h4>
-        <p dir="ltr"><span>Any time you access the Service, our servers automatically gather information from your browser or device, including some PII and some non-PII. This information includes your IP addresses and browser type (if you are using a browser), device ID, location (if you have enabled this feature), Internet service provider (ISP) or wireless service provider, referring/exit pages, platform type, date/time stamp, and number of clicks. We may use this information to analyze trends, administer and improve the Service, prevent fraud, track visitor movement in the aggregate, and gather broad demographic information. Except as set forth in this Privacy Policy, we do not share this information externally.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Cookies</span></h4>
-        <p dir="ltr"><span>We use "cookies" to keep track of some types of information while you are visiting our website or using the Service. Cookies are very small files placed on your computer, and they allow us to count the number of visitors to our website and distinguish repeat visitors from new visitors. They also allow us to save user preferences and track user trends. We rely on cookies for the proper operation of our Service. If your browser rejects cookies from the Service, then the Service will not function properly with your browser, and we are not responsible for any resulting loss of functionality in the Service.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Service Analytics</span></h4>
-        <p dir="ltr"><span>We use third-party analytics service providers (&ldquo;Analytics Providers&rdquo;), such as Google to help us analyze how users use the Service. We may change the Analytics Providers that we use from time to time. The information generated by your browser or device about your use of the Service will be transmitted to and stored by the Analytics Provider(s) on servers in the United States. The Analytics Providers will use this information for the purpose of evaluating your use of the Service, compiling reports on website or mobile activity for our use and providing other services relating to Service activity and Internet usage. The Analytics Providers may also transfer this information to third parties where required to do so by law, or where such third parties process the information on the Analytics Providers&rsquo; behalf. By using the Service, you consent to the processing of data about you by the Analytics Provider in the manner and for the purposes set out above.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Location Information</span></h4>
-        <p dir="ltr"><span>If you enable location-based services by the Service and your mobile device, the Service may collect data about your geographic location. Such location data may include, for example, geographic coordinates or other data used to determine your location (using GPS, IP address, Wi-Fi, or other technology to determine the location of your device), the time when such data is collected, and a non-PII identifier that we may use to correlate such data to you (collectively, the &ldquo;Location Data&rdquo;). The Location Data may be collected, stored, and processed by us and/or by our third-party location licensors or service providers. We may use the Location Data to analyze usage of the Service, to improve the Service, and to provide the Service to you (e.g., by providing you with location-based recommendations of places we think you might want to visit through the Service when you are exploring a new city).</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>However, it is important to note that:</span></p>
-        <p dir="ltr"><span>(a) We will not share Location Data with anyone other than our licensors or service providers who provide the location services for the Service.</span></p>
-        <p dir="ltr"><span>(b) If any such third-party licensor or service provider collects, stores, or processes any Location Data for the Service, we contractually require that they not use the Location Data for their own purposes (other than analyzing and improving their location products and services) or share this data with anyone but us (other than aggregated, anonymized data that does not identify any individuals).</span></p>
-        <p dir="ltr"><span>(c) You may enable or disable location services at any time using the settings in the app and/or your device&rsquo;s operating system.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Web Beacons</span></h4>
-        <p dir="ltr"><span>"Web beacons" (also known as "clear gifs" and "pixel tags") are small transparent graphic images that are often used in conjunction with cookies in order to further personalize our website for our users and to collect a limited set of information about our visitors. We may also use web beacons in email communications in order to understand the behavior of our customers. We do not link the web beacons to any PII.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Information About You</span></h4>
-        <p dir="ltr"><span>When you register for the Service, we collect a variety of information about you to complete your online profile. Except as otherwise stated in this Privacy Policy, we do not disclose your PII to other users of the Service. If you choose to connect your Google or Facebook account or any other service, we will receive and retain basic account registration data you provide to that service, such as name, email address, user ID and profile page URL. </span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>E-mail</span></p>
-        <p dir="ltr"><span>We require an email address from you when you register for the Service. We use your email both for transactional purposes (e.g., activity updates such as notices that another user is now following you on the Service) and for promotional purposes (e.g., newsletters, new product offerings, event notifications, special third-party offers). Email messages we send you may contain code that enables our database to track your usage of the emails, including whether the email was opened and what links (if any) were clicked. If you would rather not receive promotional emails from us, please see the section below labeled "Choice/Opt-Out". We reserve the right to send you certain communications, such as service announcements and administrative messages, without offering you the opportunity to opt out of receiving them. We may also contact you by text message (including to any wireless number you may provide to us) solely in connection with the Service. If you would rather not receive text messages from us, you may change or delete your number from your "Account Settings" page, or ask to be removed from our contact list if you receive a call or text message from us. We fully comply with the requirements of the U.S. CAN-SPAM Act.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Demographic Data</span></h4>
-        <p dir="ltr"><span>Demographic data is also collected by the Service. We use this data to tailor our visitors' experience, showing them content that we think they might be interested in, and displaying the content according to their preferences. Some of this information may be shared with advertisers on a non-personally identifiable basis.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Online Survey Data</span></h4>
-        <p dir="ltr"><span>We may periodically conduct voluntary member surveys. We encourage our members to participate in such surveys because they provide us with important information regarding the improvement of the Service. You may also volunteer for certain surveys that we may offer to our users, and any additional rules regarding the conduct of such surveys will be disclosed to you prior to your participation.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Information Transferred As a Result of Sale of Business.</span></h4>
-        <p dir="ltr"><span>In the event that we are acquired by another company, your PII may be part of the assets transferred to the acquiring party. If this occurs, you will be notified if there are any material changes to the way your PII is collected or used.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>Affiliate Information: </span></p>
-        <ul>
-          <li dir="ltr">
-            <p dir="ltr"><span>Third Party Vendors - We may share your non-personally identifiable information with business analytics vendors who provide services or functions on our behalf and/or are authorized to collect information on our behalf, via Cookies or other technologies, as necessary to operate Max Points Website features or facilitate online tailored advertising services.</span></p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr"><span>Business Partners - We may share User Information with business partners with whom we may either jointly offer products and services, or whose products or services may be offered on our Max Points Website. You should know that if you choose to access these optional services through our business partners, we may share User Information about you but we do not control or monitor their privacy practices.</span></p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr"><span>Referring Website - We may share User Information with referring websites and we encourage you to review the referring website&rsquo;s privacy policy.</span></p>
-          </li>
-        </ul>
-        <p><span><span>&nbsp;</span></span></p>
-        <p dir="ltr"><span>We do not allow these parties to access nor do we share your PII with these parties. Please note that these business partners and third party providers may be located outside the United States, in countries/regions which may have lower level of data privacy and protection than those offered in your country of residence. Nonetheless, we will aim to protect your information in accordance with strict data protection standards.</span></p>
-        <h4 dir="ltr"><span>Age Restrictions</span></h4>
-        <p dir="ltr"><span>Our age restrictions for the Service are set forth in our Terms of Use. We do not target any portion of our Service to children under the age of 13. In compliance with the Children's Online Privacy Protection Act, any information we may receive from users we believe to be under the age of 13 will be purged from our database.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Geographic Restrictions</span></h4>
-        <p dir="ltr"><span>Our services are intended for use by United States residents at this time, and the information collected in connection with the Service (including PII) is stored and processed in the United States. If you reside outside the United States, in accessing or using the Service, you consent to the collection, transfer, use, storage and disclosure of your information, as described in this Privacy Policy (including PII), in the United States and as governed by United States Law. Users may not access, use, or register for the Service if prohibited by law in their country of residence.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Security</span></h4>
-        <p dir="ltr"><span>We have security measures in place that are designed to protect against the loss, misuse and alteration of the information stored in our database. We will exercise reasonable care in providing secure transmission of information between your computer or mobile device and our servers. However, no information transmitted over the Internet can be guaranteed 100% secure, so we cannot ensure or warrant the security of any information transmitted to us over the Internet and accept no liability for any unintentional interception or misuse.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Links to Other Sites</span></h4>
-        <p dir="ltr"><span>We are not responsible for the privacy practices or the content of other websites that may be linked to our Service or of any third party advertisers.</span></p>
-        <p dir="ltr"><span>Choice/Opt-OutYou may use the following options for removing your information from our email mailing list if you wish to opt out of receiving promotional emails and newsletters.</span></p>
-        <ul>
-          <li dir="ltr">
-            <p dir="ltr"><span>Click on the "unsubscribe" link on the bottom of the email;</span></p>
-          </li>
-        </ul>
-        <p><span><span>&nbsp;</span></span></p>
-        <ul>
-          <li dir="ltr">
-            <p dir="ltr"><span>We may share your User Information with Max Points affiliated companies. With your consent, this sharing enables to provide information about products and services that may be of interest to you. With regard to this shared information or access to your information, our affiliates will follow privacy and data protection practices that are at a minimum as those described in this Privacy Policy and comply with applicable laws governing the transmission of promotional communications, including opt-out procedures.</span></p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr"><span>Social media providers. When you access certain social media features through our Max Points or if you connect to your Max Points account to a social media provider, you are sharing information with the social media provider (such as Facebook) and the information you share will be governed by their privacy policies (including that we may access such information via the social media provider). Please note that the relevant social media provider has their own privacy policy. You may be able to modify your privacy settings for these social media providers; we encourage you to review their policies.</span></p>
-          </li>
-        </ul>
-        <h4 dir="ltr"><span>Updating Your Information</span></h4>
-        <p dir="ltr"><span>You may change your email address, password and other information from the "Account Settings" page accessible via a link from our website and mobile application. To the extent you choose to include PII or other information in your profile, the Service allows you to update or remove that information by editing or deleting the content.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Acceptance of Privacy Policy</span></h4>
-        <p dir="ltr"><span>Your use of any of our Services is subject to this Privacy Policy and our Terms of Use. BY USING ANY PORTION OF OUR SERVICE, YOU ARE ACCEPTING THE PRACTICES SET OUT IN THIS PRIVACY POLICY AND THE TERMS OF USE.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Changes</span></h4>
-        <p dir="ltr"><span>Any information that is collected is subject to the privacy policy in effect at the time such information is collected. We may, however, modify and revise our privacy policy from time-to-time. If we make any material changes to this policy, we will notify you of such changes by posting them on the Service or by sending you an email or other notification, and we will indicate when such changes will become effective. By continuing to access or use the Service after those changes become effective, you are agreeing to be bound by the revised policy.</span></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Contacting Max Points </span></h4>
-        <p dir="ltr"><span>If you have any questions about this Privacy Policy, the practices of our Service, or your dealings with us, you can contact:</span></p>
-        <p dir="ltr"><a href="mailto:Contact@MaxPoints.co"><span>Contact@MaxPoints.co</span></a></p>
-        <p><span><span>&nbsp;</span></span></p>
-        <h4 dir="ltr"><span>Effective Date</span></h4>
-        <p><span id="docs-internal-guid-836c7e0c-ef4a-55b9-9680-83a597a05ceb"><span>This privacy statement was last revised on March 20, 2017.</span></span></p>
-      </div>
+      <p class="col s12">
+        Lorem Ipsum
+      </p>
     </div>
   </div>
   <!-- End Privacy Policy -->
 
   <!-- Register -->
   <div id="register" class="row" style="display: none;">
-    <div class="col s10 offset-s1 m6 offset-m3" style="margin-top: 30px;">
+    <div class="col s10 offset-s1 l6 offset-l3" style="margin-top: 30px;">
       <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content center">
@@ -536,6 +432,7 @@
               <h3>
                 Create an Account
               </h3>
+              <a onclick="model.controllers.showLogin()" style="cursor: pointer;">Already have an account? Log in here.</a>
             </div>
             <div class="row" style="margin: 20px;">
               <a onclick="model.auth.handleGoogleRegister()" class="waves-effect waves-light btn-large col m6 offset-m3 s10 offset-s1" style="background-color: #dd4b39;">    <svg style="width:24px;height:24px;top: 6px; position: relative; right: 5px;" viewBox="0 0 24 24">
@@ -544,7 +441,7 @@
                 Google
               </a>
             </div>
-            <div class="row" style="padding: 15px;margin-bottom: 0px;">
+            <div class="row" style="margin-bottom: 0px;">
               <div class="col s3 offset-s2 m2 offset-m3" style="margin-top: 16px;border-top: solid 1px rgba(0,0,0,.5);"></div>
               <div class="col s2"><h6>OR</h6></div>
               <div class="col s3 m2" style="margin-top: 16px;border-top: solid 1px rgba(0,0,0,.5);"></div>
@@ -588,7 +485,7 @@
 
   <!-- Sign In -->
   <div id="signIn" class="row" style="display: none;">
-    <div class="col s10 offset-s1 m6 offset-m3" style="margin-top: 30px;">
+    <div class="col s10 offset-s1 l6 offset-l3" style="margin-top: 30px;">
       <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content center">
@@ -607,7 +504,7 @@
                 Google
               </a>
             </div>
-            <div class="row" style="padding: 15px;margin-bottom: 0px;">
+            <div class="row" style="margin-bottom: 0px;">
               <div class="col s3 offset-s2 m2 offset-m3" style="margin-top: 16px;border-top: solid 1px rgba(0,0,0,.5);"></div>
               <div class="col s2"><h6>OR</h6></div>
               <div class="col s3 m2" style="margin-top: 16px;border-top: solid 1px rgba(0,0,0,.5);"></div>
@@ -668,7 +565,7 @@
   </div>
   <!-- End Sign In -->
 
-  <!-- Landing Page Footer Mobile -->
+  <!-- Footer Mobile -->
   <footer id="preFooterMobile" class="page-footer hide-on-med-only hide-on-large-only" style="background-color: #0d47a1; padding-top: 0px;">
     <hr>
     <div class="col s12 center hide-on-med-only hide-on-large-only" style="padding-top: 10px;">
@@ -688,7 +585,7 @@
   </footer>
   <!-- End Landing Page Footer Mobile -->
 
-  <!-- Landing Page Footer Desktop -->
+  <!-- Footer Desktop -->
   <footer id="preFooterDesktop" class="page-footer hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px;">
     <hr>
     <div class="footer-copyright">
@@ -787,7 +684,7 @@
                 </p>
               </div>
               <div class="col m12" style="background-color: #00c853; color: #fff; margin-bottom: 20px; cursor: pointer;">
-                <p style="text-transform: uppercase;" onclick="model.controllers.calculatorSetup()">
+                <p style="text-transform: uppercase;" onclick="model.controllers.showRegister()">
                   select destination
                 </p> 
               </div>
@@ -827,7 +724,7 @@
                 </p>
               </div>
               <div class="col m12" style="background-color: #00c853; color: #fff; margin-bottom: 20px; cursor: pointer;">
-                <p style="text-transform: uppercase;" onclick="model.controllers.calculatorSetup()">
+                <p style="text-transform: uppercase;" onclick="model.controllers.showRegister()">
                   select destination
                 </p> 
               </div>
@@ -867,7 +764,7 @@
                 </p>
               </div>
               <div class="col m12" style="background-color: #00c853; color: #fff; margin-bottom: 20px; cursor: pointer;">
-                <p style="text-transform: uppercase;" onclick="model.controllers.calculatorSetup()">
+                <p style="text-transform: uppercase;" onclick="model.controllers.showRegister()">
                   select destination
                 </p> 
               </div>
@@ -927,7 +824,7 @@
                 </p>
               </div>
               <div class="col s12" style="background-color: #00c853; color: #fff; margin-bottom: 20px; cursor: pointer;">
-                <p style="text-transform: uppercase;" onclick="model.controllers.calculatorSetup()">
+                <p style="text-transform: uppercase;" onclick="model.controllers.showRegister()">
                   select destination
                 </p> 
               </div>
@@ -949,254 +846,233 @@
   <script type="text/x-handlebars-template" id="pointsCalculatorTemplate">
 
     <!-- Points Calculator Desktop -->
-    <div class="section no-pad-bot hide-on-small-only hide-on-med-only">
-      <div class="container">
-        <h2 class="header center">
-          Tell us a little bit about your goals.
-        </h2>
-        <div class="row"> 
+    <div class="section no-pad-bot hide-on-small-only hide-on-med-only" style="padding-left: 300px;">
+      <h2 class="header center">
+        Tell us a little bit about your goals.
+      </h2>
+      <div class="row" style="margin-bottom: 0px;"> 
 
-          <!-- Rewards goal Desktop --> 
-          <div class="col m10 offset-m1">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col m2">
-                    <div id="addTouch" class="livicon-evo"></div>
-                  </div>
-                  <h5 class="col m6" style="margin-top: 45px; margin-left: 50px;">
-                    What’s your rewards goal?
-                  </h5>
-                  <div class="col m3 collection center" style="margin-top: 17px;">
-                    <a id="freeFlights" class="collection-item calculatorInputDesktop">
-                      Free Flights
-                    </a>
-                    <a id="cashBack" class="collection-item calculatorInputDesktop">
-                      Cash Back
-                    </a>
+        <!-- Rewards goal Desktop --> 
+        <div class="col m10 offset-m1">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class="col m2">
+                  <div id="addTouch" class="livicon-evo"></div>
+                </div>
+                <h5 class="col m6" style="margin-top: 45px; margin-left: 50px;">
+                  What’s your rewards goal?
+                </h5>
+                <div class="col m3 collection center" style="margin-top: 17px;">
+                  <a id="freeFlights" class="collection-item calculatorInputDesktop">
+                    Free Flights
+                  </a>
+                  <a id="cashBack" class="collection-item calculatorInputDesktop">
+                    Cash Back
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Rewards goal Desktop -->
+
+        <!-- Own a Business? Desktop -->
+        <div class="col m10 offset-m1">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class="col m2">
+                  <div id="addBriefcase" class="livicon-evo"></div>
+                </div>
+                <h5 class="col m6" style="margin-top: 45px; margin-left: 50px;">
+                  Do you own a business?
+                </h5>
+                <div class="col m3 collection center" style="margin-top: 17px;">
+                  <a id="yesOwnBusiness" class="collection-item calculatorInputDesktop">
+                    Yes
+                  </a>
+                  <a id="noOwnBusiness" class="collection-item calculatorInputDesktop">
+                    No
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End own a business Desktop -->
+
+        <!-- Credit Score? Desktop -->
+        <div class="col m10 offset-m1">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class="col m2" style="margin-top: 40px;">
+                  <div id="addDashboard" class="livicon-evo"></div>
+                </div>
+                <h5 class="col m6" style="margin-top: 92px; margin-left: 50px;">
+                  How's your credit score?
+                </h5>
+                <div class="col m3 collection center" style="margin-top: 17px;">
+                  <a id="excellentCredit" class="collection-item calculatorInputDesktop">
+                    Great (690+)
+                  </a>
+                  <a id="goodCredit" class="collection-item calculatorInputDesktop">
+                    Good (670-689)
+                  </a>
+                  <a id="fairCredit" class="collection-item calculatorInputDesktop">
+                    Fair (640-669)
+                  </a>
+                  <a id="limitedCredit" class="collection-item calculatorInputDesktop">
+                    Limited Credit History
+                  </a>
+                  <a id="poorCredit" class="collection-item calculatorInputDesktop">
+                    Needs Work
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Credit Score? Desktop -->
+
+        <!-- Monthly Spending? Desktop -->
+        <div class="col m10 offset-m1">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class="col m2">
+                  <div id="addCreditCardOut" class="livicon-evo"></div>
+                </div>
+                <h5 class="col m9" style="margin-top: 30px; margin-left: 50px;">
+                  On average, how much do you spend <b>per month</b> on debit and credit cards?
+                </h5>
+                <div class="row col m12 center" style="margin-top: 10px;">
+                  <a id="500" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
+                    $500
+                  </a>
+                  <a id="1000" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
+                    $1,000
+                  </a>
+                  <a id="1500" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
+                    $1,500
+                  </a>
+                  <a id="2000" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
+                    $2,000
+                  </a>
+                  <a id="3000+" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
+                    $3,000+
+                  </a>
+                  <a id="other" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
+                    Other
+                  </a>
+                </div>
+                <div class="row" id="otherSelection" style="display: none;">
+                  <div class="input-field col m6 offset-m3">
+                    <input id="otherSelectionInput" type="text" class="validate">
+                    <label for="otherSelectionInput">Amount:</label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End Rewards goal Desktop -->
+        </div>
+        <!-- End Monthly Spending? Desktop -->
 
-          <!-- Own a Business? Desktop -->
-          <div class="col m10 offset-m1">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col m2">
-                    <div id="addBriefcase" class="livicon-evo"></div>
+        <!-- Credit Cards? Desktop -->
+        <div class="col m10 offset-m1">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div class="col m2">
+                  <div id="addCreditCardIn" class="livicon-evo"></div>
+                </div>
+                <h5 class="col m9" style="margin-top: 47px; margin-left: 50px;">
+                  What credit cards do you have?
+                </h5>
+                <div class="row col m12 center">
+                  <div class="input-field col m8 offset-m2 center">
+                    <input type="text" id="card1" class="autocomplete">
+                    <label for="card1">Card 1</label>
                   </div>
-                  <h5 class="col m6" style="margin-top: 45px; margin-left: 50px;">
-                    Do you own a business?
-                  </h5>
-                  <div class="col m3 collection center" style="margin-top: 17px;">
-                    <a id="yesOwnBusiness" class="collection-item calculatorInputDesktop">
-                      Yes
-                    </a>
-                    <a id="noOwnBusiness" class="collection-item calculatorInputDesktop">
-                      No
-                    </a>
+                  <div class="input-field col m8 offset-m2" id="card22" style="display: none;">
+                    <input type="text" id="card2" class="autocomplete">
+                    <label for="card2">Card 2</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card33" style="display: none;">
+                    <input type="text" id="card3" class="autocomplete">
+                    <label for="card3">Card 3</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card44" style="display: none;">
+                    <input type="text" id="card4" class="autocomplete">
+                    <label for="card4">Card 4</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card55" style="display: none;">
+                    <input type="text" id="card5" class="autocomplete">
+                    <label for="card5">Card 5</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card66" style="display: none;">
+                    <input type="text" id="card6" class="autocomplete">
+                    <label for="card6">Card 6</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card77" style="display: none;">
+                    <input type="text" id="card7" class="autocomplete">
+                    <label for="card7">Card 7</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card88" style="display: none;">
+                    <input type="text" id="card8" class="autocomplete">
+                    <label for="card8">Card 8</label>
+                  </div>
+                  <div class="input-field col m8 offset-m2" id="card99" style="display: none;">
+                    <input type="text" id="card9" class="autocomplete">
+                    <label for="card9">Card 9</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m4 offset-m4 center">
+                    <button class="btn waves-effect waves-light btn" id="addAnotherCard">
+                      Add Card
+                      <i class="material-icons right">credit_card</i>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End own a business Desktop -->
+        </div>
+        <!-- End Credit Cards? Desktop -->
 
-          <!-- Credit Score? Desktop -->
-          <div class="col m10 offset-m1">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col m2" style="margin-top: 40px;">
-                    <div id="addDashboard" class="livicon-evo"></div>
-                  </div>
-                  <h5 class="col m6" style="margin-top: 92px; margin-left: 50px;">
-                    How's your credit score?
-                  </h5>
-                  <div class="col m3 collection center" style="margin-top: 17px;">
-                    <a id="excellentCredit" class="collection-item calculatorInputDesktop">
-                      Great (700+)
-                    </a>
-                    <a id="goodCredit" class="collection-item calculatorInputDesktop">
-                      Good (680-699)
-                    </a>
-                    <a id="fairCredit" class="collection-item calculatorInputDesktop">
-                      Fair (640-679)
-                    </a>
-                    <a id="poorCredit" class="collection-item calculatorInputDesktop">
-                      Needs Work
-                    </a>
-                  </div>
+        <!-- Data Validation Box Desktop -->
+        <div class="col s8 offset-s2 center" id="vetPointCalcInputsDesktop" style="display: none;">
+          <div class="card horizontal orange darken-4 white-text">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div>
+                  <h6> 
+                    Please make sure to fill in all of the fields above before hitting submit.
+                  </h6>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End Credit Score? Desktop -->
+        </div>
+        <!-- End Data Validation Box Mobile -->
 
-          <!-- Monthly Spending? Desktop -->
-          <div class="col m10 offset-m1">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col m2">
-                    <div id="addCreditCardOut" class="livicon-evo"></div>
-                  </div>
-                  <h5 class="col m9" style="margin-top: 30px; margin-left: 50px;">
-                    On average, how much do you spend <b>per month</b> on debit and credit cards?
-                  </h5>
-                  <div class="row col m12 center" style="margin-top: 10px;">
-                    <a id="500" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
-                      $500
-                    </a>
-                    <a id="1000" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
-                      $1,000
-                    </a>
-                    <a id="1500" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
-                      $1,500
-                    </a>
-                    <a id="2000" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
-                      $2,000
-                    </a>
-                    <a id="3000+" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
-                      $3,000+
-                    </a>
-                    <a id="other" class="col m2 collection-horizontal btn-flat-horizonatal calculatorInputDesktop">
-                      Other
-                    </a>
-                  </div>
-                  <div class="row" id="otherSelection" style="display: none;">
-                    <div class="input-field col m6 offset-m3">
-                      <input id="otherSelectionInput" type="text" class="validate">
-                      <label for="otherSelectionInput">Amount:</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Monthly Spending? Desktop -->
+        <!-- Submit Button Desktop -->
+        <div class="col m4 offset-m4 center">
 
-          <!-- E-mail? Desktop -->
-          <div class="col m10 offset-m1">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col m2">
-                    <div id="addEnvelopePut" class="livicon-evo"></div>
-                  </div>
-                  <h5 class="col m9" style="margin-left: 50px; margin-bottom: 0px;">
-                    What’s the best email to send your results?
-                  </h5>
-                  <div class="col m9" style="margin-left: 50px;">
-                    <div class="input-field">
-                      <input id="email" type="email" class="validate">
-                      <label for="email" data-error="Please re-submit." data-success="Success!">Email</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End E-mail? Desktop -->
-
-          <!-- Credit Cards? Desktop -->
-          <div class="col m10 offset-m1">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col m2">
-                    <div id="addCreditCardIn" class="livicon-evo"></div>
-                  </div>
-                  <h5 class="col m9" style="margin-top: 47px; margin-left: 50px;">
-                    What credit cards do you have?
-                  </h5>
-                  <div class="row col m12 center">
-                    <div class="input-field col m8 offset-m2 center">
-                      <input type="text" id="card1" class="autocomplete">
-                      <label for="card1">Card 1</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card22" style="display: none;">
-                      <input type="text" id="card2" class="autocomplete">
-                      <label for="card2">Card 2</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card33" style="display: none;">
-                      <input type="text" id="card3" class="autocomplete">
-                      <label for="card3">Card 3</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card44" style="display: none;">
-                      <input type="text" id="card4" class="autocomplete">
-                      <label for="card4">Card 4</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card55" style="display: none;">
-                      <input type="text" id="card5" class="autocomplete">
-                      <label for="card5">Card 5</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card66" style="display: none;">
-                      <input type="text" id="card6" class="autocomplete">
-                      <label for="card6">Card 6</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card77" style="display: none;">
-                      <input type="text" id="card7" class="autocomplete">
-                      <label for="card7">Card 7</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card88" style="display: none;">
-                      <input type="text" id="card8" class="autocomplete">
-                      <label for="card8">Card 8</label>
-                    </div>
-                    <div class="input-field col m8 offset-m2" id="card99" style="display: none;">
-                      <input type="text" id="card9" class="autocomplete">
-                      <label for="card9">Card 9</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col m4 offset-m4 center">
-                      <button class="btn waves-effect waves-light btn" id="addAnotherCard">
-                        Add Card
-                        <i class="material-icons right">credit_card</i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Credit Cards? Desktop -->
-
-          <!-- Data Validation Box Desktop -->
-          <div class="col s8 offset-s2 center" id="vetPointCalcInputsDesktop" style="display: none;">
-            <div class="card horizontal orange darken-4 white-text">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div>
-                    <h6> 
-                      Please make sure to fill in all of the fields above before hitting submit.
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Data Validation Box Mobile -->
-
-          <!-- Submit Button Desktop -->
-          <div class="col m4 offset-m4 center">
-
-            <button class="btn waves-effect waves-light btn-large" id="submitForm">
-              Submit
-              <i class="material-icons right">send</i>
-            </button>
-
-          </div>
-          <!-- End Submit Button Desktop -->
+          <button class="btn waves-effect waves-light btn-large" id="submitForm">
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
 
         </div>
+        <!-- End Submit Button Desktop -->
+
       </div>
+      
       <!-- Points Calculator Footer Desktop -->
-      <!-- <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
+      <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
         <hr>
         <div class="footer-copyright">
           <div class="row center white-text">
@@ -1212,7 +1088,7 @@
             </div>
           </div>
         </div>
-      </footer> -->
+      </footer>
       <!-- End Points Calculator Footer Desktop -->
     </div>
     <!-- End Points Calculator Desktop -->
@@ -1288,13 +1164,16 @@
                   </h5>
                   <div class="col s12 collection center" style="margin-top: 17px;">
                     <a id="excellentCreditMobile" class="collection-item calculatorInputMobile">
-                      Great (700+)
+                      Great (690+)
                     </a>
                     <a id="goodCreditMobile" class="collection-item calculatorInputMobile">
-                      Good (680-699)
+                      Good (670-689)
                     </a>
                     <a id="fairCreditMobile" class="collection-item calculatorInputMobile">
-                      Fair (640-679)
+                      Fair (640-669)
+                    </a>
+                    <a id="limitedCreditMobile" class="collection-item calculatorInputDesktop">
+                      Limited Credit History
                     </a>
                     <a id="poorCreditMobile" class="collection-item calculatorInputMobile">
                       Needs Work
@@ -1350,29 +1229,6 @@
             </div>
           </div>
           <!-- End Monthly Spending? Mobile -->
-
-          <!-- E-mail? Mobile -->
-          <div class="col s12">
-            <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div class="col s12 center">
-                    <div id="addEnvelopePutMobile" class="livicon-evo"></div>
-                  </div>
-                  <h5 class="col s12 center">
-                    What’s the best email to send your results?
-                  </h5>
-                  <div class="col s8 offset-s2">
-                    <div class="input-field">
-                      <input id="emailMobile" type="email" class="validate">
-                      <label for="emailMobile" data-error="Please re-submit." data-success="Success!">Email</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End E-mail? Mobile -->
 
           <!-- Credit Cards? Mobile -->
           <div class="col s12">
@@ -1468,7 +1324,7 @@
       </div>
 
       <!-- Points Calculator Footer Mobile -->
-      <!-- <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
+      <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
         <hr>
         <div class="col s12 center hide-on-med-only hide-on-large-only" style="padding-top: 10px;">
           <a id="termsOfServiceButtonCalcMobile" style="color:white;">Terms of Service</a>
@@ -1476,7 +1332,7 @@
           <a id="privacyPolicyButtonCalcMobile" style="color:white;">Privacy Policy</a>
         </div> 
         <div class="footer-copyright">
-          <div class="row center white-text">
+          <div class="row center white-text" style="margin-bottom: 0px;">
             <div class="container">
               <div class="col s12">
                 &#169; 2017 Max Points, LLC. All Rights Reserved.         
@@ -1484,7 +1340,7 @@
             </div>
           </div>
         </div>
-      </footer> -->
+      </footer>
       <!-- End Points Calculator Footer Mobile -->
     </div>
     <!-- End Points Calculator Mobile -->
@@ -1497,18 +1353,6 @@
 
     <!--Mobile View-->
     <div class="hide-on-large-only">
-
-      <!-- Mobile Navbar-->
-      <nav>
-        <div class="nav-wrapper">
-          <a class="brand-logo left">Max Points</a>
-          <ul class="right">
-            <li><a id="signInRecsMobile" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
-            <li><a id="registerRecsMobile" class="waves-effect waves-light btn register">Register</a></li>
-          </ul>
-        </div>
-      </nav>
-      <!-- End Mobile Navbar-->
       <div class="section no-pad-bot">
         <div class="row">
           <div class="container" style="background-color: #eceff1">  
@@ -1566,10 +1410,6 @@
 
           <div class="row col s12">
             <a class="col s4 offset-s4 waves-effect waves-light btn">Apply Now</a>
-          </div>
-
-          <div class="row col s12">
-            <a id="registerRecsMobile2" class="col s6 offset-s3 register" style="text-align: center;">Save for Later</a>
           </div>
 
           <div class="container">
@@ -1649,10 +1489,6 @@
 
           <div class="row col s12">
             <a class="col s4 offset-s4 waves-effect waves-light btn" href="{{affiliateLink}}">Apply Now</a>
-          </div>
-
-          <div class="row col s12">
-            <a id="registerRecsMobile3" class="col s6 offset-s3 register" style="text-align: center;">Save for Later</a>
           </div>
 
           <div class="container">
@@ -1770,11 +1606,11 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Display Recommendations Footer Mobile -->
-      <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
+      <footer class="page-footer hide-on-large-only" style="background-color: #0d47a1; padding-top: 0px;">
         <hr>
-        <div class="col s12 center hide-on-med-only hide-on-large-only" style="padding-top: 10px;">
+        <div class="col s12 center" style="padding-top: 10px;">
           <a id="termsOfServiceButtonMobileDisplayRecs" style="color:white;">Terms of Service</a>
           |
           <a id="privacyPolicyButtonMobileDisplayRecs" style="color:white;">Privacy Policy</a>
@@ -1790,271 +1626,276 @@
         </div>
       </footer>
       <!-- End Display Recommendations Footer Mobile -->
-    </div>
+    </div> 
 
     <!--Desktop and Tablet View-->
-    <div class="hide-on-med-only hide-on-small-only">
-      <header>
-        <div class="side-nav fixed">
-          <div class="row col m12" style="padding-top: 100px;">
+    <div class="hide-on-med-only hide-on-small-only" style="margin-left: 300px;">
+        
+      <div class="section no-pad-bot" style="padding-top: 0px;background-color: #eceff1;">
+        <div class="section col l10 offset-l1">
+          <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
+            <div class="switch">
+              <label>
+                Cash Back
+                {{#if currentStatusBasedOnSelections.cashBack}}
+                <input id="desktopSwitch" type="checkbox">
+                {{else}}
+                <input id="desktopSwitch" type="checkbox" checked="checked">
+                {{/if}}
+                <span class="lever"></span>
+                Free Flights
+              </label>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <ul id="pickCardDesktop" class="tabs">
+                  <li class="tab col s3">
+                    <a id="0" class="active">
+                      <i class="medium material-icons" style="height: 50px; width: 50px;">credit_card</i>
+                    </a>
+                  </li>
+                  <li class="tab col s3">
+                    <a id="1">
+                      <i class="medium material-icons">credit_card</i>
+                    </a>
+                  </li>
+                  <li class="tab col s3">
+                    <a id="2">
+                      <i class="medium material-icons">credit_card</i>
+                    </a>
+                  </li>
+                  <li class="tab col s3">
+                    <a id="3">
+                      <i class="medium material-icons">credit_card</i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row col m12">
             <i class="large material-icons col m12" style="text-align: center; color: #00c853;">
               credit_card
             </i>
             <h5 class="col m12" style="text-align: center;">
               {{currentDisplayRec.cardName}}
             </h5>
-            <a class="col m6 offset-m3 waves-effect waves-light btn" href="{{affiliateLink}}">Apply Now</a>
-            <a id="registerRecsDesktop2" class="col m6 offset-m3 register" style="text-align: center;">Save for Later</a>
+            <a class="col m2 offset-m5 waves-effect waves-light btn" href="{{affiliateLink}}">Apply Now</a>
           </div>
-        </div>
-      </header>
-      <main style="padding-left: 300px;">
-        
-        <div class="section no-pad-bot" style="padding-top: 0px;">
-          <div class="row" style="background-color: #0d47a1; padding: 15px 0 15px 0;margin-bottom: 0px;">
-            <div class="col m4">
-              <a class="brand-logo left">Logo</a>
-            </div>
-            <div class="col m2 offset-m4">
-              <a id="signInRecsDesktop" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a>
-            </div>
-            <div class="col m2">
-              <a id="registerRecsDesktop" class="waves-effect waves-light btn register">Register</a>
-            </div>
-          </div>
-          <div class="row" style="background-color: #eceff1; padding-bottom: 0px;">
-            <div class="section col m9">
-              <div class="row">
-                <div class="col m6">
-                  <div class="card horizontal">
-                    <div class="card-stacked">
-                      <div class="card-content">
-                        <p style="text-align: center;">
-                          Signup Bonus Value
-                        </p>
-                        <h2 style="text-align: center;color: #00c853;">
-                          ${{currentDisplayRec.cardDetails.signupBonus.bonusValue}}
-                        </h2>
-                        <p style="text-align: center;">
-                          {{currentDisplayRec.cardDetails.signupBonus.bonusCopy}}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col m6">
-                  <div class="card horizontal">
-                    <div class="card-stacked">
-                      <div class="card-content">
-                        <p style="text-align: center;">
-                          Earning rate increase
-                        </p>
-                        <h2 style="text-align: center;color: #00c853;">
-                          {{currentDisplayRec.cardDetails.earningRateIncrease}}%
-                        </h2>
-                        <p style="text-align: center;">
-                          comparing your current card selection to the recommended card
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="card white">
-                    <div class="card-content">
-                      <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
-                      <hr><br>
-                      <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-                        <tr>
-                          <td style="width:50%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
-                            Current
-                          </td>
-                          <td style="width:50%; background-color:#01579b; padding: 3px 3px; text-align: center;">
-                            With {{currentDisplayRec.cardName}}
-                          </td>
-                        </tr>
-                      </table>
-                      
-                      {{#each currentDisplayRec.combinedCategoriesComparison}}
-                      <h6>{{catName}}:</h6>
-                      <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
-                        <tr>
-                          <td style="width:{{currentDisplayVal}}%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
-                            {{currentVal}}x
-                          </td>
-                          {{#if recGreaterThanCurrent}}
-                          <td style="width:{{currentDisplayRec.recDisplayVal}}%; background-color:#01579b; padding: 3px 3px; text-align: center;">
-                            {{recVal}}x
-                          </td>
-                          {{/if}}
-                          {{#if addEmptyRow}}
-                          <td style="width: {{emptyRowDisplayVal}}%"></td>
-                          {{/if}}
-                        </tr>
-                      </table>
-                      {{/each}}
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="row">
-                <div class="col s12" style="margin-bottom: 0px !important;">
-                  <ul id="pickCategoryDesktop" class="tabs">
-                    <li class="tab"><a id="bonusAndEarningsDetailsDesktop" class="tablinks active">Bonus & Earnings</a></li>
-                    <li class="tab"><a id="annualFeeDetailsDesktop" class="tablinks">Annual Fee</a></li>
-                    <li class="tab"><a id="extraBenefitsDetailsDesktop" class="tablinks">Extra Benefits</a></li>
-                    <li class="tab"><a id="redemptionDetailsDesktop" class="tablinks">Redemption</a></li>
-                    <li class="tab"><a id="analysisDetailsDesktop" class="tablinks">Analysis</a></li>
-                  </ul>
-                </div>
-                <div id="bonusAndEarningsDetailsDesktopTab" class="col s12 tabcontent">
-                  <div class="card white">
-                    <div class="card-content" style="text-align: center;">
-                      {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9" style="padding-top: 5px;">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                      {{/each}}
-                    </div>
+          <div class="row">
+            <div class="col m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p style="text-align: center;">
+                      Signup Bonus Value
+                    </p>
+                    <h2 style="text-align: center;color: #00c853;">
+                      ${{currentDisplayRec.cardDetails.signupBonus.bonusValue}}
+                    </h2>
+                    <p style="text-align: center;">
+                      {{currentDisplayRec.cardDetails.signupBonus.bonusCopy}}
+                    </p>
                   </div>
-                </div>
-                <div id="annualFeeDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
-                  <div class="card white">
-                    <div class="card-content" style="text-align: center;">
-                      {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9" style="padding-top: 5px;">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                      {{/each}}
-                    </div>
-                  </div>
-                </div>
-                <div id="extraBenefitsDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
-                  <div class="card white">
-                    <div class="card-content" style="text-align: center;">
-                      {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9" style="padding-top: 5px;">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                      {{/each}}
-                    </div>
-                  </div>
-                </div>
-                <div id="redemptionDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
-                  <div class="card white">
-                    <div class="card-content" style="text-align: center;">
-                      {{#each currentDisplayRec.cardDetails.redemptionDetails}}
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9" style="padding-top: 5px;">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                      {{/each}}
-                    </div>
-                  </div>
-                </div>
-                <div id="analysisDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
-                  <div class="card white">
-                    <div class="card-content" style="text-align: center;">
-                      {{#each currentDisplayRec.cardDetails.analysisDetails}}
-                      <div class="container">
-                        <div class="row">
-                          <div class="col s3">
-                            <img src="{{icon}}">
-                          </div>
-                          <div class="col s9" style="padding-top: 5px;">
-                            {{detail}}
-                          </div>
-                        </div>
-                      </div> 
-                      {{/each}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col m4 offset-m4" style="text-align: center">
-                  <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
-                  <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
-                  <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
                 </div>
               </div>
             </div>
-            <div class="col m3">
-              <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
-                <div class="switch">
-                  <label>
-                    Cash Back
-                    {{#if currentStatusBasedOnSelections.cashBack}}
-                    <input id="desktopSwitch" type="checkbox">
-                    {{else}}
-                    <input id="desktopSwitch" type="checkbox" checked="checked">
-                    {{/if}}
-                    <span class="lever"></span>
-                    Free Flights
-                  </label>
+            <div class="col m6">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p style="text-align: center;">
+                      Earning rate increase
+                    </p>
+                    <h2 style="text-align: center;color: #00c853;">
+                      {{currentDisplayRec.cardDetails.earningRateIncrease}}%
+                    </h2>
+                    <p style="text-align: center;">
+                      comparing your current card selection to the recommended card
+                    </p>
+                  </div>
                 </div>
               </div>
-              <ul id="pickCardDesktop" class="table-of-contents" style="text-align: center;">
-                <li><a class="active"><i id="0" class="medium material-icons">credit_card</i></a></li>
-                <li><a><i id="1" class="medium material-icons">credit_card</i></a></li>
-                <li><a><i id="2" class="medium material-icons">credit_card</i></a></li>
-                <li><a><i id="3" class="medium material-icons">credit_card</i></a></li>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <div class="card white">
+                <div class="card-content">
+                  <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
+                  <hr><br>
+                  <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                    <tr>
+                      <td style="width:50%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
+                        Current
+                      </td>
+                      <td style="width:50%; background-color:#01579b; padding: 3px 3px; text-align: center;">
+                        With {{currentDisplayRec.cardName}}
+                      </td>
+                    </tr>
+                  </table>
+                  
+                  {{#each currentDisplayRec.combinedCategoriesComparison}}
+                  <h6>{{catName}}:</h6>
+                  <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                    <tr>
+                      <td style="width:{{currentDisplayVal}}%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
+                        {{currentVal}}x
+                      </td>
+                      {{#if recGreaterThanCurrent}}
+                      <td style="width:{{currentDisplayRec.recDisplayVal}}%; background-color:#01579b; padding: 3px 3px; text-align: center;">
+                        {{recVal}}x
+                      </td>
+                      {{/if}}
+                      {{#if addEmptyRow}}
+                      <td style="width: {{emptyRowDisplayVal}}%"></td>
+                      {{/if}}
+                    </tr>
+                  </table>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row center">
+            <div class="col s12" style="margin-bottom: 0px !important;">
+              <ul id="pickCategoryDesktop" class="tabs">
+                <li class="tab"><a id="bonusAndEarningsDetailsDesktop" class="tablinks active">Bonus & Earnings</a></li>
+                <li class="tab"><a id="annualFeeDetailsDesktop" class="tablinks">Annual Fee</a></li>
+                <li class="tab"><a id="extraBenefitsDetailsDesktop" class="tablinks">Extra Benefits</a></li>
+                <li class="tab"><a id="redemptionDetailsDesktop" class="tablinks">Redemption</a></li>
+                <li class="tab"><a id="analysisDetailsDesktop" class="tablinks">Analysis</a></li>
               </ul>
             </div>
-          </div>
-        </div>
-        <!-- Display Recommendations Footer Desktop -->
-        <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
-          <hr>
-          <div class="footer-copyright">
-            <div class="row center white-text">
-              <div class="container">
-                <div class="col m6">
-                  &#169; 2017 Max Points, LLC. All Rights Reserved.         
+            <div id="bonusAndEarningsDetailsDesktopTab" class="col s12 tabcontent">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                  {{/each}}
                 </div>
-                <div class="col m6">
-                  <a id="termsOfServiceButtonDesktopDisplayRecs" style="color:white;">Terms of Service</a>
-                  |
-                  <a id="privacyPolicyButtonDesktopDisplayRecs" style="color:white;">Privacy Policy</a>
-                </div>            
+              </div>
+            </div>
+            <div id="annualFeeDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+            <div id="extraBenefitsDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+            <div id="redemptionDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.redemptionDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+            <div id="analysisDetailsDesktopTab" class="col s12 tabcontent" style="display: none;">
+              <div class="card white">
+                <div class="card-content" style="text-align: center;">
+                  {{#each currentDisplayRec.cardDetails.analysisDetails}}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s3">
+                        <img src="{{icon}}">
+                      </div>
+                      <div class="col s9" style="padding-top: 5px;">
+                        {{detail}}
+                      </div>
+                    </div>
+                  </div> 
+                  {{/each}}
+                </div>
               </div>
             </div>
           </div>
-        </footer>
-        <!-- End Display Recommendations Footer Desktop -->
-      </main>
-    </div>
 
+          <div class="row">
+            <div class="col m4 offset-m4" style="text-align: center">
+              <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
+              <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+              <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+            </div>
+          </div>
+        </div>
+        
+
+      <!-- Display Recommendations Footer Desktop -->
+      <footer class="page-footer hide-on-med-only hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px;">
+        <hr>
+        <div class="footer-copyright">
+          <div class="row center white-text">
+            <div class="container">
+              <div class="col m6">
+                &#169; 2017 Max Points, LLC. All Rights Reserved.         
+              </div>
+              <div class="col m6">
+                <a id="termsOfServiceButtonDesktopDisplayRecs" style="color:white;">Terms of Service</a>
+                |
+                <a id="privacyPolicyButtonDesktopDisplayRecs" style="color:white;">Privacy Policy</a>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Display Recommendations Footer Desktop -->
+    </div>
   </script>
   <!-- End Display Reccomendations Template -->
 
