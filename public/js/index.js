@@ -209,7 +209,6 @@ var model = {
 
             //     // Send Calculator Inputs to Firebase
             //     firebase.database().ref('calculatorInputs/' + user.uid).set({
-            //         email: model.cards.currentStatusBasedOnSelections.email,
             //         ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
             //         creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
             //         rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
@@ -336,7 +335,6 @@ var model = {
 
                     //     // Send Calculator Inputs to Firebase
                     //     firebase.database().ref('calculatorInputs/' + user.uid).set({
-                    //         email: model.cards.currentStatusBasedOnSelections.email,
                     //         ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
                     //         creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
                     //         rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
@@ -371,6 +369,7 @@ var model = {
                       } else {
                         // Write Functions to display a view for those that haven't filled out the calc yet
                         console.log('No data to load.');
+                        document.getElementById('landingPage').style.display = 'none';
                         model.controllers.calculatorSetup();
                       }
                     });
@@ -384,7 +383,6 @@ var model = {
                             firebase.database().ref('/calculatorInputs/' + user.uid).once('value').then(function(snapshot) {
                                 var loadCalculatorInputs = (snapshot.val());
 
-                                model.cards.currentStatusBasedOnSelections.email = loadCalculatorInputs.email;
                                 model.cards.currentStatusBasedOnSelections.ownBusiness = loadCalculatorInputs.ownBusiness;
                                 model.cards.currentStatusBasedOnSelections.creditScore = loadCalculatorInputs.creditScore;
                                 model.cards.currentStatusBasedOnSelections.rewardsGoal = loadCalculatorInputs.rewardsGoal;
@@ -2861,7 +2859,6 @@ var model = {
         ],
         userSelections: [],
         currentStatusBasedOnSelections: {
-            email: null,
             ownBusiness: null,
             creditScore: null,
             rewardsGoal: null,
@@ -3259,8 +3256,8 @@ var model = {
                 cardName: 'Bank of America® BankAmericard Travel Rewards® Credit Card',
                 annualFee: 0,
                 categories: {
-                everywhere: 1.5                
-            },
+                    everywhere: 1.5                
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3313,9 +3310,9 @@ var model = {
                 cardName: 'Bank of America® Alaska Airlines Visa Signature® Credit Card',
                 annualFee: 75,
                 categories: {
-                everywhere: 1.7,
-                alaskaAirlinesFlights: 5.1
-            },
+                    everywhere: 1.7,
+                    alaskaAirlinesFlights: 5.1
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3378,14 +3375,14 @@ var model = {
                     },
                     earningRateIncrease: 25,
                     affiliateLink: 'http://oc.cardsynergy.com/t/?cr=19846&c=246411845&aid=6478b8ee&sid=38190&last_updated=1474583722'
-            }
+                }
             },
             {
                 cardName: 'Capital One® Venture® Rewards Credit Card',
                 annualFee: 59,
                 categories: {
-                everywhere: 2
-            },
+                    everywhere: 2
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3442,8 +3439,8 @@ var model = {
                 cardName: 'Capital One® QuicksilverOne® Cash Rewards Credit Card',
                 annualFee: 39,
                 categories: {
-                everywhere: 1.5
-            },
+                    everywhere: 1.5
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3496,8 +3493,8 @@ var model = {
                 cardName: 'Capital One® Platinum Credit Card',
                 annualFee: 0,
                 categories: {
-                everywhere: 0
-            },
+                    everywhere: 0
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3550,8 +3547,8 @@ var model = {
                 cardName: 'Capital One® Secured MasterCard®',
                 annualFee: 0,
                 categories: {
-                everywhere: 0
-            },
+                    everywhere: 0
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3608,8 +3605,8 @@ var model = {
                 cardName: 'Journey® Student Rewards from Capital One®',
                 annualFee: 0,
                 categories: {
-                everywhere: 1.25
-            },
+                    everywhere: 1.25
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3666,8 +3663,8 @@ var model = {
                 cardName: 'Citi® Double Cash Card',
                 annualFee: 0,
                 categories: {
-                everywhere: 2
-            },
+                    everywhere: 2
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3721,8 +3718,8 @@ var model = {
                 annualFee: 95,
                 categories: {
                 everywhere: 1.6,
-                americanAirlinesFlights: 3.2
-            },
+                    americanAirlinesFlights: 3.2
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3862,12 +3859,12 @@ var model = {
                 cardName: 'Citi ThankYou® Premier Card',
                 annualFee: 95,
                 categories: {
-                everywhere: 1.5,
-                diningOut: 3,
-                entertainment: 3,
-                gas: 4.5,
-                travel: 4.5
-            },
+                    everywhere: 1.5,
+                    diningOut: 3,
+                    entertainment: 3,
+                    gas: 4.5,
+                    travel: 4.5
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -3940,12 +3937,12 @@ var model = {
                 cardName: 'Citi Prestige® Card',
                 annualFee: 250,
                 categories: {
-                everywhere: 1.5,
-                diningOut: 3,
-                entertainment: 3,
-                hotels: 4.5,
-                flights: 4.5
-            },
+                    everywhere: 1.5,
+                    diningOut: 3,
+                    entertainment: 3,
+                    hotels: 4.5,
+                    flights: 4.5
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4034,8 +4031,8 @@ var model = {
                 cardName: 'Barclaycard Arrival Plus™ World Elite MasterCard®',
                 annualFee: 89,
                 categories: {
-                everywhere: 2.1                
-            },
+                    everywhere: 2.1                
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4096,8 +4093,8 @@ var model = {
                 cardName: 'Chase Freedom Unlimited℠',
                 annualFee: 0,
                 categories: {
-                everywhere: 3                
-            },
+                    everywhere: 3                
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4147,7 +4144,7 @@ var model = {
                 }
             },
             {
-                cardName: 'Chase® Freedom®',
+                cardName: 'Chase Freedom®',
                 annualFee: 0,
                 categories: {
                     everywhere: 2,
@@ -4283,10 +4280,10 @@ var model = {
                 cardName: 'Chase Sapphire Reserve℠',
                 annualFee: 150,
                 categories: {
-                everywhere: 2,
-                travel: 6,
-                dining: 6
-            },
+                    everywhere: 2,
+                    travel: 6,
+                    dining: 6
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4355,9 +4352,9 @@ var model = {
                 cardName: 'Chase® United MileagePlus® Explorer Card',
                 annualFee: 95,
                 categories: {
-                everywhere: 1.7,
-                unitedFlights: 3.4
-            },
+                    everywhere: 1.7,
+                    unitedFlights: 3.4
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4569,12 +4566,12 @@ var model = {
                 cardName: 'Premier Rewards Gold Card From American Express®',
                 annualFee: 195,
                 categories: {
-                everywhere: 2,
-                groceries: 4,
-                gas: 4,
-                diningOut: 4,
-                flights: 6
-            },
+                    everywhere: 2,
+                    groceries: 4,
+                    gas: 4,
+                    diningOut: 4,
+                    flights: 6
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4647,9 +4644,9 @@ var model = {
                 cardName: 'Gold Delta SkyMiles® Credit Card from American Express',
                 annualFee: 95,
                 categories: {
-                everywhere: 1.6,
-                deltaFlights: 3.2
-            },
+                    everywhere: 1.6,
+                    deltaFlights: 3.2
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -4830,9 +4827,9 @@ var model = {
                 cardName: 'Starwood Preferred Guest® Credit Card from American Express',
                 annualFee: 95,
                 categories: {
-                everywhere: 2,
-                starwoodAndMarriottHotels: 4
-            },
+                    everywhere: 2,
+                    starwoodAndMarriottHotels: 4
+                },
                 cardDetails: {
                     cardImage: 'stop',
                     bonusAndEarningsDetails: [
@@ -5054,7 +5051,7 @@ var model = {
                 }
             },
             {
-                cardName: 'Chase® Ink Business Cash℠ Credit Card',
+                cardName: 'Chase® Ink Cash℠ Business Visa',
                 annualFee: 0,
                 categories: {
                     everywhere: 2,
@@ -5124,7 +5121,7 @@ var model = {
                 }
             },
             {
-                cardName: 'Chase® Ink Business Preferred℠ Credit Card',
+                cardName: 'Chase® Ink Business Preferred℠ Visa',
                 annualFee: 95,
                 categories: {
                     everywhere: 2,
@@ -5619,7 +5616,7 @@ var model = {
                 }
             },
             {
-                cardName: 'CitiBusiness®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                cardName: 'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
                 annualFee: 95,
                 categories: {
                     everywhere: 1.6,
@@ -6093,7 +6090,7 @@ var model = {
                     });
                 } else if (selection.includes('Credit')) {
                     // Make sure to reset box inputs
-                    var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'poorCredit'];
+                    var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'limitedCredit', 'poorCredit'];
                     ids.forEach(function(id) {
                         document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
@@ -6235,7 +6232,7 @@ var model = {
                 } else if (selection.includes('Credit')) {
                     // Make sure to reset box inputs
                     var ids = ['excellentCreditMobile', 'goodCreditMobile',
-                                'fairCreditMobile', 'poorCreditMobile'];
+                                'fairCreditMobile', 'limitedCreditMobile', 'poorCreditMobile'];
                     ids.forEach(function(id) {
                         document.getElementById(id).classList.remove('active');
                         document.getElementById(id).style.color = '#039be5';
@@ -6707,65 +6704,84 @@ var model = {
             var c = model.cards;
             if (a.ownBusiness) {
                 if (a.creditScore === 'poorCredit' || 
-                    a.creditScore === 'limitedCredit' ||
-                    a.creditScore === 'notSureCredit') {
-                    // model.controllers.determinePersRecs();
+                    a.creditScore === 'limitedCredit') {
+                    model.controllers.determinePersRecs();
                 } else if (a.creditScore === 'fairCredit') {
                     for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Capital One Spark Classic For Business Visa') {
+                        if (c.possibleBizRecs[i].cardName === 'Capital One® Spark® Classic for Business') {
                             c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
                         }
                     }
-                } else if (a.creditScore === 'goodCredit') {
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Capital One Spark Cash Select For Business Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                } else if (a.creditScore === 'goodCredit' 
+                            && a.rewardsGoal === 'cashBack') {
+
+                    var recs = [
+                        'Capital One® Spark® Cash For Business Visa',
+                        'Capital One® Spark® Cash Select For Business Visa'
+                    ];
+
+                    recs.forEach(function(rec) {
+                        for (var i = 0; i < c.possibleBizRecs.length; i++) {
+                            if (c.possibleBizRecs[i].cardName === rec) {
+                                c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                            }
                         }
-                    }
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Capital One Spark Cash For Business Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                    });
+                } else if (a.creditScore === 'goodCredit' 
+                            && a.rewardsGoal === 'freeFlights') {
+
+                    var recs = [
+                        'Starwood Preferred Guest® Business Credit Card from American Express',
+                        'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                        'Gold Delta SkyMiles® Business Credit Card from American Express',
+                        'The Business Platinum® Card From American Express OPEN®'
+                    ];
+
+                    recs.forEach(function(rec) {
+                        for (var i = 0; i < c.possibleBizRecs.length; i++) {
+                            if (c.possibleBizRecs[i].cardName === rec) {
+                                c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                            }
                         }
-                    }
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Citi Business American Airlines AAdvantage Platinum Select MasterCard') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
-                        }
-                    }
+                    });
                 } else if (a.creditScore === 'excellentCredit' 
                             && a.rewardsGoal === 'cashBack') {
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Chase Ink Cash Business Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                    
+                    var recs = [
+                        'Chase® Ink Cash℠ Business Visa',
+                        'Capital One® Spark® Cash For Business Visa',
+                        'Chase® Ink Business Preferred℠ Visa',
+                        'Capital One® Spark® Cash Select For Business Visa',
+                        'SimplyCash® Plus Business Credit Card from American Express'
+                    ];
+
+
+                    recs.forEach(function(rec) {
+                        for (var i = 0; i < c.possibleBizRecs.length; i++) {
+                            if (c.possibleBizRecs[i].cardName === rec) {
+                                c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                            }
                         }
-                    }
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Capital One Spark Cash For Business Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Chase Ink Business Preferred Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Capital One Spark Cash Select For Business Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
-                        }
-                    }
+                    });
                 } else if (a.creditScore === 'excellentCredit' 
                             && a.rewardsGoal === 'freeFlights') {
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Chase Ink Business Preferred Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                    var recs = [
+                        'Chase® Ink Business Preferred℠ Visa', 
+                        'Chase® Ink Cash℠ Business Visa',
+                        'Starwood Preferred Guest® Business Credit Card from American Express',
+                        'The Blue for Business® Credit Card from American Express',
+                        'The Business Gold Rewards Card From American Express OPEN®',
+                        'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                        'Gold Delta SkyMiles® Business Credit Card from American Express',
+                        'The Business Platinum® Card From American Express OPEN®'
+                    ];
+                    recs.forEach(function(rec) {
+                        for (var i = 0; i < c.possibleBizRecs.length; i++) {
+                            if (c.possibleBizRecs[i].cardName === rec) {
+                                c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
+                            }
                         }
-                    }
-                    for (var i = 0; i < c.possibleBizRecs.length; i++) {
-                        if (c.possibleBizRecs[i].cardName === 'Chase Ink Cash Business Visa') {
-                            c.intermediateRecsBiz.push(c.possibleBizRecs[i]);
-                        }
-                    }
+                    });
                 }
             }
 
@@ -6789,365 +6805,149 @@ var model = {
             };
 
             if (a.creditScore === 'poorCredit') {
-                for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                    if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
-                        c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+
+                var recs = [
+                    'Discover It® Secured Credit Card',
+                    'Capital One® QuicksilverOne® Cash Rewards Credit Card',
+                    'Capital One® Platinum Credit Card',
+                    'Capital One® Secured MasterCard®'
+                ];
+                recs.forEach(function(rec) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === rec) {
+                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                        }
                     }
-                }
-                for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                    if (c.possiblePersRecs[i].cardName === 'Capital One Secured Mastercard') {
-                        c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                });
+            } else if (a.creditScore === 'limitedCredit') {
+                
+                var recs = [
+                    'Discover it®',
+                    'Discover it® for Students',
+                    'Journey® Student Rewards from Capital One®',
+                    'Discover it® chrome for Students',
+                    'Citi ThankYou® Preferred Card for College Students',
+                    'Chase Freedom®',
+                    'Discover It® Secured Credit Card'
+                ];
+
+                recs.forEach(function(rec) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === rec) {
+                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                        }
                     }
-                }
-            } else if (a.creditScore === 'limitedCredit' ||
-                    a.creditScore === 'notSureCredit') {
-                for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                    if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
-                        c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                });
+
+            } else if (a.creditScore === 'fairCredit') {
+
+                var recs = [
+                    'Capital One® QuicksilverOne® Cash Rewards Credit Card',
+                    'Discover it® for Students',
+                    'Discover It® Secured Credit Card',
+                    'Journey® Student Rewards from Capital One®',
+                    'Discover it®'
+                ];
+
+                recs.forEach(function(rec) {
+                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                        if (c.possiblePersRecs[i].cardName === rec) {
+                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                        }
                     }
-                }
-                for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                    if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                        c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                    }
-                }
-                for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                    if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                        c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                    } 
-                }
+                });
+
             } else if (a.rewardsGoal === 'cashBack') {
-                if (a.creditScore === 'fairCredit') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                if (a.creditScore === 'goodCredit') {
+                    
+                    var recs = [
+                        'Discover it®',
+                        'Chase Freedom®',
+                        'Bank of America® BankAmericard Travel Rewards® Credit Card',
+                        'Discover It® Miles',
+                        'Capital One® Venture® Rewards Credit Card',
+                        'Journey® Student Rewards from Capital One®',
+                        'Barclaycard Arrival Plus™ World Elite MasterCard®'
+                    ];
+
+                    recs.forEach(function(rec) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === rec) {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
                         }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                    });
+                } else if (a.creditScore === 'excellentCredit') {
+                    
+                    var recs = [
+                        'Citi® Double Cash Card',
+                        'Discover it®',
+                        'Chase Freedom®',
+                        'Bank of America® BankAmericard Travel Rewards® Credit Card',
+                        'Discover It® Miles',
+                        'Capital One® Venture® Rewards Credit Card',
+                        'Journey® Student Rewards from Capital One®',
+                        'Barclaycard Arrival Plus™ World Elite MasterCard®'
+                    ];
+
+                    recs.forEach(function(rec) {
+                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
+                            if (c.possiblePersRecs[i].cardName === rec) {
+                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
+                            }
                         }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Capital One Quicksilver One MasterCard or Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                } else if ((a.creditScore === 'goodCredit' || 
-                            a.creditScore === 'excellentCredit') && 
-                            (a.everywhere < 1.5)) {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        console.log(c.possiblePersRecs[i].cardName);
-                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Barclaycard Arrival Plus World Elite MasterCard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                } else if ((a.creditScore === 'goodCredit' || 
-                            a.creditScore === 'excellentCredit') && 
-                            (a.everywhere >= 1.5 &&
-                             a.everywhere < 2)) {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Barclaycard Arrival Plus World Elite MasterCard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                } else if ((a.creditScore === 'goodCredit' || 
-                            a.creditScore === 'excellentCredit') && 
-                            (a.everywhere = 2)) {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                } else if ((a.creditScore === 'goodCredit' || 
-                            a.creditScore === 'excellentCredit') && 
-                            (a.everywhere = 2.1)) {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Citi Double Cash MasterCard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Miles') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                }
+                    });
+
+                } 
             } else if (a.rewardsGoal === 'freeFlights') {
-                if (a.creditScore === 'poorCredit') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Capital One Secured Mastercard') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                } else if (a.creditScore === 'limitedCredit' ||
-                        a.creditScore === 'notSureCredit') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        } 
-                    }
-                } else if (a.creditScore === 'fairCredit') {
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Discover It Secured Card') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                    for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                        if (c.possiblePersRecs[i].cardName === 'Capital One Quicksilver One MasterCard or Visa') {
-                            c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                        }
-                    }
-                } else if (a.creditScore === 'goodCredit' || a.creditScore === 'excellentCredit') {
-                    if (d('American Express Platinum (Personal)', b) || 
-                        d('American Express Platinum (Business)', b)) {
+                if (a.creditScore === 'goodCredit') {
+                    var recs = [
+                        'Chase Sapphire Preferred® Card',
+                        'The Amex Everyday® Credit Card from American Express',
+                        'Chase Freedom®',
+                        'The Amex Everyday® Preferred Credit Card from American Express',
+                        'Chase Freedom Unlimited℠',
+                        'Starwood Preferred Guest® Credit Card from American Express',
+                        'Premier Rewards Gold Card From American Express®',
+                        'Gold Delta SkyMiles® Credit Card from American Express',
+                        'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                        'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                    ];
+
+                    recs.forEach(function(rec) {
                         for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
+                            if (c.possiblePersRecs[i].cardName === rec) {
                                 c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                             }
                         }
+                    });  
+                } else if (a.creditScore === 'excellentCredit') {
+                    var recs = [
+                        'Chase Sapphire Preferred® Card',
+                        'The Amex Everyday® Credit Card from American Express',
+                        'Chase Freedom®',
+                        'The Amex Everyday® Preferred Credit Card from American Express',
+                        'Chase Freedom Unlimited℠',
+                        'Chase Sapphire Reserve℠',
+                        'Starwood Preferred Guest® Credit Card from American Express',
+                        'Premier Rewards Gold Card From American Express®',
+                        'Chase® United MileagePlus® Explorer Card',
+                        'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                        'Gold Delta SkyMiles® Credit Card from American Express',
+                        'Citi Prestige® Card',
+                        'Citi ThankYou® Premier Card',
+                        'The Platinum® Card From American Express',
+                        'Premier Rewards Gold Card From American Express®',
+                        'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                    ];
+
+                    recs.forEach(function(rec) {
                         for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
+                            if (c.possiblePersRecs[i].cardName === rec) {
                                 c.intermediateRecsPers.push(c.possiblePersRecs[i]);
                             }
                         }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                    } else if (d('American Express Premier Rewards Gold', b) || 
-                                d('American Express Gold', b)) {
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                    } else if (d('Chase Sapphire Preferred Visa', b)) {
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                    } else if (d('Chase Sapphire Reserve Visa', b)) {
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                    } else if (d('American Express Everyday', b)) {
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                    } else {
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Preferred Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        } 
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'American Express Everyday Preferred') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            } 
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Sapphire Reserve Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            } 
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Unlimited Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                        for (var i = 0; i < c.possiblePersRecs.length; i++) {
-                            if (c.possiblePersRecs[i].cardName === 'Chase Freedom Visa') {
-                                c.intermediateRecsPers.push(c.possiblePersRecs[i]);
-                            }
-                        }
-                    }
+                    }); 
                 }
             }
 
@@ -7182,15 +6982,23 @@ var model = {
             model.controllers.limitRecsToFour();
         },
         limitRecsToFour: () => {
-            // Limit Pers Recs to 4
-            if (model.cards.intermediateRecsPers.length > 3) {
-                model.cards.intermediateRecsPers.splice(4);
-            }
+            if (model.cards.currentStatusBasedOnSelections.ownBusiness) {
+                // Limit Pers Recs to 2
+                if (model.cards.intermediateRecsPers.length > 1) {
+                    model.cards.intermediateRecsPers.splice(2);
+                }
 
-            // Limit Biz Recs to 3
-            if (model.cards.intermediateRecsBiz.length > 3) {
-                model.cards.intermediateRecsBiz.splice(4);
+                // Limit Biz Recs to 2
+                if (model.cards.intermediateRecsBiz.length > 1) {
+                    model.cards.intermediateRecsBiz.splice(2);
+                } 
+            } else {
+                // Limit Pers Recs to 4
+                if (model.cards.intermediateRecsPers.length > 3) {
+                    model.cards.intermediateRecsPers.splice(4);
+                }
             }
+            
 
             console.log('Limit Recs to no more than 4 per Biz/Pers Rec.');
 
