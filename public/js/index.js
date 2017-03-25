@@ -185,47 +185,6 @@ var model = {
             // The signed-in user info.
             var user = result.user;
 
-            // Send Data to Firebase if there is data to send
-            // if (model.appState.completedCalculator) {
-                
-            //     // Send App State Info to Firebase
-            //     firebase.database().ref('appState/' + user.uid).set({
-            //         completedCalculator: model.appState.completedCalculator,
-            //         firstLoginEmailPass: model.appState.firstLoginEmailPass
-            //     });
-
-            //     // Send User Card Info to Firebase
-            //     firebase.database().ref('userBaselineCards/' + user.uid).set({
-            //         card1: model.cards.userSelections[0].cardName,
-            //         card2: model.cards.userSelections[1].cardName,
-            //         card3: model.cards.userSelections[2].cardName,
-            //         card4: model.cards.userSelections[3].cardName,
-            //         card5: model.cards.userSelections[4].cardName,
-            //         card6: model.cards.userSelections[5].cardName,
-            //         card7: model.cards.userSelections[6].cardName,
-            //         card8: model.cards.userSelections[7].cardName,
-            //         card9: model.cards.userSelections[8].cardName
-            //     });
-
-            //     // Send Calculator Inputs to Firebase
-            //     firebase.database().ref('calculatorInputs/' + user.uid).set({
-            //         ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
-            //         creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
-            //         rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
-            //         monthlySpend: model.cards.currentStatusBasedOnSelections.monthlySpend,
-            //         totalAnnualFee: model.cards.currentStatusBasedOnSelections.totalAnnualFee,
-            //         cashBack: model.cards.currentStatusBasedOnSelections.cashBack
-            //     });
-
-            //     // Send Recommendations for User to Firebase
-            //     firebase.database().ref('recsForUser/' + user.uid).set({
-            //         rec1: model.cards.combinedRecs[0].cardName,
-            //         rec2: model.cards.combinedRecs[1].cardName,
-            //         rec3: model.cards.combinedRecs[2].cardName,
-            //         rec4: model.cards.combinedRecs[3].cardName
-            //     });
-            // }
-
             }).catch(function(error) {
 
                 // Handle Errors here.
@@ -309,60 +268,25 @@ var model = {
                 if (model.appState.firstLoginEmailPass || model.appState.firstLoginGoogleFacebook) {
                     console.log('First log in');
                     // Send App State Info to Firebase
-                    firebase.database().ref('appState/' + user.uid).set({
+                    firebase.database().ref('user/' + user.uid).set({
                         completedCalculator: model.appState.completedCalculator,
                         firstLoginEmailPass: model.appState.firstLoginEmailPass,
                         firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook
                     });
 
                     model.controllers.calculatorSetup();
-                    
-                    // Send Data to Firebase if there is data to send
-                    // if (model.appState.completedCalculator) {
-
-                    //     // Send User Card Info to Firebase
-                    //     firebase.database().ref('userBaselineCards/' + user.uid).set({
-                    //         card1: model.cards.userSelections[0],
-                    //         card2: model.cards.userSelections[1],
-                    //         card3: model.cards.userSelections[2],
-                    //         card4: model.cards.userSelections[3],
-                    //         card5: model.cards.userSelections[4],
-                    //         card6: model.cards.userSelections[5],
-                    //         card7: model.cards.userSelections[6],
-                    //         card8: model.cards.userSelections[7],
-                    //         card9: model.cards.userSelections[8]
-                    //     });
-
-                    //     // Send Calculator Inputs to Firebase
-                    //     firebase.database().ref('calculatorInputs/' + user.uid).set({
-                    //         ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
-                    //         creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
-                    //         rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
-                    //         monthlySpend: model.cards.currentStatusBasedOnSelections.monthlySpend,
-                    //         totalAnnualFee: model.cards.currentStatusBasedOnSelections.totalAnnualFee,
-                    //         cashBack: model.cards.currentStatusBasedOnSelections.cashBack
-                    //     });
-
-                    //     // Send Recommendations for User to Firebase
-                    //     firebase.database().ref('recsForUser/' + user.uid).set({
-                    //         rec1: model.cards.combinedRecs[0],
-                    //         rec2: model.cards.combinedRecs[1],
-                    //         rec3: model.cards.combinedRecs[2],
-                    //         rec4: model.cards.combinedRecs[3]
-                    //     });
-                    // }
                 } else {
                     
                     console.log('Not first log in');
 
                     // Load Data from Firebase into the Model Locally
-                    firebase.database().ref('/appState/' + user.uid).once('value').then(function(snapshot) {
+                    firebase.database().ref('/user/' + user.uid).once('value').then(function(snapshot) {
 
-                      var loadAppState = (snapshot.val());
+                      var loadUserData = (snapshot.val());
 
-                      model.appState.completedCalculator = loadAppState.completedCalculator;
-                      model.appState.firstLoginEmailPass = loadAppState.firstLoginEmailPass;
-                      model.appState.firstLoginGoogleFacebook = loadAppState.firstLoginGoogleFacebook;
+                      model.appState.completedCalculator = loadUserData.completedCalculator;
+                      model.appState.firstLoginEmailPass = loadUserData.firstLoginEmailPass;
+                      model.appState.firstLoginGoogleFacebook = loadUserData.firstLoginGoogleFacebook;
                     
                       if (model.appState.completedCalculator) {
                         loadRestOfData();
@@ -375,28 +299,21 @@ var model = {
                     });
 
                     function loadRestOfData() {
-                        firebase.database().ref('/userBaselineCards/' + user.uid).once('value').then(function(snapshot) {
-                            var loadUserBaselineCards = (snapshot.val());
+                        firebase.database().ref('/user/' + user.uid).once('value').then(function(snapshot) {
+                            var loadUserData = (snapshot.val());
 
-                            console.log(loadUserBaselineCards);
-                        }).then(function() {
-                            firebase.database().ref('/calculatorInputs/' + user.uid).once('value').then(function(snapshot) {
-                                var loadCalculatorInputs = (snapshot.val());
+                            model.cards.currentStatusBasedOnSelections.ownBusiness = loadUserData.ownBusiness;
+                            model.cards.currentStatusBasedOnSelections.creditScore = loadUserData.creditScore;
+                            model.cards.currentStatusBasedOnSelections.rewardsGoal = loadUserData.rewardsGoal;
+                            model.cards.currentStatusBasedOnSelections.monthlySpend = loadUserData.monthlySpend;
+                            model.cards.currentStatusBasedOnSelections.totalAnnualFee = loadUserData.totalAnnualFee;
+                            model.cards.currentStatusBasedOnSelections.cashBack = loadUserData.cashBack;
 
-                                model.cards.currentStatusBasedOnSelections.ownBusiness = loadCalculatorInputs.ownBusiness;
-                                model.cards.currentStatusBasedOnSelections.creditScore = loadCalculatorInputs.creditScore;
-                                model.cards.currentStatusBasedOnSelections.rewardsGoal = loadCalculatorInputs.rewardsGoal;
-                                model.cards.currentStatusBasedOnSelections.monthlySpend = loadCalculatorInputs.monthlySpend;
-                                model.cards.currentStatusBasedOnSelections.totalAnnualFee = loadCalculatorInputs.totalAnnualFee;
-                                model.cards.currentStatusBasedOnSelections.cashBack = loadCalculatorInputs.cashBack;
-                            }).then(function() {
-                                firebase.database().ref('/recsForUser/' + user.uid).once('value').then(function(snapshot) {
-                                    var loadRecsForUser = (snapshot.val());
-
-                                    console.log(loadRecsForUser);
-                                }).then(model.controllers.vetPointCalcInputs())
-                            });
-                        });
+                            document.getElementById('cardRecs').click();
+                            document.getElementById('cardRecs').classList.add('active');
+                            document.getElementById('displayRecommendations').style.display ='inline'; 
+                            model.controllers.displayRecInteractions();
+                        }); 
                     }
                 }
             } else {
@@ -6011,9 +5928,9 @@ var model = {
             document.getElementById('preFooterDesktop').style.display = 'none';
             document.getElementById('preFooterMobile').style.display = 'none';
 
-            // if (!model.appState.completedCalculator) {
-            //     document.getElementById('cardRecs').style.display = 'none';
-            // }
+            if (!model.appState.completedCalculator) {
+                document.getElementById('cardRecs').style.display = 'none';
+            }
 
             // Show Profile Page
             document.getElementById('profile').style.display = 'inline';
@@ -7188,9 +7105,59 @@ var model = {
             // Display Report
             setTimeout(function(){
                 document.getElementById('loading').style.display = 'none';
+                document.getElementById('cardRecs').style.display = 'block';
+                document.getElementById('cardRecs').click();
+                document.getElementById('cardRecs').classList.add('active');
                 document.getElementById('displayRecommendations').style.display ='inline'; 
                 model.controllers.displayRecInteractions();
                 }, 3000);
+        },
+        // Send to FB if the calculator has not been filled out before       
+        sendToFirebase: () => {
+            // Send Data to Firebase if there is data to send
+            // if (model.appState.completedCalculator) {
+                
+            //     // Send App State Info to Firebase
+            //     firebase.database().ref('appState/' + user.uid).set({
+            //         completedCalculator: model.appState.completedCalculator,
+            //         firstLoginEmailPass: model.appState.firstLoginEmailPass
+            //     });
+
+            //     // Send User Card Info to Firebase
+            //     firebase.database().ref('userBaselineCards/' + user.uid).set({
+            //         card1: model.cards.userSelections[0].cardName,
+            //         card2: model.cards.userSelections[1].cardName,
+            //         card3: model.cards.userSelections[2].cardName,
+            //         card4: model.cards.userSelections[3].cardName,
+            //         card5: model.cards.userSelections[4].cardName,
+            //         card6: model.cards.userSelections[5].cardName,
+            //         card7: model.cards.userSelections[6].cardName,
+            //         card8: model.cards.userSelections[7].cardName,
+            //         card9: model.cards.userSelections[8].cardName
+            //     });
+
+            //     // Send Calculator Inputs to Firebase
+            //     firebase.database().ref('calculatorInputs/' + user.uid).set({
+            //         ownBusiness: model.cards.currentStatusBasedOnSelections.ownBusiness,
+            //         creditScore: model.cards.currentStatusBasedOnSelections.creditScore,
+            //         rewardsGoal: model.cards.currentStatusBasedOnSelections.rewardsGoal,
+            //         monthlySpend: model.cards.currentStatusBasedOnSelections.monthlySpend,
+            //         totalAnnualFee: model.cards.currentStatusBasedOnSelections.totalAnnualFee,
+            //         cashBack: model.cards.currentStatusBasedOnSelections.cashBack
+            //     });
+
+            //     // Send Recommendations for User to Firebase
+            //     firebase.database().ref('recsForUser/' + user.uid).set({
+            //         rec1: model.cards.combinedRecs[0].cardName,
+            //         rec2: model.cards.combinedRecs[1].cardName,
+            //         rec3: model.cards.combinedRecs[2].cardName,
+            //         rec4: model.cards.combinedRecs[3].cardName
+            //     });
+            // }
+        },
+        // Update Existing Entry if the Calculator has been filled out before
+        updateFirebase: () => {
+
         },
         displayRecInteractions: () => {
             
