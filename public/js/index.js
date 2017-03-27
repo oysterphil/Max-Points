@@ -545,9 +545,9 @@ var model = {
                         valueUnits: 'estimated airport taxes'
                     },
                     three: {
-                        city: 'Kuala Lumpus',
+                        city: 'Kuala Lumpur',
                         country: 'Malaysia',
-                        image: '/img/kualalumpur.png',
+                        image: '/img/kaulalumpur.png',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
@@ -691,7 +691,7 @@ var model = {
                     one: {
                         city: 'Rio De Janeiro',
                         country: 'Brazil',
-                        image: '/img/riodejaneiro.png',
+                        image: '/img/rio.png',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
@@ -797,8 +797,8 @@ var model = {
                         timeframe: '3 month',
                         points: '40,000',
                         pointsUnit: 'points needed',
-                        value: '-',
-                        valueUnits: 'e-'
+                        value: '400',
+                        valueUnits: 'estimated value'
                     },
                     two: {
                         city: 'Hotel Night Worth $150',
@@ -807,8 +807,8 @@ var model = {
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'points needed',
-                        value: '-',
-                        valueUnits: '-'
+                        value: '150',
+                        valueUnits: 'estimated value'
                     },
                     three: {
                         city: '$100 of Holiday Gifts',
@@ -817,8 +817,8 @@ var model = {
                         timeframe: '1 month',
                         points: '10,000',
                         pointsUnit: 'points needed',
-                        value: '-',
-                        valueUnits: '-'
+                        value: '100',
+                        valueUnits: 'estimated value'
                     }
                 }
             ]
@@ -999,9 +999,9 @@ var model = {
                         valueUnits: 'estimated airport taxes'
                 }, 
                 {
-                        city: 'Kuala Lumpus',
+                        city: 'Kuala Lumpur',
                         country: 'Malaysia',
-                        image: '/img/kualalumpur.png',
+                        image: '/img/kaulalumpur.png',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
@@ -1135,7 +1135,7 @@ var model = {
                 {
                         city: 'Rio De Janeiro',
                         country: 'Brazil',
-                        image: '/img/riodejaneiro.png',
+                        image: '/img/rio.png',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
@@ -1235,8 +1235,8 @@ var model = {
                         timeframe: '3 month',
                         points: '40,000',
                         pointsUnit: 'points needed',
-                        value: '-',
-                        valueUnits: 'e-'
+                        value: '400',
+                        valueUnits: 'estimated value'
                 }, 
                 {
                         city: 'Hotel Night Worth $150',
@@ -1245,8 +1245,8 @@ var model = {
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'points needed',
-                        value: '-',
-                        valueUnits: '-'
+                        value: '150',
+                        valueUnits: 'estimated value'
                 }, 
                 {
                         city: '$100 of Holiday Gifts',
@@ -1255,8 +1255,8 @@ var model = {
                         timeframe: '1 month',
                         points: '10,000',
                         pointsUnit: 'points needed',
-                        value: '-',
-                        valueUnits: '-'
+                        value: '100',
+                        valueUnits: 'estimated value'
                 }           
             ]
         }
@@ -5683,8 +5683,8 @@ var model = {
             model.templates.compile();
 
             // Set Rewards Goal Selections for Mobile/Desktop to Europe
-            model.destinations.selectionDesktop = model.destinations.optionsDesktop.unitedStatesDesktop;
-            model.destinations.selectionMobile = model.destinations.optionsMobile.unitedStatesMobile;
+            model.destinations.selectionDesktop = model.destinations.optionsDesktop.europeDesktop;
+            model.destinations.selectionMobile = model.destinations.optionsMobile.europeMobile;
             
             // Render Rewards Goal Tempalates and Establish the View for Mobile/Desktop
             model.templates.renderCarouselGoalSliderDesktopTemplate();
@@ -5711,15 +5711,18 @@ var model = {
                 if ($(this).val().includes('europe')) {
                     model.destinations.selectionDesktop = 
                         model.destinations.optionsDesktop.europeDesktop;
-                } else if ($(this).val().includes('caribbean')) {
+                } else if ($(this).val().includes('ocea')) {
                     model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.caribbeanDesktop;
+                        model.destinations.optionsDesktop.oceaniaDesktop;
                 } else if ($(this).val().includes('asia')) {
                     model.destinations.selectionDesktop = 
                         model.destinations.optionsDesktop.asiaDesktop;
-                } else if ($(this).val().includes('south')) {
+                } else if ($(this).val().includes('latin')) {
                     model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.southAmericaDesktop;
+                        model.destinations.optionsDesktop.latinAmericaDesktop;
+                } else if ($(this).val().includes('africa')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.africaDesktop;
                 } else if ($(this).val().includes('united')) {
                     model.destinations.selectionDesktop = 
                         model.destinations.optionsDesktop.unitedStatesDesktop;
@@ -5737,15 +5740,18 @@ var model = {
                 if ($(this).val().includes('europe')) {
                     model.destinations.selectionMobile = 
                         model.destinations.optionsMobile.europeMobile;
-                } else if ($(this).val().includes('caribbean')) {
+                } else if ($(this).val().includes('ocea')) {
                     model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.caribbeanMobile;
+                        model.destinations.optionsMobile.oceaniaMobile;
                 } else if ($(this).val().includes('asia')) {
                     model.destinations.selectionMobile = 
                         model.destinations.optionsMobile.asiaMobile;
-                } else if ($(this).val().includes('south')) {
+                } else if ($(this).val().includes('latin')) {
                     model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.southAmericaMobile;
+                        model.destinations.optionsMobile.latinAmericaMobile;
+                } else if ($(this).val().includes('africa')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.africaMobile;
                 } else if ($(this).val().includes('united')) {
                     model.destinations.selectionMobile = 
                         model.destinations.optionsMobile.unitedStatesMobile;
@@ -6534,8 +6540,6 @@ var model = {
                     document.getElementById(card).value = model.cards.currentStatusBasedOnSelections.card;
                 }
             });
-
-
         },
         displayRecsSetup: () => {
             
