@@ -347,6 +347,34 @@ var model = {
                 "<h6>" + error.message + "</h6>";
           });
         },
+        resetPasswordAcct: () => {
+            event.preventDefault();
+            var auth = firebase.auth();
+            const emailAddress = model.cards.currentStatusBasedOnSelections.email;
+            auth.sendPasswordResetEmail(emailAddress).then(function() {
+            // Remove Error Message
+            document.getElementById('outcomeMessageDesktop').innerHTML = "";
+            document.getElementById('outcomeMessageMobile').innerHTML = "";
+
+            // Place in Success Message
+            document.getElementById('outcomeMessageDesktop').style.color = 'white';
+            document.getElementById('outcomeMessageMobile').style.color = 'white';
+            document.getElementById('outcomeMessageDesktop').innerHTML = 
+              "<h6>Success! Check your email for the link to reset your password.</h6>";
+              document.getElementById('outcomeMessageMobile').innerHTML = 
+              "<h6>Success! Check your email for the link to reset your password.</h6>";
+            document.getElementById('acctInfoOutcomeDesktop').style.display = 'inline';
+            document.getElementById('acctInfoOutcomeMobile').style.display = 'inline';
+            }, function(error) {
+                // Display Error Message
+                document.getElementById('acctInfoOutcomeDesktop').style.display = 'inline';
+                document.getElementById('outcomeMessageDesktop').innerHTML = 
+                "<h6>" + error.message + "</h6>";
+                document.getElementById('acctInfoOutcomeMobile').style.display = 'inline';
+                document.getElementById('outcomeMessageMobile').innerHTML = 
+                "<h6>" + error.message + "</h6>";
+            });
+        },
         handleSignout: () => {
             event.preventDefault();
             // Logout User
@@ -354,6 +382,15 @@ var model = {
               window.location.reload();
             }, function(error) {
               Materialize.toast(error, 4000);
+            });
+        },
+        deleteAcct: () => {
+            var user = firebase.auth().currentUser;
+
+            user.delete().then(function() {
+              window.location='https://maxpoints.co/';
+            }, function(error) {
+              // An error happened.
             });
         }
     },
