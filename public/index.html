@@ -266,12 +266,12 @@
           </h5>
           <div class="input-field col s4 offset-s4 m3">
             <select id="rewardsGoalDesktopSelect">
+              <option value="unitedStatesDesktop"><strong>US + Canada</strong></option>
               <option value="europeDesktop"><strong>Europe</strong></option>
               <option value="latinAmericaDesktop"><strong>Latin America</strong></option>
               <option value="asiaDesktop"><strong>Asia</strong></option>
               <option value="oceaniaDesktop"><strong>Oceania</strong></option>
               <option value="africaDesktop"><strong>Africa</strong></option>
-              <option value="unitedStatesDesktop"><strong>US + Canada</strong></option>
               <option value="cashBackLandingPageDesktop"><strong>Cash Back</strong></option>
             </select>
           </div>
@@ -300,12 +300,12 @@
           </h5>
           <div class="col s5 offset-s3">
             <select id="rewardsGoalMobileSelect" class="browser-default" style="background-color: rgba(0,0,0,0); color:white; border: 0px rgba(0,0,0,0);border-bottom: solid 1px white !important;">
+              <option value="unitedStatesMobile"><strong>US + Canada</strong></option>
               <option value="europeMobile"><strong>Europe</strong></option>
               <option value="latinAmericaMobile"><strong>Latin America</strong></option>
               <option value="asiaMobile"><strong>Asia</strong></option>
               <option value="oceaniaMobile"><strong>Oceania</strong></option>
               <option value="africaMobile"><strong>Africa</strong></option>
-              <option value="unitedStatesMobile"><strong>US + Canada</strong></option>
               <option value="cashBackLandingPageMobile"><strong>Cash Back</strong></option>
             </select>
           </div>
@@ -912,9 +912,13 @@
   <!-- Pulling in JQuery -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-  <!-- Pulling in Materialize.Css Scripts -->
+  <!-- Pulling in Materialize.Js Scripts -->
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <!-- Pulling in Highcharts.js -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
   <!-- Pulling in LiviconsEvo Scripts -->
   <script src="LivIconsEvo/js/LivIconsEvo.Tools.js"></script>
@@ -1710,9 +1714,7 @@
                     <p style="text-align: center;">
                       Earning rate increase
                     </p>
-                    <h2 style="text-align: center;color: #00c853;">
-                      {{currentDisplayRec.cardDetails.earningRateIncrease}}%            
-                    </h2>
+                    <h2 id="earningRateIncreaseMobile" style="text-align: center;color: #00c853;"></h2>
                     <p style="text-align: center;">
                       compared to your current card selections
                     </p>
@@ -1725,7 +1727,7 @@
           <div class="container">
             <div class="col s12">
               <div class="card white">
-                <div class="card-content">
+                <!-- <div class="card-content">
                   <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
                   <hr><br>
                   <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
@@ -1757,6 +1759,9 @@
                     </tr>
                   </table>
                   {{/each}}
+                </div> -->
+                <div class="card-content">
+                  <div id="earningComparisonMobile" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                 </div>
               </div>
             </div>
@@ -1983,9 +1988,7 @@
                     <p style="text-align: center;">
                       Earning rate increase
                     </p>
-                    <h2 style="text-align: center;color: #00c853;">
-                      {{currentDisplayRec.cardDetails.earningRateIncrease}}%
-                    </h2>
+                    <h2 id="earningRateIncreaseDesktop" style="text-align: center;color: #00c853;"></h2>
                     <p style="text-align: center;">
                       comparing your current card selection to the recommended card
                     </p>
@@ -1998,7 +2001,7 @@
           <div class="row">
             <div class="col s12">
               <div class="card white">
-                <div class="card-content">
+                <!-- <div class="card-content">
                   <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
                   <hr><br>
                   <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
@@ -2030,6 +2033,9 @@
                     </tr>
                   </table>
                   {{/each}}
+                </div> -->
+                <div class="card-content">
+                  <div id="earningComparison" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                 </div>
               </div>
             </div>

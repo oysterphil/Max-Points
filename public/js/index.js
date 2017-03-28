@@ -406,7 +406,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '81',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -418,7 +418,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '163',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -430,7 +430,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '77',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -444,7 +444,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '49,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '45',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -456,7 +456,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '60',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -468,7 +468,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '67',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -482,7 +482,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '49',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -494,7 +494,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '115',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -506,7 +506,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '45',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -522,7 +522,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '84',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -535,7 +535,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '101',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -547,7 +547,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '71',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -561,7 +561,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '78',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -573,7 +573,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '55,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '123',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -585,7 +585,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '65,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '94',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -599,7 +599,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '105',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -611,7 +611,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '103',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -623,7 +623,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '96',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -635,11 +635,11 @@ var model = {
                     one: {
                         city: 'New York City',
                         country: 'United States of America',
-                        image: '/img/newyork.png',
+                        image: '/img/NYC.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '11',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -647,11 +647,11 @@ var model = {
                     two: {
                         city: 'Los Angeles',
                         country: 'United States of America',
-                        image: '/img/losangeles.png',
+                        image: '/img/LosAngeles.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '11',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -663,7 +663,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '11',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -673,11 +673,11 @@ var model = {
                     one: {
                         city: 'Montreal',
                         country: 'Canada',
-                        image: '/img/montreal.png',
+                        image: '/img/Montreal.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '57',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -685,11 +685,11 @@ var model = {
                     two: {
                         city: 'Vancouver',
                         country: 'Canada',
-                        image: '/img/vancouver.png',
+                        image: '/img/Vancouver.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '46',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -697,11 +697,11 @@ var model = {
                     three: {
                         city: 'Toronto',
                         country: 'Canada',
-                        image: '/img/toronto.png',
+                        image: '/img/Toronto.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '52',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -717,7 +717,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '11,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '101',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -729,7 +729,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '104',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -741,7 +741,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '143',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -755,7 +755,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '74',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -767,7 +767,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '91',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -779,7 +779,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '75',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -793,7 +793,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '57',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -805,7 +805,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '25,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '67',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -817,7 +817,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '96',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -833,7 +833,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '142',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -845,7 +845,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '113',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -857,7 +857,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '138',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -873,7 +873,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '105',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -885,7 +885,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '103',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -897,7 +897,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '105',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -955,7 +955,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '81',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -967,7 +967,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '163',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -979,7 +979,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '77',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -991,7 +991,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '49,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '45',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1003,7 +1003,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '60',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1015,7 +1015,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '67',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1027,7 +1027,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '49',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1039,7 +1039,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '115',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1051,7 +1051,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '45',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1065,7 +1065,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '84',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1077,7 +1077,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '101',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1089,7 +1089,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '71',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1101,7 +1101,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '78',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1113,7 +1113,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '55,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '123',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1125,7 +1125,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '65,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '94',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1137,7 +1137,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '105',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1149,7 +1149,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '103',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1161,7 +1161,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '96',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1175,7 +1175,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '11',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1187,7 +1187,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '11',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1199,7 +1199,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '11',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1211,7 +1211,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '57',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1223,7 +1223,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '46',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1235,7 +1235,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '52',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1249,7 +1249,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '11,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '101',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1261,7 +1261,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '104',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1273,7 +1273,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '143',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1285,7 +1285,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '74',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1297,7 +1297,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '91',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1309,7 +1309,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '75',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1321,7 +1321,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '57',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1333,7 +1333,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '25,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '67',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1345,7 +1345,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '96',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1359,7 +1359,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '142',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1371,7 +1371,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '113',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1383,7 +1383,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '138',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1397,7 +1397,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '105',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1409,7 +1409,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '103',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -1421,7 +1421,7 @@ var model = {
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
-                        pointsUnit: 'miles needed',
+                        pointsUnit: 'miles needed for ticket',
                         value: '105',
                         valueUnits: 'estimated airport taxes',
                         callToAction: 'select destination'
@@ -2995,6 +2995,8 @@ var model = {
         },
         currentCategoriesArray: {
         },
+        comparisonData: [
+        ],
         possiblePersRecs: [
             {
                 cardName: 'Discover it®',
@@ -5889,8 +5891,8 @@ var model = {
             model.templates.compile();
 
             // Set Rewards Goal Selections for Mobile/Desktop to Europe
-            model.destinations.selectionDesktop = model.destinations.optionsDesktop.europeDesktop;
-            model.destinations.selectionMobile = model.destinations.optionsMobile.europeMobile;
+            model.destinations.selectionDesktop = model.destinations.optionsDesktop.unitedStatesDesktop;
+            model.destinations.selectionMobile = model.destinations.optionsMobile.unitedStatesMobile;
             
             // Render Rewards Goal Tempalates and Establish the View for Mobile/Desktop
             model.templates.renderCarouselGoalSliderDesktopTemplate();
@@ -6297,7 +6299,6 @@ var model = {
                         });
                     }
                 }
-                console.log(model.cards.currentStatusBasedOnSelections);
             }
 
             // Manage Calculator Inputs Mobile
@@ -6443,7 +6444,6 @@ var model = {
                         });
                     }
                 }
-                console.log(model.cards.currentStatusBasedOnSelections);
             }
 
             // Manage CC Inputs Desktop
@@ -6695,8 +6695,7 @@ var model = {
 
             // Submit Form Event Listeners
             document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
-            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);
-            
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);   
         },
         insertCalcInputs: () => {
             
@@ -6748,19 +6747,14 @@ var model = {
                 }
             });
 
-            console.log(model.cards.currentStatusBasedOnSelections);
-
             dbCards.forEach(function(card) {
                 if (model.cards.currentStatusBasedOnSelections[card]) {
                     delete model.cards.currentStatusBasedOnSelections[card];
                 }
             });
 
-            console.log(model.cards.currentStatusBasedOnSelections);
-
             // Activate the input fields that are filled in
             Materialize.updateTextFields();
-
         },
         displayRecsSetup: () => {
             
@@ -7248,10 +7242,6 @@ var model = {
         },
         createCategoryComparisonArrayInEachRecommendation: () => {
 
-            // TO DO:
-            // Reformat this object along the lines set out in the 
-            // old vs. new object file.
-
 
             // For Business 
             model.cards.intermediateRecsBiz.forEach((obj) => {
@@ -7373,6 +7363,212 @@ var model = {
 
             model.controllers.finalizeRecs();
         },
+        prepEarningsCompChart: () => {
+            // Prepare Data for Earnings Comparison Chart
+
+            // Empty Current Comparison Data
+            model.cards.comparisonData = [];
+
+            // Prepare Signup Bonus Object
+
+            var signupBonusData = {
+                name: 'Signup Bonus',
+                data: [
+                    0,
+                    model.cards.currentDisplayRec.cardDetails.signupBonus.bonusValue,
+                    0
+                ]
+            };
+
+            console.log('Signup Bonus Data');
+            console.log(signupBonusData);
+
+            // Establish Baseline Variables
+
+            var yearlySpend = model.cards.currentStatusBasedOnSelections.monthlySpend * 12;
+
+            var earningRateCats = [
+                'everywhere',
+                'gas',
+                'groceries',
+                'travel',
+                'diningOut'
+            ];
+
+            // Calculate Current Earning Rate 
+
+            var currentEarningRateRatios = {
+                everywhere: 0.2,
+                gas: 0.2,
+                groceries: 0.2,
+                travel: 0.2,
+                diningOut: 0.2
+            }
+
+            var currentEarningRate = 0;
+
+            earningRateCats.forEach(function(cat) {
+                if (!model.cards.currentStatusBasedOnSelections[cat]) {
+                    delete currentEarningRateRatios[cat];
+                    currentEarningRateRatios.everywhere += 0.2;
+                }
+            });
+
+            for (var cat in currentEarningRateRatios) {
+                currentEarningRate += (currentEarningRateRatios[cat] * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+            }
+
+            console.log('currentEarningRate');
+            console.log(currentEarningRate);
+
+            // Calculate Future Earning Rate
+
+            var newEarningRateRatios = {
+                everywhere: 0.2,
+                gas: 0.2,
+                groceries: 0.2,
+                travel: 0.2,
+                diningOut: 0.2
+            }
+
+            var newEarningRate = 0;
+
+            earningRateCats.forEach(function(cat) {
+                if (!model.cards.currentDisplayRec.categories[cat]) {
+                    delete newEarningRateRatios[cat];
+                    newEarningRateRatios.everywhere += 0.2;
+                }
+            });
+
+            for (var cat in newEarningRateRatios) {
+                newEarningRate += (newEarningRateRatios[cat] * yearlySpend * model.cards.currentDisplayRec.categories[cat]);
+            }
+
+            console.log('newEarningRate');
+            console.log(newEarningRate);
+
+            // Add Data to Baseline Earning Rate
+            var baselineEarningRate = {
+                name: 'Everyday Spending Bonus',
+                data: [
+                    (currentEarningRate/100),
+                    (newEarningRate/100),
+                    (newEarningRate/100)
+                ]
+            };
+
+            console.log('baselineEarningRate');
+            console.log(baselineEarningRate);
+
+            // Create Data for Comparison Chart
+            model.cards.comparisonData.push(signupBonusData, baselineEarningRate);
+            
+            console.log('comparisonData');
+            console.log(model.cards.comparisonData);
+
+            // Calculate Earning Rate Increase
+            model.cards.currentDisplayRec.earningRateIncrease = Number((((newEarningRate - currentEarningRate) / currentEarningRate) * 100).toFixed(1));
+
+            console.log('earningRateIncrease');
+            console.log(model.cards.currentDisplayRec.earningRateIncrease);
+
+            document.getElementById('earningRateIncreaseDesktop').innerHTML = model.cards.currentDisplayRec.earningRateIncrease + '%';
+            document.getElementById('earningRateIncreaseMobile').innerHTML = model.cards.currentDisplayRec.earningRateIncrease + '%';
+
+            // Populate Chart Desktop
+
+            Highcharts.chart('earningComparison', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Increased rewards benefit'
+                },
+                xAxis: {
+                    categories: ['Current Earnings', 'Earnings in Year 1', 'Earnings in Year 2+']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Dollar value of total earnings'
+                    },
+                    stackLabels: {
+                        enabled: true,
+                        style: {
+                            fontWeight: 'bold',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                        }
+                    },
+                    labels: {
+                            formatter: function () {
+                            return '$' + this.value;
+                            }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<b>{point.x}</b><br/>',
+                    pointFormat: '{series.name}: ${point.y}<br/>Total: ${point.stackTotal}'
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: false,
+                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                        }
+                    }
+                },
+                
+                series: model.cards.comparisonData
+            });
+
+            // Populate Chart Mobile
+
+            Highcharts.chart('earningComparisonMobile', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Increased rewards benefit'
+                },
+                xAxis: {
+                    categories: ['Current Earnings', 'Earnings in Year 1', 'Earnings in Year 2+']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Dollar value of total earnings'
+                    },
+                    stackLabels: {
+                        enabled: true,
+                        style: {
+                            fontWeight: 'bold',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                        }
+                    },
+                    labels: {
+                            formatter: function () {
+                            return '$' + this.value;
+                            }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<b>{point.x}</b><br/>',
+                    pointFormat: '{series.name}: ${point.y}<br/>Total: ${point.stackTotal}'
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: false,
+                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                        }
+                    }
+                },
+                
+                series: model.cards.comparisonData
+            });
+        },
         finalizeRecs: () => {
             // Combine personal and business formatted recommendations into 
             // one array that is 4 objects long. 
@@ -7396,7 +7592,6 @@ var model = {
 
             console.log('Combined Recs Array:');
             console.log(model.cards.combinedRecs);
-
 
             // ONLY NEED TO DO IF MAX WANTS TO KEEP THE ICONS IN PLACE.
             // IF HE WANTS TO USE IMAGES, HANDLEBARS WILL TAKE CARE OF THIS!
@@ -7493,6 +7688,8 @@ var model = {
         },
         displayRecInteractions: () => {
             
+            model.controllers.prepEarningsCompChart();
+
             // Change App State
             model.appState.calculator = false;
             model.appState.resultsPage = true;
@@ -7617,7 +7814,6 @@ var model = {
             document.getElementById('pickCategoryMobile').addEventListener('click', (e) => {
                 toggleBetweenDetailsCategoriesMobile(e);
             });
-
         },
         toggleCashBackFreeFlightsSwitch: () => {
             document.getElementById('crunchingNumbers').style.display = 'inline';
