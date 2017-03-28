@@ -1171,7 +1171,7 @@ var model = {
                 {
                         city: 'New York City',
                         country: 'United States of America',
-                        image: '/img/washingtondc.png',
+                        image: '/img/NYC.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
@@ -1183,7 +1183,7 @@ var model = {
                 {
                         city: 'Los Angeles',
                         country: 'United States of America',
-                        image: '/img/newyork.png',
+                        image: '/img/LosAngeles.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
@@ -1195,7 +1195,7 @@ var model = {
                 {
                         city: 'Washington DC',
                         country: 'United States of America',
-                        image: '/img/losangeles.png',
+                        image: '/img/washingtondc.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
@@ -1207,7 +1207,7 @@ var model = {
                 {
                         city: 'Montreal',
                         country: 'Canada',
-                        image: '/img/montreal.png',
+                        image: '/img/Montreal.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
@@ -1219,7 +1219,7 @@ var model = {
                 {
                         city: 'Vancouver',
                         country: 'Canada',
-                        image: '/img/vancouver.png',
+                        image: '/img/Vancouver.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
@@ -1231,7 +1231,7 @@ var model = {
                 {
                         city: 'Toronto',
                         country: 'Canada',
-                        image: '/img/toronto.png',
+                        image: '/img/Toronto.png',
                         timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
@@ -2264,19 +2264,19 @@ var model = {
                 wholesaleClubs: 5
             },
             {
-                cardName: 'Discover It® Miles',
+                cardName: 'Discover it® Miles',
                 annualFee: 0,
                 everywhere: 1.5
             },
             {
-                cardName: 'Discover It® Secured Credit Card',
+                cardName: 'Discover it® Secured Credit Card',
                 annualFee: 0,
                 everywhere: 1,
                 gas: 2,
                 diningOut: 2
             },
             {
-                cardName: 'Discover It Chrome',
+                cardName: 'Discover it Chrome',
                 annualFee: 0,
                 everywhere: 1,
                 gas: 2,
@@ -2906,13 +2906,11 @@ var model = {
             'Discover it®',
             'Discover it® for Students',
             'Discover it® chrome for Students',
-            'Discover It® Miles',
-            'Discover It® Secured Credit Card',
-            'Discover It Chrome',
+            'Discover it® Miles',
+            'Discover it® Secured Credit Card',
+            'Discover it Chrome',
             'Discover More',
             'Discover Business Card',
-            'Discover it® chrome for Students',
-            'Discover it® for Students',
             'Wells Fargo Cash Wise Visa',
             'Wells Fargo Propel 365 By American Express',
             'Wells Fargo Platinum Visa',
@@ -2991,7 +2989,8 @@ var model = {
             creditScore: null,
             rewardsGoal: null,
             monthlySpend: null,
-            totalAnnualFee: null        
+            totalAnnualFee: null,
+            everywhere: 0        
         },
         currentCategoriesArray: {
         },
@@ -3241,7 +3240,7 @@ var model = {
                 }
             },
             {
-                cardName: 'Discover It® Miles',
+                cardName: 'Discover it® Miles',
                 annualFee: 0,
                 categories: {
                     everywhere: 1.5,
@@ -3304,7 +3303,7 @@ var model = {
                 }
             },
             {
-                cardName: 'Discover It® Secured Credit Card',
+                cardName: 'Discover it® Secured Credit Card',
                 annualFee: 0,
                 categories: {
                     everywhere: 1,
@@ -5958,8 +5957,8 @@ var model = {
                     model.destinations.selectionMobile = 
                         model.destinations.optionsMobile.latinAmericaMobile;
                 } else if ($(this).val().includes('africa')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.africaMobile;
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.africaMobile;
                 } else if ($(this).val().includes('united')) {
                     model.destinations.selectionMobile = 
                         model.destinations.optionsMobile.unitedStatesMobile;
@@ -6257,7 +6256,7 @@ var model = {
 
                     if (selection === 'other') {
                         // Make sure to reset box inputs
-                        var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                        var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
                         ids.forEach(function(id) {
                             document.getElementById(id).classList.remove('active');
                             document.getElementById(id).style.color = '#039be5';
@@ -6277,7 +6276,7 @@ var model = {
                         model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
 
                         // Make sure to reset box inputs
-                        var ids = ['500', '1000', '1500', '2000', '3000+', 'other'];
+                        var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
                         ids.forEach(function(id) {
                             document.getElementById(id).classList.remove('active');
                             document.getElementById(id).style.color = '#039be5';
@@ -6399,7 +6398,7 @@ var model = {
                     if (selection === 'other') {
                         // Make sure to reset box inputs
                         var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
-                                    '2000Mobile', '3000+Mobile', 'otherMobile'];
+                                    '2000Mobile', '3000Mobile', 'otherMobile'];
                         ids.forEach(function(id) {
                             document.getElementById(id).style.backgroundColor = 'white';
                             document.getElementById(id).style.color = '#039be5';
@@ -6421,7 +6420,7 @@ var model = {
 
                         // Make sure to reset box inputs
                         var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
-                                    '2000Mobile', '3000+Mobile', 'otherMobile'];
+                                    '2000Mobile', '3000Mobile', 'otherMobile'];
                         ids.forEach(function(id) {
                             document.getElementById(id).style.backgroundColor = 'white';
                             document.getElementById(id).style.color = '#039be5';
@@ -7414,8 +7413,12 @@ var model = {
                 }
             });
 
-            for (var cat in currentEarningRateRatios) {
-                currentEarningRate += (currentEarningRateRatios[cat] * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+            if (model.cards.userSelections.length === 0) {
+                currentEarningRate = 0;
+            } else {   
+                for (var cat in currentEarningRateRatios) {
+                    currentEarningRate += (currentEarningRateRatios[cat] * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+                }
             }
 
             console.log('currentEarningRate');
@@ -7433,15 +7436,37 @@ var model = {
 
             var newEarningRate = 0;
 
+            // Add New Card to Current Status Based on Selections
+            
+            var newCurrentStatus={}; 
+
             earningRateCats.forEach(function(cat) {
-                if (!model.cards.currentDisplayRec.categories[cat]) {
+                if (model.cards.currentStatusBasedOnSelections[cat]) {
+                    newCurrentStatus[cat] = model.cards.currentStatusBasedOnSelections[cat];
+                }
+            });
+
+            console.log(model.cards.currentStatusBasedOnSelections);
+            console.log(newCurrentStatus);
+
+            earningRateCats.forEach(function(cat) {
+                if (model.cards.currentDisplayRec.categories[cat] && newCurrentStatus[cat]) {                
+                    if (model.cards.currentDisplayRec.categories[cat] > model.cards.currentStatusBasedOnSelections[cat]) {
+                        newCurrentStatus[cat] = model.cards.currentDisplayRec.categories[cat];
+                    }
+                }
+            });
+
+
+            earningRateCats.forEach(function(cat) {
+                if (!newCurrentStatus[cat]) {
                     delete newEarningRateRatios[cat];
                     newEarningRateRatios.everywhere += 0.2;
                 }
             });
 
             for (var cat in newEarningRateRatios) {
-                newEarningRate += (newEarningRateRatios[cat] * yearlySpend * model.cards.currentDisplayRec.categories[cat]);
+                newEarningRate += (newEarningRateRatios[cat] * yearlySpend * newCurrentStatus[cat]);
             }
 
             console.log('newEarningRate');
@@ -7467,7 +7492,11 @@ var model = {
             console.log(model.cards.comparisonData);
 
             // Calculate Earning Rate Increase
-            model.cards.currentDisplayRec.earningRateIncrease = Number((((newEarningRate - currentEarningRate) / currentEarningRate) * 100).toFixed(1));
+            if (currentEarningRate === 0) {
+                model.cards.currentDisplayRec.earningRateIncrease = 100;
+            } else {
+                model.cards.currentDisplayRec.earningRateIncrease = Number((((newEarningRate - currentEarningRate) / currentEarningRate) * 100).toFixed(1));
+            }
 
             console.log('earningRateIncrease');
             console.log(model.cards.currentDisplayRec.earningRateIncrease);
@@ -7817,32 +7846,32 @@ var model = {
         },
         toggleCashBackFreeFlightsSwitch: () => {
             document.getElementById('crunchingNumbers').style.display = 'inline';
-                document.getElementById('displayRecommendations').style.display = 'none';
-            setTimeout(function() {
+            document.getElementById('displayRecommendations').style.display = 'none';
                 
-                if (model.cards.currentStatusBasedOnSelections.cashBack) {
-                    model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
-                    model.cards.currentStatusBasedOnSelections.cashBack = false;
-                    model.cards.intermediateRecsPers = [];
-                    model.cards.intermediateRecsBiz = [];
-                    model.cards.finalRecsPers = [];
-                    model.cards.finalRecsBiz = [];
-                    model.cards.combinedRecs = [];
-                    model.controllers.determineBizRecs();
-                } else {
-                    model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
-                    model.cards.currentStatusBasedOnSelections.cashBack = true;
-                    model.cards.intermediateRecsPers = [];
-                    model.cards.intermediateRecsBiz = [];
-                    model.cards.finalRecsPers = [];
-                    model.cards.finalRecsBiz = [];
-                    model.cards.combinedRecs = [];
-                    model.controllers.determineBizRecs();
-                }
-                model.controllers.displayRecInteractions();
+            if (model.cards.currentStatusBasedOnSelections.cashBack) {
+                model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
+                model.cards.currentStatusBasedOnSelections.cashBack = false;
+                model.cards.intermediateRecsPers = [];
+                model.cards.intermediateRecsBiz = [];
+                model.cards.finalRecsPers = [];
+                model.cards.finalRecsBiz = [];
+                model.cards.combinedRecs = [];
+                model.controllers.determineBizRecs();
+            } else {
+                model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
+                model.cards.currentStatusBasedOnSelections.cashBack = true;
+                model.cards.intermediateRecsPers = [];
+                model.cards.intermediateRecsBiz = [];
+                model.cards.finalRecsPers = [];
+                model.cards.finalRecsBiz = [];
+                model.cards.combinedRecs = [];
+                model.controllers.determineBizRecs();
+            }
+
+            setTimeout(function() {
                 document.getElementById('crunchingNumbers').style.display = 'none';
                 document.getElementById('displayRecommendations').style.display = 'inline';
-            }, 1000);
+            }, 3500);
         },
         showRegisterRec: () => {
             document.getElementById('privacyPolicy').style.display = 'none';
