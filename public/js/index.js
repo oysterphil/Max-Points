@@ -306,7 +306,6 @@ var model = {
                         // Write Functions to display a view for those that haven't filled out the calc yet
                         console.log('No data to load.');
                         document.getElementById('landingPage').style.display = 'none';
-                        model.templates.renderPointsCalculatorTemplate();
                         model.controllers.calculatorSetup();
                       }
                     });
@@ -318,6 +317,7 @@ var model = {
                             model.cards.currentStatusBasedOnSelections = loadUserData;
 
                             model.controllers.displayRecsSetup();
+                            model.controllers.insertCalcInputs();
                         }); 
                     }
                 }
@@ -2136,7 +2136,7 @@ var model = {
                 everywhere: 0
             },
             {
-                cardName: 'Wells Fargo Business VIsa',
+                cardName: 'Wells Fargo Business Visa',
                 annualFee: 0,
                 everywhere: 1
             },
@@ -2713,7 +2713,7 @@ var model = {
             'Wells Fargo Rewards Visa',
             'Wells Fargo Propel By American Express',
             'Wells Fargo Secured Visa',
-            'Wells Fargo Business VIsa',
+            'Wells Fargo Business Visa',
             'Citi Hilton HHonors Visa Signature',
             'Citi Hilton HHonors Reserve Visa',
             'USAA Platinum Visa',
@@ -6469,7 +6469,7 @@ var model = {
                     'USAA Rewards Visa or World MasterCard':null,
                     'USAA Secured Card By American Express':null,
                     'Walmart Credit Card':null,
-                    'Wells Fargo Business VIsa':null,
+                    'Wells Fargo Business Visa':null,
                     'Wells Fargo Cash Wise Visa':null,
                     'Wells Fargo Platinum Visa':null,
                     'Wells Fargo Propel 365 By American Express':null,
@@ -6496,6 +6496,10 @@ var model = {
             document.getElementById('privacyPolicyButtonCalcMobile').addEventListener('click', model.appState.toggleToPp);
         },
         insertCalcInputs: () => {
+            
+            // Prep Calculator Section
+            model.controllers.calculatorSetup();
+
             var m = model.cards.currentStatusBasedOnSelections;
             
             // Click Saved Inputs
@@ -6533,13 +6537,17 @@ var model = {
                 'card9'
             ];
 
+            // Populate and Display Cards that the User Selected in the Past
             dbCards.forEach(function(card) {
-                console.log(model.cards.currentStatusBasedOnSelections.card);
-                if (model.cards.currentStatusBasedOnSelections.card) {
-                    document.getElementById(card).style.display = 'inline';
-                    document.getElementById(card).value = model.cards.currentStatusBasedOnSelections.card;
+                if (model.cards.currentStatusBasedOnSelections[card]) {
+                    document.getElementById(card).parentNode.style.display = 'inline';
+                    document.getElementById(card).value = model.cards.currentStatusBasedOnSelections[card];
                 }
             });
+
+            // Activate the input fields that are filled in
+            Materialize.updateTextFields();
+
         },
         displayRecsSetup: () => {
             
@@ -6561,7 +6569,8 @@ var model = {
             // Display Loading Login
             document.getElementById('loginLoading').style.display = 'inline';
 
-            model.controllers.vetPointCalcInputs();            
+            model.controllers.vetPointCalcInputs();
+
         },
         vetPointCalcInputs: () => {
             // Create Shortcut to Model
@@ -6570,7 +6579,11 @@ var model = {
             // Vet inputs
             if (m.ownBusiness !== null && m.creditScore !== null 
                 && m.rewardsGoal !== null && m.monthlySpend !== null) {
-                model.controllers.createReport();
+                if (model.appState.completedCalculator) {
+                    model.controllers.toggleCashBackFreeFlightsSwitch
+                } else {
+                    model.controllers.createReport();
+                }
             } else {
                 document.getElementById('vetPointCalcInputsDesktop').style.display = 'inline';
                 document.getElementById('vetPointCalcInputsMobile').style.display = 'inline';
@@ -6651,16 +6664,15 @@ var model = {
                     'card8',
                     'card9'
                 ];
-                
+
+                // Populate User Selections from Previous Session
                 dbCards.forEach(function(card) {
-                    for (var card in model.cards.currentStatusBasedOnSelections) {
-                        if (model.cards.currentStatusBasedOnSelections.hasOwnProperty(card)) {
-                            model.cards.all.forEach(function(cc) {
-                                if (cc.cardName === model.cards.currentStatusBasedOnSelections.card) {
-                                    model.cards.userSelections.push(model.cards.all[cc]);
-                                }
-                            });
-                        }
+                    if (model.cards.currentStatusBasedOnSelections[card]) {
+                        model.cards.all.forEach(function(cc) {
+                            if (cc.cardName === model.cards.currentStatusBasedOnSelections[card]) {
+                                model.cards.userSelections.push(cc);
+                            }
+                        });
                     }
                 });
             }
@@ -7288,29 +7300,6 @@ var model = {
                 model.controllers.displayRecInteractions();
             }
 
-            function toggleCashBackFreeFlightsSwitch () {
-                if (model.cards.currentStatusBasedOnSelections.cashBack) {
-                    model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
-                    model.cards.currentStatusBasedOnSelections.cashBack = false;
-                    model.cards.intermediateRecsPers = [];
-                    model.cards.intermediateRecsBiz = [];
-                    model.cards.finalRecsPers = [];
-                    model.cards.finalRecsBiz = [];
-                    model.cards.combinedRecs = [];
-                    model.controllers.determineBizRecs();
-                } else {
-                    model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
-                    model.cards.currentStatusBasedOnSelections.cashBack = true;
-                    model.cards.intermediateRecsPers = [];
-                    model.cards.intermediateRecsBiz = [];
-                    model.cards.finalRecsPers = [];
-                    model.cards.finalRecsBiz = [];
-                    model.cards.combinedRecs = [];
-                    model.controllers.determineBizRecs();
-                }
-                model.controllers.displayRecInteractions();
-            }
-
             function toggleBetweenDetailsCategoriesMobile (e) {
                 // Makes sure the right thing was clicked
                 if (e.target.nodeName === 'A') {
@@ -7399,9 +7388,9 @@ var model = {
 
             // Toggle b/w Cash Back and Free Flights Event Listeners Desktop/Mobile
             document.getElementById('desktopSwitch').addEventListener('click', 
-                toggleCashBackFreeFlightsSwitch);
+                model.controllers.toggleCashBackFreeFlightsSwitch);
             document.getElementById('mobileSwitch').addEventListener('click', 
-                toggleCashBackFreeFlightsSwitch);
+                model.controllers.toggleCashBackFreeFlightsSwitch);
 
             // Toggle b/w Card Details Event Listeners Desktop/Mobile
             document.getElementById('pickCategoryDesktop').addEventListener('click', (e) => {
@@ -7421,6 +7410,35 @@ var model = {
                 model.appState.toggleToPp);
             document.getElementById('privacyPolicyButtonMobileDisplayRecs').addEventListener('click', 
                 model.appState.toggleToPp);
+        },
+        toggleCashBackFreeFlightsSwitch: () => {
+            document.getElementById('crunchingNumbers').style.display = 'inline';
+                document.getElementById('displayRecommendations').style.display = 'none';
+            setTimeout(function() {
+                
+                if (model.cards.currentStatusBasedOnSelections.cashBack) {
+                    model.cards.currentStatusBasedOnSelections.rewardsGoal = 'freeFlights';
+                    model.cards.currentStatusBasedOnSelections.cashBack = false;
+                    model.cards.intermediateRecsPers = [];
+                    model.cards.intermediateRecsBiz = [];
+                    model.cards.finalRecsPers = [];
+                    model.cards.finalRecsBiz = [];
+                    model.cards.combinedRecs = [];
+                    model.controllers.determineBizRecs();
+                } else {
+                    model.cards.currentStatusBasedOnSelections.rewardsGoal = 'cashBack';
+                    model.cards.currentStatusBasedOnSelections.cashBack = true;
+                    model.cards.intermediateRecsPers = [];
+                    model.cards.intermediateRecsBiz = [];
+                    model.cards.finalRecsPers = [];
+                    model.cards.finalRecsBiz = [];
+                    model.cards.combinedRecs = [];
+                    model.controllers.determineBizRecs();
+                }
+                model.controllers.displayRecInteractions();
+                document.getElementById('crunchingNumbers').style.display = 'none';
+                document.getElementById('displayRecommendations').style.display = 'inline';
+            }, 1000);
         },
         showRegisterRec: () => {
             document.getElementById('privacyPolicy').style.display = 'none';
