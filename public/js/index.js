@@ -366,31 +366,37 @@ var model = {
                         city: 'Paris',
                         country: 'France',
                         image: '/img/paris.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
                         pointsUnit: 'miles needed',
                         value: '81',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'London',
                         country: 'United Kingdom',
                         image: '/img/london.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
                         pointsUnit: 'miles needed',
                         value: '163',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Rome',
                         country: 'Italy',
                         image: '/img/rome.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '77',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 },
                 {
@@ -398,31 +404,37 @@ var model = {
                         city: 'Prague',
                         country: 'Czechia',
                         image: '/img/prague.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '49,000',
                         pointsUnit: 'miles needed',
                         value: '45',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Reykjavik',
                         country: 'Iceland',
                         image: '/img/reykjavik.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '60',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Athens',
                         country: 'Greece',
                         image: '/img/athens.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '67',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }     
                  },
                  {
@@ -430,31 +442,37 @@ var model = {
                         city: 'Madrid',
                         country: 'Spain',
                         image: '/img/madrid.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '49',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Vienna',
                         country: 'Austria',
                         image: '/img/vienna.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '115',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Amsterdam',
                         country: 'The Netherlands',
                         image: '/img/amsterdam.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
                         pointsUnit: 'miles needed',
                         value: '45',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 }
             ],
@@ -464,32 +482,38 @@ var model = {
                         city: 'Tokyo',
                         country: 'Japan',
                         image: '/img/tokyo.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '84',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
 
                     },
                     two: {
                         city: 'Bangkok',
                         country: 'Thailand',
                         image: '/img/bangkok.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '101',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Beijing',
                         country: 'China',
                         image: '/img/beijing.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '71',
-                        valueUnits: 'estimated airport taxes' 
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 },
                 {
@@ -497,31 +521,37 @@ var model = {
                         city: 'Seoul',
                         country: 'South Korea',
                         image: '/img/seoul.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '78',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'New Delhi',
                         country: 'India',
                         image: '/img/delhi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '55,000',
                         pointsUnit: 'miles needed',
                         value: '123',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Abu Dhabi',
                         country: 'United Arab Emirates',
                         image: '/img/abudhabi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '65,000',
                         pointsUnit: 'miles needed',
                         value: '94',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 },
                 {
@@ -529,31 +559,37 @@ var model = {
                         city: 'Hanoi',
                         country: 'Vietnam',
                         image: '/img/hanoi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
                         pointsUnit: 'miles needed',
                         value: '105',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Singapore',
                         country: 'Singapore',
                         image: '/img/singapore.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
                         value: '103',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Kuala Lumpur',
                         country: 'Malaysia',
                         image: '/img/kaulalumpur.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
                         value: '96',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 }          
             ],
@@ -563,31 +599,37 @@ var model = {
                         city: 'New York City',
                         country: 'United States of America',
                         image: '/img/newyork.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '11',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Los Angeles',
                         country: 'United States of America',
                         image: '/img/losangeles.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '11',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Washington DC',
                         country: 'United States of America',
                         image: '/img/washingtondc.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '11',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 },
                 {
@@ -595,31 +637,37 @@ var model = {
                         city: 'Montreal',
                         country: 'Canada',
                         image: '/img/montreal.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
                         pointsUnit: 'miles needed',
                         value: '57',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Vancouver',
                         country: 'Canada',
                         image: '/img/vancouver.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '46',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Toronto',
                         country: 'Canada',
                         image: '/img/toronto.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
                         pointsUnit: 'miles needed',
                         value: '52',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 }          
             ],
@@ -629,31 +677,37 @@ var model = {
                         city: 'Nassau',
                         country: 'The Bahamas',
                         image: '/img/nassau.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '11,000',
                         pointsUnit: 'miles needed',
                         value: '101',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Santo Domingo',
                         country: 'Dominican Republic',
                         image: '/img/santodomingo.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '104',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Kingston',
                         country: 'Jamaica',
                         image: '/img/kingston.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '143',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 },
                 {
@@ -661,31 +715,37 @@ var model = {
                         city: 'San Jose',
                         country: 'Costa Rica',
                         image: '/img/sanjose.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '74',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Mexico City',
                         country: 'Mexico',
                         image: '/img/delhi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
                         pointsUnit: 'miles needed',
                         value: '91',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Bogota',
                         country: 'Colombia',
                         image: '/img/abudhabi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
                         pointsUnit: 'miles needed',
                         value: '75',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 },
                 {
@@ -693,31 +753,37 @@ var model = {
                         city: 'Rio De Janeiro',
                         country: 'Brazil',
                         image: '/img/rio.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '57',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Lima',
                         country: 'Peru',
                         image: '/img/lima.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '25,000',
                         pointsUnit: 'miles needed',
                         value: '67',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Quito',
                         country: 'Ecuador',
                         image: '/img/quito.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
                         pointsUnit: 'miles needed',
                         value: '96',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 }          
             ],
@@ -727,31 +793,37 @@ var model = {
                         city: 'Sydney',
                         country: 'Australia',
                         image: '/img/sydney.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '142',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Wellington',
                         country: 'New Zealand',
                         image: '/img/wellington.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
                         pointsUnit: 'miles needed',
                         value: '113',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Melbourne',
                         country: 'Australia',
                         image: '/img/melbourne.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
                         value: '138',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 }
             ],
@@ -761,31 +833,37 @@ var model = {
                         city: 'Marrakech',
                         country: 'Morocco',
                         image: '/img/marrakech.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '105',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     two: {
                         city: 'Cape Town',
                         country: 'South Africa',
                         image: '/img/capetown.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
                         pointsUnit: 'miles needed',
                         value: '103',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     },
                     three: {
                         city: 'Fes',
                         country: 'Morocco',
                         image: '/img/fes.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '105',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                     }
                 }
             ],
@@ -795,31 +873,37 @@ var model = {
                         city: '$400 In Cash',
                         country: '',
                         image: '/img/wallet.png',
+                        timeframeCopy: 'achieve this goal in',
                         timeframe: '3 month',
                         points: '40,000',
                         pointsUnit: 'points needed',
                         value: '400',
-                        valueUnits: 'estimated value'
+                        valueUnits: 'estimated value',
+                        callToAction: 'select goal'
                     },
                     two: {
                         city: 'Hotel Night Worth $150',
                         country: '',
                         image: '/img/hotel.png',
+                        timeframeCopy: 'achieve this goal in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'points needed',
                         value: '150',
-                        valueUnits: 'estimated value'
+                        valueUnits: 'estimated value',
+                        callToAction: 'select goal'
                     },
                     three: {
                         city: '$100 of Holiday Gifts',
                         country: '',
                         image: '/img/gifts.png',
+                        timeframeCopy: 'achieve this goal in',
                         timeframe: '1 month',
                         points: '10,000',
                         pointsUnit: 'points needed',
                         value: '100',
-                        valueUnits: 'estimated value'
+                        valueUnits: 'estimated value',
+                        callToAction: 'select goal'
                     }
                 }
             ]
@@ -831,91 +915,109 @@ var model = {
                         city: 'Paris',
                         country: 'France',
                         image: '/img/paris.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
                         pointsUnit: 'miles needed',
                         value: '81',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'London',
                         country: 'United Kingdom',
                         image: '/img/london.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
                         pointsUnit: 'miles needed',
                         value: '163',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Rome',
                         country: 'Italy',
                         image: '/img/rome.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '77',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Prague',
                         country: 'Czechia',
                         image: '/img/prague.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '49,000',
                         pointsUnit: 'miles needed',
                         value: '45',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Reykjavik',
                         country: 'Iceland',
                         image: '/img/reykjavik.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '60',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Athens',
                         country: 'Greece',
                         image: '/img/athens.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '67',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Madrid',
                         country: 'Spain',
                         image: '/img/madrid.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '49',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Vienna',
                         country: 'Austria',
                         image: '/img/vienna.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '115',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Amsterdam',
                         country: 'The Netherlands',
                         image: '/img/amsterdam.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '34,000',
                         pointsUnit: 'miles needed',
                         value: '45',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }
             ],
             asiaMobile: [
@@ -923,91 +1025,109 @@ var model = {
                         city: 'Tokyo',
                         country: 'Japan',
                         image: '/img/tokyo.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '40,000',
                         pointsUnit: 'miles needed',
                         value: '84',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Bangkok',
                         country: 'Thailand',
                         image: '/img/bangkok.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '101',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Beijing',
                         country: 'China',
                         image: '/img/beijing.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '71',
-                        valueUnits: 'estimated airport taxes' 
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Seoul',
                         country: 'South Korea',
                         image: '/img/seoul.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '78',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'New Delhi',
                         country: 'India',
                         image: '/img/delhi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '55,000',
                         pointsUnit: 'miles needed',
                         value: '123',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Abu Dhabi',
                         country: 'United Arab Emirates',
                         image: '/img/abudhabi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '65,000',
                         pointsUnit: 'miles needed',
                         value: '94',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Hanoi',
                         country: 'Vietnam',
                         image: '/img/hanoi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
                         pointsUnit: 'miles needed',
                         value: '105',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Singapore',
                         country: 'Singapore',
                         image: '/img/singapore.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
                         value: '103',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Kuala Lumpur',
                         country: 'Malaysia',
                         image: '/img/kaulalumpur.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
                         value: '96',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }
             ],
             unitedStatesMobile: [
@@ -1015,61 +1135,73 @@ var model = {
                         city: 'New York City',
                         country: 'United States of America',
                         image: '/img/washingtondc.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '11',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Los Angeles',
                         country: 'United States of America',
                         image: '/img/newyork.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '11',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Washington DC',
                         country: 'United States of America',
                         image: '/img/losangeles.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '11',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Montreal',
                         country: 'Canada',
                         image: '/img/montreal.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
                         pointsUnit: 'miles needed',
                         value: '57',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Vancouver',
                         country: 'Canada',
                         image: '/img/vancouver.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '46',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Toronto',
                         country: 'Canada',
                         image: '/img/toronto.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '12,000',
                         pointsUnit: 'miles needed',
                         value: '52',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                  }
             ],
             latinAmericaMobile: [
@@ -1077,91 +1209,109 @@ var model = {
                         city: 'Nassau',
                         country: 'The Bahamas',
                         image: '/img/nassau.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '11,000',
                         pointsUnit: 'miles needed',
                         value: '101',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Santo Domingo',
                         country: 'Dominican Republic',
                         image: '/img/santodomingo.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '104',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Kingston',
                         country: 'Jamaica',
                         image: '/img/kingston.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '143',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'San Jose',
                         country: 'Costa Rica',
                         image: '/img/sanjose.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'miles needed',
                         value: '74',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Mexico City',
                         country: 'Mexico',
                         image: '/img/delhi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
                         pointsUnit: 'miles needed',
                         value: '91',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Bogota',
                         country: 'Colombia',
                         image: '/img/abudhabi.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
                         pointsUnit: 'miles needed',
                         value: '75',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Rio De Janeiro',
                         country: 'Brazil',
                         image: '/img/rio.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '57',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Lima',
                         country: 'Peru',
                         image: '/img/lima.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '2 months',
                         points: '25,000',
                         pointsUnit: 'miles needed',
                         value: '67',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Quito',
                         country: 'Ecuador',
                         image: '/img/quito.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '1 month',
                         points: '20,000',
                         pointsUnit: 'miles needed',
                         value: '96',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }
             ],
             oceaniaMobile: [
@@ -1169,31 +1319,37 @@ var model = {
                         city: 'Sydney',
                         country: 'Australia',
                         image: '/img/sydney.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '60,000',
                         pointsUnit: 'miles needed',
                         value: '142',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Wellington',
                         country: 'New Zealand',
                         image: '/img/wellington.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
                         pointsUnit: 'miles needed',
                         value: '113',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Melbourne',
                         country: 'Australia',
                         image: '/img/melbourne.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '75,000',
                         pointsUnit: 'miles needed',
                         value: '138',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }
             ],
             africaMobile: [
@@ -1201,31 +1357,37 @@ var model = {
                         city: 'Marrakech',
                         country: 'Morocco',
                         image: '/img/marrakech.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '105',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Cape Town',
                         country: 'South Africa',
                         image: '/img/capetown.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '4 months',
                         points: '80,000',
                         pointsUnit: 'miles needed',
                         value: '103',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }, 
                 {
                         city: 'Fes',
                         country: 'Morocco',
                         image: '/img/fes.png',
+                        timeframeCopy: 'earn an award ticket in',
                         timeframe: '3 months',
                         points: '50,000',
                         pointsUnit: 'miles needed',
                         value: '105',
-                        valueUnits: 'estimated airport taxes'
+                        valueUnits: 'estimated airport taxes',
+                        callToAction: 'select destination'
                 }
             ],
             cashBackLandingPageMobile: [
@@ -1233,31 +1395,37 @@ var model = {
                         city: '$400 In Cash',
                         country: '',
                         image: '/img/wallet.png',
+                        timeframeCopy: 'achieve this goal in',
                         timeframe: '3 month',
                         points: '40,000',
                         pointsUnit: 'points needed',
                         value: '400',
-                        valueUnits: 'estimated value'
+                        valueUnits: 'estimated value',
+                        callToAction: 'select goal'
                 }, 
                 {
                         city: 'Hotel Night Worth $150',
                         country: '',
                         image: '/img/hotel.png',
+                        timeframeCopy: 'achieve this goal in',
                         timeframe: '1 month',
                         points: '15,000',
                         pointsUnit: 'points needed',
                         value: '150',
-                        valueUnits: 'estimated value'
+                        valueUnits: 'estimated value',
+                        callToAction: 'select goal'
                 }, 
                 {
                         city: '$100 of Holiday Gifts',
                         country: '',
                         image: '/img/gifts.png',
+                        timeframeCopy: 'achieve this goal in',
                         timeframe: '1 month',
                         points: '10,000',
                         pointsUnit: 'points needed',
                         value: '100',
-                        valueUnits: 'estimated value'
+                        valueUnits: 'estimated value',
+                        callToAction: 'select goal'
                 }           
             ]
         }
@@ -5939,6 +6107,8 @@ var model = {
             document.getElementById('preNav').style.display = 'none';
             document.getElementById('preFooterDesktop').style.display = 'none';
             document.getElementById('preFooterMobile').style.display = 'none';
+            document.getElementById('landingPage').style.display = 'none';
+
 
             if (!model.appState.completedCalculator) {
                 document.getElementById('cardRecs').style.display = 'none';
@@ -6490,11 +6660,6 @@ var model = {
             document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
             document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);
             
-            // Points Calculator PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButtonCalcDesktop').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('termsOfServiceButtonCalcMobile').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonCalcDesktop').addEventListener('click', model.appState.toggleToPp);
-            document.getElementById('privacyPolicyButtonCalcMobile').addEventListener('click', model.appState.toggleToPp);
         },
         insertCalcInputs: () => {
             
@@ -7416,15 +7581,6 @@ var model = {
                 toggleBetweenDetailsCategoriesMobile(e);
             });
 
-            // PP and TOS Event Listeners Desktop/Mobile
-            document.getElementById('termsOfServiceButtonDesktopDisplayRecs').addEventListener('click', 
-                model.appState.toggleToTos);
-            document.getElementById('termsOfServiceButtonMobileDisplayRecs').addEventListener('click', 
-                model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonDesktopDisplayRecs').addEventListener('click', 
-                model.appState.toggleToPp);
-            document.getElementById('privacyPolicyButtonMobileDisplayRecs').addEventListener('click', 
-                model.appState.toggleToPp);
         },
         toggleCashBackFreeFlightsSwitch: () => {
             document.getElementById('crunchingNumbers').style.display = 'inline';
