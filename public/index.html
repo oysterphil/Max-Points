@@ -410,7 +410,7 @@
 
     <!-- Desktop -->
     <div class="hide-on-med-only hide-on-small-only">
-      <h5 style="text-align: center;">Loading...</h5>
+      <h5 style="text-align: center;margin-left: 300px;">Loading...</h5>
       <div class="progress">
         <div class="indeterminate"></div>
       </div>
@@ -2124,14 +2124,29 @@
         });
 
         if (selection === 'goals') {
+          
+          model.appState.calculator = true;
+          model.appState.resultsPage = false;
+          model.appState.acctInfo = false;
+
           document.getElementById('acctInfo').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'none';
           document.getElementById('pointsCalculator').style.display = 'inline';
         } else if (selection === 'cardRecs') {
+          
+          model.appState.calculator = false;
+          model.appState.resultsPage = true;
+          model.appState.acctInfo = false;
+
           document.getElementById('pointsCalculator').style.display = 'none';
           document.getElementById('acctInfo').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'inline';
         } else if (selection === 'personalInfo') {
+
+          model.appState.calculator = false;
+          model.appState.resultsPage = false;
+          model.appState.acctInfo = true;
+
           document.getElementById('pointsCalculator').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'none';
           document.getElementById('acctInfo').style.display = 'inline';

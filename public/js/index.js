@@ -6,6 +6,7 @@ var model = {
         landingPage: true,
         calculator: false,
         resultsPage: false,
+        acctInfo: false,
         profilePage: false,
         registerBeforeRecs: false,
         signInBeforeRecs: false,
@@ -316,8 +317,8 @@ var model = {
 
                             model.cards.currentStatusBasedOnSelections = loadUserData;
 
-                            model.controllers.displayRecsSetup();
                             model.controllers.insertCalcInputs();
+                            model.controllers.displayRecsSetup();
                         }); 
                     }
                 }
@@ -6545,6 +6546,16 @@ var model = {
                 }
             });
 
+            console.log(model.cards.currentStatusBasedOnSelections);
+
+            dbCards.forEach(function(card) {
+                if (model.cards.currentStatusBasedOnSelections[card]) {
+                    delete model.cards.currentStatusBasedOnSelections[card];
+                }
+            });
+
+            console.log(model.cards.currentStatusBasedOnSelections);
+
             // Activate the input fields that are filled in
             Materialize.updateTextFields();
 
@@ -6566,24 +6577,25 @@ var model = {
             document.getElementById('preFooterDesktop').style.display = 'none';
             document.getElementById('preFooterMobile').style.display = 'none';
 
+            // Hide Calculator Page
+            document.getElementById('pointsCalculator').style.display = 'none';
+
             // Display Loading Login
             document.getElementById('loginLoading').style.display = 'inline';
 
             model.controllers.vetPointCalcInputs();
-
         },
         vetPointCalcInputs: () => {
             // Create Shortcut to Model
             const m = model.cards.currentStatusBasedOnSelections;
 
+            document.getElementById('vetPointCalcInputsDesktop').style.display = 'none';
+            document.getElementById('vetPointCalcInputsMobile').style.display = 'none';
+
             // Vet inputs
             if (m.ownBusiness !== null && m.creditScore !== null 
                 && m.rewardsGoal !== null && m.monthlySpend !== null) {
-                if (model.appState.completedCalculator) {
-                    model.controllers.toggleCashBackFreeFlightsSwitch
-                } else {
-                    model.controllers.createReport();
-                }
+                model.controllers.createReport();
             } else {
                 document.getElementById('vetPointCalcInputsDesktop').style.display = 'inline';
                 document.getElementById('vetPointCalcInputsMobile').style.display = 'inline';
@@ -6592,6 +6604,14 @@ var model = {
         createReport: () => {
             
             model.appState.completedCalculator = true;
+
+            // Reset Inputs
+            model.cards.userSelections = [];
+            model.cards.intermediateRecsPers = [];
+            model.cards.intermediateRecsBiz = [];
+            model.cards.finalRecsPers = [];
+            model.cards.finalRecsBiz = [];
+            model.cards.combinedRecs = [];
 
             // Hide the Form
             document.getElementById('pointsCalculator').style.display = 'none';
@@ -6611,72 +6631,49 @@ var model = {
             
             // Log User's Remaining Inputs to the Model
             
+            // Other Amount, if applicable
             if (!model.appState.loginLoading) {
-                // Other Amount, if applicable
                 var otherAmount = document.getElementById('otherSelectionInput').value;
                 if (otherAmount) {
                     model.cards.currentStatusBasedOnSelections.monthlySpend = otherAmount;
                 }
-
-
-                // Current CCs, if applicable
-
-                var compiledCardValues = [card1,card2,card3,card4,card5,card6,card7,card8,card9];
-
-                var checkCards = ['card1','card2','card3','card4','card5','card6','card7','card8','card9',]
-                
-                for (var i = 0; i < checkCards.length; i++) {
-                    if (document.getElementById(checkCards[i]).value) {
-                        compiledCardValues[i] = document.getElementById(checkCards[i]).value;
-                    } else if (document.getElementById(checkCards[i] + 'Mobile').value) {
-                        compiledCardValues[i] = document.getElementById(checkCards[i] + 'Mobile').value;
-                    } else {
-                        compiledCardValues[i] = null;
-                    }
-                }
-
-                var cards = model.cards.all;
-
-                // Determine Cash Back Status for Rewards Goal Toggle on Display Recs View
-                if (model.cards.currentStatusBasedOnSelections.rewardsGoal === 'cashBack') {
-                    model.cards.currentStatusBasedOnSelections.cashBack = true;
-                } else {
-                    model.cards.currentStatusBasedOnSelections.cashBack = false;
-                }
-
-                // Create the Selections Object
-                for (var i = 0; i < cards.length; i++) {
-                    compiledCardValues.forEach(function(card) {
-                        if (cards[i].cardName === card) {
-                            model.cards.userSelections.push(cards[i]);
-                        }
-                    }); 
-                }
-            } else {
-                var dbCards = [
-                    'card1',
-                    'card2',
-                    'card3',
-                    'card4',
-                    'card5',
-                    'card6',
-                    'card7',
-                    'card8',
-                    'card9'
-                ];
-
-                // Populate User Selections from Previous Session
-                dbCards.forEach(function(card) {
-                    if (model.cards.currentStatusBasedOnSelections[card]) {
-                        model.cards.all.forEach(function(cc) {
-                            if (cc.cardName === model.cards.currentStatusBasedOnSelections[card]) {
-                                model.cards.userSelections.push(cc);
-                            }
-                        });
-                    }
-                });
             }
 
+
+            // Current CCs, if applicable
+
+            var compiledCardValues = [card1,card2,card3,card4,card5,card6,card7,card8,card9];
+
+            var checkCards = ['card1','card2','card3','card4','card5','card6','card7','card8','card9',]
+            
+            for (var i = 0; i < checkCards.length; i++) {
+                if (document.getElementById(checkCards[i]).value) {
+                    compiledCardValues[i] = document.getElementById(checkCards[i]).value;
+                } else if (document.getElementById(checkCards[i] + 'Mobile').value) {
+                    compiledCardValues[i] = document.getElementById(checkCards[i] + 'Mobile').value;
+                } else {
+                    compiledCardValues[i] = null;
+                }
+            }
+
+            var cards = model.cards.all;
+
+            // Determine Cash Back Status for Rewards Goal Toggle on Display Recs View
+            if (model.cards.currentStatusBasedOnSelections.rewardsGoal === 'cashBack') {
+                model.cards.currentStatusBasedOnSelections.cashBack = true;
+            } else {
+                model.cards.currentStatusBasedOnSelections.cashBack = false;
+            }
+
+            // Create the Selections Object
+            for (var i = 0; i < cards.length; i++) {
+                compiledCardValues.forEach(function(card) {
+                    if (cards[i].cardName === card) {
+                        model.cards.userSelections.push(cards[i]);
+                    }
+                }); 
+            }
+        
             console.log('Display User Selections');
             console.log(model.cards.userSelections);
 
@@ -7263,16 +7260,34 @@ var model = {
                 }
             }
 
-            for (var i = 1; i < 10; i++) {
-                if (model.cards.combinedRecs[(i-1)]) {
-                    calcEntry['rec' + i] = model.cards.combinedRecs[(i-1)].cardName;
-                }
-            }
+            // for (var i = 1; i < 10; i++) {
+            //     if (model.cards.combinedRecs[(i-1)]) {
+            //         calcEntry['rec' + i] = model.cards.combinedRecs[(i-1)].cardName;
+            //     }
+            // }
 
             console.log(calcEntry);
 
             var userRef = firebase.database().ref("users/" + model.appState.uid);
             userRef.update(calcEntry);
+
+            var dbCards = [
+                'card1',
+                'card2',
+                'card3',
+                'card4',
+                'card5',
+                'card6',
+                'card7',
+                'card8',
+                'card9'
+            ];
+
+            dbCards.forEach(function(card) {
+                if (model.cards.currentStatusBasedOnSelections[card]) {
+                    delete model.cards.currentStatusBasedOnSelections[card];
+                }
+            });
         },
         displayRecInteractions: () => {
             
