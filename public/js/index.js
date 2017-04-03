@@ -6450,7 +6450,9 @@ var model = {
                 for (var i = 1; i < 10; i++) {
                     if (model.appState.addAnotherCardCount === i) {
                         var nextCard = 'card' + (i+1) + (i+1);
+                        var nextX = 'x' + (i+1);
                         document.getElementById(nextCard).style.display = "inline";
+                        document.getElementById(nextX).style.display = "inline";
                         model.appState.addAnotherCardCount += 1;
                         if (model.appState.addAnotherCardCount === 9) {
                             document.getElementById('addAnotherCard').classList.add('disabled');
@@ -6465,7 +6467,9 @@ var model = {
                 for (var i = 1; i < 10; i++) {
                     if (model.appState.addAnotherCardCount === i) {
                         var nextCard = 'card' + (i+1) + (i+1) + (i+1);
+                        var nextX = 'x' + (i+1) + 'Mobile';
                         document.getElementById(nextCard).style.display = "inline";
+                        document.getElementById(nextX).style.display = "inline";
                         model.appState.addAnotherCardCount += 1;
                         if (model.appState.addAnotherCardCount === 9) {
                             document.getElementById('addAnotherCardMobile').classList.add('disabled');
@@ -6473,6 +6477,16 @@ var model = {
                         break;
                     } 
                 }
+            }
+
+            // Hide x-ed-out Cards
+            function hideCard() {
+                var selection = this;
+                var previous = $(this).prev("div");
+                document.getElementById(previous[0].id).children[0].value = '';
+                document.getElementById(selection.id).style.display = 'none';
+                document.getElementById(previous[0].id).style.display = 'none';
+                model.appState.addAnotherCardCount -= 1;
             }
 
             // Set up Event Listeners for Calculator Inputs Desktop
@@ -6485,6 +6499,13 @@ var model = {
             var collection = Array.from(document.getElementsByClassName("calculatorInputMobile")); 
             for (var i = 0; i < collection.length; i++) {
                 collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
+            }
+
+            // Set up Event Listeners for x-out buttons for Cards
+            var collection = Array.from(document.getElementsByClassName('x-out'));
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', hideCard);
+                collection[i].style.cursor = 'pointer';
             }
 
             // Add Autocomplete Functionality for Add Cards Section
@@ -6743,6 +6764,38 @@ var model = {
                 if (model.cards.currentStatusBasedOnSelections[card]) {
                     document.getElementById(card).parentNode.style.display = 'inline';
                     document.getElementById(card).value = model.cards.currentStatusBasedOnSelections[card];
+                    if (card !== 'card1') {
+                        var xId = 'x' + card.charAt((card.length - 1));
+                        document.getElementById(xId).style.display = 'inline';
+                        model.appState.addAnotherCardCount += 1;
+                    }
+                }
+            });
+
+            var dbCardsMobile = [
+                'card1Mobile',
+                'card2Mobile',
+                'card3Mobile',
+                'card4Mobile',
+                'card5Mobile',
+                'card6Mobile',
+                'card7Mobile',
+                'card8Mobile',
+                'card9Mobile'
+            ];
+
+            // Populate and Display Cards that the User Selected in the Past
+            dbCardsMobile.forEach(function(card) {
+                var nonMobileCard = card.slice(0,5);
+                var mobileEnd = card.slice(4,(card.length));
+                console.log(mobileEnd);
+                if (model.cards.currentStatusBasedOnSelections[nonMobileCard]) {
+                    document.getElementById(card).parentNode.style.display = 'inline';
+                    document.getElementById(card).value = model.cards.currentStatusBasedOnSelections[nonMobileCard];
+                    if (card !== 'card1Mobile') {
+                        var xId = 'x' + mobileEnd;
+                        document.getElementById(xId).style.display = 'inline';
+                    }
                 }
             });
 
