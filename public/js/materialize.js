@@ -3154,14 +3154,22 @@ $(document).ready(function(){
             }
 
             var val = $input.val().toLowerCase();
+            val = val.replace("®", "");
+            val = val.replace("℠", "");
             $autocomplete.empty();
 
             // Check if the input isn't empty
             if (val !== '') {
               for(var key in data) {
+              	var searchKey = jQuery.extend(true, {}, key);
+              	var updatedKey = '';
+              	for (letter in searchKey) {
+              		updatedKey += searchKey[letter];
+              	}
+	            updatedKey = updatedKey.replace(/[^\x00-\x7F]/g, "");
                 if (data.hasOwnProperty(key) &&
-                    key.toLowerCase().indexOf(val) !== -1 &&
-                    key.toLowerCase() !== val) {
+                    updatedKey.toLowerCase().indexOf(val) !== -1 &&
+                    updatedKey.toLowerCase() !== val) {
                   var autocompleteOption = $('<li></li>');
                   if(!!data[key]) {
                     autocompleteOption.append('<img src="'+ data[key] +'" class="right circle"><span>'+ key +'</span>');
