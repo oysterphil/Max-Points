@@ -321,7 +321,7 @@ var model = {
                         usersRef.update(newUser);
 
                         model.controllers.calculatorSetup();
-                    }
+                    } 
                 });
             } else {
                 console.log('No one is signed in.');
