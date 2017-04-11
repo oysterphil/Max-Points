@@ -2990,6 +2990,7 @@ var model = {
             creditScore: null,
             rewardsGoal: null,
             monthlySpend: null,
+            monthlySpendValue: null,
             totalAnnualFee: null,
             everywhere: 0        
         },
@@ -6271,6 +6272,10 @@ var model = {
                     document.getElementById('otherSelection').style.display = 'none';
 
                     if (selection === 'other') {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
                         // Make sure to reset box inputs
                         var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
                         ids.forEach(function(id) {
@@ -6290,6 +6295,9 @@ var model = {
 
                         // Log Selection to the Model
                         model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        var selectionNumber = parseFloat(selection.replace(/,/g, ''));
+                        model.cards.currentStatusBasedOnSelections.monthlySpendValue = selectionNumber;
 
                         // Make sure to reset box inputs
                         var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
@@ -6412,6 +6420,10 @@ var model = {
                     document.getElementById('otherSelectionMobile').style.display = 'none';
 
                     if (selection === 'other') {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
                         // Make sure to reset box inputs
                         var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
                                     '2000Mobile', '3000Mobile', 'otherMobile'];
@@ -6433,6 +6445,9 @@ var model = {
 
                         // Log Selection to the Model
                         model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        var selectionNumber = parseFloat(selection.replace(/,/g, ''));
+                        model.cards.currentStatusBasedOnSelections.monthlySpendValue = selectionNumber;
 
                         // Make sure to reset box inputs
                         var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
@@ -6769,6 +6784,11 @@ var model = {
             document.getElementById(m.monthlySpend).click();
             document.getElementById(m.monthlySpend + 'Mobile').click();
 
+            if (m.monthlySpend === 'other') {
+                document.getElementById('otherSelectionInput').value = m.monthlySpendValue;
+                document.getElementById('otherSelectionInputMobile').value = m.monthlySpendValue;
+            }
+
             var dbCards = [
                 'card1',
                 'card2',
@@ -6863,8 +6883,19 @@ var model = {
             document.getElementById('vetPointCalcInputsMobile').style.display = 'none';
 
             // Vet inputs
+
+            if (document.getElementById('otherSelectionInput').value) {
+                var otherAmount = document.getElementById('otherSelectionInput').value;
+                otherAmount = parseFloat(otherAmount.replace(/,/g, ''));
+                m.monthlySpendValue = otherAmount;
+            } else if (document.getElementById('otherSelectionInputMobile').value) {
+                var otherAmount = document.getElementById('otherSelectionInputMobile').value;
+                otherAmount = parseFloat(otherAmount.replace(/,/g, ''));
+                m.monthlySpendValue = otherAmount;
+            }
+
             if (m.ownBusiness !== null && m.creditScore !== null 
-                && m.rewardsGoal !== null && m.monthlySpend !== null) {
+                && m.rewardsGoal !== null && m.monthlySpend) {
                 model.controllers.createReport();
             } else {
                 document.getElementById('vetPointCalcInputsDesktop').style.display = 'inline';
@@ -6898,19 +6929,8 @@ var model = {
             model.controllers.determineSelections();
         },
         determineSelections: () => {
-            
-            // Log User's Remaining Inputs to the Model
-            
-            // Other Amount, if applicable
-            if (!model.appState.loginLoading) {
-                var otherAmount = document.getElementById('otherSelectionInput').value;
-                if (otherAmount) {
-                    model.cards.currentStatusBasedOnSelections.monthlySpend = otherAmount;
-                }
-            }
-
-
-            // Current CCs, if applicable
+                    
+            // Log User's Current CCs, if applicable
 
             var compiledCardValues = [card1,card2,card3,card4,card5,card6,card7,card8,card9];
 
@@ -7459,7 +7479,7 @@ var model = {
 
             // Establish Baseline Variables
 
-            var yearlySpend = model.cards.currentStatusBasedOnSelections.monthlySpend * 12;
+            var yearlySpend = model.cards.currentStatusBasedOnSelections.monthlySpendValue * 12;
 
             var earningRateCats = [
                 'everywhere',
