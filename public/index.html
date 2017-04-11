@@ -23,9 +23,13 @@
     <nav>
       <div class="nav-wrapper">
         <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;"><img class="hide-on-large-only" src="/img/logo.png" height="45px" style="margin-top: 5px;margin-left: 5px;"><img class="hide-on-small-only hide-on-med-only" src="/img/logo.png" height="55px" style="margin-top: 5px;margin-left: 5px;"></a>
-        <ul class="right">
-          <li><a id="signInButton" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
-          <li><a id="registerButton" class="waves-effect waves-light btn register">Register</a></li>
+        <ul class="right hide-on-small-only">
+          <li><a href="javascript:model.controllers.showLogin()" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
+          <li><a href="javascript:model.controllers.showRegister()" class="waves-effect waves-light btn register">Register</a></li>
+        </ul>
+        <ul class="right hide-on-med-only hide-on-large-only">
+          <li><a href="javascript:model.controllers.showLogin()" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0); padding: 0 1rem;">Sign in</a></li>
+          <li><a href="javascript:model.controllers.showRegister()" class="waves-effect waves-light btn register" style="padding: 0 1rem;">Register</a></li>
         </ul>
       </div>
     </nav>
@@ -395,7 +399,19 @@
                 <button class="waves-effect waves-green btn-flat btn-large" onclick="model.auth.resetPasswordAcct()" style="background-color: #00c853; color: white;">Reset Password</button>
               </div>
 
-              <a href="javascript:model.auth.deleteAcct()">Delete Account</a>
+              <!-- Delete Account Mobile -->
+              <a href="#deleteAccountMobile">Delete Account</a>
+
+              <!-- Modal Structure -->
+              <div id="deleteAccountMobile" class="modal">
+                <div class="modal-content">
+                  <h4>Are you sure you want to delete your account?</h4>
+                </div>
+                <div class="modal-footer">
+                  <a href="javascript:model.auth.deleteAcct()" class="modal-action modal-close waves-effect waves-green btn-flat">Delete</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+              </div>
 
               <!-- Acct Info Footer Mobile -->
               <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
@@ -437,7 +453,19 @@
                 <button class="waves-effect waves-green btn-flat btn-large" onclick="model.auth.resetPasswordAcct()" style="background-color: #00c853; color: white;">Reset Password</button>
               </div>
 
-              <a href="javascript:model.auth.deleteAcct()">Delete Account</a>
+              <!-- Delete Account Desktop -->
+              <a href="#deleteAccountDesktop">Delete Account</a>
+
+              <!-- Modal Structure -->
+              <div id="deleteAccountDesktop" class="modal">
+                <div class="modal-content">
+                  <h4>Are you sure you want to delete your account?</h4>
+                </div>
+                <div class="modal-footer">
+                  <a href="javascript:model.auth.deleteAcct()" class="modal-action modal-close waves-effect waves-green btn-flat">Delete</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+              </div>
 
               <!-- Acct Info Footer Desktop -->
               <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
@@ -753,8 +781,8 @@
               </div>
               <div class="row col s10 offset-s1 m8 offset-m2">
                 <p style="text-align: center;">By clicking Create Account, you agree to our 
-                <a href="https://www.storganize.io/terms-of-service-fall-16/" target="_blank" > Terms of Service</a> and 
-                <a href="https://www.storganize.io/privacy-policy/" target="_blank" > Privacy Policy</a>
+                <a href="javascript:model.appState.toggleToTos()"> Terms of Service</a> and 
+                <a href="javascript:model.appState.toggleToPp()"> Privacy Policy</a>
                 </p>
               </div>
               <div class="row col s8 offset-s2">
@@ -880,9 +908,9 @@
             &#169; 2017 Max Points, LLC. All Rights Reserved.         
           </div>
           <div class="col m6">
-            <a id="termsOfServiceButtonLpDesktop" style="color:white;">Terms of Service</a>
+            <a id="termsOfServiceButtonLpDesktop" style="color:white;cursor: pointer;">Terms of Service</a>
             |
-            <a id="privacyPolicyButtonLpDesktop" style="color:white;">Privacy Policy</a>
+            <a id="privacyPolicyButtonLpDesktop" style="color:white;cursor: pointer;">Privacy Policy</a>
           </div>            
         </div>
       </div>

@@ -182,6 +182,7 @@ var model = {
         },
         handleGoogleRegister: () => {
 
+            // TO DO: Fix below so that a new account is not created
             model.appState.firstLoginGoogleFacebook = true;
 
             // Authenticate through Google
@@ -195,7 +196,7 @@ var model = {
             var user = result.user;
 
             }).catch(function(error) {
-
+                console.log(error);
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -222,6 +223,7 @@ var model = {
               var user = result.user;
               // ...
             }).catch(function(error) {
+                console.log(error);
               // Handle Errors here.
               var errorCode = error.code;
               var errorMessage = error.message;
@@ -275,53 +277,52 @@ var model = {
             console.log('Auth state change fired');
 
             if (user) {
-                
+
                 model.appState.uid = user.uid;
 
-                if (model.appState.firstLoginEmailPass || model.appState.firstLoginGoogleFacebook) {
-                    console.log('First log in');
-                    // Send App State Info to Firebase
-                    firebase.database().ref('users/' + user.uid).set({
-                        completedCalculator: model.appState.completedCalculator,
-                        firstLoginEmailPass: model.appState.firstLoginEmailPass,
-                        firstLoginGoogleFacebook: model.appState.firstLoginGoogleFacebook
-                    });
+                firebase.database().ref('/roles/users').once('value').then(function(snapshot) {
 
-                    model.controllers.calculatorSetup();
-                } else {
-                    
-                    console.log('Not first log in');
-
-                    // Load Data from Firebase into the Model Locally
-                    firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
-
-                      var loadUserData = (snapshot.val());
-
-                      model.appState.completedCalculator = loadUserData.completedCalculator;
-                      model.appState.firstLoginEmailPass = loadUserData.firstLoginEmailPass;
-                      model.appState.firstLoginGoogleFacebook = loadUserData.firstLoginGoogleFacebook;
-                    
-                      if (model.appState.completedCalculator) {
-                        loadRestOfData();
-                      } else {
-                        // Write Functions to display a view for those that haven't filled out the calc yet
-                        console.log('No data to load.');
-                        document.getElementById('landingPage').style.display = 'none';
-                        model.controllers.calculatorSetup();
-                      }
-                    });
-
-                    function loadRestOfData() {
+                    var loadUsers = (snapshot.val());
+                    console.log(loadUsers.hasOwnProperty(user.uid));
+                    if (loadUsers.hasOwnProperty(user.uid)) {
+                        console.log('in');
+                        // Load Data from Firebase into the Model Locally
                         firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
+
                             var loadUserData = (snapshot.val());
+                            console.log('in in');
+                            console.log(loadUserData);
 
-                            model.cards.currentStatusBasedOnSelections = loadUserData;
+                            model.appState.completedCalculator = loadUserData.completedCalculator;
 
-                            model.controllers.insertCalcInputs();
-                            model.controllers.displayRecsSetup();
-                        }); 
+                            if (model.appState.completedCalculator) {
+                                model.cards.currentStatusBasedOnSelections = loadUserData;
+                                model.controllers.insertCalcInputs();
+                                model.controllers.displayRecsSetup();
+                            } else {
+                                // Write Functions to display a view for those that haven't filled out the calc yet
+                                console.log('No data to load.');
+                                document.getElementById('landingPage').style.display = 'none';
+                                model.controllers.calculatorSetup();
+                            }
+                        });
+                    } else {
+                        console.log('First log in');
+                        // Send User Info to Firebase
+                        firebase.database().ref('users/' + user.uid).set({
+                            completedCalculator: model.appState.completedCalculator
+                        });
+
+                        // Update Roles
+                        var newUser ={};
+                        newUser[user.uid] = true;
+                        console.log(newUser);
+                        var usersRef = firebase.database().ref("roles/users");
+                        usersRef.update(newUser);
+
+                        model.controllers.calculatorSetup();
                     }
-                }
+                });
             } else {
                 console.log('No one is signed in.');
             }
@@ -393,7 +394,7 @@ var model = {
               // An error happened.
             });
         }
-    },
+    }, 
     destinations: {
         selectionDesktop: null,
         optionsDesktop: {
@@ -5909,10 +5910,6 @@ var model = {
             $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
             $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
 
-            // Login/Register/Logo Event Listeners
-            document.getElementById('registerButton').addEventListener('click', model.controllers.showRegister);
-            document.getElementById('signInButton').addEventListener('click', model.controllers.showLogin);
-
             function changeRewardGoalViewDesktop() {
 
                 if ($(this).val().includes('europe')) {
@@ -6129,6 +6126,25 @@ var model = {
                 style: 'original',
                 tryToSharpen: true
             });
+
+            var options = [
+                {selector: '#addTouch', offset: 50, callback: function() {
+                    $('#addTouch').playLiviconEvo();
+                } },
+                {selector: '#addBriefcase', offset: 340, callback: function() {
+                    $('#addBriefcase').playLiviconEvo();
+                } },
+                {selector: '#addDashboard', offset: 350, callback: function() {
+                    $('#addDashboard').playLiviconEvo();
+                } },
+                {selector: '#addCreditCardOut', offset: 360, callback: function() {
+                    $('#addCreditCardOut').playLiviconEvo();
+                } },
+                {selector: '#addCreditCardIn', offset: 370, callback: function() {
+                    $('#addCreditCardIn').playLiviconEvo();
+                } }
+            ];
+            Materialize.scrollFire(options);
         },
         calculatorSetup: () => {
             
@@ -6704,7 +6720,13 @@ var model = {
                     'Wells Fargo Propel By American Express':null,
                     'Wells Fargo Rewards Visa':null,
                     'Wells Fargo Secured Visa':null
-                }
+                },
+                // renderItem: function (item, search){
+                //     // escape special characters
+                //     search = search.replace(/[-\/\\^$*+?.®()|[\]{}]/g, '\\$&');
+                //     var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+                //     return '<div class="autocomplete-suggestion" data-id="'+ item[0] +'" data-val="' + item[1] + '">' + item[1].replace(re, "<b>$1</b>") + '</div>';
+                // },
             });
 
             // Add another card event listener desktop
@@ -6715,7 +6737,7 @@ var model = {
 
             // Submit Form Event Listeners
             document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
-            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs);   
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs); 
         },
         insertCalcInputs: () => {
             
