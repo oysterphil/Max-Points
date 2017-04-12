@@ -7117,12 +7117,12 @@ var model = {
                     var recs = [
                         'Chase® Ink Business Preferred℠ Visa', 
                         'Chase® Ink Cash℠ Business Visa',
-                        'Starwood Preferred Guest® Business Credit Card from American Express',
                         'The Blue for Business® Credit Card from American Express',
+                        'Starwood Preferred Guest® Business Credit Card from American Express',
+                        'The Business Platinum® Card From American Express OPEN®',
                         'The Business Gold Rewards Card From American Express OPEN®',
                         'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
-                        'Gold Delta SkyMiles® Business Credit Card from American Express',
-                        'The Business Platinum® Card From American Express OPEN®'
+                        'Gold Delta SkyMiles® Business Credit Card from American Express'
                     ];
                     recs.forEach(function(rec) {
                         for (var i = 0; i < c.possibleBizRecs.length; i++) {
@@ -7209,15 +7209,27 @@ var model = {
             } else if (a.rewardsGoal === 'cashBack') {
                 if (a.creditScore === 'goodCredit') {
                     
-                    var recs = [
-                        'Discover it®',
-                        'Chase Freedom®',
-                        'Bank of America® BankAmericard Travel Rewards® Credit Card',
-                        'Discover It® Miles',
-                        'Capital One® Venture® Rewards Credit Card',
-                        'Journey® Student Rewards from Capital One®',
-                        'Barclaycard Arrival Plus™ World Elite MasterCard®'
-                    ];
+                    if (a.monthlySpendValue >= 4000) {
+                        var recs = [
+                            'Discover It® Miles',
+                            'Capital One® Venture® Rewards Credit Card',
+                            'Barclaycard Arrival Plus™ World Elite MasterCard®',
+                            'Discover it®',
+                            'Chase Freedom®',
+                            'Bank of America® BankAmericard Travel Rewards® Credit Card',
+                            'Journey® Student Rewards from Capital One®'
+                        ];
+                    } else {
+                        var recs = [
+                            'Discover it®',
+                            'Chase Freedom®',
+                            'Bank of America® BankAmericard Travel Rewards® Credit Card',
+                            'Discover It® Miles',
+                            'Capital One® Venture® Rewards Credit Card',
+                            'Barclaycard Arrival Plus™ World Elite MasterCard®',
+                            'Journey® Student Rewards from Capital One®'
+                        ];
+                    }
 
                     recs.forEach(function(rec) {
                         for (var i = 0; i < c.possiblePersRecs.length; i++) {
@@ -7228,16 +7240,29 @@ var model = {
                     });
                 } else if (a.creditScore === 'excellentCredit') {
                     
-                    var recs = [
-                        'Citi® Double Cash Card',
-                        'Discover it®',
-                        'Chase Freedom®',
-                        'Bank of America® BankAmericard Travel Rewards® Credit Card',
-                        'Discover It® Miles',
-                        'Capital One® Venture® Rewards Credit Card',
-                        'Journey® Student Rewards from Capital One®',
-                        'Barclaycard Arrival Plus™ World Elite MasterCard®'
-                    ];
+                    if (a.monthlySpendValue >= 4000) {
+                        var recs = [
+                            'Citi® Double Cash Card',
+                            'Chase Freedom®',
+                            'Discover it®',
+                            'Bank of America® BankAmericard Travel Rewards® Credit Card',
+                            'Discover It® Miles',
+                            'Capital One® Venture® Rewards Credit Card',
+                            'Barclaycard Arrival Plus™ World Elite MasterCard®',
+                            'Journey® Student Rewards from Capital One®'
+                        ];
+                    } else {
+                        var recs = [
+                            'Discover It® Miles',
+                            'Capital One® Venture® Rewards Credit Card',
+                            'Barclaycard Arrival Plus™ World Elite MasterCard®',
+                            'Citi® Double Cash Card',
+                            'Chase Freedom®',
+                            'Discover it®',
+                            'Bank of America® BankAmericard Travel Rewards® Credit Card',
+                            'Journey® Student Rewards from Capital One®'
+                        ];
+                    }
 
                     recs.forEach(function(rec) {
                         for (var i = 0; i < c.possiblePersRecs.length; i++) {
@@ -7250,18 +7275,54 @@ var model = {
                 } 
             } else if (a.rewardsGoal === 'freeFlights') {
                 if (a.creditScore === 'goodCredit') {
-                    var recs = [
-                        'Chase Sapphire Preferred® Card',
-                        'The Amex Everyday® Credit Card from American Express',
-                        'Chase Freedom®',
-                        'The Amex Everyday® Preferred Credit Card from American Express',
-                        'Chase Freedom Unlimited℠',
-                        'Starwood Preferred Guest® Credit Card from American Express',
-                        'Premier Rewards Gold Card From American Express®',
-                        'Gold Delta SkyMiles® Credit Card from American Express',
-                        'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
-                        'Bank of America® Alaska Airlines Visa Signature® Credit Card'
-                    ];
+                    
+                    var hasSapphireReserve;
+                    model.cards.userSelections.forEach(function(sel) {
+                        if (sel.cardName === 'Chase Sapphire Reserve℠') {
+                            hasSapphireReserve = true;
+                        }
+                    });
+
+                    if (a.monthlySpendValue >= 2700) {
+                        var recs = [
+                            'Chase Sapphire Preferred® Card',
+                            'The Amex Everyday® Preferred Credit Card from American Express',
+                            'Chase Freedom Unlimited℠',
+                            'The Amex Everyday® Credit Card from American Express',
+                            'Chase Freedom®',
+                            'Starwood Preferred Guest® Credit Card from American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Gold Delta SkyMiles® Credit Card from American Express',
+                            'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                            'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                        ];
+                    } else if (hasSapphireReserve) {    
+                        var recs = [
+                            'The Amex Everyday® Credit Card from American Express',
+                            'Chase Freedom®',
+                            'The Amex Everyday® Preferred Credit Card from American Express',
+                            'Chase Sapphire Preferred® Card',
+                            'Chase Freedom Unlimited℠',
+                            'Starwood Preferred Guest® Credit Card from American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Gold Delta SkyMiles® Credit Card from American Express',
+                            'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                            'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                        ];
+                    } else {
+                        var recs = [
+                            'Chase Sapphire Preferred® Card',
+                            'The Amex Everyday® Credit Card from American Express',
+                            'Chase Freedom®',
+                            'The Amex Everyday® Preferred Credit Card from American Express',
+                            'Chase Freedom Unlimited℠',
+                            'Starwood Preferred Guest® Credit Card from American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Gold Delta SkyMiles® Credit Card from American Express',
+                            'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                            'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                        ];
+                    }
 
                     recs.forEach(function(rec) {
                         for (var i = 0; i < c.possiblePersRecs.length; i++) {
@@ -7271,24 +7332,71 @@ var model = {
                         }
                     });  
                 } else if (a.creditScore === 'excellentCredit') {
-                    var recs = [
-                        'Chase Sapphire Preferred® Card',
-                        'The Amex Everyday® Credit Card from American Express',
-                        'Chase Freedom®',
-                        'The Amex Everyday® Preferred Credit Card from American Express',
-                        'Chase Freedom Unlimited℠',
-                        'Chase Sapphire Reserve℠',
-                        'Starwood Preferred Guest® Credit Card from American Express',
-                        'Premier Rewards Gold Card From American Express®',
-                        'Chase® United MileagePlus® Explorer Card',
-                        'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
-                        'Gold Delta SkyMiles® Credit Card from American Express',
-                        'Citi Prestige® Card',
-                        'Citi ThankYou® Premier Card',
-                        'The Platinum® Card From American Express',
-                        'Premier Rewards Gold Card From American Express®',
-                        'Bank of America® Alaska Airlines Visa Signature® Credit Card'
-                    ];
+                    var hasSapphireReserve;
+                    model.cards.userSelections.forEach(function(sel) {
+                        if (sel.cardName === 'Chase Sapphire Reserve℠') {
+                            hasSapphireReserve = true;
+                        }
+                    });
+
+                    if (a.monthlySpendValue >= 2700) {
+                        var recs = [
+                            'Chase Sapphire Preferred® Card',
+                            'The Amex Everyday® Preferred Credit Card from American Express',
+                            'Chase Freedom Unlimited℠',
+                            'The Amex Everyday® Credit Card from American Express',
+                            'Chase Freedom®',
+                            'Chase Sapphire Reserve℠',
+                            'Starwood Preferred Guest® Credit Card from American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Chase® United MileagePlus® Explorer Card',
+                            'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                            'Gold Delta SkyMiles® Credit Card from American Express',
+                            'Citi Prestige® Card',
+                            'Citi ThankYou® Premier Card',
+                            'The Platinum® Card From American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                        ];
+                    } else if (hasSapphireReserve) {
+                        var recs = [
+                            'The Amex Everyday® Credit Card from American Express',
+                            'The Amex Everyday® Preferred Credit Card from American Express',
+                            'Chase Freedom®',
+                            'Chase Sapphire Preferred® Card',
+                            'Chase Freedom Unlimited℠',
+                            'Chase Sapphire Reserve℠',
+                            'Starwood Preferred Guest® Credit Card from American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Chase® United MileagePlus® Explorer Card',
+                            'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                            'Gold Delta SkyMiles® Credit Card from American Express',
+                            'Citi Prestige® Card',
+                            'Citi ThankYou® Premier Card',
+                            'The Platinum® Card From American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                        ];
+                    } else {
+                        var recs = [
+                            'Chase Sapphire Preferred® Card',
+                            'The Amex Everyday® Credit Card from American Express',
+                            'The Amex Everyday® Preferred Credit Card from American Express',
+                            'Chase Freedom®',
+                            'Chase Freedom Unlimited℠',
+                            'Chase Sapphire Reserve℠',
+                            'Starwood Preferred Guest® Credit Card from American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Chase® United MileagePlus® Explorer Card',
+                            'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®',
+                            'Gold Delta SkyMiles® Credit Card from American Express',
+                            'Citi Prestige® Card',
+                            'Citi ThankYou® Premier Card',
+                            'The Platinum® Card From American Express',
+                            'Premier Rewards Gold Card From American Express®',
+                            'Bank of America® Alaska Airlines Visa Signature® Credit Card'
+                        ];
+                    }
 
                     recs.forEach(function(rec) {
                         for (var i = 0; i < c.possiblePersRecs.length; i++) {
