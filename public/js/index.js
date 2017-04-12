@@ -6839,7 +6839,6 @@ var model = {
             dbCardsMobile.forEach(function(card) {
                 var nonMobileCard = card.slice(0,5);
                 var mobileEnd = card.slice(4,(card.length));
-                console.log(mobileEnd);
                 if (model.cards.currentStatusBasedOnSelections[nonMobileCard]) {
                     document.getElementById(card).parentNode.style.display = 'inline';
                     document.getElementById(card).value = model.cards.currentStatusBasedOnSelections[nonMobileCard];
@@ -7610,35 +7609,84 @@ var model = {
             var currentEarningRate = 0;
             var newEarningRate = 0;
 
-            if (model.cards.userSelections.length > 0) {
-
-                var earningRateCats = [
-                    'everywhere',
+            var earningRateCats = [
                     'gas',
                     'groceries',
+                    'diningOut',
                     'travel',
-                    'diningOut'
+                    'departmentStores',
+                    'amazon',
+                    'telecommunications',
+                    'officeSupplyStores',
+                    'everywhere'
                 ];
+
+            if (model.cards.userSelections.length > 0) {
 
                 // Calculate Current Earning Rate 
 
                 var currentEarningRateRatios = {
-                    everywhere: 0.2,
-                    gas: 0.2,
-                    groceries: 0.2,
-                    travel: 0.2,
-                    diningOut: 0.2
+                    gas: {
+                        ratio: 0.09,
+                        cap: 5000
+                    },
+                    groceries: {
+                        ratio: 0.19,
+                        cap: 20000
+                    },
+                    diningOut: {
+                        ratio: 0.19,
+                        cap: 1000000000000000000000
+                    },
+                    travel: {
+                        ratio: 0.19,
+                        cap: 1000000000000000000000
+                    },
+                    departmentStores: {
+                        ratio: 0.02,
+                        cap: 8000
+                    },
+                    amazon: {
+                        ratio: 0.04,
+                        cap: 10000
+                    },
+                    telecommunications: {
+                        ratio: 0.03,
+                        cap: 3000
+                    },
+                    officeSupplyStores: {
+                        ratio: 0.02,
+                        cap: 20000
+                    },
+                    everywhere: {
+                        ratio: 0.23,
+                        cap: 1000000000000000000000
+                    }
                 }
 
+                console.log(currentEarningRateRatios);
+
+                // Calculate Relevant Ratios
                 earningRateCats.forEach(function(cat) {
                     if (!model.cards.currentStatusBasedOnSelections[cat]) {
+                        currentEarningRateRatios.everywhere.ratio += currentEarningRateRatios[cat].ratio;
                         delete currentEarningRateRatios[cat];
-                        currentEarningRateRatios.everywhere += 0.2;
                     }
                 });
 
+                console.log(currentEarningRateRatios);
+
+                // Calculate Current Earning Rate
+                var everywhereSpend = 0;
                 for (var cat in currentEarningRateRatios) {
-                    currentEarningRate += (currentEarningRateRatios[cat] * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+                    if (cat === 'everywhere') {
+                        currentEarningRate += (((currentEarningRateRatios[cat].ratio * yearlySpend) + everywhereSpend) * model.cards.currentStatusBasedOnSelections[cat]);
+                    } else if ((currentEarningRateRatios[cat].ratio * yearlySpend) > currentEarningRateRatios[cat].cap) {
+                        everywhereSpend += ((currentEarningRateRatios[cat].ratio * yearlySpend) - currentEarningRateRatios[cat].cap);
+                        currentEarningRate += (currentEarningRateRatios[cat].cap * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+                    } else {
+                        currentEarningRate += (currentEarningRateRatios[cat].ratio * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+                    }
                 }
 
                 console.log('currentEarningRate');
@@ -7647,17 +7695,49 @@ var model = {
                 // Calculate Future Earning Rate
 
                 var newEarningRateRatios = {
-                    everywhere: 0.2,
-                    gas: 0.2,
-                    groceries: 0.2,
-                    travel: 0.2,
-                    diningOut: 0.2
+                    gas: {
+                        ratio: 0.09,
+                        cap: 5000
+                    },
+                    groceries: {
+                        ratio: 0.19,
+                        cap: 20000
+                    },
+                    diningOut: {
+                        ratio: 0.19,
+                        cap: 1000000000000000000000
+                    },
+                    travel: {
+                        ratio: 0.19,
+                        cap: 1000000000000000000000
+                    },
+                    departmentStores: {
+                        ratio: 0.02,
+                        cap: 8000
+                    },
+                    amazon: {
+                        ratio: 0.04,
+                        cap: 10000
+                    },
+                    telecommunications: {
+                        ratio: 0.03,
+                        cap: 3000
+                    },
+                    officeSupplyStores: {
+                        ratio: 0.02,
+                        cap: 20000
+                    },
+                    everywhere: {
+                        ratio: 0.23,
+                        cap: 1000000000000000000000
+                    }
                 }
 
                 // Add New Card to Current Status Based on Selections
                 
                 var newCurrentStatus={}; 
 
+                // Re-creates Current Status Based on Selections 
                 earningRateCats.forEach(function(cat) {
                     if (model.cards.currentStatusBasedOnSelections[cat]) {
                         newCurrentStatus[cat] = model.cards.currentStatusBasedOnSelections[cat];
@@ -7667,39 +7747,108 @@ var model = {
                 console.log(model.cards.currentStatusBasedOnSelections);
                 console.log(newCurrentStatus);
 
+                // Checks to see if the new cards categories match the current status 
+                // based on selections categories, and if it does and beats it, then 
+                // it replaces the current status based on selections categories with
+                // the display rec category.
                 earningRateCats.forEach(function(cat) {
                     if (model.cards.currentDisplayRec.categories[cat] && newCurrentStatus[cat]) {                
-                        if (model.cards.currentDisplayRec.categories[cat] > model.cards.currentStatusBasedOnSelections[cat]) {
+                        if (model.cards.currentDisplayRec.categories[cat] > newCurrentStatus[cat]) {
                             newCurrentStatus[cat] = model.cards.currentDisplayRec.categories[cat];
                         }
                     }
                 });
 
-
+                // Checks categories in the new current status obect with the calculation categories,
+                // deleting the calculation categories that aren't in the current status object and 
+                // adding its ratio to the everywhere category ratio to compensate.
                 earningRateCats.forEach(function(cat) {
                     if (!newCurrentStatus[cat]) {
+                        newEarningRateRatios.everywhere.ratio += newEarningRateRatios[cat].ratio;
                         delete newEarningRateRatios[cat];
-                        newEarningRateRatios.everywhere += 0.2;
                     }
                 });
 
+                var newEverywhereSpend = 0;
                 for (var cat in newEarningRateRatios) {
-                    newEarningRate += (newEarningRateRatios[cat] * yearlySpend * newCurrentStatus[cat]);
+                    if (cat === 'everywhere') {
+                        newEarningRate += (((newEarningRateRatios[cat].ratio * yearlySpend) + newEverywhereSpend) * newCurrentStatus[cat]);
+                    } else if ((newEarningRateRatios[cat].ratio * yearlySpend) > newEarningRateRatios[cat].cap) {
+                        newEverywhereSpend += ((newEarningRateRatios[cat].ratio * yearlySpend) - newEarningRateRatios[cat].cap);
+                        newEarningRate += (newEarningRateRatios[cat].cap * yearlySpend * newCurrentStatus[cat]);
+                    } else {
+                        newEarningRate += (newEarningRateRatios[cat].ratio * yearlySpend * newCurrentStatus[cat]);
+                    }
                 }
 
                 console.log('newEarningRate');
                 console.log(newEarningRate);
             } else {
                 var newEarningRateRatios = {
-                    everywhere: 0.2,
-                    gas: 0.2,
-                    groceries: 0.2,
-                    travel: 0.2,
-                    diningOut: 0.2
+                    gas: {
+                        ratio: 0.09,
+                        cap: 5000
+                    },
+                    groceries: {
+                        ratio: 0.19,
+                        cap: 20000
+                    },
+                    diningOut: {
+                        ratio: 0.19,
+                        cap: 1000000000000000000000
+                    },
+                    travel: {
+                        ratio: 0.19,
+                        cap: 1000000000000000000000
+                    },
+                    departmentStores: {
+                        ratio: 0.02,
+                        cap: 8000
+                    },
+                    amazon: {
+                        ratio: 0.04,
+                        cap: 10000
+                    },
+                    telecommunications: {
+                        ratio: 0.03,
+                        cap: 3000
+                    },
+                    officeSupplyStores: {
+                        ratio: 0.02,
+                        cap: 20000
+                    },
+                    everywhere: {
+                        ratio: 0.23,
+                        cap: 1000000000000000000000
+                    }
                 }
 
+                // Add New Card's Value
+                earningRateCats.forEach(function(cat) {
+                    if (model.cards.currentDisplayRec.categories[cat]) {                
+                        model.cards.currentStatusBasedOnSelections[cat] = model.cards.currentDisplayRec.categories[cat];
+                    }
+                });
+
+                // Calculate Relevant Ratios
+                earningRateCats.forEach(function(cat) {
+                    if (!model.cards.currentStatusBasedOnSelections[cat]) {
+                        newEarningRateRatios.everywhere.ratio += newEarningRateRatios[cat].ratio;
+                        delete newEarningRateRatios[cat];
+                    }
+                });
+
+                // Calculate New Earning Rate
+                var newEverywhereSpend = 0;
                 for (var cat in newEarningRateRatios) {
-                    newEarningRate += (newEarningRateRatios[cat] * yearlySpend);
+                    if (cat === 'everywhere') {
+                        newEarningRate += (((newEarningRateRatios[cat].ratio * yearlySpend) + newEverywhereSpend) * model.cards.currentStatusBasedOnSelections[cat]);
+                    } else if ((newEarningRateRatios[cat].ratio * yearlySpend) > newEarningRateRatios[cat].cap) {
+                        newEverywhereSpend += ((newEarningRateRatios[cat].ratio * yearlySpend) - newEarningRateRatios[cat].cap);
+                        newEarningRate += (newEarningRateRatios[cat].cap * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+                    } else {
+                        newEarningRate += (newEarningRateRatios[cat].ratio * yearlySpend * model.cards.currentStatusBasedOnSelections[cat]);
+                    }
                 }
             }
 
