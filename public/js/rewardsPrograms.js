@@ -1,3 +1,6 @@
+var airports = [
+
+];
 var programs = {
 	// Here is where you list the three points transferrable programs
 	pointsTransferrable: {
@@ -8,7 +11,7 @@ var programs = {
 			// I may have missed. Just be sure to separate each key
 			// value pair within the object with a , except for the 
 			// last key value pair. 
-			participatingPrograms: {
+			participatingPrograms: [
 				{
 					// Place comma after this key value pair
 					name: 'unitedAirlines',
@@ -19,11 +22,15 @@ var programs = {
 				{
 					name: 'delta',
 					pointTransferRate: 1
+				},
+				{
+					name: 'Chase Cash Back Program',
+					pointTransferRate: 1
 				}
-			}
+			]
 		},
 		amex: {
-			participatingPrograms: {
+			participatingPrograms: [
 				{
 					name: 'unitedAirlines',
 					pointTransferRate: 1.2
@@ -32,10 +39,10 @@ var programs = {
 					name: 'example2',
 					pointTransferRate: 1
 				}
-			}
+			]
 		},
 		citi: {
-			participatingPrograms: {
+			participatingPrograms: [
 				{
 					name: 'unitedAirlines',
 					pointTransferRate: 1.2
@@ -44,7 +51,23 @@ var programs = {
 					name: 'example2',
 					pointTransferRate: 1
 				}
-			}
+			]
+		}
+	},
+	cashBack: {
+		discover: {
+			participatingPrograms: [
+				{
+					name: 'Discover Cash Back Program',
+				}
+			]
+		},
+		anotherCashBackProgram: {
+			participatingPrograms: [
+				{
+					name: 'Discover Cash Back Program',
+				}
+			]
 		}
 	},
 	// This is the complex object for the frequentFlier programs.
@@ -57,6 +80,112 @@ var programs = {
 			// United and Delta may not be region based programs, but I am
 			// using them as examples here.
 			unitedAirlines: {
+				displayName: 'United\'s Display Name',
+				// I break each program up into fromRegions 
+				// within each from region.
+				// These sections will hold all of the information that
+				// we will be drawing on to visualize recommendations for
+				// users, depending on which from/to city they choose.
+				fromRegions: {
+					// For fromRegions, all US from cities could go anywhere
+					// in the world, but we assume that all non-US from cities
+					// will end up somewhere in the US.
+					us: {
+						// Below is where you list the general fee and miles
+						// for each toRegion.
+						generalToRegionCosts: {
+							europe: {
+								economyFee: '5',
+								economyMiles: '30,000 - 35,000',
+								businessFee: '5',
+								businessMiles: '30,000 - 35,000',
+								airports: [
+									'CDG',
+									'BCN'
+								]
+							},
+							latinAmerica: {
+								fee: '70',
+								miles: '12000'
+							},
+							anotherRegion: {
+								fee: '100',
+								miles: '50000'
+							},
+							etc: {
+								fee: 'etc',
+								miles: 'etc'
+							}
+						},
+						generalFromAirports: [
+							'WAS', 
+							'JFK', 
+							'...'
+						],
+						// Here we list city information, including all airports
+						// within each city.
+						exceptionToAirports: [				
+							{
+								exceptionAirportCode: 'LON',
+								exceptionEconomyFee: '100',
+								exceptionEconomyMiles: '50,000',
+								exceptionBusinessFee: '100',
+								exceptionBusinessMiles: '50,000'
+							},
+							{
+								exceptionAirportCode: 'CDG',
+								exceptionFee: '10',
+								exceptionMiles: '20,000'
+							}	
+						]
+					},
+					canada: {
+						// Because we assume, that all foreign cities are 
+						// eventually headed to somewhere in the U.S. region,
+						// we only need to list the general fee and miles to
+						// the US. Down the line, if you wanted to add inter-
+						// region costs, you would do it below as we have done
+						// in the U.S. toRegionCosts object.
+						airports: [
+							'OTO'
+						],
+						generalToUsFeeEconomy: '55',
+						generalToUsFeeBusiness: '100',
+						// If no exceptions, no need to include the below, just delete.
+						exceptionAirports: null
+					},
+					europe: {
+						// Because we assume, that all foreign cities are 
+						// eventually headed to somewhere in the U.S. region,
+						// we only need to list the general fee and miles to
+						// the US. Down the line, if you wanted to add inter-
+						// region costs, you would do it below as we have done
+						// in the U.S. toRegionCosts object.
+						airports: [
+							'BCN',
+							'MAD'
+						],
+						generalToUsFee: '100',
+						// Here we list city information, including all airports
+						// within each city.
+						exceptionAirports: [
+							{
+								airportCode: 'CDG'
+								exceptionFee: '100 - 150',
+							},
+							{
+								airportCode: 'BCN'
+								exceptionFee: '75',
+							}
+						],
+					}
+				}
+			},
+			deltaAirlines: {
+				// Repeat Above for each region based program
+			},
+			chaseCashBack: {
+				displayName: 'Chase Cash Back',
 				// I break each program up into fromRegions and then 
 				// toRegions within each from region.
 				// These sections will hold all of the information that
@@ -71,153 +200,20 @@ var programs = {
 						// for each toRegion.
 						generalToRegionCosts: {
 							europe: {
-								fee: 5,
-								miles: 30000
+								fee: 0,
+								miles: 100000
 							},
 							latinAmerica: {
-								fee: 70,
-								miles: 12000
-							},
-							anotherRegion: {
-								fee: 100,
+								fee: 0,
 								miles: 50000
 							},
-							etc: {
-								fee: 'etc',
-								miles: 'etc'
-							}
-						},
-						// Here we list city information, including all airports
-						// within each city.
-						cities: [
-							// Each city object will look like the below
-							{
-								// City Name
-								cityName: 'Atlanta',
-								generalCityAirportCode: 'ATL',
-								// Airports Array
-								airports: [
-									// Each airport is an object w/i the array
-									// The DC example (next) is better
-									{
-										airportName: 'Specific Atlanta Airport',
-										airportCode: 'SAA'
-									}
-								],
-								// Below is where you would list fee/mileage exceptions
-								// on an airport basis
-								exceptionToAirports: [
-									{
-										exceptionAirportName: 'Heathrow',
-										exceptionAirportCity: 'London',
-										exceptionAirportCountry: 'The United Kingdom',
-										exceptionAirportCode: 'LON',
-										exceptionFee: 100,
-										exceptionMiles: 50000
-									},
-									{
-										exceptionAirportName: 'Charles De Gaule',
-										exceptionAirportCity: 'Paris',
-										exceptionAirportCountry: 'France',
-										exceptionAirportCode: 'CDG',
-										exceptionFee: 10,
-										exceptionMiles: 20000
-									}
-								]
-							},
-							{
-								cityName: 'Washington, DC',
-								generalCityAirportCode: 'WAS',
-								airports: [
-									{
-										airportName: 'Reagan',
-										airportCode: 'DCA'
-									},
-									{
-										airportName: 'Dulles',
-										airportCode: 'IAD'
-									}
-								],
-								exceptionToAirports: [
-									{
-										exceptionAirportName: 'Madrid International Airport',
-										exceptionAirportCity: 'Madrid',
-										exceptionAirportCountry: 'Spain',
-										exceptionAirportCode: 'MAD',
-										exceptionFee: 100,
-										exceptionMiles: 50000
-									},
-									{
-										exceptionAirportName: 'Ataturk',
-										exceptionAirportCity: 'Istanbul',
-										exceptionAirportCountry: 'Turkey',
-										exceptionAirportCode: 'IST',
-										exceptionFee: 10,
-										exceptionMiles: 20000
-									}
-								]
-							},
-							{
-								cityName: 'etc',
-								airportCode: 'ETC'
-							}
-						],
-					},
-					canada: {
-						// Because we assume, that all foreign cities are 
-						// eventually headed to somewhere in the U.S. region,
-						// we only need to list the general fee and miles to
-						// the US. Down the line, if you wanted to add inter-
-						// region costs, you would do it below as we have done
-						// in the U.S. toRegionCosts object.
-						generalToUsCosts: {
-							fee: 5,
-							miles: 30000
-						},
-						// Here we list city information, including all airports
-						// within each city.
-						cities: [
-							{
-								cityName: 'Ottowa',
-								// List the general city airport code as null if there
-								// is no general city airport code, but only individual 
-								// airport codes.
-								generalCityAirportCode: null,
-								airports: [
-									{
-										airportName: 'Ottowa General',
-										airportCode: 'OTW'
-									}
-								],
-								// We use exceptionAirportState instead of Country because,
-								// again, we are assuming that all flights are to the US.
-								exceptionToAirports: [
-									{
-										exceptionAirportName: 'John F. Kennedy',
-										exceptionAirportCity: 'New York City',
-										// Feel free to use New York or NY as you prefer
-										exceptionAirportState: 'New York',
-										exceptionAirportCode: 'JFK',
-										exceptionFee: 100,
-										exceptionMiles: 50000
-									},
-									{
-										exceptionAirportName: 'Washington Dulles',
-										exceptionAirportCity: 'Washington',
-										exceptionAirportState: 'District of Columbia',
-										exceptionAirportCode: 'IAD',
-										exceptionFee: 10,
-										exceptionMiles: 20000
-									}
-								]
-							}
-						],
+							...
+						}
 					}
-				},
+				}
 			},
-			deltaAirlines: {
-				// Repeat Above for each region based program
-			}
+
+
 		},
 		distanceBased: {
 			// Virgin may not be a distance based program, but I am using
@@ -228,167 +224,92 @@ var programs = {
 				// These sections will hold all of the information that
 				// we will be drawing on to visualize recommendations for
 				// users, depending on which from/to city they choose.
-				fromRegions: {
-					// For fromRegions, all US from cities could go anywhere
-					// in the world, but we assume that all non-US from cities
-					// will end up somewhere in the US.
-					us: {
-						// Below is where you list the general fee and miles
-						// for each toRegion. If there is no general rule for 
-						// either fee or miles, simply list it as null.
-						generalToRegionCosts: {
-							europe: {
-								fee: 5,
-								miles: 30000
-							},
-							latinAmerica: {
-								fee: 70,
-								miles: 12000
-							},
-							anotherRegion: {
-								fee: 100,
-								miles: 50000
-							},
-							etc: {
-								// This region does not have a general fee
-								fee: null,
-								miles: 'etc'
-							}
-						},
-						// Here we list city information, including all airports
-						// within each city.
-						cities: [
-							// Each city object will look like the below
-							{
-								// City Name
-								cityName: 'Atlanta',
-								generalCityAirportCode: 'ATL',
-								// Airports Array
-								airports: [
-									// Each airport is an object w/i the array
-									// The DC example (next) is better
-									{
-										airportName: 'Specific Atlanta Airport',
-										airportCode: 'SAA'
-									}
-								],
-								// Below is where you would list fee/mileage exceptions
-								// on an airport basis
-								exceptionToAirports: [
-									{
-										exceptionAirportName: 'Heathrow',
-										exceptionAirportCity: 'London',
-										exceptionAirportCountry: 'The United Kingdom',
-										exceptionAirportCode: 'LON',
-										exceptionFee: 100,
-										exceptionMiles: 50000
-									},
-									{
-										exceptionAirportName: 'Charles De Gaule',
-										exceptionAirportCity: 'Paris',
-										exceptionAirportCountry: 'France',
-										exceptionAirportCode: 'CDG',
-										exceptionFee: 10,
-										exceptionMiles: 20000
-									}
-								]
-							},
-							{
-								cityName: 'Washington, DC',
-								generalCityAirportCode: 'WAS',
-								airports: [
-									{
-										airportName: 'Reagan',
-										airportCode: 'DCA'
-									},
-									{
-										airportName: 'Dulles',
-										airportCode: 'IAD'
-									}
-								],
-								exceptionToAirports: [
-									{
-										exceptionAirportName: 'Madrid International Airport',
-										exceptionAirportCity: 'Madrid',
-										exceptionAirportCountry: 'Spain',
-										exceptionAirportCode: 'MAD',
-										exceptionFee: 100,
-										exceptionMiles: 50000
-									},
-									{
-										exceptionAirportName: 'Ataturk',
-										exceptionAirportCity: 'Istanbul',
-										exceptionAirportCountry: 'Turkey',
-										exceptionAirportCode: 'IST',
-										exceptionFee: 10,
-										exceptionMiles: 20000
-									}
-								]
-							},
-							{
-								cityName: 'etc',
-								airportCode: 'ETC'
-							}
+				fromBatches: [
+					// Each city object will look like the below
+					{
+						fromAirportCodes: [
+							'JFK',
+							'BOS',
+							'IAD'
 						],
+						toBatches: [
+							{
+								batch: [
+									'BCN',
+									'MAD',
+									'CDG'
+								],
+								costs: {
+									// If business, include 
+									economyFee: '5 - 50',
+									economyMiles: '30,000',
+									// If business, include below and remove comma on economyMiles
+									// businessFee: '20 - 100',
+									// businessMiles: '50,000'
+								}
+							},
+							{
+								batch: [
+									'FCO',
+									'LIS',
+									'DBV'
+								],
+								costs: {
+									fee: '50 - 100',
+									miles: '20,000'
+								}
+							}
+						]
 					},
-					canada: {
-						// Because we assume, that all foreign cities are 
-						// eventually headed to somewhere in the U.S. region,
-						// we only need to list the general fee and miles to
-						// the US. If there is no general rule, please just list
-						// it as null. Down the line, if you wanted to add inter-
-						// region costs, you would do it below as we have done
-						// in the U.S. toRegionCosts object.
-						generalToUsCosts: {
-							fee: 5,
-							miles: 30000
-						},
-						// Here we list city information, including all airports
-						// within each city.
-						cities: [
+					{
+						fromAirportCode: 'JFK'
+						toBatches: [
 							{
-								cityName: 'Ottowa',
-								// List the general city airport code as null if there
-								// is no general city airport code, but only individual 
-								// airport codes.
-								generalCityAirportCode: null,
-								airports: [
-									{
-										airportName: 'Ottowa General',
-										airportCode: 'OTW'
-									}
+								batch: [
+									'BCN',
+									'MAD',
+									'CDG'
 								],
-								// We use exceptionAirportState instead of Country because,
-								// again, we are assuming that all flights are to the US.
-								exceptionToAirports: [
-									{
-										exceptionAirportName: 'John F. Kennedy',
-										exceptionAirportCity: 'New York City',
-										// Feel free to use New York or NY as you prefer
-										exceptionAirportState: 'New York',
-										exceptionAirportCode: 'JFK',
-										exceptionFee: 100,
-										exceptionMiles: 50000
-									},
-									{
-										exceptionAirportName: 'Washington Dulles',
-										exceptionAirportCity: 'Washington',
-										exceptionAirportState: 'District of Columbia',
-										exceptionAirportCode: 'IAD',
-										exceptionFee: 10,
-										exceptionMiles: 20000
-									}
-								]
+								costs: {
+									fee: '5 - 50',
+									miles: '30,000'
+								}
+							},
+							{
+								batch: [
+									'FCO',
+									'LIS',
+									'DBV'
+								],
+								costs: {
+									fee: '50 - 100',
+									miles: '20,000'
+								}
 							}
+						]
+					},
+					{
+						fromAirportCodes: [
+							'BCN',
+							'MAD',
+							'CDG'
 						],
+						toBatches: [
+							{
+								batch: [
+									'JFK',
+									'BOS',
+									'IAD'
+								],
+								costs: {
+									fee: '5 - 50',
+									miles: '30,000'
+								}
+							}
+						]
 					}
-				},
+				]
 			}
 		}
-	},
-	// We still need to discuss cashBack, but from our original 
-	// conversation, this seemed more straightforward.
-	cashBack: {
-
 	}
 }
