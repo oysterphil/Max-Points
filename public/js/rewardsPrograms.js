@@ -326,6 +326,10 @@ var model = {
         {
             name: 'delta',
             points: 250000
+        },
+        {
+            name: 'virginAtlantic',
+            points: 1000
         }
     ],
     userFreqFlierPrograms: [],
@@ -351,6 +355,9 @@ var model = {
         // Iterate through each program that the user inputted
         // First check to see if any of their programs are
         // points transferrable programs.
+        
+        var progExists = false;
+
         model.userPrograms.forEach(function(prog) {
             var pointsTransferrableProgs = [
                 {
@@ -392,22 +399,24 @@ var model = {
 
             var ffCbPrograms = [
                 'unitedAirlines',
-                'delta'
+                'delta',
+                'virginAtlantic'
             ];
 
-            ffCbPrograms.forEach(function(ffCbprog) {
-                if (prog.name === ffCbprog) {
-                    model.userFreqFlierPrograms.forEach(function(sel) {
-                        if (prog.name === sel.name) {
-                            sel.points += prog.points;
-                        } 
-                    }); 
-                }
-                
-            });
+            model.userFreqFlierPrograms.forEach(function(sel) {
+                if (prog.name === sel.name) {
+                    sel.points += prog.points;
+                    progExists = true;
+                } 
+            }); 
 
-            // If it is not there, then add the
-            // program selection object as is.
+            if (prog.name === 'chase' || prog.name === 'amex' || prog.name === 'citi') {
+
+            } else if (!progExists) {
+                model.userFreqFlierPrograms.push(prog);
+            }
+            // Reset progExists
+            progExists = false;
         });
     }
 }
