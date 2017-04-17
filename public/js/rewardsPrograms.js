@@ -79,6 +79,7 @@ var model = {
                 // using them as examples here.
                 unitedAirlines: {
                     displayName: 'United\'s Display Name',
+                    programType: 'regionBased',
                     // I break each program up into fromRegions 
                     // within each from region.
                     // These sections will hold all of the information that
@@ -217,6 +218,7 @@ var model = {
                 // Virgin may not be a distance based program, but I am using
                 // it and Delta as examples here.
                 virginAtlantic: {
+                    programType: 'distanceBased',
                     // I break each program up into fromRegions and then 
                     // toRegions within each from region.
                     // These sections will hold all of the information that
@@ -333,6 +335,7 @@ var model = {
         }
     ],
     userFreqFlierPrograms: [],
+    programRecList: [],
     grabFlightSelections: () => {
         model.userFlightSelections.fromAirport = document.getElementById('').value;
         model.userFlightSelections.toAirport = document.getElementById('').value;
@@ -356,6 +359,9 @@ var model = {
         // First check to see if any of their programs are
         // points transferrable programs.
         
+        // Reset Frequent Flier Programs
+        model.userFreqFlierPrograms = [];
+
         var progExists = false;
 
         model.userPrograms.forEach(function(prog) {
@@ -415,8 +421,24 @@ var model = {
             } else if (!progExists) {
                 model.userFreqFlierPrograms.push(prog);
             }
+
             // Reset progExists
             progExists = false;
         });
+
+        model.createProgramRecList();
+    },
+    createProgramRecList: () => {
+        model.userFreqFlierPrograms.forEach(function(prog) {
+            if (prog.programType === 'regionBased') {
+                for (var key in prog) {
+                  if (key === 'fromRegions') {
+                    console.log(key + " -> " + prog[key]);
+                  }
+                }
+                // if (userFlightSelections.fromAirport === prog.)
+            }
+        });
     }
+
 }
