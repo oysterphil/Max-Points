@@ -7684,6 +7684,9 @@ var model = {
                 document.getElementById(selection.id).style.display = 'none';
                 document.getElementById(previous[0].id).style.display = 'none';
                 model.appState.addAnotherCardCount -= 1;
+                if (model.appState.addAnotherProgramCount < 9) {
+                    document.getElementById('addAnotherCard').classList.remove('disabled');
+                }
             }
 
             // Set up Event Listeners for Calculator Inputs Desktop
@@ -7930,7 +7933,7 @@ var model = {
                 for (var i = 1; i < 6; i++) {
                     if (model.appState.addAnotherProgramCount === i) {
                         var nextProgram = 'program' + (i+1) + (i+1);
-                        var nextProgramPoints = 'programPoints' + (i+1);
+                        var nextProgramPoints = 'programPoints' + (i+1) + (i+1);
                         var nextY = 'y' + (i+1);
                         document.getElementById(nextProgram).style.display = "inline";
                         document.getElementById(nextProgramPoints).style.display = "inline";
@@ -7974,17 +7977,101 @@ var model = {
                 document.getElementById(previous[0].id).style.display = 'none';
                 document.getElementById(previous2[0].id).style.display = 'none';
                 model.appState.addAnotherProgramCount -= 1;
+                if (model.appState.addAnotherProgramCount < 5) {
+                    document.getElementById('addAnotherProgram').classList.remove('disabled');
+                }
+            }
+
+            function vetRedemptionInputs() {
+                if (document.getElementById('fromAirport').value) {
+                    model.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value;
+                    model.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value;
+                    model.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
+                    model.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
+                    model.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
+                }
+                if (document.getElementById('fromAirportMobile').value) {
+                    model.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value;
+                    model.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value;
+                    model.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
+                    model.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
+                    model.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
+                }
+
+                if (document.getElementById('flightType').value === 'roundTrip') {
+                    model.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value;
+                    model.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value;
+                    model.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
+                    model.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
+                    model.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
+                }
+
+                if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
+                    model.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
+                    model.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
+                    model.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
+                    model.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
+                    model.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
+                }
+
+                // Log User's Current CCs, if applicable
+
+                var compiledProgramValues = [program1,program2,program3,program4,program5];
+
+                var checkCards = ['program1','program2','program3','program4','program5']
+                
+                if (!model.appState.mobileView) {
+                    for (var i = 0; i < checkCards.length; i ++) {
+                        document.getElementById(checkCards[i] + 'Mobile').value = '';
+                    }
+                } else {
+                    for (var i = 0; i < checkCards.length; i ++) {
+                        document.getElementById(checkCards[i]).value = '';
+                    }
+                }
+
+                for (var i = 0; i < checkCards.length; i++) {
+                    if (document.getElementById(checkCards[i]).value) {
+                        compiledCardValues[i] = document.getElementById(checkCards[i]).value;
+                    } else if (document.getElementById(checkCards[i] + 'Mobile').value) {
+                        compiledCardValues[i] = document.getElementById(checkCards[i] + 'Mobile').value;
+                    } else {
+                        compiledCardValues[i] = null;
+                    }
+                }
+
+                var cards = model.cards.all;
+
+                // Determine Cash Back Status for Rewards Goal Toggle on Display Recs View
+                if (model.cards.currentStatusBasedOnSelections.rewardsGoal === 'cashBack') {
+                    model.cards.currentStatusBasedOnSelections.cashBack = true;
+                } else {
+                    model.cards.currentStatusBasedOnSelections.cashBack = false;
+                }
+
+                // Create the Selections Object
+                for (var i = 0; i < cards.length; i++) {
+                    compiledCardValues.forEach(function(card) {
+                        if (cards[i].cardName === card) {
+                            model.cards.userSelections.push(cards[i]);
+                        }
+                    }); 
+                }
+            
+                console.log('Display User Selections');
+                console.log(model.cards.userSelections);
+
             }
 
             // Set up Event Listeners for x-out buttons for Cards
             var collection = Array.from(document.getElementsByClassName('x-out'));
             for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', hideCard);
+                collection[i].addEventListener('click', hideProgram);
                 collection[i].style.cursor = 'pointer';
             }
 
-            // Add Autocomplete Functionality for Add Cards Section
-            $('input.autocomplete').autocomplete({
+            // Add Autocomplete Functionality for Airport Entry Section
+            $('input.airportAutocomplete').autocomplete({
                 data: {
                     'American Express Blue Cash Everyday':null,
                     'American Express Blue Cash Preferred':null,
@@ -7999,186 +8086,27 @@ var model = {
                     'American Express Hilton HHonors Surpass':null,
                     'American Express Mercedes Benz':null,
                     'American Express Mercedes Benz Platinum':null,
-                    'American Express Plum':null,
-                    'Banana Republic Credit Card':null,
-                    'Bank of America Alaska Airlines Business Visa':null,
-                    'Bank of America Alaska Airlines Platinum Plus Visa':null,
-                    'Bank of America Allegiant Airlines World MasterCard':null,
-                    'Bank of America BankAmericard Cash Rewards Visa (All Versions)':null,
-                    'Bank of America BankAmericard MasterCard':null,
-                    'Bank of America BankAmericard Rewards Visa':null,
-                    'Bank of America Cash Rewards For Business MasterCard':null,
-                    'Bank of America Hawaiian Airlines World Elite MasterCard':null,
-                    'Bank of America Spirit Airlines World MasterCard':null,
-                    'Bank of America Travel Rewards World MasterCard For Business':null,
-                    'Bank of America Virgin Atlantic World Elite MasterCard':null,
-                    'Bank of America WorldPoints Visa or MasterCard':null,
-                    'Bank of America® Alaska Airlines Visa Signature® Credit Card':null,
-                    'Bank of America® BankAmericard Travel Rewards® Credit Card':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Blue Mastercard':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Mastercard':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Red World Elite MasterCard':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Silver World Elite MasterCard':null,
-                    'Barclaycard Arrival Plus™ World Elite MasterCard®':null,
-                    'Barclaycard Cash Forward MasterCard':null,
-                    'Barclaycard Frontier Airlines World MasterCard':null,
-                    'Barclaycard Hawaiian Airlines Business MasterCard':null,
-                    'Barclaycard JetBlue Business MasterCard':null,
-                    'Barclaycard JetBlue MasterCard':null,
-                    'Barclaycard JetBlue Plus MasterCard':null,
-                    'Barclaycard Lufthansa Premier Miles and More MasterCard':null,
-                    'Barclaycard Rewards MasterCard':null,
-                    'Barclaycard Ring MasterCard':null,
-                    'Barclaycard Upromise By Sallie Mae World MasterCard':null,
-                    'Barclaycard Wyndham Rewards Visa Signature':null,
-                    'Barclaycard Wyndham Rewards Visa Signature (Annual Fee Version)':null,
-                    'Best Western Rewards Business MasterCard':null,
-                    'Best Western Rewards MasterCard':null,
-                    'Best Western Rewards Premier MasterCard':null,
-                    'Best Western Rewards Secured MasterCard':null,
-                    'Capital One Buy Power MasterCard':null,
-                    'Capital One BuyPower For Business MasterCard':null,
-                    'Capital One Cash Rewards Visa or MasterCard':null,
-                    'Capital One Platinum Prestige Visa or MasterCard':null,
-                    'Capital One Spark Miles For Business Visa':null,
-                    'Capital One Spark Miles Select For Business Visa':null,
-                    'Capital One Spark Select For Business Visa':null,
-                    'Capital One Venture One Rewards Visa':null,
-                    'Capital One® Platinum Credit Card':null,
-                    'Capital One® QuicksilverOne® Cash Rewards Credit Card':null,
-                    'Capital One® Quicksilver® Cash Rewards Credit Card':null,
-                    'Capital One® Secured MasterCard®':null,
-                    'Capital One® Spark® Cash Select for Business':null,
-                    'Capital One® Spark® Cash for Business':null,
-                    'Capital One® Spark® Classic for Business':null,
-                    'Capital One® Venture® Rewards Credit Card':null,
-                    'Chase Amazon Rewards Visa':null,
-                    'Chase British Airways Avios Visa Signature':null,
-                    'Chase Disney Premier Visa':null,
-                    'Chase Disney Rewards Visa':null,
-                    'Chase Freedom Unlimited℠':null,
-                    'Chase Freedom®':null,
-                    'Chase Hyatt Visa':null,
-                    'Chase IHG Rewards Club Select MasterCard':null,
-                    'Chase Ink Plus or Bold Business Visa or MasterCard':null,
-                    'Chase Marriott Rewards Premier Business Visa':null,
-                    'Chase Marriott Rewards Premier Business Visa Signature':null,
-                    'Chase Marriott Rewards Premier Visa':null,
-                    'Chase Ritz Carlton Rewards Visa':null,
-                    'Chase Sapphire Preferred® Card':null,
-                    'Chase Sapphire Reserve℠':null,
-                    'Chase Slate Visa':null,
-                    'Chase Southwest Airlines Rapid Rewards Plus Visa':null,
-                    'Chase Southwest Airlines Rapid Rewards Premier Business Visa':null,
-                    'Chase Southwest Airlines Rapid Rewards Premier Visa':null,
-                    'Chase Southwest Rapid Rewards Plus Business Visa':null,
-                    'Chase United MileagePlus Club Visa':null,
-                    'Chase United MileagePlus Explorer Business Visa':null,
-                    'Chase® Ink Business Cash℠ Credit Card':null,
-                    'Chase® Ink Business Preferred℠ Credit Card':null,
-                    'Chase® United MileagePlus® Explorer Card':null,
-                    'Choice Privileges Visa Signature':null,
-                    'Citi American Airlines AAdvantage Executive World Elite MasterCard':null,
-                    'Citi Costco Anywhere Business Visa':null,
-                    'Citi Costco Anywhere Visa':null,
-                    'Citi Diamond Preferred MasterCard':null,
-                    'Citi Forward MasterCard or Visa':null,
-                    'Citi Hilton HHonors Reserve Visa':null,
-                    'Citi Hilton HHonors Visa Signature':null,
-                    'Citi Prestige® Card':null,
-                    'Citi Secured MasterCard':null,
-                    'Citi Simplicity MasterCard':null,
-                    'Citi Thank You Preferred MasterCard':null,
-                    'Citi ThankYou® Preferred Card for College Students':null,
-                    'Citi ThankYou® Premier Card':null,
-                    'CitiBusiness®/AAdvanage® Platinum Select® World Elite™ MasterCard®':null,
-                    'Citi® Double Cash Card':null,
-                    'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®':null,
-                    'Comenity Bank Virgin America Premium Visa Signature':null,
-                    'Comenity Bank Virgin America Visa Signature':null,
-                    'Delta Reserve Credit Card from American Express®':null,
-                    'Delta Reserve for Business Credit Card from American Express®':null,
-                    'Discover Business Card':null,
-                    'Discover It Chrome':null,
-                    'Discover It® Miles':null,
-                    'Discover It® Secured Credit Card':null,
-                    'Discover More':null,
-                    'Discover it®':null,
-                    'Discover it® chrome for Students':null,
-                    'Discover it® for Students':null,
-                    'Gold Delta SkyMiles® Business Credit Card from American Express':null,
-                    'Gold Delta SkyMiles® Credit Card from American Express':null,
-                    'JP Morgan Chase Palladium Visa Signature':null,
-                    'Journey® Student Rewards from Capital One®':null,
-                    'Lowe’s Credit Card':null,
-                    'M&T Business Bonus Rewards Plus Visa':null,
-                    'M&T Business Bonus Rewards Visa':null,
-                    'M&T Business Visa':null,
-                    'M&T Rewards Visa':null,
-                    'M&T Visa Signature':null,
-                    'No Credit Card':null,
-                    'Other Business Bank Credit Card':null,
-                    'Other No Annual Fee Card':null,
-                    'Other Personal Bank Credit Card':null,
-                    'Other Store Card':null,
-                    'PNC Business Cash Rewards Visa Signature':null,
-                    'PNC Business Travel Rewards Visa':null,
-                    'PNC Business Visa':null,
-                    'PNC CashBuilder Visa':null,
-                    'PNC Core Visa':null,
-                    'PNC Points Business Visa':null,
-                    'PNC Points Visa':null,
-                    'PNC Premier Traveler Visa Signature':null,
-                    'Platinum Delta SkyMiles® Business Credit Card from American Express':null,
-                    'Platinum Delta SkyMiles® Credit Card from American Express':null,
-                    'Premier Rewards Gold Card From American Express®':null,
-                    'SimplyCash® Plus Business Credit Card from American Express':null,
-                    'Starwood Preferred Guest® Business Credit Card from American Express':null,
-                    'Starwood Preferred Guest® Credit Card from American Express':null,
-                    'Suntrust Business Visa or MasterCard':null,
-                    'Suntrust Cash Rewards MasterCard':null,
-                    'Suntrust Prime Rewards MasterCard':null,
-                    'Suntrust Travel Rewards MasterCard':null,
-                    'Synchrony Bank Amazon Prime Rewards Store Card':null,
-                    'TD Aeroplan Visa':null,
-                    'TD Business Solutions Visa':null,
-                    'TD Cash Rewards or Cash Rewards Platinum Visa':null,
-                    'TD Cash Visa':null,
-                    'TD Easy Rewards Visa':null,
-                    'Target Credit Card':null,
-                    'The Amex Everyday® Credit Card from American Express':null,
-                    'The Amex Everyday® Preferred Credit Card from American Express':null,
-                    'The Blue for Business® Credit Card from American Express':null,
-                    'The Business Gold Rewards Card From American Express OPEN®':null,
-                    'The Business Platinum® Card From American Express OPEN®':null,
-                    'The Platinum® Card From American Express':null,
-                    'US Bank Cash Plus Visa Signature':null,
-                    'US Bank Cash Rewards Business Visa':null,
-                    'US Bank Club Carlson Business Rewards Visa':null,
-                    'US Bank Club Carlson Premier Rewards Visa Signature':null,
-                    'US Bank Club Carlson Rewards Visa':null,
-                    'US Bank Club Carlson Rewards Visa Signature':null,
-                    'US Bank Flexperks Business Select Visa':null,
-                    'US Bank Flexperks Business Travel Rewards Visa':null,
-                    'US Bank Flexperks By American Express':null,
-                    'US Bank Flexperks Travel Rewards Visa':null,
-                    'USAA Active Military MasterCard':null,
-                    'USAA Cash Rewards By American Express':null,
-                    'USAA Cash Rewards World MasterCard':null,
-                    'USAA Platinum Visa':null,
-                    'USAA Preferred Cash Rewards World MasterCard':null,
-                    'USAA Rate Advantage Platinum Visa':null,
-                    'USAA Rewards By American Express':null,
-                    'USAA Rewards Visa or World MasterCard':null,
-                    'USAA Secured Card By American Express':null,
-                    'Walmart Credit Card':null,
-                    'Wells Fargo Business Visa':null,
-                    'Wells Fargo Cash Wise Visa':null,
-                    'Wells Fargo Platinum Visa':null,
-                    'Wells Fargo Propel 365 By American Express':null,
-                    'Wells Fargo Propel By American Express':null,
-                    'Wells Fargo Rewards Visa':null,
-                    'Wells Fargo Secured Visa':null
+                    'American Express Plum':null
+                },
+            });
+
+            // Add Autocomplete Functionality for Program Entry Section
+            $('input.programAutocomplete').autocomplete({
+                data: {
+                    'American Express Blue Cash Everyday':null,
+                    'American Express Blue Cash Preferred':null,
+                    'American Express Blue Sky':null,
+                    'American Express Centurion':null,
+                    'American Express Charles Schwabb Investor Card':null,
+                    'American Express Corporate Gold':null,
+                    'American Express Corporate Platinum':null,
+                    'American Express Gold':null,
+                    'American Express Green':null,
+                    'American Express Hilton HHonors':null,
+                    'American Express Hilton HHonors Surpass':null,
+                    'American Express Mercedes Benz':null,
+                    'American Express Mercedes Benz Platinum':null,
+                    'American Express Plum':null
                 },
             });
 
@@ -8186,12 +8114,12 @@ var model = {
             document.getElementById('addAnotherProgram').addEventListener('click', manageProgramInputsDesktop, false);
 
             // Add another card event listener mobile
-            document.getElementById('addAnotherProgramMobile').addEventListener('click', manageProgramInputsMobile, false);
+            // document.getElementById('addAnotherProgramMobile').addEventListener('click', manageProgramInputsMobile, false);
 
             // Submit Form Event Listeners
             // TO DO: Add Destination for Event Listener
-            document.getElementById('submitRedempCalcForm').addEventListener('click', model.controllers.vetPointCalcInputs);
-            document.getElementById('submitRedempCalcFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs); 
+            document.getElementById('submitRedempCalcForm').addEventListener('click', vetRedemptionInputs);
+            // document.getElementById('submitRedempCalcFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs); 
         },
         insertCalcInputs: () => {
             
