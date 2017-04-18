@@ -19,7 +19,7 @@
 <body style="background-color: #90caf9;">
 
   <!-- Navbar Mobile, Tablet, and Desktop -->
-  <div id="preNav" class="navbar-fixed" style="display: block;">  
+  <div id="preNav" class="navbar-fixed" style="display: none;">  
     <nav>
       <div class="nav-wrapper">
         <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;"><img class="hide-on-large-only" src="/img/logo.png" height="45px" style="margin-top: 5px;margin-left: 5px;"><img class="hide-on-small-only hide-on-med-only" src="/img/logo.png" height="55px" style="margin-top: 5px;margin-left: 5px;"></a>
@@ -37,7 +37,7 @@
   <!-- End Navbar -->
 
   <!-- Landing Page -->
-  <div id="landingPage" style="display: inline;">
+  <div id="landingPage" style="display: none;">
 
     <!-- Mobile Splash Page --> 
     <section class="hide-on-large-only" style="background-image: url(https://www.rewardexpert.com/assets/home/map-blue-6193d943c4727043b081f06d651540bc.png); padding:30px 0px 50px 0px;">
@@ -331,7 +331,7 @@
   <!-- End Landing Page -->
 
   <!-- Profile -->
-  <div id="profile" style="display: none;">
+  <div id="profile" style="display: inline;">
     <header>
       <nav class="top-nav hide-on-med-only hide-on-small-only" style="height: 100px; line-height: 100px;">
         <div class="container">
@@ -353,6 +353,9 @@
         <li id="cardRecs" class="bold">
           <a class="waves-effect waves-default" style="font-size: 18px;">Card Recommendations</a>
         </li>
+        <li id="redempCalc" class="bold">
+          <a class="waves-effect waves-default" style="font-size: 18px;">Redemption Calculator</a>
+        </li>
         <li id="personalInfo" class="bold">
           <a class="waves-effect waves-default" style="font-size: 18px;">Account Information</a>
         </li>
@@ -367,6 +370,7 @@
       
       <div class="section no-pad-bot" style="padding-top: 0px;">
         <div style="background-color: #90caf9; padding-bottom: 0px;">
+          
           <!-- Points Calculator Form --> 
           <div id="pointsCalculator" style="display: none;"></div>
           <!-- End Points Calculator --> 
@@ -374,6 +378,12 @@
           <!-- Display Recommendations --> 
           <div id="displayRecommendations" style="display: none;"></div>
           <!-- End Display Recommendations -->
+
+          <!-- Redemption Calculator --> 
+          <div id="redemptionCalculator" style="display: inline;">
+            
+          </div>
+          <!-- End Redemption Calculator -->
 
           <div id="acctInfo" style="display: none;margin-top: 80px;">
 
@@ -899,7 +909,8 @@
   <!-- End Landing Page Footer Mobile -->
 
   <!-- Footer Desktop -->
-  <footer id="preFooterDesktop" class="page-footer hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px;">
+  <!-- TO DO: Remove display:none below -->
+  <footer id="preFooterDesktop" class="page-footer hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px; display: none;">
     <hr>
     <div class="footer-copyright">
       <div class="row center white-text">
@@ -1381,7 +1392,7 @@
             </div>
           </div>
         </div>
-        <!-- End Data Validation Box Mobile -->
+        <!-- End Data Validation Box Desktop -->
 
         <!-- Submit Button Desktop -->
         <div class="col m4 offset-m4 center">
@@ -2219,6 +2230,417 @@
   </script>
   <!-- End Display Reccomendations Template -->
 
+  <!-- Redemption Calculator View -->
+  <script type="text/x-handlebars-template" id="redemptionCalculatorTemplate">
+    
+    <!--Mobile View-->
+    <div class="hide-on-large-only">
+      <div class="section no-pad-bot">
+        <div class="row">
+          <div class="container" style="background-color: #4176B8">  
+
+          <div align="center" style="padding-top: 25px; padding-bottom: 25px;">
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <input id="from" type="text" class="validate">
+                <label for="from">From</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row col s12">
+            <i class="large material-icons col s4 offset-s4" style="text-align: center; color: #00c853;">credit_card</i>
+            <h5 class="col s12" style="text-align: center;">
+              {{currentDisplayRec.cardName}}
+            </h5>
+          </div>
+
+          <div class="row col s12">
+            <a class="col s4 offset-s4 waves-effect waves-light btn" target="_blank" href="{{currentDisplayRec.cardDetails.affiliateLink}}">Apply Now</a>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col s6">
+                <div class="card white">
+                  <div class="card-content">
+                    <p style="text-align: center;">
+                      Signup Bonus Value
+                    </p>
+                    <h3 style="text-align: center;color: #00c853;">
+                      ${{currentDisplayRec.cardDetails.signupBonus.bonusValue}} 
+                    </h3>
+                    <p style="text-align: center;">
+                      {{currentDisplayRec.cardDetails.signupBonus.bonusCopy}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s6">
+                <div class="card white">
+                  <div class="card-content">
+                    <p style="text-align: center;">
+                      Earning rate increase
+                    </p>
+                    <h3 id="earningRateIncreaseMobile" style="text-align: center;color: #00c853;"></h3>
+                    <p style="text-align: center;">
+                      compared to your current card selections
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="col s12">
+              <div class="card white">
+                <!-- <div class="card-content">
+                  <h5 style="text-align: center;">Points Earned Per Dollar Spent by Adding {{currentDisplayRec.cardName}}</h5>
+                  <hr><br>
+                  <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                    <tr>
+                      <td style="width:50%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
+                        Current
+                      </td>
+                      <td style="width:50%; background-color:#01579b; padding: 3px 3px; text-align: center;">
+                        With {{currentDisplayRec.cardName}}
+                      </td>
+                    </tr>
+                  </table>
+                  
+                  {{#each currentDisplayRec.combinedCategoriesComparison}}
+                  <h6>{{catName}}:</h6>
+                  <table style="border:0;" cellpadding="0" cellspacing="0" width="250">
+                    <tr>
+                      <td style="width:{{currentDisplayVal}}%; background-color:#9e9e9e; padding: 3px 3px; text-align: center;">
+                        {{currentVal}}x
+                      </td>
+                      {{#if recGreaterThanCurrent}}
+                      <td style="width:{{recDisplayVal}}%; background-color:#01579b; padding: 3px 3px; text-align: center;">
+                        {{recVal}}x
+                      </td>
+                      {{/if}}
+                      {{#if addEmptyRow}}
+                      <td style="width: {{emptyRowDisplayVal}}%"></td>
+                      {{/if}}
+                    </tr>
+                  </table>
+                  {{/each}}
+                </div> -->
+                <div class="card-content">
+                  <div id="earningComparisonMobile" style="min-width: 250px; height: 400px; margin: 0 auto"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row col s12">
+            <a class="col s4 offset-s4 waves-effect waves-light btn" target="_blank" href="{{currentDisplayRec.cardDetails.affiliateLink}}">Apply Now</a>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <ul id="pickCategoryMobile" class="tabs">
+                  <li class="tab"><a id="bonusAndEarningsDetailsMobile" class="tablinks active">Bonus & Earnings</a></li>
+                  <li class="tab"><a id="annualFeeDetailsMobile" class="tablinks">Annual Fee</a></li>
+                  <li class="tab"><a id="extraBenefitsDetailsMobile" class="tablinks">Extra Benefits</a></li>
+                  <li class="tab"><a id="redemptionDetailsMobile" class="tablinks">Redemption</a></li>
+                  <li class="tab"><a id="analysisDetailsMobile" class="tablinks">Analysis</a></li>
+                </ul>
+              </div>
+              <div id="bonusAndEarningsDetailsMobileTab" class="col s12 tabcontent">
+                <div class="card white">
+                  <div class="card-content"">
+                    {{#each currentDisplayRec.cardDetails.bonusAndEarningsDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <i class="tiny material-icons">{{icon}}</i>
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
+                      </div>
+                    </div> 
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div id="annualFeeDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+                <div class="card white">
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.annualFeeDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <i class="tiny material-icons">{{icon}}</i>
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
+                      </div>
+                    </div> 
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div id="extraBenefitsDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+                <div class="card white">
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.extraBenefitsDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <i class="tiny material-icons">{{icon}}</i>
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
+                      </div>
+                    </div> 
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div id="redemptionDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+                <div class="card white">
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.redemptionDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <i class="tiny material-icons">{{icon}}</i>
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
+                      </div>
+                    </div> 
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div id="analysisDetailsMobileTab" class="col s12 tabcontent" style="display: none;">
+                <div class="card white">
+                  <div class="card-content" style="text-align: center;">
+                    {{#each currentDisplayRec.cardDetails.analysisDetails}}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col s3">
+                          <i class="tiny material-icons">{{icon}}</i>
+                        </div>
+                        <div class="col s9" style="padding-top: 5px;">
+                          {{detail}}
+                        </div>
+                      </div>
+                    </div> 
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col s12" style="text-align: center; margin-bottom: 20px;">
+              <a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/email.png" border="0" alt="Email"/></a>
+              <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+              <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=maxpoints-ba294.firebaseapp.com&pubid=ra-42fed1e187bae420&title=Max%20Points%20%7C%20Home&ct=1" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Redemption Calculator Footer -->
+      <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
+        <hr>
+        <div class="footer-copyright">
+          <div class="row center white-text">
+            <div class="container">
+              <div class="col s12">
+                &#169; 2017 Max Points, LLC. All Rights Reserved.         
+              </div>            
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Redemption Calculator Footer -->
+    </div>
+
+    <!--Desktop and Tablet View-->
+    <div class="hide-on-med-only hide-on-small-only" style="margin-left: 300px;">
+        
+      <div class="section no-pad-bot" style="padding-top: 0px;">
+        <div class="section col l10 offset-l1">
+          
+          <!-- Flight Details Desktop --> 
+          <div class="row">
+            <div class="col m10 offset-m1">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <div class="input-field col l3">
+                      <input type="text" id="fromAirport" class="airportAutocomplete"> 
+                      <label for="fromAirport">From</label>
+                    </div>
+                    <div class="input-field col l3">
+                      <input type="text" id="toAirport" class="airportAutocomplete"> 
+                      <label for="toAirport">To</label>
+                    </div>
+                    <div class="input-field col l2">
+                      <select id="flightClass" class="browser-default">
+                        <option value="" disabled selected>Class</option>
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                      </select>
+                    </div>
+                    <div class="input-field col l2">
+                      <select id="flightType" class="browser-default">
+                        <option value="" disabled selected>Type</option>
+                        <option value="oneWay">One Way</option>
+                        <option value="roundTrip">Round Trip</option>
+                      </select>
+                    </div>
+                    <div class="input-field col l2">
+                      <select id="numTickets" class="browser-default">
+                        <option value="" disabled selected>Tickets</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Flight Details Desktop -->
+          
+          <!-- Program Details Desktop --> 
+          <div class="row">
+            <div class="col m10 offset-m1">
+              <div class="card horizontal">
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <h5 class="center">
+                      What points and miles do you have?
+                    </h5>
+                    <div class="row col m12 center">
+                      <div class="input-field col m4 offset-m2 center">
+                        <input type="text" id="program1" class="programAutocomplete"> 
+                        <label for="program1">Program 1</label>
+                      </div>
+                      <div class="input-field col m4 center">
+                        <input type="text" id="programPoints1" class="programAutocomplete"> 
+                        <label for="programPoints1">Points/Miles</label>
+                      </div>
+                      <div class="input-field col m4 offset-m2" id="program22" style="display: none;">
+                        <input type="text" id="program2" class="programAutocomplete">
+                        <label for="program2">Program 2</label>
+                      </div>
+                      <div id="programPoints22" class="input-field col m3 center" style="display: none;">
+                        <input type="text" id="programPoints2" class="programAutocomplete"> 
+                        <label for="programPoints2">Points/Miles</label>
+                      </div>
+                      <i id="y2" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="input-field col m4 offset-m2" id="program33" style="display: none;">
+                        <input type="text" id="program3" class="programAutocomplete">
+                        <label for="program3">Program 3</label>
+                      </div>
+                      <div id="programPoints33" class="input-field col m3 center" style="display: none;">
+                        <input type="text" id="programPoints3" class="programAutocomplete"> 
+                        <label for="programPoints3">Points/Miles</label>
+                      </div>
+                      <i id="y3" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="input-field col m4 offset-m2" id="program44" style="display: none;">
+                        <input type="text" id="program4" class="programAutocomplete">
+                        <label for="program4">Program 4</label>
+                      </div>
+                      <div id="programPoints44" class="input-field col m3 center" style="display: none;">
+                        <input type="text" id="programPoints4" class="programAutocomplete"> 
+                        <label for="programPoints4">Points/Miles</label>
+                      </div>
+                      <i id="y4" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="input-field col m7 offset-m2" id="program55" style="display: none;">
+                        <input type="text" id="program5" class="programAutocomplete">
+                        <label for="program5">Program 5</label>
+                      </div>
+                      <div id="programPoints55" class="input-field col m3 center" style="display: none;">
+                        <input type="text" id="programPoints5" class="programAutocomplete"> 
+                        <label for="programPoints5">Points/Miles</label>
+                      </div>
+                      <i id="y5" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="row">
+                        <div class="col m4 offset-m4 center">
+                          <button class="btn waves-effect waves-light btn" id="addAnotherProgram">
+                            Add Program
+                            <i class="material-icons right">credit_card</i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Program Details Desktop -->
+
+          <!-- Data Validation Box Desktop -->
+          <div class="col s8 offset-s2 center" id="vetRedempCalcInputsDesktop" style="display: none;">
+            <div class="card horizontal orange darken-4 white-text">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <div>
+                    <h6> 
+                      Please make sure to fill in all of the fields above before hitting submit.
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Data Validation Box Desktop -->
+
+          <!-- Submit Button Desktop -->
+          <div class="col m4 offset-m4 center">
+
+            <button class="btn waves-effect waves-light btn-large" id="submitRedempCalcForm">
+              Submit
+              <i class="material-icons right">send</i>
+            </button>
+
+          </div>
+          <!-- End Submit Button Desktop -->
+
+        </div>
+        
+
+      <!-- Display Recommendations Footer Desktop -->
+      <footer class="page-footer hide-on-med-only hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px;">
+        <hr>
+        <div class="footer-copyright">
+          <div class="row center white-text">
+            <div class="container">
+              <div class="col m12">
+                &#169; 2017 Max Points, LLC. All Rights Reserved.         
+              </div>           
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Display Recommendations Footer Desktop -->
+    </div>
+
+  </script>
+  <!-- End Redemption Calculator View -->
+
   <!-- Slider Logic Desktop/Mobile -->
   <script type="text/javascript">
 
@@ -2234,7 +2656,7 @@
         const selection = this.id;
         
         // Make sure to reset box inputs
-        var ids = ['goals', 'cardRecs', 'personalInfo'];
+        var ids = ['goals', 'cardRecs', 'redempCalc', 'personalInfo'];
         ids.forEach(function(id) {
             document.getElementById(id).classList.remove('active');
         });
@@ -2244,8 +2666,10 @@
           model.appState.calculator = true;
           model.appState.resultsPage = false;
           model.appState.acctInfo = false;
+          model.appState.redempCalc = false;
 
           document.getElementById('acctInfo').style.display = 'none';
+          document.getElementById('redemptionCalculator').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'none';
           document.getElementById('pointsCalculator').style.display = 'inline';
         } else if (selection === 'cardRecs') {
@@ -2253,18 +2677,33 @@
           model.appState.calculator = false;
           model.appState.resultsPage = true;
           model.appState.acctInfo = false;
+          model.appState.redempCalc = false;
 
           document.getElementById('pointsCalculator').style.display = 'none';
           document.getElementById('acctInfo').style.display = 'none';
+          document.getElementById('redemptionCalculator').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'inline';
+        } else if (selection === 'redempCalc') {
+
+          model.appState.calculator = false;
+          model.appState.resultsPage = false;
+          model.appState.acctInfo = false;
+          model.appState.redempCalc = true;
+
+          document.getElementById('pointsCalculator').style.display = 'none';
+          document.getElementById('displayRecommendations').style.display = 'none';
+          document.getElementById('acctInfo').style.display = 'none';
+          document.getElementById('redemptionCalculator').style.display = 'inline';
         } else if (selection === 'personalInfo') {
 
           model.appState.calculator = false;
           model.appState.resultsPage = false;
+          model.appState.redempCalc = false;
           model.appState.acctInfo = true;
 
           document.getElementById('pointsCalculator').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'none';
+          document.getElementById('redemptionCalculator').style.display = 'none';
           document.getElementById('acctInfo').style.display = 'inline';
         }
 

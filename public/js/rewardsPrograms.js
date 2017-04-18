@@ -1,24 +1,14 @@
 var model = {
     programs: {
-        // Here is where you list the three points transferrable programs
         pointsTransferrable: {
             chase: {
-                // Here is where you would include all of the relevant
-                // data about each frequent flier program that the points
-                // program works with. Feel free to add data points that 
-                // I may have missed. Just be sure to separate each key
-                // value pair within the object with a , except for the 
-                // last key value pair. 
                 participatingPrograms: [
                     {
-                        // Place comma after this key value pair
                         name: 'unitedAirlines',
-                        // But not after this key value pair, since
-                        // it is the last one in the object.
                         pointTransferRate: 1.2
                     },
                     {
-                        name: 'delta',
+                        name: 'deltaAirlines',
                         pointTransferRate: 1
                     },
                     {
@@ -68,257 +58,697 @@ var model = {
                 ]
             }
         },
-        // This is the complex object for the frequentFlier programs.
-        // We will be manipulating this object heavily in the logic section,
-        // so it is important to get it right.
         frequentFlier: {
-            // From our convo, there are region-based and distance based
-            // programs.
-            regionBased: {
-                // United and Delta may not be region based programs, but I am
-                // using them as examples here.
-                unitedAirlines: {
-                    displayName: 'United\'s Display Name',
-                    programType: 'regionBased',
-                    // I break each program up into fromRegions 
-                    // within each from region.
-                    // These sections will hold all of the information that
-                    // we will be drawing on to visualize recommendations for
-                    // users, depending on which from/to city they choose.
-                    fromRegions: {
-                        // For fromRegions, all US from cities could go anywhere
-                        // in the world, but we assume that all non-US from cities
-                        // will end up somewhere in the US.
-                        us: {
-                            // Below is where you list the general fee and miles
-                            // for each toRegion.
-                            generalToRegionCosts: {
-                                europe: {
-                                    economyFee: '5',
-                                    economyMiles: '30,000 - 35,000',
-                                    businessFee: '5',
-                                    businessMiles: '30,000 - 35,000',
-                                    airports: [
-                                        'CDG',
-                                        'BCN'
-                                    ]
-                                },
-                                latinAmerica: {
-                                    fee: '70',
-                                    miles: '12000'
-                                },
-                                anotherRegion: {
-                                    fee: '100',
-                                    miles: '50000'
-                                },
-                                etc: {
-                                    fee: 'etc',
-                                    miles: 'etc'
+            unitedAirlines: {
+                displayName: 'United\'s Display Name',
+                programType: 'regionBased',
+                // I break each program up into fromRegions 
+                // within each from region.
+                // These sections will hold all of the information that
+                // we will be drawing on to visualize recommendations for
+                // users, depending on which from/to city they choose.
+                fromRegions: {
+                    // For fromRegions, all US from cities could go anywhere
+                    // in the world, but we assume that all non-US from cities
+                    // will end up somewhere in the US.
+                    us: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '100',
+                                businessMiles: '100,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'MXC',
+                                    'GTC'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'WAS', 
+                            'JFK'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'MAD',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    },
+                    canada: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'OTT', 
+                            'YCW'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'CDG',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    },
+                    europe: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'WAS',
+                                    'JFK'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'CDG', 
+                            'LON'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'LAX',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    }
+                }
+            },
+            deltaAirlines: {
+                displayName: 'Delta\'s Display Name',
+                programType: 'regionBased',
+                // I break each program up into fromRegions 
+                // within each from region.
+                // These sections will hold all of the information that
+                // we will be drawing on to visualize recommendations for
+                // users, depending on which from/to city they choose.
+                fromRegions: {
+                    // For fromRegions, all US from cities could go anywhere
+                    // in the world, but we assume that all non-US from cities
+                    // will end up somewhere in the US.
+                    us: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'MXC',
+                                    'GTC'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'LAX', 
+                            'LGD'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'MAD',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    },
+                    canada: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'OTT', 
+                            'YCS'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'CDG',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    },
+                    europe: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'MAD', 
+                            'BRR'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'CDG',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    }
+                }
+            },
+            chaseCashBack: {
+                displayName: 'Chase Cash Back',
+                programType: 'regionBased',
+                // I break each program up into fromRegions and then 
+                // toRegions within each from region.
+                // These sections will hold all of the information that
+                // we will be drawing on to visualize recommendations for
+                // users, depending on which from/to city they choose.
+                fromRegions: {
+                    // For fromRegions, all US from cities could go anywhere
+                    // in the world, but we assume that all non-US from cities
+                    // will end up somewhere in the US.
+                    us: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'MIA', 
+                            'DFW'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'CDG',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    },
+                    canada: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'DFS', 
+                            'GFS'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'CDG',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    },
+                    europe: {
+                        // Below is where you list the general fee and miles
+                        // for each toRegion.
+                        generalToRegionCosts: {
+                            europe: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            },
+                            latinAmerica: {
+                                economyFee: '5',
+                                economyMiles: '30,000 - 35,000',
+                                businessFee: '5',
+                                businessMiles: '30,000 - 35,000',
+                                airports: [
+                                    'CDG',
+                                    'BCN'
+                                ]
+                            }
+                        },
+                        generalFromAirports: [
+                            'AMS', 
+                            'RMA'
+                        ],
+                        // Here we list city information, including all airports
+                        // within each city.
+                        exceptionToAirports: [              
+                            {
+                                exceptionAirportCode: 'LON',
+                                exceptionEconomyFee: '100',
+                                exceptionEconomyMiles: '50,000',
+                                exceptionBusinessFee: '100',
+                                exceptionBusinessMiles: '50,000'
+                            },
+                            {
+                                exceptionAirportCode: 'CDG',
+                                exceptionFee: '10',
+                                exceptionMiles: '20,000'
+                            }   
+                        ]
+                    }
+                }
+            },
+            virginAtlantic: {
+                programType: 'distanceBased',
+                fromBatches: [
+                    // Each city object will look like the below
+                    {
+                        fromAirportCodes: [
+                            'JFK',
+                            'BOS',
+                            'IAD'
+                        ],
+                        toBatches: [
+                            {
+                                batch: [
+                                    'BCN',
+                                    'MAD',
+                                    'CDG'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    // businessFee: '20 - 100',
+                                    // businessMiles: '50,000'
                                 }
                             },
-                            generalFromAirports: [
-                                'WAS', 
-                                'JFK', 
-                                '...'
-                            ],
-                            // Here we list city information, including all airports
-                            // within each city.
-                            exceptionToAirports: [              
-                                {
-                                    exceptionAirportCode: 'LON',
-                                    exceptionEconomyFee: '100',
-                                    exceptionEconomyMiles: '50,000',
-                                    exceptionBusinessFee: '100',
-                                    exceptionBusinessMiles: '50,000'
-                                },
-                                {
-                                    exceptionAirportCode: 'CDG',
-                                    exceptionFee: '10',
-                                    exceptionMiles: '20,000'
-                                }   
-                            ]
-                        },
-                        canada: {
-                            // Because we assume, that all foreign cities are 
-                            // eventually headed to somewhere in the U.S. region,
-                            // we only need to list the general fee and miles to
-                            // the US. Down the line, if you wanted to add inter-
-                            // region costs, you would do it below as we have done
-                            // in the U.S. toRegionCosts object.
-                            airports: [
-                                'OTO'
-                            ],
-                            generalToUsFeeEconomy: '55',
-                            generalToUsFeeBusiness: '100',
-                            // If no exceptions, no need to include the below, just delete.
-                            exceptionAirports: null
-                        },
-                        europe: {
-                            // Because we assume, that all foreign cities are 
-                            // eventually headed to somewhere in the U.S. region,
-                            // we only need to list the general fee and miles to
-                            // the US. Down the line, if you wanted to add inter-
-                            // region costs, you would do it below as we have done
-                            // in the U.S. toRegionCosts object.
-                            airports: [
-                                'BCN',
-                                'MAD'
-                            ],
-                            generalToUsFee: '100',
-                            // Here we list city information, including all airports
-                            // within each city.
-                            exceptionAirports: [
-                                {
-                                    airportCode: 'CDG',
-                                    exceptionFee: '100 - 150'
-                                },
-                                {
-                                    airportCode: 'BCN',
-                                    exceptionFee: '75'
+                            {
+                                batch: [
+                                    'FCO',
+                                    'LIS',
+                                    'DBV'
+                                ],
+                                costs: {
+                                    fee: '50 - 100',
+                                    miles: '20,000'
                                 }
-                            ],
-                        }
-                    }
-                },
-                deltaAirlines: {
-                    // Repeat Above for each region based program
-                },
-                chaseCashBack: {
-                    displayName: 'Chase Cash Back',
-                    // I break each program up into fromRegions and then 
-                    // toRegions within each from region.
-                    // These sections will hold all of the information that
-                    // we will be drawing on to visualize recommendations for
-                    // users, depending on which from/to city they choose.
-                    fromRegions: {
-                        // For fromRegions, all US from cities could go anywhere
-                        // in the world, but we assume that all non-US from cities
-                        // will end up somewhere in the US.
-                        us: {
-                            // Below is where you list the general fee and miles
-                            // for each toRegion.
-                            generalToRegionCosts: {
-                                europe: {
-                                    fee: 0,
-                                    miles: 100000
-                                },
-                                latinAmerica: {
-                                    fee: 0,
-                                    miles: 50000
-                                }
-                                
                             }
-                        }
+                        ]
+                    },
+                    {
+                        fromAirportCodes: [
+                            'WAS',
+                            'LAX',
+                            'PXD'
+                        ],
+                        toBatches: [
+                            {
+                                batch: [
+                                    'BCN',
+                                    'MAD',
+                                    'CDG'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
+                                }
+                            },
+                            {
+                                batch: [
+                                    'FCO',
+                                    'LIS',
+                                    'DBV'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        fromAirportCodes: [
+                            'BCN',
+                            'MAD',
+                            'CDG'
+                        ],
+                        toBatches: [
+                            {
+                                batch: [
+                                    'JFK',
+                                    'WAS',
+                                    'IAD'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
+                                }
+                            }
+                        ]
                     }
-                },
-
-
+                ]
             },
-            distanceBased: {
-                // Virgin may not be a distance based program, but I am using
-                // it and Delta as examples here.
-                virginAtlantic: {
-                    programType: 'distanceBased',
-                    // I break each program up into fromRegions and then 
-                    // toRegions within each from region.
-                    // These sections will hold all of the information that
-                    // we will be drawing on to visualize recommendations for
-                    // users, depending on which from/to city they choose.
-                    fromBatches: [
-                        // Each city object will look like the below
-                        {
-                            fromAirportCodes: [
-                                'JFK',
-                                'BOS',
-                                'IAD'
-                            ],
-                            toBatches: [
-                                {
-                                    batch: [
-                                        'BCN',
-                                        'MAD',
-                                        'CDG'
-                                    ],
-                                    costs: {
-                                        // If business, include 
-                                        economyFee: '5 - 50',
-                                        economyMiles: '30,000',
-                                        // If business, include below and remove comma on economyMiles
-                                        // businessFee: '20 - 100',
-                                        // businessMiles: '50,000'
-                                    }
-                                },
-                                {
-                                    batch: [
-                                        'FCO',
-                                        'LIS',
-                                        'DBV'
-                                    ],
-                                    costs: {
-                                        fee: '50 - 100',
-                                        miles: '20,000'
-                                    }
+            virginAtlantic2: {
+                programType: 'distanceBased',
+                // I break each program up into fromRegions and then 
+                // toRegions within each from region.
+                // These sections will hold all of the information that
+                // we will be drawing on to visualize recommendations for
+                // users, depending on which from/to city they choose.
+                fromBatches: [
+                    // Each city object will look like the below
+                    {
+                        fromAirportCodes: [
+                            'JFK',
+                            'BOS',
+                            'IAD'
+                        ],
+                        toBatches: [
+                            {
+                                batch: [
+                                    'BCN',
+                                    'MAD',
+                                    'CDG'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
                                 }
-                            ]
-                        },
-                        {
-                            fromAirportCode: 'JFK',
-                            toBatches: [
-                                {
-                                    batch: [
-                                        'BCN',
-                                        'MAD',
-                                        'CDG'
-                                    ],
-                                    costs: {
-                                        fee: '5 - 50',
-                                        miles: '30,000'
-                                    }
-                                },
-                                {
-                                    batch: [
-                                        'FCO',
-                                        'LIS',
-                                        'DBV'
-                                    ],
-                                    costs: {
-                                        fee: '50 - 100',
-                                        miles: '20,000'
-                                    }
+                            },
+                            {
+                                batch: [
+                                    'FCO',
+                                    'LIS',
+                                    'DBV'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
                                 }
-                            ]
-                        },
-                        {
-                            fromAirportCodes: [
-                                'BCN',
-                                'MAD',
-                                'CDG'
-                            ],
-                            toBatches: [
-                                {
-                                    batch: [
-                                        'JFK',
-                                        'BOS',
-                                        'IAD'
-                                    ],
-                                    costs: {
-                                        fee: '5 - 50',
-                                        miles: '30,000'
-                                    }
+                            }
+                        ]
+                    },
+                    {
+                        fromAirportCodes: [
+                            'JFK',
+                            'BOS',
+                            'IAD'
+                        ],
+                        toBatches: [
+                            {
+                                batch: [
+                                    'BCN',
+                                    'MAD',
+                                    'CDG'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
                                 }
-                            ]
-                        }
-                    ]
-                }
+                            },
+                            {
+                                batch: [
+                                    'FCO',
+                                    'LIS',
+                                    'DBV'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        fromAirportCodes: [
+                            'BCN',
+                            'MAD',
+                            'CDG'
+                        ],
+                        toBatches: [
+                            {
+                                batch: [
+                                    'JFK',
+                                    'BOS',
+                                    'IAD'
+                                ],
+                                costs: {
+                                    // If business, include 
+                                    economyFee: '5 - 50',
+                                    economyMiles: '30,000',
+                                    // If business, include below and remove comma on economyMiles
+                                    businessFee: '20 - 100',
+                                    businessMiles: '50,000'
+                                }
+                            }
+                        ]
+                    }
+                ]
             }
         }
     },
     userFlightSelections: {
-        fromAirport: null,
-        toAirport: null,
-        class: null,
-        type: null,
-        numTickets: null
+        toDestination: {
+            fromAirport: 'WAS',
+            toAirport: 'CDG',
+            class: 'economy',
+            type: 'roundTrip',
+            numTickets: null
+        },
+        fromDestination: {
+            fromAirport: 'CDG',
+            toAirport: 'WAS',
+            class: 'economy',
+            type: 'roundTrip',
+            numTickets: null
+        }
     },
     userPrograms: [
         {
@@ -326,7 +756,7 @@ var model = {
             points: 25000
         },
         {
-            name: 'delta',
+            name: 'deltaAirlines',
             points: 250000
         },
         {
@@ -335,13 +765,31 @@ var model = {
         }
     ],
     userFreqFlierPrograms: [],
-    programRecList: [],
+    eligiblePrograms: {
+        toDestination: [],
+        fromDestination: []
+    },
     grabFlightSelections: () => {
-        model.userFlightSelections.fromAirport = document.getElementById('').value;
-        model.userFlightSelections.toAirport = document.getElementById('').value;
-        model.userFlightSelections.class = document.getElementById('').value;
-        model.userFlightSelections.type = document.getElementById('').value;
-        model.userFlightSelections.numTickets = document.getElementById('').value;
+            
+        if (document.getElementById('').value === 'oneWay') {
+            // Log to destination
+            model.userFlightSelections.toDestination.fromAirport = document.getElementById('').value;
+            model.userFlightSelections.toDestination.toAirport = document.getElementById('').value;
+            model.userFlightSelections.toDestination.class = document.getElementById('').value;
+            model.userFlightSelections.toDestination.type = document.getElementById('').value;
+            model.userFlightSelections.toDestination.numTickets = document.getElementById('').value;
+        }
+
+        if (document.getElementById('').value === 'roundTrip') {
+
+            // Log from destination TO DO: Switch out fromAirport from to dest with toAirport
+            model.userFlightSelections.fromDestination.fromAirport = document.getElementById('').value;
+            model.userFlightSelections.fromDestination.toAirport = document.getElementById('').value;
+            model.userFlightSelections.fromDestination.class = document.getElementById('').value;
+            model.userFlightSelections.fromDestination.type = document.getElementById('').value;
+            model.userFlightSelections.fromDestination.numTickets = document.getElementById('').value;
+
+        }
 
         model.createRewardProgramSelectionsObject();
     },
@@ -403,12 +851,6 @@ var model = {
             // points transferrable program and then add
             // the points.
 
-            var ffCbPrograms = [
-                'unitedAirlines',
-                'delta',
-                'virginAtlantic'
-            ];
-
             model.userFreqFlierPrograms.forEach(function(sel) {
                 if (prog.name === sel.name) {
                     sel.points += prog.points;
@@ -426,19 +868,260 @@ var model = {
             progExists = false;
         });
 
-        model.createProgramRecList();
+        model.determineElibilePrograms();
     },
-    createProgramRecList: () => {
+    determineElibilePrograms: () => {
+        
+        var ffCbPrograms = [
+            'unitedAirlines',
+            'deltaAirlines',
+            'virginAtlantic',
+            'chaseCashBack'
+        ];
+
+        // For Each Frequent Flier Program with points fully updated
         model.userFreqFlierPrograms.forEach(function(prog) {
-            if (prog.programType === 'regionBased') {
-                for (var key in prog) {
-                  if (key === 'fromRegions') {
-                    console.log(key + " -> " + prog[key]);
-                  }
+            var ff = model.programs.frequentFlier;
+            // For every frequent flier program
+            for (var key in ff) {
+                // When the User's Freq. Flier Program matches with 
+                // the freq. flier program database in the model
+                if (prog.name === key) {
+                    // If the program in the model is region based
+                    if (ff[key].programType === 'regionBased') {
+                        // Create an object to house all of the from regions
+                        // for that program
+                        var regions = ff[key].fromRegions;
+                        // Iterate through each region within that object
+                        for (var reg in regions) {
+                            
+                            // Check to see if the user selection from airport
+                            // matches this region's general from airports first
+                            // and then check for toRegion.
+                            if (regions[reg].generalFromAirports.indexOf(model.userFlightSelections.toDestination.fromAirport) > -1) {
+                                
+                                // If it does match, then check to see if the program 
+                                // supports the user's toRegion destination in general.
+                                
+                                for (var costReg in regions[reg].generalToRegionCosts) {
+                                    
+                                    if (regions[reg].generalToRegionCosts[costReg].airports.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                        // Success! Program supports from and to 
+                                        // destinations, so push the following data to 
+                                        // the program in the user's freq flier prog obj
+                                        var obj = {};
+                                        obj['name'] = prog.name;
+                                        obj['points'] = prog.points;
+                                        obj['supportsRoute'] = true;
+                                        obj['from'] = model.userFlightSelections.toDestination.fromAirport;
+                                        obj['to'] = model.userFlightSelections.toDestination.toAirport;
+
+                                        if (model.userFlightSelections.toDestination.class === 'economy') {
+                                            obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
+                                            obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                            model.eligiblePrograms.toDestination.push(obj);
+                                        } else {
+                                            obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
+                                            obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                            model.eligiblePrograms.toDestination.push(obj);
+                                        }
+                                    }
+                                }
+
+                                // If fromRegion does match but general toRegion does 
+                                // not, then check to see if the program 
+                                // supports the user's toRegion destination in exceptions.
+                                
+                                regions[reg].exceptionToAirports.forEach(function (excp) {
+                                    if (excp.exceptionAirportCode === model.userFlightSelections.toDestination.toAirport) {
+                                        // Success! Program supports from and to 
+                                        // destinations, so push the following data to 
+                                        // the program in the user's freq flier prog obj
+
+                                        var obj = {};
+                                        obj['name'] = prog.name;
+                                        obj['points'] = prog.points;
+                                        obj['supportsRoute'] = true;
+                                        obj['from'] = model.userFlightSelections.toDestination.fromAirport;
+                                        obj['to'] = model.userFlightSelections.toDestination.toAirport;
+
+                                        if (model.userFlightSelections.toDestination.class === 'economy') {
+                                            obj['fees'] = excp.exceptionEconomyFee;
+                                            obj['miles'] = excp.exceptionEconomyMiles;
+                                            model.eligiblePrograms.toDestination.push(obj);
+                                        } else {
+                                            obj['fees'] = excp.exceptionBusinessFee;
+                                            obj['miles'] = excp.exceptionBusinessMiles;
+                                            model.eligiblePrograms.toDestination.push(obj);
+                                        }
+                                    }
+                                });                                 
+                            }
+
+                            // If roundTrip, perform for from destination
+                            if (model.userFlightSelections.toDestination.type === 'roundTrip') {
+
+                                // Check to see if the user selection from airport
+                                // matches this region's general from airports first
+                                // and then check for toRegion.
+                                if (regions[reg].generalFromAirports.indexOf(model.userFlightSelections.fromDestination.fromAirport) > -1) {
+                                    
+                                    // If it does match, then check to see if the program 
+                                    // supports the user's toRegion destination in general.
+                                    
+                                    for (var costReg in regions[reg].generalToRegionCosts) {
+                                        
+                                        if (regions[reg].generalToRegionCosts[costReg].airports.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                            // Success! Program supports from and to 
+                                            // destinations, so push the following data to 
+                                            // the program in the user's freq flier prog obj
+                                            var obj = {};
+                                            obj['name'] = prog.name;
+                                            obj['points'] = prog.points;
+                                            obj['supportsRoute'] = true;
+                                            obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
+                                            obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+
+                                            if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
+                                                obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                model.eligiblePrograms.fromDestination.push(obj);
+                                            } else {
+                                                obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
+                                                obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                model.eligiblePrograms.fromDestination.push(obj);
+                                            }
+                                        }
+                                    }
+
+                                    // If fromRegion does match but general toRegion does 
+                                    // not, then check to see if the program 
+                                    // supports the user's toRegion destination in exceptions.
+                                    
+                                    regions[reg].exceptionToAirports.forEach(function (excp) {
+                                        if (excp.exceptionAirportCode === model.userFlightSelections.fromDestination.toAirport) {
+                                            // Success! Program supports from and to 
+                                            // destinations, so push the following data to 
+                                            // the program in the user's freq flier prog obj
+                                            
+                                            var obj = {};
+                                            obj['name'] = prog.name;
+                                            obj['points'] = prog.points;
+                                            obj['supportsRoute'] = true;
+                                            obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
+                                            obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+
+                                            if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                obj['fees'] = excp.exceptionEconomyFee;
+                                                obj['miles'] = excp.exceptionEconomyMiles;
+                                                model.eligiblePrograms.fromDestination.push(obj);
+                                            } else {
+                                                obj['fees'] = excp.exceptionBusinessFee;
+                                                obj['miles'] = excp.exceptionBusinessMiles;
+                                                model.eligiblePrograms.fromDestination.push(obj);
+                                            }
+                                        }
+                                    });                                 
+                                }
+                            }
+                            
+                        }
+                    } else if (ff[key].programType === 'distanceBased') {
+                        
+                        // Create a variable to house all of the from batches
+                        // for that program
+                        
+                        var batches = ff[key].fromBatches;
+                        
+                        // Iterate through each from batch within that object to
+                        // look for the from/to airport to see if the program 
+                        // supports the route.
+
+                        batches.forEach(function(b) {
+                            if (b.fromAirportCodes.indexOf(model.userFlightSelections.toDestination.fromAirport) > -1) {
+                                
+                                // If it does match, then check to see if the program 
+                                // supports the user's toRegion destination and at what 
+                                // fee.
+
+                                b.toBatches.forEach(function(toB) {
+                                    if (toB.batch.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                        // Success! Program supports from and to 
+                                        // destinations, so push the following data to 
+                                        // the program in the user's freq flier prog obj
+                                        var obj = {};
+                                        obj['name'] = prog.name;
+                                        obj['points'] = prog.points;
+                                        obj['supportsRoute'] = true;
+                                        obj['from'] = model.userFlightSelections.toDestination.fromAirport;
+                                        obj['to'] = model.userFlightSelections.toDestination.toAirport;
+
+                                        if (model.userFlightSelections.toDestination.class === 'economy') {
+                                            obj['fees'] = toB.costs.economyFee;
+                                            obj['miles'] = toB.costs.economyMiles;
+                                            model.eligiblePrograms.toDestination.push(obj);
+                                        } else {
+                                            if (toB.costs.businessFee) {
+                                                obj['fees'] = toB.costs.businessFee;
+                                                obj['miles'] = toB.costs.businessMiles;
+                                                model.eligiblePrograms.toDestination.push(obj);
+                                            } else {
+                                                obj['fees'] = toB.costs.economyFee;
+                                                obj['miles'] = toB.costs.economyMiles;
+                                                model.eligiblePrograms.toDestination.push(obj);
+                                            }
+                                            
+                                        }
+                                    }
+                                });                                 
+                            }
+
+                            // If roundTrip, perform for from destination
+                            if (model.userFlightSelections.toDestination.type === 'roundTrip') {
+                                if (b.fromAirportCodes.indexOf(model.userFlightSelections.fromDestination.fromAirport) > -1) {
+                                
+                                    // If it does match, then check to see if the program 
+                                    // supports the user's toRegion destination and at what 
+                                    // fee.
+
+                                    b.toBatches.forEach(function(toB) {
+                                        if (toB.batch.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                            // Success! Program supports from and to 
+                                            // destinations, so push the following data to 
+                                            // the program in the user's freq flier prog obj
+                                            var obj = {};
+                                            obj['name'] = prog.name;
+                                            obj['points'] = prog.points;
+                                            obj['supportsRoute'] = true;
+                                            obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
+                                            obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+
+                                            if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                obj['fees'] = toB.costs.economyFee;
+                                                obj['miles'] = toB.costs.economyMiles;
+                                                model.eligiblePrograms.fromDestination.push(obj);
+                                            } else {
+                                                if (toB.costs.businessFee) {
+                                                    obj['fees'] = toB.costs.businessFee;
+                                                    obj['miles'] = toB.costs.businessMiles;
+                                                    model.eligiblePrograms.fromDestination.push(obj);
+                                                } else {
+                                                    obj['fees'] = toB.costs.economyFee;
+                                                    obj['miles'] = toB.costs.economyMiles;
+                                                    model.eligiblePrograms.fromDestination.push(obj);
+                                                }
+                                                
+                                            }
+                                        }
+                                    });                                 
+                                }
+                            }
+                        });
+                    }
                 }
-                // if (userFlightSelections.fromAirport === prog.)
             }
         });
-    }
 
+        console.log(model.eligiblePrograms);
+    }
 }
