@@ -5855,47 +5855,38 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'united',
-                            displayName: 'United Airlines',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airFrance',
-                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'korean',
-                            displayName: 'Korean Airlines SkyPass',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
-                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
-                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'british',
-                            displayName: 'British Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'iberia',
-                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'southwest',
-                            displayName: 'Southwest Airlines Rapid Rewards',
                             pointTransferRate: 1
                         },
                         {
                             name: 'chaseAnyCard',
-                            displayName: 'Chase Ultimate Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -5906,47 +5897,38 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'united',
-                            displayName: 'United Airlines',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airFrance',
-                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'korean',
-                            displayName: 'Korean Airlines SkyPass',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
-                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
-                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'british',
-                            displayName: 'British Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'iberia',
-                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'southwest',
-                            displayName: 'Southwest Airlines Rapid Rewards',
                             pointTransferRate: 1
                         },
                         {
                             name: 'chaseReserveCard',
-                            displayName: 'Chase Ultimate Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -5957,57 +5939,46 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'british',
-                            displayName: 'British Airways Avios',
                             pointTransferRate: .8
                         },
                         {
                             name: 'iberia',
-                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: .8       
                         },
                         {
                             name: 'airFrance',
-                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airCanada',
-                            displayName: 'Air Canada Aeroplan',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
-                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
-                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'delta',
-                            displayName: 'Delta Airlines SkyMiles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'ana',
-                            displayName: 'ANA: All Nippon Airways Mileage Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'etihad',
-                            displayName: 'Etihad Airways Guest',
                             pointTransferRate: 1
                         },
                         {
                             name: 'cathayPacific',
-                            displayName: 'Cathay Pacific Asia Miles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'amexAnyCashBack',
-                            displayName: 'American Express Membership Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -6018,57 +5989,46 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'british',
-                            displayName: 'British Airways Avios',
                             pointTransferRate: .8
                         },
                         {
                             name: 'iberia',
-                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: .8
                         },
                         {
                             name: 'airFrance',
-                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airCanada',
-                            displayName: 'Air Canada Aeroplan',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
-                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
-                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'delta',
-                            displayName: 'Delta Airlines SkyMiles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'ana',
-                            displayName: 'ANA: All Nippon Airways Mileage Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'etihad',
-                            displayName: 'Etihad Airways Guest',
                             pointTransferRate: 1
                         },
                         {
                             name: 'cathayPacific',
-                            displayName: 'Cathay Pacific Asia Miles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'amexBizCashBack',
-                            displayName: 'American Express Membership Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -6079,32 +6039,26 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'airFrance',
-                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
-                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
-                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'etihad',
-                            displayName: 'Etihad Airways Guest',
                             pointTransferRate: 1
                         },
                         {
                             name: 'cathayPacific',
-                            displayName: 'Cathay Pacific Asia Miles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'citiCashBack',
-                            displayName: 'Citi Thank You Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -39405,7 +39359,6 @@ var model = {
                         ptProg.ref.forEach(function(p) {
                             var obj = {};
                             obj['name'] = p.name;
-                            obj['displayName'] = p.displayName;
                             obj['points'] = prog.points * p.pointTransferRate;
                             model.userFreqFlierPrograms.push(obj);
                         });
@@ -39503,7 +39456,7 @@ var model = {
                                                 // the program in the user's freq flier prog obj
                                                 var obj = {};
                                                 
-                                                obj['displayName'] = prog.displayName;
+                                                obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39533,7 +39486,7 @@ var model = {
 
                                             var obj = {};
                                             
-                                            obj['displayName'] = prog.displayName;
+                                            obj['displayName'] = ff[key].displayName;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39565,7 +39518,7 @@ var model = {
 
                                                 var obj = {};
                                                 
-                                                obj['displayName'] = prog.displayName;
+                                                obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39605,7 +39558,7 @@ var model = {
 
                                                         var obj = {};
                                                         
-                                                        obj['displayName'] = prog.displayName;
+                                                        obj['displayName'] = ff[key].displayName;
                                                         obj['points'] = prog.points;
                                                         obj['supportsRoute'] = true;
                                                         obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39681,7 +39634,7 @@ var model = {
                                                     // the program in the user's freq flier prog obj
                                                     var obj = {};
                                                     
-                                                    obj['displayName'] = prog.displayName;
+                                                    obj['displayName'] = ff[key].displayName;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39711,7 +39664,7 @@ var model = {
 
                                                 var obj = {};
                                                 
-                                                obj['displayName'] = prog.displayName;
+                                                obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39742,7 +39695,7 @@ var model = {
 
                                                     var obj = {};
                                                     
-                                                    obj['displayName'] = prog.displayName;
+                                                    obj['displayName'] = ff[key].displayName;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39781,7 +39734,7 @@ var model = {
 
                                                             var obj = {};
                                                             
-                                                            obj['displayName'] = prog.displayName;
+                                                            obj['displayName'] = ff[key].displayName;
                                                             obj['points'] = prog.points;
                                                             obj['supportsRoute'] = true;
                                                             obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39858,7 +39811,7 @@ var model = {
                                             // the program in the user's freq flier prog obj
                                             var obj = {};
                                             
-                                            obj['displayName'] = prog.displayName;
+                                            obj['displayName'] = ff[key].displayName;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39899,7 +39852,7 @@ var model = {
                                                 // the program in the user's freq flier prog obj
                                                 var obj = {};
                                                 
-                                                obj['displayName'] = prog.displayName;
+                                                obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
