@@ -18580,7 +18580,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -18608,7 +18608,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -18629,7 +18629,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VLN'  
                             ],
                             generalToUsFeeEconomy: '45',
@@ -18695,7 +18695,7 @@ var model = {
                             ],
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'MAO'
                             ],
                             generalToUsFeeEconomy: '45',
@@ -18791,7 +18791,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                         'CPH', 
                                         'PRG', 
                                         'KEF', 
@@ -19074,7 +19074,7 @@ var model = {
                             ],
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'BAH',
                                 'ALY',
                                 'SSH',
@@ -19151,7 +19151,7 @@ var model = {
                             ],
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'ALA'                     
                             ],
                             generalToUsFeeEconomy: '85',
@@ -19187,7 +19187,7 @@ var model = {
                             ],
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     'DLC', 
                                     'HGH',
                                     'TAO',
@@ -19301,7 +19301,7 @@ var model = {
                             ],
                         },  
                         asiaTwo: {
-                            airports: [
+                            generalFromAirports: [
                                 'BWN',
                                 'PEN',
                                 'TST'
@@ -19414,66 +19414,66 @@ var model = {
                             ],
                         },          
                         africa: {
-                            airports: [
-                                        //SUBSAHARAN
-                                        'CKY',
-                                        'FNA',
-                                        'ROB',
-                                        'BKO',
-                                        'ABJ',
-                                        'OUA',
-                                        'ACC',
-                                        'LFW',
-                                        'COO',
-                                        'ABV',
-                                        'KAN',
-                                        'NIM',
-                                        'NDJ',
-                                        'DLA',
-                                        'NSI',
-                                        //NOT ONEWORLD
-                                        'LBV',
-                                        'FIH',
-                                        //NOT ONEWORLD
-                                        'BZV',
-                                        'BGF',
-                                        //NOT ONEWORLD
-                                        'JUB',
-                                        'KRT',
-                                        'JIB',
-                                        //NOT ONEWORLD
-                                        //NOT ONEWORLD
-                                        'BJM',
-                                        'KGL',
-                                        'EBB',
-                                        'JRO',
-                                        //NO 1W
-                                        'LLW',
-                                        //NO 1W
-                                        'LUN',
-                                        'MPM',
-                                        //NOT 1W
-                                        'LAD',
-                                        //NOT 1W
-                                        'HRE',
-                                        'WDH',
-                                        //SKYTEAM ONLY
-                                        'DZA',
-                                        //NOT 1W
-                                        'HAH',
-                                        'SEZ',
-                                        //NOT 1W
-                                        'TNR',
-                                        //NOT 1W
-                                        'MRU',
-                                        //NOT 1W
-                                        'RUN',
-                                        //SKYTEAM ONLY
-                                        'TFN',
-                                        'TFS',
-                                        //NOT ONEWORLD
-                                        //NOT ONEWORLD
-                                        'DUR'
+                            generalFromAirports: [
+                                //SUBSAHARAN
+                                'CKY',
+                                'FNA',
+                                'ROB',
+                                'BKO',
+                                'ABJ',
+                                'OUA',
+                                'ACC',
+                                'LFW',
+                                'COO',
+                                'ABV',
+                                'KAN',
+                                'NIM',
+                                'NDJ',
+                                'DLA',
+                                'NSI',
+                                //NOT ONEWORLD
+                                'LBV',
+                                'FIH',
+                                //NOT ONEWORLD
+                                'BZV',
+                                'BGF',
+                                //NOT ONEWORLD
+                                'JUB',
+                                'KRT',
+                                'JIB',
+                                //NOT ONEWORLD
+                                //NOT ONEWORLD
+                                'BJM',
+                                'KGL',
+                                'EBB',
+                                'JRO',
+                                //NO 1W
+                                'LLW',
+                                //NO 1W
+                                'LUN',
+                                'MPM',
+                                //NOT 1W
+                                'LAD',
+                                //NOT 1W
+                                'HRE',
+                                'WDH',
+                                //SKYTEAM ONLY
+                                'DZA',
+                                //NOT 1W
+                                'HAH',
+                                'SEZ',
+                                //NOT 1W
+                                'TNR',
+                                //NOT 1W
+                                'MRU',
+                                //NOT 1W
+                                'RUN',
+                                //SKYTEAM ONLY
+                                'TFN',
+                                'TFS',
+                                //NOT ONEWORLD
+                                //NOT ONEWORLD
+                                'DUR'
                             ],
                             generalToUsFeeEconomy: '49',
                             generalToUsMilesEconomy:'40,000',
@@ -19482,7 +19482,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'PPT',
                                 'NOU'
                             ],
@@ -19530,11 +19530,11 @@ var model = {
                     logo: 'virgin.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'delta.png',
-                    'hawaiian.png'
+                        'delta.png',
+                        'hawaiian.png'
                     ],
                     availableAirlinesLowFees: [
-                    'ana.png'
+                        'ana.png'
                     ],
                     programOverview: [
                         'Only roundtrips allowed.',
@@ -20082,7 +20082,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -20110,7 +20110,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -20131,7 +20131,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'CCS',
                                 'CTG',
                                 'BSB'
@@ -20184,7 +20184,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'CPH', 
                                 'PRG',  
                                 'KEF', 
@@ -20322,7 +20322,7 @@ var model = {
                             ],
                         },
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '47',
                             generalToUsMilesEconomy:'40,000',
@@ -20388,7 +20388,7 @@ var model = {
                             ],
                         },  
                         middleEast: {
-                            airports: [   
+                            generalFromAirports: [   
                                 'ACC',
                                 'CAN',
                                 'MNL'
@@ -20446,7 +20446,7 @@ var model = {
                             ],
                         },                     
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                             'PPT',
                             'NOU'
                             ],
@@ -21659,7 +21659,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -21687,7 +21687,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -21708,7 +21708,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -21730,7 +21730,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -21756,7 +21756,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -22170,7 +22170,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -22214,7 +22214,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -22229,7 +22229,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -22266,7 +22266,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         asiaTwo: {
-                            airports: [
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -22298,7 +22298,7 @@ var model = {
                             exceptionFromAirports: null
                         },          
                         indianSub: {
-                            airports: [
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -22324,7 +22324,7 @@ var model = {
                             exceptionFromAirports: null
                         },          
                         africa: {
-                            airports: [
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -22433,7 +22433,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -23588,109 +23588,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'20,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'60,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -23742,7 +23639,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -23770,7 +23667,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -23791,7 +23688,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -23813,7 +23710,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -23839,7 +23736,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -24253,7 +24150,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -24297,7 +24194,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -24311,8 +24208,8 @@ var model = {
                             generalToUsMilesBusiness:'360,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -24348,8 +24245,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -24380,8 +24277,8 @@ var model = {
                             generalToUsMilesBusiness:'250,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -24406,8 +24303,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -24516,7 +24413,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -25671,109 +25568,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'20,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'60,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -25825,7 +25619,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -25853,7 +25647,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -25874,7 +25668,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -25896,7 +25690,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -25922,7 +25716,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -26336,7 +26130,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -26380,7 +26174,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -26394,8 +26188,8 @@ var model = {
                             generalToUsMilesBusiness:'360,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -26431,8 +26225,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -26463,8 +26257,8 @@ var model = {
                             generalToUsMilesBusiness:'250,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -26489,8 +26283,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -26599,7 +26393,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -27754,109 +27548,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'20,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'60,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -27908,7 +27599,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -27936,7 +27627,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -27957,7 +27648,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -27979,7 +27670,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -28005,7 +27696,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -28419,7 +28110,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -28463,7 +28154,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -28477,8 +28168,8 @@ var model = {
                             generalToUsMilesBusiness:'360,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -28514,8 +28205,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -28546,8 +28237,8 @@ var model = {
                             generalToUsMilesBusiness:'250,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -28572,8 +28263,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -28682,7 +28373,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -29837,109 +29528,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'16,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'48,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -29991,7 +29579,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -30019,7 +29607,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -30040,7 +29628,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -30062,7 +29650,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -30088,7 +29676,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -30502,7 +30090,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -30546,7 +30134,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -30560,8 +30148,8 @@ var model = {
                             generalToUsMilesBusiness:'288,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -30597,8 +30185,8 @@ var model = {
                             generalToUsMilesBusiness:'176,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -30629,8 +30217,8 @@ var model = {
                             generalToUsMilesBusiness:'200,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -30655,8 +30243,8 @@ var model = {
                             generalToUsMilesBusiness:'176,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -30765,7 +30353,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -31920,109 +31508,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'16,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'48,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -32074,7 +31559,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -32102,7 +31587,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -32123,7 +31608,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -32145,7 +31630,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -32171,7 +31656,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -32585,7 +32070,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -32629,7 +32114,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -32643,8 +32128,8 @@ var model = {
                             generalToUsMilesBusiness:'288,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -32680,8 +32165,8 @@ var model = {
                             generalToUsMilesBusiness:'176,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -32712,8 +32197,8 @@ var model = {
                             generalToUsMilesBusiness:'200,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -32738,8 +32223,8 @@ var model = {
                             generalToUsMilesBusiness:'176,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -32848,7 +32333,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -34003,109 +33488,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'13,300',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'40,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -34157,7 +33539,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -34185,7 +33567,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -34206,7 +33588,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -34228,7 +33610,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -34254,7 +33636,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -34668,7 +34050,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -34712,7 +34094,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -34726,8 +34108,8 @@ var model = {
                             generalToUsMilesBusiness:'240,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -34763,8 +34145,8 @@ var model = {
                             generalToUsMilesBusiness:'146,600',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -34795,8 +34177,8 @@ var model = {
                             generalToUsMilesBusiness:'166,600',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -34821,8 +34203,8 @@ var model = {
                             generalToUsMilesBusiness:'146,600',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -34931,7 +34313,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -36086,109 +35468,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'20,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'60,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -36240,7 +35519,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -36268,7 +35547,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -36289,7 +35568,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -36311,7 +35590,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -36337,7 +35616,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -36751,7 +36030,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -36795,7 +36074,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -36809,8 +36088,8 @@ var model = {
                             generalToUsMilesBusiness:'360,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -36846,8 +36125,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -36878,8 +36157,8 @@ var model = {
                             generalToUsMilesBusiness:'250,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -36904,8 +36183,8 @@ var model = {
                             generalToUsMilesBusiness:'220,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -37014,7 +36293,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
@@ -38169,109 +37448,6 @@ var model = {
                                 'ICT'
                             ],
                         },
-                            us: {
-                            generalFromAirports: [
-                                        'ALB', 
-                                        'ABQ', 
-                                        'ANC',
-                                        'ATL',
-                                        'AUS',
-                                        'BWI',
-                                        'BIL',
-                                        'BOI',
-                                        'BOS',
-                                        'BZN',
-                                        'BUF',
-                                        'BUR',
-                                        'BTV',
-                                        'CLT',
-                                        'CHS',
-                                        'ORD',
-                                        'CVG',
-                                        'CLE',
-                                        'COS',
-                                        'CMH',
-                                        'DFW',
-                                        'DAY',
-                                        'DEN',
-                                        'DSM',
-                                        'DTW',
-                                        'ELP',
-                                        'EUG',
-                                        'FAI',
-                                        'FLL',
-                                        'RSW',
-                                        'GRR',
-                                        'GSO',
-                                        'MDT',
-                                        'BDL',
-                                        'IAH',
-                                        'IND',
-                                        'JAC',
-                                        'JAX',
-                                        'MCI',
-                                        'TYS',
-                                        'LAS',
-                                        'LAX',
-                                        'SDF',
-                                        'MHT',
-                                        'MFE',
-                                        'MEM',
-                                        'MIA',
-                                        'MKE',
-                                        'MSP',
-                                        'MTJ',
-                                        'BNA',
-                                        'MSY',
-                                        'JFK',
-                                        'LGA',
-                                        'EWR',
-                                        'ORF',
-                                        'OKC',
-                                        'OMA',
-                                        'ONT',
-                                        'SNA',
-                                        'MCO',
-                                        'PSP',
-                                        'ECP',
-                                        'PHL',
-                                        'PHX',
-                                        'PIT',
-                                        'PWM',
-                                        'PDX',
-                                        'PVD',
-                                        'RDU',
-                                        'RAP',
-                                        'RNO',
-                                        'RIC',
-                                        'ROC',
-                                        'SMF',
-                                        'SLC',
-                                        'SAT',
-                                        'SAN',
-                                        'SFO',
-                                        'SJC',
-                                        'SRQ',
-                                        'SEA',
-                                        'FSD',
-                                        'GEG',
-                                        'STL',
-                                        'SYR',
-                                        'TPA',
-                                        'TUS',
-                                        'TUL',
-                                        'EGE',
-                                        'DCA',
-                                        'IAD',
-                                        'PBI',
-                                        'ICT' 
-                            ],
-                            generalToUsFeeEconomy: '0',
-                            generalToUsMilesEconomy:'10,000',
-                            generalToUsFeeBusiness: '0',
-                            generalToUsMilesBusiness:'30,000',
-                            exceptionFromAirports: null
-                        },
                         canada: {
                             generalFromAirports: [
                                 'YYC', 
@@ -38323,7 +37499,7 @@ var model = {
                                 }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -38351,7 +37527,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -38372,7 +37548,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BOG',
                                 'MDE',
                                 'CCS',
@@ -38394,7 +37570,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI',
                                 'LPB',
                                 'MVD',
@@ -38420,7 +37596,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                         'ATH',
                                         'TXL',
@@ -38834,7 +38010,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'TLV',
                                 'GYD',
                                 'BAH',
@@ -38878,7 +38054,7 @@ var model = {
                             exceptionFromAirports: null
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'KBL',
                                 'ALA',
                                 'FRU',  
@@ -38892,8 +38068,8 @@ var model = {
                             generalToUsMilesBusiness:'180,000',
                             exceptionFromAirports: null
                         },  
-                            asiaOne: {
-                            airports: [
+                        asiaOne: {
+                            generalFromAirports: [
                                     'ULN',
                                     'TPE',
                                     'ICN',
@@ -38929,8 +38105,8 @@ var model = {
                             generalToUsMilesBusiness:'110,000',
                             exceptionFromAirports: null
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'MNL',
                                 'SIN',
                                 'BWN',
@@ -38961,8 +38137,8 @@ var model = {
                             generalToUsMilesBusiness:'175,000',
                             exceptionFromAirports: null
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -38987,8 +38163,8 @@ var model = {
                             generalToUsMilesBusiness:'110,000',
                             exceptionFromAirports: null
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                         'CMN',
                                         'AGA',
@@ -39097,7 +38273,7 @@ var model = {
                             exceptionFromAirports: null
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'AKL',
                                 'CHC',
                                 'WLG',
