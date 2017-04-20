@@ -5855,6 +5855,7 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'united',
+                            displayName: 'United Airlines',
                             pointTransferRate: 1
                         },
                         {
@@ -5905,6 +5906,7 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'united',
+                            displayName: 'United Airlines',
                             pointTransferRate: 1
                         },
                         {
@@ -39403,6 +39405,7 @@ var model = {
                         ptProg.ref.forEach(function(p) {
                             var obj = {};
                             obj['name'] = p.name;
+                            obj['displayName'] = p.displayName;
                             obj['points'] = prog.points * p.pointTransferRate;
                             model.userFreqFlierPrograms.push(obj);
                         });
@@ -39499,7 +39502,8 @@ var model = {
                                                 // destinations, so push the following data to 
                                                 // the program in the user's freq flier prog obj
                                                 var obj = {};
-                                                obj['name'] = prog.name;
+                                                
+                                                obj['displayName'] = prog.displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39528,7 +39532,8 @@ var model = {
                                             // the program in the user's freq flier prog obj
 
                                             var obj = {};
-                                            obj['name'] = prog.name;
+                                            
+                                            obj['displayName'] = prog.displayName;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39559,7 +39564,8 @@ var model = {
                                                 // the program in the user's freq flier prog obj
 
                                                 var obj = {};
-                                                obj['name'] = prog.name;
+                                                
+                                                obj['displayName'] = prog.displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39598,7 +39604,8 @@ var model = {
                                                         // the program in the user's freq flier prog obj
 
                                                         var obj = {};
-                                                        obj['name'] = prog.name;
+                                                        
+                                                        obj['displayName'] = prog.displayName;
                                                         obj['points'] = prog.points;
                                                         obj['supportsRoute'] = true;
                                                         obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39673,7 +39680,8 @@ var model = {
                                                     // destinations, so push the following data to 
                                                     // the program in the user's freq flier prog obj
                                                     var obj = {};
-                                                    obj['name'] = prog.name;
+                                                    
+                                                    obj['displayName'] = prog.displayName;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39702,7 +39710,8 @@ var model = {
                                                 // the program in the user's freq flier prog obj
 
                                                 var obj = {};
-                                                obj['name'] = prog.name;
+                                                
+                                                obj['displayName'] = prog.displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39732,7 +39741,8 @@ var model = {
                                                     // the program in the user's freq flier prog obj
 
                                                     var obj = {};
-                                                    obj['name'] = prog.name;
+                                                    
+                                                    obj['displayName'] = prog.displayName;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39770,7 +39780,8 @@ var model = {
                                                             // the program in the user's freq flier prog obj
 
                                                             var obj = {};
-                                                            obj['name'] = prog.name;
+                                                            
+                                                            obj['displayName'] = prog.displayName;
                                                             obj['points'] = prog.points;
                                                             obj['supportsRoute'] = true;
                                                             obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
@@ -39846,7 +39857,8 @@ var model = {
                                             // destinations, so push the following data to 
                                             // the program in the user's freq flier prog obj
                                             var obj = {};
-                                            obj['name'] = prog.name;
+                                            
+                                            obj['displayName'] = prog.displayName;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.userFlightSelections.toDestination.fromAirport;
@@ -39886,7 +39898,8 @@ var model = {
                                                 // destinations, so push the following data to 
                                                 // the program in the user's freq flier prog obj
                                                 var obj = {};
-                                                obj['name'] = prog.name;
+                                                
+                                                obj['displayName'] = prog.displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
