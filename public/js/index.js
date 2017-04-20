@@ -10006,7 +10006,6 @@ var model = {
                             generalToUsFeeBusiness: '5',
                             generalToUsMilesBusiness: '40,000',
                             exceptionFromAirports: null,
-                                }
                         },
                         carribean: {
                             airports: [
@@ -11264,7 +11263,8 @@ var model = {
                                     exceptionEconomyFee: '27',
                                     exceptionBusinessFee: '27'
                                 }
-                        ]
+                            ]
+                        }
                     }
                 },
                 ana: {
@@ -12021,10 +12021,9 @@ var model = {
                             generalToUsFeeBusiness: '5.6',
                             generalToUsMilesBusiness: '34,000',
                             exceptionFromAirports: null,
-                                }
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -12058,7 +12057,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -12079,7 +12078,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                             'VLN'
                             ],
                             generalToUsFeeEconomy: '48',
@@ -12125,7 +12124,7 @@ var model = {
                             ],
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '54',
                             generalToUsMilesEconomy:'27,500',
@@ -12245,7 +12244,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'AMS',
                                 'ATH',
                                 'TXL',
@@ -12435,7 +12434,7 @@ var model = {
                             ],
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'BAH',
                                 'ALY',
                                 'SSH',
@@ -12512,7 +12511,7 @@ var model = {
                             ],
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'HND',
                                 'NRT',
                                 'KIX',
@@ -12530,7 +12529,7 @@ var model = {
                             exceptionFromAirports: null,
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     'GUM',
                                     'DLC',
                                     'HGH',
@@ -12625,7 +12624,7 @@ var model = {
                             ],
                         },  
                         asiaTwo: {
-                            airports: [
+                            generalFromAirports: [
                                 'BWN',
                                 'PEN',
                                 'ALA',
@@ -12744,7 +12743,7 @@ var model = {
                             ],
                         },          
                         indianSub: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '25',
                             generalToUsMilesEconomy:'40,000',
@@ -12834,7 +12833,7 @@ var model = {
                             ],
                         },          
                         africa: {
-                            airports: [
+                            generalFromAirports: [
                                 //NA
                                         'AGA',
                                         //STAR ALLIANCE ONLY FOR ONE BELOW
@@ -12988,7 +12987,7 @@ var model = {
                             ],
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'TKK',
                                 'KSA',
                                 'KWA',
@@ -13054,7 +13053,8 @@ var model = {
                                     exceptionEconomyFee: '27',
                                     exceptionBusinessFee: '27'
                                 }
-                        ]
+                            ]
+                        }
                     }
                 },
                 singapore: {
@@ -13553,7 +13553,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -13587,7 +13587,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -13608,7 +13608,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VLN'
                             ],
                             generalToUsFeeEconomy: '48',
@@ -13674,7 +13674,7 @@ var model = {
                             ],
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                             'RIO'                        
                             ],
                             generalToUsFeeEconomy: '54',
@@ -13775,7 +13775,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'MAN',
                                 'FRA'
                             ],
@@ -13786,7 +13786,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                         
                             ],
                             generalToUsFeeEconomy: '47',
@@ -13796,7 +13796,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 
                             ],
                             generalToUsFeeEconomy: '30',
@@ -13806,7 +13806,7 @@ var model = {
                             exceptionFromAirports: null,
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     
                             ],
                             generalToUsFeeEconomy: '35',
@@ -13816,7 +13816,7 @@ var model = {
                             exceptionFromAirports: null,
                         },  
                         asiaTwo: {
-                            airports: [
+                            generalFromAirports: [
                         
                             ],
                             generalToUsFeeEconomy: '42',
@@ -13826,7 +13826,7 @@ var model = {
                             exceptionFromAirports: null,
                         },      
                         indianSub: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '25',
                             generalToUsMilesEconomy:'42,500',
@@ -13835,7 +13835,7 @@ var model = {
                             exceptionFromAirports: null,
                         },  
                         africa: {
-                            airports: [
+                            generalFromAirports: [
                                 
                             ],
                             generalToUsFeeEconomy: '49',
@@ -13845,7 +13845,7 @@ var model = {
                             exceptionFromAirports: null,
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 
                             ],
                             generalToUsFeeEconomy: '80',
@@ -14394,7 +14394,7 @@ var model = {
                                         'SEZ'
                                     ]
                                 },
-                                    oceania: {
+                                oceania: {
                                     economyFee: '5',
                                     economyMiles: '40,000',
                                     businessFee: '5',
@@ -14516,7 +14516,7 @@ var model = {
                                 'DCA',
                                 'MKE',
                                 'JAC'
-                            ],
+                            ]
                         },
                         canada: {
                             generalFromAirports: [
@@ -14532,7 +14532,7 @@ var model = {
                             generalToUsMilesEconomy:'15,000',
                             generalToUsFeeBusiness: '51',
                             generalToUsMilesBusiness: '30,000',
-                            exceptionFromAirports: null,
+                            exceptionFromAirports: null
                         },
                         mexico: {
                             generalFromAirports: [
@@ -14551,7 +14551,7 @@ var model = {
                             generalToUsMilesEconomy:'12,500/17,500',
                             generalToUsFeeBusiness: '55',
                             generalToUsMilesBusiness: '27,500',
-                            exceptionFromAirports: null,
+                            exceptionFromAirports: null
                         },
                         hawaii: {
                             generalFromAirports: [
@@ -14565,11 +14565,10 @@ var model = {
                             generalToUsMilesEconomy:'20,000/22,500',
                             generalToUsFeeBusiness: '5',
                             generalToUsMilesBusiness: '40,000',
-                            exceptionFromAirports: null,
-                                }
+                            exceptionFromAirports: null
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'STX',
                                 'STT',
                                 'ANU',
@@ -14607,7 +14606,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                         'PTP',
                                         'BZE',
                                         'GUA',
@@ -14629,7 +14628,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VLN'
                             ],
                             generalToUsFeeEconomy: '48',
@@ -14700,7 +14699,7 @@ var model = {
                             ],
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'MAO',
                                 'RIO'
                             ],
@@ -14792,7 +14791,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                     'DUS',
                                     'HEL',
                                     'AMS',
@@ -14914,7 +14913,7 @@ var model = {
                             ],
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'BAH',
                                 'ALY',
                                 'SSH',
@@ -14990,8 +14989,8 @@ var model = {
                                 }
                             ],
                         },  
-                            asiaOne: {
-                            airports: [             
+                        asiaOne: {
+                            generalFromAirports: [             
                             ],
                             generalToUsFeeEconomy: '35',
                             generalToUsMilesEconomy:'35,000',
@@ -15065,8 +15064,8 @@ var model = {
                                     }
                             ],
                         },  
-                            asiaTwo: {
-                            airports: [
+                        asiaTwo: {
+                            generalFromAirports: [
                                 'BWN',
                                 'PEN',
                                 'TST',
@@ -15217,8 +15216,8 @@ var model = {
                                     }
                             ],
                         },          
-                            indianSub: {
-                            airports: [
+                        indianSub: {
+                            generalFromAirports: [
                                 //NOT SKY FOR 2 BELOW
                                 'ALA'
                             ],
@@ -15334,8 +15333,8 @@ var model = {
                                     }
                             ],
                         },          
-                            africa: {
-                            airports: [
+                        africa: {
+                            generalFromAirports: [
                                 //NA
                                 'AGA',
                                 'ALG',
@@ -15419,7 +15418,7 @@ var model = {
                             ],
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'TKK',
                                 'KSA',
                                 'KWA',
@@ -15489,7 +15488,8 @@ var model = {
                                     exceptionEconomyFee: '27',
                                     exceptionBusinessFee: '27',
                                 }
-                        ]
+                            ]
+                        }
                     }
                 },
                 delta: {
@@ -16461,7 +16461,7 @@ var model = {
                             exceptionFromAirports: null   
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -16489,7 +16489,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -16510,7 +16510,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VLN'  
                             ],
                             generalToUsFeeEconomy: '48',
@@ -16576,7 +16576,7 @@ var model = {
                             ],
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'MAO'
                             ],
                             generalToUsFeeEconomy: '54',
@@ -16672,7 +16672,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'BRU',
                                         'ATH', 
                                         'BCN', 
@@ -17014,7 +17014,7 @@ var model = {
                             ],
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'BAH',
                                 'ALY',
                                 'SSH',
@@ -17091,7 +17091,7 @@ var model = {
                             ],
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'ALA'                     
                             ],
                             generalToUsFeeEconomy: '30',
@@ -17127,7 +17127,7 @@ var model = {
                             ],
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     'DLC', 
                                     'HGH',
                                     'TAO',
@@ -17241,7 +17241,7 @@ var model = {
                             ],
                         },  
                         asiaTwo: {
-                            airports: [
+                            generalFromAirports: [
                                 'BWN',
                                 'PEN',
                                 'TST'
@@ -17354,7 +17354,7 @@ var model = {
                             ],
                         },          
                         indianSub: {
-                            airports: [
+                            generalFromAirports: [
                                 'DEL',
                                 'BOM',
                                 'MLE',
@@ -17458,7 +17458,7 @@ var model = {
                             ],
                         },          
                         africa: {
-                            airports: [
+                            generalFromAirports: [
                                 //NA
                                         'AGA',
                                         'ALG',
@@ -17583,7 +17583,7 @@ var model = {
                             ],
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'PPT',
                                 'NOU'
                             ],
@@ -19918,7 +19918,7 @@ var model = {
                                         'MNL' 
                                     ]
                                 },
-                                    oceania: {
+                                oceania: {
                                     economyFee: '5.60',
                                     economyMiles: '50,000',
                                     businessFee: '5.60',
@@ -20079,7 +20079,6 @@ var model = {
                             generalToUsFeeBusiness: '5',
                             generalToUsMilesBusiness:'37,500',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -20480,7 +20479,8 @@ var model = {
                                     exceptionEconomyFee: '27',
                                     exceptionBusinessFee: '27',
                                 }
-                        ]
+                            ]
+                        }
                     }
                 },
                 capitalOne: {
@@ -23491,6 +23491,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -23636,7 +23637,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'120,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -25471,6 +25471,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -25616,7 +25617,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'120,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -27451,6 +27451,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -27546,7 +27547,7 @@ var model = {
                                 'IAD',
                                 'PBI',
                                 'ICT'
-                            ],
+                            ]
                         },
                         canada: {
                             generalFromAirports: [
@@ -27596,7 +27597,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'120,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -29431,6 +29431,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -29576,7 +29577,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'96,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -30605,7 +30605,7 @@ var model = {
                                         'SJD'
                                     ]
                                 },
-                                    hawaii: {
+                                hawaii: {
                                     economyFee: '0',
                                     economyMiles: '36,000',
                                     businessFee: '0',
@@ -31411,6 +31411,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -31556,7 +31557,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'96,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -32585,7 +32585,7 @@ var model = {
                                         'SJD'
                                     ]
                                 },
-                                    hawaii: {
+                                hawaii: {
                                     economyFee: '0',
                                     economyMiles: '30,000',
                                     businessFee: '0',
@@ -33391,6 +33391,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -33536,7 +33537,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'80,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -34565,7 +34565,7 @@ var model = {
                                         'SJD'
                                     ]
                                 },
-                                    hawaii: {
+                                hawaii: {
                                     economyFee: '0',
                                     economyMiles: '45,000',
                                     businessFee: '0',
@@ -35371,6 +35371,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -35516,7 +35517,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'120,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
@@ -36545,7 +36545,7 @@ var model = {
                                         'SJD'
                                     ]
                                 },
-                                    hawaii: {
+                                hawaii: {
                                     economyFee: '0',
                                     economyMiles: '22,500',
                                     businessFee: '0',
@@ -37351,6 +37351,7 @@ var model = {
                                 'SPN'
                                     ]
                                 },
+                            },
                             generalFromAirports: [
                                 'ALB', 
                                 'ABQ', 
@@ -37496,7 +37497,6 @@ var model = {
                             generalToUsFeeBusiness: '0',
                             generalToUsMilesBusiness:'60,000',
                             exceptionFromAirports: null
-                                }
                         },
                         carribean: {
                             generalFromAirports: [
