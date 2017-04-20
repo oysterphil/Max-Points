@@ -39328,7 +39328,7 @@ var model = {
         },
         userFlightSelections: {
             toDestination: {
-                fromAirport: 'WAS',
+                fromAirport: 'IAD',
                 toAirport: 'CDG',
                 class: 'economy',
                 type: 'roundTrip',
@@ -39336,7 +39336,7 @@ var model = {
             },
             fromDestination: {
                 fromAirport: 'CDG',
-                toAirport: 'WAS',
+                toAirport: 'IAD',
                 class: 'economy',
                 type: 'roundTrip',
                 numTickets: null
@@ -39478,8 +39478,6 @@ var model = {
                             var regions = ff[key].fromRegions;
                             // Iterate through each region within that object
                             for (var reg in regions) {
-                                console.log(prog.name);
-                                console.log(reg);
                                 // Check to see if the user selection from airport
                                 // matches this region's general from airports first
                                 // and then check for toRegion. There are no from exceptions
@@ -39553,96 +39551,101 @@ var model = {
                                     // not, then check to see if the program 
                                     // supports the user's toRegion destination in exceptions.
                                     
-                                    regions[reg].exceptionFromAirports.forEach(function (excp) {
-                                        if (excp.exceptionAirportCode === model.userFlightSelections.toDestination.toAirport) {
-                                            // Success! Program supports from and to 
-                                            // destinations, so push the following data to 
-                                            // the program in the user's freq flier prog obj
+                                    if (regions[reg].exceptionFromAirports) {
+                                        regions[reg].exceptionFromAirports.forEach(function (excp) {
+                                            if (excp.exceptionAirportCode === model.userFlightSelections.toDestination.toAirport) {
+                                                // Success! Program supports from and to 
+                                                // destinations, so push the following data to 
+                                                // the program in the user's freq flier prog obj
 
-                                            var obj = {};
-                                            obj['name'] = prog.name;
-                                            obj['points'] = prog.points;
-                                            obj['supportsRoute'] = true;
-                                            obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                            obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                                var obj = {};
+                                                obj['name'] = prog.name;
+                                                obj['points'] = prog.points;
+                                                obj['supportsRoute'] = true;
+                                                obj['from'] = model.userFlightSelections.toDestination.fromAirport;
+                                                obj['to'] = model.userFlightSelections.toDestination.toAirport;
 
-                                            if (model.userFlightSelections.toDestination.class === 'economy') {
-                                                obj['fees'] = excp.exceptionEconomyFee;
-                                                obj['miles'] = excp.exceptionEconomyMiles;
-                                                model.eligiblePrograms.toDestination.push(obj);
-                                            } else {
-                                                obj['fees'] = excp.exceptionBusinessFee;
-                                                obj['miles'] = excp.exceptionBusinessMiles;
-                                                model.eligiblePrograms.toDestination.push(obj);
+                                                if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                    obj['fees'] = excp.exceptionEconomyFee;
+                                                    obj['miles'] = excp.exceptionEconomyMiles;
+                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                } else {
+                                                    obj['fees'] = excp.exceptionBusinessFee;
+                                                    obj['miles'] = excp.exceptionBusinessMiles;
+                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                }
                                             }
-                                        }
-                                    });                                 
+                                        }); 
+                                    } 
+
                                 } else {
                                     // For non-US from regions, check to see if the from airport selected
                                     // by the user is in the exceptionFromAirports key of the non-US region
                                     // object. If it is, push the exception to the eligible programs object
                                     // with the exception's values overriding the region's general values.
                                     if (reg !== 'us') {
-                                        regions[reg].exceptionFromAirports.forEach(function(excp) {
-                                            // Check if the user from airport matches with the region's
-                                            // exception from airports.
-                                            if (model.userFlightSelections.toDestination.fromAirport === excp.exceptionAirportCode) {
-                                                // Success! Now check to see if the user to airport matches 
-                                                // with the US to airports from abroad.
-                                                if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                        if (regions[reg].exceptionFromAirports) {
+                                            regions[reg].exceptionFromAirports.forEach(function(excp) {
+                                                // Check if the user from airport matches with the region's
+                                                // exception from airports.
+                                                if (model.userFlightSelections.toDestination.fromAirport === excp.exceptionAirportCode) {
+                                                    // Success! Now check to see if the user to airport matches 
+                                                    // with the US to airports from abroad.
+                                                    if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
 
-                                                    // Success! Program supports from and to 
-                                                    // destinations, so push the following data to 
-                                                    // the program in the user's freq flier prog obj
+                                                        // Success! Program supports from and to 
+                                                        // destinations, so push the following data to 
+                                                        // the program in the user's freq flier prog obj
 
-                                                    var obj = {};
-                                                    obj['name'] = prog.name;
-                                                    obj['points'] = prog.points;
-                                                    obj['supportsRoute'] = true;
-                                                    obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                                    obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                                        var obj = {};
+                                                        obj['name'] = prog.name;
+                                                        obj['points'] = prog.points;
+                                                        obj['supportsRoute'] = true;
+                                                        obj['from'] = model.userFlightSelections.toDestination.fromAirport;
+                                                        obj['to'] = model.userFlightSelections.toDestination.toAirport;
 
-                                                    if (model.userFlightSelections.toDestination.class === 'economy') {
-                                                        
-                                                        // If exception fee exists, log it to model
-                                                        if (excp.exceptionEconomyFee) {
-                                                            obj['fees'] = excp.exceptionEconomyFee; 
+                                                        if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                            
+                                                            // If exception fee exists, log it to model
+                                                            if (excp.exceptionEconomyFee) {
+                                                                obj['fees'] = excp.exceptionEconomyFee; 
+                                                            } else {
+                                                                // Otherwise log general fee
+                                                                obj['fees'] = regions[reg].generalToUsFeeEconomy;
+                                                            }
+
+                                                            // If exception fee exists, log it to model
+                                                            if (excp.exceptionEconomyMiles) {
+                                                                obj['miles'] = excp.exceptionEconomyMiles; 
+                                                            } else {
+                                                                // Otherwise log general fee
+                                                                obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                            }      
+                                                            // Push program to eligible programs object
+                                                            model.eligiblePrograms.toDestination.push(obj);
                                                         } else {
-                                                            // Otherwise log general fee
-                                                            obj['fees'] = regions[reg].generalToUsFeeEconomy;
-                                                        }
+                                                            // If exception fee exists, log it to model
+                                                            if (excp.exceptionBusinessFee) {
+                                                                obj['fees'] = excp.exceptionBusinessFee; 
+                                                            } else {
+                                                                // Otherwise log general fee
+                                                                obj['fees'] = regions[reg].generalToUsFeeBusiness;
+                                                            }
 
-                                                        // If exception fee exists, log it to model
-                                                        if (excp.exceptionEconomyMiles) {
-                                                            obj['miles'] = excp.exceptionEconomyMiles; 
-                                                        } else {
-                                                            // Otherwise log general fee
-                                                            obj['miles'] = regions[reg].generalToUsMilesEconomy;
-                                                        }      
-                                                        // Push program to eligible programs object
-                                                        model.eligiblePrograms.toDestination.push(obj);
-                                                    } else {
-                                                        // If exception fee exists, log it to model
-                                                        if (excp.exceptionBusinessFee) {
-                                                            obj['fees'] = excp.exceptionBusinessFee; 
-                                                        } else {
-                                                            // Otherwise log general fee
-                                                            obj['fees'] = regions[reg].generalToUsFeeBusiness;
-                                                        }
-
-                                                        // If exception fee exists, log it to model
-                                                        if (excp.exceptionEconomyMiles) {
-                                                            obj['miles'] = excp.exceptionBusinessMiles; 
-                                                        } else {
-                                                            // Otherwise log general fee
-                                                            obj['miles'] = regions[reg].generalToUsMilesBusiness;
-                                                        }      
-                                                        // Push program to eligible programs object
-                                                        model.eligiblePrograms.toDestination.push(obj);
-                                                    }   
+                                                            // If exception fee exists, log it to model
+                                                            if (excp.exceptionEconomyMiles) {
+                                                                obj['miles'] = excp.exceptionBusinessMiles; 
+                                                            } else {
+                                                                // Otherwise log general fee
+                                                                obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                            }      
+                                                            // Push program to eligible programs object
+                                                            model.eligiblePrograms.toDestination.push(obj);
+                                                        }   
+                                                    }
                                                 }
-                                            }
-                                        });
+                                            });
+                                        }
                                     }
                                 }
 
@@ -39721,97 +39724,100 @@ var model = {
                                         // If fromRegion does match but general toRegion does 
                                         // not, then check to see if the program 
                                         // supports the user's toRegion destination in exceptions.
-                                        
-                                        regions[reg].exceptionFromAirports.forEach(function (excp) {
-                                            if (excp.exceptionAirportCode === model.userFlightSelections.fromDestination.toAirport) {
-                                                // Success! Program supports from and to 
-                                                // destinations, so push the following data to 
-                                                // the program in the user's freq flier prog obj
+                                        if (regions[reg].exceptionFromAirports) {
+                                            regions[reg].exceptionFromAirports.forEach(function (excp) {
+                                                if (excp.exceptionAirportCode === model.userFlightSelections.fromDestination.toAirport) {
+                                                    // Success! Program supports from and to 
+                                                    // destinations, so push the following data to 
+                                                    // the program in the user's freq flier prog obj
 
-                                                var obj = {};
-                                                obj['name'] = prog.name;
-                                                obj['points'] = prog.points;
-                                                obj['supportsRoute'] = true;
-                                                obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                    var obj = {};
+                                                    obj['name'] = prog.name;
+                                                    obj['points'] = prog.points;
+                                                    obj['supportsRoute'] = true;
+                                                    obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
+                                                    obj['to'] = model.userFlightSelections.fromDestination.toAirport;
 
-                                                if (model.userFlightSelections.fromDestination.class === 'economy') {
-                                                    obj['fees'] = excp.exceptionEconomyFee;
-                                                    obj['miles'] = excp.exceptionEconomyMiles;
-                                                    model.eligiblePrograms.fromDestination.push(obj);
-                                                } else {
-                                                    obj['fees'] = excp.exceptionBusinessFee;
-                                                    obj['miles'] = excp.exceptionBusinessMiles;
-                                                    model.eligiblePrograms.fromDestination.push(obj);
+                                                    if (model.userFlightSelections.fromDestination.class === 'economy') {
+                                                        obj['fees'] = excp.exceptionEconomyFee;
+                                                        obj['miles'] = excp.exceptionEconomyMiles;
+                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                    } else {
+                                                        obj['fees'] = excp.exceptionBusinessFee;
+                                                        obj['miles'] = excp.exceptionBusinessMiles;
+                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                    }
                                                 }
-                                            }
-                                        });                                 
+                                            });
+                                        }                                 
                                     } else {
                                         // For non-US from regions, check to see if the from airport selected
                                         // by the user is in the exceptionFromAirports key of the non-US region
                                         // object. If it is, push the exception to the eligible programs object
                                         // with the exception's values overriding the region's general values.
                                         if (reg !== 'us') {
-                                            regions[reg].exceptionFromAirports.forEach(function(excp) {
-                                                // Check if the user from airport matches with the region's
-                                                // exception from airports.
-                                                if (model.userFlightSelections.fromDestination.fromAirport === excp.exceptionAirportCode) {
-                                                    // Success! Now check to see if the user to airport matches 
-                                                    // with the US to airports from abroad.
-                                                    if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                            if (regions[reg].exceptionFromAirports) {    
+                                                regions[reg].exceptionFromAirports.forEach(function(excp) {
+                                                    // Check if the user from airport matches with the region's
+                                                    // exception from airports.
+                                                    if (model.userFlightSelections.fromDestination.fromAirport === excp.exceptionAirportCode) {
+                                                        // Success! Now check to see if the user to airport matches 
+                                                        // with the US to airports from abroad.
+                                                        if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
 
-                                                        // Success! Program supports from and to 
-                                                        // destinations, so push the following data to 
-                                                        // the program in the user's freq flier prog obj
+                                                            // Success! Program supports from and to 
+                                                            // destinations, so push the following data to 
+                                                            // the program in the user's freq flier prog obj
 
-                                                        var obj = {};
-                                                        obj['name'] = prog.name;
-                                                        obj['points'] = prog.points;
-                                                        obj['supportsRoute'] = true;
-                                                        obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                        obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                            var obj = {};
+                                                            obj['name'] = prog.name;
+                                                            obj['points'] = prog.points;
+                                                            obj['supportsRoute'] = true;
+                                                            obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
+                                                            obj['to'] = model.userFlightSelections.fromDestination.toAirport;
 
-                                                        if (model.userFlightSelections.fromDestination.class === 'economy') {
-                                                            
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionEconomyFee) {
-                                                                obj['fees'] = excp.exceptionEconomyFee; 
+                                                            if (model.userFlightSelections.fromDestination.class === 'economy') {
+                                                                
+                                                                // If exception fee exists, log it to model
+                                                                if (excp.exceptionEconomyFee) {
+                                                                    obj['fees'] = excp.exceptionEconomyFee; 
+                                                                } else {
+                                                                    // Otherwise log general fee
+                                                                    obj['fees'] = regions[reg].generalToUsFeeEconomy;
+                                                                }
+
+                                                                // If exception fee exists, log it to model
+                                                                if (excp.exceptionEconomyMiles) {
+                                                                    obj['miles'] = excp.exceptionEconomyMiles; 
+                                                                } else {
+                                                                    // Otherwise log general fee
+                                                                    obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                                }      
+                                                                // Push program to eligible programs object
+                                                                model.eligiblePrograms.fromDestination.push(obj);
                                                             } else {
-                                                                // Otherwise log general fee
-                                                                obj['fees'] = regions[reg].generalToUsFeeEconomy;
-                                                            }
+                                                                // If exception fee exists, log it to model
+                                                                if (excp.exceptionBusinessFee) {
+                                                                    obj['fees'] = excp.exceptionBusinessFee; 
+                                                                } else {
+                                                                    // Otherwise log general fee
+                                                                    obj['fees'] = regions[reg].generalToUsFeeBusiness;
+                                                                }
 
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionEconomyMiles) {
-                                                                obj['miles'] = excp.exceptionEconomyMiles; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['miles'] = regions[reg].generalToUsMilesEconomy;
-                                                            }      
-                                                            // Push program to eligible programs object
-                                                            model.eligiblePrograms.fromDestination.push(obj);
-                                                        } else {
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionBusinessFee) {
-                                                                obj['fees'] = excp.exceptionBusinessFee; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['fees'] = regions[reg].generalToUsFeeBusiness;
-                                                            }
-
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionEconomyMiles) {
-                                                                obj['miles'] = excp.exceptionBusinessMiles; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['miles'] = regions[reg].generalToUsMilesBusiness;
-                                                            }      
-                                                            // Push program to eligible programs object
-                                                            model.eligiblePrograms.fromDestination.push(obj);
-                                                        }   
+                                                                // If exception fee exists, log it to model
+                                                                if (excp.exceptionEconomyMiles) {
+                                                                    obj['miles'] = excp.exceptionBusinessMiles; 
+                                                                } else {
+                                                                    // Otherwise log general fee
+                                                                    obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                                }      
+                                                                // Push program to eligible programs object
+                                                                model.eligiblePrograms.fromDestination.push(obj);
+                                                            }   
+                                                        }
                                                     }
-                                                }
-                                            });
+                                                });
+                                            }
                                         }
                                     }
                                 }                           
