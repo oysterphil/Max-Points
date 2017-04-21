@@ -39300,7 +39300,7 @@ var model = {
         },
         userPrograms: [
             {
-                name: 'chase',
+                name: 'chaseAnyCard',
                 points: 25000
             },
             {
@@ -39323,31 +39323,31 @@ var model = {
             // points transferrable programs.
             
             // Reset Frequent Flier Programs
-            model.userFreqFlierPrograms = [];
+            model.rewProg.userFreqFlierPrograms = [];
 
             var progExists = false;
 
-            model.userPrograms.forEach(function(prog) {
+            model.rewProg.userPrograms.forEach(function(prog) {
                 var pointsTransferrableProgs = [
                     {
                         prog: 'chaseAnyCard',
-                        ref: model.programs.pointsTransferrable.chaseAnyCard.participatingPrograms
+                        ref: model.rewProg.programs.pointsTransferrable.chaseAnyCard.participatingPrograms
                     },
                     {
                         prog: 'chaseReserveCard',
-                        ref: model.programs.pointsTransferrable.chaseReserveCard.participatingPrograms
+                        ref: model.rewProg.programs.pointsTransferrable.chaseReserveCard.participatingPrograms
                     },
                     {
                         prog: 'amexAnyCard',
-                        ref: model.programs.pointsTransferrable.amexAnyCard.participatingPrograms
+                        ref: model.rewProg.programs.pointsTransferrable.amexAnyCard.participatingPrograms
                     },
                     {
                         prog: 'amexBiz',
-                        ref: model.programs.pointsTransferrable.amexBiz.participatingPrograms
+                        ref: model.rewProg.programs.pointsTransferrable.amexBiz.participatingPrograms
                     },
                     {
                         prog: 'citi',
-                        ref: model.programs.pointsTransferrable.citi.participatingPrograms
+                        ref: model.rewProg.programs.pointsTransferrable.citi.participatingPrograms
                     }
                 ];
                 pointsTransferrableProgs.forEach(function(ptProg) {
@@ -39360,7 +39360,7 @@ var model = {
                             var obj = {};
                             obj['name'] = p.name;
                             obj['points'] = prog.points * p.pointTransferRate;
-                            model.userFreqFlierPrograms.push(obj);
+                            model.rewProg.userFreqFlierPrograms.push(obj);
                         });
                     }
                 });
@@ -39368,11 +39368,11 @@ var model = {
                 // Next check for frequent flier and cash back 
                 // programs. First, though, check and see if 
                 // the their selection is already in the 
-                // model.userFreqFlierPrograms array due to a
+                // model.rewProg.userFreqFlierPrograms array due to a
                 // points transferrable program and then add
                 // the points.
 
-                model.userFreqFlierPrograms.forEach(function(sel) {
+                model.rewProg.userFreqFlierPrograms.forEach(function(sel) {
                     if (prog.name === sel.name) {
                         sel.points += prog.points;
                         progExists = true;
@@ -39386,16 +39386,16 @@ var model = {
                     prog.name === 'citi') {
 
                 } else if (!progExists) {
-                    model.userFreqFlierPrograms.push(prog);
+                    model.rewProg.userFreqFlierPrograms.push(prog);
                 }
 
                 // Reset progExists
                 progExists = false;
             });
 
-            console.log(model.userFreqFlierPrograms);
+            console.log(model.rewProg.userFreqFlierPrograms);
 
-            model.determineElibilePrograms();
+            model.rewProg.determineElibilePrograms();
         },
         determineElibilePrograms: () => {
             
@@ -39420,8 +39420,8 @@ var model = {
             ];
 
             // For Each Frequent Flier Program with points fully updated
-            model.userFreqFlierPrograms.forEach(function(prog) {
-                var ff = model.programs.frequentFlier;
+            model.rewProg.userFreqFlierPrograms.forEach(function(prog) {
+                var ff = model.rewProg.programs.frequentFlier;
                 // For every frequent flier program
                 for (var key in ff) {
                     // When the User's Freq. Flier Program matches with 
@@ -39439,7 +39439,7 @@ var model = {
                                 // and then check for toRegion. There are no from exceptions
                                 // if the from region is the US, but there are from exceptions
                                 // if the region is not the US. 
-                                if (regions[reg].generalFromAirports.indexOf(model.userFlightSelections.toDestination.fromAirport) > -1) {
+                                if (regions[reg].generalFromAirports.indexOf(model.rewProg.userFlightSelections.toDestination.fromAirport) > -1) {
 
                                     // IF the from region is the U.S.
 
@@ -39450,7 +39450,7 @@ var model = {
                                         
                                         for (var costReg in regions[reg].generalToRegionCosts) {
                                             
-                                            if (regions[reg].generalToRegionCosts[costReg].airports.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                            if (regions[reg].generalToRegionCosts[costReg].airports.indexOf(model.rewProg.userFlightSelections.toDestination.toAirport) > -1) {
                                                 // Success! Program supports from and to 
                                                 // destinations, so push the following data to 
                                                 // the program in the user's freq flier prog obj
@@ -39459,17 +39459,17 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
-                                                obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                                obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                                obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
-                                                if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                     obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
-                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
-                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 }
                                             }
                                         }
@@ -39478,7 +39478,7 @@ var model = {
                                         // IF the from region is NOT the U.S., then check to see if
                                         // the program supports the user's toRegion destination.
 
-                                        if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                        if (model.rewProg.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.rewProg.userFlightSelections.toDestination.toAirport) > -1) {
 
                                             // Success! Program supports from and to 
                                             // destinations, so push the following data to 
@@ -39489,17 +39489,17 @@ var model = {
                                             obj['displayName'] = ff[key].displayName;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
-                                            obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                            obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                            obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                                            obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
-                                            if (model.userFlightSelections.toDestination.class === 'economy') {
+                                            if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                 obj['fees'] = regions[reg].generalToUsFeeEconomy;
                                                 obj['miles'] = regions[reg].generalToUsMilesEconomy;
-                                                model.eligiblePrograms.toDestination.push(obj);
+                                                model.rewProg.eligiblePrograms.toDestination.push(obj);
                                             } else {
                                                 obj['fees'] = regions[reg].generalToUsFeeBusiness;
                                                 obj['miles'] = regions[reg].generalToUsMilesBusiness;
-                                                model.eligiblePrograms.toDestination.push(obj);
+                                                model.rewProg.eligiblePrograms.toDestination.push(obj);
                                             }   
                                         }
 
@@ -39511,7 +39511,7 @@ var model = {
                                     
                                     if (regions[reg].exceptionFromAirports) {
                                         regions[reg].exceptionFromAirports.forEach(function (excp) {
-                                            if (excp.exceptionAirportCode === model.userFlightSelections.toDestination.toAirport) {
+                                            if (excp.exceptionAirportCode === model.rewProg.userFlightSelections.toDestination.toAirport) {
                                                 // Success! Program supports from and to 
                                                 // destinations, so push the following data to 
                                                 // the program in the user's freq flier prog obj
@@ -39521,17 +39521,17 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
-                                                obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                                obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                                obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
-                                                if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                     obj['fees'] = excp.exceptionEconomyFee;
                                                     obj['miles'] = excp.exceptionEconomyMiles;
-                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = excp.exceptionBusinessFee;
                                                     obj['miles'] = excp.exceptionBusinessMiles;
-                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 }
                                             }
                                         }); 
@@ -39547,10 +39547,10 @@ var model = {
                                             regions[reg].exceptionFromAirports.forEach(function(excp) {
                                                 // Check if the user from airport matches with the region's
                                                 // exception from airports.
-                                                if (model.userFlightSelections.toDestination.fromAirport === excp.exceptionAirportCode) {
+                                                if (model.rewProg.userFlightSelections.toDestination.fromAirport === excp.exceptionAirportCode) {
                                                     // Success! Now check to see if the user to airport matches 
                                                     // with the US to airports from abroad.
-                                                    if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                                    if (model.rewProg.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.rewProg.userFlightSelections.toDestination.toAirport) > -1) {
 
                                                         // Success! Program supports from and to 
                                                         // destinations, so push the following data to 
@@ -39561,10 +39561,10 @@ var model = {
                                                         obj['displayName'] = ff[key].displayName;
                                                         obj['points'] = prog.points;
                                                         obj['supportsRoute'] = true;
-                                                        obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                                        obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                                        obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                                                        obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
-                                                        if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                        if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                             
                                                             // If exception fee exists, log it to model
                                                             if (excp.exceptionEconomyFee) {
@@ -39582,7 +39582,7 @@ var model = {
                                                                 obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                             }      
                                                             // Push program to eligible programs object
-                                                            model.eligiblePrograms.toDestination.push(obj);
+                                                            model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                         } else {
                                                             // If exception fee exists, log it to model
                                                             if (excp.exceptionBusinessFee) {
@@ -39600,7 +39600,7 @@ var model = {
                                                                 obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                             }      
                                                             // Push program to eligible programs object
-                                                            model.eligiblePrograms.toDestination.push(obj);
+                                                            model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                         }   
                                                     }
                                                 }
@@ -39610,14 +39610,14 @@ var model = {
                                 }
 
                                 // If roundTrip, perform for from destination
-                                if (model.userFlightSelections.toDestination.type === 'roundTrip') {
+                                if (model.rewProg.userFlightSelections.toDestination.type === 'roundTrip') {
 
                                     // Check to see if the user selection from airport
                                     // matches this region's general from airports first
                                     // and then check for toRegion. There are no from exceptions
                                     // if the from region is the US, but there are from exceptions
                                     // if the region is not the US. 
-                                    if (regions[reg].generalFromAirports.indexOf(model.userFlightSelections.fromDestination.fromAirport) > -1) {
+                                    if (regions[reg].generalFromAirports.indexOf(model.rewProg.userFlightSelections.fromDestination.fromAirport) > -1) {
 
                                         // IF the from region is the U.S.
 
@@ -39628,7 +39628,7 @@ var model = {
                                             
                                             for (var costReg in regions[reg].generalToRegionCosts) {
                                                 
-                                                if (regions[reg].generalToRegionCosts[costReg].airports.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                                if (regions[reg].generalToRegionCosts[costReg].airports.indexOf(model.rewProg.userFlightSelections.fromDestination.toAirport) > -1) {
                                                     // Success! Program supports from and to 
                                                     // destinations, so push the following data to 
                                                     // the program in the user's freq flier prog obj
@@ -39637,17 +39637,17 @@ var model = {
                                                     obj['displayName'] = ff[key].displayName;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
-                                                    obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                    obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                    obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                    obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                    if (model.userFlightSelections.fromDestination.class === 'economy') {
+                                                    if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
                                                         obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
                                                         obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
-                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     } else {
                                                         obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
                                                         obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
-                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
                                                 }
                                             }
@@ -39656,7 +39656,7 @@ var model = {
                                             // IF the from region is NOT the U.S., then check to see if
                                             // the program supports the user's toRegion destination.
 
-                                            if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                            if (model.rewProg.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.rewProg.userFlightSelections.fromDestination.toAirport) > -1) {
 
                                                 // Success! Program supports from and to 
                                                 // destinations, so push the following data to 
@@ -39667,17 +39667,17 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
-                                                obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                if (model.userFlightSelections.fromDestination.class === 'economy') {
+                                                if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
                                                     obj['fees'] = regions[reg].generalToUsFeeEconomy;
                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
-                                                    model.eligiblePrograms.fromDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = regions[reg].generalToUsFeeBusiness;
                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
-                                                    model.eligiblePrograms.fromDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                 }   
                                             }
 
@@ -39688,7 +39688,7 @@ var model = {
                                         // supports the user's toRegion destination in exceptions.
                                         if (regions[reg].exceptionFromAirports) {
                                             regions[reg].exceptionFromAirports.forEach(function (excp) {
-                                                if (excp.exceptionAirportCode === model.userFlightSelections.fromDestination.toAirport) {
+                                                if (excp.exceptionAirportCode === model.rewProg.userFlightSelections.fromDestination.toAirport) {
                                                     // Success! Program supports from and to 
                                                     // destinations, so push the following data to 
                                                     // the program in the user's freq flier prog obj
@@ -39698,17 +39698,17 @@ var model = {
                                                     obj['displayName'] = ff[key].displayName;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
-                                                    obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                    obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                    obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                    obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                    if (model.userFlightSelections.fromDestination.class === 'economy') {
+                                                    if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
                                                         obj['fees'] = excp.exceptionEconomyFee;
                                                         obj['miles'] = excp.exceptionEconomyMiles;
-                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     } else {
                                                         obj['fees'] = excp.exceptionBusinessFee;
                                                         obj['miles'] = excp.exceptionBusinessMiles;
-                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
                                                 }
                                             });
@@ -39723,10 +39723,10 @@ var model = {
                                                 regions[reg].exceptionFromAirports.forEach(function(excp) {
                                                     // Check if the user from airport matches with the region's
                                                     // exception from airports.
-                                                    if (model.userFlightSelections.fromDestination.fromAirport === excp.exceptionAirportCode) {
+                                                    if (model.rewProg.userFlightSelections.fromDestination.fromAirport === excp.exceptionAirportCode) {
                                                         // Success! Now check to see if the user to airport matches 
                                                         // with the US to airports from abroad.
-                                                        if (model.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                                        if (model.rewProg.programs.frequentFlier.toUsAirportsFromAbroad.indexOf(model.rewProg.userFlightSelections.fromDestination.toAirport) > -1) {
 
                                                             // Success! Program supports from and to 
                                                             // destinations, so push the following data to 
@@ -39737,10 +39737,10 @@ var model = {
                                                             obj['displayName'] = ff[key].displayName;
                                                             obj['points'] = prog.points;
                                                             obj['supportsRoute'] = true;
-                                                            obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                            obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                            obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                            obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                            if (model.userFlightSelections.fromDestination.class === 'economy') {
+                                                            if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
                                                                 
                                                                 // If exception fee exists, log it to model
                                                                 if (excp.exceptionEconomyFee) {
@@ -39758,7 +39758,7 @@ var model = {
                                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                                 }      
                                                                 // Push program to eligible programs object
-                                                                model.eligiblePrograms.fromDestination.push(obj);
+                                                                model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                             } else {
                                                                 // If exception fee exists, log it to model
                                                                 if (excp.exceptionBusinessFee) {
@@ -39776,7 +39776,7 @@ var model = {
                                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                                 }      
                                                                 // Push program to eligible programs object
-                                                                model.eligiblePrograms.fromDestination.push(obj);
+                                                                model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                             }   
                                                         }
                                                     }
@@ -39798,14 +39798,14 @@ var model = {
                             // supports the route.
 
                             batches.forEach(function(b) {
-                                if (b.fromAirportCodes.indexOf(model.userFlightSelections.toDestination.fromAirport) > -1) {
+                                if (b.fromAirportCodes.indexOf(model.rewProg.userFlightSelections.toDestination.fromAirport) > -1) {
                                     
                                     // If it does match, then check to see if the program 
                                     // supports the user's toRegion destination and at what 
                                     // fee.
 
                                     b.toBatches.forEach(function(toB) {
-                                        if (toB.batch.indexOf(model.userFlightSelections.toDestination.toAirport) > -1) {
+                                        if (toB.batch.indexOf(model.rewProg.userFlightSelections.toDestination.toAirport) > -1) {
                                             // Success! Program supports from and to 
                                             // destinations, so push the following data to 
                                             // the program in the user's freq flier prog obj
@@ -39814,22 +39814,22 @@ var model = {
                                             obj['displayName'] = ff[key].displayName;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
-                                            obj['from'] = model.userFlightSelections.toDestination.fromAirport;
-                                            obj['to'] = model.userFlightSelections.toDestination.toAirport;
+                                            obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                                            obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
-                                            if (model.userFlightSelections.toDestination.class === 'economy') {
+                                            if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                 obj['fees'] = toB.costs.economyFee;
                                                 obj['miles'] = toB.costs.economyMiles;
-                                                model.eligiblePrograms.toDestination.push(obj);
+                                                model.rewProg.eligiblePrograms.toDestination.push(obj);
                                             } else {
                                                 if (toB.costs.businessFee) {
                                                     obj['fees'] = toB.costs.businessFee;
                                                     obj['miles'] = toB.costs.businessMiles;
-                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = toB.costs.economyFee;
                                                     obj['miles'] = toB.costs.economyMiles;
-                                                    model.eligiblePrograms.toDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 }
                                                 
                                             }
@@ -39838,15 +39838,15 @@ var model = {
                                 }
 
                                 // If roundTrip, perform for from destination
-                                if (model.userFlightSelections.toDestination.type === 'roundTrip') {
-                                    if (b.fromAirportCodes.indexOf(model.userFlightSelections.fromDestination.fromAirport) > -1) {
+                                if (model.rewProg.userFlightSelections.toDestination.type === 'roundTrip') {
+                                    if (b.fromAirportCodes.indexOf(model.rewProg.userFlightSelections.fromDestination.fromAirport) > -1) {
                                     
                                         // If it does match, then check to see if the program 
                                         // supports the user's toRegion destination and at what 
                                         // fee.
 
                                         b.toBatches.forEach(function(toB) {
-                                            if (toB.batch.indexOf(model.userFlightSelections.fromDestination.toAirport) > -1) {
+                                            if (toB.batch.indexOf(model.rewProg.userFlightSelections.fromDestination.toAirport) > -1) {
                                                 // Success! Program supports from and to 
                                                 // destinations, so push the following data to 
                                                 // the program in the user's freq flier prog obj
@@ -39855,22 +39855,22 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
-                                                obj['from'] = model.userFlightSelections.fromDestination.fromAirport;
-                                                obj['to'] = model.userFlightSelections.fromDestination.toAirport;
+                                                obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                if (model.userFlightSelections.toDestination.class === 'economy') {
+                                                if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                     obj['fees'] = toB.costs.economyFee;
                                                     obj['miles'] = toB.costs.economyMiles;
-                                                    model.eligiblePrograms.fromDestination.push(obj);
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                 } else {
                                                     if (toB.costs.businessFee) {
                                                         obj['fees'] = toB.costs.businessFee;
                                                         obj['miles'] = toB.costs.businessMiles;
-                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     } else {
                                                         obj['fees'] = toB.costs.economyFee;
                                                         obj['miles'] = toB.costs.economyMiles;
-                                                        model.eligiblePrograms.fromDestination.push(obj);
+                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
                                                     
                                                 }
@@ -39884,7 +39884,7 @@ var model = {
                 }
             });
 
-            console.log(model.eligiblePrograms);
+            console.log(model.rewProg.eligiblePrograms);
         }
     },
     templates: {
@@ -39952,7 +39952,7 @@ var model = {
         },
         renderPointsRedemptionTemplate: () => {
             var redemptionCalculatorTemplateHtml =
-                model.templates.variables.redemptionCalculatorTemplate(model.rewProg.eligiblePrograms);
+                model.templates.variables.redemptionCalculatorTemplate(model.rewProg);
             document.getElementById('redemptionCalculator').innerHTML = 
                 redemptionCalculatorTemplateHtml;
         }
@@ -40898,34 +40898,34 @@ var model = {
 
             function vetRedemptionInputs() {
                 if (document.getElementById('fromAirport').value) {
-                    model.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value;
-                    model.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value;
-                    model.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
-                    model.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
-                    model.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
+                    model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value;
+                    model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value;
+                    model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
+                    model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
+                    model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
                 }
                 if (document.getElementById('fromAirportMobile').value) {
-                    model.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value;
-                    model.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value;
-                    model.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
-                    model.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
-                    model.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
+                    model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value;
+                    model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value;
+                    model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
+                    model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
+                    model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
                 }
 
                 if (document.getElementById('flightType').value === 'roundTrip') {
-                    model.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value;
-                    model.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value;
-                    model.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
-                    model.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
-                    model.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
+                    model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value;
+                    model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value;
+                    model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
+                    model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
+                    model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
                 }
 
                 if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
-                    model.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
-                    model.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
-                    model.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
-                    model.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
-                    model.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
                 }
 
                 // Log User's Programs, if applicable

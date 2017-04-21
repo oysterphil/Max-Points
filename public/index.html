@@ -2381,6 +2381,7 @@
           <!-- End Submit Button Desktop -->
 
         </div>
+      </div>
 
       <!-- Redemption Calculator Footer -->
       <footer class="page-footer" style="background-color: #0d47a1; padding-top: 0px;">
@@ -2402,7 +2403,7 @@
     <div class="hide-on-med-only hide-on-small-only" style="margin-left: 300px;">
         
       <div class="section no-pad-bot" style="padding-top: 0px;">
-        <div class="section col l10 offset-l1">
+        <div id="gatherProgramAndFlightInfo" class="section col l10 offset-l1">
           
           <!-- Flight Details Desktop --> 
           <div class="row">
@@ -2545,8 +2546,59 @@
 
           </div>
           <!-- End Submit Button Desktop -->
-
         </div>
+
+
+        <div id="displayProgramAndFlightInfo" class="section col l10 offset-l1">
+
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}}</a></li>
+                {{#if userFlightSelections.fromDestination.fromAirport}}
+                  <li class="tab col s3"><a class="active" href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}}</a></li>
+                {{/if}}
+              </ul>
+            </div>
+            <div id="toDestination" class="col s12">
+              {{#each eligiblePrograms.toDestination}}
+              <!-- Display To Destination Program and Flight Details Desktop --> 
+              <div class="row">
+                <div class="col m10 offset-m1">
+                  <div class="card horizontal">
+                    <div class="card-stacked">
+                      <div class="card-content">
+                      1
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Display To Destination Program and Flight Details Desktop -->
+              {{/each}}
+            </div>
+            {{#if userFlightSelections.fromDestination.fromAirport}}
+            <div id="fromDestination" class="col s12">
+              {{#each eligiblePrograms.fromDestination}}
+              <!-- Display From Destination Program and Flight Details Desktop --> 
+              <div class="row">
+                <div class="col m10 offset-m1">
+                  <div class="card horizontal">
+                    <div class="card-stacked">
+                      <div class="card-content">
+                      2
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Display From Destination Program and Flight Details Desktop -->
+              {{/each}}
+            </div>
+            {{/if}}
+          </div>
+        </div>
+
         
 
       <!-- Display Recommendations Footer Desktop -->
