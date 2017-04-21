@@ -6720,7 +6720,7 @@ var model = {
                                     economyFee: '5.60',
                                     economyMiles: '30,000',
                                     businessFee: '5.60',
-                                    businessMiles: '57,500/70,000',
+                                    businessMiles: '57,500-70,000',
                                     airports: [
                                         'AMS',
                                         'ATH',
@@ -7133,7 +7133,7 @@ var model = {
                                     economyFee: '7',
                                     economyMiles: '42,500',
                                     businessFee: '7',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         'TLV',
                                         'GYD',
@@ -7176,7 +7176,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '42,500',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         'KBL',
                                         'ALA',
@@ -7191,7 +7191,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '35,000',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         'ULN',
                                         'TPE',
@@ -7227,7 +7227,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '40,000',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         'MNL',
                                         'SIN',
@@ -7257,7 +7257,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '42,500',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         'DEL',
                                         'BOM',
@@ -7281,7 +7281,7 @@ var model = {
                                     economyFee: '30',
                                     economyMiles: '40,000',
                                     businessFee: '30',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         //NA
                                         'CMN',
@@ -7389,7 +7389,7 @@ var model = {
                                     economyFee: '5',
                                     economyMiles: '40,000',
                                     businessFee: '5',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                             'AKL',
                                             'CHC',
@@ -8119,7 +8119,7 @@ var model = {
                             generalToUsFeeEconomy: '70',
                             generalToUsMilesEconomy:'30,000',
                             generalToUsFeeBusiness: '70',
-                            generalToUsMilesBusiness: '57,500/70,000',
+                            generalToUsMilesBusiness: '57,500-70,000',
                             exceptionFromAirports: [
                                 {
                                     exceptionAirportCode: 'ARN',
@@ -8306,7 +8306,7 @@ var model = {
                             generalToUsFeeEconomy: '47',
                             generalToUsMilesEconomy:'42,500',
                             generalToUsFeeBusiness: '47',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                 {
                                     exceptionAirportCode: 'CAI',
@@ -8357,7 +8357,7 @@ var model = {
                             generalToUsFeeEconomy: '30',
                             generalToUsMilesEconomy:'42,500',
                             generalToUsFeeBusiness: '30',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                 {
                                     exceptionAirportCode: 'FRU',
@@ -8401,7 +8401,7 @@ var model = {
                             generalToUsFeeEconomy: '35',
                             generalToUsMilesEconomy:'35,000',
                             generalToUsFeeBusiness: '35',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                     {
                                     exceptionAirportCode: 'ULN',
@@ -8458,63 +8458,63 @@ var model = {
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'HND',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'KIX',
                                     exceptionEconomyFee: '49',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '49',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'ITM',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'CTS',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'SDJ',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'OKA',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'NGO',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     },
                                     {
                                     exceptionAirportCode: 'FUK',
                                     exceptionEconomyFee: '40',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '40',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                     }
                             ]
                         },  
@@ -8527,7 +8527,7 @@ var model = {
                             generalToUsFeeEconomy: '42',
                             generalToUsMilesEconomy:'40,000',
                             generalToUsFeeBusiness: '42',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                     {
                                     exceptionAirportCode: 'MNL',
@@ -8637,7 +8637,7 @@ var model = {
                             generalToUsFeeEconomy: '25',
                             generalToUsMilesEconomy:'42,500',
                             generalToUsFeeBusiness: '25',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                     {
                                     exceptionAirportCode: 'MLE',
@@ -8816,7 +8816,7 @@ var model = {
                             generalToUsFeeEconomy: '49',
                             generalToUsMilesEconomy:'40,000',
                             generalToUsFeeBusiness: '49',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                     {
                                     exceptionAirportCode: 'JNB',
@@ -8890,7 +8890,7 @@ var model = {
                             generalToUsFeeEconomy: '80',
                             generalToUsMilesEconomy:'40,000',
                             generalToUsFeeBusiness: '80',
-                            generalToUsMilesBusiness: '70,000/80,000',
+                            generalToUsMilesBusiness: '70,000-80,000',
                             exceptionFromAirports: [
                                 {
                                     exceptionAirportCode: 'AKL',
@@ -8942,14 +8942,14 @@ var model = {
                                     exceptionEconomyFee: '30',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '30',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                 },
                                 {
                                     exceptionAirportCode: 'ROR',
                                     exceptionEconomyFee: '27',
                                     exceptionEconomyMiles: '35,000',
                                     exceptionBusinessFee: '27',
-                                    exceptionBusinessMiles: '65,000/75,000'
+                                    exceptionBusinessMiles: '65,000-75,000'
                                 }
                         ]
                     }
@@ -9242,9 +9242,9 @@ var model = {
                                 },
                                 europe: {
                                     economyFee: '5.60',
-                                    economyMiles: '30,000/37,500',
+                                    economyMiles: '30,000-37,500',
                                     businessFee: '5.60',
-                                    businessMiles: '55,000/57,500',
+                                    businessMiles: '55,000-57,500',
                                     airports: [
                                         'AMS',
                                         'ATH',
@@ -10407,9 +10407,9 @@ var model = {
                                         'ZAG'
                             ],
                             generalToUsFeeEconomy: '70',
-                            generalToUsMilesEconomy:'30,000/37,500',
+                            generalToUsMilesEconomy:'30,000-37,500',
                             generalToUsFeeBusiness: '70',
-                            generalToUsMilesBusiness: '55,000/57,500',
+                            generalToUsMilesBusiness: '55,000-57,500',
                             exceptionFromAirports: [
                                 {
                                     exceptionAirportCode: 'ARN',
@@ -12498,9 +12498,9 @@ var model = {
                                     'HGH'
                             ],
                             generalToUsFeeEconomy: '35',
-                            generalToUsMilesEconomy:'22,500/30,000',
+                            generalToUsMilesEconomy:'22,500-30,000',
                             generalToUsFeeBusiness: '35',
-                            generalToUsMilesBusiness: '40,000/47,500',
+                            generalToUsMilesBusiness: '40,000-47,500',
                             exceptionFromAirports: [
                                     {
                                     exceptionAirportCode: 'TPE',
@@ -13304,7 +13304,7 @@ var model = {
                                     economyFee: '7',
                                     economyMiles: '42,500',
                                     businessFee: '7',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                     ]
                                 },
@@ -13312,7 +13312,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '42,500',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                     ]
                                 },
@@ -13320,7 +13320,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '35,000',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
             
                                     ]
@@ -13329,7 +13329,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '40,000',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         
                                     ]
@@ -13338,7 +13338,7 @@ var model = {
                                     economyFee: '35',
                                     economyMiles: '42,500',
                                     businessFee: '35',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                                                     
                                         ]
@@ -13347,7 +13347,7 @@ var model = {
                                     economyFee: '30',
                                     economyMiles: '40,000',
                                     businessFee: '30',
-                                    businessMiles: '70,000/80,000',
+                                    businessMiles: '70,000-80,000',
                                     airports: [
                                         
                                     ]
@@ -13356,7 +13356,7 @@ var model = {
                                     economyFee: '5',
                                     economyMiles: '35,000',
                                     businessFee: '5',
-                                    businessMiles: '65,000/75,000',
+                                    businessMiles: '65,000-75,000',
                                     airports: [
                                             
                                     ]
@@ -13969,7 +13969,7 @@ var model = {
                                 },
                                 mexico: {
                                     economyFee: '5.60',
-                                    economyMiles: '12,500/17,500',
+                                    economyMiles: '12,500-17,500',
                                     businessFee: '5.60',
                                     businessMiles: '27,500',
                                     airports: [
@@ -13987,7 +13987,7 @@ var model = {
                                 },
                                 hawaii: {
                                     economyFee: '5.60',
-                                    economyMiles: '20,000/22,500',
+                                    economyMiles: '20,000-22,500',
                                     businessFee: '5.60',
                                     businessMiles: '40,000',
                                     airports: [
@@ -14000,7 +14000,7 @@ var model = {
                                 },
                                 carribean: {
                                     economyFee: '5.60',
-                                    economyMiles: '12,500/17,500',
+                                    economyMiles: '12,500-17,500',
                                     businessFee: '5.60',
                                     businessMiles: '27,500',
                                     airports: [
@@ -14038,7 +14038,7 @@ var model = {
                                 },
                                 centralAmerica: {
                                     economyFee: '5.60',
-                                    economyMiles: '12,500/17,500',
+                                    economyMiles: '12,500-17,500',
                                     businessFee: '5.60',
                                     businessMiles: '27,500',
                                     airports: [
@@ -14109,7 +14109,7 @@ var model = {
                                 },
                                 europe: {
                                     economyFee: '5.60',
-                                    economyMiles: '22,500/30,000',
+                                    economyMiles: '22,500-30,000',
                                     businessFee: '5.60',
                                     businessMiles: '57,500',
                                     airports: [
@@ -14504,7 +14504,7 @@ var model = {
                                 'SJD'
                             ],
                             generalToUsFeeEconomy: '55',
-                            generalToUsMilesEconomy:'12,500/17,500',
+                            generalToUsMilesEconomy:'12,500-17,500',
                             generalToUsFeeBusiness: '55',
                             generalToUsMilesBusiness: '27,500',
                             exceptionFromAirports: null
@@ -14518,7 +14518,7 @@ var model = {
                                 'LIH'
                             ],
                             generalToUsFeeEconomy: '5',
-                            generalToUsMilesEconomy:'20,000/22,500',
+                            generalToUsMilesEconomy:'20,000-22,500',
                             generalToUsFeeBusiness: '5',
                             generalToUsMilesBusiness: '40,000',
                             exceptionFromAirports: null
@@ -14556,7 +14556,7 @@ var model = {
                                 'GND'   
                             ],
                             generalToUsFeeEconomy: '75',
-                            generalToUsMilesEconomy:'12,500/17,500',
+                            generalToUsMilesEconomy:'12,500-17,500',
                             generalToUsFeeBusiness: '75',
                             generalToUsMilesBusiness: '27,500',
                             exceptionFromAirports: null,
@@ -14578,7 +14578,7 @@ var model = {
                                         'SAP'   
                             ],
                             generalToUsFeeEconomy: '70',
-                            generalToUsMilesEconomy:'12,500/17,500',
+                            generalToUsMilesEconomy:'12,500-17,500',
                             generalToUsFeeBusiness: '70',
                             generalToUsMilesBusiness: '27,500',
                             exceptionFromAirports: null,
@@ -14782,7 +14782,7 @@ var model = {
                                     'GVA'
                                     ],
                             generalToUsFeeEconomy: '70',
-                            generalToUsMilesEconomy:'22,500/30,000',
+                            generalToUsMilesEconomy:'22,500-30,000',
                             generalToUsFeeBusiness: '70',
                             generalToUsMilesBusiness: '57,500',
                             exceptionFromAirports: [
@@ -15780,9 +15780,9 @@ var model = {
                                 },
                                 southSouthAmerica: {
                                     economyFee: '5.60',
-                                    economyMiles: '30,000/35,000',
+                                    economyMiles: '30,000-35,000',
                                     businessFee: '5.60',
-                                    businessMiles: '75,000/100,000',
+                                    businessMiles: '75,000-100,000',
                                     airports: [
                                         'VVI',
                                         'LPB',
@@ -16536,9 +16536,9 @@ var model = {
                                 'MAO'
                             ],
                             generalToUsFeeEconomy: '54',
-                            generalToUsMilesEconomy:'30,000/35,000',
+                            generalToUsMilesEconomy:'30,000-35,000',
                             generalToUsFeeBusiness: '54',
-                            generalToUsMilesBusiness:'75,000/100,000',
+                            generalToUsMilesBusiness:'75,000-100,000',
                             exceptionFromAirports: [
                                 {
                                     exceptionAirportCode: 'EZE',
@@ -38303,9 +38303,9 @@ var model = {
                                     ],
                                     costs: {
                                         economyFee: '30',
-                                        economyMiles: '13,000/20,000',
+                                        economyMiles: '13,000-20,000',
                                         businessFee: '40',
-                                        businessMiles: '50,000/60,000'
+                                        businessMiles: '50,000-60,000'
                                     }
                                 },  
                             ]
@@ -38328,9 +38328,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '70',
-                                        economyMiles: '13,000/20,000',
+                                        economyMiles: '13,000-20,000',
                                         businessFee: '80',
-                                        businessMiles: '50,000/60,000'
+                                        businessMiles: '50,000-60,000'
                                     }
                                 },  
                             ]
@@ -38352,7 +38352,7 @@ var model = {
                                         economyFee: '30',
                                         economyMiles: '16,240/25,000',
                                         businessFee: '40',
-                                        businessMiles: '62,500/75,000'
+                                        businessMiles: '62,500-75,000'
                                     }
                                 },  
                             ]
@@ -38374,7 +38374,7 @@ var model = {
                                         economyFee: '70',
                                         economyMiles: '16,240/25,000',
                                         businessFee: '80',
-                                        businessMiles: '62,500/75,000'
+                                        businessMiles: '62,500-75,000'
                                     }
                                 },  
                             ]
@@ -38412,9 +38412,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '40',
-                                        economyMiles: '17,500/24,500',
+                                        economyMiles: '17,500-24,500',
                                         businessFee: '50',
-                                        businessMiles: '54,500/64,500'
+                                        businessMiles: '54,500-64,500'
                                     }
                                 },  
                             ]
@@ -38445,9 +38445,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '80',
-                                        economyMiles: '17,500/24,500',
+                                        economyMiles: '17,500-24,500',
                                         businessFee: '90',
-                                        businessMiles: '54,500/64,500'
+                                        businessMiles: '54,500-64,500'
                                     }
                                 },  
                             ]
@@ -38475,9 +38475,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '100',
-                                        economyMiles: '17,500/24,500',
+                                        economyMiles: '17,500-24,500',
                                         businessFee: '110',
-                                        businessMiles: '54,500/64,500'
+                                        businessMiles: '54,500-64,500'
                                     }
                                 },  
                             ]
@@ -38528,9 +38528,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '40',
-                                        economyMiles: '20,500/27,500',
+                                        economyMiles: '20,500-27,500',
                                         businessFee: '50',
-                                        businessMiles: '57,500/67,500'
+                                        businessMiles: '57,500-67,500'
                                     }
                                 },  
                             ]
@@ -38581,9 +38581,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '80',
-                                        economyMiles: '20,500/27,500',
+                                        economyMiles: '20,500-27,500',
                                         businessFee: '90',
-                                        businessMiles: '57,500/67,500'
+                                        businessMiles: '57,500-67,500'
                                     }
                                 },  
                             ]
@@ -38614,9 +38614,9 @@ var model = {
                                     ],
                                     costs: {
                                         economyFee: '40',
-                                        economyMiles: '23,000/30,000',
+                                        economyMiles: '23,000-30,000',
                                         businessFee: '50',
-                                        businessMiles: '60,000/70,000'
+                                        businessMiles: '60,000-70,000'
                                     }
                                 },  
                             ]
@@ -38648,9 +38648,9 @@ var model = {
                                     costs: {
                                         // If business, include 
                                         economyFee: '80',
-                                        economyMiles: '23,000/30,000',
+                                        economyMiles: '23,000-30,000',
                                         businessFee: '90',
-                                        businessMiles: '60,000/70,000'
+                                        businessMiles: '60,000-70,000'
                                     }
                                 },  
                             ]
@@ -39457,6 +39457,7 @@ var model = {
                                                 var obj = {};
                                                 
                                                 obj['displayName'] = ff[key].displayName;
+                                                obj['logo'] = ff[key].logo;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39465,10 +39466,29 @@ var model = {
                                                 if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                     obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                    var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }
+
                                                     model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                    var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }
                                                     model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 }
                                             }
@@ -39487,6 +39507,7 @@ var model = {
                                             var obj = {};
                                             
                                             obj['displayName'] = ff[key].displayName;
+                                            obj['logo'] = ff[key].logo;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39495,12 +39516,32 @@ var model = {
                                             if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                 obj['fees'] = regions[reg].generalToUsFeeEconomy;
                                                 obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                var num = regions[reg].generalToUsMilesEconomy;
+                                                num = num.substring((num.indexOf('-')+1),num.length);
+                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    obj['enoughPoints'] = 'Yes!';
+                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    obj['enoughPoints'] = 'Close!';
+                                                } else {
+                                                    obj['enoughPoints'] = 'No';
+                                                }
+
                                                 model.rewProg.eligiblePrograms.toDestination.push(obj);
                                             } else {
                                                 obj['fees'] = regions[reg].generalToUsFeeBusiness;
                                                 obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                var num = regions[reg].generalToUsMilesBusiness;
+                                                num = num.substring((num.indexOf('-')+1),num.length);
+                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    obj['enoughPoints'] = 'Yes!';
+                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    obj['enoughPoints'] = 'Close!';
+                                                } else {
+                                                    obj['enoughPoints'] = 'No';
+                                                }
+
                                                 model.rewProg.eligiblePrograms.toDestination.push(obj);
-                                            }   
+                                            }
                                         }
 
                                     }
@@ -39519,6 +39560,7 @@ var model = {
                                                 var obj = {};
                                                 
                                                 obj['displayName'] = ff[key].displayName;
+                                                obj['logo'] = ff[key].logo;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39559,6 +39601,7 @@ var model = {
                                                         var obj = {};
                                                         
                                                         obj['displayName'] = ff[key].displayName;
+                                                        obj['logo'] = ff[key].logo;
                                                         obj['points'] = prog.points;
                                                         obj['supportsRoute'] = true;
                                                         obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39580,6 +39623,15 @@ var model = {
                                                             } else {
                                                                 // Otherwise log general fee
                                                                 obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                                var num = regions[reg].generalToUsMilesEconomy;
+                                                                num = num.substring((num.indexOf('-')+1),num.length);
+                                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                                    obj['enoughPoints'] = 'Yes!';
+                                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                                    obj['enoughPoints'] = 'Close!';
+                                                                } else {
+                                                                    obj['enoughPoints'] = 'No';
+                                                                }
                                                             }      
                                                             // Push program to eligible programs object
                                                             model.rewProg.eligiblePrograms.toDestination.push(obj);
@@ -39598,6 +39650,15 @@ var model = {
                                                             } else {
                                                                 // Otherwise log general fee
                                                                 obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                                var num = regions[reg].generalToUsMilesBusiness;
+                                                                num = num.substring((num.indexOf('-')+1),num.length);
+                                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                                    obj['enoughPoints'] = 'Yes!';
+                                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                                    obj['enoughPoints'] = 'Close!';
+                                                                } else {
+                                                                    obj['enoughPoints'] = 'No';
+                                                                }
                                                             }      
                                                             // Push program to eligible programs object
                                                             model.rewProg.eligiblePrograms.toDestination.push(obj);
@@ -39635,6 +39696,7 @@ var model = {
                                                     var obj = {};
                                                     
                                                     obj['displayName'] = ff[key].displayName;
+                                                    obj['logo'] = ff[key].logo;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39643,10 +39705,28 @@ var model = {
                                                     if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
                                                         obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
                                                         obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                        var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                        num = num.substring((num.indexOf('-')+1),num.length);
+                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                            obj['enoughPoints'] = 'Yes!';
+                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                            obj['enoughPoints'] = 'Close!';
+                                                        } else {
+                                                            obj['enoughPoints'] = 'No';
+                                                        }
                                                         model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     } else {
                                                         obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
                                                         obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                        var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                        num = num.substring((num.indexOf('-')+1),num.length);
+                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                            obj['enoughPoints'] = 'Yes!';
+                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                            obj['enoughPoints'] = 'Close!';
+                                                        } else {
+                                                            obj['enoughPoints'] = 'No';
+                                                        }
                                                         model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
                                                 }
@@ -39665,6 +39745,7 @@ var model = {
                                                 var obj = {};
                                                 
                                                 obj['displayName'] = ff[key].displayName;
+                                                obj['logo'] = ff[key].logo;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39673,10 +39754,28 @@ var model = {
                                                 if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
                                                     obj['fees'] = regions[reg].generalToUsFeeEconomy;
                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                    var num = regions[reg].generalToUsMilesEconomy;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }
                                                     model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = regions[reg].generalToUsFeeBusiness;
                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                    var num = regions[reg].generalToUsMilesBusiness;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }
                                                     model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                 }   
                                             }
@@ -39696,6 +39795,7 @@ var model = {
                                                     var obj = {};
                                                     
                                                     obj['displayName'] = ff[key].displayName;
+                                                    obj['logo'] = ff[key].logo;
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39735,6 +39835,7 @@ var model = {
                                                             var obj = {};
                                                             
                                                             obj['displayName'] = ff[key].displayName;
+                                                            obj['logo'] = ff[key].logo;
                                                             obj['points'] = prog.points;
                                                             obj['supportsRoute'] = true;
                                                             obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39756,6 +39857,15 @@ var model = {
                                                                 } else {
                                                                     // Otherwise log general fee
                                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                                    var num = regions[reg].generalToUsMilesEconomy;
+                                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                                        obj['enoughPoints'] = 'Yes!';
+                                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                                        obj['enoughPoints'] = 'Close!';
+                                                                    } else {
+                                                                        obj['enoughPoints'] = 'No';
+                                                                    }
                                                                 }      
                                                                 // Push program to eligible programs object
                                                                 model.rewProg.eligiblePrograms.fromDestination.push(obj);
@@ -39774,6 +39884,15 @@ var model = {
                                                                 } else {
                                                                     // Otherwise log general fee
                                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                                    var num = regions[reg].generalToUsMilesBusiness;
+                                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                                        obj['enoughPoints'] = 'Yes!';
+                                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                                        obj['enoughPoints'] = 'Close!';
+                                                                    } else {
+                                                                        obj['enoughPoints'] = 'No';
+                                                                    }
                                                                 }      
                                                                 // Push program to eligible programs object
                                                                 model.rewProg.eligiblePrograms.fromDestination.push(obj);
@@ -39812,6 +39931,7 @@ var model = {
                                             var obj = {};
                                             
                                             obj['displayName'] = ff[key].displayName;
+                                            obj['logo'] = ff[key].logo;
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39820,15 +39940,42 @@ var model = {
                                             if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                 obj['fees'] = toB.costs.economyFee;
                                                 obj['miles'] = toB.costs.economyMiles;
+                                                var num = toB.costs.economyMiles;
+                                                num = num.substring((num.indexOf('-')+1),num.length);
+                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    obj['enoughPoints'] = 'Yes!';
+                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    obj['enoughPoints'] = 'Close!';
+                                                } else {
+                                                    obj['enoughPoints'] = 'No';
+                                                }
                                                 model.rewProg.eligiblePrograms.toDestination.push(obj);
                                             } else {
                                                 if (toB.costs.businessFee) {
                                                     obj['fees'] = toB.costs.businessFee;
                                                     obj['miles'] = toB.costs.businessMiles;
+                                                    var num = toB.costs.businessMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }
                                                     model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 } else {
                                                     obj['fees'] = toB.costs.economyFee;
                                                     obj['miles'] = toB.costs.economyMiles;
+                                                    var num = toB.costs.economyMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }                                                      
                                                     model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 }
                                                 
@@ -39853,6 +40000,7 @@ var model = {
                                                 var obj = {};
                                                 
                                                 obj['displayName'] = ff[key].displayName;
+                                                obj['logo'] = ff[key].logo;
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39861,15 +40009,42 @@ var model = {
                                                 if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
                                                     obj['fees'] = toB.costs.economyFee;
                                                     obj['miles'] = toB.costs.economyMiles;
+                                                    var num = toB.costs.economyMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }    
                                                     model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                 } else {
                                                     if (toB.costs.businessFee) {
                                                         obj['fees'] = toB.costs.businessFee;
                                                         obj['miles'] = toB.costs.businessMiles;
+                                                        var num = toB.costs.businessMiles;
+                                                        num = num.substring((num.indexOf('-')+1),num.length);
+                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                            obj['enoughPoints'] = 'Yes!';
+                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                            obj['enoughPoints'] = 'Close!';
+                                                        } else {
+                                                            obj['enoughPoints'] = 'No';
+                                                        }    
                                                         model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     } else {
                                                         obj['fees'] = toB.costs.economyFee;
                                                         obj['miles'] = toB.costs.economyMiles;
+                                                        var num = toB.costs.economyMiles;
+                                                        num = num.substring((num.indexOf('-')+1),num.length);
+                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                            obj['enoughPoints'] = 'Yes!';
+                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                            obj['enoughPoints'] = 'Close!';
+                                                        } else {
+                                                            obj['enoughPoints'] = 'No';
+                                                        } 
                                                         model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
                                                     

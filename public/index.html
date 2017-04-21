@@ -2554,49 +2554,106 @@
           <div class="row">
             <div class="col s12">
               <ul class="tabs">
-                <li class="tab col s3"><a class="active" href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}}</a></li>
+                <li class="tab col s6"><a class="active" href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}}</a></li>
                 {{#if userFlightSelections.fromDestination.fromAirport}}
-                  <li class="tab col s3"><a href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}}</a></li>
+                  <li class="tab col s6"><a href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}}</a></li>
                 {{/if}}
               </ul>
-            </div>
-            
-            <div id="toDestination" class="col s12" style="background-color: #f5f5f5">
-              {{#each eligiblePrograms.toDestination}}
-              <!-- Display To Destination Program and Flight Details Desktop --> 
-              <div class="row">
-                <div class="col l12">
-                  <div class="card horizontal">
-                    <div class="card-stacked">
-                      <div class="card-content">
-                      1
+              <div class="tabs-content">
+                <div id="toDestination" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
+                  {{#each eligiblePrograms.toDestination}}
+                  <!-- Display To Destination Program and Flight Details Desktop --> 
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="card horizontal">
+                        <div class="card-stacked">
+                          <div class="card-content">
+                            <!-- Program Logo -->
+                            <div class="row col s12 center">
+                              <img src='img/{{logo}}'>
+                              <h5>{{displayName}}</h5>
+                            </div>
+                            <!-- Program Costs in Miles/Points + Fees -->
+                            <div class="row col s12 center">
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <h6>Costs:</h6>
+                                <p>
+                                  {{miles}} (points/miles) + ${{fees}} in airport fees 
+                                </p> 
+                              </div>
+
+                              <!-- Booking Info/Overview Details -->
+                              <div class="col s6">
+                                <div class="col s12 center" style="padding: 30px;">
+                                  <a class="waves-effect waves-light btn-large">Booking Info</a>
+                                </div>
+                                <div class="col s12 center" style="padding: 30px;">
+                                  <a class="waves-effect waves-light btn-large">Overview Details</a>
+                                </div>
+                              </div>
+                              <!-- Enough Points? -->
+                              <div class="col s6 center">
+                                <h5>Your points:</h5>
+                                <div style="border: solid 1px #90caf9; padding: 10px;">
+                                  <p>
+                                    {{points}} 
+                                  </p> 
+                                </div>
+                                <h5>Enough?</h5>
+                                <div style="border: solid 1px #90caf9; padding: 10px;">
+                                  <p>
+                                    {{enoughPoints}} 
+                                  </p> 
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Overview Details -->
+                            <div class="col s12">
+                            <ul class="tabs">
+                              <li class="tab col s4"><a class="active" href="#availableAirlines">Available Airlines</a></li>
+                              <li class="tab col s4"><a href="#programOverview">Program Overview</a></li>
+                              <li class="tab col s4"><a href="#pointsTransferred">Points Transferred From</a></li>
+                            </ul>
+                            <div class="tabs-content">
+                              <div id="availableAirlines">
+                                
+                              </div>
+                              <div id="programOverview">
+                                
+                              </div>
+                              <div id="pointsTransferred">
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <!-- End Display To Destination Program and Flight Details Desktop -->
+                  {{/each}}
                 </div>
-              </div>
-              <!-- End Display To Destination Program and Flight Details Desktop -->
-              {{/each}}
-            </div>
-            {{#if userFlightSelections.fromDestination.fromAirport}}
-            <div id="fromDestination" class="col s12" style="background-color: #f5f5f5">
-              {{#each eligiblePrograms.fromDestination}}
-              <!-- Display From Destination Program and Flight Details Desktop --> 
-              <div class="row">
-                <div class="col l12">
-                  <div class="card horizontal">
-                    <div class="card-stacked">
-                      <div class="card-content">
-                      2
+                {{#if userFlightSelections.fromDestination.fromAirport}}
+                <div id="fromDestination" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
+                  {{#each eligiblePrograms.fromDestination}}
+                  <!-- Display From Destination Program and Flight Details Desktop --> 
+                  <div class="row">
+                    <div class="col l12">
+                      <div class="card horizontal">
+                        <div class="card-stacked">
+                          <div class="card-content">
+                          2
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <!-- End Display From Destination Program and Flight Details Desktop -->
+                  {{/each}}
                 </div>
+                {{/if}}
               </div>
-              <!-- End Display From Destination Program and Flight Details Desktop -->
-              {{/each}}
             </div>
-            {{/if}}
           </div>
         </div>
 
