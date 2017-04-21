@@ -2554,17 +2554,18 @@
           <div class="row">
             <div class="col s12">
               <ul class="tabs">
-                <li class="tab col s3"><a href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}}</a></li>
+                <li class="tab col s3"><a class="active" href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}}</a></li>
                 {{#if userFlightSelections.fromDestination.fromAirport}}
-                  <li class="tab col s3"><a class="active" href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}}</a></li>
+                  <li class="tab col s3"><a href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}}</a></li>
                 {{/if}}
               </ul>
             </div>
-            <div id="toDestination" class="col s12">
+            
+            <div id="toDestination" class="col s12" style="background-color: #f5f5f5">
               {{#each eligiblePrograms.toDestination}}
               <!-- Display To Destination Program and Flight Details Desktop --> 
               <div class="row">
-                <div class="col m10 offset-m1">
+                <div class="col l12">
                   <div class="card horizontal">
                     <div class="card-stacked">
                       <div class="card-content">
@@ -2578,11 +2579,11 @@
               {{/each}}
             </div>
             {{#if userFlightSelections.fromDestination.fromAirport}}
-            <div id="fromDestination" class="col s12">
+            <div id="fromDestination" class="col s12" style="background-color: #f5f5f5">
               {{#each eligiblePrograms.fromDestination}}
               <!-- Display From Destination Program and Flight Details Desktop --> 
               <div class="row">
-                <div class="col m10 offset-m1">
+                <div class="col l12">
                   <div class="card horizontal">
                     <div class="card-stacked">
                       <div class="card-content">
