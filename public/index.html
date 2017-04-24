@@ -2403,6 +2403,8 @@
     <div class="hide-on-med-only hide-on-small-only" style="margin-left: 300px;">
         
       <div class="section no-pad-bot" style="padding-top: 0px;">
+        
+        <!-- Gather Program and Flight Info -->
         <div id="gatherProgramAndFlightInfo" class="section col l10 offset-l1">
           
           <!-- Flight Details Desktop --> 
@@ -2547,16 +2549,17 @@
           </div>
           <!-- End Submit Button Desktop -->
         </div>
+        <!-- End Gather Program and Flight Info -->
 
-
-        <div id="displayProgramAndFlightInfo" class="section col l10 offset-l1">
+        <!-- Display Program and Flight Info -->
+        <div id="displayProgramAndFlightInfo" class="section col l10 offset-l1" style="display: none;">
 
           <div class="row">
             <div class="col s12">
               <ul class="tabs">
-                <li class="tab col s6"><a class="active" href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}}</a></li>
+                <li class="tab col s6"><a class="active" href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}} ({{eligiblePrograms.toDestinationCount}} routes)</a></li>
                 {{#if userFlightSelections.fromDestination.fromAirport}}
-                  <li class="tab col s6"><a href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}}</a></li>
+                  <li class="tab col s6"><a href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}} ({{eligiblePrograms.fromDestinationCount}} routes)</a></li>
                 {{/if}}
               </ul>
               <div class="tabs-content">
@@ -2588,7 +2591,7 @@
                                   <a class="waves-effect waves-light btn-large">Booking Info</a>
                                 </div>
                                 <div class="col s12 center" style="padding: 30px;">
-                                  <a class="waves-effect waves-light btn-large">Overview Details</a>
+                                  <a class="waves-effect waves-light btn-large" onclick="model.rewProg.viewExtraInfo('{{destId}}')">Overview Details</a>
                                 </div>
                               </div>
                               <!-- Enough Points? -->
@@ -2608,21 +2611,43 @@
                               </div>
                             </div>
                             <!-- Overview Details -->
-                            <div class="col s12">
-                            <ul class="tabs">
-                              <li class="tab col s4"><a class="active" href="#availableAirlines">Available Airlines</a></li>
-                              <li class="tab col s4"><a href="#programOverview">Program Overview</a></li>
-                              <li class="tab col s4"><a href="#pointsTransferred">Points Transferred From</a></li>
-                            </ul>
-                            <div class="tabs-content">
-                              <div id="availableAirlines">
-                                
-                              </div>
-                              <div id="programOverview">
-                                
-                              </div>
-                              <div id="pointsTransferred">
-                                
+                            <div class="col s12" id="{{destId}}" style="display:none;">
+                              <ul class="tabs">
+                                <li class="tab col s4"><a class="active" href="#{{availableAirlinesId}}">Available Airlines</a></li>
+                                <li class="tab col s4"><a href="#{{programOverviewId}}">Program Overview</a></li>
+                                <li class="tab col s4"><a href="#{{pointsTransferredFromId}}">Points Transferred From</a></li>
+                              </ul>
+                              <div class="tabs-content">
+                                <div id="{{availableAirlinesId}}">
+                                  <h5>Partner airlines with no fees:</h5>
+                                  <div class="col s4">
+                                    {{#each airlines.noFees}}
+                                        <img src='{{logo}}'>
+                                    {{/each}}
+                                  </div>
+                                  {{#if lowFees}}
+                                    <h5>Partner airlines with low fees:</h5>
+                                    <div class="col s4">
+                                      {{#each airlines.lowFees}}
+                                          <img src='{{logo}}'>
+                                      {{/each}}
+                                    </div>
+                                  {{/if}}
+                                </div>
+                                <div id="{{programOverviewId}}">
+                                  <ul>
+                                    {{#each programOverview}}
+                                      <li>
+                                        {{overview}}
+                                      </li>
+                                    {{/each}}
+                                  </ul>
+                                </div>
+                                <div id="{{pointsTransferredFromId}}">
+                                  <h5>Points Transferred from:</h5>
+                                  <img src="{{transferPartner.logo}}">
+                                  <h4>{{transferPartner.displayName}}</h4>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -2642,7 +2667,85 @@
                       <div class="card horizontal">
                         <div class="card-stacked">
                           <div class="card-content">
-                          2
+                            <!-- Program Logo -->
+                            <div class="row col s12 center">
+                              <img src='img/{{logo}}'>
+                              <h5>{{displayName}}</h5>
+                            </div>
+                            <!-- Program Costs in Miles/Points + Fees -->
+                            <div class="row col s12 center">
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <h6>Costs:</h6>
+                                <p>
+                                  {{miles}} (points/miles) + ${{fees}} in airport fees 
+                                </p> 
+                              </div>
+
+                              <!-- Booking Info/Overview Details -->
+                              <div class="col s6">
+                                <div class="col s12 center" style="padding: 30px;">
+                                  <a class="waves-effect waves-light btn-large">Booking Info</a>
+                                </div>
+                                <div class="col s12 center" style="padding: 30px;">
+                                  <a class="waves-effect waves-light btn-large" onclick="model.rewProg.viewExtraInfo('{{destId}}')">Overview Details</a>
+                                </div>
+                              </div>
+                              <!-- Enough Points? -->
+                              <div class="col s6 center">
+                                <h5>Your points:</h5>
+                                <div style="border: solid 1px #90caf9; padding: 10px;">
+                                  <p>
+                                    {{points}} 
+                                  </p> 
+                                </div>
+                                <h5>Enough?</h5>
+                                <div style="border: solid 1px #90caf9; padding: 10px;">
+                                  <p>
+                                    {{enoughPoints}} 
+                                  </p> 
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Overview Details -->
+                            <div class="col s12" id="{{destId}}" style="display:none;">
+                              <ul class="tabs">
+                                <li class="tab col s4"><a class="active" href="#{{availableAirlinesId}}">Available Airlines</a></li>
+                                <li class="tab col s4"><a href="#{{programOverviewId}}">Program Overview</a></li>
+                                <li class="tab col s4"><a href="#{{pointsTransferredFromId}}">Points Transferred From</a></li>
+                              </ul>
+                              <div class="tabs-content">
+                                <div id="{{availableAirlinesId}}">
+                                  <h5>Partner airlines with no fees:</h5>
+                                  <div class="col s4">
+                                    {{#each airlines.noFees}}
+                                        <img src='{{logo}}'>
+                                    {{/each}}
+                                  </div>
+                                  {{#if lowFees}}
+                                    <h5>Partner airlines with low fees:</h5>
+                                    <div class="col s4">
+                                      {{#each airlines.lowFees}}
+                                          <img src='{{logo}}'>
+                                      {{/each}}
+                                    </div>
+                                  {{/if}}
+                                </div>
+                                <div id="{{programOverviewId}}">
+                                  <ul>
+                                    {{#each programOverview}}
+                                      <li>
+                                        {{overview}}
+                                      </li>
+                                    {{/each}}
+                                  </ul>
+                                </div>
+                                <div id="{{pointsTransferredFromId}}">
+                                  <h5>Points Transferred from:</h5>
+                                  <img src="{{transferPartner.logo}}">
+                                  <h4>{{transferPartner.displayName}}</h4>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2656,7 +2759,7 @@
             </div>
           </div>
         </div>
-
+        <!-- End Display Program and Flight Info -->
         
 
       <!-- Display Recommendations Footer Desktop -->

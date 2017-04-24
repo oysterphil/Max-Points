@@ -6422,44 +6422,43 @@ var model = {
                     logo: 'united.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'adria.png',
-                        'aegean.png',
-                        'aircanada.png',
-                        'airchina.png',
-                        'airindia.png',
-                        'airnewzealand.png',
-                        'ana.png',
-                        'asiana.png',
-                        'austrian.png',
-                        'avianca.png',
-                        'brussels.png',
-                        'copa.png',
-                        'croatia.png',
-                        'egyptair.png',
-                        'evaair.png',
-                        'ethiopian.png',
-                        'lotpolish.png',
-                        'lufthansa.png',
-                        'sas.png',
-                        'shenzhen.png',
-                        'singapore.png',
-                        'southafrican.png',
-                        'swiss.png',
-                        'tap.png',
-                        'thai.png',
-                        'turkish.png',
-                        'united.png',
-                        'aerlingus.png',
-                        'hawaiian.png'
+                        {logo:'adria.png'},
+                        {logo:'aegean.png'},
+                        {logo:'aircanada.png'},
+                        {logo:'airchina.png'},
+                        {logo:'airindia.png'},
+                        {logo:'airnewzealand.png'},
+                        {logo:'ana.png'},
+                        {logo:'asiana.png'},
+                        {logo:'austrian.png'},
+                        {logo:'avianca.png'},
+                        {logo:'brussels.png'},
+                        {logo:'copa.png'},
+                        {logo:'croatia.png'},
+                        {logo:'egyptair.png'},
+                        {logo:'evaair.png'},
+                        {logo:'ethiopian.png'},
+                        {logo:'lotpolish.png'},
+                        {logo:'lufthansa.png'},
+                        {logo:'sas.png'},
+                        {logo:'shenzhen.png'},
+                        {logo:'singapore.png'},
+                        {logo:'southafrican.png'},
+                        {logo:'swiss.png'},
+                        {logo:'tap.png'},
+                        {logo:'thai.png'},
+                        {logo:'turkish.png'},
+                        {logo:'united.png'},
+                        {logo:'aerlingus.png'},
+                        {logo:'hawaiian.png'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'One way flights allowed.',
-                        'No surcharges on ANY partners!',
-                        'Stopover & open jaw allowed.',
-                        'Partner business/first class requires more miles.',
-                        'Search & book directly on United.com.'
+                        {overview:'One way flights allowed.'},
+                        {overview:'No surcharges on ANY partners!'},
+                        {overview:'Stopover & open jaw allowed.'},
+                        {overview:'Partner business/first class requires more miles.'},
+                        {overview:'Search & book directly on United.com.'}
                     ],
                     fromRegions: {
                         us: {
@@ -8959,34 +8958,34 @@ var model = {
                     logo: 'aircanada.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'aegean.png',
-                        'airchina.png',
-                        'airnewzealand.png',
-                        'asiana.png',
-                        'avianca.png',
-                        'brussels.png',
-                        'egyptair.png',
-                        'evaair.png',
-                        'ethiopian.png',
-                        'sas.png',
-                        'singapore.png',
-                        'southafrican.png',
-                        'swiss.png',
-                        'thai.png',
-                        'turkish.png',
-                        'united.png'
+                        {logo:'aegean.png'},
+                        {logo:'airchina.png'},
+                        {logo:'airnewzealand.png'},
+                        {logo:'asiana.png'},
+                        {logo:'avianca.png'},
+                        {logo:'brussels.png'},
+                        {logo:'egyptair.png'},
+                        {logo:'evaair.png'},
+                        {logo:'ethiopian.png'},
+                        {logo:'sas.png'},
+                        {logo:'singapore.png'},
+                        {logo:'southafrican.png'},
+                        {logo:'swiss.png'},
+                        {logo:'thai.png'},
+                        {logo:'turkish.png'},
+                        {logo:'united.png'}
                     ],
                     availableAirlinesLowFees: [
-                        'ana.png',
-                        'lotpolish.png',
+                        {logo:'ana.png'},
+                        {logo:'lotpolish.png'},
                     ],
                     programOverview: [
-                        'One way flights allowed.',
-                        '2 Stopovers or 1 open jaw allowed.',
-                        'Eastern European cities require more miles.',
-                        'Avoid Air Canada, Lufthansa, and other partners that charge high fees.',
-                        'Redeem for great value on no fee airlines like United, Swiss, Thai, Turkish, and many more.',
-                        'Search & book directly on Aeroplan.com.'
+                        {overview:'One way flights allowed.'},
+                        {overview:'2 Stopovers or 1 open jaw allowed.'},
+                        {overview:'Eastern European cities require more miles.'},
+                        {overview:'Avoid Air Canada, Lufthansa, and other partners that charge high fees.'},
+                        {overview:'Redeem for great value on no fee airlines like United, Swiss, Thai, Turkish, and many more.'},
+                        {overview:'Search & book directly on Aeroplan.com.'}
                     ],
                     fromRegions: {
                         us: {
@@ -11228,34 +11227,34 @@ var model = {
                     logo: 'ana.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'adria.png',
-                        'aircanada.png',
-                        'airchina.png',
-                        'airnewzealand.png',
-                        'avianca.png',
-                        'copa.png',
-                        'singapore.png',
-                        'united.png',
-                        'etihad.png',
-                        'hawaiian.png',
-                        'latam.png'
+                        {logo:'adria.png'},
+                        {logo:'aircanada.png'},
+                        {logo:'airchina.png'},
+                        {logo:'airnewzealand.png'},
+                        {logo:'avianca.png'},
+                        {logo:'copa.png'},
+                        {logo:'singapore.png'},
+                        {logo:'united.png'},
+                        {logo:'etihad.png'},
+                        {logo:'hawaiian.png'},
+                        {logo:'latam.png'}
                     ],
                     availableAirlinesLowFees: [
-                        'ana.png',
-                        'asiana.png',
-                        'lotpolish.png'
+                        {logo:'ana.png'},
+                        {logo:'asiana.png'},
+                        {logo:'lotpolish.png'}
                     ],
                     programOverview: [
-                        'Roundtrip flights only.',
-                        'Can only redeem flights for family members.',
-                        'No stopovers or open jaws',
-                        'Lower, special pricing on ANA flights 9+ months a year.',
-                        'Avoid Brussels, Swiss, Lufthansa, and other partners that charge high fees.',
-                        'Redeem for great value on United (except to Asia), Air Canada, Avianca, Etihad, and many more.',
-                        'Redeem for great value and low fees on ANA to Japan and some otehr Asian destiantions, Asiana, and LOT Polish Airlines.',
-                        'Search for Star Alliance flights on United.com or Aeroplan.com.',
-                        'Search for "guest" seats on Etihad.com.',
-                        'Book directly on ANA.com & call to book non-Star Alliance partners like Etihad.'
+                        {overview:'Roundtrip flights only.'},
+                        {overview:'Can only redeem flights for family members.'},
+                        {overview:'No stopovers or open jaws'},
+                        {overview:'Lower, special pricing on ANA flights 9+ months a year.'},
+                        {overview:'Avoid Brussels, Swiss, Lufthansa, and other partners that charge high fees.'},
+                        {overview:'Redeem for great value on United (except to Asia), Air Canada, Avianca, Etihad, and many more.'},
+                        {overview:'Redeem for great value and low fees on ANA to Japan and some otehr Asian destiantions, Asiana, and LOT Polish Airlines.'},
+                        {overview:'Search for Star Alliance flights on United.com or Aeroplan.com.'},
+                        {overview:'Search for "guest" seats on Etihad.com.'},
+                        {overview:'Book directly on ANA.com & call to book non-Star Alliance partners like Etihad.'}
                     ],
                     fromRegions: {
                         us: {
@@ -13018,22 +13017,21 @@ var model = {
                     logo: 'singapore.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'aircanada.png',
-                        'avianca.png',
-                        'copa.png',
-                        'singapore.png',
-                        'united.png'
+                        {logo:'aircanada.png'},
+                        {logo:'avianca.png'},
+                        {logo:'copa.png'},
+                        {logo:'singapore.png'},
+                        {logo:'united.png'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'Partner ailines must be booked round trip.',
-                        'One way flights allowed on Singapore Air.',
-                        'One stopover & open jaw allowed on round trips.',
-                        'Redeem for no extra fees for Air Canada, Avianca, Copa and United within the Americas.',
-                        'No surcharges on any Singapore Airlines flights or the famous first class suites.',
-                        'Search for Star Alliance flights on United.com or Aeroplan.com.',
-                        'Book directly on SingaporeAir.com & call to book Star Alliance partners.'
+                        {overview:'Partner ailines must be booked round trip.'},
+                        {overview:'One way flights allowed on Singapore Air.'},
+                        {overview:'One stopover & open jaw allowed on round trips.'},
+                        {overview:'Redeem for no extra fees for Air Canada, Avianca, Copa and United within the Americas.'},
+                        {overview:'No surcharges on any Singapore Airlines flights or the famous first class suites.'},
+                        {overview:'Search for Star Alliance flights on United.com or Aeroplan.com.'},
+                        {overview:'Book directly on SingaporeAir.com & call to book Star Alliance partners.'}
                     ],
                     fromRegions: {
                         us: {
@@ -13817,37 +13815,37 @@ var model = {
                     logo: 'american.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'airberlin.png',
-                        'american.png', 
-                        'cathay.png',
-                        'finnair.png',
-                        'japan.png',
-                        'latam.png',
-                        'malaysia.png',
-                        'qantas.png',
-                        'qatar.png',
-                        'royaljordanian.png',
-                        'sseven.png',
-                        'srilankan.png',
-                        'alaska.png',
-                        'etihad.png',
-                        'fiji.png',
-                        'hawaiian.png',
-                        'jet.png',
-                        'tahiti.png',
-                        'westjet.png'
+                        {logo:'airberlin.png'},
+                        {logo:'american.png'},
+                        {logo:'cathay.png'},
+                        {logo:'finnair.png'},
+                        {logo:'japan.png'},
+                        {logo:'latam.png'},
+                        {logo:'malaysia.png'},
+                        {logo:'qantas.png'},
+                        {logo:'qatar.png'},
+                        {logo:'royaljordanian.png'},
+                        {logo:'sseven.png'},
+                        {logo:'srilankan.png'},
+                        {logo:'alaska.png'},
+                        {logo:'etihad.png'},
+                        {logo:'fiji.png'},
+                        {logo:'hawaiian.png'},
+                        {logo:'jet.png'},
+                        {logo:'tahiti.png'},
+                        {logo:'westjet.png'}
                     ],
                     availableAirlinesLowFees: [
-                    'iberia.png'
+                        {logo:'iberia.png'}
                     ],
                     programOverview: [
-                        'One way flights allowed.',
-                        'No stopovers or open jaws allowed.',
-                        'Avoid British Airways flights with high fees and, Iberia flights with low fees.',
-                        'No fees on ANY other partner airlines.',
-                        'Lower, off-peak pricing on AA flights only.',
-                        'Book Air Berlin, American, Alaska Airlines, British Airways, Finnair, Qatas, Hawaiian Airlines, and Royal Jordanian flights online.',
-                        'Find other Oneworld partner airline availability on Qantas.com or BritishAirways.com then call American to book.'
+                        {overview:'One way flights allowed.'},
+                        {overview:'No stopovers or open jaws allowed.'},
+                        {overview:'Avoid British Airways flights with high fees and, Iberia flights with low fees.'},
+                        {overview:'No fees on ANY other partner airlines.'},
+                        {overview:'Lower, off-peak pricing on AA flights only.'},
+                        {overview:'Book Air Berlin, American, Alaska Airlines, British Airways, Finnair, Qatas, Hawaiian Airlines, and Royal Jordanian flights online.'},
+                        {overview:'Find other Oneworld partner airline availability on Qantas.com or BritishAirways.com then call American to book.'}
                     ],
                     fromRegions: {
                         us: {
@@ -15453,31 +15451,31 @@ var model = {
                     logo: 'delta.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'aerolineas.png',
-                        'airfrance.png',
-                        'alitalia.png',
-                        'delta.png',
-                        'garuda.png',
-                        'kenya.png',
-                        'korean.png',
-                        'vietnam.png',
-                        'saudia.png',
-                        'virgin.png'    
+                        {logo:'aerolineas.png'},
+                        {logo:'airfrance.png'},
+                        {logo:'alitalia.png'},
+                        {logo:'delta.png'},
+                        {logo:'garuda.png'},
+                        {logo:'kenya.png'},
+                        {logo:'korean.png'},
+                        {logo:'vietnam.png'},
+                        {logo:'saudia.png'},
+                        {logo:'virgin.png'}
                     ],
                     availableAirlinesLowFees: [
-                        'aeromexico.png',
-                        'czech.png',
-                        'chinaairlines.png',
-                        'chinaeastern.png',
-                        'chinasouthern.png'
+                        {logo:'aeromexico.png'},
+                        {logo:'czech.png'},
+                        {logo:'chinaairlines.png'},
+                        {logo:'chinaeastern.png'},
+                        {logo:'chinasouthern.png'}
                     ],
                     programOverview: [
-                        'One way flights allowed.',
-                        'No stopovers or open jaws allowed.',
-                        'Avoid partners with high fees like Aeroflot or one way Delta flights from Europe to US.',
-                        'No surcharges on most other SkyTeam partner airlines.',
-                        'Search and book most SkyTeam partner airlines on Delta.com.',
-                        'Use AirFrance.us to search for most availability and other SkyTeam partners then call Delta to book.'
+                        {overview:'One way flights allowed.'},
+                        {overview:'No stopovers or open jaws allowed.'},
+                        {overview:'Avoid partners with high fees like Aeroflot or one way Delta flights from Europe to US.'},
+                        {overview:'No surcharges on most other SkyTeam partner airlines.'},
+                        {overview:'Search and book most SkyTeam partner airlines on Delta.com.'},
+                        {overview:'Use AirFrance.us to search for most availability and other SkyTeam partners then call Delta to book.'}
                     ],
                     fromRegions: {
                         us: {
@@ -17592,30 +17590,30 @@ var model = {
                     logo: 'airfrance.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'aerolineas.png',
-                        'aeromexico.png',
-                        'delta.png',
-                        'korean.png',
-                        'saudia.png',
-                        'tarom.png'   
+                        {logo:'aerolineas.png'},
+                        {logo:'aeromexico.png'},
+                        {logo:'delta.png'},
+                        {logo:'korean.png'},
+                        {logo:'saudia.png'},
+                        {logo:'tarom.png'}
                     ],
                     availableAirlinesLowFees: [
-                        'airfrance.png',
-                        'aeroflot.png',
-                        'alitalia.png',
-                        'chinaairlines.png',
-                        'chinaeastern.png',
-                        'chinasouthern.png'
+                        {logo:'airfrance.png'},
+                        {logo:'aeroflot.png'},
+                        {logo:'alitalia.png'},
+                        {logo:'chinaairlines.png'},
+                        {logo:'chinaeastern.png'},
+                        {logo:'chinasouthern.png'}
                     ],
                     programOverview: [
-                        'One way flights allowed.',
-                        'One stopover and open jaws allowed on round trips. Must be booked by phone.',
-                        'Avoid partners with high fees like Aeroflot or one way Delta flights from Europe to US.',
-                        'No surcharges on most other SkyTeam partner airlines.',
-                        'Low fees on Air France/KLM.',
-                        'More access to Air France/KLM flights with Flying Blue miles.',
-                        'Search and book most SkyTeam partner airlines on AirFrance.us or search on Delta.com.',
-                        'Monthly rotating cities for US to Europe for 25%-50% off mileage price.'
+                        {overview:'One way flights allowed.'},
+                        {overview:'One stopover and open jaws allowed on round trips. Must be booked by phone.'},
+                        {overview:'Avoid partners with high fees like Aeroflot or one way Delta flights from Europe to US.'},
+                        {overview:'No surcharges on most other SkyTeam partner airlines.'},
+                        {overview:'Low fees on Air France/KLM.'},
+                        {overview:'More access to Air France/KLM flights with Flying Blue miles.'},
+                        {overview:'Search and book most SkyTeam partner airlines on AirFrance.us or search on Delta.com.'},
+                        {overview:'Monthly rotating cities for US to Europe for 25%-50% off mileage price.'}
                     ],
                     fromRegions: {
                         us: {
@@ -19486,20 +19484,20 @@ var model = {
                     logo: 'virgin.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                        'delta.png',
-                        'hawaiian.png'
+                        {logo:'delta.png'},
+                        {logo:'hawaiian.png'}
                     ],
                     availableAirlinesLowFees: [
-                        'ana.png'
+                        {logo:'ana.png'}
                     ],
                     programOverview: [
-                        'Only roundtrips allowed.',
-                        'No stopovers or open jaws allowed.',
-                        'Use for partners without fees like Delta and Hawaiian as well as low fees with ANA: All Nippon Airways.',
-                        'Delta flights requiring the fewest miles displayed on Delta.com or AirFrance.us are bookable by Virgin Atlantic.',
-                        'Hawaiian seats requiring the fewest miles on HawaiianAirlines.com are bookable by Virgin Atlantic.',
-                        'ANA flights available on United.com are available to Virgin Atlantic.',
-                        'Call Virgin Atlantic to book and just provide your desired flight numbers.'
+                        {overview:'Only roundtrips allowed.'},
+                        {overview:'No stopovers or open jaws allowed.'},
+                        {overview:'Use for partners without fees like Delta and Hawaiian as well as low fees with ANA: All Nippon Airways.'},
+                        {overview:'Delta flights requiring the fewest miles displayed on Delta.com or AirFrance.us are bookable by Virgin Atlantic.'},
+                        {overview:'Hawaiian seats requiring the fewest miles on HawaiianAirlines.com are bookable by Virgin Atlantic.'},
+                        {overview:'ANA flights available on United.com are available to Virgin Atlantic.'},
+                        {overview:'Call Virgin Atlantic to book and just provide your desired flight numbers.'}
                     ],
                     fromRegions: {
                         us: {
@@ -20444,14 +20442,13 @@ var model = {
                     logo: 'capitalone.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1 cent so 100,000 points=$1,000.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1 cent so 100,000 points=$1,000.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -22424,14 +22421,13 @@ var model = {
                     logo: 'wellsfargo.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1 cent so 100,000 points=$1,000.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1 cent so 100,000 points=$1,000.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -24404,14 +24400,13 @@ var model = {
                     logo: 'discover.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1 cent so 100,000 points=$1,000.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1 cent so 100,000 points=$1,000.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -26384,14 +26379,13 @@ var model = {
                     logo: 'bofa.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1 cent so 100,000 points=$1,000.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1 cent so 100,000 points=$1,000.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -28364,14 +28358,13 @@ var model = {
                     logo: 'citi.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1.25 cents so 100,000 points=$1,250.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1.25 cents so 100,000 points=$1,250.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -30344,14 +30337,13 @@ var model = {
                     logo: 'chase.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1.25 cents so 100,000 points=$1,250.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1.25 cents so 100,000 points=$1,250.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -32324,14 +32316,13 @@ var model = {
                     logo: 'chase.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 cash back point=1.5 cents so 100,000 points=$1,500.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 cash back point=1.5 cents so 100,000 points=$1,500.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -34304,14 +34295,13 @@ var model = {
                     logo: 'amex.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 point=1 cent so 100,000 points=$1,000.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 point=1 cent so 100,000 points=$1,000.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -36284,14 +36274,13 @@ var model = {
                     logo: 'amex.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
-                    'All Airlines.'
+                        {all:'All Airlines.'}
                     ],
-                    availableAirlinesLowFees: [
-                    ],
+                    availableAirlinesLowFees: null,
                     programOverview: [
-                        'All points prices are based on the cost of the ticket.',
-                        '1 point=2 cents so 100,000 points=$2,000.',
-                        'Frequent flyer miles typically offer much higher value for free flights.'
+                        {overview:'All points prices are based on the cost of the ticket.'},
+                        {overview:'1 point=2 cents so 100,000 points=$2,000.'},
+                        {overview:'Frequent flyer miles typically offer much higher value for free flights.'}
                     ],
                     fromRegions: {
                         us: {
@@ -38264,26 +38253,26 @@ var model = {
                     logo: 'british.png',
                     programType: 'distanceBased',
                     availableAirlinesNoFees: [
-                        'airberlin.png',
-                        'aerlingus.png',
-                        'american.png',
-                        'alaska.png',
-                        'cathay.png',
-                        'latam.png',
-                        'sseven.png'
+                        {logo:'airberlin.png'},
+                        {logo:'aerlingus.png'},
+                        {logo:'american.png'},
+                        {logo:'alaska.png'},
+                        {logo:'cathay.png'},
+                        {logo:'latam.png'},
+                        {logo:'sseven.png'}
                     ],
                     availableAirlinesLowFees: [
-                        'japan.png'
+                        {logo:'japan.png'}
                     ],
                     programOverview: [
-                        'All flights priced one way so one way flights allowed.',
-                        'Unlimited stopovers & open jaws allowed.',
-                        'Lower, special pricing on British Air and Aer Lingus flights 9+ months a year.',
-                        'Avoid using miles for British Airways and partners with high fees.',
-                        'No surcharges on American and Alaska flights within the Americas & to Asia only.',
-                        'No fees for Air Berline or Aer Lingus to Europe and Japan Airlines to Asia.',
-                        'Search and book most Oneworld partner airlines on BritishAirways.com.',
-                        'Use United.com to search for Aer Lingus availability and call British Airways to book. Request they waive the phone booking fee as this cannot be booked online.'
+                        {overview:'All flights priced one way so one way flights allowed.'},
+                        {overview:'Unlimited stopovers & open jaws allowed.'},
+                        {overview:'Lower, special pricing on British Air and Aer Lingus flights 9+ months a year.'},
+                        {overview:'Avoid using miles for British Airways and partners with high fees.'},
+                        {overview:'No surcharges on American and Alaska flights within the Americas & to Asia only.'},
+                        {overview:'No fees for Air Berline or Aer Lingus to Europe and Japan Airlines to Asia.'},
+                        {overview:'Search and book most Oneworld partner airlines on BritishAirways.com.'},
+                        {overview:'Use United.com to search for Aer Lingus availability and call British Airways to book. Request they waive the phone booking fee as this cannot be booked online.'}
                     ],
                     fromBatches: [
                         {
@@ -39284,17 +39273,17 @@ var model = {
         },
         userFlightSelections: {
             toDestination: {
-                fromAirport: 'IAD',
-                toAirport: 'CDG',
-                class: 'economy',
-                type: 'roundTrip',
+                fromAirport: null,
+                toAirport: null,
+                class: null,
+                type: null,
                 numTickets: null
             },
             fromDestination: {
-                fromAirport: 'CDG',
-                toAirport: 'IAD',
-                class: 'economy',
-                type: 'roundTrip',
+                fromAirport: null,
+                toAirport: null,
+                class: null,
+                type: null,
                 numTickets: null
             }
         },
@@ -39315,7 +39304,9 @@ var model = {
         userFreqFlierPrograms: [],
         eligiblePrograms: {
             toDestination: [],
-            fromDestination: []
+            toDestinationCount: 0,
+            fromDestination: [],
+            fromDestinationCount: 0
         },
         translateProgramSelectionsToFreqFlierPrograms: () => {
             // Iterate through each program that the user inputted
@@ -39328,42 +39319,23 @@ var model = {
             var progExists = false;
 
             model.rewProg.userPrograms.forEach(function(prog) {
-                var pointsTransferrableProgs = [
-                    {
-                        prog: 'chaseAnyCard',
-                        ref: model.rewProg.programs.pointsTransferrable.chaseAnyCard.participatingPrograms
-                    },
-                    {
-                        prog: 'chaseReserveCard',
-                        ref: model.rewProg.programs.pointsTransferrable.chaseReserveCard.participatingPrograms
-                    },
-                    {
-                        prog: 'amexAnyCard',
-                        ref: model.rewProg.programs.pointsTransferrable.amexAnyCard.participatingPrograms
-                    },
-                    {
-                        prog: 'amexBiz',
-                        ref: model.rewProg.programs.pointsTransferrable.amexBiz.participatingPrograms
-                    },
-                    {
-                        prog: 'citi',
-                        ref: model.rewProg.programs.pointsTransferrable.citi.participatingPrograms
-                    }
-                ];
-                pointsTransferrableProgs.forEach(function(ptProg) {
-                    if (prog.name === ptProg.prog) {
+
+                for (var ptsTrans in model.rewProg.programs.pointsTransferrable) {
+                    if (prog.name === ptsTrans) {
                         // If any of the user selections are points
                         // transferrable programs, then calculate
                         // how many points they would have in each 
                         // program at the various conversion rates.
-                        ptProg.ref.forEach(function(p) {
+                        model.rewProg.programs.pointsTransferrable[ptsTrans].participatingPrograms.forEach(function(p) {
                             var obj = {};
                             obj['name'] = p.name;
                             obj['points'] = prog.points * p.pointTransferRate;
+                            obj['transferPartnerDisplayName'] = model.rewProg.programs.pointsTransferrable[ptsTrans].displayName;
+                            obj['transferPartnerLogo'] = model.rewProg.programs.pointsTransferrable[ptsTrans].logo;
                             model.rewProg.userFreqFlierPrograms.push(obj);
                         });
                     }
-                });
+                }
 
                 // Next check for frequent flier and cash back 
                 // programs. First, though, check and see if 
@@ -39379,6 +39351,9 @@ var model = {
                     } 
                 }); 
 
+                // If the program does not currently exist in the userFreqFlierPrograms 
+                // object and is not a points transferrable program, then push it to the 
+                // userFreqFlierPrograms object.
                 if (prog.name === 'chaseAnyCard' || 
                     prog.name === 'chaseReserveCard' || 
                     prog.name === 'amexAnyCard' || 
@@ -39421,6 +39396,17 @@ var model = {
 
             // For Each Frequent Flier Program with points fully updated
             model.rewProg.userFreqFlierPrograms.forEach(function(prog) {
+                
+                function makeRefCode() {
+                    var text = "";
+                    var possible = "ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijklmnpqrstuvwxyz111112222233333444445555566666777778888899999";
+
+                    for( var i=0; i < 5; i++ )
+                        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+                    return text;
+                }
+
                 var ff = model.rewProg.programs.frequentFlier;
                 // For every frequent flier program
                 for (var key in ff) {
@@ -39458,6 +39444,19 @@ var model = {
                                                 
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39508,6 +39507,19 @@ var model = {
                                             
                                             obj['displayName'] = ff[key].displayName;
                                             obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                            obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                            obj['transferPartner'] = {
+                                                displayName: prog.transferPartnerDisplayName,
+                                                logo: prog.transferPartnerLogo
+                                            };
+                                            obj['airlines'] = {
+                                                noFees: ff[key].availableAirlinesNoFees,
+                                                lowFees: ff[key].availableAirlinesLowFees
+                                            };
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39561,6 +39573,19 @@ var model = {
                                                 
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39602,6 +39627,19 @@ var model = {
                                                         
                                                         obj['displayName'] = ff[key].displayName;
                                                         obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                        obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                        obj['transferPartner'] = {
+                                                            displayName: prog.transferPartnerDisplayName,
+                                                            logo: prog.transferPartnerLogo
+                                                        };
+                                                        obj['airlines'] = {
+                                                            noFees: ff[key].availableAirlinesNoFees,
+                                                            lowFees: ff[key].availableAirlinesLowFees
+                                                        };
                                                         obj['points'] = prog.points;
                                                         obj['supportsRoute'] = true;
                                                         obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -39697,6 +39735,19 @@ var model = {
                                                     
                                                     obj['displayName'] = ff[key].displayName;
                                                     obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                    obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                    obj['transferPartner'] = {
+                                                        displayName: prog.transferPartnerDisplayName,
+                                                        logo: prog.transferPartnerLogo
+                                                    };
+                                                    obj['airlines'] = {
+                                                        noFees: ff[key].availableAirlinesNoFees,
+                                                        lowFees: ff[key].availableAirlinesLowFees
+                                                    };
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39746,6 +39797,19 @@ var model = {
                                                 
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39796,6 +39860,19 @@ var model = {
                                                     
                                                     obj['displayName'] = ff[key].displayName;
                                                     obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                    obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                    obj['transferPartner'] = {
+                                                        displayName: prog.transferPartnerDisplayName,
+                                                        logo: prog.transferPartnerLogo
+                                                    };
+                                                    obj['airlines'] = {
+                                                        noFees: ff[key].availableAirlinesNoFees,
+                                                        lowFees: ff[key].availableAirlinesLowFees
+                                                    };
                                                     obj['points'] = prog.points;
                                                     obj['supportsRoute'] = true;
                                                     obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39836,6 +39913,19 @@ var model = {
                                                             
                                                             obj['displayName'] = ff[key].displayName;
                                                             obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                            obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                            obj['transferPartner'] = {
+                                                                displayName: prog.transferPartnerDisplayName,
+                                                                logo: prog.transferPartnerLogo
+                                                            };
+                                                            obj['airlines'] = {
+                                                                noFees: ff[key].availableAirlinesNoFees,
+                                                                lowFees: ff[key].availableAirlinesLowFees
+                                                            };
                                                             obj['points'] = prog.points;
                                                             obj['supportsRoute'] = true;
                                                             obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -39932,6 +40022,19 @@ var model = {
                                             
                                             obj['displayName'] = ff[key].displayName;
                                             obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                            obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                            obj['transferPartner'] = {
+                                                displayName: prog.transferPartnerDisplayName,
+                                                logo: prog.transferPartnerLogo
+                                            };
+                                            obj['airlines'] = {
+                                                noFees: ff[key].availableAirlinesNoFees,
+                                                lowFees: ff[key].availableAirlinesLowFees
+                                            };
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
                                             obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
@@ -40001,6 +40104,19 @@ var model = {
                                                 
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
+                                                obj['destId'] = makeRefCode();
+                                                obj['programOverview'] = ff[key].programOverview;
+                                                obj['programOverviewId'] = makeRefCode();
+                                                obj['availableAirlinesId'] = makeRefCode();
+                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
                                                 obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
@@ -40059,7 +40175,21 @@ var model = {
                 }
             });
 
+            model.rewProg.eligiblePrograms.toDestinationCount = model.rewProg.eligiblePrograms.toDestination.length;
+            model.rewProg.eligiblePrograms.fromDestinationCount = model.rewProg.eligiblePrograms.fromDestination.length;
+            
+            // Display Output/Render Template
+            model.templates.renderPointsRedemptionTemplate();
+            $('ul.tabs').tabs();
+
             console.log(model.rewProg.eligiblePrograms);
+        },
+        viewExtraInfo: (a) => {
+            if (document.getElementById(a).style.display === 'inline') {
+                document.getElementById(a).style.display = 'none';
+            } else {
+                document.getElementById(a).style.display = 'inline'
+            }
         }
     },
     templates: {
@@ -41071,81 +41201,6 @@ var model = {
                 }
             }
 
-            function vetRedemptionInputs() {
-                if (document.getElementById('fromAirport').value) {
-                    model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value;
-                    model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value;
-                    model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
-                    model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
-                    model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
-                }
-                if (document.getElementById('fromAirportMobile').value) {
-                    model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value;
-                    model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value;
-                    model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
-                    model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
-                    model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
-                }
-
-                if (document.getElementById('flightType').value === 'roundTrip') {
-                    model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value;
-                    model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value;
-                    model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
-                    model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
-                    model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
-                }
-
-                if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
-                    model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
-                    model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
-                    model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
-                    model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
-                    model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
-                }
-
-                // Log User's Programs, if applicable
-
-                var compiledProgramValues = [];
-                
-                if (!model.appState.mobileView) {
-                    for (var i = 0; i < checkPrograms.length; i ++) {
-                        document.getElementById(checkPrograms[i] + 'Mobile').value = '';
-                    }
-                } else {
-                    for (var i = 0; i < checkPrograms.length; i ++) {
-                        document.getElementById(checkPrograms[i]).value = '';
-                    }
-                }
-
-                for (var i = 1; i < 6; i++) {
-                    var obj = {};
-                    if (document.getElementById(('program' + i)).value) {
-                        obj[name] = document.getElementById(('program' + i)).value;
-                        obj[points] = document.getElementById(('programPoints' + i)).value;
-                        compiledProgramValues.push(obj);
-                    } else if (document.getElementById(('program' + i + 'Mobile')).value) {
-                        obj[name] = document.getElementById(('program' + i + 'Mobile')).value;
-                        obj[points] = document.getElementById(('programPoints' + i + 'Mobile')).value;
-                        compiledProgramValues.push(obj);
-                    } 
-                }
-
-                var cards = model.cards.all;
-
-                // Create the Selections Object
-                for (var i = 0; i < cards.length; i++) {
-                    compiledCardValues.forEach(function(card) {
-                        if (cards[i].cardName === card) {
-                            model.rewProg.userPrograms.push(cards[i]);
-                        }
-                    }); 
-                }
-            
-                console.log('Display User Selections');
-                console.log(model.cards.userSelections);
-
-            }
-
             // Set up Event Listeners for x-out buttons for Cards
             var collection = Array.from(document.getElementsByClassName('x-out'));
             for (var i = 0; i < collection.length; i++) {
@@ -41201,8 +41256,72 @@ var model = {
 
             // Submit Form Event Listeners
             // TO DO: Add Destination for Event Listener
-            document.getElementById('submitRedempCalcForm').addEventListener('click', vetRedemptionInputs);
-            // document.getElementById('submitRedempCalcFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs); 
+            document.getElementById('submitRedempCalcForm').addEventListener('click', model.controllers.vetRedemptionInputs);
+        },
+        vetRedemptionInputs: () => {
+            if (document.getElementById('fromAirport').value) {
+                model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value;
+                model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value;
+                model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
+                model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
+                model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
+            }
+            // if (document.getElementById('fromAirportMobile').value) {
+            //     model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value;
+            //     model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value;
+            //     model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
+            //     model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
+            //     model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
+            // }
+
+            if (document.getElementById('flightType').value === 'roundTrip') {
+                model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value;
+                model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value;
+                model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
+                model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
+                model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
+            }
+
+            // if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
+            //     model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
+            //     model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
+            //     model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
+            //     model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
+            //     model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
+            // }
+
+            // Log User's Programs, if applicable
+
+            var compiledProgramValues = [];
+            
+            // if (!model.appState.mobileView) {
+            //     for (var i = 0; i < checkPrograms.length; i ++) {
+            //         document.getElementById(checkPrograms[i] + 'Mobile').value = '';
+            //     }
+            // } else {
+            //     for (var i = 0; i < checkPrograms.length; i ++) {
+            //         document.getElementById(checkPrograms[i]).value = '';
+            //     }
+            // }
+
+            for (var i = 1; i < 6; i++) {
+                var obj = {};
+                if (document.getElementById(('program' + i)).value) {
+                    obj[name] = document.getElementById(('program' + i)).value;
+                    obj[points] = document.getElementById(('programPoints' + i)).value;
+                    compiledProgramValues.push(obj);
+                } 
+                // else if (document.getElementById(('program' + i + 'Mobile')).value) {
+                //     obj[name] = document.getElementById(('program' + i + 'Mobile')).value;
+                //     obj[points] = document.getElementById(('programPoints' + i + 'Mobile')).value;
+                //     compiledProgramValues.push(obj);
+                // } 
+            }
+
+            model.rewProg.userPrograms = compiledProgramValues;
+        
+            console.log('Display User Programs');
+            console.log(model.rewProg.userPrograms);
         },
         insertCalcInputs: () => {
             
