@@ -5855,38 +5855,47 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'united',
+                            displayName: 'United Airlines MileagePlus',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airFrance',
+                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'korean',
+                            displayName: 'Korean Airlines SkyPass',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
+                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
+                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'british',
+                            displayName: 'British Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'iberia',
+                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'southwest',
+                            displayName: 'Southwest Airlines Rapid Rewards',
                             pointTransferRate: 1
                         },
                         {
                             name: 'chaseAnyCard',
+                            displayName: 'Chase Ultimate Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -5897,38 +5906,47 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'united',
+                            displayName: 'United Airlines MileagePlus',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airFrance',
+                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'korean',
+                            displayName: 'Korean Airlines SkyPass',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
+                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
+                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'british',
+                            displayName: 'British Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'iberia',
+                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: 1
                         },
                         {
                             name: 'southwest',
+                            displayName: 'Southwest Airlines Rapid Rewards',
                             pointTransferRate: 1
                         },
                         {
                             name: 'chaseReserveCard',
+                            displayName: 'Chase Ultimate Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -5939,46 +5957,57 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'british',
+                            displayName: 'British Airways Avios',
                             pointTransferRate: .8
                         },
                         {
                             name: 'iberia',
+                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: .8       
                         },
                         {
                             name: 'airFrance',
+                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airCanada',
+                            displayName: 'Air Canada Aeroplan',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
+                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
+                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'delta',
+                            displayName: 'Delta Airlines SkyMiles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'ana',
+                            displayName: 'ANA: All Nippon Airways Mileage Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'etihad',
+                            displayName: 'Etihad Airways Guest',
                             pointTransferRate: 1
                         },
                         {
                             name: 'cathayPacific',
+                            displayName: 'Cathay Pacific Asia Miles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'amexAnyCashBack',
+                            displayName: 'American Express Membership Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -5989,46 +6018,57 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'british',
+                            displayName: 'British Airways Avios',
                             pointTransferRate: .8
                         },
                         {
                             name: 'iberia',
+                            displayName: 'Iberia Airways Avios',
                             pointTransferRate: .8
                         },
                         {
                             name: 'airFrance',
+                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'airCanada',
+                            displayName: 'Air Canada Aeroplan',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
+                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
+                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'delta',
+                            displayName: 'Delta Airlines SkyMiles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'ana',
+                            displayName: 'ANA: All Nippon Airways Mileage Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'etihad',
+                            displayName: 'Etihad Airways Guest',
                             pointTransferRate: 1
                         },
                         {
                             name: 'cathayPacific',
+                            displayName: 'Cathay Pacific Asia Miles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'amexBizCashBack',
+                            displayName: 'American Express Membership Rewards Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
@@ -6039,31 +6079,36 @@ var model = {
                     participatingPrograms: [
                         {
                             name: 'airFrance',
+                            displayName: 'Air France/KLM Flying Blue',
                             pointTransferRate: 1
                         },
                         {
                             name: 'virgin',
+                            displayName: 'Virgin Atlantic Flying Club',
                             pointTransferRate: 1
                         },
                         {
                             name: 'singapore',
+                            displayName: 'Singapore Airlines KrisFlyer',
                             pointTransferRate: 1
                         },
                         {
                             name: 'etihad',
+                            displayName: 'Etihad Airways Guest',
                             pointTransferRate: 1
                         },
                         {
                             name: 'cathayPacific',
+                            displayName: 'Cathay Pacific Asia Miles',
                             pointTransferRate: 1
                         },
                         {
                             name: 'citiCashBack',
+                            displayName: 'Citi Thank You Pay with Points',
                             pointTransferRate: 1
                         },
                     ]
                 }
-
             },
             frequentFlier: {        
                 allAirports: [
@@ -8111,7 +8156,6 @@ var model = {
                             generalToUsFeeBusiness: '5',
                             generalToUsMilesBusiness: '40,000',
                             exceptionFromAirports: null
-                        }
                         },
                         carribean: {
                             airports: [
@@ -9070,7 +9114,7 @@ var model = {
                                     }
                             ]
                         },  
-                            asiaTwo: {
+                        asiaTwo: {
                             airports: [ 
                                 'BWN',
                                 'PEN',
@@ -9183,7 +9227,7 @@ var model = {
                                     }
                             ],
                         },          
-                            indianSub: {
+                        indianSub: {
                             airports: [
                             ],
                             generalToUsFeeEconomy: '25',
@@ -9273,7 +9317,7 @@ var model = {
                                     }
                             ],
                         },          
-                            africa: {
+                        africa: {
                             airports: [
                                 //NA
                                         'AGA',
@@ -9503,7 +9547,8 @@ var model = {
                                     exceptionBusinessFee: '27',
                                     exceptionBusinessMiles: '65,000-75,000'
                                 }
-                        ]
+                            ]
+                        }
                     }
                 },
                 airCanada: {
@@ -20033,7 +20078,7 @@ var model = {
                     }
                 },
                 virgin: {
-                    displayName: 'Delta Airline SkyMiles',
+                    displayName: 'Virgin Atlantic Flying Club',
                     logo: 'virgin.png',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
@@ -40931,8 +40976,9 @@ var model = {
                     for (var i = 1; i < 6; i++) {
                         var obj = {};
                         if (document.getElementById(('program' + i)).value) {
+                            var points = Number(document.getElementById(('programPoints' + i)).value.replace(/,/g , ''))
                             obj['name'] = document.getElementById(('program' + i)).value;
-                            obj['points'] = document.getElementById(('programPoints' + i)).value;
+                            obj['points'] = points;
                             compiledProgramValues.push(obj);
                         } 
                         // else if (document.getElementById(('program' + i + 'Mobile')).value) {
@@ -41718,6 +41764,7 @@ var model = {
                         model.rewProg.programs.pointsTransferrable[ptsTrans].participatingPrograms.forEach(function(p) {
                             var obj = {};
                             obj['name'] = p.name;
+                            obj['displayName'] = p.displayName;
                             obj['points'] = prog.points * p.pointTransferRate;
                             obj['transferPartnerDisplayName'] = model.rewProg.programs.pointsTransferrable[ptsTrans].displayName;
                             obj['transferPartnerLogo'] = model.rewProg.programs.pointsTransferrable[ptsTrans].logo;
