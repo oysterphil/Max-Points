@@ -19,7 +19,7 @@
 <body style="background-color: #90caf9;">
 
   <!-- Navbar Mobile, Tablet, and Desktop -->
-  <div id="preNav" class="navbar-fixed" style="display: none;">  
+  <div id="preNav" class="navbar-fixed" style="display: block;">  
     <nav>
       <div class="nav-wrapper">
         <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;"><img class="hide-on-large-only" src="/img/logo.png" height="45px" style="margin-top: 5px;margin-left: 5px;"><img class="hide-on-small-only hide-on-med-only" src="/img/logo.png" height="55px" style="margin-top: 5px;margin-left: 5px;"></a>
@@ -37,7 +37,7 @@
   <!-- End Navbar -->
 
   <!-- Landing Page -->
-  <div id="landingPage" style="display: none;">
+  <div id="landingPage" style="display: inline;">
 
     <!-- Mobile Splash Page --> 
     <section class="hide-on-large-only" style="background-image: url(https://www.rewardexpert.com/assets/home/map-blue-6193d943c4727043b081f06d651540bc.png); padding:30px 0px 50px 0px;">
@@ -331,7 +331,7 @@
   <!-- End Landing Page -->
 
   <!-- Profile -->
-  <div id="profile" style="display: inline;">
+  <div id="profile" style="display: none;">
     <header>
       <nav class="top-nav hide-on-med-only hide-on-small-only" style="height: 100px; line-height: 100px;">
         <div class="container">
@@ -380,7 +380,7 @@
           <!-- End Display Recommendations -->
 
           <!-- Redemption Calculator --> 
-          <div id="redemptionCalculator" style="display: inline;">
+          <div id="redemptionCalculator" style="display: none;">
             
           </div>
           <!-- End Redemption Calculator -->
@@ -909,8 +909,7 @@
   <!-- End Landing Page Footer Mobile -->
 
   <!-- Footer Desktop -->
-  <!-- TO DO: Remove display:none below -->
-  <footer id="preFooterDesktop" class="page-footer hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px; display: none;">
+  <footer id="preFooterDesktop" class="page-footer hide-on-small-only" style="background-color: #0d47a1; padding-top: 0px;">
     <hr>
     <div class="footer-copyright">
       <div class="row center white-text">
@@ -2245,29 +2244,29 @@
                 <div class="card-stacked">
                   <div class="card-content">
                     <div class="input-field col l3">
-                      <input type="text" id="fromAirport" class="airportAutocomplete"> 
-                      <label for="fromAirport">From</label>
+                      <input type="text" id="fromAirportMobile" class="airportAutocomplete"> 
+                      <label for="fromAirportMobile">From</label>
                     </div>
                     <div class="input-field col l3">
-                      <input type="text" id="toAirport" class="airportAutocomplete"> 
-                      <label for="toAirport">To</label>
+                      <input type="text" id="toAirportMobile" class="airportAutocomplete"> 
+                      <label for="toAirportMobile">To</label>
                     </div>
                     <div class="input-field col l2">
-                      <select id="flightClass" class="browser-default">
+                      <select id="flightClassMobile" class="browser-default">
                         <option value="" disabled selected>Class</option>
                         <option value="economy">Economy</option>
                         <option value="business">Business</option>
                       </select>
                     </div>
                     <div class="input-field col l2">
-                      <select id="flightType" class="browser-default">
+                      <select id="flightTypeMobile" class="browser-default">
                         <option value="" disabled selected>Type</option>
                         <option value="oneWay">One Way</option>
                         <option value="roundTrip">Round Trip</option>
                       </select>
                     </div>
                     <div class="input-field col l2">
-                      <select id="numTickets" class="browser-default">
+                      <select id="numTicketsMobile" class="browser-default">
                         <option value="" disabled selected>Tickets</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -2284,7 +2283,7 @@
           <!-- End Flight Details Desktop -->
           
           <!-- Program Details Desktop --> 
-          <div class="row">
+          <!-- <div class="row">
             <div class="col m10 offset-m1">
               <div class="card horizontal">
                 <div class="card-stacked">
@@ -2294,22 +2293,22 @@
                     </h5>
                     <div class="row col m12 center">
                       <div class="input-field col m4 offset-m2 center">
-                        <input type="text" id="program1" class="programAutocomplete"> 
-                        <label for="program1">Program 1</label>
+                        <input type="text" id="program1Mobile" class="programAutocomplete"> 
+                        <label for="program1Mobile">Program 1</label>
                       </div>
                       <div class="input-field col m4 center">
-                        <input type="text" id="programPoints1" class="programAutocomplete"> 
-                        <label for="programPoints1">Points/Miles</label>
+                        <input type="text" id="programPoints1Mobile" class="programAutocomplete"> 
+                        <label for="programPoints1Mobile">Points/Miles</label>
                       </div>
-                      <div class="input-field col m4 offset-m2" id="program22" style="display: none;">
-                        <input type="text" id="program2" class="programAutocomplete">
-                        <label for="program2">Program 2</label>
+                      <div class="input-field col m4 offset-m2" id="program22Mobile" style="display: none;">
+                        <input type="text" id="program2Mobile" class="programAutocomplete">
+                        <label for="program2Mobile">Program 2</label>
                       </div>
-                      <div id="programPoints22" class="input-field col m3 center" style="display: none;">
-                        <input type="text" id="programPoints2" class="programAutocomplete"> 
-                        <label for="programPoints2">Points/Miles</label>
+                      <div id="programPoints33Mobile" class="input-field col m3 center" style="display: none;">
+                        <input type="text" id="programPoints3Mobile" class="programAutocomplete"> 
+                        <label for="programPoints3Mobile">Points/Miles</label>
                       </div>
-                      <i id="y2" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <i id="y" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
                       <div class="input-field col m4 offset-m2" id="program33" style="display: none;">
                         <input type="text" id="program3" class="programAutocomplete">
                         <label for="program3">Program 3</label>
@@ -2350,7 +2349,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- End Program Details Desktop -->
 
           <!-- Data Validation Box Desktop -->
@@ -2372,10 +2371,10 @@
           <!-- Submit Button Desktop -->
           <div class="col m4 offset-m4 center">
 
-            <button class="btn waves-effect waves-light btn-large" id="submitRedempCalcForm">
+            <!-- <button class="btn waves-effect waves-light btn-large" id="submitRedempCalcForm">
               Submit
               <i class="material-icons right">send</i>
-            </button>
+            </button> -->
 
           </div>
           <!-- End Submit Button Desktop -->
@@ -2554,6 +2553,16 @@
         <!-- Display Program and Flight Info -->
         <div id="displayProgramAndFlightInfo" class="section col l10 offset-l1" style="display: none;">
 
+          <!-- Back to Inputs Button Desktop -->
+          <div class="col m4 offset-m4 center">
+
+            <button class="btn waves-effect waves-light btn-large" id="backToInputsDesktop" style="margin: 30px;">
+              Back to Inputs
+            </button>
+
+          </div>
+          <!-- End Back to Inputs Button Desktop -->
+
           <div class="row">
             <div class="col s12">
               <ul class="tabs">
@@ -2591,7 +2600,7 @@
                                   <a class="waves-effect waves-light btn-large">Booking Info</a>
                                 </div>
                                 <div class="col s12 center" style="padding: 30px;">
-                                  <a class="waves-effect waves-light btn-large" onclick="model.rewProg.viewExtraInfo('{{destId}}')">Overview Details</a>
+                                  <a class="waves-effect waves-light btn-large" onclick="model.controllers.viewExtraInfo('{{destId}}')">Overview Details</a>
                                 </div>
                               </div>
                               <!-- Enough Points? -->
@@ -2687,7 +2696,7 @@
                                   <a class="waves-effect waves-light btn-large">Booking Info</a>
                                 </div>
                                 <div class="col s12 center" style="padding: 30px;">
-                                  <a class="waves-effect waves-light btn-large" onclick="model.rewProg.viewExtraInfo('{{destId}}')">Overview Details</a>
+                                  <a class="waves-effect waves-light btn-large" onclick="model.controllers.viewExtraInfo('{{destId}}')">Overview Details</a>
                                 </div>
                               </div>
                               <!-- Enough Points? -->
@@ -2829,6 +2838,8 @@
           model.appState.resultsPage = false;
           model.appState.acctInfo = false;
           model.appState.redempCalc = true;
+
+          model.controllers.redemptionSetup();
 
           document.getElementById('pointsCalculator').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'none';

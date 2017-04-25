@@ -6063,10 +6063,739 @@ var model = {
                         },
                     ]
                 }
+
             },
             frequentFlier: {        
                 allAirports: [
-
+                    'ABQ',
+                    'ALB',
+                    'ANC',
+                    'ATL',
+                    'AUS',
+                    'BDL',
+                    'BHM',
+                    'BNA',
+                    'BOI',
+                    'BOS',
+                    'BUF',
+                    'BWI',
+                    'CLE',
+                    'CLT',
+                    'CMH',
+                    'COS',
+                    'CVG',
+                    'DAY',
+                    'DCA',
+                    'DEN',
+                    'DFW',
+                    'DSM',
+                    'DTW',
+                    'EGE',
+                    'ELP',
+                    'EUG',
+                    'EWR',
+                    'FAT',
+                    'FLL',
+                    'HDN',
+                    'HOU',
+                    'HSV',
+                    'HVN',
+                    'IAD',
+                    'IAH',
+                    'ICT',
+                    'IND',
+                    'JAC',
+                    'JAX',
+                    'JFK',
+                    'JLN',
+                    'LAS',
+                    'LAX',
+                    'LGA',
+                    'LIT',
+                    'MCI',
+                    'MCO',
+                    'MDT',
+                    'MEM',
+                    'MGM',
+                    'MIA',
+                    'MKE',
+                    'MOB',
+                    'MSP',
+                    'MSY',
+                    'MTJ',
+                    'OAK',
+                    'OKC',
+                    'OMA',
+                    'ONT',
+                    'ORD',
+                    'ORF',
+                    'PBI',
+                    'PDX',
+                    'PHL',
+                    'PHX',
+                    'PIT',
+                    'PSP',
+                    'PVD',
+                    'PWM',
+                    'RDU',
+                    'RIC',
+                    'RNO',
+                    'ROC',
+                    'RSW',
+                    'SAF',
+                    'SAN',
+                    'SAT',
+                    'SDF',
+                    'SEA',
+                    'SFO',
+                    'SGF',
+                    'SJC',
+                    'SLC',
+                    'SMF',
+                    'SNA',
+                    'STL',
+                    'SYR',
+                    'TPA',
+                    'TUL',
+                    'TUS',
+                    'XNA',
+                    'AKL',
+                    'BNE',
+                    'CHC',
+                    'DUR',
+                    'GUM',
+                    'ICN',
+                    'KSA',
+                    'KWA',
+                    'MAJ',
+                    'MEL',
+                    'NOU',
+                    'PER',
+                    'PNI',
+                    'PPT',
+                    'ROR',
+                    'SPN',
+                    'SYD',
+                    'TKK',
+                    'WLG',
+                    'YAP',
+                    'AAL',
+                    'ABE',
+                    'ABJ',
+                    'ABV',
+                    'ABZ',
+                    'ACC',
+                    'ACE',
+                    'ADA',
+                    'ADB',
+                    'ADD',
+                    'ADE',
+                    'ADF',
+                    'AER',
+                    'AES',
+                    'AGA',
+                    'AGF',
+                    'AGP',
+                    'AGR',
+                    'AGS',
+                    'AJA',
+                    'AJI',
+                    'ALA',
+                    'ALC',
+                    'ALG',
+                    'ALY',
+                    'AMA',
+                    'AMD',
+                    'AMM',
+                    'AMS',
+                    'ANR',
+                    'ANU',
+                    'AOI',
+                    'ARN',
+                    'ASB',
+                    'ASM',
+                    'ASR',
+                    'ASU',
+                    'ATH',
+                    'ATW',
+                    'AUA',
+                    'AUH',
+                    'AUR',
+                    'AVL',
+                    'AVP',
+                    'AWZ',
+                    'AYT',
+                    'BAH',
+                    'BAL',
+                    'BAQ',
+                    'BCN',
+                    'BDA',
+                    'BEG',
+                    'BES',
+                    'BEY',
+                    'BGF',
+                    'BGG',
+                    'BGI',
+                    'BGO',
+                    'BGR',
+                    'BGW',
+                    'BHD',
+                    'BHX',
+                    'BIA',
+                    'BIL',
+                    'BIO',
+                    'BIQ',
+                    'BIS',
+                    'BJM',
+                    'BJV',
+                    'BJX',
+                    'BKK',
+                    'BKO',
+                    'BLL',
+                    'BLQ',
+                    'BLR',
+                    'BMA',
+                    'BOD',
+                    'BOG',
+                    'BOM',
+                    'BON',
+                    'BPT',
+                    'BQK',
+                    'BQN',
+                    'BRE',
+                    'BRI',
+                    'BRS',
+                    'BRU',
+                    'BSB',
+                    'BSL',
+                    'BSR',
+                    'BTR',
+                    'BTV',
+                    'BUD',
+                    'BUR',
+                    'BUS',
+                    'BVC',
+                    'BVE',
+                    'BWN',
+                    'BZE',
+                    'BZN',
+                    'BZV',
+                    'CAE',
+                    'CAG',
+                    'CAI',
+                    'CAK',
+                    'CAN',
+                    'CAP',
+                    'CCS',
+                    'CCU',
+                    'CDG',
+                    'CEB',
+                    'CFE',
+                    'CFG',
+                    'CFN',
+                    'CFR',
+                    'CFU',
+                    'CGK',
+                    'CGN',
+                    'CHA',
+                    'CHS',
+                    'CIX',
+                    'CIY',
+                    'CJU',
+                    'CKY',
+                    'CKZ',
+                    'CLJ',
+                    'CLO',
+                    'CLY',
+                    'CMB',
+                    'CMN',
+                    'CMW',
+                    'CND',
+                    'CNF',
+                    'CNX',
+                    'COO',
+                    'COR',
+                    'CPH',
+                    'CPT',
+                    'CRK',
+                    'CRW',
+                    'CTA',
+                    'CTG',
+                    'CTS',
+                    'CTU',
+                    'CUN',
+                    'CUR',
+                    'CUZ',
+                    'CWL',
+                    'CZL',
+                    'CZM',
+                    'DAB',
+                    'DAD',
+                    'DAL',
+                    'DAR',
+                    'DBV',
+                    'DCM',
+                    'DEL',
+                    'DKR',
+                    'DLA',
+                    'DLC',
+                    'DLM',
+                    'DME',
+                    'DMM',
+                    'DNK',
+                    'DOH',
+                    'DPS',
+                    'DRS',
+                    'DTM',
+                    'DUB',
+                    'DUS',
+                    'DXB',
+                    'DYU',
+                    'DZA',
+                    'EAP',
+                    'EBB',
+                    'EBL',
+                    'ECN',
+                    'ECP',
+                    'EDI',
+                    'EDO',
+                    'ELQ',
+                    'ERC',
+                    'ERZ',
+                    'ESB',
+                    'ETZ',
+                    'EVN',
+                    'EVV',
+                    'EYW',
+                    'EZE',
+                    'EZS',
+                    'FAI',
+                    'FAO',
+                    'FAR',
+                    'FAY',
+                    'FCA',
+                    'FCO',
+                    'FDH',
+                    'FIH',
+                    'FKB',
+                    'FLR',
+                    'FMO',
+                    'FNA',
+                    'FNC',
+                    'FNT',
+                    'FPO',
+                    'FRA',
+                    'FRU',
+                    'FSC',
+                    'FSD',
+                    'FUE',
+                    'FUK',
+                    'FWA',
+                    'GBE',
+                    'GCM',
+                    'GDL',
+                    'GDN',
+                    'GEG',
+                    'GIG',
+                    'GLA',
+                    'GMP',
+                    'GMU',
+                    'GND',
+                    'GNV',
+                    'GNY',
+                    'GOA',
+                    'GOI',
+                    'GOT',
+                    'GPT',
+                    'GRB',
+                    'GRR',
+                    'GRU',
+                    'GRZ',
+                    'GSO',
+                    'GSP',
+                    'GTF',
+                    'GUA',
+                    'GVA',
+                    'GWT',
+                    'GYD',
+                    'GYE',
+                    'GZP',
+                    'GZT',
+                    'HAH',
+                    'HAJ',
+                    'HAM',
+                    'HAN',
+                    'HAV',
+                    'HEL',
+                    'HER',
+                    'HGH',
+                    'HKG',
+                    'HKT',
+                    'HND',
+                    'HNL',
+                    'HOG',
+                    'HOT',
+                    'HPN',
+                    'HRE',
+                    'HRG',
+                    'HRK',
+                    'HRL',
+                    'HTY',
+                    'HUY',
+                    'HYD',
+                    'HYT',
+                    'IBZ',
+                    'IDA',
+                    'IFN',
+                    'IGD',
+                    'IKA',
+                    'INI',
+                    'INN',
+                    'INV',
+                    'IQT',
+                    'ISB',
+                    'ISE',
+                    'IST',
+                    'ISU',
+                    'ITM',
+                    'ITO',
+                    'JAI',
+                    'JAN',
+                    'JED',
+                    'JER',
+                    'JIB',
+                    'JNB',
+                    'JNU',
+                    'JRO',
+                    'JUB',
+                    'KAN',
+                    'KBL',
+                    'KBP',
+                    'KBV',
+                    'KCO',
+                    'KEF',
+                    'KFS',
+                    'KGL',
+                    'KHE',
+                    'KHI',
+                    'KIN',
+                    'KIR',
+                    'KIV',
+                    'KIX',
+                    'KOA',
+                    'KRK',
+                    'KRS',
+                    'KRT',
+                    'KSC',
+                    'KSY',
+                    'KTM',
+                    'KTT',
+                    'KTW',
+                    'KUF',
+                    'KUL',
+                    'KVD',
+                    'KWI',
+                    'KYA',
+                    'KZR',
+                    'LAD',
+                    'LAI',
+                    'LAN',
+                    'LBA',
+                    'LBB',
+                    'LBV',
+                    'LCA',
+                    'LCY',
+                    'LDE',
+                    'LED',
+                    'LEJ',
+                    'LEX',
+                    'LFW',
+                    'LGB',
+                    'LGW',
+                    'LHE',
+                    'LHR',
+                    'LIG',
+                    'LIH',
+                    'LIL',
+                    'LIM',
+                    'LIN',
+                    'LIR',
+                    'LIS',
+                    'LJU',
+                    'LLW',
+                    'LNZ',
+                    'LOS',
+                    'LPA',
+                    'LPB',
+                    'LPI',
+                    'LRH',
+                    'LRT',
+                    'LUG',
+                    'LUN',
+                    'LUX',
+                    'LUZ',
+                    'LWO',
+                    'LXR',
+                    'LYS',
+                    'MAA',
+                    'MAD',
+                    'MAN',
+                    'MAO',
+                    'MAR',
+                    'MBA',
+                    'MBJ',
+                    'MCT',
+                    'MDE',
+                    'MDW',
+                    'MED',
+                    'MEX',
+                    'MFE',
+                    'MFM',
+                    'MGA',
+                    'MGQ',
+                    'MHD',
+                    'MHT',
+                    'MID',
+                    'MLA',
+                    'MLB',
+                    'MLE',
+                    'MLH',
+                    'MLX',
+                    'MME',
+                    'MNL',
+                    'MOT',
+                    'MPL',
+                    'MPM',
+                    'MQM',
+                    'MRS',
+                    'MRU',
+                    'MSN',
+                    'MSO',
+                    'MSQ',
+                    'MSR',
+                    'MST',
+                    'MTY',
+                    'MUC',
+                    'MVD',
+                    'MXP',
+                    'MYR',
+                    'MZH',
+                    'NAP',
+                    'NAS',
+                    'NAV',
+                    'NBO',
+                    'NCE',
+                    'NCL',
+                    'NDJ',
+                    'NGO',
+                    'NIM',
+                    'NJF',
+                    'NKM',
+                    'NKT',
+                    'NOC',
+                    'NOP',
+                    'NQY',
+                    'NRT',
+                    'NSI',
+                    'NTE',
+                    'NUE',
+                    'NWI',
+                    'OAJ',
+                    'ODL',
+                    'ODS',
+                    'OGG',
+                    'OGU',
+                    'OKA',
+                    'OKK',
+                    'OLB',
+                    'OPO',
+                    'ORK',
+                    'ORN',
+                    'ORY',
+                    'OSL',
+                    'OTP',
+                    'OUA',
+                    'OZH',
+                    'PAD',
+                    'PAP',
+                    'PDL',
+                    'PEK',
+                    'PEN',
+                    'PGF',
+                    'PGR',
+                    'PHF',
+                    'PIE',
+                    'PLS',
+                    'PLZ',
+                    'PMI',
+                    'PMO',
+                    'PNH',
+                    'PNS',
+                    'POA',
+                    'POP',
+                    'POS',
+                    'POZ',
+                    'PRG',
+                    'PRN',
+                    'PSA',
+                    'PSC',
+                    'PTP',
+                    'PTY',
+                    'PUF',
+                    'PUJ',
+                    'PUY',
+                    'PVG',
+                    'PVR',
+                    'RAI',
+                    'RAK',
+                    'RAP',
+                    'RDZ',
+                    'REC',
+                    'RGN',
+                    'RHO',
+                    'RID',
+                    'RIO',
+                    'RIX',
+                    'RLG',
+                    'RNS',
+                    'ROA',
+                    'ROB',
+                    'ROS',
+                    'ROV',
+                    'RTB',
+                    'RTM',
+                    'RUH',
+                    'RUN',
+                    'RZE',
+                    'SAH',
+                    'SAL',
+                    'SAP',
+                    'SAV',
+                    'SAW',
+                    'SBN',
+                    'SBZ',
+                    'SCL',
+                    'SCN',
+                    'SCQ',
+                    'SDJ',
+                    'SDQ',
+                    'SDU',
+                    'SEZ',
+                    'SGN',
+                    'SHA',
+                    'SHE',
+                    'SID',
+                    'SIN',
+                    'SJD',
+                    'SJJ',
+                    'SJO',
+                    'SJU',
+                    'SKB',
+                    'SKG',
+                    'SKP',
+                    'SNN',
+                    'SNU',
+                    'SOF',
+                    'SPA',
+                    'SPU',
+                    'SRQ',
+                    'SSG',
+                    'SSH',
+                    'STI',
+                    'STR',
+                    'STT',
+                    'STW',
+                    'STX',
+                    'SUB',
+                    'SUF',
+                    'SVG',
+                    'SVO',
+                    'SVQ',
+                    'SWF',
+                    'SXB',
+                    'SXF',
+                    'SXM',
+                    'SYZ',
+                    'SZF',
+                    'SZG',
+                    'TAE',
+                    'TAO',
+                    'TAS',
+                    'TBS',
+                    'TBZ',
+                    'TEQ',
+                    'TFN',
+                    'TFS',
+                    'TGD',
+                    'TGU',
+                    'TIA',
+                    'TIF',
+                    'TLH',
+                    'TLL',
+                    'TLN',
+                    'TLS',
+                    'TLV',
+                    'TMS',
+                    'TNG',
+                    'TNR',
+                    'TOL',
+                    'TOS',
+                    'TPE',
+                    'TRD',
+                    'TRF',
+                    'TRI',
+                    'TRN',
+                    'TRS',
+                    'TSR',
+                    'TST',
+                    'TUN',
+                    'TVC',
+                    'TXL',
+                    'TYS',
+                    'TZL',
+                    'TZX',
+                    'UIO',
+                    'UIP',
+                    'ULN',
+                    'URO',
+                    'UVF',
+                    'VAN',
+                    'VAR',
+                    'VAS',
+                    'VCE',
+                    'VCP',
+                    'VIE',
+                    'VKO',
+                    'VLC',
+                    'VLN',
+                    'VNO',
+                    'VPS',
+                    'VRA',
+                    'VRN',
+                    'VTE',
+                    'VVI',
+                    'VXE',
+                    'WAW',
+                    'WDH',
+                    'WRO',
+                    'WUH',
+                    'XIY',
+                    'XMN',
+                    'XRY',
+                    'YEG',
+                    'YEI',
+                    'YHZ',
+                    'YKO',
+                    'YNB',
+                    'YOW',
+                    'YUL',
+                    'YVR',
+                    'YYC',
+                    'YYZ',
+                    'ZAG',
+                    'ZIH',
+                    'ZNZ',
+                    'ZRH'
                 ],
                 toUsAirportsFromAbroad: [
                     'ALB',
@@ -39111,26 +39840,1862 @@ var model = {
                 numTickets: null
             }
         },
-        userPrograms: [
-            {
-                name: 'chaseAnyCard',
-                points: 25000
-            },
-            {
-                name: 'deltaAirlines',
-                points: 250000
-            },
-            {
-                name: 'virginAtlantic',
-                points: 1000
-            }
-        ],
+        userPrograms: [],
         userFreqFlierPrograms: [],
         eligiblePrograms: {
             toDestination: [],
             toDestinationCount: 0,
             fromDestination: [],
             fromDestinationCount: 0
+        }
+    },
+    templates: {
+        variables: {
+            displayRecommendationsTemplate: null,
+            carouselGoalSliderDesktopTemplate: null,
+            carouselGoalSliderMobileTemplate: null,
+            pointsCalculatorTemplate: null,
+            redemptionCalculatorTemplate: null
+        },
+        compile: () => {
+            // Compile Display Recommendations Template
+            var displayRecommendationsTemplateSource = 
+                document.getElementById('displayRecommendationsTemplate').innerHTML;
+            model.templates.variables.displayRecommendationsTemplate = 
+                Handlebars.compile(displayRecommendationsTemplateSource);
+
+            // Compile Carousel Goal Slider Desktop
+            var carouselGoalSliderDesktopTemplateSource = 
+                document.getElementById('carouselGoalSliderDesktopTemplate').innerHTML;
+            model.templates.variables.carouselGoalSliderDesktopTemplate = 
+                Handlebars.compile(carouselGoalSliderDesktopTemplateSource);
+
+            // Compile Carousel Goal Slider Mobile
+            var carouselGoalSliderMobileTemplateSource = 
+                document.getElementById('carouselGoalSliderMobileTemplate').innerHTML;
+            model.templates.variables.carouselGoalSliderMobileTemplate = 
+                Handlebars.compile(carouselGoalSliderMobileTemplateSource);
+
+            // Compile Points Calculator Template
+            var pointsCalculatorTemplateSource = 
+                document.getElementById('pointsCalculatorTemplate').innerHTML;
+            model.templates.variables.pointsCalculatorTemplate = 
+                Handlebars.compile(pointsCalculatorTemplateSource);
+
+            // Compile Redemption Calculator Template
+            var redemptionCalculatorTemplateSource = 
+                document.getElementById('redemptionCalculatorTemplate').innerHTML;
+            model.templates.variables.redemptionCalculatorTemplate = 
+                Handlebars.compile(redemptionCalculatorTemplateSource);
+        },
+        renderDisplayRecommendationsTemplate: () => {
+            var displayRecommendationsTemplateHtml = 
+                model.templates.variables.displayRecommendationsTemplate(model.cards);
+            document.getElementById('displayRecommendations').innerHTML = 
+                displayRecommendationsTemplateHtml;
+        },
+        renderCarouselGoalSliderDesktopTemplate: () => {
+            var carouselGoalSliderDesktopTemplateHtml = 
+                model.templates.variables.carouselGoalSliderDesktopTemplate(model.destinations);
+            document.getElementById('carouselGoalSliderDesktop').innerHTML = 
+                carouselGoalSliderDesktopTemplateHtml;
+        },
+        renderCarouselGoalSliderMobileTemplate: () => {
+            var carouselGoalSliderMobileTemplateHtml = 
+                model.templates.variables.carouselGoalSliderMobileTemplate(model.destinations);
+            document.getElementById('carouselGoalSliderMobile').innerHTML = 
+                carouselGoalSliderMobileTemplateHtml;
+        },
+        renderPointsCalculatorTemplate: () => {
+            var pointsCalculatorTemplateHtml = 
+                model.templates.variables.pointsCalculatorTemplate(model.cards);
+            document.getElementById('pointsCalculator').innerHTML = 
+                pointsCalculatorTemplateHtml;
+        },
+        renderPointsRedemptionTemplate: () => {
+            var redemptionCalculatorTemplateHtml =
+                model.templates.variables.redemptionCalculatorTemplate(model.rewProg);
+            document.getElementById('redemptionCalculator').innerHTML = 
+                redemptionCalculatorTemplateHtml;
+        }
+        
+    },
+    controllers: {
+        setup: () => {
+            // Compile Templates
+            model.templates.compile();
+
+            // Set Rewards Goal Selections for Mobile/Desktop to Europe
+            model.destinations.selectionDesktop = model.destinations.optionsDesktop.unitedStatesDesktop;
+            model.destinations.selectionMobile = model.destinations.optionsMobile.unitedStatesMobile;
+            
+            // Render Rewards Goal Tempalates and Establish the View for Mobile/Desktop
+            model.templates.renderCarouselGoalSliderDesktopTemplate();
+            model.controllers.setupCarouselViewDesktop();
+            model.templates.renderCarouselGoalSliderMobileTemplate();
+            model.controllers.setupCarouselViewMobile();
+
+            // Landing Page PP and TOS Event Listeners
+            document.getElementById('termsOfServiceButtonLpDesktop').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonLpDesktop').addEventListener('click', model.appState.toggleToPp);
+            document.getElementById('termsOfServiceButtonLpMobile').addEventListener('click', model.appState.toggleToTos);
+            document.getElementById('privacyPolicyButtonLpMobile').addEventListener('click', model.appState.toggleToPp);
+            
+            // Rewards Goal Event Listeners 
+            $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
+            $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
+
+            function changeRewardGoalViewDesktop() {
+
+                if ($(this).val().includes('europe')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.europeDesktop;
+                } else if ($(this).val().includes('ocea')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.oceaniaDesktop;
+                } else if ($(this).val().includes('asia')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.asiaDesktop;
+                } else if ($(this).val().includes('latin')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.latinAmericaDesktop;
+                } else if ($(this).val().includes('africa')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.africaDesktop;
+                } else if ($(this).val().includes('united')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.unitedStatesDesktop;
+                } else if ($(this).val().includes('cashBack')) {
+                    model.destinations.selectionDesktop = 
+                        model.destinations.optionsDesktop.cashBackLandingPageDesktop;
+                }
+
+                model.templates.renderCarouselGoalSliderDesktopTemplate();
+                model.controllers.setupCarouselViewDesktop();
+            }
+
+            function changeRewardGoalViewMobile() {
+                
+                if ($(this).val().includes('europe')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.europeMobile;
+                } else if ($(this).val().includes('ocea')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.oceaniaMobile;
+                } else if ($(this).val().includes('asia')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.asiaMobile;
+                } else if ($(this).val().includes('latin')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.latinAmericaMobile;
+                } else if ($(this).val().includes('africa')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.africaMobile;
+                } else if ($(this).val().includes('united')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.unitedStatesMobile;
+                } else if ($(this).val().includes('cashBack')) {
+                    model.destinations.selectionMobile = 
+                        model.destinations.optionsMobile.cashBackLandingPageMobile;
+                }
+
+                model.templates.renderCarouselGoalSliderMobileTemplate();
+                model.controllers.setupCarouselViewMobile();
+            }
+        },
+        closeForgotPasswordModal: () => {
+            event.preventDefault();
+            $('#forgotPasswordModal').modal('close');
+        },
+        showRegister: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+
+            model.appState.registerBeforeRecs = true;
+            if (document.getElementById('landingPage').style.display === 'inline') {
+                model.appState.landingPage = false;
+                document.getElementById('landingPage').style.display = 'none';
+            } else if (document.getElementById('pointsCalculator').style.display === 'inline') {
+                model.appState.calculator = false;
+                document.getElementById('pointsCalculator').style.display = 'none';
+            } else if (document.getElementById('signIn').style.display === 'inline') {
+                model.appState.signInBeforeRecs = false;
+                document.getElementById('signIn').style.display = 'none';
+            }
+
+            document.getElementById('register').style.display = 'inline';
+        },
+        showLogin: () => {
+            document.getElementById('privacyPolicy').style.display = 'none';
+            document.getElementById('termsOfService').style.display = 'none';
+
+            model.appState.signInBeforeRecs = true;
+            if (document.getElementById('landingPage').style.display === 'inline') {
+                model.appState.landingPage = false;
+                document.getElementById('landingPage').style.display = 'none';
+            } else if (document.getElementById('pointsCalculator').style.display === 'inline') {
+                model.appState.calculator = false;
+                document.getElementById('pointsCalculator').style.display = 'none';
+            } else if (document.getElementById('register').style.display === 'inline') {
+                model.appState.registerBeforeRecs = false;
+                document.getElementById('register').style.display = 'none';
+            }
+            
+            document.getElementById('signIn').style.display = 'inline';
+        },
+        setupCarouselViewMobile: () => {
+            var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
+            var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
+            for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
+                if (i === 0) {
+                    carouselSlidesMobileArray[i].style.display = 'block';
+                } else {
+                    carouselSlidesMobileArray[i].style.display = 'none';
+                }
+            }
+        },
+        setupCarouselViewDesktop: () => {
+            var carouselSlidesDesktop = document.getElementsByClassName("mySlides2");
+            var carouselSlidesDesktopArray = Array.from(carouselSlidesDesktop);
+            for (var i = 0; i < carouselSlidesDesktopArray.length; i++) {
+                if (i === 0) {
+                    carouselSlidesDesktopArray[i].style.display = 'block';
+                } else {
+                    carouselSlidesDesktopArray[i].style.display = 'none';
+                }
+            }
+        },
+        insertLivIconsForCalculator: () => {
+            // Rewards Goal Icon Desktop
+            jQuery('#addTouch').addLiviconEvo({
+                name: 'touch.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Own a Business Icon Desktop
+            jQuery('#addBriefcase').addLiviconEvo({
+                name: 'briefcase.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Credit Score Icon Desktop
+            jQuery('#addDashboard').addLiviconEvo({
+                name: 'dashboard.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Monthly Spend Icon Desktop
+            jQuery('#addCreditCardOut').addLiviconEvo({
+                name: 'credit-card-out.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Email Icon Desktop
+            jQuery('#addEnvelopePut').addLiviconEvo({
+                name: 'envelope-put.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Current Credit Cards Icon Desktop
+            jQuery('#addCreditCardIn').addLiviconEvo({
+                name: 'credit-card-in.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Rewards Goal Icon Mobile
+            jQuery('#addTouchMobile').addLiviconEvo({
+                name: 'touch.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Own a Business Icon Mobile
+            jQuery('#addBriefcaseMobile').addLiviconEvo({
+                name: 'briefcase.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Credit Score Icon Mobile
+            jQuery('#addDashboardMobile').addLiviconEvo({
+                name: 'dashboard.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Monthly Spend Icon Mobile
+            jQuery('#addCreditCardOutMobile').addLiviconEvo({
+                name: 'credit-card-out.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Email Icon Mobile
+            jQuery('#addEnvelopePutMobile').addLiviconEvo({
+                name: 'envelope-put.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            // Current Credit Cards Icon Mobile
+            jQuery('#addCreditCardInMobile').addLiviconEvo({
+                name: 'credit-card-in.svg',
+                size: '120px',
+                style: 'original',
+                tryToSharpen: true
+            });
+
+            var options = [
+                {selector: '#addTouch', offset: 50, callback: function() {
+                    $('#addTouch').playLiviconEvo();
+                } },
+                {selector: '#addBriefcase', offset: 340, callback: function() {
+                    $('#addBriefcase').playLiviconEvo();
+                } },
+                {selector: '#addDashboard', offset: 350, callback: function() {
+                    $('#addDashboard').playLiviconEvo();
+                } },
+                {selector: '#addCreditCardOut', offset: 360, callback: function() {
+                    $('#addCreditCardOut').playLiviconEvo();
+                } },
+                {selector: '#addCreditCardIn', offset: 370, callback: function() {
+                    $('#addCreditCardIn').playLiviconEvo();
+                } }
+            ];
+            Materialize.scrollFire(options);
+        },
+        calculatorSetup: () => {
+            
+            // Scroll to Top
+            window.scrollTo(0,0);
+
+            // Change App State
+            model.appState.landingPage = false;
+            model.appState.calculator = true;
+
+            // Hide Landing Page
+            document.getElementById('signIn').style.display = "none";
+            document.getElementById('register').style.display = "none";
+            document.getElementById('preNav').style.display = 'none';
+            document.getElementById('preFooterDesktop').style.display = 'none';
+            document.getElementById('preFooterMobile').style.display = 'none';
+            document.getElementById('landingPage').style.display = 'none';
+
+
+            if (!model.appState.completedCalculator) {
+                document.getElementById('cardRecs').style.display = 'none';
+                document.getElementById('redempCalc').style.display = 'none';
+            }
+
+            // Show Profile Page
+            document.getElementById('profile').style.display = 'inline';
+
+            // Render Points Calculator Template 
+            model.templates.renderPointsCalculatorTemplate();
+
+            // Insert LivIcons
+            model.controllers.insertLivIconsForCalculator();
+
+            // Mobile or Not?
+            window.mobileAndTabletcheck = function() {
+              var check = false;
+              (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+              model.appState.mobileView = check;
+            };
+            window.mobileAndTabletcheck();
+
+            // Show Points Calculator Template
+            document.getElementById('pointsCalculator').style.display = "inline";
+
+            // Manage Calculator Inputs Desktop
+            function manageCalculatorInputsDesktop() {
+                const selection = this.id;
+                if (selection === "freeFlights" || 
+                    selection === "cashBack") {
+
+                    // Make sure to reset box inputs
+                    var ids = ['cashBack', 'freeFlights'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).classList.remove('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection === "yesOwnBusiness" || 
+                    selection ==='noOwnBusiness') {
+
+                    // Make sure to reset box inputs
+                    var ids = ['yesOwnBusiness', 'noOwnBusiness'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).classList.remove('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    if (selection === "yesOwnBusiness"){
+                        model.cards.currentStatusBasedOnSelections.ownBusiness = true;
+                    } else {
+                        model.cards.currentStatusBasedOnSelections.ownBusiness = false;
+                    }
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection.includes('Credit')) {
+                    // Make sure to reset box inputs
+                    var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'limitedCredit', 'poorCredit'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).classList.remove('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.creditScore = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection).style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection);
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection.includes('00') || selection.includes('other')) {
+                    
+                    document.getElementById('otherSelection').style.display = 'none';
+
+                    if (selection === 'other') {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        // Make sure to reset box inputs
+                        var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).classList.remove('active');
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection).style.color = 'white';
+
+                        // Show Other Form
+                        document.getElementById('otherSelection').style.display = 'inline';
+                    } else {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        var selectionNumber = parseFloat(selection.replace(/,/g, ''));
+                        model.cards.currentStatusBasedOnSelections.monthlySpendValue = selectionNumber;
+
+                        // Make sure to reset box inputs
+                        var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).classList.remove('active');
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection).style.color = 'white';
+
+                        // Remove selection from ids Array
+                        var index = ids.indexOf(selection);
+                        ids.splice(index, 1);
+
+                        // Grey out other option/s
+                        ids.forEach(function (id) {
+                            document.getElementById(id).style.color = 'grey';
+                        });
+                    }
+                }
+            }
+
+            // Manage Calculator Inputs Mobile
+            function manageCalculatorInputsMobile() {
+                // Grab Selection
+                var selection = this.id;
+                // Delete Mobile String from Selection
+                selection = selection.replace('Mobile', '');
+
+                if (selection === "freeFlights" || 
+                    selection === "cashBack") {
+
+                    // Make sure to reset box inputs
+                    var ids = ['cashBackMobile', 'freeFlightsMobile'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).classList.remove('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection + 'Mobile').style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection + 'Mobile');
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection === "yesOwnBusiness" || 
+                    selection ==='noOwnBusiness') {
+
+                    // Make sure to reset box inputs
+                    var ids = ['yesOwnBusinessMobile', 'noOwnBusinessMobile'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).classList.remove('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    if (selection === "yesOwnBusiness"){
+                        model.cards.currentStatusBasedOnSelections.ownBusiness = true;
+                    } else {
+                        model.cards.currentStatusBasedOnSelections.ownBusiness = false;
+                    }
+
+                    // Turn Selection Font White
+                    document.getElementById(selection + 'Mobile').style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection + 'Mobile');
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection.includes('Credit')) {
+                    // Make sure to reset box inputs
+                    var ids = ['excellentCreditMobile', 'goodCreditMobile',
+                                'fairCreditMobile', 'limitedCreditMobile', 'poorCreditMobile'];
+                    ids.forEach(function(id) {
+                        document.getElementById(id).classList.remove('active');
+                        document.getElementById(id).style.color = '#039be5';
+                    });
+                    
+                    // Add Active to selection
+                    $(this).addClass('active');
+
+                    // Log Active to the Model
+                    model.cards.currentStatusBasedOnSelections.creditScore = selection;
+
+                    // Turn Selection Font White
+                    document.getElementById(selection + 'Mobile').style.color = 'white';
+
+                    // Remove selection from ids Array
+                    var index = ids.indexOf(selection + 'Mobile');
+                    ids.splice(index, 1);
+
+                    // Grey out other option/s
+                    ids.forEach(function (id) {
+                        document.getElementById(id).style.color = 'grey';
+                    });
+                } else if (selection.includes('00') || selection.includes('other')) {
+                    
+                    document.getElementById('otherSelectionMobile').style.display = 'none';
+
+                    if (selection === 'other') {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        // Make sure to reset box inputs
+                        var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
+                                    '2000Mobile', '3000Mobile', 'otherMobile'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection + 'Mobile').style.color = 'white';
+                        document.getElementById(selection + 'Mobile').style.backgroundColor = '#26a69a';
+
+                        // Show Other Form
+                        document.getElementById('otherSelectionMobile').style.display = 'inline';
+                    } else {
+
+                        // Log Selection to the Model
+                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
+
+                        var selectionNumber = parseFloat(selection.replace(/,/g, ''));
+                        model.cards.currentStatusBasedOnSelections.monthlySpendValue = selectionNumber;
+
+                        // Make sure to reset box inputs
+                        var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
+                                    '2000Mobile', '3000Mobile', 'otherMobile'];
+                        ids.forEach(function(id) {
+                            document.getElementById(id).style.backgroundColor = 'white';
+                            document.getElementById(id).style.color = '#039be5';
+                        });
+                        
+                        // Add Active to selection
+                        $(this).addClass('active');
+
+                        // Turn Selection Font White
+                        document.getElementById(selection + 'Mobile').style.color = 'white';
+                        document.getElementById(selection + 'Mobile').style.backgroundColor = '#26a69a';
+
+                        // Remove selection from ids Array
+                        var index = ids.indexOf(selection + 'Mobile');
+                        ids.splice(index, 1);
+
+                        // Grey out other option/s
+                        ids.forEach(function (id) {
+                            document.getElementById(id).style.color = 'grey';
+                        });
+                    }
+                }
+            }
+
+            // Manage CC Inputs Desktop
+            function manageCreditCardInputsDesktop() {
+                for (var i = 1; i < 10; i++) {
+                    if (model.appState.addAnotherCardCount === i) {
+                        var nextCard = 'card' + (i+1) + (i+1);
+                        var nextX = 'x' + (i+1);
+                        document.getElementById(nextCard).style.display = "inline";
+                        document.getElementById(nextX).style.display = "inline";
+                        model.appState.addAnotherCardCount += 1;
+                        if (model.appState.addAnotherCardCount === 9) {
+                            document.getElementById('addAnotherCard').classList.add('disabled');
+                        }
+                        break;
+                    } 
+                }
+            }
+            
+            // Manage CC Inputs Mobile
+            function manageCreditCardInputsMobile() {
+                for (var i = 1; i < 10; i++) {
+                    if (model.appState.addAnotherCardCount === i) {
+                        var nextCard = 'card' + (i+1) + (i+1) + (i+1);
+                        var nextX = 'x' + (i+1) + 'Mobile';
+                        document.getElementById(nextCard).style.display = "inline";
+                        document.getElementById(nextX).style.display = "inline";
+                        model.appState.addAnotherCardCount += 1;
+                        if (model.appState.addAnotherCardCount === 9) {
+                            document.getElementById('addAnotherCardMobile').classList.add('disabled');
+                        }
+                        break;
+                    } 
+                }
+            }
+
+            // Hide x-ed-out Cards
+            function hideCard() {
+                var selection = this;
+                var previous = $(this).prev("div");
+                document.getElementById(previous[0].id).children[0].value = '';
+                document.getElementById(selection.id).style.display = 'none';
+                document.getElementById(previous[0].id).style.display = 'none';
+                model.appState.addAnotherCardCount -= 1;
+                if (model.appState.addAnotherProgramCount < 9) {
+                    document.getElementById('addAnotherCard').classList.remove('disabled');
+                }
+            }
+
+            // Set up Event Listeners for Calculator Inputs Desktop
+            var collection = Array.from(document.getElementsByClassName("calculatorInputDesktop")); 
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', manageCalculatorInputsDesktop, false);
+            }
+
+            // Set up Event Listeners for Calculator Inputs Mobile
+            var collection = Array.from(document.getElementsByClassName("calculatorInputMobile")); 
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
+            }
+
+            // Set up Event Listeners for x-out buttons for Cards
+            var collection = Array.from(document.getElementsByClassName('x-out'));
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', hideCard);
+                collection[i].style.cursor = 'pointer';
+            }
+
+            // Add Autocomplete Functionality for Add Cards Section
+            $('input.autocomplete').autocomplete({
+                data: {
+                    'American Express Blue Cash Everyday':null,
+                    'American Express Blue Cash Preferred':null,
+                    'American Express Blue Sky':null,
+                    'American Express Centurion':null,
+                    'American Express Charles Schwabb Investor Card':null,
+                    'American Express Corporate Gold':null,
+                    'American Express Corporate Platinum':null,
+                    'American Express Gold':null,
+                    'American Express Green':null,
+                    'American Express Hilton HHonors':null,
+                    'American Express Hilton HHonors Surpass':null,
+                    'American Express Mercedes Benz':null,
+                    'American Express Mercedes Benz Platinum':null,
+                    'American Express Plum':null,
+                    'Banana Republic Credit Card':null,
+                    'Bank of America Alaska Airlines Business Visa':null,
+                    'Bank of America Alaska Airlines Platinum Plus Visa':null,
+                    'Bank of America Allegiant Airlines World MasterCard':null,
+                    'Bank of America BankAmericard Cash Rewards Visa (All Versions)':null,
+                    'Bank of America BankAmericard MasterCard':null,
+                    'Bank of America BankAmericard Rewards Visa':null,
+                    'Bank of America Cash Rewards For Business MasterCard':null,
+                    'Bank of America Hawaiian Airlines World Elite MasterCard':null,
+                    'Bank of America Spirit Airlines World MasterCard':null,
+                    'Bank of America Travel Rewards World MasterCard For Business':null,
+                    'Bank of America Virgin Atlantic World Elite MasterCard':null,
+                    'Bank of America WorldPoints Visa or MasterCard':null,
+                    'Bank of America® Alaska Airlines Visa Signature® Credit Card':null,
+                    'Bank of America® BankAmericard Travel Rewards® Credit Card':null,
+                    'Barclaycard American Airlines AAdvantage Aviator Blue Mastercard':null,
+                    'Barclaycard American Airlines AAdvantage Aviator Mastercard':null,
+                    'Barclaycard American Airlines AAdvantage Aviator Red World Elite MasterCard':null,
+                    'Barclaycard American Airlines AAdvantage Aviator Silver World Elite MasterCard':null,
+                    'Barclaycard Arrival Plus™ World Elite MasterCard®':null,
+                    'Barclaycard Cash Forward MasterCard':null,
+                    'Barclaycard Frontier Airlines World MasterCard':null,
+                    'Barclaycard Hawaiian Airlines Business MasterCard':null,
+                    'Barclaycard JetBlue Business MasterCard':null,
+                    'Barclaycard JetBlue MasterCard':null,
+                    'Barclaycard JetBlue Plus MasterCard':null,
+                    'Barclaycard Lufthansa Premier Miles and More MasterCard':null,
+                    'Barclaycard Rewards MasterCard':null,
+                    'Barclaycard Ring MasterCard':null,
+                    'Barclaycard Upromise By Sallie Mae World MasterCard':null,
+                    'Barclaycard Wyndham Rewards Visa Signature':null,
+                    'Barclaycard Wyndham Rewards Visa Signature (Annual Fee Version)':null,
+                    'Best Western Rewards Business MasterCard':null,
+                    'Best Western Rewards MasterCard':null,
+                    'Best Western Rewards Premier MasterCard':null,
+                    'Best Western Rewards Secured MasterCard':null,
+                    'Capital One Buy Power MasterCard':null,
+                    'Capital One BuyPower For Business MasterCard':null,
+                    'Capital One Cash Rewards Visa or MasterCard':null,
+                    'Capital One Platinum Prestige Visa or MasterCard':null,
+                    'Capital One Spark Miles For Business Visa':null,
+                    'Capital One Spark Miles Select For Business Visa':null,
+                    'Capital One Spark Select For Business Visa':null,
+                    'Capital One Venture One Rewards Visa':null,
+                    'Capital One® Platinum Credit Card':null,
+                    'Capital One® QuicksilverOne® Cash Rewards Credit Card':null,
+                    'Capital One® Quicksilver® Cash Rewards Credit Card':null,
+                    'Capital One® Secured MasterCard®':null,
+                    'Capital One® Spark® Cash Select for Business':null,
+                    'Capital One® Spark® Cash for Business':null,
+                    'Capital One® Spark® Classic for Business':null,
+                    'Capital One® Venture® Rewards Credit Card':null,
+                    'Chase Amazon Rewards Visa':null,
+                    'Chase British Airways Avios Visa Signature':null,
+                    'Chase Disney Premier Visa':null,
+                    'Chase Disney Rewards Visa':null,
+                    'Chase Freedom Unlimited℠':null,
+                    'Chase Freedom®':null,
+                    'Chase Hyatt Visa':null,
+                    'Chase IHG Rewards Club Select MasterCard':null,
+                    'Chase Ink Plus or Bold Business Visa or MasterCard':null,
+                    'Chase Marriott Rewards Premier Business Visa':null,
+                    'Chase Marriott Rewards Premier Business Visa Signature':null,
+                    'Chase Marriott Rewards Premier Visa':null,
+                    'Chase Ritz Carlton Rewards Visa':null,
+                    'Chase Sapphire Preferred® Card':null,
+                    'Chase Sapphire Reserve℠':null,
+                    'Chase Slate Visa':null,
+                    'Chase Southwest Airlines Rapid Rewards Plus Visa':null,
+                    'Chase Southwest Airlines Rapid Rewards Premier Business Visa':null,
+                    'Chase Southwest Airlines Rapid Rewards Premier Visa':null,
+                    'Chase Southwest Rapid Rewards Plus Business Visa':null,
+                    'Chase United MileagePlus Club Visa':null,
+                    'Chase United MileagePlus Explorer Business Visa':null,
+                    'Chase® Ink Business Cash℠ Credit Card':null,
+                    'Chase® Ink Business Preferred℠ Credit Card':null,
+                    'Chase® United MileagePlus® Explorer Card':null,
+                    'Choice Privileges Visa Signature':null,
+                    'Citi American Airlines AAdvantage Executive World Elite MasterCard':null,
+                    'Citi Costco Anywhere Business Visa':null,
+                    'Citi Costco Anywhere Visa':null,
+                    'Citi Diamond Preferred MasterCard':null,
+                    'Citi Forward MasterCard or Visa':null,
+                    'Citi Hilton HHonors Reserve Visa':null,
+                    'Citi Hilton HHonors Visa Signature':null,
+                    'Citi Prestige® Card':null,
+                    'Citi Secured MasterCard':null,
+                    'Citi Simplicity MasterCard':null,
+                    'Citi Thank You Preferred MasterCard':null,
+                    'Citi ThankYou® Preferred Card for College Students':null,
+                    'Citi ThankYou® Premier Card':null,
+                    'CitiBusiness®/AAdvanage® Platinum Select® World Elite™ MasterCard®':null,
+                    'Citi® Double Cash Card':null,
+                    'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®':null,
+                    'Comenity Bank Virgin America Premium Visa Signature':null,
+                    'Comenity Bank Virgin America Visa Signature':null,
+                    'Delta Reserve Credit Card from American Express®':null,
+                    'Delta Reserve for Business Credit Card from American Express®':null,
+                    'Discover Business Card':null,
+                    'Discover It Chrome':null,
+                    'Discover It® Miles':null,
+                    'Discover It® Secured Credit Card':null,
+                    'Discover More':null,
+                    'Discover it®':null,
+                    'Discover it® chrome for Students':null,
+                    'Discover it® for Students':null,
+                    'Gold Delta SkyMiles® Business Credit Card from American Express':null,
+                    'Gold Delta SkyMiles® Credit Card from American Express':null,
+                    'JP Morgan Chase Palladium Visa Signature':null,
+                    'Journey® Student Rewards from Capital One®':null,
+                    'Lowe’s Credit Card':null,
+                    'M&T Business Bonus Rewards Plus Visa':null,
+                    'M&T Business Bonus Rewards Visa':null,
+                    'M&T Business Visa':null,
+                    'M&T Rewards Visa':null,
+                    'M&T Visa Signature':null,
+                    'No Credit Card':null,
+                    'Other Business Bank Credit Card':null,
+                    'Other No Annual Fee Card':null,
+                    'Other Personal Bank Credit Card':null,
+                    'Other Store Card':null,
+                    'PNC Business Cash Rewards Visa Signature':null,
+                    'PNC Business Travel Rewards Visa':null,
+                    'PNC Business Visa':null,
+                    'PNC CashBuilder Visa':null,
+                    'PNC Core Visa':null,
+                    'PNC Points Business Visa':null,
+                    'PNC Points Visa':null,
+                    'PNC Premier Traveler Visa Signature':null,
+                    'Platinum Delta SkyMiles® Business Credit Card from American Express':null,
+                    'Platinum Delta SkyMiles® Credit Card from American Express':null,
+                    'Premier Rewards Gold Card From American Express®':null,
+                    'SimplyCash® Plus Business Credit Card from American Express':null,
+                    'Starwood Preferred Guest® Business Credit Card from American Express':null,
+                    'Starwood Preferred Guest® Credit Card from American Express':null,
+                    'Suntrust Business Visa or MasterCard':null,
+                    'Suntrust Cash Rewards MasterCard':null,
+                    'Suntrust Prime Rewards MasterCard':null,
+                    'Suntrust Travel Rewards MasterCard':null,
+                    'Synchrony Bank Amazon Prime Rewards Store Card':null,
+                    'TD Aeroplan Visa':null,
+                    'TD Business Solutions Visa':null,
+                    'TD Cash Rewards or Cash Rewards Platinum Visa':null,
+                    'TD Cash Visa':null,
+                    'TD Easy Rewards Visa':null,
+                    'Target Credit Card':null,
+                    'The Amex Everyday® Credit Card from American Express':null,
+                    'The Amex Everyday® Preferred Credit Card from American Express':null,
+                    'The Blue for Business® Credit Card from American Express':null,
+                    'The Business Gold Rewards Card From American Express OPEN®':null,
+                    'The Business Platinum® Card From American Express OPEN®':null,
+                    'The Platinum® Card From American Express':null,
+                    'US Bank Cash Plus Visa Signature':null,
+                    'US Bank Cash Rewards Business Visa':null,
+                    'US Bank Club Carlson Business Rewards Visa':null,
+                    'US Bank Club Carlson Premier Rewards Visa Signature':null,
+                    'US Bank Club Carlson Rewards Visa':null,
+                    'US Bank Club Carlson Rewards Visa Signature':null,
+                    'US Bank Flexperks Business Select Visa':null,
+                    'US Bank Flexperks Business Travel Rewards Visa':null,
+                    'US Bank Flexperks By American Express':null,
+                    'US Bank Flexperks Travel Rewards Visa':null,
+                    'USAA Active Military MasterCard':null,
+                    'USAA Cash Rewards By American Express':null,
+                    'USAA Cash Rewards World MasterCard':null,
+                    'USAA Platinum Visa':null,
+                    'USAA Preferred Cash Rewards World MasterCard':null,
+                    'USAA Rate Advantage Platinum Visa':null,
+                    'USAA Rewards By American Express':null,
+                    'USAA Rewards Visa or World MasterCard':null,
+                    'USAA Secured Card By American Express':null,
+                    'Walmart Credit Card':null,
+                    'Wells Fargo Business Visa':null,
+                    'Wells Fargo Cash Wise Visa':null,
+                    'Wells Fargo Platinum Visa':null,
+                    'Wells Fargo Propel 365 By American Express':null,
+                    'Wells Fargo Propel By American Express':null,
+                    'Wells Fargo Rewards Visa':null,
+                    'Wells Fargo Secured Visa':null
+                },
+            });
+
+            // Add another card event listener desktop
+            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
+
+            // Add another card event listener mobile
+            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
+
+            // Submit Form Event Listeners
+            document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
+            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs); 
+        },
+        redemptionSetup: () => {
+            
+            // Scroll to Top
+            window.scrollTo(0,0);
+
+            // Change App State
+            model.appState.landingPage = false;
+            model.appState.calculator = false;
+            model.appState.acctInfo = false;
+            model.appState.redempCalc = true;
+
+            // Render Points Redemption Template
+            // model.templates.renderPointsRedemptionTemplate();
+
+            // Manage Program Inputs Desktop
+            function manageProgramInputsDesktop() {
+                for (var i = 1; i < 6; i++) {
+                    if (model.appState.addAnotherProgramCount === i) {
+                        var nextProgram = 'program' + (i+1) + (i+1);
+                        var nextProgramPoints = 'programPoints' + (i+1) + (i+1);
+                        var nextY = 'y' + (i+1);
+                        document.getElementById(nextProgram).style.display = "inline";
+                        document.getElementById(nextProgramPoints).style.display = "inline";
+                        document.getElementById(nextY).style.display = "inline";
+                        model.appState.addAnotherProgramCount += 1;
+                        if (model.appState.addAnotherProgramCount === 5) {
+                            document.getElementById('addAnotherProgram').classList.add('disabled');
+                        }
+                        break;
+                    } 
+                }
+            }
+            
+            // Manage Program Inputs Mobile
+            function manageProgramInputsMobile() {
+                for (var i = 1; i < 6; i++) {
+                    if (model.appState.addAnotherProgramCount === i) {
+                        var nextProgram = 'program' + (i+1) + (i+1) + (i+1);
+                        var nextProgramPoints = 'programPoints' + (i+1) + 'Mobile';
+                        var nextX = 'x' + (i+1) + 'Mobile';
+                        document.getElementById(nextProgram).style.display = "inline";
+                        document.getElementById(nextProgramPoints).style.display = "inline";
+                        document.getElementById(nextY).style.display = "inline";
+                        model.appState.addAnotherProgramCount += 1;
+                        if (model.appState.addAnotherProgramCount === 5) {
+                            document.getElementById('addAnotherProgramMobile').classList.add('disabled');
+                        }
+                        break;
+                    } 
+                }
+            }
+
+            // Hide x-ed-out Cards
+            function hideProgram() {
+                var selection = this;
+                var previous = $(this).prev("div");
+                var previous2 = $(previous).prev("div");
+                document.getElementById(previous[0].id).children[0].value = '';
+                document.getElementById(previous2[0].id).children[0].value = '';
+                document.getElementById(selection.id).style.display = 'none';
+                document.getElementById(previous[0].id).style.display = 'none';
+                document.getElementById(previous2[0].id).style.display = 'none';
+                model.appState.addAnotherProgramCount -= 1;
+                if (model.appState.addAnotherProgramCount < 5) {
+                    document.getElementById('addAnotherProgram').classList.remove('disabled');
+                }
+            }
+
+            function vetRedemptionInputs() {
+                // Hide Gather Information and Display Crunching Numbers
+                document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
+                document.getElementById('crunchingNumbers').style.display = 'inline';
+
+                if (document.getElementById('fromAirport').value) {
+                    model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
+                    model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
+                    model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
+                }
+                // if (document.getElementById('fromAirportMobile').value) {
+                //     model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value.substring(0, 3);
+                //     model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value.substring(0, 3);
+                //     model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
+                //     model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
+                //     model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
+                // }
+
+                if (document.getElementById('flightType').value === 'roundTrip') {
+                    model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
+                    model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
+                    model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
+                }
+
+                // if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
+                //     model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
+                //     model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
+                //     model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
+                //     model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
+                //     model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
+                // }
+
+                // Make Sure they are all filled out
+                if (model.rewProg.userFlightSelections.toDestination.fromAirport &&
+                    model.rewProg.userFlightSelections.toDestination.toAirport &&
+                    model.rewProg.userFlightSelections.toDestination.class &&
+                    model.rewProg.userFlightSelections.toDestination.type &&
+                    model.rewProg.userFlightSelections.toDestination.numTickets) {
+                    collectProgramValues();
+                } else {
+                    document.getElementById('vetRedempCalcInputsDesktop').style.display = 'inline';
+                    document.getElementById('gatherProgramAndFlightInfo').style.display = 'inline';
+                    document.getElementById('crunchingNumbers').style.display = 'none';
+                }
+                
+
+                function collectProgramValues() {
+                    // Log User's Programs, if applicable
+
+                    var compiledProgramValues = [];
+                    
+                    // TO DO: Once mobile is done, be sure to delete values from other view
+                    // if (!model.appState.mobileView) {
+                    //     for (var i = 0; i < checkPrograms.length; i ++) {
+                    //         document.getElementById(checkPrograms[i] + 'Mobile').value = '';
+                    //     }
+                    // } else {
+                    //     for (var i = 0; i < checkPrograms.length; i ++) {
+                    //         document.getElementById(checkPrograms[i]).value = '';
+                    //     }
+                    // }
+
+                    for (var i = 1; i < 6; i++) {
+                        var obj = {};
+                        if (document.getElementById(('program' + i)).value) {
+                            obj['name'] = document.getElementById(('program' + i)).value;
+                            obj['points'] = document.getElementById(('programPoints' + i)).value;
+                            compiledProgramValues.push(obj);
+                        } 
+                        // else if (document.getElementById(('program' + i + 'Mobile')).value) {
+                        //     obj[name] = document.getElementById(('program' + i + 'Mobile')).value;
+                        //     obj[points] = document.getElementById(('programPoints' + i + 'Mobile')).value;
+                        //     compiledProgramValues.push(obj);
+                        // } 
+                    }
+
+                    model.rewProg.userPrograms = compiledProgramValues;
+                
+                    console.log('Display User Programs');
+                    console.log(model.rewProg.userPrograms);
+
+                    model.controllers.translateProgramSelectionsToFreqFlierPrograms();
+                }
+            }
+
+            // Set up Event Listeners for x-out buttons for Cards
+            var collection = Array.from(document.getElementsByClassName('x-out'));
+            for (var i = 0; i < collection.length; i++) {
+                collection[i].addEventListener('click', hideProgram);
+                collection[i].style.cursor = 'pointer';
+            }
+
+            // Add Autocomplete Functionality for Airport Entry Section
+            $('input.airportAutocomplete').autocomplete({
+                data: {
+                    'AAL - Aalborg Airport':null,
+                    'ABE - Lehigh Valley International Airport':null,
+                    'ABJ - Abidjan Port Bouet Airport':null,
+                    'ABQ - Albuquerque International Airport':null,
+                    'ABV - Abuja International Airport':null,
+                    'ABZ - Aberdeen Dyce International Airport':null,
+                    'ACC - Kotoka International Airport':null,
+                    'ACE - Arrecife Airport':null,
+                    'ADA - Sakirpasa Airport':null,
+                    'ADB - Gaziemir Airport':null,
+                    'ADD - Bole International Airport':null,
+                    'ADE - Aden International Airport':null,
+                    'ADF - Adiyaman Airport':null,
+                    'AER - Adler Airport':null,
+                    'AES - Vigra Airport':null,
+                    'AGA - Almassira Airport':null,
+                    'AGF - La Garenne Airport':null,
+                    'AGP - Malaga Airport':null,
+                    'AGR - Agra Airport':null,
+                    'AGS - Bush Field Airport':null,
+                    'AJA - Campo Dell Oro Airport':null,
+                    'AJI - Agri Airport':null,
+                    'AKL - Auckland International Airport':null,
+                    'ALA - Alma Ata Airport':null,
+                    'ALB - Albany International Airport':null,
+                    'ALC - Alicante Airport':null,
+                    'ALG - Houari Boumediene Airport':null,
+                    'ALY - An-Nuzhah Airport':null,
+                    'AMA - Amarillo International Airport':null,
+                    'AMD - Sardar Vallabhbhai Patel International Airport':null,
+                    'AMM - Queen Alia International Airport':null,
+                    'AMS - Schiphol Airport':null,
+                    'ANC - Anchorage International Airport':null,
+                    'ANR - Deurne Airport':null,
+                    'ANU - V C Bird International Airport':null,
+                    'AOI - Falconara Airport':null,
+                    'ARN - Arlanda Airport':null,
+                    'ASB - Ashkhabad Northwest Airport':null,
+                    'ASM - Yohannes Iv International Airport':null,
+                    'ASR - Erkilet Airport':null,
+                    'ASU - Silvio Pettirossi International Airport':null,
+                    'ATH - Eleftherios Venizelos International Airport':null,
+                    'ATL - Hartsfield-Jackson Atlanta International Airport':null,
+                    'ATW - Outagamie County Airport':null,
+                    'AUA - Reina Beatrix International Airport':null,
+                    'AUH - Abu Dhabi International Airport':null,
+                    'AUR - Aurillac Airport':null,
+                    'AUS - Austin-Bergstrom International Airport':null,
+                    'AVL - Asheville Regional Airport':null,
+                    'AVP - Wilkes Barre Scranton International Airport':null,
+                    'AWZ - Ahvaz Airport':null,
+                    'AYT - Antalya Airport':null,
+                    'BAH - Bahrain International Airport':null,
+                    'BAL - Batman Airport':null,
+                    'BAQ - Ernesto Cortissoz Airport':null,
+                    'BCN - Barcelona International Airport':null,
+                    'BDA - Bermuda International Airport':null,
+                    'BDL - Bradley International Airport':null,
+                    'BEG - Surcin Airport':null,
+                    'BES - Guipavas Airport':null,
+                    'BEY - Beirut International Airport':null,
+                    'BGF - Bangui M Poko Airport':null,
+                    'BGI - Grantley Adams International Airport':null,
+                    'BGO - Bergen Flesland Airport':null,
+                    'BGR - Bangor International Airport':null,
+                    'BGW - Al Muthana Airport':null,
+                    'BHD - George Best Belfast City Airport':null,
+                    'BHM - Birmingham International Airport':null,
+                    'BHX - Birmingham International Airport':null,
+                    'BIA - Poretta Airport':null,
+                    'BIL - Logan International Airport':null,
+                    'BIO - Bilbao Airport':null,
+                    'BIQ - Anglet Airport':null,
+                    'BIS - Bismarck Municipal Airport':null,
+                    'BJM - Bujumbura Airport':null,
+                    'BJV - Milas Airport':null,
+                    'BJX - Silao Airport':null,
+                    'BKK - Bangkok International Airport':null,
+                    'BKO - Bamako Senou Airport':null,
+                    'BLL - Billund Airport':null,
+                    'BLQ - Bologna Airport':null,
+                    'BLR - HAL Bangalore International Airport':null,
+                    'BMA - Bromma Airport':null,
+                    'BNA - Nashville International Airport':null,
+                    'BNE - Brisbane International Airport':null,
+                    'BOD - Bordeaux Airport':null,
+                    'BOG - Eldorado International Airport':null,
+                    'BOI - Boise Air Terminal':null,
+                    'BOM - Chhatrapati Shivaji International Airport':null,
+                    'BON - Flamingo Airport':null,
+                    'BOS - Gen E L Logan International Airport':null,
+                    'BPT - Jefferson County Airport':null,
+                    'BQK - Glynco Jetport Airport':null,
+                    'BQN - Rafael Hernandez Airport':null,
+                    'BRE - Bremen Airport':null,
+                    'BRI - Palese Macchie Airport':null,
+                    'BRS - Bristol International Airport':null,
+                    'BRU - Brussels Airport':null,
+                    'BSB - Juscelino Kubitschek International Airport':null,
+                    'BSL - Euroairport Basel-Mulhouse-Freiburg':null,
+                    'BSR - Basrah International Airport':null,
+                    'BTR - Baton Rouge Metropolitan Airport':null,
+                    'BTV - Burlington International Airport':null,
+                    'BUD - Ferihegy Airport':null,
+                    'BUF - Greater Buffalo International Airport':null,
+                    'BUR - Burbank Glendale Pasadena Airport':null,
+                    'BUS - Batumi':null,
+                    'BVC - Boa Vista Airport':null,
+                    'BVE - La Roche Airport':null,
+                    'BWI - Baltimore-Washington International Thurgood Mars':null,
+                    'BWN - Brunei International Airport':null,
+                    'BZE - Philip S W Goldson International Airport':null,
+                    'BZN - Gallatin Field Airport':null,
+                    'BZV - Brazzaville Maya Maya Airport':null,
+                    'CAE - Columbia Metropolitan Airport':null,
+                    'CAG - Elmas Airport':null,
+                    'CAI - Cairo International Airport':null,
+                    'CAK - Akron Canton Regional Airport':null,
+                    'CAN - Baiyun Airport':null,
+                    'CAP - Cap Haitien Airport':null,
+                    'CCS - Simon Bolivar International Airport':null,
+                    'CCU - Netaji Subhash Chandra Bose International Airpor':null,
+                    'CDG - Charles de Gaulle International Airport':null,
+                    'CEB - Lahug Airport':null,
+                    'CFE - Aulnat Airport':null,
+                    'CFN - Carrickfin Airport':null,
+                    'CFR - Carpiquet Airport':null,
+                    'CFU - Kerkira Airport':null,
+                    'CGK - Jakarta International Airport':null,
+                    'CGN - Cologne Bonn Airport':null,
+                    'CHA - Chattanooga Metropolitan Airport':null,
+                    'CHC - Christchurch International Airport':null,
+                    'CHS - Charleston International Airport':null,
+                    'CIX - Cap J A Quinones Gonzales Airport':null,
+                    'CJU - Cheju International Airport':null,
+                    'CKY - Conakry Airport':null,
+                    'CKZ - Abydus':null,
+                    'CLE - Hopkins International Airport':null,
+                    'CLJ - Someseni Airport':null,
+                    'CLO - Alfonso Bonilla Aragon International Airport':null,
+                    'CLT - Douglas International Airport':null,
+                    'CLY - Ste Catherine Airport':null,
+                    'CMB - Katunayake International Airport':null,
+                    'CMH - Port Columbus International Airport':null,
+                    'CMN - Mohamed V Airport':null,
+                    'CMW - Ignacio Agramonte Airport':null,
+                    'CND - Constanta Mihail Kogalniceanu Airport':null,
+                    'CNF - Tancredo Neves International Airport':null,
+                    'CNX - Chiang Mai International Airport':null,
+                    'COO - Cotonou Cadjehon Airport':null,
+                    'COR - Ingeniero Ambrosio L.V. Taravella International':null,
+                    'COS - City of Colorado Springs Municipal Airport':null,
+                    'CPH - Copenhagen Airport':null,
+                    'CPT - D F Malan Airport':null,
+                    'CRK - Clark Field Airport':null,
+                    'CRW - Yeager Airport':null,
+                    'CTA - Catania Fontanarossa Airport':null,
+                    'CTG - Rafael Nunez Airport':null,
+                    'CTS - New Chitose Airport':null,
+                    'CTU - Chengdushuang Liu Airport':null,
+                    'CUN - Cancun Airport':null,
+                    'CUR - Hato Airport':null,
+                    'CUZ - Velazco Astete Airport':null,
+                    'CVG - Greater Cincinnati International Airport':null,
+                    'CWL - Cardiff International Airport':null,
+                    'CZL - Ain El Bey Airport':null,
+                    'CZM - Cozumel International Airport':null,
+                    'DAB - Daytona Beach International Airport':null,
+                    'DAD - Da Nang Airport':null,
+                    'DAL - Dallas Love Field Airport':null,
+                    'DAR - Dar Es Salaam Airport':null,
+                    'DAY - James M Cox Dayton International Airport':null,
+                    'DBV - Dubrovnik Airport':null,
+                    'DCA - Washington National Airport':null,
+                    'DCM - Mazamet Airport':null,
+                    'DEL - Indira Gandhi International Airport':null,
+                    'DEN - Denver International Airport':null,
+                    'DFW - Fort Worth International Airport':null,
+                    'DKR - Dakar Yoff Airport':null,
+                    'DLA - Douala Airport':null,
+                    'DLC - Chou Shui Tzu Airport':null,
+                    'DLM - Dalaman Airport':null,
+                    'DME - Domodedovo Airport':null,
+                    'DMM - King Fahd International Airport':null,
+                    'DNK - Voloskoye Airport':null,
+                    'DOH - Doha International Airport':null,
+                    'DPS - Bali International Airport':null,
+                    'DRS - Ottendorf Okrilla Highway Strip Airport':null,
+                    'DSM - Des Moines International Airport':null,
+                    'DTM - Dortmund Airport':null,
+                    'DTW - Detroit Metropolitan Wayne County Airport':null,
+                    'DUB - Dublin Airport':null,
+                    'DUR - Louis Botha Airport':null,
+                    'DUS - Dusseldorf International Airport':null,
+                    'DXB - Dubai International Airport':null,
+                    'DYU - Tajikistan':null,
+                    'DZA - Dzaoudzi Pamanzi Airport':null,
+                    'EBB - Entebbe International Airport':null,
+                    'EBL - Erbil':null,
+                    'ECN - Ercan Airport':null,
+                    'EDI - Edinburgh International Airport':null,
+                    'EDO - Edremit-Korfez Airport':null,
+                    'EGE - Eagle County Regional Airport':null,
+                    'ELP - El Paso International Airport':null,
+                    'ELQ - Gassim Airport':null,
+                    'ERC - Erzincan Airport':null,
+                    'ERZ - Erzurum Airport':null,
+                    'ESB - Esenboga Airport':null,
+                    'ETZ - Lorraine Airport':null,
+                    'EUG - Mahlon Sweet Field Airport':null,
+                    'EVN - Yerevan-Parakar Airport':null,
+                    'EVV - Evansville Regional Airport':null,
+                    'EWR - Newark International Airport':null,
+                    'EYW - Key West International Airport':null,
+                    'EZE - Ministro Pistarini International Airport':null,
+                    'EZS - Elazig Airport':null,
+                    'FAI - Fairbanks International Airport':null,
+                    'FAO - Faro Airport':null,
+                    'FAR - Hector International Airport':null,
+                    'FAT - Fresno Yosemite International Airport':null,
+                    'FAY - Fayetteville Regional Airport':null,
+                    'FCA - Glacier Park International Airport':null,
+                    'FCO - Leonardo da Vinci International Airport':null,
+                    'FDH - Friedrichshafen Airport':null,
+                    'FIH - Kinshasa N Djili International Airport':null,
+                    'FKB - Baden-Airpark':null,
+                    'FLL - Fort Lauderdale Hollywood International Airport':null,
+                    'FLR - Florence Airport':null,
+                    'FMO - Munster-Osnabruck International Airport':null,
+                    'FNA - Freetown Lungi Airport':null,
+                    'FNC - Funchal Airport':null,
+                    'FNT - Bishop International Airport':null,
+                    'FPO - Freeport International Airport':null,
+                    'FRA - Frankfurt International Airport':null,
+                    'FRU - Vasilyevka Airport':null,
+                    'FSC - Sud Corse Airport':null,
+                    'FSD - Sioux Falls Regional Airport':null,
+                    'FUE - Puerto del Rosario Airport':null,
+                    'FUK - Fukuoka Airport':null,
+                    'FWA - Fort Wayne Municipal Airport-Baer Field':null,
+                    'GBE - Sir Seretse Khama International Airport':null,
+                    'GCM - Owen Roberts International Airport':null,
+                    'GDL - Don Miguel Hidalgo International Airport':null,
+                    'GDN - Rebiechowo Airport':null,
+                    'GEG - Spokane International Airport':null,
+                    'GIG - Rio de Janeiro-Antonio Carlos Jobim Internationa':null,
+                    'GLA - Glasgow International Airport':null,
+                    'GMP - Gimpo International Airport':null,
+                    'GND - Point Salines International Airport':null,
+                    'GNV - Gainesville Regional Airport':null,
+                    'GOA - Genoa Cristoforo Colombo Airport':null,
+                    'GOI - Dabolim Airport':null,
+                    'GOT - Gothenburg Airport':null,
+                    'GPT - Gulfport Biloxi Regional Airport':null,
+                    'GRB - Austin Straubel International Airport':null,
+                    'GRR - Gerald R. Ford International Airport':null,
+                    'GRU - Governador Andre Franco Montoro International Ai':null,
+                    'GRZ - Graz Airport':null,
+                    'GSO - Triad International Airport':null,
+                    'GSP - Greenville Spartanburg International Airport':null,
+                    'GTF - Great Falls International Airport':null,
+                    'GUA - La Aurora Airport':null,
+                    'GUM - Antonio B Won Pat International Airport':null,
+                    'GVA - Geneva Airport':null,
+                    'GWT - Westerland Airport':null,
+                    'GYD - Azerbaijan':null,
+                    'GYE - Simon Bolivar International Airport':null,
+                    'GZT - Gaziantep Airport':null,
+                    'HAH - Moroni Hahaia Airport':null,
+                    'HAJ - Hannover International Airport':null,
+                    'HAM - Hamburg Airport':null,
+                    'HAN - Noi Bai Airport':null,
+                    'HAV - Jose Marti International Airport':null,
+                    'HDN - Yampa Valley Airport':null,
+                    'HEL - Helsinki Vantaa Airport':null,
+                    'HER - Iraklion Airport':null,
+                    'HGH - Jianoiao Airport':null,
+                    'HKG - Hong Kong International Airport':null,
+                    'HKT - Phuket International Airport':null,
+                    'HND - Tokyo International Airport':null,
+                    'HNL - Honolulu International Airport':null,
+                    'HOG - Holguin Airport':null,
+                    'HOU - William P Hobby Airport':null,
+                    'HPN - Westchester County Airport':null,
+                    'HRE - Harare International Airport':null,
+                    'HRG - Hurghada Airport':null,
+                    'HRK - Kharkov Airport':null,
+                    'HRL - Grande Valley International Airport':null,
+                    'HSV - Huntsville International Airport':null,
+                    'HUY - Humberside International Airport':null,
+                    'HVN - Tweed New Haven Airport':null,
+                    'HYD - Begumpet Airport':null,
+                    'IAD - Washington Dulles International Airport':null,
+                    'IAH - George Bush Intercontinental Airport':null,
+                    'IBZ - Ibiza Airport':null,
+                    'ICN - New Incheon International Airport':null,
+                    'ICT - Wichita Mid-Continent Airport':null,
+                    'IDA - Fanning Field Airport':null,
+                    'IFN - Esfahan International Airport':null,
+                    'IKA - Imam Khomeini International Airport':null,
+                    'IND - Indianapolis International Airport':null,
+                    'INI - Nis Airport':null,
+                    'INN - Innsbruck Airport':null,
+                    'INV - Inverness Airport':null,
+                    'IQT - Cnl Fap Fran Seca Vignetta Airport':null,
+                    'ISB - Islamabad International Airport':null,
+                    'IST - Ataturk Hava Limani Airport':null,
+                    'ITM - Osaka International Airport':null,
+                    'ITO - Hilo International Airport':null,
+                    'JAC - Jackson Hole Airport':null,
+                    'JAI - Sanganer Airport':null,
+                    'JAN - Jackson International Airport':null,
+                    'JAX - Jacksonville International Airport':null,
+                    'JED - King Abdul Aziz International Airport':null,
+                    'JER - Jersey Airport':null,
+                    'JFK - John F Kennedy International Airport':null,
+                    'JIB - Djibouti Ambouli Airport':null,
+                    'JLN - Joplin Regional Airport':null,
+                    'JNB - OR Tambo International Airport':null,
+                    'JNU - Juneau International Airport':null,
+                    'JRO - Kilimanjaro International Airport':null,
+                    'JUB - Juba Airport':null,
+                    'KAN - Kano Mallam Aminu International Airport':null,
+                    'KBL - Kabul International Airport':null,
+                    'KBP - Borispol Airport':null,
+                    'KBV - Thailand':null,
+                    'KEF - Keflavik International':null,
+                    'KGL - Kigali Airport':null,
+                    'KHI - Karachi Civil Airport':null,
+                    'KIN - Norman Manley':null,
+                    'KIR - Kerry County Airport':null,
+                    'KIV - Kishinev Southeast Airport':null,
+                    'KIX - Kansai International Airport':null,
+                    'KOA - Kailua-Kona International Airport':null,
+                    'KRK - Balice Airport':null,
+                    'KRS - Kristiansand Airport':null,
+                    'KRT - Khartoum Airport':null,
+                    'KSA - Kosrae Island Airport':null,
+                    'KSC - Barca Airport':null,
+                    'KSY - Kars (abandoned) Airport':null,
+                    'KTM - Tribhuvan International Airport':null,
+                    'KTT - Kittila Airport':null,
+                    'KTW - Zendek Airport':null,
+                    'KUF - Kurumoch Airport':null,
+                    'KUL - Kuala Lumpur International Airport':null,
+                    'KVD - Elisavetpol':null,
+                    'KWA - Bucholz Army Air Field':null,
+                    'KWI - Kuwait International Airport':null,
+                    'KYA - Konya Airport':null,
+                    'LAD - Luanda 4 de Fevereiro Airport':null,
+                    'LAI - Servel Airport':null,
+                    'LAN - Lansing Capital City Airport':null,
+                    'LAS - Mccarran International Airport':null,
+                    'LAX - Los Angeles International Airport':null,
+                    'LBA - Leeds Bradford Airport':null,
+                    'LBB - Lubbock International Airport':null,
+                    'LBV - Libreville Leon M Ba Airport':null,
+                    'LCA - Larnaca Airport':null,
+                    'LCY - London City Airport':null,
+                    'LDE - Ossun Airport':null,
+                    'LED - Pulkuvo 2 Airport':null,
+                    'LEJ - Leipzig-Halle Airport':null,
+                    'LEX - Blue Grass Field':null,
+                    'LFW - Lome Tokoin Airport':null,
+                    'LGA - LaGuardia Airport':null,
+                    'LGB - Long Beach Daugherty Field Airport':null,
+                    'LGW - London Gatwick Airport':null,
+                    'LHE - Lahore Airport':null,
+                    'LHR - London Heathrow Airport':null,
+                    'LIG - Bellegarde Airport':null,
+                    'LIH - Lihue Airport':null,
+                    'LIL - Lesquin Airport':null,
+                    'LIM - Jorge Chavez Airport':null,
+                    'LIN - Linate Airport':null,
+                    'LIR - Tomas Guardia International Airport':null,
+                    'LIS - Lisbon Airport':null,
+                    'LIT - Adams Field Airport':null,
+                    'LJU - Ljubljana Airport':null,
+                    'LLW - Kamuzu International Airport':null,
+                    'LNZ - Linz Airport':null,
+                    'LOS - Lagos Murtala Muhammed Airport':null,
+                    'LPA - Las Palmas Airport':null,
+                    'LPB - El Alto International Airport':null,
+                    'LPI - Saab Airport':null,
+                    'LRH - Laleu Airport':null,
+                    'LRT - Lann Bihoue Airport':null,
+                    'LUG - Lugano Airport':null,
+                    'LUN - Lusaka International Airport':null,
+                    'LUX - Luxembourg Airport':null,
+                    'LWO - Sknilov Airport':null,
+                    'LXR - Luxor Airport':null,
+                    'LYS - Lyon Airport':null,
+                    'MAA - Chennai International Airport':null,
+                    'MAD - Barajas Airport':null,
+                    'MAJ - Marshall Islands International Airport':null,
+                    'MAN - Manchester International Airport':null,
+                    'MAO - Eduardo Gomes International Airport':null,
+                    'MAR - La Chinita International Airport':null,
+                    'MBA - Moi International Airport':null,
+                    'MBJ - Sangster International Airport':null,
+                    'MCI - Kansas City International Airport':null,
+                    'MCO - Orlando International Airport':null,
+                    'MCT - Seeb International Airport':null,
+                    'MDE - Jose Maria Cordova Airport':null,
+                    'MDT - Harrisburg International Airport':null,
+                    'MDW - Chicago Midway International Airport':null,
+                    'MED - Madinah International Airport':null,
+                    'MEL - Melbourne International Airport':null,
+                    'MEM - Memphis International Airport':null,
+                    'MEX - Lic Benito Juarez International Airport':null,
+                    'MFE - Miller International Airport':null,
+                    'MFM - Macau Airport':null,
+                    'MGA - Augusto Cesar Sandino International Airport':null,
+                    'MGM - Montgomery Regional Airport':null,
+                    'MGQ - Mogadishu Airport':null,
+                    'MHD - Mashhad Airport':null,
+                    'MHT - Manchester-Boston Regional Airport':null,
+                    'MIA - Miami International Airport':null,
+                    'MID - Lic M Crecencio Rejon International Airport':null,
+                    'MKE - General Mitchell International Airport':null,
+                    'MLA - Luqa Airport':null,
+                    'MLB - Melbourne International Airport':null,
+                    'MLE - Male International Airport':null,
+                    'MLH - Bale Mulhouse Airport':null,
+                    'MLX - Erhac Airport':null,
+                    'MME - Durham Tees Valley Airport':null,
+                    'MNL - Ninoy Aquino International Airport':null,
+                    'MOB - Mobile Regional Airport':null,
+                    'MOT - Minot International Airport':null,
+                    'MPL - Frejorgues Airport':null,
+                    'MPM - Maputo Airport':null,
+                    'MQM - Mardin':null,
+                    'MRS - Marignane Airport':null,
+                    'MRU - Plaisance International Airport':null,
+                    'MSN - Dane County Regional Airport-Truax Field':null,
+                    'MSO - Missoula International Airport':null,
+                    'MSP - Minneapolis St Paul International Airport':null,
+                    'MSQ - Velikiydvor Airport':null,
+                    'MSR - Mus Airport':null,
+                    'MST - Maastricht Airport':null,
+                    'MSY - New Orleans International Airport':null,
+                    'MTJ - Montrose Regional Airport':null,
+                    'MTY - Gen Mariano Escobedo International Airport':null,
+                    'MUC - Franz-Josef-Strauss Airport':null,
+                    'MVD - Carrasco International Airport':null,
+                    'MXP - Malpensa International Airport':null,
+                    'MYR - Myrtle Beach International Airport':null,
+                    'MZH - Merzifon':null,
+                    'NAP - Naples International Airport':null,
+                    'NAS - Nassau International Airport':null,
+                    'NAV - Nevşehir Airport':null,
+                    'NBO - Jomo Kenyatta International Airport':null,
+                    'NCE - Nice-Cote d\'Azur Airport':null,
+                    'NCL - Newcastle International Airport':null,
+                    'NDJ - Ndjamena Airport':null,
+                    'NGO - Chubu International Airport':null,
+                    'NIM - Niamey Airport':null,
+                    'NKM - Nagoya Airport':null,
+                    'NOC - Connaught Airport':null,
+                    'NOU - La Tontouta Airport':null,
+                    'NQY - St Mawgan Airport':null,
+                    'NRT - Narita International Airport':null,
+                    'NSI - Nsimalen Airport':null,
+                    'NTE - Chateau Bougon Airport':null,
+                    'NUE - Nurnberg Airport':null,
+                    'NWI - Norwich Airport':null,
+                    'OAJ - Albert J Ellis Airport':null,
+                    'OAK - Oakland International Airport':null,
+                    'ODS - Odessa Central Airport':null,
+                    'OGG - Kahului Airport':null,
+                    'OKA - Shimojishima Airport':null,
+                    'OKC - Will Rogers World Airport':null,
+                    'OLB - Olbia Costa Smeralda Airport':null,
+                    'OMA - Eppley Airfield':null,
+                    'ONT - Ontario International Airport':null,
+                    'OPO - Porto Airport':null,
+                    'ORD - Chicago O\'Hare International Airport':null,
+                    'ORF - Norfolk International Airport':null,
+                    'ORK - Cork Airport':null,
+                    'ORN - Es Senia Airport':null,
+                    'ORY - Paris Orly Airport':null,
+                    'OSL - Oslo Gardermoen Airport':null,
+                    'OTP - Otopeni Airport':null,
+                    'OUA - Ouagadougou Airport':null,
+                    'OZH - Zaporozhye East Airport':null,
+                    'PAD - Paderborn-Lippstadt Airport':null,
+                    'PAP - Toussaint Louverture International Airport':null,
+                    'PBI - Palm Beach International Airport':null,
+                    'PDL - Ponta Delgada Airport':null,
+                    'PDX - Portland International Airport':null,
+                    'PEK - Beijing Capital Airport':null,
+                    'PEN - Penang International Airport':null,
+                    'PER - Perth International Airport':null,
+                    'PGF - Rivesaltes Airport':null,
+                    'PHF - Newport News-Williamsburg International Airport':null,
+                    'PHL - Philadelphia International Airport':null,
+                    'PHX - Sky Harbor International Airport':null,
+                    'PIE - St. Petersburg-Clearwater International Airport':null,
+                    'PIT - Pittsburgh International Airport':null,
+                    'PLS - Providenciales Airport':null,
+                    'PLZ - H F Verwoerd Airport':null,
+                    'PMI - Palma de Mallorca Airport':null,
+                    'PMO - Palermo Airport':null,
+                    'PNH - Pochentong Airport':null,
+                    'PNI - Pohnpei International Airport':null,
+                    'PNS - Pensacola Regional Airport':null,
+                    'POA - Salgado Filho International Airport':null,
+                    'POP - Puerto Plata International Airport':null,
+                    'POS - Piarco Airport':null,
+                    'POZ - Lawica Airport':null,
+                    'PPT - Tahiti Faaa Airport':null,
+                    'PRG - Prague Ruzyne Airport':null,
+                    'PRN - Pristina Airport':null,
+                    'PSA - Pisa Airport':null,
+                    'PSC - Tri Cities Airport':null,
+                    'PSP - Palm Springs International Airport':null,
+                    'PTP - Le Raizet Airport':null,
+                    'PTY - Tocumen International Airport':null,
+                    'PUF - Pont Long Uzein Airport':null,
+                    'PUJ - Punta Cana Airport':null,
+                    'PUY - Pula Airport':null,
+                    'PVD - Theodore Francis Green State Airport':null,
+                    'PVG - Pudong International Airport':null,
+                    'PVR - Lic Gustavo Diaz Ordaz International Airport':null,
+                    'PWM - Jetport International Airport':null,
+                    'RAI - Francisco Mendes Airport':null,
+                    'RAK - Menara Airport':null,
+                    'RAP - Rapid City Regional Airport':null,
+                    'RDU - Durham International Airport':null,
+                    'RDZ - Marcillac Airport':null,
+                    'REC - Gilberto Freyre International Airport':null,
+                    'RGN - Mingaladon Airport':null,
+                    'RHO - Paradisi Airport':null,
+                    'RIC - Richmond International Airport':null,
+                    'RIX - Riga Airport':null,
+                    'RLG - Rostock–Laage Airport':null,
+                    'RNO - Reno-Tahoe International Airport':null,
+                    'RNS - St Jacques Airport':null,
+                    'ROA - Roanoke Regional Airport-Woodrum Field':null,
+                    'ROB - Roberts International Airport':null,
+                    'ROC - Greater Rochester International Airport':null,
+                    'ROR - Koror Airport':null,
+                    'ROS - Rosario Airport':null,
+                    'ROV - Rostov East Airport':null,
+                    'RSW - Southwest Florida International Airport':null,
+                    'RTB - Roatan Island Airport':null,
+                    'RTM - Rotterdam Airport':null,
+                    'RUH - King Khalid International Airport':null,
+                    'RUN - Saint Denis Gillot Airport':null,
+                    'RZE - Jasionka Airport':null,
+                    'SAH - Sanaa International Airport':null,
+                    'SAL - El Salvador International Airport':null,
+                    'SAN - San Diego International Airport':null,
+                    'SAP - La Mesa International Airport':null,
+                    'SAT - San Antonio International Airport':null,
+                    'SAV - Savannah International Airport':null,
+                    'SAW - Istanbul Sabiha Gokcen Airport':null,
+                    'SBN - South Bend Regional Airport':null,
+                    'SBZ - Turnisor Airport':null,
+                    'SCL - Arturo Merino Benitez International Airport':null,
+                    'SCN - Saarbrucken Airport':null,
+                    'SCQ - Santiago Airport':null,
+                    'SDF - Louisville International Airport':null,
+                    'SDJ - Sendai Airport':null,
+                    'SDQ - De Las Americas International Airport':null,
+                    'SDU - Santos Dumont Airport':null,
+                    'SEA - Tacoma International Airport':null,
+                    'SEZ - Seychelles International Airport':null,
+                    'SFO - San Francisco International Airport':null,
+                    'SGF - Springfield Regional Airport':null,
+                    'SGN - Tan Son Nhut Airport':null,
+                    'SHA - Hongqiao Airport':null,
+                    'SHE - Dongta Airport':null,
+                    'SID - Amilcar Cabral International Airport':null,
+                    'SIN - Singapore Changi Airport':null,
+                    'SJC - Norman Y Mineta San Jose International Airport':null,
+                    'SJD - Los Cabos International Airport':null,
+                    'SJJ - Sarajevo Airport':null,
+                    'SJO - Juan Santamaria International Airport':null,
+                    'SJU - Luis Munoz Marin Airport':null,
+                    'SKB - Golden Rock Airport':null,
+                    'SKG - Thessaloniki Airport':null,
+                    'SKP - Petrovec':null,
+                    'SLC - Salt Lake City International Airport':null,
+                    'SMF - Sacramento International Airport':null,
+                    'SNA - John Wayne Airport':null,
+                    'SNN - Shannon Airport':null,
+                    'SNU - Santa Clara Airport':null,
+                    'SOF - Vrazhdebna Airport':null,
+                    'SPN - Saipan International Airport':null,
+                    'SPU - Split Airport':null,
+                    'SRQ - Sarasota Bradenton Airport':null,
+                    'SSG - Malabo Airport':null,
+                    'SSH - Ras Nasrani Airport':null,
+                    'STI - Cibao International Airport':null,
+                    'STL - Lambert St Louis International Airport':null,
+                    'STR - Stuttgart Airport':null,
+                    'STT - Cyril E King International Airport':null,
+                    'STW - Mikhaylovskoye Airport':null,
+                    'STX - Henry E Rohlson International Airport':null,
+                    'SUB - Juanda Airport':null,
+                    'SUF - Lamezia Terme Airport':null,
+                    'SVG - Stavanger Sola Airport':null,
+                    'SVO - Sheremtyevo Airport':null,
+                    'SVQ - Sevilla Airport':null,
+                    'SWF - Stewart International Airport':null,
+                    'SXB - Entzheim Airport':null,
+                    'SXF - Berlin-Schonefeld International Airport':null,
+                    'SXM - Prinses Juliana International Airport':null,
+                    'SYD - Kingsford Smith Airport':null,
+                    'SYR - Hancock International Airport':null,
+                    'SYZ - Shiraz International Airport':null,
+                    'SZF - Ã‡arÅŸamba':null,
+                    'SZG - Salzburg Airport':null,
+                    'TAE - Daegu International Airport':null,
+                    'TAO - Liuting Airport':null,
+                    'TAS - Tashkent South Airport':null,
+                    'TBS - Tbilisi-Noyo Alekseyevka Airport':null,
+                    'TBZ - Tabriz Airport':null,
+                    'TFN - Norte-Los Rodeos Airport':null,
+                    'TFS - Sur-Reina Sofia Airport':null,
+                    'TGD - Titograd Airport':null,
+                    'TGU - Toncontin International Airport':null,
+                    'TIA - Tirane Rinas Airport':null,
+                    'TIF - Taif Airport':null,
+                    'TKK - Truk International Airport':null,
+                    'TLH - Tallahassee Regional Airport':null,
+                    'TLL - Ulemiste Airport':null,
+                    'TLN - Le Palyvestre Airport':null,
+                    'TLS - Blagnac Airport':null,
+                    'TLV - Ben Gurion Airport':null,
+                    'TMS - Sao Tome Salazar Airport':null,
+                    'TNG - Boukhalf Airport':null,
+                    'TNR - Antananarivo Ivato Airport':null,
+                    'TOL - Toledo Express Airport':null,
+                    'TOS - Tromso Langnes Airport':null,
+                    'TPA - Tampa International Airport':null,
+                    'TPE - Taiwan Taoyuan International Airport':null,
+                    'TRD - Trondheim Vaernes Airport':null,
+                    'TRF - Torp Airport':null,
+                    'TRI - Tri-Cities Regional Airport':null,
+                    'TRN - Turin International Airport':null,
+                    'TRS - Ronchi Dei Legionari Airport':null,
+                    'TSR - Timisoara Northeast Airport':null,
+                    'TST - Trang Airport':null,
+                    'TUL - Tulsa International Airport':null,
+                    'TUN - Aeroport Tunis':null,
+                    'TUS - Tucson International Airport':null,
+                    'TVC - Cherry Capital Airport':null,
+                    'TXL - Berlin-Tegel International Airport':null,
+                    'TYS - Mcghee Tyson Airport':null,
+                    'TZX - Trabzon Air Base':null,
+                    'UIO - Mariscal Sucre International Airport':null,
+                    'UIP - Pluguffan Airport':null,
+                    'ULN - Ulaanbaatar Southwest Airport':null,
+                    'URO - Boos Airport':null,
+                    'UVF - Hewanorra International Airport':null,
+                    'VAN - Van Airport':null,
+                    'VAR - Topoli Airport':null,
+                    'VAS - Sivas Airport':null,
+                    'VCE - Marco Polo International Airport':null,
+                    'VCP - Viracopos International Airport':null,
+                    'VIE - Vienna Schwechat International Airport':null,
+                    'VKO - Ynukovo Airport':null,
+                    'VLC - Valencia Airport':null,
+                    'VLN - Zim Valencia Airport':null,
+                    'VNO - Vilnius Airport':null,
+                    'VPS - Eglin Air Force Base':null,
+                    'VRA - Varadero Airport':null,
+                    'VRN - Verona Airport':null,
+                    'VTE - Vientiane Airport':null,
+                    'VVI - Viru Viru International Airport':null,
+                    'VXE - San Pedro Airport':null,
+                    'WAW - Okecie International Airport':null,
+                    'WDH - Windhoek Airport':null,
+                    'WLG - Wellington International Airport':null,
+                    'WRO - Strachowice Airport':null,
+                    'WUH - Wuchang Nanhu Airport':null,
+                    'XIY - Hsien Yang Airport':null,
+                    'XMN - Xiamen Airport':null,
+                    'XNA - Northwest Arkansas Regional Airport':null,
+                    'XRY - Jerez Airport':null,
+                    'YAP - Yap International Airport':null,
+                    'YEG - Edmonton International Airport':null,
+                    'YEI - Bursa Yenişehir Airport':null,
+                    'YHZ - Halifax International Airport':null,
+                    'YNB - Yenbo Airport':null,
+                    'YOW - Ottawa International Airport':null,
+                    'YUL - AÃ©roport International Pierre-Elliott-Trudeau d':null,
+                    'YVR - Vancouver International Airport':null,
+                    'YYC - Calgary International Airport':null,
+                    'YYZ - Toronto Lester B Pearson International Airport':null,
+                    'ZAG - Zagreb Airport':null,
+                    'ZIH - Ixtapa Zihuatanejo International Airport':null,
+                    'ZNZ - Zanzibar Airport':null,
+                    'ZRH - Zurich International Airport':null
+                },
+            });
+
+            // Add Autocomplete Functionality for Program Entry Section
+            $('input.programAutocomplete').autocomplete({
+                data: {
+                    'Chase Ultimate Rewards (Sapphire Preferred, Ink Plus or Ink Bold Cards)':null,
+                    'Chase Ultimate Rewards (Sapphire Reserve Card)':null,
+                    'American Express Membership Rewards (Any Card)':null,
+                    'American Express Membership Rewards (Business Platinum Card)':null,
+                    'Citi Thank You Points (Premier, Prestige or Chairman Cards)':null,
+                    'United Airlines MileagePlus':null,
+                    'Air Canada Aeroplan':null,
+                    'ANA: All Nippon Airways Mileage Club':null,
+                    'Singapore Airlines KrisFlyer':null,
+                    'American Airlines AAdvantage':null,
+                    'Delta Airlines SkyMiles':null,
+                    'Air France/KLM Flying Blue':null,
+                    'Delta Airline SkyMiles':null,
+                    'Capital One Cash Back':null,
+                    'Wells Fargo Cash Back':null,
+                    'Discover Cash Back':null,
+                    'Bank of America Cash Back':null,
+                    'Citi Thank You Pay With Points':null,
+                    'Chase Ultimate Rewards Pay With Points':null,
+                    'American Express Membership Rewards Pay With Points':null,
+                    'British Airways Avios':null
+                },
+            });
+
+            // Add another card event listener desktop
+            document.getElementById('addAnotherProgram').addEventListener('click', manageProgramInputsDesktop, false);
+
+            // Add another card event listener mobile
+            // document.getElementById('addAnotherProgramMobile').addEventListener('click', manageProgramInputsMobile, false);
+
+            // Submit Form Event Listeners
+            // TO DO: Add Destination for Event Listener
+            document.getElementById('submitRedempCalcForm').addEventListener('click', vetRedemptionInputs);
         },
         translateProgramSelectionsToFreqFlierPrograms: () => {
             // Iterate through each program that the user inputted
@@ -39145,7 +41710,7 @@ var model = {
             model.rewProg.userPrograms.forEach(function(prog) {
 
                 for (var ptsTrans in model.rewProg.programs.pointsTransferrable) {
-                    if (prog.name === ptsTrans) {
+                    if (prog.name === model.rewProg.programs.pointsTransferrable[ptsTrans].displayName) {
                         // If any of the user selections are points
                         // transferrable programs, then calculate
                         // how many points they would have in each 
@@ -39192,9 +41757,10 @@ var model = {
                 progExists = false;
             });
 
+            console.log('User Frequent Flier Programs');
             console.log(model.rewProg.userFreqFlierPrograms);
 
-            model.rewProg.determineElibilePrograms();
+            model.controllers.determineElibilePrograms();
         },
         determineElibilePrograms: () => {
             
@@ -40006,1828 +42572,59 @@ var model = {
             model.templates.renderPointsRedemptionTemplate();
             $('ul.tabs').tabs();
 
+            // Hide Crunching Numbers and Display Routes
+            document.getElementById('crunchingNumbers').style.display = 'none';
+            document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
+            document.getElementById('displayProgramAndFlightInfo').style.display = 'inline';
+
+            function backToInputs() {
+                // Reset Outputs
+                model.rewProg.eligiblePrograms.fromDestination = [];
+                model.rewProg.eligiblePrograms.fromDestinationCount = null;
+                model.rewProg.eligiblePrograms.toDestination = [];
+                model.rewProg.eligiblePrograms.toDestinationCount = null;
+
+                model.controllers.redemptionSetup();
+                document.getElementById('fromAirport').value = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                document.getElementById('toAirport').value = model.rewProg.userFlightSelections.toDestination.toAirport;
+                document.getElementById('flightClass').value = model.rewProg.userFlightSelections.toDestination.class;
+                document.getElementById('flightType').value = model.rewProg.userFlightSelections.toDestination.type;
+                document.getElementById('numTickets').value = model.rewProg.userFlightSelections.toDestination.numTickets;
+
+
+                for (var i = 1; i < 6; i++) {
+                    if (model.rewProg.userPrograms[i-1]) {
+                        if (i === 1) {
+                            document.getElementById('program1').value = model.rewProg.userPrograms[i-1].name;
+                            document.getElementById('programPoints1').value = model.rewProg.userPrograms[i-1].points;
+                        } else {
+                            document.getElementById('program' + i + i).style.display = 'inline';
+                            document.getElementById('program' + i).value = model.rewProg.userPrograms[i-1].name;
+                            document.getElementById('programPoints' + i).value = model.rewProg.userPrograms[i-1].points;
+                            document.getElementById('programPoints' + i + i).style.display = 'inline';
+                            document.getElementById('y' + i).style.display = 'inline';
+                        }
+                        
+                    }
+                }
+
+                // Activate the input fields that are filled in
+                Materialize.updateTextFields();
+
+                document.getElementById('displayProgramAndFlightInfo').style.display = 'none';
+                document.getElementById('gatherProgramAndFlightInfo').style.display = 'inline';
+            }
+
+            document.getElementById('backToInputsDesktop').addEventListener('click', backToInputs);
+
             console.log(model.rewProg.eligiblePrograms);
         },
         viewExtraInfo: (a) => {
             if (document.getElementById(a).style.display === 'inline') {
                 document.getElementById(a).style.display = 'none';
             } else {
-                document.getElementById(a).style.display = 'inline'
+                document.getElementById(a).style.display = 'inline';
             }
-        }
-    },
-    templates: {
-        variables: {
-            displayRecommendationsTemplate: null,
-            carouselGoalSliderDesktopTemplate: null,
-            carouselGoalSliderMobileTemplate: null,
-            pointsCalculatorTemplate: null,
-            redemptionCalculatorTemplate: null
-        },
-        compile: () => {
-            // Compile Display Recommendations Template
-            var displayRecommendationsTemplateSource = 
-                document.getElementById('displayRecommendationsTemplate').innerHTML;
-            model.templates.variables.displayRecommendationsTemplate = 
-                Handlebars.compile(displayRecommendationsTemplateSource);
-
-            // Compile Carousel Goal Slider Desktop
-            var carouselGoalSliderDesktopTemplateSource = 
-                document.getElementById('carouselGoalSliderDesktopTemplate').innerHTML;
-            model.templates.variables.carouselGoalSliderDesktopTemplate = 
-                Handlebars.compile(carouselGoalSliderDesktopTemplateSource);
-
-            // Compile Carousel Goal Slider Mobile
-            var carouselGoalSliderMobileTemplateSource = 
-                document.getElementById('carouselGoalSliderMobileTemplate').innerHTML;
-            model.templates.variables.carouselGoalSliderMobileTemplate = 
-                Handlebars.compile(carouselGoalSliderMobileTemplateSource);
-
-            // Compile Points Calculator Template
-            var pointsCalculatorTemplateSource = 
-                document.getElementById('pointsCalculatorTemplate').innerHTML;
-            model.templates.variables.pointsCalculatorTemplate = 
-                Handlebars.compile(pointsCalculatorTemplateSource);
-
-            // Compile Redemption Calculator Template
-            var redemptionCalculatorTemplateSource = 
-                document.getElementById('redemptionCalculatorTemplate').innerHTML;
-            model.templates.variables.redemptionCalculatorTemplate = 
-                Handlebars.compile(redemptionCalculatorTemplateSource);
-        },
-        renderDisplayRecommendationsTemplate: () => {
-            var displayRecommendationsTemplateHtml = 
-                model.templates.variables.displayRecommendationsTemplate(model.cards);
-            document.getElementById('displayRecommendations').innerHTML = 
-                displayRecommendationsTemplateHtml;
-        },
-        renderCarouselGoalSliderDesktopTemplate: () => {
-            var carouselGoalSliderDesktopTemplateHtml = 
-                model.templates.variables.carouselGoalSliderDesktopTemplate(model.destinations);
-            document.getElementById('carouselGoalSliderDesktop').innerHTML = 
-                carouselGoalSliderDesktopTemplateHtml;
-        },
-        renderCarouselGoalSliderMobileTemplate: () => {
-            var carouselGoalSliderMobileTemplateHtml = 
-                model.templates.variables.carouselGoalSliderMobileTemplate(model.destinations);
-            document.getElementById('carouselGoalSliderMobile').innerHTML = 
-                carouselGoalSliderMobileTemplateHtml;
-        },
-        renderPointsCalculatorTemplate: () => {
-            var pointsCalculatorTemplateHtml = 
-                model.templates.variables.pointsCalculatorTemplate(model.cards);
-            document.getElementById('pointsCalculator').innerHTML = 
-                pointsCalculatorTemplateHtml;
-        },
-        renderPointsRedemptionTemplate: () => {
-            var redemptionCalculatorTemplateHtml =
-                model.templates.variables.redemptionCalculatorTemplate(model.rewProg);
-            document.getElementById('redemptionCalculator').innerHTML = 
-                redemptionCalculatorTemplateHtml;
-        }
-        
-    },
-    controllers: {
-        setup: () => {
-            // Compile Templates
-            model.templates.compile();
-
-            // Set Rewards Goal Selections for Mobile/Desktop to Europe
-            model.destinations.selectionDesktop = model.destinations.optionsDesktop.unitedStatesDesktop;
-            model.destinations.selectionMobile = model.destinations.optionsMobile.unitedStatesMobile;
-            
-            // Render Rewards Goal Tempalates and Establish the View for Mobile/Desktop
-            model.templates.renderCarouselGoalSliderDesktopTemplate();
-            model.controllers.setupCarouselViewDesktop();
-            model.templates.renderCarouselGoalSliderMobileTemplate();
-            model.controllers.setupCarouselViewMobile();
-
-            // Landing Page PP and TOS Event Listeners
-            document.getElementById('termsOfServiceButtonLpDesktop').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonLpDesktop').addEventListener('click', model.appState.toggleToPp);
-            document.getElementById('termsOfServiceButtonLpMobile').addEventListener('click', model.appState.toggleToTos);
-            document.getElementById('privacyPolicyButtonLpMobile').addEventListener('click', model.appState.toggleToPp);
-            
-            // Rewards Goal Event Listeners 
-            $("#rewardsGoalDesktopSelect").on('change', changeRewardGoalViewDesktop);
-            $("#rewardsGoalMobileSelect").on('change', changeRewardGoalViewMobile);
-
-            function changeRewardGoalViewDesktop() {
-
-                if ($(this).val().includes('europe')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.europeDesktop;
-                } else if ($(this).val().includes('ocea')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.oceaniaDesktop;
-                } else if ($(this).val().includes('asia')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.asiaDesktop;
-                } else if ($(this).val().includes('latin')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.latinAmericaDesktop;
-                } else if ($(this).val().includes('africa')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.africaDesktop;
-                } else if ($(this).val().includes('united')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.unitedStatesDesktop;
-                } else if ($(this).val().includes('cashBack')) {
-                    model.destinations.selectionDesktop = 
-                        model.destinations.optionsDesktop.cashBackLandingPageDesktop;
-                }
-
-                model.templates.renderCarouselGoalSliderDesktopTemplate();
-                model.controllers.setupCarouselViewDesktop();
-            }
-
-            function changeRewardGoalViewMobile() {
-                
-                if ($(this).val().includes('europe')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.europeMobile;
-                } else if ($(this).val().includes('ocea')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.oceaniaMobile;
-                } else if ($(this).val().includes('asia')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.asiaMobile;
-                } else if ($(this).val().includes('latin')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.latinAmericaMobile;
-                } else if ($(this).val().includes('africa')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.africaMobile;
-                } else if ($(this).val().includes('united')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.unitedStatesMobile;
-                } else if ($(this).val().includes('cashBack')) {
-                    model.destinations.selectionMobile = 
-                        model.destinations.optionsMobile.cashBackLandingPageMobile;
-                }
-
-                model.templates.renderCarouselGoalSliderMobileTemplate();
-                model.controllers.setupCarouselViewMobile();
-            }
-        },
-        closeForgotPasswordModal: () => {
-            event.preventDefault();
-            $('#forgotPasswordModal').modal('close');
-        },
-        showRegister: () => {
-            document.getElementById('privacyPolicy').style.display = 'none';
-            document.getElementById('termsOfService').style.display = 'none';
-
-            model.appState.registerBeforeRecs = true;
-            if (document.getElementById('landingPage').style.display === 'inline') {
-                model.appState.landingPage = false;
-                document.getElementById('landingPage').style.display = 'none';
-            } else if (document.getElementById('pointsCalculator').style.display === 'inline') {
-                model.appState.calculator = false;
-                document.getElementById('pointsCalculator').style.display = 'none';
-            } else if (document.getElementById('signIn').style.display === 'inline') {
-                model.appState.signInBeforeRecs = false;
-                document.getElementById('signIn').style.display = 'none';
-            }
-
-            document.getElementById('register').style.display = 'inline';
-        },
-        showLogin: () => {
-            document.getElementById('privacyPolicy').style.display = 'none';
-            document.getElementById('termsOfService').style.display = 'none';
-
-            model.appState.signInBeforeRecs = true;
-            if (document.getElementById('landingPage').style.display === 'inline') {
-                model.appState.landingPage = false;
-                document.getElementById('landingPage').style.display = 'none';
-            } else if (document.getElementById('pointsCalculator').style.display === 'inline') {
-                model.appState.calculator = false;
-                document.getElementById('pointsCalculator').style.display = 'none';
-            } else if (document.getElementById('register').style.display === 'inline') {
-                model.appState.registerBeforeRecs = false;
-                document.getElementById('register').style.display = 'none';
-            }
-            
-            document.getElementById('signIn').style.display = 'inline';
-        },
-        setupCarouselViewMobile: () => {
-            var carouselSlidesMobile = document.getElementsByClassName("mySlides4");
-            var carouselSlidesMobileArray = Array.from(carouselSlidesMobile);
-            for (var i = 0; i < carouselSlidesMobileArray.length; i++) {
-                if (i === 0) {
-                    carouselSlidesMobileArray[i].style.display = 'block';
-                } else {
-                    carouselSlidesMobileArray[i].style.display = 'none';
-                }
-            }
-        },
-        setupCarouselViewDesktop: () => {
-            var carouselSlidesDesktop = document.getElementsByClassName("mySlides2");
-            var carouselSlidesDesktopArray = Array.from(carouselSlidesDesktop);
-            for (var i = 0; i < carouselSlidesDesktopArray.length; i++) {
-                if (i === 0) {
-                    carouselSlidesDesktopArray[i].style.display = 'block';
-                } else {
-                    carouselSlidesDesktopArray[i].style.display = 'none';
-                }
-            }
-        },
-        insertLivIconsForCalculator: () => {
-            // Rewards Goal Icon Desktop
-            jQuery('#addTouch').addLiviconEvo({
-                name: 'touch.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Own a Business Icon Desktop
-            jQuery('#addBriefcase').addLiviconEvo({
-                name: 'briefcase.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Credit Score Icon Desktop
-            jQuery('#addDashboard').addLiviconEvo({
-                name: 'dashboard.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Monthly Spend Icon Desktop
-            jQuery('#addCreditCardOut').addLiviconEvo({
-                name: 'credit-card-out.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Email Icon Desktop
-            jQuery('#addEnvelopePut').addLiviconEvo({
-                name: 'envelope-put.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Current Credit Cards Icon Desktop
-            jQuery('#addCreditCardIn').addLiviconEvo({
-                name: 'credit-card-in.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Rewards Goal Icon Mobile
-            jQuery('#addTouchMobile').addLiviconEvo({
-                name: 'touch.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Own a Business Icon Mobile
-            jQuery('#addBriefcaseMobile').addLiviconEvo({
-                name: 'briefcase.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Credit Score Icon Mobile
-            jQuery('#addDashboardMobile').addLiviconEvo({
-                name: 'dashboard.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Monthly Spend Icon Mobile
-            jQuery('#addCreditCardOutMobile').addLiviconEvo({
-                name: 'credit-card-out.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Email Icon Mobile
-            jQuery('#addEnvelopePutMobile').addLiviconEvo({
-                name: 'envelope-put.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            // Current Credit Cards Icon Mobile
-            jQuery('#addCreditCardInMobile').addLiviconEvo({
-                name: 'credit-card-in.svg',
-                size: '120px',
-                style: 'original',
-                tryToSharpen: true
-            });
-
-            var options = [
-                {selector: '#addTouch', offset: 50, callback: function() {
-                    $('#addTouch').playLiviconEvo();
-                } },
-                {selector: '#addBriefcase', offset: 340, callback: function() {
-                    $('#addBriefcase').playLiviconEvo();
-                } },
-                {selector: '#addDashboard', offset: 350, callback: function() {
-                    $('#addDashboard').playLiviconEvo();
-                } },
-                {selector: '#addCreditCardOut', offset: 360, callback: function() {
-                    $('#addCreditCardOut').playLiviconEvo();
-                } },
-                {selector: '#addCreditCardIn', offset: 370, callback: function() {
-                    $('#addCreditCardIn').playLiviconEvo();
-                } }
-            ];
-            Materialize.scrollFire(options);
-        },
-        calculatorSetup: () => {
-            
-            // Scroll to Top
-            window.scrollTo(0,0);
-
-            // Change App State
-            model.appState.landingPage = false;
-            model.appState.calculator = true;
-
-            // Hide Landing Page
-            document.getElementById('signIn').style.display = "none";
-            document.getElementById('register').style.display = "none";
-            document.getElementById('preNav').style.display = 'none';
-            document.getElementById('preFooterDesktop').style.display = 'none';
-            document.getElementById('preFooterMobile').style.display = 'none';
-            document.getElementById('landingPage').style.display = 'none';
-
-
-            if (!model.appState.completedCalculator) {
-                document.getElementById('cardRecs').style.display = 'none';
-            }
-
-            // Show Profile Page
-            document.getElementById('profile').style.display = 'inline';
-
-            // Render Points Calculator Template 
-            model.templates.renderPointsCalculatorTemplate();
-
-            // Insert LivIcons
-            model.controllers.insertLivIconsForCalculator();
-
-            // Mobile or Not?
-            window.mobileAndTabletcheck = function() {
-              var check = false;
-              (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
-              model.appState.mobileView = check;
-            };
-            window.mobileAndTabletcheck();
-
-            // Show Points Calculator Template
-            document.getElementById('pointsCalculator').style.display = "inline";
-
-            // Manage Calculator Inputs Desktop
-            function manageCalculatorInputsDesktop() {
-                const selection = this.id;
-                if (selection === "freeFlights" || 
-                    selection === "cashBack") {
-
-                    // Make sure to reset box inputs
-                    var ids = ['cashBack', 'freeFlights'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).classList.remove('active');
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-
-                    // Add Active to selection
-                    $(this).addClass('active');
-
-                    // Log Active to the Model
-                    model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
-
-                    // Turn Selection Font White
-                    document.getElementById(selection).style.color = 'white';
-
-                    // Remove selection from ids Array
-                    var index = ids.indexOf(selection);
-                    ids.splice(index, 1);
-
-                    // Grey out other option/s
-                    ids.forEach(function (id) {
-                        document.getElementById(id).style.color = 'grey';
-                    });
-                } else if (selection === "yesOwnBusiness" || 
-                    selection ==='noOwnBusiness') {
-
-                    // Make sure to reset box inputs
-                    var ids = ['yesOwnBusiness', 'noOwnBusiness'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).classList.remove('active');
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-                    
-                    // Add Active to selection
-                    $(this).addClass('active');
-
-                    // Log Active to the Model
-                    if (selection === "yesOwnBusiness"){
-                        model.cards.currentStatusBasedOnSelections.ownBusiness = true;
-                    } else {
-                        model.cards.currentStatusBasedOnSelections.ownBusiness = false;
-                    }
-
-                    // Turn Selection Font White
-                    document.getElementById(selection).style.color = 'white';
-
-                    // Remove selection from ids Array
-                    var index = ids.indexOf(selection);
-                    ids.splice(index, 1);
-
-                    // Grey out other option/s
-                    ids.forEach(function (id) {
-                        document.getElementById(id).style.color = 'grey';
-                    });
-                } else if (selection.includes('Credit')) {
-                    // Make sure to reset box inputs
-                    var ids = ['excellentCredit', 'goodCredit', 'fairCredit', 'limitedCredit', 'poorCredit'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).classList.remove('active');
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-                    
-                    // Add Active to selection
-                    $(this).addClass('active');
-
-                    // Log Active to the Model
-                    model.cards.currentStatusBasedOnSelections.creditScore = selection;
-
-                    // Turn Selection Font White
-                    document.getElementById(selection).style.color = 'white';
-
-                    // Remove selection from ids Array
-                    var index = ids.indexOf(selection);
-                    ids.splice(index, 1);
-
-                    // Grey out other option/s
-                    ids.forEach(function (id) {
-                        document.getElementById(id).style.color = 'grey';
-                    });
-                } else if (selection.includes('00') || selection.includes('other')) {
-                    
-                    document.getElementById('otherSelection').style.display = 'none';
-
-                    if (selection === 'other') {
-
-                        // Log Selection to the Model
-                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
-
-                        // Make sure to reset box inputs
-                        var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
-                        ids.forEach(function(id) {
-                            document.getElementById(id).classList.remove('active');
-                            document.getElementById(id).style.color = '#039be5';
-                        });
-                        
-                        // Add Active to selection
-                        $(this).addClass('active');
-
-                        // Turn Selection Font White
-                        document.getElementById(selection).style.color = 'white';
-
-                        // Show Other Form
-                        document.getElementById('otherSelection').style.display = 'inline';
-                    } else {
-
-                        // Log Selection to the Model
-                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
-
-                        var selectionNumber = parseFloat(selection.replace(/,/g, ''));
-                        model.cards.currentStatusBasedOnSelections.monthlySpendValue = selectionNumber;
-
-                        // Make sure to reset box inputs
-                        var ids = ['500', '1000', '1500', '2000', '3000', 'other'];
-                        ids.forEach(function(id) {
-                            document.getElementById(id).classList.remove('active');
-                            document.getElementById(id).style.color = '#039be5';
-                        });
-                        
-                        // Add Active to selection
-                        $(this).addClass('active');
-
-                        // Turn Selection Font White
-                        document.getElementById(selection).style.color = 'white';
-
-                        // Remove selection from ids Array
-                        var index = ids.indexOf(selection);
-                        ids.splice(index, 1);
-
-                        // Grey out other option/s
-                        ids.forEach(function (id) {
-                            document.getElementById(id).style.color = 'grey';
-                        });
-                    }
-                }
-            }
-
-            // Manage Calculator Inputs Mobile
-            function manageCalculatorInputsMobile() {
-                // Grab Selection
-                var selection = this.id;
-                // Delete Mobile String from Selection
-                selection = selection.replace('Mobile', '');
-
-                if (selection === "freeFlights" || 
-                    selection === "cashBack") {
-
-                    // Make sure to reset box inputs
-                    var ids = ['cashBackMobile', 'freeFlightsMobile'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).classList.remove('active');
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-
-                    // Add Active to selection
-                    $(this).addClass('active');
-
-                    // Log Active to the Model
-                    model.cards.currentStatusBasedOnSelections.rewardsGoal = selection;
-
-                    // Turn Selection Font White
-                    document.getElementById(selection + 'Mobile').style.color = 'white';
-
-                    // Remove selection from ids Array
-                    var index = ids.indexOf(selection + 'Mobile');
-                    ids.splice(index, 1);
-
-                    // Grey out other option/s
-                    ids.forEach(function (id) {
-                        document.getElementById(id).style.color = 'grey';
-                    });
-                } else if (selection === "yesOwnBusiness" || 
-                    selection ==='noOwnBusiness') {
-
-                    // Make sure to reset box inputs
-                    var ids = ['yesOwnBusinessMobile', 'noOwnBusinessMobile'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).classList.remove('active');
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-                    
-                    // Add Active to selection
-                    $(this).addClass('active');
-
-                    // Log Active to the Model
-                    if (selection === "yesOwnBusiness"){
-                        model.cards.currentStatusBasedOnSelections.ownBusiness = true;
-                    } else {
-                        model.cards.currentStatusBasedOnSelections.ownBusiness = false;
-                    }
-
-                    // Turn Selection Font White
-                    document.getElementById(selection + 'Mobile').style.color = 'white';
-
-                    // Remove selection from ids Array
-                    var index = ids.indexOf(selection + 'Mobile');
-                    ids.splice(index, 1);
-
-                    // Grey out other option/s
-                    ids.forEach(function (id) {
-                        document.getElementById(id).style.color = 'grey';
-                    });
-                } else if (selection.includes('Credit')) {
-                    // Make sure to reset box inputs
-                    var ids = ['excellentCreditMobile', 'goodCreditMobile',
-                                'fairCreditMobile', 'limitedCreditMobile', 'poorCreditMobile'];
-                    ids.forEach(function(id) {
-                        document.getElementById(id).classList.remove('active');
-                        document.getElementById(id).style.color = '#039be5';
-                    });
-                    
-                    // Add Active to selection
-                    $(this).addClass('active');
-
-                    // Log Active to the Model
-                    model.cards.currentStatusBasedOnSelections.creditScore = selection;
-
-                    // Turn Selection Font White
-                    document.getElementById(selection + 'Mobile').style.color = 'white';
-
-                    // Remove selection from ids Array
-                    var index = ids.indexOf(selection + 'Mobile');
-                    ids.splice(index, 1);
-
-                    // Grey out other option/s
-                    ids.forEach(function (id) {
-                        document.getElementById(id).style.color = 'grey';
-                    });
-                } else if (selection.includes('00') || selection.includes('other')) {
-                    
-                    document.getElementById('otherSelectionMobile').style.display = 'none';
-
-                    if (selection === 'other') {
-
-                        // Log Selection to the Model
-                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
-
-                        // Make sure to reset box inputs
-                        var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
-                                    '2000Mobile', '3000Mobile', 'otherMobile'];
-                        ids.forEach(function(id) {
-                            document.getElementById(id).style.backgroundColor = 'white';
-                            document.getElementById(id).style.color = '#039be5';
-                        });
-                        
-                        // Add Active to selection
-                        $(this).addClass('active');
-
-                        // Turn Selection Font White
-                        document.getElementById(selection + 'Mobile').style.color = 'white';
-                        document.getElementById(selection + 'Mobile').style.backgroundColor = '#26a69a';
-
-                        // Show Other Form
-                        document.getElementById('otherSelectionMobile').style.display = 'inline';
-                    } else {
-
-                        // Log Selection to the Model
-                        model.cards.currentStatusBasedOnSelections.monthlySpend = selection;
-
-                        var selectionNumber = parseFloat(selection.replace(/,/g, ''));
-                        model.cards.currentStatusBasedOnSelections.monthlySpendValue = selectionNumber;
-
-                        // Make sure to reset box inputs
-                        var ids = ['500Mobile', '1000Mobile', '1500Mobile', 
-                                    '2000Mobile', '3000Mobile', 'otherMobile'];
-                        ids.forEach(function(id) {
-                            document.getElementById(id).style.backgroundColor = 'white';
-                            document.getElementById(id).style.color = '#039be5';
-                        });
-                        
-                        // Add Active to selection
-                        $(this).addClass('active');
-
-                        // Turn Selection Font White
-                        document.getElementById(selection + 'Mobile').style.color = 'white';
-                        document.getElementById(selection + 'Mobile').style.backgroundColor = '#26a69a';
-
-                        // Remove selection from ids Array
-                        var index = ids.indexOf(selection + 'Mobile');
-                        ids.splice(index, 1);
-
-                        // Grey out other option/s
-                        ids.forEach(function (id) {
-                            document.getElementById(id).style.color = 'grey';
-                        });
-                    }
-                }
-            }
-
-            // Manage CC Inputs Desktop
-            function manageCreditCardInputsDesktop() {
-                for (var i = 1; i < 10; i++) {
-                    if (model.appState.addAnotherCardCount === i) {
-                        var nextCard = 'card' + (i+1) + (i+1);
-                        var nextX = 'x' + (i+1);
-                        document.getElementById(nextCard).style.display = "inline";
-                        document.getElementById(nextX).style.display = "inline";
-                        model.appState.addAnotherCardCount += 1;
-                        if (model.appState.addAnotherCardCount === 9) {
-                            document.getElementById('addAnotherCard').classList.add('disabled');
-                        }
-                        break;
-                    } 
-                }
-            }
-            
-            // Manage CC Inputs Mobile
-            function manageCreditCardInputsMobile() {
-                for (var i = 1; i < 10; i++) {
-                    if (model.appState.addAnotherCardCount === i) {
-                        var nextCard = 'card' + (i+1) + (i+1) + (i+1);
-                        var nextX = 'x' + (i+1) + 'Mobile';
-                        document.getElementById(nextCard).style.display = "inline";
-                        document.getElementById(nextX).style.display = "inline";
-                        model.appState.addAnotherCardCount += 1;
-                        if (model.appState.addAnotherCardCount === 9) {
-                            document.getElementById('addAnotherCardMobile').classList.add('disabled');
-                        }
-                        break;
-                    } 
-                }
-            }
-
-            // Hide x-ed-out Cards
-            function hideCard() {
-                var selection = this;
-                var previous = $(this).prev("div");
-                document.getElementById(previous[0].id).children[0].value = '';
-                document.getElementById(selection.id).style.display = 'none';
-                document.getElementById(previous[0].id).style.display = 'none';
-                model.appState.addAnotherCardCount -= 1;
-                if (model.appState.addAnotherProgramCount < 9) {
-                    document.getElementById('addAnotherCard').classList.remove('disabled');
-                }
-            }
-
-            // Set up Event Listeners for Calculator Inputs Desktop
-            var collection = Array.from(document.getElementsByClassName("calculatorInputDesktop")); 
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', manageCalculatorInputsDesktop, false);
-            }
-
-            // Set up Event Listeners for Calculator Inputs Mobile
-            var collection = Array.from(document.getElementsByClassName("calculatorInputMobile")); 
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', manageCalculatorInputsMobile, false);
-            }
-
-            // Set up Event Listeners for x-out buttons for Cards
-            var collection = Array.from(document.getElementsByClassName('x-out'));
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', hideCard);
-                collection[i].style.cursor = 'pointer';
-            }
-
-            // Add Autocomplete Functionality for Add Cards Section
-            $('input.autocomplete').autocomplete({
-                data: {
-                    'American Express Blue Cash Everyday':null,
-                    'American Express Blue Cash Preferred':null,
-                    'American Express Blue Sky':null,
-                    'American Express Centurion':null,
-                    'American Express Charles Schwabb Investor Card':null,
-                    'American Express Corporate Gold':null,
-                    'American Express Corporate Platinum':null,
-                    'American Express Gold':null,
-                    'American Express Green':null,
-                    'American Express Hilton HHonors':null,
-                    'American Express Hilton HHonors Surpass':null,
-                    'American Express Mercedes Benz':null,
-                    'American Express Mercedes Benz Platinum':null,
-                    'American Express Plum':null,
-                    'Banana Republic Credit Card':null,
-                    'Bank of America Alaska Airlines Business Visa':null,
-                    'Bank of America Alaska Airlines Platinum Plus Visa':null,
-                    'Bank of America Allegiant Airlines World MasterCard':null,
-                    'Bank of America BankAmericard Cash Rewards Visa (All Versions)':null,
-                    'Bank of America BankAmericard MasterCard':null,
-                    'Bank of America BankAmericard Rewards Visa':null,
-                    'Bank of America Cash Rewards For Business MasterCard':null,
-                    'Bank of America Hawaiian Airlines World Elite MasterCard':null,
-                    'Bank of America Spirit Airlines World MasterCard':null,
-                    'Bank of America Travel Rewards World MasterCard For Business':null,
-                    'Bank of America Virgin Atlantic World Elite MasterCard':null,
-                    'Bank of America WorldPoints Visa or MasterCard':null,
-                    'Bank of America® Alaska Airlines Visa Signature® Credit Card':null,
-                    'Bank of America® BankAmericard Travel Rewards® Credit Card':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Blue Mastercard':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Mastercard':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Red World Elite MasterCard':null,
-                    'Barclaycard American Airlines AAdvantage Aviator Silver World Elite MasterCard':null,
-                    'Barclaycard Arrival Plus™ World Elite MasterCard®':null,
-                    'Barclaycard Cash Forward MasterCard':null,
-                    'Barclaycard Frontier Airlines World MasterCard':null,
-                    'Barclaycard Hawaiian Airlines Business MasterCard':null,
-                    'Barclaycard JetBlue Business MasterCard':null,
-                    'Barclaycard JetBlue MasterCard':null,
-                    'Barclaycard JetBlue Plus MasterCard':null,
-                    'Barclaycard Lufthansa Premier Miles and More MasterCard':null,
-                    'Barclaycard Rewards MasterCard':null,
-                    'Barclaycard Ring MasterCard':null,
-                    'Barclaycard Upromise By Sallie Mae World MasterCard':null,
-                    'Barclaycard Wyndham Rewards Visa Signature':null,
-                    'Barclaycard Wyndham Rewards Visa Signature (Annual Fee Version)':null,
-                    'Best Western Rewards Business MasterCard':null,
-                    'Best Western Rewards MasterCard':null,
-                    'Best Western Rewards Premier MasterCard':null,
-                    'Best Western Rewards Secured MasterCard':null,
-                    'Capital One Buy Power MasterCard':null,
-                    'Capital One BuyPower For Business MasterCard':null,
-                    'Capital One Cash Rewards Visa or MasterCard':null,
-                    'Capital One Platinum Prestige Visa or MasterCard':null,
-                    'Capital One Spark Miles For Business Visa':null,
-                    'Capital One Spark Miles Select For Business Visa':null,
-                    'Capital One Spark Select For Business Visa':null,
-                    'Capital One Venture One Rewards Visa':null,
-                    'Capital One® Platinum Credit Card':null,
-                    'Capital One® QuicksilverOne® Cash Rewards Credit Card':null,
-                    'Capital One® Quicksilver® Cash Rewards Credit Card':null,
-                    'Capital One® Secured MasterCard®':null,
-                    'Capital One® Spark® Cash Select for Business':null,
-                    'Capital One® Spark® Cash for Business':null,
-                    'Capital One® Spark® Classic for Business':null,
-                    'Capital One® Venture® Rewards Credit Card':null,
-                    'Chase Amazon Rewards Visa':null,
-                    'Chase British Airways Avios Visa Signature':null,
-                    'Chase Disney Premier Visa':null,
-                    'Chase Disney Rewards Visa':null,
-                    'Chase Freedom Unlimited℠':null,
-                    'Chase Freedom®':null,
-                    'Chase Hyatt Visa':null,
-                    'Chase IHG Rewards Club Select MasterCard':null,
-                    'Chase Ink Plus or Bold Business Visa or MasterCard':null,
-                    'Chase Marriott Rewards Premier Business Visa':null,
-                    'Chase Marriott Rewards Premier Business Visa Signature':null,
-                    'Chase Marriott Rewards Premier Visa':null,
-                    'Chase Ritz Carlton Rewards Visa':null,
-                    'Chase Sapphire Preferred® Card':null,
-                    'Chase Sapphire Reserve℠':null,
-                    'Chase Slate Visa':null,
-                    'Chase Southwest Airlines Rapid Rewards Plus Visa':null,
-                    'Chase Southwest Airlines Rapid Rewards Premier Business Visa':null,
-                    'Chase Southwest Airlines Rapid Rewards Premier Visa':null,
-                    'Chase Southwest Rapid Rewards Plus Business Visa':null,
-                    'Chase United MileagePlus Club Visa':null,
-                    'Chase United MileagePlus Explorer Business Visa':null,
-                    'Chase® Ink Business Cash℠ Credit Card':null,
-                    'Chase® Ink Business Preferred℠ Credit Card':null,
-                    'Chase® United MileagePlus® Explorer Card':null,
-                    'Choice Privileges Visa Signature':null,
-                    'Citi American Airlines AAdvantage Executive World Elite MasterCard':null,
-                    'Citi Costco Anywhere Business Visa':null,
-                    'Citi Costco Anywhere Visa':null,
-                    'Citi Diamond Preferred MasterCard':null,
-                    'Citi Forward MasterCard or Visa':null,
-                    'Citi Hilton HHonors Reserve Visa':null,
-                    'Citi Hilton HHonors Visa Signature':null,
-                    'Citi Prestige® Card':null,
-                    'Citi Secured MasterCard':null,
-                    'Citi Simplicity MasterCard':null,
-                    'Citi Thank You Preferred MasterCard':null,
-                    'Citi ThankYou® Preferred Card for College Students':null,
-                    'Citi ThankYou® Premier Card':null,
-                    'CitiBusiness®/AAdvanage® Platinum Select® World Elite™ MasterCard®':null,
-                    'Citi® Double Cash Card':null,
-                    'Citi®/AAdvanage® Platinum Select® World Elite™ MasterCard®':null,
-                    'Comenity Bank Virgin America Premium Visa Signature':null,
-                    'Comenity Bank Virgin America Visa Signature':null,
-                    'Delta Reserve Credit Card from American Express®':null,
-                    'Delta Reserve for Business Credit Card from American Express®':null,
-                    'Discover Business Card':null,
-                    'Discover It Chrome':null,
-                    'Discover It® Miles':null,
-                    'Discover It® Secured Credit Card':null,
-                    'Discover More':null,
-                    'Discover it®':null,
-                    'Discover it® chrome for Students':null,
-                    'Discover it® for Students':null,
-                    'Gold Delta SkyMiles® Business Credit Card from American Express':null,
-                    'Gold Delta SkyMiles® Credit Card from American Express':null,
-                    'JP Morgan Chase Palladium Visa Signature':null,
-                    'Journey® Student Rewards from Capital One®':null,
-                    'Lowe’s Credit Card':null,
-                    'M&T Business Bonus Rewards Plus Visa':null,
-                    'M&T Business Bonus Rewards Visa':null,
-                    'M&T Business Visa':null,
-                    'M&T Rewards Visa':null,
-                    'M&T Visa Signature':null,
-                    'No Credit Card':null,
-                    'Other Business Bank Credit Card':null,
-                    'Other No Annual Fee Card':null,
-                    'Other Personal Bank Credit Card':null,
-                    'Other Store Card':null,
-                    'PNC Business Cash Rewards Visa Signature':null,
-                    'PNC Business Travel Rewards Visa':null,
-                    'PNC Business Visa':null,
-                    'PNC CashBuilder Visa':null,
-                    'PNC Core Visa':null,
-                    'PNC Points Business Visa':null,
-                    'PNC Points Visa':null,
-                    'PNC Premier Traveler Visa Signature':null,
-                    'Platinum Delta SkyMiles® Business Credit Card from American Express':null,
-                    'Platinum Delta SkyMiles® Credit Card from American Express':null,
-                    'Premier Rewards Gold Card From American Express®':null,
-                    'SimplyCash® Plus Business Credit Card from American Express':null,
-                    'Starwood Preferred Guest® Business Credit Card from American Express':null,
-                    'Starwood Preferred Guest® Credit Card from American Express':null,
-                    'Suntrust Business Visa or MasterCard':null,
-                    'Suntrust Cash Rewards MasterCard':null,
-                    'Suntrust Prime Rewards MasterCard':null,
-                    'Suntrust Travel Rewards MasterCard':null,
-                    'Synchrony Bank Amazon Prime Rewards Store Card':null,
-                    'TD Aeroplan Visa':null,
-                    'TD Business Solutions Visa':null,
-                    'TD Cash Rewards or Cash Rewards Platinum Visa':null,
-                    'TD Cash Visa':null,
-                    'TD Easy Rewards Visa':null,
-                    'Target Credit Card':null,
-                    'The Amex Everyday® Credit Card from American Express':null,
-                    'The Amex Everyday® Preferred Credit Card from American Express':null,
-                    'The Blue for Business® Credit Card from American Express':null,
-                    'The Business Gold Rewards Card From American Express OPEN®':null,
-                    'The Business Platinum® Card From American Express OPEN®':null,
-                    'The Platinum® Card From American Express':null,
-                    'US Bank Cash Plus Visa Signature':null,
-                    'US Bank Cash Rewards Business Visa':null,
-                    'US Bank Club Carlson Business Rewards Visa':null,
-                    'US Bank Club Carlson Premier Rewards Visa Signature':null,
-                    'US Bank Club Carlson Rewards Visa':null,
-                    'US Bank Club Carlson Rewards Visa Signature':null,
-                    'US Bank Flexperks Business Select Visa':null,
-                    'US Bank Flexperks Business Travel Rewards Visa':null,
-                    'US Bank Flexperks By American Express':null,
-                    'US Bank Flexperks Travel Rewards Visa':null,
-                    'USAA Active Military MasterCard':null,
-                    'USAA Cash Rewards By American Express':null,
-                    'USAA Cash Rewards World MasterCard':null,
-                    'USAA Platinum Visa':null,
-                    'USAA Preferred Cash Rewards World MasterCard':null,
-                    'USAA Rate Advantage Platinum Visa':null,
-                    'USAA Rewards By American Express':null,
-                    'USAA Rewards Visa or World MasterCard':null,
-                    'USAA Secured Card By American Express':null,
-                    'Walmart Credit Card':null,
-                    'Wells Fargo Business Visa':null,
-                    'Wells Fargo Cash Wise Visa':null,
-                    'Wells Fargo Platinum Visa':null,
-                    'Wells Fargo Propel 365 By American Express':null,
-                    'Wells Fargo Propel By American Express':null,
-                    'Wells Fargo Rewards Visa':null,
-                    'Wells Fargo Secured Visa':null
-                },
-            });
-
-            // Add another card event listener desktop
-            document.getElementById('addAnotherCard').addEventListener('click', manageCreditCardInputsDesktop, false);
-
-            // Add another card event listener mobile
-            document.getElementById('addAnotherCardMobile').addEventListener('click', manageCreditCardInputsMobile, false);
-
-            // Submit Form Event Listeners
-            document.getElementById('submitForm').addEventListener('click', model.controllers.vetPointCalcInputs);
-            document.getElementById('submitFormMobile').addEventListener('click', model.controllers.vetPointCalcInputs); 
-        },
-        redemptionSetup: () => {
-            
-            // Scroll to Top
-            window.scrollTo(0,0);
-
-            // Change App State
-            model.appState.landingPage = false;
-            model.appState.calculator = false;
-            model.appState.acctInfo = false;
-            model.appState.redempCalc = true;
-
-            // Manage Program Inputs Desktop
-            function manageProgramInputsDesktop() {
-                for (var i = 1; i < 6; i++) {
-                    if (model.appState.addAnotherProgramCount === i) {
-                        var nextProgram = 'program' + (i+1) + (i+1);
-                        var nextProgramPoints = 'programPoints' + (i+1) + (i+1);
-                        var nextY = 'y' + (i+1);
-                        document.getElementById(nextProgram).style.display = "inline";
-                        document.getElementById(nextProgramPoints).style.display = "inline";
-                        document.getElementById(nextY).style.display = "inline";
-                        model.appState.addAnotherProgramCount += 1;
-                        if (model.appState.addAnotherProgramCount === 5) {
-                            document.getElementById('addAnotherProgram').classList.add('disabled');
-                        }
-                        break;
-                    } 
-                }
-            }
-            
-            // Manage Program Inputs Mobile
-            function manageProgramInputsMobile() {
-                for (var i = 1; i < 6; i++) {
-                    if (model.appState.addAnotherProgramCount === i) {
-                        var nextProgram = 'program' + (i+1) + (i+1) + (i+1);
-                        var nextProgramPoints = 'programPoints' + (i+1) + 'Mobile';
-                        var nextX = 'x' + (i+1) + 'Mobile';
-                        document.getElementById(nextProgram).style.display = "inline";
-                        document.getElementById(nextProgramPoints).style.display = "inline";
-                        document.getElementById(nextY).style.display = "inline";
-                        model.appState.addAnotherProgramCount += 1;
-                        if (model.appState.addAnotherProgramCount === 5) {
-                            document.getElementById('addAnotherProgramMobile').classList.add('disabled');
-                        }
-                        break;
-                    } 
-                }
-            }
-
-            // Hide x-ed-out Cards
-            function hideProgram() {
-                var selection = this;
-                var previous = $(this).prev("div");
-                var previous2 = $(previous).prev("div");
-                document.getElementById(previous[0].id).children[0].value = '';
-                document.getElementById(previous2[0].id).children[0].value = '';
-                document.getElementById(selection.id).style.display = 'none';
-                document.getElementById(previous[0].id).style.display = 'none';
-                document.getElementById(previous2[0].id).style.display = 'none';
-                model.appState.addAnotherProgramCount -= 1;
-                if (model.appState.addAnotherProgramCount < 5) {
-                    document.getElementById('addAnotherProgram').classList.remove('disabled');
-                }
-            }
-
-            // Set up Event Listeners for x-out buttons for Cards
-            var collection = Array.from(document.getElementsByClassName('x-out'));
-            for (var i = 0; i < collection.length; i++) {
-                collection[i].addEventListener('click', hideProgram);
-                collection[i].style.cursor = 'pointer';
-            }
-
-            // Add Autocomplete Functionality for Airport Entry Section
-            $('input.airportAutocomplete').autocomplete({
-                data: {
-                    'AAL - Aalborg Airport':null,
-                    'ABE - Lehigh Valley International Airport':null,
-                    'ABJ - Abidjan Port Bouet Airport':null,
-                    'ABQ - Albuquerque International Airport':null,
-                    'ABV - Abuja International Airport':null,
-                    'ABZ - Aberdeen Dyce International Airport':null,
-                    'ACC - Kotoka International Airport':null,
-                    'ACE - Arrecife Airport':null,
-                    'ADA - Sakirpasa Airport':null,
-                    'ADB - Gaziemir Airport':null,
-                    'ADD - Bole International Airport':null,
-                    'ADE - Aden International Airport':null,
-                    'ADF - Adiyaman Airport':null,
-                    'AER - Adler Airport':null,
-                    'AES - Vigra Airport':null,
-                    'AGA - Almassira Airport':null,
-                    'AGF - La Garenne Airport':null,
-                    'AGP - Malaga Airport':null,
-                    'AGR - Agra Airport':null,
-                    'AGS - Bush Field Airport':null,
-                    'AJA - Campo Dell Oro Airport':null,
-                    'AJI - Agri Airport':null,
-                    'AKL - Auckland International Airport':null,
-                    'ALA - Alma Ata Airport':null,
-                    'ALB - Albany International Airport':null,
-                    'ALC - Alicante Airport':null,
-                    'ALG - Houari Boumediene Airport':null,
-                    'ALY - An-Nuzhah Airport':null,
-                    'AMA - Amarillo International Airport':null,
-                    'AMD - Sardar Vallabhbhai Patel International Airport':null,
-                    'AMM - Queen Alia International Airport':null,
-                    'AMS - Schiphol Airport':null,
-                    'ANC - Anchorage International Airport':null,
-                    'ANR - Deurne Airport':null,
-                    'ANU - V C Bird International Airport':null,
-                    'AOI - Falconara Airport':null,
-                    'ARN - Arlanda Airport':null,
-                    'ASB - Ashkhabad Northwest Airport':null,
-                    'ASM - Yohannes Iv International Airport':null,
-                    'ASR - Erkilet Airport':null,
-                    'ASU - Silvio Pettirossi International Airport':null,
-                    'ATH - Eleftherios Venizelos International Airport':null,
-                    'ATL - Hartsfield-Jackson Atlanta International Airport':null,
-                    'ATW - Outagamie County Airport':null,
-                    'AUA - Reina Beatrix International Airport':null,
-                    'AUH - Abu Dhabi International Airport':null,
-                    'AUR - Aurillac Airport':null,
-                    'AUS - Austin-Bergstrom International Airport':null,
-                    'AVL - Asheville Regional Airport':null,
-                    'AVP - Wilkes Barre Scranton International Airport':null,
-                    'AWZ - Ahvaz Airport':null,
-                    'AYT - Antalya Airport':null,
-                    'BAH - Bahrain International Airport':null,
-                    'BAL - Batman Airport':null,
-                    'BAQ - Ernesto Cortissoz Airport':null,
-                    'BCN - Barcelona International Airport':null,
-                    'BDA - Bermuda International Airport':null,
-                    'BDL - Bradley International Airport':null,
-                    'BEG - Surcin Airport':null,
-                    'BES - Guipavas Airport':null,
-                    'BEY - Beirut International Airport':null,
-                    'BGF - Bangui M Poko Airport':null,
-                    'BGI - Grantley Adams International Airport':null,
-                    'BGO - Bergen Flesland Airport':null,
-                    'BGR - Bangor International Airport':null,
-                    'BGW - Al Muthana Airport':null,
-                    'BHD - George Best Belfast City Airport':null,
-                    'BHM - Birmingham International Airport':null,
-                    'BHX - Birmingham International Airport':null,
-                    'BIA - Poretta Airport':null,
-                    'BIL - Logan International Airport':null,
-                    'BIO - Bilbao Airport':null,
-                    'BIQ - Anglet Airport':null,
-                    'BIS - Bismarck Municipal Airport':null,
-                    'BJM - Bujumbura Airport':null,
-                    'BJV - Milas Airport':null,
-                    'BJX - Silao Airport':null,
-                    'BKK - Bangkok International Airport':null,
-                    'BKO - Bamako Senou Airport':null,
-                    'BLL - Billund Airport':null,
-                    'BLQ - Bologna Airport':null,
-                    'BLR - HAL Bangalore International Airport':null,
-                    'BMA - Bromma Airport':null,
-                    'BNA - Nashville International Airport':null,
-                    'BNE - Brisbane International Airport':null,
-                    'BOD - Bordeaux Airport':null,
-                    'BOG - Eldorado International Airport':null,
-                    'BOI - Boise Air Terminal':null,
-                    'BOM - Chhatrapati Shivaji International Airport':null,
-                    'BON - Flamingo Airport':null,
-                    'BOS - Gen E L Logan International Airport':null,
-                    'BPT - Jefferson County Airport':null,
-                    'BQK - Glynco Jetport Airport':null,
-                    'BQN - Rafael Hernandez Airport':null,
-                    'BRE - Bremen Airport':null,
-                    'BRI - Palese Macchie Airport':null,
-                    'BRS - Bristol International Airport':null,
-                    'BRU - Brussels Airport':null,
-                    'BSB - Juscelino Kubitschek International Airport':null,
-                    'BSL - Euroairport Basel-Mulhouse-Freiburg':null,
-                    'BSR - Basrah International Airport':null,
-                    'BTR - Baton Rouge Metropolitan Airport':null,
-                    'BTV - Burlington International Airport':null,
-                    'BUD - Ferihegy Airport':null,
-                    'BUF - Greater Buffalo International Airport':null,
-                    'BUR - Burbank Glendale Pasadena Airport':null,
-                    'BUS - Batumi':null,
-                    'BVC - Boa Vista Airport':null,
-                    'BVE - La Roche Airport':null,
-                    'BWI - Baltimore-Washington International Thurgood Mars':null,
-                    'BWN - Brunei International Airport':null,
-                    'BZE - Philip S W Goldson International Airport':null,
-                    'BZN - Gallatin Field Airport':null,
-                    'BZV - Brazzaville Maya Maya Airport':null,
-                    'CAE - Columbia Metropolitan Airport':null,
-                    'CAG - Elmas Airport':null,
-                    'CAI - Cairo International Airport':null,
-                    'CAK - Akron Canton Regional Airport':null,
-                    'CAN - Baiyun Airport':null,
-                    'CAP - Cap Haitien Airport':null,
-                    'CCS - Simon Bolivar International Airport':null,
-                    'CCU - Netaji Subhash Chandra Bose International Airpor':null,
-                    'CDG - Charles de Gaulle International Airport':null,
-                    'CEB - Lahug Airport':null,
-                    'CFE - Aulnat Airport':null,
-                    'CFN - Carrickfin Airport':null,
-                    'CFR - Carpiquet Airport':null,
-                    'CFU - Kerkira Airport':null,
-                    'CGK - Jakarta International Airport':null,
-                    'CGN - Cologne Bonn Airport':null,
-                    'CHA - Chattanooga Metropolitan Airport':null,
-                    'CHC - Christchurch International Airport':null,
-                    'CHS - Charleston International Airport':null,
-                    'CIX - Cap J A Quinones Gonzales Airport':null,
-                    'CJU - Cheju International Airport':null,
-                    'CKY - Conakry Airport':null,
-                    'CKZ - Abydus':null,
-                    'CLE - Hopkins International Airport':null,
-                    'CLJ - Someseni Airport':null,
-                    'CLO - Alfonso Bonilla Aragon International Airport':null,
-                    'CLT - Douglas International Airport':null,
-                    'CLY - Ste Catherine Airport':null,
-                    'CMB - Katunayake International Airport':null,
-                    'CMH - Port Columbus International Airport':null,
-                    'CMN - Mohamed V Airport':null,
-                    'CMW - Ignacio Agramonte Airport':null,
-                    'CND - Constanta Mihail Kogalniceanu Airport':null,
-                    'CNF - Tancredo Neves International Airport':null,
-                    'CNX - Chiang Mai International Airport':null,
-                    'COO - Cotonou Cadjehon Airport':null,
-                    'COR - Ingeniero Ambrosio L.V. Taravella International':null,
-                    'COS - City of Colorado Springs Municipal Airport':null,
-                    'CPH - Copenhagen Airport':null,
-                    'CPT - D F Malan Airport':null,
-                    'CRK - Clark Field Airport':null,
-                    'CRW - Yeager Airport':null,
-                    'CTA - Catania Fontanarossa Airport':null,
-                    'CTG - Rafael Nunez Airport':null,
-                    'CTS - New Chitose Airport':null,
-                    'CTU - Chengdushuang Liu Airport':null,
-                    'CUN - Cancun Airport':null,
-                    'CUR - Hato Airport':null,
-                    'CUZ - Velazco Astete Airport':null,
-                    'CVG - Greater Cincinnati International Airport':null,
-                    'CWL - Cardiff International Airport':null,
-                    'CZL - Ain El Bey Airport':null,
-                    'CZM - Cozumel International Airport':null,
-                    'DAB - Daytona Beach International Airport':null,
-                    'DAD - Da Nang Airport':null,
-                    'DAL - Dallas Love Field Airport':null,
-                    'DAR - Dar Es Salaam Airport':null,
-                    'DAY - James M Cox Dayton International Airport':null,
-                    'DBV - Dubrovnik Airport':null,
-                    'DCA - Washington National Airport':null,
-                    'DCM - Mazamet Airport':null,
-                    'DEL - Indira Gandhi International Airport':null,
-                    'DEN - Denver International Airport':null,
-                    'DFW - Fort Worth International Airport':null,
-                    'DKR - Dakar Yoff Airport':null,
-                    'DLA - Douala Airport':null,
-                    'DLC - Chou Shui Tzu Airport':null,
-                    'DLM - Dalaman Airport':null,
-                    'DME - Domodedovo Airport':null,
-                    'DMM - King Fahd International Airport':null,
-                    'DNK - Voloskoye Airport':null,
-                    'DOH - Doha International Airport':null,
-                    'DPS - Bali International Airport':null,
-                    'DRS - Ottendorf Okrilla Highway Strip Airport':null,
-                    'DSM - Des Moines International Airport':null,
-                    'DTM - Dortmund Airport':null,
-                    'DTW - Detroit Metropolitan Wayne County Airport':null,
-                    'DUB - Dublin Airport':null,
-                    'DUR - Louis Botha Airport':null,
-                    'DUS - Dusseldorf International Airport':null,
-                    'DXB - Dubai International Airport':null,
-                    'DYU - Tajikistan':null,
-                    'DZA - Dzaoudzi Pamanzi Airport':null,
-                    'EBB - Entebbe International Airport':null,
-                    'EBL - Erbil':null,
-                    'ECN - Ercan Airport':null,
-                    'EDI - Edinburgh International Airport':null,
-                    'EDO - Edremit-Korfez Airport':null,
-                    'EGE - Eagle County Regional Airport':null,
-                    'ELP - El Paso International Airport':null,
-                    'ELQ - Gassim Airport':null,
-                    'ERC - Erzincan Airport':null,
-                    'ERZ - Erzurum Airport':null,
-                    'ESB - Esenboga Airport':null,
-                    'ETZ - Lorraine Airport':null,
-                    'EUG - Mahlon Sweet Field Airport':null,
-                    'EVN - Yerevan-Parakar Airport':null,
-                    'EVV - Evansville Regional Airport':null,
-                    'EWR - Newark International Airport':null,
-                    'EYW - Key West International Airport':null,
-                    'EZE - Ministro Pistarini International Airport':null,
-                    'EZS - Elazig Airport':null,
-                    'FAI - Fairbanks International Airport':null,
-                    'FAO - Faro Airport':null,
-                    'FAR - Hector International Airport':null,
-                    'FAT - Fresno Yosemite International Airport':null,
-                    'FAY - Fayetteville Regional Airport':null,
-                    'FCA - Glacier Park International Airport':null,
-                    'FCO - Leonardo da Vinci International Airport':null,
-                    'FDH - Friedrichshafen Airport':null,
-                    'FIH - Kinshasa N Djili International Airport':null,
-                    'FKB - Baden-Airpark':null,
-                    'FLL - Fort Lauderdale Hollywood International Airport':null,
-                    'FLR - Florence Airport':null,
-                    'FMO - Munster-Osnabruck International Airport':null,
-                    'FNA - Freetown Lungi Airport':null,
-                    'FNC - Funchal Airport':null,
-                    'FNT - Bishop International Airport':null,
-                    'FPO - Freeport International Airport':null,
-                    'FRA - Frankfurt International Airport':null,
-                    'FRU - Vasilyevka Airport':null,
-                    'FSC - Sud Corse Airport':null,
-                    'FSD - Sioux Falls Regional Airport':null,
-                    'FUE - Puerto del Rosario Airport':null,
-                    'FUK - Fukuoka Airport':null,
-                    'FWA - Fort Wayne Municipal Airport-Baer Field':null,
-                    'GBE - Sir Seretse Khama International Airport':null,
-                    'GCM - Owen Roberts International Airport':null,
-                    'GDL - Don Miguel Hidalgo International Airport':null,
-                    'GDN - Rebiechowo Airport':null,
-                    'GEG - Spokane International Airport':null,
-                    'GIG - Rio de Janeiro-Antonio Carlos Jobim Internationa':null,
-                    'GLA - Glasgow International Airport':null,
-                    'GMP - Gimpo International Airport':null,
-                    'GND - Point Salines International Airport':null,
-                    'GNV - Gainesville Regional Airport':null,
-                    'GOA - Genoa Cristoforo Colombo Airport':null,
-                    'GOI - Dabolim Airport':null,
-                    'GOT - Gothenburg Airport':null,
-                    'GPT - Gulfport Biloxi Regional Airport':null,
-                    'GRB - Austin Straubel International Airport':null,
-                    'GRR - Gerald R. Ford International Airport':null,
-                    'GRU - Governador Andre Franco Montoro International Ai':null,
-                    'GRZ - Graz Airport':null,
-                    'GSO - Triad International Airport':null,
-                    'GSP - Greenville Spartanburg International Airport':null,
-                    'GTF - Great Falls International Airport':null,
-                    'GUA - La Aurora Airport':null,
-                    'GUM - Antonio B Won Pat International Airport':null,
-                    'GVA - Geneva Airport':null,
-                    'GWT - Westerland Airport':null,
-                    'GYD - Azerbaijan':null,
-                    'GYE - Simon Bolivar International Airport':null,
-                    'GZT - Gaziantep Airport':null,
-                    'HAH - Moroni Hahaia Airport':null,
-                    'HAJ - Hannover International Airport':null,
-                    'HAM - Hamburg Airport':null,
-                    'HAN - Noi Bai Airport':null,
-                    'HAV - Jose Marti International Airport':null,
-                    'HDN - Yampa Valley Airport':null,
-                    'HEL - Helsinki Vantaa Airport':null,
-                    'HER - Iraklion Airport':null,
-                    'HGH - Jianoiao Airport':null,
-                    'HKG - Hong Kong International Airport':null,
-                    'HKT - Phuket International Airport':null,
-                    'HND - Tokyo International Airport':null,
-                    'HNL - Honolulu International Airport':null,
-                    'HOG - Holguin Airport':null,
-                    'HOU - William P Hobby Airport':null,
-                    'HPN - Westchester County Airport':null,
-                    'HRE - Harare International Airport':null,
-                    'HRG - Hurghada Airport':null,
-                    'HRK - Kharkov Airport':null,
-                    'HRL - Grande Valley International Airport':null,
-                    'HSV - Huntsville International Airport':null,
-                    'HUY - Humberside International Airport':null,
-                    'HVN - Tweed New Haven Airport':null,
-                    'HYD - Begumpet Airport':null,
-                    'IAD - Dulles International Airport':null,
-                    'IAH - George Bush Intercontinental Airport':null,
-                    'IBZ - Ibiza Airport':null,
-                    'ICN - New Incheon International Airport':null,
-                    'ICT - Wichita Mid-Continent Airport':null,
-                    'IDA - Fanning Field Airport':null,
-                    'IFN - Esfahan International Airport':null,
-                    'IKA - Imam Khomeini International Airport':null,
-                    'IND - Indianapolis International Airport':null,
-                    'INI - Nis Airport':null,
-                    'INN - Innsbruck Airport':null,
-                    'INV - Inverness Airport':null,
-                    'IQT - Cnl Fap Fran Seca Vignetta Airport':null,
-                    'ISB - Islamabad International Airport':null,
-                    'IST - Ataturk Hava Limani Airport':null,
-                    'ITM - Osaka International Airport':null,
-                    'ITO - Hilo International Airport':null,
-                    'JAC - Jackson Hole Airport':null,
-                    'JAI - Sanganer Airport':null,
-                    'JAN - Jackson International Airport':null,
-                    'JAX - Jacksonville International Airport':null,
-                    'JED - King Abdul Aziz International Airport':null,
-                    'JER - Jersey Airport':null,
-                    'JFK - John F Kennedy International Airport':null,
-                    'JIB - Djibouti Ambouli Airport':null,
-                    'JLN - Joplin Regional Airport':null,
-                    'JNB - OR Tambo International Airport':null,
-                    'JNU - Juneau International Airport':null,
-                    'JRO - Kilimanjaro International Airport':null,
-                    'JUB - Juba Airport':null,
-                    'KAN - Kano Mallam Aminu International Airport':null,
-                    'KBL - Kabul International Airport':null,
-                    'KBP - Borispol Airport':null,
-                    'KBV - Thailand':null,
-                    'KEF - Keflavik International':null,
-                    'KGL - Kigali Airport':null,
-                    'KHI - Karachi Civil Airport':null,
-                    'KIN - Norman Manley':null,
-                    'KIR - Kerry County Airport':null,
-                    'KIV - Kishinev Southeast Airport':null,
-                    'KIX - Kansai International Airport':null,
-                    'KOA - Kailua-Kona International Airport':null,
-                    'KRK - Balice Airport':null,
-                    'KRS - Kristiansand Airport':null,
-                    'KRT - Khartoum Airport':null,
-                    'KSA - Kosrae Island Airport':null,
-                    'KSC - Barca Airport':null,
-                    'KSY - Kars (abandoned) Airport':null,
-                    'KTM - Tribhuvan International Airport':null,
-                    'KTT - Kittila Airport':null,
-                    'KTW - Zendek Airport':null,
-                    'KUF - Kurumoch Airport':null,
-                    'KUL - Kuala Lumpur International Airport':null,
-                    'KVD - Elisavetpol':null,
-                    'KWA - Bucholz Army Air Field':null,
-                    'KWI - Kuwait International Airport':null,
-                    'KYA - Konya Airport':null,
-                    'LAD - Luanda 4 de Fevereiro Airport':null,
-                    'LAI - Servel Airport':null,
-                    'LAN - Lansing Capital City Airport':null,
-                    'LAS - Mccarran International Airport':null,
-                    'LAX - Los Angeles International Airport':null,
-                    'LBA - Leeds Bradford Airport':null,
-                    'LBB - Lubbock International Airport':null,
-                    'LBV - Libreville Leon M Ba Airport':null,
-                    'LCA - Larnaca Airport':null,
-                    'LCY - London City Airport':null,
-                    'LDE - Ossun Airport':null,
-                    'LED - Pulkuvo 2 Airport':null,
-                    'LEJ - Leipzig-Halle Airport':null,
-                    'LEX - Blue Grass Field':null,
-                    'LFW - Lome Tokoin Airport':null,
-                    'LGA - LaGuardia Airport':null,
-                    'LGB - Long Beach Daugherty Field Airport':null,
-                    'LGW - London Gatwick Airport':null,
-                    'LHE - Lahore Airport':null,
-                    'LHR - London Heathrow Airport':null,
-                    'LIG - Bellegarde Airport':null,
-                    'LIH - Lihue Airport':null,
-                    'LIL - Lesquin Airport':null,
-                    'LIM - Jorge Chavez Airport':null,
-                    'LIN - Linate Airport':null,
-                    'LIR - Tomas Guardia International Airport':null,
-                    'LIS - Lisbon Airport':null,
-                    'LIT - Adams Field Airport':null,
-                    'LJU - Ljubljana Airport':null,
-                    'LLW - Kamuzu International Airport':null,
-                    'LNZ - Linz Airport':null,
-                    'LOS - Lagos Murtala Muhammed Airport':null,
-                    'LPA - Las Palmas Airport':null,
-                    'LPB - El Alto International Airport':null,
-                    'LPI - Saab Airport':null,
-                    'LRH - Laleu Airport':null,
-                    'LRT - Lann Bihoue Airport':null,
-                    'LUG - Lugano Airport':null,
-                    'LUN - Lusaka International Airport':null,
-                    'LUX - Luxembourg Airport':null,
-                    'LWO - Sknilov Airport':null,
-                    'LXR - Luxor Airport':null,
-                    'LYS - Lyon Airport':null,
-                    'MAA - Chennai International Airport':null,
-                    'MAD - Barajas Airport':null,
-                    'MAJ - Marshall Islands International Airport':null,
-                    'MAN - Manchester International Airport':null,
-                    'MAO - Eduardo Gomes International Airport':null,
-                    'MAR - La Chinita International Airport':null,
-                    'MBA - Moi International Airport':null,
-                    'MBJ - Sangster International Airport':null,
-                    'MCI - Kansas City International Airport':null,
-                    'MCO - Orlando International Airport':null,
-                    'MCT - Seeb International Airport':null,
-                    'MDE - Jose Maria Cordova Airport':null,
-                    'MDT - Harrisburg International Airport':null,
-                    'MDW - Chicago Midway International Airport':null,
-                    'MED - Madinah International Airport':null,
-                    'MEL - Melbourne International Airport':null,
-                    'MEM - Memphis International Airport':null,
-                    'MEX - Lic Benito Juarez International Airport':null,
-                    'MFE - Miller International Airport':null,
-                    'MFM - Macau Airport':null,
-                    'MGA - Augusto Cesar Sandino International Airport':null,
-                    'MGM - Montgomery Regional Airport':null,
-                    'MGQ - Mogadishu Airport':null,
-                    'MHD - Mashhad Airport':null,
-                    'MHT - Manchester-Boston Regional Airport':null,
-                    'MIA - Miami International Airport':null,
-                    'MID - Lic M Crecencio Rejon International Airport':null,
-                    'MKE - General Mitchell International Airport':null,
-                    'MLA - Luqa Airport':null,
-                    'MLB - Melbourne International Airport':null,
-                    'MLE - Male International Airport':null,
-                    'MLH - Bale Mulhouse Airport':null,
-                    'MLX - Erhac Airport':null,
-                    'MME - Durham Tees Valley Airport':null,
-                    'MNL - Ninoy Aquino International Airport':null,
-                    'MOB - Mobile Regional Airport':null,
-                    'MOT - Minot International Airport':null,
-                    'MPL - Frejorgues Airport':null,
-                    'MPM - Maputo Airport':null,
-                    'MQM - Mardin':null,
-                    'MRS - Marignane Airport':null,
-                    'MRU - Plaisance International Airport':null,
-                    'MSN - Dane County Regional Airport-Truax Field':null,
-                    'MSO - Missoula International Airport':null,
-                    'MSP - Minneapolis St Paul International Airport':null,
-                    'MSQ - Velikiydvor Airport':null,
-                    'MSR - Mus Airport':null,
-                    'MST - Maastricht Airport':null,
-                    'MSY - New Orleans International Airport':null,
-                    'MTJ - Montrose Regional Airport':null,
-                    'MTY - Gen Mariano Escobedo International Airport':null,
-                    'MUC - Franz-Josef-Strauss Airport':null,
-                    'MVD - Carrasco International Airport':null,
-                    'MXP - Malpensa International Airport':null,
-                    'MYR - Myrtle Beach International Airport':null,
-                    'MZH - Merzifon':null,
-                    'NAP - Naples International Airport':null,
-                    'NAS - Nassau International Airport':null,
-                    'NAV - Nevşehir Airport':null,
-                    'NBO - Jomo Kenyatta International Airport':null,
-                    'NCE - Nice-Cote d\'Azur Airport':null,
-                    'NCL - Newcastle International Airport':null,
-                    'NDJ - Ndjamena Airport':null,
-                    'NGO - Chubu International Airport':null,
-                    'NIM - Niamey Airport':null,
-                    'NKM - Nagoya Airport':null,
-                    'NOC - Connaught Airport':null,
-                    'NOU - La Tontouta Airport':null,
-                    'NQY - St Mawgan Airport':null,
-                    'NRT - Narita International Airport':null,
-                    'NSI - Nsimalen Airport':null,
-                    'NTE - Chateau Bougon Airport':null,
-                    'NUE - Nurnberg Airport':null,
-                    'NWI - Norwich Airport':null,
-                    'OAJ - Albert J Ellis Airport':null,
-                    'OAK - Oakland International Airport':null,
-                    'ODS - Odessa Central Airport':null,
-                    'OGG - Kahului Airport':null,
-                    'OKA - Shimojishima Airport':null,
-                    'OKC - Will Rogers World Airport':null,
-                    'OLB - Olbia Costa Smeralda Airport':null,
-                    'OMA - Eppley Airfield':null,
-                    'ONT - Ontario International Airport':null,
-                    'OPO - Porto Airport':null,
-                    'ORD - Chicago O\'Hare International Airport':null,
-                    'ORF - Norfolk International Airport':null,
-                    'ORK - Cork Airport':null,
-                    'ORN - Es Senia Airport':null,
-                    'ORY - Paris Orly Airport':null,
-                    'OSL - Oslo Gardermoen Airport':null,
-                    'OTP - Otopeni Airport':null,
-                    'OUA - Ouagadougou Airport':null,
-                    'OZH - Zaporozhye East Airport':null,
-                    'PAD - Paderborn-Lippstadt Airport':null,
-                    'PAP - Toussaint Louverture International Airport':null,
-                    'PBI - Palm Beach International Airport':null,
-                    'PDL - Ponta Delgada Airport':null,
-                    'PDX - Portland International Airport':null,
-                    'PEK - Beijing Capital Airport':null,
-                    'PEN - Penang International Airport':null,
-                    'PER - Perth International Airport':null,
-                    'PGF - Rivesaltes Airport':null,
-                    'PHF - Newport News-Williamsburg International Airport':null,
-                    'PHL - Philadelphia International Airport':null,
-                    'PHX - Sky Harbor International Airport':null,
-                    'PIE - St. Petersburg-Clearwater International Airport':null,
-                    'PIT - Pittsburgh International Airport':null,
-                    'PLS - Providenciales Airport':null,
-                    'PLZ - H F Verwoerd Airport':null,
-                    'PMI - Palma de Mallorca Airport':null,
-                    'PMO - Palermo Airport':null,
-                    'PNH - Pochentong Airport':null,
-                    'PNI - Pohnpei International Airport':null,
-                    'PNS - Pensacola Regional Airport':null,
-                    'POA - Salgado Filho International Airport':null,
-                    'POP - Puerto Plata International Airport':null,
-                    'POS - Piarco Airport':null,
-                    'POZ - Lawica Airport':null,
-                    'PPT - Tahiti Faaa Airport':null,
-                    'PRG - Prague Ruzyne Airport':null,
-                    'PRN - Pristina Airport':null,
-                    'PSA - Pisa Airport':null,
-                    'PSC - Tri Cities Airport':null,
-                    'PSP - Palm Springs International Airport':null,
-                    'PTP - Le Raizet Airport':null,
-                    'PTY - Tocumen International Airport':null,
-                    'PUF - Pont Long Uzein Airport':null,
-                    'PUJ - Punta Cana Airport':null,
-                    'PUY - Pula Airport':null,
-                    'PVD - Theodore Francis Green State Airport':null,
-                    'PVG - Pudong International Airport':null,
-                    'PVR - Lic Gustavo Diaz Ordaz International Airport':null,
-                    'PWM - Jetport International Airport':null,
-                    'RAI - Francisco Mendes Airport':null,
-                    'RAK - Menara Airport':null,
-                    'RAP - Rapid City Regional Airport':null,
-                    'RDU - Durham International Airport':null,
-                    'RDZ - Marcillac Airport':null,
-                    'REC - Gilberto Freyre International Airport':null,
-                    'RGN - Mingaladon Airport':null,
-                    'RHO - Paradisi Airport':null,
-                    'RIC - Richmond International Airport':null,
-                    'RIX - Riga Airport':null,
-                    'RLG - Rostock–Laage Airport':null,
-                    'RNO - Reno-Tahoe International Airport':null,
-                    'RNS - St Jacques Airport':null,
-                    'ROA - Roanoke Regional Airport-Woodrum Field':null,
-                    'ROB - Roberts International Airport':null,
-                    'ROC - Greater Rochester International Airport':null,
-                    'ROR - Koror Airport':null,
-                    'ROS - Rosario Airport':null,
-                    'ROV - Rostov East Airport':null,
-                    'RSW - Southwest Florida International Airport':null,
-                    'RTB - Roatan Island Airport':null,
-                    'RTM - Rotterdam Airport':null,
-                    'RUH - King Khalid International Airport':null,
-                    'RUN - Saint Denis Gillot Airport':null,
-                    'RZE - Jasionka Airport':null,
-                    'SAH - Sanaa International Airport':null,
-                    'SAL - El Salvador International Airport':null,
-                    'SAN - San Diego International Airport':null,
-                    'SAP - La Mesa International Airport':null,
-                    'SAT - San Antonio International Airport':null,
-                    'SAV - Savannah International Airport':null,
-                    'SAW - Istanbul Sabiha Gokcen Airport':null,
-                    'SBN - South Bend Regional Airport':null,
-                    'SBZ - Turnisor Airport':null,
-                    'SCL - Arturo Merino Benitez International Airport':null,
-                    'SCN - Saarbrucken Airport':null,
-                    'SCQ - Santiago Airport':null,
-                    'SDF - Louisville International Airport':null,
-                    'SDJ - Sendai Airport':null,
-                    'SDQ - De Las Americas International Airport':null,
-                    'SDU - Santos Dumont Airport':null,
-                    'SEA - Tacoma International Airport':null,
-                    'SEZ - Seychelles International Airport':null,
-                    'SFO - San Francisco International Airport':null,
-                    'SGF - Springfield Regional Airport':null,
-                    'SGN - Tan Son Nhut Airport':null,
-                    'SHA - Hongqiao Airport':null,
-                    'SHE - Dongta Airport':null,
-                    'SID - Amilcar Cabral International Airport':null,
-                    'SIN - Singapore Changi Airport':null,
-                    'SJC - Norman Y Mineta San Jose International Airport':null,
-                    'SJD - Los Cabos International Airport':null,
-                    'SJJ - Sarajevo Airport':null,
-                    'SJO - Juan Santamaria International Airport':null,
-                    'SJU - Luis Munoz Marin Airport':null,
-                    'SKB - Golden Rock Airport':null,
-                    'SKG - Thessaloniki Airport':null,
-                    'SKP - Petrovec':null,
-                    'SLC - Salt Lake City International Airport':null,
-                    'SMF - Sacramento International Airport':null,
-                    'SNA - John Wayne Airport':null,
-                    'SNN - Shannon Airport':null,
-                    'SNU - Santa Clara Airport':null,
-                    'SOF - Vrazhdebna Airport':null,
-                    'SPN - Saipan International Airport':null,
-                    'SPU - Split Airport':null,
-                    'SRQ - Sarasota Bradenton Airport':null,
-                    'SSG - Malabo Airport':null,
-                    'SSH - Ras Nasrani Airport':null,
-                    'STI - Cibao International Airport':null,
-                    'STL - Lambert St Louis International Airport':null,
-                    'STR - Stuttgart Airport':null,
-                    'STT - Cyril E King International Airport':null,
-                    'STW - Mikhaylovskoye Airport':null,
-                    'STX - Henry E Rohlson International Airport':null,
-                    'SUB - Juanda Airport':null,
-                    'SUF - Lamezia Terme Airport':null,
-                    'SVG - Stavanger Sola Airport':null,
-                    'SVO - Sheremtyevo Airport':null,
-                    'SVQ - Sevilla Airport':null,
-                    'SWF - Stewart International Airport':null,
-                    'SXB - Entzheim Airport':null,
-                    'SXF - Berlin-Schonefeld International Airport':null,
-                    'SXM - Prinses Juliana International Airport':null,
-                    'SYD - Kingsford Smith Airport':null,
-                    'SYR - Hancock International Airport':null,
-                    'SYZ - Shiraz International Airport':null,
-                    'SZF - Ã‡arÅŸamba':null,
-                    'SZG - Salzburg Airport':null,
-                    'TAE - Daegu International Airport':null,
-                    'TAO - Liuting Airport':null,
-                    'TAS - Tashkent South Airport':null,
-                    'TBS - Tbilisi-Noyo Alekseyevka Airport':null,
-                    'TBZ - Tabriz Airport':null,
-                    'TFN - Norte-Los Rodeos Airport':null,
-                    'TFS - Sur-Reina Sofia Airport':null,
-                    'TGD - Titograd Airport':null,
-                    'TGU - Toncontin International Airport':null,
-                    'TIA - Tirane Rinas Airport':null,
-                    'TIF - Taif Airport':null,
-                    'TKK - Truk International Airport':null,
-                    'TLH - Tallahassee Regional Airport':null,
-                    'TLL - Ulemiste Airport':null,
-                    'TLN - Le Palyvestre Airport':null,
-                    'TLS - Blagnac Airport':null,
-                    'TLV - Ben Gurion Airport':null,
-                    'TMS - Sao Tome Salazar Airport':null,
-                    'TNG - Boukhalf Airport':null,
-                    'TNR - Antananarivo Ivato Airport':null,
-                    'TOL - Toledo Express Airport':null,
-                    'TOS - Tromso Langnes Airport':null,
-                    'TPA - Tampa International Airport':null,
-                    'TPE - Taiwan Taoyuan International Airport':null,
-                    'TRD - Trondheim Vaernes Airport':null,
-                    'TRF - Torp Airport':null,
-                    'TRI - Tri-Cities Regional Airport':null,
-                    'TRN - Turin International Airport':null,
-                    'TRS - Ronchi Dei Legionari Airport':null,
-                    'TSR - Timisoara Northeast Airport':null,
-                    'TST - Trang Airport':null,
-                    'TUL - Tulsa International Airport':null,
-                    'TUN - Aeroport Tunis':null,
-                    'TUS - Tucson International Airport':null,
-                    'TVC - Cherry Capital Airport':null,
-                    'TXL - Berlin-Tegel International Airport':null,
-                    'TYS - Mcghee Tyson Airport':null,
-                    'TZX - Trabzon Air Base':null,
-                    'UIO - Mariscal Sucre International Airport':null,
-                    'UIP - Pluguffan Airport':null,
-                    'ULN - Ulaanbaatar Southwest Airport':null,
-                    'URO - Boos Airport':null,
-                    'UVF - Hewanorra International Airport':null,
-                    'VAN - Van Airport':null,
-                    'VAR - Topoli Airport':null,
-                    'VAS - Sivas Airport':null,
-                    'VCE - Marco Polo International Airport':null,
-                    'VCP - Viracopos International Airport':null,
-                    'VIE - Vienna Schwechat International Airport':null,
-                    'VKO - Ynukovo Airport':null,
-                    'VLC - Valencia Airport':null,
-                    'VLN - Zim Valencia Airport':null,
-                    'VNO - Vilnius Airport':null,
-                    'VPS - Eglin Air Force Base':null,
-                    'VRA - Varadero Airport':null,
-                    'VRN - Verona Airport':null,
-                    'VTE - Vientiane Airport':null,
-                    'VVI - Viru Viru International Airport':null,
-                    'VXE - San Pedro Airport':null,
-                    'WAW - Okecie International Airport':null,
-                    'WDH - Windhoek Airport':null,
-                    'WLG - Wellington International Airport':null,
-                    'WRO - Strachowice Airport':null,
-                    'WUH - Wuchang Nanhu Airport':null,
-                    'XIY - Hsien Yang Airport':null,
-                    'XMN - Xiamen Airport':null,
-                    'XNA - Northwest Arkansas Regional Airport':null,
-                    'XRY - Jerez Airport':null,
-                    'YAP - Yap International Airport':null,
-                    'YEG - Edmonton International Airport':null,
-                    'YEI - Bursa Yenişehir Airport':null,
-                    'YHZ - Halifax International Airport':null,
-                    'YNB - Yenbo Airport':null,
-                    'YOW - Ottawa International Airport':null,
-                    'YUL - AÃ©roport International Pierre-Elliott-Trudeau d':null,
-                    'YVR - Vancouver International Airport':null,
-                    'YYC - Calgary International Airport':null,
-                    'YYZ - Toronto Lester B Pearson International Airport':null,
-                    'ZAG - Zagreb Airport':null,
-                    'ZIH - Ixtapa Zihuatanejo International Airport':null,
-                    'ZNZ - Zanzibar Airport':null,
-                    'ZRH - Zurich International Airport':null
-                },
-            });
-
-            // Add Autocomplete Functionality for Program Entry Section
-            $('input.programAutocomplete').autocomplete({
-                data: {
-                    'American Express Blue Cash Everyday':null,
-                    'American Express Blue Cash Preferred':null,
-                    'American Express Blue Sky':null,
-                    'American Express Centurion':null,
-                    'American Express Charles Schwabb Investor Card':null,
-                    'American Express Corporate Gold':null,
-                    'American Express Corporate Platinum':null,
-                    'American Express Gold':null,
-                    'American Express Green':null,
-                    'American Express Hilton HHonors':null,
-                    'American Express Hilton HHonors Surpass':null,
-                    'American Express Mercedes Benz':null,
-                    'American Express Mercedes Benz Platinum':null,
-                    'American Express Plum':null
-                },
-            });
-
-            // Add another card event listener desktop
-            document.getElementById('addAnotherProgram').addEventListener('click', manageProgramInputsDesktop, false);
-
-            // Add another card event listener mobile
-            // document.getElementById('addAnotherProgramMobile').addEventListener('click', manageProgramInputsMobile, false);
-
-            // Submit Form Event Listeners
-            // TO DO: Add Destination for Event Listener
-            document.getElementById('submitRedempCalcForm').addEventListener('click', model.controllers.vetRedemptionInputs);
-        },
-        vetRedemptionInputs: () => {
-            if (document.getElementById('fromAirport').value) {
-                model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value;
-                model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value;
-                model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
-                model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
-                model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
-            }
-            // if (document.getElementById('fromAirportMobile').value) {
-            //     model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value;
-            //     model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value;
-            //     model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
-            //     model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
-            //     model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
-            // }
-
-            if (document.getElementById('flightType').value === 'roundTrip') {
-                model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value;
-                model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirport').value;
-                model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClass').value;
-                model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
-                model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
-            }
-
-            // if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
-            //     model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
-            //     model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
-            //     model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
-            //     model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
-            //     model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
-            // }
-
-            // Log User's Programs, if applicable
-
-            var compiledProgramValues = [];
-            
-            // if (!model.appState.mobileView) {
-            //     for (var i = 0; i < checkPrograms.length; i ++) {
-            //         document.getElementById(checkPrograms[i] + 'Mobile').value = '';
-            //     }
-            // } else {
-            //     for (var i = 0; i < checkPrograms.length; i ++) {
-            //         document.getElementById(checkPrograms[i]).value = '';
-            //     }
-            // }
-
-            for (var i = 1; i < 6; i++) {
-                var obj = {};
-                if (document.getElementById(('program' + i)).value) {
-                    obj[name] = document.getElementById(('program' + i)).value;
-                    obj[points] = document.getElementById(('programPoints' + i)).value;
-                    compiledProgramValues.push(obj);
-                } 
-                // else if (document.getElementById(('program' + i + 'Mobile')).value) {
-                //     obj[name] = document.getElementById(('program' + i + 'Mobile')).value;
-                //     obj[points] = document.getElementById(('programPoints' + i + 'Mobile')).value;
-                //     compiledProgramValues.push(obj);
-                // } 
-            }
-
-            model.rewProg.userPrograms = compiledProgramValues;
-        
-            console.log('Display User Programs');
-            console.log(model.rewProg.userPrograms);
         },
         insertCalcInputs: () => {
             
@@ -43098,6 +43895,7 @@ var model = {
             model.cards.currentDisplayRec = model.cards.combinedRecs[0];
 
             model.templates.renderDisplayRecommendationsTemplate();
+            model.templates.renderPointsRedemptionTemplate();
 
             if (!model.appState.loginLoading) {
                 model.controllers.sendToFirebase();
@@ -43106,6 +43904,7 @@ var model = {
                 setTimeout(function() {
                     document.getElementById('crunchingNumbers').style.display = 'none';
                     document.getElementById('cardRecs').style.display = 'block';
+                    document.getElementById('redempCalc').style.display = 'block';
                     document.getElementById('cardRecs').click();
                     document.getElementById('cardRecs').classList.add('active');
                     document.getElementById('displayRecommendations').style.display ='inline'; 
@@ -43120,6 +43919,7 @@ var model = {
                 document.getElementById('profile').style.display = 'inline';
                 document.getElementById('cardRecs').click();
                 document.getElementById('cardRecs').classList.add('active');
+                document.getElementById('redempCalc').style.display = 'inline';
                 document.getElementById('displayRecommendations').style.display ='inline';
                 model.appState.loginLoading = false;
                 model.controllers.displayRecInteractions();
