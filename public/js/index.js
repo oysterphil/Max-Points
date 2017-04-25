@@ -8158,7 +8158,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -8192,7 +8192,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -8213,7 +8213,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VLN'   
                             ],
                             generalToUsFeeEconomy: '48',
@@ -8279,7 +8279,7 @@ var model = {
                             ]
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '55',
                             generalToUsMilesEconomy:'30,000',
@@ -8379,7 +8379,7 @@ var model = {
                             ]
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                 'LIS',
                                 //STAR ONLY FOR TWO BELOW
                                 'FNC',
@@ -8870,7 +8870,7 @@ var model = {
                             ]
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 'BAH',
                                 'ALY',
                                 'SSH',
@@ -8947,7 +8947,7 @@ var model = {
                             ]
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'ALA'
                             ],
                             generalToUsFeeEconomy: '30',
@@ -8983,7 +8983,7 @@ var model = {
                             ]
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     'DLC',
                                     'HGH',
                                     'TAO',
@@ -9115,7 +9115,7 @@ var model = {
                             ]
                         },  
                         asiaTwo: {
-                            airports: [ 
+                            generalFromAirports: [ 
                                 'BWN',
                                 'PEN',
                                 'TST'
@@ -9228,7 +9228,7 @@ var model = {
                             ],
                         },          
                         indianSub: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '25',
                             generalToUsMilesEconomy:'42,500',
@@ -9318,7 +9318,7 @@ var model = {
                             ],
                         },          
                         africa: {
-                            airports: [
+                            generalFromAirports: [
                                 //NA
                                         'AGA',
                                         //STAR ALLIANCE ONLY FOR ONE BELOW
@@ -9472,7 +9472,7 @@ var model = {
                             ],
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'TKK',
                                 'KSA',
                                 'KWA',
@@ -10561,7 +10561,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         carribean: {
-                            airports: [
+                            generalFromAirports: [
                                 'BQN',
                                 'ANU',
                                 'GCM',
@@ -10594,7 +10594,7 @@ var model = {
                             exceptionFromAirports: null,
                         },
                         centralAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'BZE',
                                 'GUA',
                                 'LIR',
@@ -10615,7 +10615,7 @@ var model = {
                             exceptionFromAirports: null
                         },
                         northSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                                 'VVI'
                             ],
                             generalToUsFeeEconomy: '48',
@@ -10661,7 +10661,7 @@ var model = {
                             ],
                         },
                         southSouthAmerica: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '54',
                             generalToUsMilesEconomy:'30,000',
@@ -10781,7 +10781,7 @@ var model = {
                             ],
                         },
                         europe: {
-                            airports: [
+                            generalFromAirports: [
                                         //STAR ONLY FOR TWO BELOW
                                         'IST',
                                         'BRS',
@@ -11161,7 +11161,7 @@ var model = {
                             ],
                         },
                         middleEast: {
-                            airports: [
+                            generalFromAirports: [
                                 //NA
                                 'AGA',
                                 //STAR ALLIANCE ONLY FOR ONE BELOW
@@ -11257,7 +11257,7 @@ var model = {
                             ],
                         },  
                         centralAsia: {
-                            airports: [
+                            generalFromAirports: [
                                 'ALA'
                             ],
                             generalToUsFeeEconomy: '30',
@@ -11293,7 +11293,7 @@ var model = {
                             ],
                         },  
                         asiaOne: {
-                            airports: [
+                            generalFromAirports: [
                                     'DLC',
                                     'HGH',
                                     'TAO',
@@ -11407,7 +11407,7 @@ var model = {
                             ],
                         },  
                         asiaTwo: {
-                            airports: [
+                            generalFromAirports: [
                                 'BWN',
                                 'PEN',                       
                                 'TST'
@@ -11520,7 +11520,7 @@ var model = {
                             ],
                         },          
                         indianSub: {
-                            airports: [
+                            generalFromAirports: [
                             ],
                             generalToUsFeeEconomy: '25',
                             generalToUsMilesEconomy:'50,000',
@@ -11610,7 +11610,7 @@ var model = {
                             ],
                         },          
                         africa: {
-                            airports: [
+                            generalFromAirports: [
                                         //SUBSAHARAN
                                         'CKY',
                                         'FNA',
@@ -11746,7 +11746,7 @@ var model = {
                             ],
                         },                          
                         oceania: {
-                            airports: [
+                            generalFromAirports: [
                                 'TKK',
                                 'KSA',
                                 'KWA',
@@ -12142,7 +12142,7 @@ var model = {
                                         'BCN',
                                         'LIN',
                                         'LYS'
-                                        ]
+                                    ]
                                 },
                                 middleEast: {
                                     economyFee: '7',
@@ -16058,7 +16058,7 @@ var model = {
                         {logo:'korean.png'},
                         {logo:'vietnam.png'},
                         {logo:'saudia.png'},
-                        {logo:'virgin.png'}
+                        {logo:'virgin.jpg'}
                     ],
                     availableAirlinesLowFees: [
                         {logo:'aeromexico.png'},
@@ -20079,7 +20079,7 @@ var model = {
                 },
                 virgin: {
                     displayName: 'Virgin Atlantic Flying Club',
-                    logo: 'virgin.png',
+                    logo: 'virgin.jpg',
                     programType: 'regionBased',
                     availableAirlinesNoFees: [
                         {logo:'delta.png'},
@@ -24137,7 +24137,7 @@ var model = {
                                 'IAD',
                                 'PBI',
                                 'ICT'
-                            ],
+                            ]
                         },
                         canada: {
                             generalFromAirports: [
@@ -39962,8 +39962,7 @@ var model = {
                 model.templates.variables.redemptionCalculatorTemplate(model.rewProg);
             document.getElementById('redemptionCalculator').innerHTML = 
                 redemptionCalculatorTemplateHtml;
-        }
-        
+        }    
     },
     controllers: {
         setup: () => {
@@ -40908,6 +40907,18 @@ var model = {
             }
 
             function vetRedemptionInputs() {
+                
+                // Reset User Flight Selections
+                for (var dest in model.rewProg.userFlightSelections) {
+                    for (var key in model.rewProg.userFlightSelections[dest]) {
+                        model.rewProg.userFlightSelections[dest][key] = null;
+                    }
+                }
+
+                // Reset User Programs and User Freq Flier Programs
+                model.rewProg.userPrograms = [];
+                model.rewProg.userFreqFlierPrograms = [];
+
                 // Hide Gather Information and Display Crunching Numbers
                 document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
                 document.getElementById('crunchingNumbers').style.display = 'inline';
@@ -41882,10 +41893,25 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                 obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
                                                 obj['transferPartner'] = {
                                                     displayName: prog.transferPartnerDisplayName,
                                                     logo: prog.transferPartnerLogo
@@ -41896,6 +41922,10 @@ var model = {
                                                 };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                                 obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
                                                 obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
@@ -41904,6 +41934,7 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
                                                     var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -41918,6 +41949,7 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
                                                     var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -41944,11 +41976,26 @@ var model = {
                                             
                                             obj['displayName'] = ff[key].displayName;
                                             obj['logo'] = ff[key].logo;
-                                                obj['destId'] = makeRefCode();
+                                            obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                             obj['programOverview'] = ff[key].programOverview;
-                                                obj['programOverviewId'] = makeRefCode();
-                                                obj['availableAirlinesId'] = makeRefCode();
-                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                            obj['programOverviewId'] = makeRefCode();
+                                            obj['availableAirlinesId'] = makeRefCode();
+                                            obj['pointsTransferredFromId'] = makeRefCode();
+                                            if (prog.name === 'capitalOne' ||
+                                            	prog.name === 'wellsfargo' ||
+                                            	prog.name === 'discover' ||
+                                            	prog.name === 'bankOfAmerica' ||
+                                            	prog.name === 'citiCashBack' ||
+                                            	prog.name === 'chaseAnyCard' ||
+                                            	prog.name === 'chaseReserveCard' ||
+                                            	prog.name === 'amexAnyCashBack' ||
+                                            	prog.name === 'amexBizCashBack') {
+                                            	obj['cashBackProgram'] = true;
+                                            }
                                             obj['transferPartner'] = {
                                                 displayName: prog.transferPartnerDisplayName,
                                                 logo: prog.transferPartnerLogo
@@ -41959,6 +42006,10 @@ var model = {
                                             };
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                             obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
                                             obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
@@ -41967,6 +42018,7 @@ var model = {
                                                 obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                 var num = regions[reg].generalToUsMilesEconomy;
                                                 num = num.substring((num.indexOf('-')+1),num.length);
+                                                obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                 if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                     obj['enoughPoints'] = 'Yes!';
                                                 } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -41981,6 +42033,7 @@ var model = {
                                                 obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                 var num = regions[reg].generalToUsMilesBusiness;
                                                 num = num.substring((num.indexOf('-')+1),num.length);
+                                                obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                 if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                     obj['enoughPoints'] = 'Yes!';
                                                 } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42011,10 +42064,25 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                 obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
                                                 obj['transferPartner'] = {
                                                     displayName: prog.transferPartnerDisplayName,
                                                     logo: prog.transferPartnerLogo
@@ -42025,6 +42093,10 @@ var model = {
                                                 };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                                 obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
                                                 obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
@@ -42065,79 +42137,100 @@ var model = {
                                                         obj['displayName'] = ff[key].displayName;
                                                         obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                         obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
-                                                        obj['transferPartner'] = {
-                                                            displayName: prog.transferPartnerDisplayName,
-                                                            logo: prog.transferPartnerLogo
-                                                        };
-                                                        obj['airlines'] = {
-                                                            noFees: ff[key].availableAirlinesNoFees,
-                                                            lowFees: ff[key].availableAirlinesLowFees
-                                                        };
-                                                        obj['points'] = prog.points;
-                                                        obj['supportsRoute'] = true;
-                                                        obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
-                                                        obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
+                                                obj['points'] = prog.points;
+                                                obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
+                                                obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
-                                                        if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
-                                                            
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionEconomyFee) {
-                                                                obj['fees'] = excp.exceptionEconomyFee; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['fees'] = regions[reg].generalToUsFeeEconomy;
-                                                            }
+                                                if (model.rewProg.userFlightSelections.toDestination.class === 'economy') {
+                                                    
+                                                    // If exception fee exists, log it to model
+                                                    if (excp.exceptionEconomyFee) {
+                                                        obj['fees'] = excp.exceptionEconomyFee; 
+                                                    } else {
+                                                        // Otherwise log general fee
+                                                        obj['fees'] = regions[reg].generalToUsFeeEconomy;
+                                                    }
 
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionEconomyMiles) {
-                                                                obj['miles'] = excp.exceptionEconomyMiles; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['miles'] = regions[reg].generalToUsMilesEconomy;
-                                                                var num = regions[reg].generalToUsMilesEconomy;
-                                                                num = num.substring((num.indexOf('-')+1),num.length);
-                                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
-                                                                    obj['enoughPoints'] = 'Yes!';
-                                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
-                                                                    obj['enoughPoints'] = 'Close!';
-                                                                } else {
-                                                                    obj['enoughPoints'] = 'No';
-                                                                }
-                                                            }      
-                                                            // Push program to eligible programs object
-                                                            model.rewProg.eligiblePrograms.toDestination.push(obj);
+                                                    // If exception fee exists, log it to model
+                                                    if (excp.exceptionEconomyMiles) {
+                                                        obj['miles'] = excp.exceptionEconomyMiles; 
+                                                    } else {
+                                                        // Otherwise log general fee
+                                                        obj['miles'] = regions[reg].generalToUsMilesEconomy;
+                                                        var num = regions[reg].generalToUsMilesEconomy;
+                                                        num = num.substring((num.indexOf('-')+1),num.length);
+                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                            obj['enoughPoints'] = 'Yes!';
+                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                            obj['enoughPoints'] = 'Close!';
                                                         } else {
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionBusinessFee) {
-                                                                obj['fees'] = excp.exceptionBusinessFee; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['fees'] = regions[reg].generalToUsFeeBusiness;
-                                                            }
+                                                            obj['enoughPoints'] = 'No';
+                                                        }
+                                                    }      
+                                                    // Push program to eligible programs object
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
+                                                } else {
+                                                    // If exception fee exists, log it to model
+                                                    if (excp.exceptionBusinessFee) {
+                                                        obj['fees'] = excp.exceptionBusinessFee; 
+                                                    } else {
+                                                        // Otherwise log general fee
+                                                        obj['fees'] = regions[reg].generalToUsFeeBusiness;
+                                                    }
 
-                                                            // If exception fee exists, log it to model
-                                                            if (excp.exceptionEconomyMiles) {
-                                                                obj['miles'] = excp.exceptionBusinessMiles; 
-                                                            } else {
-                                                                // Otherwise log general fee
-                                                                obj['miles'] = regions[reg].generalToUsMilesBusiness;
-                                                                var num = regions[reg].generalToUsMilesBusiness;
-                                                                num = num.substring((num.indexOf('-')+1),num.length);
-                                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
-                                                                    obj['enoughPoints'] = 'Yes!';
-                                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
-                                                                    obj['enoughPoints'] = 'Close!';
-                                                                } else {
-                                                                    obj['enoughPoints'] = 'No';
-                                                                }
-                                                            }      
-                                                            // Push program to eligible programs object
-                                                            model.rewProg.eligiblePrograms.toDestination.push(obj);
-                                                        }   
+                                                    // If exception fee exists, log it to model
+                                                    if (excp.exceptionEconomyMiles) {
+                                                        obj['miles'] = excp.exceptionBusinessMiles; 
+                                                    } else {
+                                                        // Otherwise log general fee
+                                                        obj['miles'] = regions[reg].generalToUsMilesBusiness;
+                                                        var num = regions[reg].generalToUsMilesBusiness;
+                                                        num = num.substring((num.indexOf('-')+1),num.length);
+                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                            obj['enoughPoints'] = 'Yes!';
+                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                            obj['enoughPoints'] = 'Close!';
+                                                        } else {
+                                                            obj['enoughPoints'] = 'No';
+                                                        }
+                                                    }      
+                                                    // Push program to eligible programs object
+                                                    model.rewProg.eligiblePrograms.toDestination.push(obj);
+                                                }   
                                                     }
                                                 }
                                             });
@@ -42173,50 +42266,74 @@ var model = {
                                                     obj['displayName'] = ff[key].displayName;
                                                     obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                     obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
-                                                    obj['transferPartner'] = {
-                                                        displayName: prog.transferPartnerDisplayName,
-                                                        logo: prog.transferPartnerLogo
-                                                    };
-                                                    obj['airlines'] = {
-                                                        noFees: ff[key].availableAirlinesNoFees,
-                                                        lowFees: ff[key].availableAirlinesLowFees
-                                                    };
-                                                    obj['points'] = prog.points;
-                                                    obj['supportsRoute'] = true;
-                                                    obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
-                                                    obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
+                                                obj['points'] = prog.points;
+                                                obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
+                                                obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                    if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
-                                                        obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
-                                                        obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
-                                                        var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
-                                                        num = num.substring((num.indexOf('-')+1),num.length);
-                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
-                                                            obj['enoughPoints'] = 'Yes!';
-                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
-                                                            obj['enoughPoints'] = 'Close!';
-                                                        } else {
-                                                            obj['enoughPoints'] = 'No';
-                                                        }
-                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
+                                                if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
+                                                    obj['fees'] = regions[reg].generalToRegionCosts[costReg].economyFee;
+                                                    obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                    var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
                                                     } else {
-                                                        obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
-                                                        obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
-                                                        var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
-                                                        num = num.substring((num.indexOf('-')+1),num.length);
-                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
-                                                            obj['enoughPoints'] = 'Yes!';
-                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
-                                                            obj['enoughPoints'] = 'Close!';
-                                                        } else {
-                                                            obj['enoughPoints'] = 'No';
-                                                        }
-                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
+                                                        obj['enoughPoints'] = 'No';
                                                     }
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
+                                                } else {
+                                                    obj['fees'] = regions[reg].generalToRegionCosts[costReg].businessFee;
+                                                    obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                    var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
+                                                    num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        obj['enoughPoints'] = 'Yes!';
+                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        obj['enoughPoints'] = 'Close!';
+                                                    } else {
+                                                        obj['enoughPoints'] = 'No';
+                                                    }
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
+                                                }
                                                 }
                                             }
 
@@ -42235,10 +42352,25 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                 obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
                                                 obj['transferPartner'] = {
                                                     displayName: prog.transferPartnerDisplayName,
                                                     logo: prog.transferPartnerLogo
@@ -42249,6 +42381,10 @@ var model = {
                                                 };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                                 obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
                                                 obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
@@ -42257,6 +42393,7 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                     var num = regions[reg].generalToUsMilesEconomy;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42270,6 +42407,7 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                     var num = regions[reg].generalToUsMilesBusiness;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42298,32 +42436,51 @@ var model = {
                                                     obj['displayName'] = ff[key].displayName;
                                                     obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                     obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
-                                                    obj['transferPartner'] = {
-                                                        displayName: prog.transferPartnerDisplayName,
-                                                        logo: prog.transferPartnerLogo
-                                                    };
-                                                    obj['airlines'] = {
-                                                        noFees: ff[key].availableAirlinesNoFees,
-                                                        lowFees: ff[key].availableAirlinesLowFees
-                                                    };
-                                                    obj['points'] = prog.points;
-                                                    obj['supportsRoute'] = true;
-                                                    obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
-                                                    obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
+                                                obj['transferPartner'] = {
+                                                    displayName: prog.transferPartnerDisplayName,
+                                                    logo: prog.transferPartnerLogo
+                                                };
+                                                obj['airlines'] = {
+                                                    noFees: ff[key].availableAirlinesNoFees,
+                                                    lowFees: ff[key].availableAirlinesLowFees
+                                                };
+                                                obj['points'] = prog.points;
+                                                obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
+                                                obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
+                                                obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
-                                                    if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
-                                                        obj['fees'] = excp.exceptionEconomyFee;
-                                                        obj['miles'] = excp.exceptionEconomyMiles;
-                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
-                                                    } else {
-                                                        obj['fees'] = excp.exceptionBusinessFee;
-                                                        obj['miles'] = excp.exceptionBusinessMiles;
-                                                        model.rewProg.eligiblePrograms.fromDestination.push(obj);
-                                                    }
+                                                if (model.rewProg.userFlightSelections.fromDestination.class === 'economy') {
+                                                    obj['fees'] = excp.exceptionEconomyFee;
+                                                    obj['miles'] = excp.exceptionEconomyMiles;
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
+                                                } else {
+                                                    obj['fees'] = excp.exceptionBusinessFee;
+                                                    obj['miles'] = excp.exceptionBusinessMiles;
+                                                    model.rewProg.eligiblePrograms.fromDestination.push(obj);
+                                                }
                                                 }
                                             });
                                         }                                 
@@ -42350,11 +42507,26 @@ var model = {
                                                             
                                                             obj['displayName'] = ff[key].displayName;
                                                             obj['logo'] = ff[key].logo;
-                                                obj['destId'] = makeRefCode();
+                                                            obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                             obj['programOverview'] = ff[key].programOverview;
-                                                obj['programOverviewId'] = makeRefCode();
-                                                obj['availableAirlinesId'] = makeRefCode();
-                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                                            obj['programOverviewId'] = makeRefCode();
+                                                            obj['availableAirlinesId'] = makeRefCode();
+                                                            obj['pointsTransferredFromId'] = makeRefCode();
+                                                            if (prog.name === 'capitalOne' ||
+                                                            	prog.name === 'wellsfargo' ||
+                                                            	prog.name === 'discover' ||
+                                                            	prog.name === 'bankOfAmerica' ||
+                                                            	prog.name === 'citiCashBack' ||
+                                                            	prog.name === 'chaseAnyCard' ||
+                                                            	prog.name === 'chaseReserveCard' ||
+                                                            	prog.name === 'amexAnyCashBack' ||
+                                                            	prog.name === 'amexBizCashBack') {
+                                                            	obj['cashBackProgram'] = true;
+                                                            }
                                                             obj['transferPartner'] = {
                                                                 displayName: prog.transferPartnerDisplayName,
                                                                 logo: prog.transferPartnerLogo
@@ -42365,6 +42537,10 @@ var model = {
                                                             };
                                                             obj['points'] = prog.points;
                                                             obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                                             obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
                                                             obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
@@ -42386,6 +42562,7 @@ var model = {
                                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                                     var num = regions[reg].generalToUsMilesEconomy;
                                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                                         obj['enoughPoints'] = 'Yes!';
                                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42413,6 +42590,7 @@ var model = {
                                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                                     var num = regions[reg].generalToUsMilesBusiness;
                                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                                         obj['enoughPoints'] = 'Yes!';
                                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42459,11 +42637,26 @@ var model = {
                                             
                                             obj['displayName'] = ff[key].displayName;
                                             obj['logo'] = ff[key].logo;
-                                                obj['destId'] = makeRefCode();
+                                            obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                             obj['programOverview'] = ff[key].programOverview;
-                                                obj['programOverviewId'] = makeRefCode();
-                                                obj['availableAirlinesId'] = makeRefCode();
-                                                obj['pointsTransferredFromId'] = makeRefCode();
+                                            obj['programOverviewId'] = makeRefCode();
+                                            obj['availableAirlinesId'] = makeRefCode();
+                                            obj['pointsTransferredFromId'] = makeRefCode();
+                                            if (prog.name === 'capitalOne' ||
+                                            	prog.name === 'wellsfargo' ||
+                                            	prog.name === 'discover' ||
+                                            	prog.name === 'bankOfAmerica' ||
+                                            	prog.name === 'citiCashBack' ||
+                                            	prog.name === 'chaseAnyCard' ||
+                                            	prog.name === 'chaseReserveCard' ||
+                                            	prog.name === 'amexAnyCashBack' ||
+                                                prog.name === 'amexBizCashBack') {
+                                        	    obj['cashBackProgram'] = true;
+                                            }
                                             obj['transferPartner'] = {
                                                 displayName: prog.transferPartnerDisplayName,
                                                 logo: prog.transferPartnerLogo
@@ -42474,6 +42667,10 @@ var model = {
                                             };
                                             obj['points'] = prog.points;
                                             obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                             obj['from'] = model.rewProg.userFlightSelections.toDestination.fromAirport;
                                             obj['to'] = model.rewProg.userFlightSelections.toDestination.toAirport;
 
@@ -42482,6 +42679,7 @@ var model = {
                                                 obj['miles'] = toB.costs.economyMiles;
                                                 var num = toB.costs.economyMiles;
                                                 num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                 if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                     obj['enoughPoints'] = 'Yes!';
                                                 } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42496,6 +42694,7 @@ var model = {
                                                     obj['miles'] = toB.costs.businessMiles;
                                                     var num = toB.costs.businessMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42509,6 +42708,7 @@ var model = {
                                                     obj['miles'] = toB.costs.economyMiles;
                                                     var num = toB.costs.economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42518,7 +42718,6 @@ var model = {
                                                     }                                                      
                                                     model.rewProg.eligiblePrograms.toDestination.push(obj);
                                                 }
-                                                
                                             }
                                         }
                                     });                                 
@@ -42542,10 +42741,25 @@ var model = {
                                                 obj['displayName'] = ff[key].displayName;
                                                 obj['logo'] = ff[key].logo;
                                                 obj['destId'] = makeRefCode();
+                                                obj['destIdMobile'] = makeRefCode();
+                                                obj['programOverviewIdMobile'] = makeRefCode();
+                                                obj['availableAirlinesIdMobile'] = makeRefCode();
+                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                                 obj['programOverview'] = ff[key].programOverview;
                                                 obj['programOverviewId'] = makeRefCode();
                                                 obj['availableAirlinesId'] = makeRefCode();
                                                 obj['pointsTransferredFromId'] = makeRefCode();
+                                                if (prog.name === 'capitalOne' ||
+                                                	prog.name === 'wellsfargo' ||
+                                                	prog.name === 'discover' ||
+                                                	prog.name === 'bankOfAmerica' ||
+                                                	prog.name === 'citiCashBack' ||
+                                                	prog.name === 'chaseAnyCard' ||
+                                                	prog.name === 'chaseReserveCard' ||
+                                                	prog.name === 'amexAnyCashBack' ||
+                                                	prog.name === 'amexBizCashBack') {
+                                                	obj['cashBackProgram'] = true;
+                                                }
                                                 obj['transferPartner'] = {
                                                     displayName: prog.transferPartnerDisplayName,
                                                     logo: prog.transferPartnerLogo
@@ -42556,6 +42770,10 @@ var model = {
                                                 };
                                                 obj['points'] = prog.points;
                                                 obj['supportsRoute'] = true;
+                                                obj['numTickets'] = model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                if (model.rewProg.userFlightSelections.toDestination.numTickets > 1) {
+                                                    obj['moreThanOneTicket'] = true;
+                                                }
                                                 obj['from'] = model.rewProg.userFlightSelections.fromDestination.fromAirport;
                                                 obj['to'] = model.rewProg.userFlightSelections.fromDestination.toAirport;
 
@@ -42564,6 +42782,7 @@ var model = {
                                                     obj['miles'] = toB.costs.economyMiles;
                                                     var num = toB.costs.economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
+                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                     if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
                                                     } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42578,6 +42797,7 @@ var model = {
                                                         obj['miles'] = toB.costs.businessMiles;
                                                         var num = toB.costs.businessMiles;
                                                         num = num.substring((num.indexOf('-')+1),num.length);
+                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                         if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                             obj['enoughPoints'] = 'Yes!';
                                                         } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42591,6 +42811,7 @@ var model = {
                                                         obj['miles'] = toB.costs.economyMiles;
                                                         var num = toB.costs.economyMiles;
                                                         num = num.substring((num.indexOf('-')+1),num.length);
+                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
                                                         if (Number(num.replace(/,/g , '')) <= prog.points) {
                                                             obj['enoughPoints'] = 'Yes!';
                                                         } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
@@ -42600,7 +42821,6 @@ var model = {
                                                         } 
                                                         model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
-                                                    
                                                 }
                                             }
                                         });                                 
@@ -42621,6 +42841,7 @@ var model = {
 
             // Hide Crunching Numbers and Display Routes
             document.getElementById('crunchingNumbers').style.display = 'none';
+            document.getElementById('vetRedempCalcInputsDesktop').style.display = 'none';
             document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
             document.getElementById('displayProgramAndFlightInfo').style.display = 'inline';
 
@@ -43941,8 +44162,11 @@ var model = {
 
             model.cards.currentDisplayRec = model.cards.combinedRecs[0];
 
-            model.templates.renderDisplayRecommendationsTemplate();
+            // Set up and Render Redemption Tool
             model.templates.renderPointsRedemptionTemplate();
+            model.controllers.redemptionSetup();
+
+            model.templates.renderDisplayRecommendationsTemplate();
 
             if (!model.appState.loginLoading) {
                 model.controllers.sendToFirebase();

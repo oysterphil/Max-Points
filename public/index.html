@@ -2234,152 +2234,420 @@
     
     <!--Mobile View-->
     <div class="hide-on-large-only">
+      
       <div class="section no-pad-bot" style="padding-top: 0px;">
-        <div class="section col s10 offset-s1">
+        
+        <!-- Gather Program and Flight Info Mobile -->
+        <div id="gatherProgramAndFlightInfoMobile" class="section col s10 offset-s1">
           
-          <!-- Flight Details Desktop --> 
+          <!-- Flight Details Mobile --> 
           <div class="row">
             <div class="col s10 offset-s1">
               <div class="card horizontal">
                 <div class="card-stacked">
                   <div class="card-content">
-                    <div class="input-field col l3">
-                      <input type="text" id="fromAirportMobile" class="airportAutocomplete"> 
-                      <label for="fromAirportMobile">From</label>
-                    </div>
-                    <div class="input-field col l3">
-                      <input type="text" id="toAirportMobile" class="airportAutocomplete"> 
-                      <label for="toAirportMobile">To</label>
-                    </div>
-                    <div class="input-field col l2">
-                      <select id="flightClassMobile" class="browser-default">
-                        <option value="" disabled selected>Class</option>
-                        <option value="economy">Economy</option>
-                        <option value="business">Business</option>
-                      </select>
-                    </div>
-                    <div class="input-field col l2">
-                      <select id="flightTypeMobile" class="browser-default">
-                        <option value="" disabled selected>Type</option>
-                        <option value="oneWay">One Way</option>
-                        <option value="roundTrip">Round Trip</option>
-                      </select>
-                    </div>
-                    <div class="input-field col l2">
-                      <select id="numTicketsMobile" class="browser-default">
-                        <option value="" disabled selected>Tickets</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
+                    <div class="row">
+                      <p class="center">* A U.S. city must be either the to or from destination.</p>
+                      <div class="input-field col s6">
+                        <input type="text" id="fromAirportMobile" class="airportAutocomplete"> 
+                        <label for="fromAirportMobile">From</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input type="text" id="toAirportMobile" class="airportAutocomplete"> 
+                        <label for="toAirport">To</label>
+                      </div>
+                      <div class="input-field col s4">
+                        <select id="flightClassMobile" class="browser-default">
+                          <option value="" disabled selected>Class</option>
+                          <option value="economy">Economy</option>
+                          <option value="business">Business</option>
+                        </select>
+                      </div>
+                      <div class="input-field col s4">
+                        <select id="flightTypeMobile" class="browser-default">
+                          <option value="" disabled selected>Type</option>
+                          <option value="oneWay">One Way</option>
+                          <option value="roundTrip">Round Trip</option>
+                        </select>
+                      </div>
+                      <div class="input-field col s4">
+                        <select id="numTicketsMobile" class="browser-default">
+                          <option value="" disabled selected>Tickets</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End Flight Details Desktop -->
+          <!-- End Flight Details Mobile -->
           
-          <!-- Program Details Desktop --> 
-          <!-- <div class="row">
-            <div class="col m10 offset-m1">
+          <!-- Program Details Mobile --> 
+          <div class="row">
+            <div class="col s10 offset-s1">
               <div class="card horizontal">
                 <div class="card-stacked">
                   <div class="card-content">
                     <h5 class="center">
                       What points and miles do you have?
                     </h5>
-                    <div class="row col m12 center">
-                      <div class="input-field col m4 offset-m2 center">
+                    <div class="row col s12 center">
+                      <div class="input-field col s4 offset-s2 center">
                         <input type="text" id="program1Mobile" class="programAutocomplete"> 
-                        <label for="program1Mobile">Program 1</label>
+                        <label for="program1">Program 1</label>
                       </div>
-                      <div class="input-field col m4 center">
+                      <div class="input-field col s4 center">
                         <input type="text" id="programPoints1Mobile" class="programAutocomplete"> 
-                        <label for="programPoints1Mobile">Points/Miles</label>
+                        <label for="programPoints1">Points/Miles</label>
                       </div>
-                      <div class="input-field col m4 offset-m2" id="program22Mobile" style="display: none;">
+                      <div class="input-field col s4 offset-s2" id="program22Mobile" style="display: none;">
                         <input type="text" id="program2Mobile" class="programAutocomplete">
-                        <label for="program2Mobile">Program 2</label>
+                        <label for="program2">Program 2</label>
                       </div>
-                      <div id="programPoints33Mobile" class="input-field col m3 center" style="display: none;">
-                        <input type="text" id="programPoints3Mobile" class="programAutocomplete"> 
-                        <label for="programPoints3Mobile">Points/Miles</label>
+                      <div id="programPoints22Mobile" class="input-field col s3 center" style="display: none;">
+                        <input type="text" id="programPoints2Mobile" class="programAutocomplete"> 
+                        <label for="programPoints2">Points/Miles</label>
                       </div>
-                      <i id="y" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
-                      <div class="input-field col m4 offset-m2" id="program33" style="display: none;">
-                        <input type="text" id="program3" class="programAutocomplete">
+                      <i id="y2Mobile" class="material-icons col s1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="input-field col s4 offset-s2" id="program33" style="display: none;">
+                        <input type="text" id="program3Mobile" class="programAutocomplete">
                         <label for="program3">Program 3</label>
                       </div>
-                      <div id="programPoints33" class="input-field col m3 center" style="display: none;">
-                        <input type="text" id="programPoints3" class="programAutocomplete"> 
+                      <div id="programPoints33Mobile" class="input-field col s3 center" style="display: none;">
+                        <input type="text" id="programPoints3Mobile" class="programAutocomplete"> 
                         <label for="programPoints3">Points/Miles</label>
                       </div>
-                      <i id="y3" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
-                      <div class="input-field col m4 offset-m2" id="program44" style="display: none;">
-                        <input type="text" id="program4" class="programAutocomplete">
+                      <i id="y3Mobile" class="material-icons col s1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="input-field col s4 offset-s2" id="program44Mobile" style="display: none;">
+                        <input type="text" id="program4Mobile" class="programAutocomplete">
                         <label for="program4">Program 4</label>
                       </div>
-                      <div id="programPoints44" class="input-field col m3 center" style="display: none;">
-                        <input type="text" id="programPoints4" class="programAutocomplete"> 
+                      <div id="programPoints44Mobile" class="input-field col s3 center" style="display: none;">
+                        <input type="text" id="programPoints4Mobile" class="programAutocomplete"> 
                         <label for="programPoints4">Points/Miles</label>
                       </div>
-                      <i id="y4" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
-                      <div class="input-field col m4 offset-m2" id="program55" style="display: none;">
-                        <input type="text" id="program5" class="programAutocomplete">
+                      <i id="y4Mobile" class="material-icons col s1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                      <div class="input-field col s4 offset-s2" id="program55Mobile" style="display: none;">
+                        <input type="text" id="program5Mobile" class="programAutocomplete">
                         <label for="program5">Program 5</label>
                       </div>
-                      <div id="programPoints55" class="input-field col m3 center" style="display: none;">
-                        <input type="text" id="programPoints5" class="programAutocomplete"> 
+                      <div id="programPoints55Mobile" class="input-field col s3 center" style="display: none;">
+                        <input type="text" id="programPoints5Mobile" class="programAutocomplete"> 
                         <label for="programPoints5">Points/Miles</label>
                       </div>
-                      <i id="y5" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
-                      <div class="row">
-                        <div class="col m4 offset-m4 center" style="margin-top: 20px;">
-                          <button class="btn waves-effect waves-light btn" id="addAnotherProgram">
-                            Add Program
-                            <i class="material-icons right">credit_card</i>
-                          </button>
-                        </div>
+                      <i id="y5Mobile" class="material-icons col s1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
+                    </div>
+                    <div class="row">
+                      <div class="col s4 offset-s4 center" style="margin-top: 20px;">
+                        <button class="btn waves-effect waves-light btn" id="addAnotherProgramMobile">
+                          Add Program
+                          <i class="material-icons right">credit_card</i>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
-          <!-- End Program Details Desktop -->
+          </div>
+          <!-- End Program Details Mobile -->
 
-          <!-- Data Validation Box Desktop -->
-          <div class="col s8 offset-s2 center" id="vetRedempCalcInputsDesktop" style="display: none;">
-            <div class="card horizontal orange darken-4 white-text">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div>
-                    <h6> 
-                      Please make sure to fill in all of the fields above before hitting submit.
-                    </h6>
+          <!-- Data Validation Box Mobile -->
+          <div class="row">
+            <div class="col s8 offset-s2 center" id="vetRedempCalcInputsMobile" style="display: none;">
+              <div class="card horizontal orange darken-4 white-text">
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <div>
+                      <h6> 
+                        Please make sure to fill in all of the fields above before hitting submit.
+                      </h6>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End Data Validation Box Desktop -->
+          <!-- End Data Validation Box Mobile -->
 
-          <!-- Submit Button Desktop -->
-          <div class="col m4 offset-m4 center">
+          <!-- Submit Button Mobile -->
+          <div class="col s4 offset-s4 center">
 
-            <!-- <button class="btn waves-effect waves-light btn-large" id="submitRedempCalcForm">
+            <button class="btn waves-effect waves-light btn-large" id="submitRedempCalcFormMobile">
               Submit
               <i class="material-icons right">send</i>
-            </button> -->
+            </button>
 
           </div>
-          <!-- End Submit Button Desktop -->
-
+          <!-- End Submit Button Mobile -->
         </div>
+        <!-- End Gather Program and Flight Info Mobile -->
+
+        <!-- Display Program and Flight Info Mobile -->
+        <div id="displayProgramAndFlightInfoMobile" class="section col s10 offset-s1" style="display: none;">
+
+          <!-- Back to Inputs Button Mobile -->
+          <div class="col s4 offset-s4 center">
+
+            <button class="btn waves-effect waves-light btn-large" id="backToInputsMobile" style="margin: 30px;">
+              Back to Inputs
+            </button>
+
+          </div>
+          <!-- End Back to Inputs Button Mobile -->
+
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s6"><a class="active" href="#toDestinationMobile">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}} ({{eligiblePrograms.toDestinationCount}} routes)</a></li>
+                {{#if userFlightSelections.fromDestination.fromAirport}}
+                  <li class="tab col s6"><a href="#fromDestinationMobile">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}} ({{eligiblePrograms.fromDestinationCount}} routes)</a></li>
+                {{/if}}
+              </ul>
+              <div class="tabs-content">
+                <div id="toDestinationMobile" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
+                  {{#each eligiblePrograms.toDestination}}
+                  <!-- Display To Destination Program and Flight Details Mobile --> 
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="card horizontal">
+                        <div class="card-stacked">
+                          <div class="card-content">
+                            <!-- Program Logo -->
+                            <div class="row col s12 center">
+                              <img src='img/airlines/{{logo}}' width="300px">
+                              <h5>{{displayName}}</h5>
+                            </div>
+                            <!-- Program Costs in Miles/Points + Fees -->
+                            <div class="row col s12 center">
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <h6>Costs:</h6>
+                                <p>
+                                  {{miles}} (points/miles) + ${{fees}} in airport fees / ticket
+                                </p> 
+                                {{#if moreThanOneTicket}}
+                                  <p>
+                                    {{totalMiles}} (total points/miles) for {{numTickets}} tickets
+                                  </p> 
+                                {{/if}}
+                              </div>
+
+                              <!-- Enough Points? Mobile -->
+                              <h5>Your points:</h5>
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <p>
+                                  {{points}} 
+                                </p> 
+                              </div>
+                              <h5>Enough?</h5>
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <p>
+                                  {{enoughPoints}} 
+                                </p> 
+                              </div>
+                              <!-- End Enough Points? Mobile -->
+
+                              <!-- Booking Info/Overview Details Mobile -->
+                              <div class="col s12 center" style="padding: 30px;">
+                                <a class="waves-effect waves-light btn-large">Booking Info</a>
+                              </div>
+                              <div class="col s12 center" style="padding: 30px;">
+                                <a class="waves-effect waves-light btn-large" onclick="model.controllers.viewExtraInfo('{{destId}}')">Overview Details</a>
+                              </div>
+                              <!-- End Booking Info/Overview Details Mobile  -->
+                            </div>
+
+                            <!-- Overview Details -->
+                            <div class="col s12" id="{{destIdMobile}}" style="display:none;">
+                              <ul class="tabs">
+                                <li class="tab col s4"><a class="active" href="#{{availableAirlinesId}}">Available Airlines</a></li>
+                                <li class="tab col s4"><a href="#{{programOverviewId}}">Program Overview</a></li>
+                                <li class="tab col s4"><a href="#{{pointsTransferredFromId}}">Points Transferred From</a></li>
+                              </ul>
+                              <div class="tabs-content">
+                                <div id="{{availableAirlinesIdMobile}}">
+                                  {{#if cashBackProgram}}
+                                    <h5>You can use your cash back with any airline.</h5>
+                                  {{else}}
+                                  <div style="margin-top: 10px;">  
+                                    {{#if airlines.noFees}}
+                                      <h5>Partner airlines with no fees:</h5>
+                                      {{#each airlines.noFees}}
+                                      <div class="col s6 center">
+                                            <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
+                                      {{/each}}
+                                      {{else}}
+                                      <h5>This airline has no no-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
+                                  <div style="margin-top: 25px;">
+                                    {{#if airlines.lowFees}}
+                                      <h5>Partner airlines with low fees:</h5>
+                                      {{#each airlines.lowFees}}
+                                      <div class="col s6 center">
+                                        <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
+                                      {{/each}}
+                                      {{else}}
+                                      <h5>This airline has no low-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
+                                  {{/if}}
+                                </div>
+                                <div id="{{programOverviewIdMobile}}">
+                                  <ul>
+                                    {{#each programOverview}}
+                                      <li>
+                                        {{overview}}
+                                      </li>
+                                    {{/each}}
+                                  </ul>
+                                </div>
+                                <div id="{{pointsTransferredFromIdMobile}}">
+                                  <h5>Points Transferred from:</h5>
+                                  <img src="img/banks/{{transferPartner.logo}}">
+                                  <h5>{{transferPartner.displayName}}</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Display To Destination Program and Flight Details Mobile -->
+                  {{/each}}
+                </div>
+                {{#if userFlightSelections.fromDestination.fromAirport}}
+                <div id="fromDestinationMobile" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
+                  {{#each eligiblePrograms.fromDestination}}
+                  <!-- Display From Destination Program and Flight Details Mobile --> 
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="card horizontal">
+                        <div class="card-stacked">
+                          <div class="card-content">
+                            <!-- Program Logo -->
+                            <div class="row col s12 center">
+                              <img src='img/airlines/{{logo}}' width="300px">
+                              <h5>{{displayName}}</h5>
+                            </div>
+                            <!-- Program Costs in Miles/Points + Fees -->
+                            <div class="row col s12 center">
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <h6>Costs:</h6>
+                                <p>
+                                  {{miles}} (points/miles) + ${{fees}} in airport fees / ticket
+                                </p> 
+                                {{#if moreThanOneTicket}}  
+                                  <p>
+                                    {{totalMiles}} (total points/miles) for {{numTickets}} tickets
+                                  </p> 
+                                {{/if}}
+                              </div>
+
+                              <!-- Booking Info/Overview Details Mobile -->
+                              <div class="col s12 center" style="padding: 30px;">
+                                <a class="waves-effect waves-light btn-large">Booking Info</a>
+                              </div>
+                              <div class="col s12 center" style="padding: 30px;">
+                                <a class="waves-effect waves-light btn-large" onclick="model.controllers.viewExtraInfo('{{destId}}')">Overview Details</a>
+                              </div>
+                              <!-- End Booking Info/Overview Details Mobile -->
+
+                              <!-- Enough Points? -->
+                              <h5>Your points:</h5>
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <p>
+                                  {{points}} 
+                                </p> 
+                              </div>
+                              <h5>Enough?</h5>
+                              <div style="border: solid 1px #90caf9; padding: 10px;">
+                                <p>
+                                  {{enoughPoints}} 
+                                </p> 
+                              </div>
+                              <!-- End Enough Points? -->
+
+                            </div>
+
+                            <!-- Overview Details -->
+                            <div class="col s12" id="{{destIdMobile}}" style="display:none;">
+                              <ul class="tabs">
+                                <li class="tab col s4"><a class="active" href="#{{availableAirlinesId}}">Available Airlines</a></li>
+                                <li class="tab col s4"><a href="#{{programOverviewId}}">Program Overview</a></li>
+                                <li class="tab col s4"><a href="#{{pointsTransferredFromId}}">Points Transferred From</a></li>
+                              </ul>
+                              <div class="tabs-content">
+                                <div id="{{availableAirlinesIdMobile}}">
+                                  {{#if cashBackProgram}}
+                                    <h5>You can use your cash back with any airline.</h5>
+                                  {{else}}
+                                  <div style="margin-top: 10px;">
+                                    {{#if airlines.noFees}}
+                                      <h5>Partner airlines with no fees:</h5>
+                                      {{#each airlines.noFees}}
+                                      <div class="col s6 center">
+                                        <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
+                                      {{/each}}
+                                      {{else}}
+                                      <h5>This airline has no no-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
+                                  <div style="margin-top: 25px;">
+                                    {{#if airlines.lowFees}}
+                                      <h5>Partner airlines with low fees:</h5>
+                                      {{#each airlines.lowFees}}
+                                      <div class="col s6 center">
+                                        <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
+                                      {{/each}}
+                                      {{else}}
+                                      <h5>This airline has no low-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
+                                  {{/if}}
+                                </div>
+                                <div id="{{programOverviewIdMobile}}">
+                                  <ul>
+                                    {{#each programOverview}}
+                                      <li>
+                                        {{overview}}
+                                      </li>
+                                    {{/each}}
+                                  </ul>
+                                </div>
+                                <div id="{{pointsTransferredFromIdMobile}}">
+                                  <h5>Points Transferred from:</h5>
+                                  <img src="img/banks/{{transferPartner.logo}}">
+                                  <h5>{{transferPartner.displayName}}</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Display From Destination Program and Flight Details Mobile -->
+                  {{/each}}
+                </div>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Display Program and Flight Info Mobile -->
+
       </div>
 
       <!-- Redemption Calculator Footer -->
@@ -2403,7 +2671,7 @@
         
       <div class="section no-pad-bot" style="padding-top: 0px;">
         
-        <!-- Gather Program and Flight Info -->
+        <!-- Gather Program and Flight Info Desktop -->
         <div id="gatherProgramAndFlightInfo" class="section col l10 offset-l1">
           
           <!-- Flight Details Desktop --> 
@@ -2412,38 +2680,41 @@
               <div class="card horizontal">
                 <div class="card-stacked">
                   <div class="card-content">
-                    <div class="input-field col l3">
-                      <input type="text" id="fromAirport" class="airportAutocomplete"> 
-                      <label for="fromAirport">From</label>
+                    <div class="row">
+                      <div class="input-field col l3">
+                        <input type="text" id="fromAirport" class="airportAutocomplete"> 
+                        <label for="fromAirport">From</label>
+                      </div>
+                      <div class="input-field col l3">
+                        <input type="text" id="toAirport" class="airportAutocomplete"> 
+                        <label for="toAirport">To</label>
+                      </div>
+                      <div class="input-field col l2">
+                        <select id="flightClass" class="browser-default">
+                          <option value="" disabled selected>Class</option>
+                          <option value="economy">Economy</option>
+                          <option value="business">Business</option>
+                        </select>
+                      </div>
+                      <div class="input-field col l2">
+                        <select id="flightType" class="browser-default">
+                          <option value="" disabled selected>Type</option>
+                          <option value="oneWay">One Way</option>
+                          <option value="roundTrip">Round Trip</option>
+                        </select>
+                      </div>
+                      <div class="input-field col l2">
+                        <select id="numTickets" class="browser-default">
+                          <option value="" disabled selected>Tickets</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="input-field col l3">
-                      <input type="text" id="toAirport" class="airportAutocomplete"> 
-                      <label for="toAirport">To</label>
-                    </div>
-                    <div class="input-field col l2">
-                      <select id="flightClass" class="browser-default">
-                        <option value="" disabled selected>Class</option>
-                        <option value="economy">Economy</option>
-                        <option value="business">Business</option>
-                      </select>
-                    </div>
-                    <div class="input-field col l2">
-                      <select id="flightType" class="browser-default">
-                        <option value="" disabled selected>Type</option>
-                        <option value="oneWay">One Way</option>
-                        <option value="roundTrip">Round Trip</option>
-                      </select>
-                    </div>
-                    <div class="input-field col l2">
-                      <select id="numTickets" class="browser-default">
-                        <option value="" disabled selected>Tickets</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
+                    <p class="center">* A U.S. city must be either the to or from destination.</p>
                   </div>
                 </div>
               </div>
@@ -2505,13 +2776,13 @@
                         <label for="programPoints5">Points/Miles</label>
                       </div>
                       <i id="y5" class="material-icons col m1 x-out" style="-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); display: none; margin-top: 35px;">add</i>
-                      <div class="row">
-                        <div class="col m4 offset-m4 center" style="margin-top: 20px;">
-                          <button class="btn waves-effect waves-light btn" id="addAnotherProgram">
-                            Add Program
-                            <i class="material-icons right">credit_card</i>
-                          </button>
-                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col m4 offset-m4 center" style="margin-top: 20px;">
+                        <button class="btn waves-effect waves-light btn" id="addAnotherProgram">
+                          Add Program
+                          <i class="material-icons right">credit_card</i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2522,14 +2793,16 @@
           <!-- End Program Details Desktop -->
 
           <!-- Data Validation Box Desktop -->
-          <div class="col s8 offset-s2 center" id="vetRedempCalcInputsDesktop" style="display: none;">
-            <div class="card horizontal orange darken-4 white-text">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <div>
-                    <h6> 
-                      Please make sure to fill in all of the fields above before hitting submit.
-                    </h6>
+          <div class="row">
+            <div class="col s8 offset-s2 center" id="vetRedempCalcInputsDesktop" style="display: none;">
+              <div class="card horizontal orange darken-4 white-text">
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <div>
+                      <h6> 
+                        Please make sure to fill in all of the fields above before hitting submit.
+                      </h6>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2548,9 +2821,9 @@
           </div>
           <!-- End Submit Button Desktop -->
         </div>
-        <!-- End Gather Program and Flight Info -->
+        <!-- End Gather Program and Flight Info Desktop -->
 
-        <!-- Display Program and Flight Info -->
+        <!-- Display Program and Flight Info Desktop -->
         <div id="displayProgramAndFlightInfo" class="section col l10 offset-l1" style="display: none;">
 
           <!-- Back to Inputs Button Desktop -->
@@ -2566,13 +2839,13 @@
           <div class="row">
             <div class="col s12">
               <ul class="tabs">
-                <li class="tab col s6"><a class="active" href="#toDestination">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}} ({{eligiblePrograms.toDestinationCount}} routes)</a></li>
+                <li class="tab col s6"><a class="active" href="#toDestinationDesktop">{{userFlightSelections.toDestination.fromAirport}} to {{userFlightSelections.toDestination.toAirport}} ({{eligiblePrograms.toDestinationCount}} routes)</a></li>
                 {{#if userFlightSelections.fromDestination.fromAirport}}
-                  <li class="tab col s6"><a href="#fromDestination">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}} ({{eligiblePrograms.fromDestinationCount}} routes)</a></li>
+                  <li class="tab col s6"><a href="#fromDestinationDesktop">{{userFlightSelections.fromDestination.fromAirport}} to {{userFlightSelections.fromDestination.toAirport}} ({{eligiblePrograms.fromDestinationCount}} routes)</a></li>
                 {{/if}}
               </ul>
               <div class="tabs-content">
-                <div id="toDestination" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
+                <div id="toDestinationDesktop" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
                   {{#each eligiblePrograms.toDestination}}
                   <!-- Display To Destination Program and Flight Details Desktop --> 
                   <div class="row">
@@ -2582,7 +2855,7 @@
                           <div class="card-content">
                             <!-- Program Logo -->
                             <div class="row col s12 center">
-                              <img src='img/{{logo}}'>
+                              <img src='img/airlines/{{logo}}' width="300px">
                               <h5>{{displayName}}</h5>
                             </div>
                             <!-- Program Costs in Miles/Points + Fees -->
@@ -2590,8 +2863,13 @@
                               <div style="border: solid 1px #90caf9; padding: 10px;">
                                 <h6>Costs:</h6>
                                 <p>
-                                  {{miles}} (points/miles) + ${{fees}} in airport fees 
+                                  {{miles}} (points/miles) + ${{fees}} in airport fees / ticket
                                 </p> 
+                                {{#if moreThanOneTicket}}
+                                  <p>
+                                    {{totalMiles}} (total points/miles) for {{numTickets}} tickets
+                                  </p> 
+                                {{/if}}
                               </div>
 
                               <!-- Booking Info/Overview Details -->
@@ -2628,19 +2906,33 @@
                               </ul>
                               <div class="tabs-content">
                                 <div id="{{availableAirlinesId}}">
-                                  <h5>Partner airlines with no fees:</h5>
-                                  <div class="col s4">
-                                    {{#each airlines.noFees}}
-                                        <img src='{{logo}}'>
-                                    {{/each}}
-                                  </div>
-                                  {{#if lowFees}}
-                                    <h5>Partner airlines with low fees:</h5>
-                                    <div class="col s4">
-                                      {{#each airlines.lowFees}}
-                                          <img src='{{logo}}'>
+                                  {{#if cashBackProgram}}
+                                    <h5>You can use your cash back with any airline.</h5>
+                                  {{else}}
+                                  <div style="margin-top: 10px;">  
+                                    {{#if airlines.noFees}}
+                                      <h5>Partner airlines with no fees:</h5>
+                                      {{#each airlines.noFees}}
+                                      <div class="col s4 center">
+                                            <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
                                       {{/each}}
-                                    </div>
+                                      {{else}}
+                                      <h5>This airline has no no-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
+                                  <div style="margin-top: 25px;">
+                                    {{#if airlines.lowFees}}
+                                      <h5>Partner airlines with low fees:</h5>
+                                      {{#each airlines.lowFees}}
+                                      <div class="col s4 center">
+                                        <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
+                                      {{/each}}
+                                      {{else}}
+                                      <h5>This airline has no low-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
                                   {{/if}}
                                 </div>
                                 <div id="{{programOverviewId}}">
@@ -2654,8 +2946,8 @@
                                 </div>
                                 <div id="{{pointsTransferredFromId}}">
                                   <h5>Points Transferred from:</h5>
-                                  <img src="{{transferPartner.logo}}">
-                                  <h4>{{transferPartner.displayName}}</h4>
+                                  <img src="img/banks/{{transferPartner.logo}}">
+                                  <h5>{{transferPartner.displayName}}</h5>
                                 </div>
                               </div>
                             </div>
@@ -2668,7 +2960,7 @@
                   {{/each}}
                 </div>
                 {{#if userFlightSelections.fromDestination.fromAirport}}
-                <div id="fromDestination" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
+                <div id="fromDestinationDesktop" class="col s12" style="background-color: #f5f5f5; padding-top: 20px;">
                   {{#each eligiblePrograms.fromDestination}}
                   <!-- Display From Destination Program and Flight Details Desktop --> 
                   <div class="row">
@@ -2678,7 +2970,7 @@
                           <div class="card-content">
                             <!-- Program Logo -->
                             <div class="row col s12 center">
-                              <img src='img/{{logo}}'>
+                              <img src='img/airlines/{{logo}}' width="300px">
                               <h5>{{displayName}}</h5>
                             </div>
                             <!-- Program Costs in Miles/Points + Fees -->
@@ -2686,8 +2978,13 @@
                               <div style="border: solid 1px #90caf9; padding: 10px;">
                                 <h6>Costs:</h6>
                                 <p>
-                                  {{miles}} (points/miles) + ${{fees}} in airport fees 
+                                  {{miles}} (points/miles) + ${{fees}} in airport fees / ticket
                                 </p> 
+                                {{#if moreThanOneTicket}}  
+                                  <p>
+                                    {{totalMiles}} (total points/miles) for {{numTickets}} tickets
+                                  </p> 
+                                {{/if}}
                               </div>
 
                               <!-- Booking Info/Overview Details -->
@@ -2724,19 +3021,33 @@
                               </ul>
                               <div class="tabs-content">
                                 <div id="{{availableAirlinesId}}">
-                                  <h5>Partner airlines with no fees:</h5>
-                                  <div class="col s4">
-                                    {{#each airlines.noFees}}
-                                        <img src='{{logo}}'>
-                                    {{/each}}
-                                  </div>
-                                  {{#if lowFees}}
-                                    <h5>Partner airlines with low fees:</h5>
-                                    <div class="col s4">
-                                      {{#each airlines.lowFees}}
-                                          <img src='{{logo}}'>
+                                  {{#if cashBackProgram}}
+                                    <h5>You can use your cash back with any airline.</h5>
+                                  {{else}}
+                                  <div style="margin-top: 10px;">
+                                    {{#if airlines.noFees}}
+                                      <h5>Partner airlines with no fees:</h5>
+                                      {{#each airlines.noFees}}
+                                      <div class="col s4 center">
+                                        <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
                                       {{/each}}
-                                    </div>
+                                      {{else}}
+                                      <h5>This airline has no no-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
+                                  <div style="margin-top: 25px;">
+                                    {{#if airlines.lowFees}}
+                                      <h5>Partner airlines with low fees:</h5>
+                                      {{#each airlines.lowFees}}
+                                      <div class="col s4 center">
+                                        <img src='img/airlines/{{logo}}' width="100px">
+                                      </div>
+                                      {{/each}}
+                                      {{else}}
+                                      <h5>This airline has no low-fee partners.</h5>
+                                    {{/if}}
+                                  </div>
                                   {{/if}}
                                 </div>
                                 <div id="{{programOverviewId}}">
@@ -2750,8 +3061,8 @@
                                 </div>
                                 <div id="{{pointsTransferredFromId}}">
                                   <h5>Points Transferred from:</h5>
-                                  <img src="{{transferPartner.logo}}">
-                                  <h4>{{transferPartner.displayName}}</h4>
+                                  <img src="img/banks/{{transferPartner.logo}}">
+                                  <h5>{{transferPartner.displayName}}</h5>
                                 </div>
                               </div>
                             </div>
@@ -2768,7 +3079,9 @@
             </div>
           </div>
         </div>
-        <!-- End Display Program and Flight Info -->
+        <!-- End Display Program and Flight Info Desktop -->
+
+      </div>
         
 
       <!-- Display Recommendations Footer Desktop -->
@@ -2838,8 +3151,6 @@
           model.appState.resultsPage = false;
           model.appState.acctInfo = false;
           model.appState.redempCalc = true;
-
-          model.controllers.redemptionSetup();
 
           document.getElementById('pointsCalculator').style.display = 'none';
           document.getElementById('displayRecommendations').style.display = 'none';
