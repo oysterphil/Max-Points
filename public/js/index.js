@@ -40875,9 +40875,9 @@ var model = {
             function manageProgramInputsMobile() {
                 for (var i = 1; i < 6; i++) {
                     if (model.appState.addAnotherProgramCount === i) {
-                        var nextProgram = 'program' + (i+1) + (i+1) + (i+1);
-                        var nextProgramPoints = 'programPoints' + (i+1) + 'Mobile';
-                        var nextX = 'x' + (i+1) + 'Mobile';
+                        var nextProgram = 'program' + (i+1) + (i+1) + 'Mobile';
+                        var nextProgramPoints = 'programPoints' + (i+1) + (i+1) + 'Mobile';
+                        var nextY = 'y' + (i+1) + 'Mobile';
                         document.getElementById(nextProgram).style.display = "inline";
                         document.getElementById(nextProgramPoints).style.display = "inline";
                         document.getElementById(nextY).style.display = "inline";
@@ -40918,25 +40918,20 @@ var model = {
                 // Reset User Programs and User Freq Flier Programs
                 model.rewProg.userPrograms = [];
                 model.rewProg.userFreqFlierPrograms = [];
-
-                // Hide Gather Information and Display Crunching Numbers
-                document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
-                document.getElementById('crunchingNumbers').style.display = 'inline';
-
+               
                 if (document.getElementById('fromAirport').value) {
+                    
+                    // Hide Gather Information and Display Crunching Numbers
+                    document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
+                    document.getElementById('crunchingNumbers').style.display = 'inline';
+
+                    // Log Selections to the Model
                     model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirport').value.substring(0, 3);
                     model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirport').value.substring(0, 3);
                     model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClass').value;
                     model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightType').value;
                     model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTickets').value;
-                }
-                // if (document.getElementById('fromAirportMobile').value) {
-                //     model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value.substring(0, 3);
-                //     model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value.substring(0, 3);
-                //     model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
-                //     model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
-                //     model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
-                // }
+                } 
 
                 if (document.getElementById('flightType').value === 'roundTrip') {
                     model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirport').value.substring(0, 3);
@@ -40945,14 +40940,6 @@ var model = {
                     model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightType').value;
                     model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTickets').value;
                 }
-
-                // if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
-                //     model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value;
-                //     model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value;
-                //     model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
-                //     model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
-                //     model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
-                // }
 
                 // Make Sure they are all filled out
                 if (model.rewProg.userFlightSelections.toDestination.fromAirport &&
@@ -40973,30 +40960,19 @@ var model = {
 
                     var compiledProgramValues = [];
                     
-                    // TO DO: Once mobile is done, be sure to delete values from other view
-                    // if (!model.appState.mobileView) {
-                    //     for (var i = 0; i < checkPrograms.length; i ++) {
-                    //         document.getElementById(checkPrograms[i] + 'Mobile').value = '';
-                    //     }
-                    // } else {
-                    //     for (var i = 0; i < checkPrograms.length; i ++) {
-                    //         document.getElementById(checkPrograms[i]).value = '';
-                    //     }
-                    // }
+                    // Delete values from other view
+                    for (var i = 1; i < 6; i ++) {
+                        document.getElementById('program' + [i] + 'Mobile').value = '';
+                    }
 
                     for (var i = 1; i < 6; i++) {
                         var obj = {};
                         if (document.getElementById(('program' + i)).value) {
-                            var points = Number(document.getElementById(('programPoints' + i)).value.replace(/,/g , ''))
+                            var points = Number(document.getElementById(('programPoints' + i)).value.replace(/,/g , ''));
                             obj['name'] = document.getElementById(('program' + i)).value;
                             obj['points'] = points;
                             compiledProgramValues.push(obj);
-                        } 
-                        // else if (document.getElementById(('program' + i + 'Mobile')).value) {
-                        //     obj[name] = document.getElementById(('program' + i + 'Mobile')).value;
-                        //     obj[points] = document.getElementById(('programPoints' + i + 'Mobile')).value;
-                        //     compiledProgramValues.push(obj);
-                        // } 
+                        }
                     }
 
                     model.rewProg.userPrograms = compiledProgramValues;
@@ -41004,6 +40980,86 @@ var model = {
                     console.log('Display User Programs');
                     console.log(model.rewProg.userPrograms);
 
+                    window.scrollTo(0, 0);
+                    model.controllers.translateProgramSelectionsToFreqFlierPrograms();
+                }
+            }
+
+            function vetRedemptionInputsMobile() {
+                
+                // Reset User Flight Selections
+                for (var dest in model.rewProg.userFlightSelections) {
+                    for (var key in model.rewProg.userFlightSelections[dest]) {
+                        model.rewProg.userFlightSelections[dest][key] = null;
+                    }
+                }
+
+                // Reset User Programs and User Freq Flier Programs
+                model.rewProg.userPrograms = [];
+                model.rewProg.userFreqFlierPrograms = [];
+
+                // Hide Gather Information and Display Crunching Numbers
+                document.getElementById('gatherProgramAndFlightInfoMobile').style.display = 'none';
+                // TO DO: Replace this and Desktop view with a mobile loading screen
+                document.getElementById('crunchingNumbers').style.display = 'inline';
+
+                if (document.getElementById('fromAirportMobile').value) {
+                    // Log Selections to the Model
+                    model.rewProg.userFlightSelections.toDestination.fromAirport = document.getElementById('fromAirportMobile').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.toDestination.toAirport = document.getElementById('toAirportMobile').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.toDestination.class = document.getElementById('flightClassMobile').value;
+                    model.rewProg.userFlightSelections.toDestination.type = document.getElementById('flightTypeMobile').value;
+                    model.rewProg.userFlightSelections.toDestination.numTickets = document.getElementById('numTicketsMobile').value; 
+                }  
+
+                if (document.getElementById('flightTypeMobile').value === 'roundTrip') {
+                    model.rewProg.userFlightSelections.fromDestination.fromAirport = document.getElementById('toAirportMobile').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.fromDestination.toAirport = document.getElementById('fromAirportMobile').value.substring(0, 3);
+                    model.rewProg.userFlightSelections.fromDestination.class = document.getElementById('flightClassMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.type = document.getElementById('flightTypeMobile').value;
+                    model.rewProg.userFlightSelections.fromDestination.numTickets = document.getElementById('numTicketsMobile').value;
+                }
+
+                // Make Sure they are all filled out
+                if (model.rewProg.userFlightSelections.toDestination.fromAirport &&
+                    model.rewProg.userFlightSelections.toDestination.toAirport &&
+                    model.rewProg.userFlightSelections.toDestination.class &&
+                    model.rewProg.userFlightSelections.toDestination.type &&
+                    model.rewProg.userFlightSelections.toDestination.numTickets) {
+                    collectProgramValuesMobile();
+                } else {
+                    document.getElementById('vetRedempCalcInputsMobile').style.display = 'inline';
+                    document.getElementById('gatherProgramAndFlightInfoMobile').style.display = 'inline';
+                    document.getElementById('crunchingNumbers').style.display = 'none';
+                }
+                
+
+                function collectProgramValuesMobile() {
+                    // Log User's Programs, if applicable
+
+                    var compiledProgramValues = [];
+                    
+                    // Delete values from other view
+                    for (var i = 1; i < 6; i ++) {
+                        document.getElementById('program' + [i]).value = '';
+                    }
+
+                    for (var i = 1; i < 6; i++) {
+                        var obj = {};
+                        if (document.getElementById(('program' + i + 'Mobile')).value) {
+                            var points = Number(document.getElementById(('programPoints' + i + 'Mobile')).value.replace(/,/g , ''))
+                            obj['name'] = document.getElementById(('program' + i + 'Mobile')).value;
+                            obj['points'] = points;
+                            compiledProgramValues.push(obj);
+                        } 
+                    }
+
+                    model.rewProg.userPrograms = compiledProgramValues;
+                
+                    console.log('Display User Programs');
+                    console.log(model.rewProg.userPrograms);
+
+                    window.scrollTo(0, 0);
                     model.controllers.translateProgramSelectionsToFreqFlierPrograms();
                 }
             }
@@ -41748,11 +41804,13 @@ var model = {
             document.getElementById('addAnotherProgram').addEventListener('click', manageProgramInputsDesktop, false);
 
             // Add another card event listener mobile
-            // document.getElementById('addAnotherProgramMobile').addEventListener('click', manageProgramInputsMobile, false);
+            document.getElementById('addAnotherProgramMobile').addEventListener('click', manageProgramInputsMobile, false);
 
             // Submit Form Event Listeners
-            // TO DO: Add Destination for Event Listener
-            document.getElementById('submitRedempCalcForm').addEventListener('click', vetRedemptionInputs);
+            document.getElementById('submitRedempCalcForm').addEventListener('click', vetRedemptionInputs, false);
+
+            // Submit Form Event Listeners Mobile
+            document.getElementById('submitRedempCalcFormMobile').addEventListener('click', vetRedemptionInputsMobile, false);
         },
         translateProgramSelectionsToFreqFlierPrograms: () => {
             // Iterate through each program that the user inputted
@@ -41792,7 +41850,7 @@ var model = {
                 // the points.
 
                 model.rewProg.userFreqFlierPrograms.forEach(function(sel) {
-                    if (prog.name === sel.name) {
+                    if (prog.name === sel.displayName) {
                         sel.points += prog.points;
                         progExists = true;
                     } 
@@ -41934,10 +41992,11 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
                                                     var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -41949,10 +42008,11 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
                                                     var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -41977,10 +42037,10 @@ var model = {
                                             obj['displayName'] = ff[key].displayName;
                                             obj['logo'] = ff[key].logo;
                                             obj['destId'] = makeRefCode();
-                                                obj['destIdMobile'] = makeRefCode();
-                                                obj['programOverviewIdMobile'] = makeRefCode();
-                                                obj['availableAirlinesIdMobile'] = makeRefCode();
-                                                obj['pointsTransferredFromIdMobile'] = makeRefCode();
+                                            obj['destIdMobile'] = makeRefCode();
+                                            obj['programOverviewIdMobile'] = makeRefCode();
+                                            obj['availableAirlinesIdMobile'] = makeRefCode();
+                                            obj['pointsTransferredFromIdMobile'] = makeRefCode();
                                             obj['programOverview'] = ff[key].programOverview;
                                             obj['programOverviewId'] = makeRefCode();
                                             obj['availableAirlinesId'] = makeRefCode();
@@ -42018,10 +42078,11 @@ var model = {
                                                 obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                 var num = regions[reg].generalToUsMilesEconomy;
                                                 num = num.substring((num.indexOf('-')+1),num.length);
-                                                obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                obj['totalMiles'] = totalMiles;
+                                                if (totalMiles <= prog.points) {
                                                     obj['enoughPoints'] = 'Yes!';
-                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                } else if ((totalMiles - prog.points) <= 5000) {
                                                     obj['enoughPoints'] = 'Close!';
                                                 } else {
                                                     obj['enoughPoints'] = 'No';
@@ -42033,10 +42094,11 @@ var model = {
                                                 obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                 var num = regions[reg].generalToUsMilesBusiness;
                                                 num = num.substring((num.indexOf('-')+1),num.length);
-                                                obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                obj['totalMiles'] = totalMiles;
+                                                if (totalMiles <= prog.points) {
                                                     obj['enoughPoints'] = 'Yes!';
-                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                } else if ((totalMiles - prog.points) <= 5000) {
                                                     obj['enoughPoints'] = 'Close!';
                                                 } else {
                                                     obj['enoughPoints'] = 'No';
@@ -42191,10 +42253,11 @@ var model = {
                                                         obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                         var num = regions[reg].generalToUsMilesEconomy;
                                                         num = num.substring((num.indexOf('-')+1),num.length);
-                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                        obj['totalMiles'] = totalMiles;
+                                                        if (totalMiles <= prog.points) {
                                                             obj['enoughPoints'] = 'Yes!';
-                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        } else if ((totalMiles - prog.points) <= 5000) {
                                                             obj['enoughPoints'] = 'Close!';
                                                         } else {
                                                             obj['enoughPoints'] = 'No';
@@ -42219,10 +42282,11 @@ var model = {
                                                         obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                         var num = regions[reg].generalToUsMilesBusiness;
                                                         num = num.substring((num.indexOf('-')+1),num.length);
-                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                        obj['totalMiles'] = totalMiles;
+                                                        if (totalMiles <= prog.points) {
                                                             obj['enoughPoints'] = 'Yes!';
-                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        } else if ((totalMiles - prog.points) <= 5000) {
                                                             obj['enoughPoints'] = 'Close!';
                                                         } else {
                                                             obj['enoughPoints'] = 'No';
@@ -42310,10 +42374,11 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].economyMiles;
                                                     var num = regions[reg].generalToRegionCosts[costReg].economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42324,10 +42389,11 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToRegionCosts[costReg].businessMiles;
                                                     var num = regions[reg].generalToRegionCosts[costReg].businessMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42393,10 +42459,11 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                     var num = regions[reg].generalToUsMilesEconomy;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42407,10 +42474,11 @@ var model = {
                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                     var num = regions[reg].generalToUsMilesBusiness;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42562,10 +42630,11 @@ var model = {
                                                                     obj['miles'] = regions[reg].generalToUsMilesEconomy;
                                                                     var num = regions[reg].generalToUsMilesEconomy;
                                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                                    obj['totalMiles'] = totalMiles;
+                                                                    if (totalMiles <= prog.points) {
                                                                         obj['enoughPoints'] = 'Yes!';
-                                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                                         obj['enoughPoints'] = 'Close!';
                                                                     } else {
                                                                         obj['enoughPoints'] = 'No';
@@ -42590,10 +42659,11 @@ var model = {
                                                                     obj['miles'] = regions[reg].generalToUsMilesBusiness;
                                                                     var num = regions[reg].generalToUsMilesBusiness;
                                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                                    obj['totalMiles'] = totalMiles;
+                                                                    if (totalMiles <= prog.points) {
                                                                         obj['enoughPoints'] = 'Yes!';
-                                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                                         obj['enoughPoints'] = 'Close!';
                                                                     } else {
                                                                         obj['enoughPoints'] = 'No';
@@ -42679,10 +42749,11 @@ var model = {
                                                 obj['miles'] = toB.costs.economyMiles;
                                                 var num = toB.costs.economyMiles;
                                                 num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                obj['totalMiles'] = totalMiles;
+                                                if (totalMiles <= prog.points) {
                                                     obj['enoughPoints'] = 'Yes!';
-                                                } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                } else if ((totalMiles - prog.points) <= 5000) {
                                                     obj['enoughPoints'] = 'Close!';
                                                 } else {
                                                     obj['enoughPoints'] = 'No';
@@ -42694,10 +42765,11 @@ var model = {
                                                     obj['miles'] = toB.costs.businessMiles;
                                                     var num = toB.costs.businessMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42708,10 +42780,11 @@ var model = {
                                                     obj['miles'] = toB.costs.economyMiles;
                                                     var num = toB.costs.economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42782,10 +42855,11 @@ var model = {
                                                     obj['miles'] = toB.costs.economyMiles;
                                                     var num = toB.costs.economyMiles;
                                                     num = num.substring((num.indexOf('-')+1),num.length);
-                                                    obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                    if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                    var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                    obj['totalMiles'] = totalMiles;
+                                                    if (totalMiles <= prog.points) {
                                                         obj['enoughPoints'] = 'Yes!';
-                                                    } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                    } else if ((totalMiles - prog.points) <= 5000) {
                                                         obj['enoughPoints'] = 'Close!';
                                                     } else {
                                                         obj['enoughPoints'] = 'No';
@@ -42797,10 +42871,11 @@ var model = {
                                                         obj['miles'] = toB.costs.businessMiles;
                                                         var num = toB.costs.businessMiles;
                                                         num = num.substring((num.indexOf('-')+1),num.length);
-                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                        obj['totalMiles'] = totalMiles;
+                                                        if (totalMiles <= prog.points) {
                                                             obj['enoughPoints'] = 'Yes!';
-                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        } else if ((totalMiles - prog.points) <= 5000) {
                                                             obj['enoughPoints'] = 'Close!';
                                                         } else {
                                                             obj['enoughPoints'] = 'No';
@@ -42811,14 +42886,15 @@ var model = {
                                                         obj['miles'] = toB.costs.economyMiles;
                                                         var num = toB.costs.economyMiles;
                                                         num = num.substring((num.indexOf('-')+1),num.length);
-                                                        obj['totalMiles'] = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
-                                                        if (Number(num.replace(/,/g , '')) <= prog.points) {
+                                                        var totalMiles = Number(num.replace(/,/g , '')) * model.rewProg.userFlightSelections.toDestination.numTickets;
+                                                        obj['totalMiles'] = totalMiles;
+                                                        if (totalMiles <= prog.points) {
                                                             obj['enoughPoints'] = 'Yes!';
-                                                        } else if ((Number(num.replace(/,/g , '')) - prog.points) <= 5000) {
+                                                        } else if ((totalMiles - prog.points) <= 5000) {
                                                             obj['enoughPoints'] = 'Close!';
                                                         } else {
                                                             obj['enoughPoints'] = 'No';
-                                                        } 
+                                                        }
                                                         model.rewProg.eligiblePrograms.fromDestination.push(obj);
                                                     }
                                                 }
@@ -42838,14 +42914,24 @@ var model = {
             // Display Output/Render Template
             model.templates.renderPointsRedemptionTemplate();
             $('ul.tabs').tabs();
+            $('.collapsible').collapsible();
 
-            // Hide Crunching Numbers and Display Routes
-            document.getElementById('crunchingNumbers').style.display = 'none';
-            document.getElementById('vetRedempCalcInputsDesktop').style.display = 'none';
-            document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
-            document.getElementById('displayProgramAndFlightInfo').style.display = 'inline';
+            if (!model.appState.mobileView) {
+                // Hide Crunching Numbers and Display Routes
+                document.getElementById('crunchingNumbers').style.display = 'none';
+                document.getElementById('vetRedempCalcInputsDesktop').style.display = 'none';
+                document.getElementById('gatherProgramAndFlightInfo').style.display = 'none';
+                document.getElementById('displayProgramAndFlightInfo').style.display = 'inline';
+            } else {
+                // Hide Crunching Numbers and Display Routes
+                document.getElementById('crunchingNumbers').style.display = 'none';
+                document.getElementById('vetRedempCalcInputsMobile').style.display = 'none';
+                document.getElementById('gatherProgramAndFlightInfoMobile').style.display = 'none';
+                document.getElementById('displayProgramAndFlightInfoMobile').style.display = 'inline';
+            }    
 
             function backToInputs() {
+                window.scrollTo(0, 0);
                 // Reset Outputs
                 model.rewProg.eligiblePrograms.fromDestination = [];
                 model.rewProg.eligiblePrograms.fromDestinationCount = null;
@@ -42883,7 +42969,47 @@ var model = {
                 document.getElementById('gatherProgramAndFlightInfo').style.display = 'inline';
             }
 
+            function backToInputsMobile() {
+                window.scrollTo(0, 0);
+                // Reset Outputs
+                model.rewProg.eligiblePrograms.fromDestination = [];
+                model.rewProg.eligiblePrograms.fromDestinationCount = null;
+                model.rewProg.eligiblePrograms.toDestination = [];
+                model.rewProg.eligiblePrograms.toDestinationCount = null;
+
+                model.controllers.redemptionSetup();
+                document.getElementById('fromAirportMobile').value = model.rewProg.userFlightSelections.toDestination.fromAirport;
+                document.getElementById('toAirportMobile').value = model.rewProg.userFlightSelections.toDestination.toAirport;
+                document.getElementById('flightClassMobile').value = model.rewProg.userFlightSelections.toDestination.class;
+                document.getElementById('flightTypeMobile').value = model.rewProg.userFlightSelections.toDestination.type;
+                document.getElementById('numTicketsMobile').value = model.rewProg.userFlightSelections.toDestination.numTickets;
+
+
+                for (var i = 1; i < 6; i++) {
+                    if (model.rewProg.userPrograms[i-1]) {
+                        if (i === 1) {
+                            document.getElementById('program1Mobile').value = model.rewProg.userPrograms[i-1].name;
+                            document.getElementById('programPoints1Mobile').value = model.rewProg.userPrograms[i-1].points;
+                        } else {
+                            document.getElementById('program' + i + i + 'Mobile').style.display = 'inline';
+                            document.getElementById('program' + i + 'Mobile').value = model.rewProg.userPrograms[i-1].name;
+                            document.getElementById('programPoints' + i + 'Mobile').value = model.rewProg.userPrograms[i-1].points;
+                            document.getElementById('programPoints' + i + i + 'Mobile').style.display = 'inline';
+                            document.getElementById('y' + i + 'Mobile').style.display = 'inline';
+                        }
+                        
+                    }
+                }
+
+                // Activate the input fields that are filled in
+                Materialize.updateTextFields();
+
+                document.getElementById('displayProgramAndFlightInfoMobile').style.display = 'none';
+                document.getElementById('gatherProgramAndFlightInfoMobile').style.display = 'inline';
+            }
+
             document.getElementById('backToInputsDesktop').addEventListener('click', backToInputs);
+            document.getElementById('backToInputsMobile').addEventListener('click', backToInputsMobile);
 
             console.log(model.rewProg.eligiblePrograms);
         },
@@ -42893,6 +43019,30 @@ var model = {
             } else {
                 document.getElementById(a).style.display = 'inline';
             }
+        },
+        viewExtraInfoMobile: (a) => {
+            var mobileIds = [];
+            
+            model.rewProg.eligiblePrograms.toDestination.forEach(function(prog) {
+                for (var key in prog) {
+                    if (key.indexOf('IdMobile') > -1) {
+                        mobileIds.push(prog[key]);
+                    }
+                }
+            });
+            model.rewProg.eligiblePrograms.fromDestination.forEach(function(prog) {
+                for (var key in prog) {
+                    if (key.indexOf('IdMobile') > -1) {
+                        mobileIds.push(prog[key]);
+                    }
+                }
+            });
+
+            mobileIds.forEach(function(id) {
+                document.getElementById(id).style.display = 'none';
+            });
+
+            document.getElementById(a).style.display = 'inline';
         },
         insertCalcInputs: () => {
             
