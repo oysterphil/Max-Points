@@ -40234,6 +40234,8 @@ var model = {
             // Change App State
             model.appState.landingPage = false;
             model.appState.calculator = true;
+            model.appState.acctInfo = false;
+            model.appState.redempCalc = false;
 
             // Hide Landing Page
             document.getElementById('signIn').style.display = "none";
@@ -43139,6 +43141,14 @@ var model = {
 
             // Activate the input fields that are filled in
             Materialize.updateTextFields();
+
+            // Reset Rest of Inputs
+            model.cards.userSelections = [];
+            model.cards.intermediateRecsPers = [];
+            model.cards.intermediateRecsBiz = [];
+            model.cards.finalRecsPers = [];
+            model.cards.finalRecsBiz = [];
+            model.cards.combinedRecs = [];
         },
         displayRecsSetup: () => {
             
@@ -43149,6 +43159,8 @@ var model = {
             model.appState.landingPage = false;
             model.appState.resultsPage = true;
             model.appState.loginLoading = true;
+            model.appState.redempCalc = false;
+            model.appState.acctInfo = false;
 
             // Hide Landing Page
             document.getElementById('signIn').style.display = "none";
@@ -43346,8 +43358,8 @@ var model = {
                             && a.rewardsGoal === 'cashBack') {
 
                     var recs = [
-                        'Capital One® Spark® Cash For Business Visa',
-                        'Capital One® Spark® Cash Select For Business Visa'
+                        'Capital One® Spark® Cash for Business',
+                        'Capital One® Spark® Cash Select for Business'
                     ];
 
                     recs.forEach(function(rec) {
@@ -43379,9 +43391,9 @@ var model = {
                     
                     var recs = [
                         'Chase® Ink Cash℠ Business Visa',
-                        'Capital One® Spark® Cash For Business Visa',
+                        'Capital One® Spark® Cash for Business',
                         'Chase® Ink Business Preferred℠ Visa',
-                        'Capital One® Spark® Cash Select For Business Visa',
+                        'Capital One® Spark® Cash Select for Business',
                         'SimplyCash® Plus Business Credit Card from American Express'
                     ];
 
