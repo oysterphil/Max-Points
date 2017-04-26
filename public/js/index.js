@@ -3009,7 +3009,7 @@ var model = {
             rewardsGoal: null,
             monthlySpend: null,
             monthlySpendValue: null,
-            totalAnnualFee: null,
+            totalAnnualFee: 0,
             everywhere: 0        
         },
         currentCategoriesArray: {
