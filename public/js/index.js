@@ -408,7 +408,8 @@ var model = {
             user.delete().then(function() {
               window.location='https://maxpoints.co/';
             }, function(error) {
-              // An error happened.
+                console.log(error);
+                Materialize.toast(error.message, 4000);
             });
         }
     }, 
