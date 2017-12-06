@@ -1,0 +1,28 @@
+[debug] [2017-12-06T21:01:58.380Z] ----------------------------------------------------------------------
+[debug] [2017-12-06T21:01:58.382Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-12-06T21:01:58.383Z] CLI Version:   3.13.1
+[debug] [2017-12-06T21:01:58.383Z] Platform:      darwin
+[debug] [2017-12-06T21:01:58.383Z] Node Version:  v8.7.0
+[debug] [2017-12-06T21:01:58.385Z] Time:          Wed Dec 06 2017 16:01:58 GMT-0500 (EST)
+[debug] [2017-12-06T21:01:58.385Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-06T21:01:58.403Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-06T21:01:58.403Z] > authorizing via signed-in user
+[debug] [2017-12-06T21:01:58.406Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/maxpoints-ba294  
+ Wed Dec 06 2017 16:01:58 GMT-0500 (EST)
+[debug] [2017-12-06T21:01:59.414Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T21:01:59.419Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/maxpoints-ba294/tokens  
+ Wed Dec 06 2017 16:01:59 GMT-0500 (EST)
+[debug] [2017-12-06T21:01:59.756Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/HumbledbytheRoad/Documents/maxPoints'...
+[info] 
+[debug] [2017-12-06T21:01:59.760Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/maxpoints-ba294  
+ Wed Dec 06 2017 16:01:59 GMT-0500 (EST)
+[debug] [2017-12-06T21:02:00.078Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T21:02:00.078Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/698965710938/clients/_:getWebAppConfig  
+ Wed Dec 06 2017 16:02:00 GMT-0500 (EST)
+[debug] [2017-12-06T21:02:00.326Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

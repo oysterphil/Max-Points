@@ -320,6 +320,9 @@ var model = {
                                 // Write Functions to display a view for those that haven't filled out the calc yet
                                 console.log('No data to load.');
                                 document.getElementById('landingPage').style.display = 'none';
+                                document.getElementById('profile').style.display = 'inline';
+                                document.getElementById('preNav').style.display = 'none';
+                                document.getElementById('preFooterDesktop').style.display = 'none';                                
                                 model.controllers.calculatorSetup();
                             }
                         });
@@ -39969,6 +39972,8 @@ var model = {
         setup: () => {
             // Compile Templates
             model.templates.compile();
+            model.controllers.showLogin();
+            
 
             // Set Rewards Goal Selections for Mobile/Desktop to Europe
             model.destinations.selectionDesktop = model.destinations.optionsDesktop.unitedStatesDesktop;
@@ -40046,6 +40051,7 @@ var model = {
 
                 model.templates.renderCarouselGoalSliderMobileTemplate();
                 model.controllers.setupCarouselViewMobile();
+                
             }
         },
         closeForgotPasswordModal: () => {
