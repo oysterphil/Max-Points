@@ -41825,6 +41825,7 @@ var model = {
 
             var progExists = false;
 
+            // First push Points Transferrable Programs
             model.rewProg.userPrograms.forEach(function(prog) {
 
                 for (var ptsTrans in model.rewProg.programs.pointsTransferrable) {
@@ -41833,47 +41834,76 @@ var model = {
                         // transferrable programs, then calculate
                         // how many points they would have in each 
                         // program at the various conversion rates.
-                        model.rewProg.programs.pointsTransferrable[ptsTrans].participatingPrograms.forEach(function(p) {
-                            var obj = {};
-                            obj['name'] = p.name;
-                            obj['displayName'] = p.displayName;
-                            obj['points'] = prog.points * p.pointTransferRate;
-                            obj['transferPartnerDisplayName'] = model.rewProg.programs.pointsTransferrable[ptsTrans].displayName;
-                            obj['transferPartnerLogo'] = model.rewProg.programs.pointsTransferrable[ptsTrans].logo;
-                            model.rewProg.userFreqFlierPrograms.push(obj);
-                        });
+
+                        // First, check to see if there is any overlap between
+                        // participating programs in this points program and 
+                        // other points programs that the user might have.
+                        // If there is overlap, add the points from each program.
+                        // If there is no overlap, add the program as a new program.
+                        
+                        if (model.rewProg.userFreqFlierPrograms.length === 0) {
+                            model.rewProg.programs.pointsTransferrable[ptsTrans].participatingPrograms.forEach(function(p) {
+
+                                var obj = {};
+                                obj['name'] = p.name;
+                                obj['displayName'] = p.displayName;
+                                obj['points'] = prog.points * p.pointTransferRate;
+                                obj['transferPartnerDisplayName'] = model.rewProg.programs.pointsTransferrable[ptsTrans].displayName;
+                                obj['transferPartnerLogo'] = model.rewProg.programs.pointsTransferrable[ptsTrans].logo;
+                                model.rewProg.userFreqFlierPrograms.push(obj);
+                            });
+                        } else {
+                            model.rewProg.programs.pointsTransferrable[ptsTrans].participatingPrograms.forEach(function(p) {
+                                model.rewProg.userFreqFlierPrograms.forEach(function(sel) {
+                                    if (p.name === sel.displayName) {
+                                        sel.points += p.points;
+                                    } else {
+                                        var obj = {};
+                                        obj['name'] = p.name;
+                                        obj['displayName'] = p.displayName;
+                                        obj['points'] = prog.points * p.pointTransferRate;
+                                        obj['transferPartnerDisplayName'] = model.rewProg.programs.pointsTransferrable[ptsTrans].displayName;
+                                        obj['transferPartnerLogo'] = model.rewProg.programs.pointsTransferrable[ptsTrans].logo;
+                                        model.rewProg.userFreqFlierPrograms.push(obj);
+                                    }
+                                });
+                            });
+                        }
                     }
                 }
 
-                // Next check for frequent flier and cash back 
-                // programs. First, though, check and see if 
-                // the their selection is already in the 
-                // model.rewProg.userFreqFlierPrograms array due to a
-                // points transferrable program and then add
-                // the points.
+            });
+
+            // Next check for frequent flier and cash back 
+            // programs. First, though, check and see if 
+            // their selection is already in the 
+            // model.rewProg.userFreqFlierPrograms array due to a
+            // points transferrable program and then add
+            // the points.
+
+            model.rewProg.userPrograms.forEach(function(prog) {
 
                 model.rewProg.userFreqFlierPrograms.forEach(function(sel) {
                     if (prog.name === sel.displayName) {
                         sel.points += prog.points;
                         progExists = true;
                     } 
-                }); 
 
-                // If the program does not currently exist in the userFreqFlierPrograms 
-                // object and is not a points transferrable program, then push it to the 
-                // userFreqFlierPrograms object.
-                if (prog.name === 'chaseAnyCard' || 
-                    prog.name === 'chaseReserveCard' || 
-                    prog.name === 'amexAnyCard' || 
-                    prog.name === 'amexBiz' || 
-                    prog.name === 'citi') {
+                    // If the program does not currently exist in the userFreqFlierPrograms 
+                    // object and is not a points transferrable program, then push it to the 
+                    // userFreqFlierPrograms object.
+                    if (prog.name === 'Chase Ultimate Rewards (Sapphire Preferred, Ink Plus or Ink Bold Cards)' || 
+                        prog.name === 'Chase Ultimate Rewards (Sapphire Reserve Card)' || 
+                        prog.name === 'American Express Membership Rewards (Any Card)' || 
+                        prog.name === 'American Express Membership Rewards (Business Platinum Card)' || 
+                        prog.name === 'Citi Thank You Points (Premier, Prestige or Chairman Cards)') {
+                    } else if (!progExists) {
+                        model.rewProg.userFreqFlierPrograms.push(prog);
+                    }
 
-                } else if (!progExists) {
-                    model.rewProg.userFreqFlierPrograms.push(prog);
-                }
-
-                // Reset progExists
-                progExists = false;
+                    // Reset progExists
+                    progExists = false;
+                });
             });
 
             console.log('User Frequent Flier Programs');

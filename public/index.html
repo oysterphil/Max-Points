@@ -22,7 +22,7 @@
   <div id="preNav" class="navbar-fixed" style="display: block;">  
     <nav>
       <div class="nav-wrapper">
-        <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;"><img class="hide-on-large-only" src="/img/logo.png" height="45px" style="margin-top: 5px;margin-left: 5px;"><img class="hide-on-small-only hide-on-med-only" src="/img/logo.png" height="55px" style="margin-top: 5px;margin-left: 5px;"></a>
+        <a onClick="window.location.reload()" class="brand-logo left" style="cursor: pointer;"><img class="hide-on-large-only" src="/img/logo.png" height="45px" style="margin-top: 5px;margin-left: 5px;"><img class="hide-on-small-only hide-on-med-only" src="/img/Untitled-2.svg" height="55px" style="margin-top: 5px;margin-left: 5px;"></a>
         <ul class="right hide-on-small-only">
           <li><a href="javascript:model.controllers.showLogin()" class="waves-effect waves-light btn" style="border: 2px solid #00c853;background-color: rgba(0,0,0,0);">Sign in</a></li>
           <li><a href="javascript:model.controllers.showRegister()" class="waves-effect waves-light btn register">Register</a></li>
@@ -3113,12 +3113,6 @@
 
     function toggleBetweenNavItems () {
         const selection = this.id;
-        
-        // Make sure to reset box inputs
-        var ids = ['goals', 'cardRecs', 'redempCalc', 'personalInfo'];
-        ids.forEach(function(id) {
-            document.getElementById(id).classList.remove('active');
-        });
 
         if (selection === 'goals') {
           
@@ -3166,8 +3160,14 @@
           document.getElementById('acctInfo').style.display = 'inline';
         }
 
-        // Highlight Selection
-        document.getElementById(selection).classList.add('active');
+        // Make sure to reset box inputs and highlight selection
+        var ids = ['goals', 'cardRecs', 'redempCalc', 'personalInfo'];
+        ids.forEach(function(id) {
+            document.getElementById(id).classList.remove('active');
+            if (id === selection) {
+              document.getElementById(id).classList.add('active');
+            }
+        });
     }
 
     // Declare slideIndex Variables BEFORE Handlebars messes it up!
